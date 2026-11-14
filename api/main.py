@@ -142,7 +142,7 @@ class RefinementRequest(BaseModel):
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "service": "voyager-travel-agent"}
+    return {"status": "ok", "service": "voyager-tpf"}
 
 
 @app.post("/api/travel/plan", response_model=TravelResponse)

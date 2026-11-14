@@ -88,7 +88,7 @@ def test_health_endpoint(client):
     response = client.get("/health")
 
     assert response.status_code == 200
-    assert response.json() == {"status": "ok", "service": "voyager-travel-agent"}
+    assert response.json() == {"status": "ok", "service": "voyager-tpf"}
 
 
 def test_collaborative_endpoint_success(client, mock_graph_run):
