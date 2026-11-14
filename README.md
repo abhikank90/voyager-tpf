@@ -1,8 +1,10 @@
-# Voyager: Targeted Peer Feedback for Multi-Agent Conflict Resolution
+# Voyager-TPF: Targeted Peer Feedback for Multi-Agent Conflict Resolution
+
+*Voyager-TPF (formerly `voyager-travel-agent`) is unrelated to the Minecraft agent "Voyager" (Wang et al., 2023).*
 
 [![DOI](https://zenodo.org/badge/1240210492.svg)](https://doi.org/10.5281/zenodo.21269752)
 
-[![CI](https://github.com/abhikank90/voyager-travel-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/abhikank90/voyager-travel-agent/actions/workflows/ci.yml)
+[![CI](https://github.com/abhikank90/voyager-tpf/actions/workflows/ci.yml/badge.svg)](https://github.com/abhikank90/voyager-tpf/actions/workflows/ci.yml)
 
 **A coordination pattern for multi-agent LLM systems: typed conflict detection, targeted peer feedback, and selective re-execution.** Voyager demonstrates the pattern on a real problem — multi-agent travel planning — where parallel specialist agents produce locally optimal but globally incoherent results. On synthetic inventory the pattern resolves 100% of conflicts; on real API inventory it honestly surfaces the ones reality can't satisfy.
 
@@ -269,8 +271,8 @@ A real trace from the live capture benchmark (Greece, $2,000, beaches and local 
 ## Quick Start
 
 ```bash
-git clone https://github.com/abhikank90/voyager-travel-agent.git
-cd voyager-travel-agent
+git clone https://github.com/abhikank90/voyager-tpf.git
+cd voyager-tpf
 pip install -r requirements-lock.txt   # pinned, known-good versions
 pip install -e . --no-deps
 cp .env.example .env        # add ANTHROPIC_API_KEY (only required key)

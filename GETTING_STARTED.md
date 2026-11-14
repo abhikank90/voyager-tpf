@@ -91,8 +91,8 @@ User selects "Balanced" → Full day-by-day itinerary with booking links
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/your-org/voyager-travel-agent
-cd voyager-travel-agent
+git clone https://github.com/abhikank90/voyager-tpf
+cd voyager-tpf
 cp .env.example .env
 # Edit .env — add your ANTHROPIC_API_KEY (that's all you need!)
 ```
@@ -142,7 +142,7 @@ API docs at [http://localhost:8000/docs](http://localhost:8000/docs)
 ## Project Structure
 
 ```
-voyager-travel-agent/
+voyager-tpf/
 ├── agents/                         # Agent implementations
 │   ├── base_agent.py               # Abstract base with tracing + shared date logic
 │   ├── intent_parser.py            # Query → structured TravelIntent
