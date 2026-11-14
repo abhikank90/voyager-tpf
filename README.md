@@ -1,4 +1,4 @@
-# Voyager-TPF: Targeted Peer Feedback for Multi-Agent Conflict Resolution
+# Voyager-TPF: Typed conflict detection, targeted peer feedback, and reproducible replay for multi-agent LLM systems
 
 *Voyager-TPF (formerly `voyager-travel-agent`) is unrelated to the Minecraft agent "Voyager" (Wang et al., 2023).*
 
