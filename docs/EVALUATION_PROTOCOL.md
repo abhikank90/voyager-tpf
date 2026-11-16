@@ -353,6 +353,9 @@ after the fact are still disclosed, marked as unlogged.
 
 | Date | Deviation | Reason | Commit |
 |---|---|---|---|
+| 2026-11-15 | `broadcast` critique is the detected conflicts rendered as prose (no typed data, no addressing), not the UI narrative; flight and hotel interpret it with their own LLM, recorded as fixtures in capture/replay. | The UI narrative is built without flight arrival times or experience locations, so it cannot express two of the three conflict types; using it would confound H1c with an information difference rather than test typed routing. | 60ed0ed |
+| 2026-11-15 | `two_way` re-runs exactly the agents it messages, without the ≥3-agent full re-run. | With location and timing conflicts it messages three agents, which would trigger a full re-run and make H5 differ from `targeted` by more than the second resolution direction. | 60ed0ed |
+| 2026-11-16 | Stay length is the trip window's nights (13 by default) for hotel pricing, experiences, option costs and itinerary dates under the v1.5 month rule. | Hotel totals were priced for 14 nights against a 13-night check-in/out, and the itinerary always used July dates, so delivered plans contradicted the searched dates (relevant to H2c coherence). | a036695 |
 
 ## 14. Budget estimate
 
