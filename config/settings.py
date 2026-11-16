@@ -51,6 +51,11 @@ class Settings(BaseSettings):
     # Used to backfill fixtures for sources added after the original capture.
     replay_record_missing: bool = False
 
+    # ── Refinement condition (protocol §3) ────────────────────────────────
+    # targeted | full_rerun | broadcast | two_way (VOYAGER_REFINEMENT_MODE).
+    # Baseline is enable_refinement=False on the query, not a mode.
+    refinement_mode: Literal["targeted", "full_rerun", "broadcast", "two_way"] = "targeted"
+
     # ── Trip-window anchor (protocol §5.2) ────────────────────────────────
     # Mock sessions resolve trip dates against this fixed date, so synthetic
     # benchmarks do not drift with the day they run (VOYAGER_MOCK_ANCHOR_DATE).

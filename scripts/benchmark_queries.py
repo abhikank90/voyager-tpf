@@ -115,6 +115,58 @@ async def run_compare(queries: list[str]) -> None:
     print(f"\n  compare mode: {ok}/{len(queries)*2} total runs succeeded")
 
 
+CONDITIONS = ("baseline", "targeted", "full_rerun", "broadcast", "two_way")
+
+
+def load_manifest_queries(path: str, query_set: str) -> list[tuple[str, str]]:
+    """(query_id, query_text) rows of one set from results/v1.5/query_manifest.csv."""
+    import csv
+
+    with open(path, newline="") as fh:
+        rows = [r for r in csv.DictReader(fh) if r["set"] == query_set]
+    if not rows:
+        raise SystemExit(f"no '{query_set}' rows in {path}")
+    return [(r["query_id"], r["query_text"]) for r in rows]
+
+
+async def run_conditions(
+    queries: list[tuple[str, str]],
+    conditions: list[str],
+    repeats: int,
+) -> None:
+    """Run every condition for each query back to back, repeated ``repeats`` times.
+
+    Interleaving by query keeps time-of-day and provider-load effects out of the
+    paired comparison. The condition order rotates by query index so no
+    condition always runs first. Each session is tagged with query_id,
+    condition and run index.
+    """
+    from graph.travel_graph import run_collaborative_travel_query
+
+    total = len(queries) * len(conditions) * repeats
+    done = ok = 0
+    for run_idx in range(1, repeats + 1):
+        for qi, (query_id, query) in enumerate(queries):
+            shift = qi % len(conditions)
+            order = conditions[shift:] + conditions[:shift]
+            for condition in order:
+                done += 1
+                print(f"  [{done}/{total}] run {run_idx} {query_id} {condition}")
+                try:
+                    await run_collaborative_travel_query(
+                        query,
+                        enable_refinement=(condition != "baseline"),
+                        refinement_mode=None if condition == "baseline" else condition,
+                        session_tags={
+                            "query_id": query_id, "condition": condition, "run_index": run_idx,
+                        },
+                    )
+                    ok += 1
+                except Exception as exc:  # protocol §8: logged, re-run by hand
+                    print(f"           ✗ {exc}")
+    print(f"\n  conditions: {ok}/{total} sessions succeeded")
+
+
 def _write_results(inventory_mode: str) -> None:
     """Write standardized results artifacts (run_summary.json, CSVs, manifest)."""
     from agents.inventory import load_manifest
@@ -130,9 +182,33 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Voyager metrics benchmark")
     parser.add_argument(
         "--mode",
-        choices=["full", "baseline", "compare"],
+        choices=["full", "baseline", "compare", "conditions"],
         default="full",
-        help="full: run with refinement; baseline: skip rounds 2/3; compare: run both",
+        help=(
+            "full: run with refinement; baseline: skip rounds 2/3; compare: run both; "
+            "conditions: every v1.5 condition per query, interleaved (protocol §6)"
+        ),
+    )
+    parser.add_argument(
+        "--refinement-mode",
+        choices=["targeted", "full_rerun", "broadcast", "two_way"],
+        default=None,
+        help="refinement condition for --mode full (defaults to VOYAGER_REFINEMENT_MODE)",
+    )
+    parser.add_argument(
+        "--conditions",
+        default=",".join(CONDITIONS),
+        help="comma-separated conditions for --mode conditions",
+    )
+    parser.add_argument("--repeats", type=int, default=1, help="runs per condition (--mode conditions)")
+    parser.add_argument(
+        "--manifest",
+        default=None,
+        help="read queries and IDs from a query manifest CSV (with --set)",
+    )
+    parser.add_argument(
+        "--set", dest="query_set", choices=["synthetic", "real", "control"], default="synthetic",
+        help="manifest set to run",
     )
     parser.add_argument(
         "--inventory",
@@ -161,14 +237,42 @@ def main() -> None:
         print_summary()
         return
 
+    if args.refinement_mode:
+        os.environ["VOYAGER_REFINEMENT_MODE"] = args.refinement_mode
+        reload_settings()
+
     limit = args.query_count or args.limit
-    queries = list(QUERIES)
+    if args.manifest:
+        tagged = load_manifest_queries(args.manifest, args.query_set)
+    else:
+        tagged = [(f"Q{i:02d}", q) for i, q in enumerate(QUERIES, 1)]
     offset = int(os.environ.get("VOYAGER_QUERY_OFFSET", "0"))
     if offset:
-        queries = queries[offset:]
+        tagged = tagged[offset:]
     if limit:
-        queries = queries[:limit]
+        tagged = tagged[:limit]
 
+    if args.mode == "conditions":
+        conditions = [c.strip() for c in args.conditions.split(",") if c.strip()]
+        unknown = set(conditions) - set(CONDITIONS)
+        if unknown:
+            raise SystemExit(f"unknown conditions: {sorted(unknown)}")
+        if args.dry_run:
+            print(f"\n{len(tagged)} queries x {conditions} x {args.repeats} runs:\n")
+            for qid, q in tagged:
+                print(f"  {qid}  {q}")
+            return
+        print(f"\nRunning {len(tagged)} queries x {len(conditions)} conditions x "
+              f"{args.repeats} runs (inventory={inventory_mode})")
+
+        async def _run_conditions() -> None:
+            await run_conditions(tagged, conditions, args.repeats)
+            _write_results(inventory_mode)
+
+        asyncio.run(_run_conditions())
+        return
+
+    queries = [q for _, q in tagged]
     if args.dry_run:
         print(f"\n{len(queries)} queries (mode={args.mode}, inventory={inventory_mode}):\n")
         for i, q in enumerate(queries, 1):

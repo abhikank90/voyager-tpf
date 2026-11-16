@@ -237,6 +237,24 @@ class FlightAgent(BaseAgent):
                         pass
                     break
 
+        # broadcast mode: no typed constraint, so read the prose critique.
+        if preferred_arrival_hour is None:
+            interpretation = await self._interpret_critique(
+                state,
+                task=(
+                    "If the feedback asks for a different flight arrival time, return "
+                    '{"arrive_before_hour": <hour 0-23 the flight should land before>}. '
+                    'Otherwise return {"arrive_before_hour": null}.'
+                ),
+                plan={
+                    "destination": destination,
+                    "selected_flight_arrival": (state.get("selected_flight") or {}).get("arrival"),
+                },
+            )
+            hour = interpretation.get("arrive_before_hour")
+            if isinstance(hour, int) and not isinstance(hour, bool) and 0 <= hour <= 23:
+                preferred_arrival_hour = hour
+
         api_key = os.getenv("SERPAPI_API_KEY")
 
         mode = self._inventory_mode()

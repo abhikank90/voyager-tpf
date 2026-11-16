@@ -20,6 +20,7 @@ from __future__ import annotations
 import hashlib
 import json
 from collections.abc import Awaitable, Callable
+from contextlib import contextmanager
 from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import Any
@@ -74,6 +75,12 @@ def capture(source: str, payload: Any, query_id: str, run_label: str) -> Path:
     path = base / f"{query_id}_{source}.json"
     path.write_text(json.dumps(sanitized, indent=2, default=str) + "\n")
 
+    with _manifest_lock():
+        _record_manifest_entry(source, query_id, sanitized, run_label)
+    return path
+
+
+def _record_manifest_entry(source: str, query_id: str, sanitized: Any, run_label: str) -> None:
     manifest = _load_manifest()
     entry = {
         "query_id": query_id,
@@ -85,7 +92,6 @@ def capture(source: str, payload: Any, query_id: str, run_label: str) -> Path:
     }
     manifest.setdefault("fixtures", {})[f"{query_id}_{source}"] = entry
     _write_manifest(manifest)
-    return path
 
 
 def replay(source: str, query_id: str, *, verify_hash: bool = True) -> dict[str, Any]:
@@ -149,6 +155,29 @@ def load_manifest() -> dict[str, Any]:
     return _load_manifest()
 
 
+@contextmanager
+def _manifest_lock():
+    """Exclusive lock around a manifest read-modify-write.
+
+    Without it, two processes recording fixtures at once each read the manifest,
+    add their entry and write the whole file back, silently dropping the other's
+    entries. POSIX ``flock``; a no-op where unavailable.
+    """
+    base = _fixtures_dir()
+    base.mkdir(parents=True, exist_ok=True)
+    try:
+        import fcntl
+    except ImportError:  # pragma: no cover - non-POSIX
+        yield
+        return
+    with open(base / ".manifest.lock", "w") as fh:
+        fcntl.flock(fh, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(fh, fcntl.LOCK_UN)
+
+
 def _load_manifest() -> dict[str, Any]:
     path = _fixtures_dir() / _MANIFEST_NAME
     if not path.exists():
@@ -179,6 +208,11 @@ def ensure_capture_anchor(rule: str) -> date:
     a fixture set that already holds pre-v1.5 fixtures is refused: the two sets
     would mix incompatible keys. Point ``VOYAGER_INVENTORY_DIR`` at a fresh dir.
     """
+    with _manifest_lock():
+        return _ensure_capture_anchor_locked(rule)
+
+
+def _ensure_capture_anchor_locked(rule: str) -> date:
     manifest = _load_manifest()
     existing_rule = manifest.get("trip_window_rule")
     has_fixtures = bool(manifest.get("fixtures"))

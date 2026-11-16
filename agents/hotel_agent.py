@@ -141,6 +141,31 @@ class HotelAgent(BaseAgent):
                 if location_hint or centroid:
                     break
 
+        # broadcast mode: no typed constraint, so read the prose critique.
+        if location_hint is None and centroid is None:
+            activity_locations = [
+                (e.get("location") or "").strip()
+                for e in (state.get("experiences") or [])[:3]
+                if (e.get("location") or "").strip()
+            ]
+            interpretation = await self._interpret_critique(
+                state,
+                task=(
+                    "If the feedback asks for the hotel to be somewhere else, return "
+                    '{"target_area": "<the area the hotel should be in>"}, using an area '
+                    "named in the current plan where possible. Otherwise return "
+                    '{"target_area": null}.'
+                ),
+                plan={
+                    "destination": destination,
+                    "selected_hotel_location": (state.get("selected_hotel") or {}).get("location"),
+                    "top_activity_locations": activity_locations,
+                },
+            )
+            area = interpretation.get("target_area")
+            if isinstance(area, str) and area.strip():
+                location_hint = area.strip()
+
         api_key = os.getenv("NUITEE_API_KEY", "")
         mode = self._inventory_mode()
         # Dates derived per-mode (see flight_agent): replay anchors on the

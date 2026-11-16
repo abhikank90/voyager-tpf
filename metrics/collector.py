@@ -17,6 +17,7 @@ call print_summary() to produce the before/after table for the article.
 from __future__ import annotations
 
 import json
+import os
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -28,6 +29,12 @@ _SESSIONS_FILE = _METRICS_DIR / "sessions.jsonl"
 _RESULTS_DIR = Path(__file__).parent.parent / "results"
 _RESULTS_SCHEMA_VERSION = "2"
 _RESEARCH_AGENTS_COUNT = 5
+
+
+def _sessions_file() -> Path:
+    """Session log path. ``VOYAGER_METRICS_PATH`` gives each concurrent run its own file."""
+    override = os.environ.get("VOYAGER_METRICS_PATH")
+    return Path(override) if override else _SESSIONS_FILE
 
 
 def _default_convergence(run_metrics: dict[str, Any]) -> dict[str, Any]:
@@ -61,6 +68,8 @@ def record_session(
     mode: str = "full",
     token_usage=None,
     estimated_cost_usd: float = 0.0,
+    refinement_mode: str | None = None,
+    session_tags: dict | None = None,
 ) -> None:
     """Extract all metrics from a completed run and append to sessions.jsonl."""
     conflicts: list[dict] = final_state.get("conflicts", []) or []
@@ -216,17 +225,24 @@ def record_session(
         "feedback_metrics": final_state.get("feedback_metrics", {}),
     }
 
-    _SESSIONS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with open(_SESSIONS_FILE, "a") as f:
+    record["refinement_mode"] = refinement_mode or ("targeted" if mode == "full" else mode)
+    record["trip_window"] = final_state.get("trip_window", {})
+    for key, value in (session_tags or {}).items():
+        record.setdefault(key, value)
+
+    path = _sessions_file()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "a") as f:
         f.write(json.dumps(record) + "\n")
 
 
 def load_sessions(mode: str | None = None) -> list[dict]:
     """Load recorded sessions, optionally filtered by mode ('full' or 'baseline')."""
-    if not _SESSIONS_FILE.exists():
+    path = _sessions_file()
+    if not path.exists():
         return []
     sessions = []
-    with open(_SESSIONS_FILE) as f:
+    with open(path) as f:
         for line in f:
             if line.strip():
                 s = json.loads(line)

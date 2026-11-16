@@ -40,6 +40,7 @@ from agents import (
     WeatherAgent,
 )
 from agents.conflicts import CONFLICT_RESOLVER, ConflictLifecycleTracker
+from agents.refinement_modes import round_3_agents, transform_messages, validate_mode
 from graph.state import TravelState
 
 _AGENTS_ALL = {"flight", "hotel", "experience", "weather", "visa_safety"}
@@ -114,6 +115,9 @@ async def collaboration_hub_1_node(state: TravelState) -> TravelState:
 
     # Preserve the Round-1 conflicts before hub_2 may overwrite state["conflicts"]
     conflicts = result.get("conflicts") if result.get("conflicts") is not None else state.get("conflicts", [])
+    result["agent_messages"] = transform_messages(
+        _mode(state), result.get("agent_messages", []), conflicts, state, round_num=1,
+    )
     existing = {**(state.get("run_metrics") or {}), **(result.get("run_metrics") or {})}
     result["run_metrics"] = {**existing, "round_1_conflicts": list(conflicts)}
 
@@ -137,7 +141,11 @@ async def research_round_2(state: TravelState) -> TravelState:
             agents_to_rerun.add(target)
 
     has_all_message = any(msg.get("to_agent") == "all" for msg in messages)
-    full_rerun = has_all_message or len(agents_to_rerun) >= 3
+    # The >=3-agent escape hatch is part of the targeted pattern. The two_way
+    # ablation re-runs exactly the agents it messages, so it differs from
+    # targeted only by the second resolution direction (protocol §3, H5).
+    hatch = len(agents_to_rerun) >= 3 and _mode(state) != "two_way"
+    full_rerun = has_all_message or hatch
     rerun_names = sorted(_AGENTS_ALL) if full_rerun else sorted(agents_to_rerun)
 
     if full_rerun:
@@ -181,6 +189,9 @@ async def collaboration_hub_2_node(state: TravelState) -> TravelState:
     """Round 2 hub: check if conflicts are resolved, audit lifecycle."""
     result = await _collaboration_hub.run(state)
     conflicts = result.get("conflicts") if result.get("conflicts") is not None else state.get("conflicts", [])
+    result["agent_messages"] = transform_messages(
+        _mode(state), result.get("agent_messages", []), conflicts, state, round_num=2,
+    )
 
     existing = {**(state.get("run_metrics") or {}), **(result.get("run_metrics") or {})}
     result["run_metrics"] = {**existing, "round_2_conflicts": list(conflicts)}
@@ -202,28 +213,18 @@ async def research_round_3(state: TravelState) -> TravelState:
     t0 = time.perf_counter()
 
     conflicts = state.get("conflicts", [])
-    # Each conflict type names a single responsible agent (DESIGN.md §3) — the
-    # same map the hub routes messages through — so Round 3 re-runs exactly that
-    # resolver per surviving conflict, not every participant in the conflict.
-    resolvers = {
-        CONFLICT_RESOLVER[conflict["type"]]
-        for conflict in conflicts
-        if conflict.get("type") in CONFLICT_RESOLVER
+    # targeted: each conflict type names a single responsible agent (DESIGN.md
+    # §3), the same map the hub routes messages through, so Round 3 re-runs
+    # exactly that resolver per surviving conflict. full_rerun and broadcast
+    # re-run every research agent; two_way also re-runs the experience agent
+    # for a location conflict. See agents/refinement_modes.py.
+    rerunnable = round_3_agents(_mode(state), conflicts, CONFLICT_RESOLVER)
+
+    runners = {
+        "flight": _flight, "hotel": _hotel, "experience": _experience,
+        "weather": _weather, "visa_safety": _visa_safety,
     }
-
-    # Only flight/hotel/experience can be re-run; weather and visa_safety are
-    # read-only data sources that don't benefit from a second pass here.
-    # Intersecting the resolver set (which never contains weather/visa_safety)
-    # keeps the rerun metric and the savings calculation honest.
-    rerunnable = resolvers & {"flight", "hotel", "experience"}
-
-    tasks = []
-    if "flight" in rerunnable:
-        tasks.append(_flight.run(state))
-    if "hotel" in rerunnable:
-        tasks.append(_hotel.run(state))
-    if "experience" in rerunnable:
-        tasks.append(_experience.run(state))
+    tasks = [runners[name].run(state) for name in sorted(rerunnable)]
 
     results = await asyncio.gather(*tasks, return_exceptions=True) if tasks else []
 
@@ -299,6 +300,11 @@ async def retry_research_node(state: TravelState) -> TravelState:
 async def itinerary_builder_node(state: TravelState) -> TravelState:
     """Build single itinerary (legacy — used for backward compatibility)."""
     return await _itinerary_builder.run(state)
+
+
+def _mode(state: TravelState) -> str:
+    """Refinement condition for this session (protocol §3)."""
+    return validate_mode(state.get("refinement_mode") or "targeted")
 
 
 # ── Routing ──────────────────────────────────────────────────────────────────
@@ -417,6 +423,8 @@ async def run_collaborative_travel_query(
     session_id: str = None,
     enable_refinement: bool = True,
     record_metrics: bool = True,
+    refinement_mode: str | None = None,
+    session_tags: dict | None = None,
 ) -> dict:
     """Entry point: run collaborative multi-agent graph (generates 3 options).
 
@@ -426,14 +434,20 @@ async def run_collaborative_travel_query(
         record_metrics: When False, suppresses writing to metrics/sessions.jsonl.
             Set False on the API path so live user requests don't pollute the
             benchmark dataset.
+        refinement_mode: targeted | full_rerun | broadcast | two_way. Defaults to
+            settings.refinement_mode. Ignored when enable_refinement is False.
+        session_tags: extra fields written into the session record (e.g.
+            query_id, run index) so benchmark pairing never relies on query text.
     """
     import uuid
 
+    from config.settings import get_settings
     from metrics.collector import record_session
     from metrics.token_tracker import compute_session_cost, get_current, start_session
 
     if session_id is None:
         session_id = str(uuid.uuid4())
+    mode = validate_mode(refinement_mode or get_settings().refinement_mode)
 
     start_session()
 
@@ -450,6 +464,7 @@ async def run_collaborative_travel_query(
         "refinement_history": [],
         "run_metrics": {},
         "enable_refinement": enable_refinement,
+        "refinement_mode": mode,
     }
 
     t0 = time.perf_counter()
@@ -467,5 +482,7 @@ async def run_collaborative_travel_query(
             mode="full" if enable_refinement else "baseline",
             token_usage=usage,
             estimated_cost_usd=estimated_cost,
+            refinement_mode=mode if enable_refinement else "baseline",
+            session_tags=session_tags,
         )
     return final_state

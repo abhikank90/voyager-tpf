@@ -88,6 +88,65 @@ class BaseAgent(ABC):
         )
         return hashlib.sha256(canonical.encode("utf-8")).hexdigest()[:16]
 
+    async def _interpret_critique(self, state: dict, task: str, plan: dict) -> dict:
+        """Read a prose critique (broadcast mode) and return a structured answer.
+
+        Flight and hotel select with code from typed data. When the hub sends
+        prose instead (``broadcast``, protocol §3), the agent's own LLM turns the
+        prose into the same fields the selection code already uses. Returns {}
+        when the inbox holds no critique. In capture and replay the answer is
+        recorded as a fixture keyed by the full prompt, so replays are
+        deterministic (protocol §4).
+        """
+        import hashlib
+        import json
+        import re
+
+        from agents import inventory
+        from agents.refinement_modes import CRITIQUE_MESSAGE_TYPE
+
+        critiques = [
+            (m.get("content") or "").strip()
+            for m in self._messages_for_me(state)
+            if m.get("message_type") == CRITIQUE_MESSAGE_TYPE
+        ]
+        critiques = list(dict.fromkeys(c for c in critiques if c))
+        if not critiques or getattr(self, "llm", None) is None:
+            return {}
+
+        role = getattr(self, "short_name", None) or self.name
+        prompt = (
+            f"You are the {role} agent in a travel-planning team. The trip coordinator "
+            "sent this feedback to every agent on the team:\n\n"
+            f"\"{' '.join(critiques)}\"\n\n"
+            f"Current plan:\n{json.dumps(plan, indent=2, sort_keys=True, default=str)}\n\n"
+            f"{task}\nReturn only a JSON object, with no other text."
+        )
+
+        async def _ask() -> dict:
+            response = await self.llm.ainvoke(prompt)
+            text = getattr(response, "content", "") or ""
+            if isinstance(text, list):
+                text = " ".join(str(p.get("text", p)) if isinstance(p, dict) else str(p) for p in text)
+            match = re.search(r"\{.*\}", text, re.DOTALL)
+            try:
+                parsed = json.loads(match.group()) if match else {}
+            except json.JSONDecodeError:
+                parsed = {}
+            return {"interpretation": parsed if isinstance(parsed, dict) else {}}
+
+        source = f"critique_{role}"
+        if self._inventory_mode() in ("capture", "replay"):
+            key = inventory.inventory_query_id(
+                source, prompt=hashlib.sha256(prompt.encode("utf-8")).hexdigest(),
+            )
+            recorded = await inventory.replay_or_record(
+                source, key, _ask, run_label=f"{role}-critique",
+            )
+        else:
+            recorded = await _ask()
+        return recorded.get("interpretation", {}) or {}
+
     def _trip_window(self, intent: dict, legacy_duration_days: int = 13):
         """Inventory date window for this session (protocol §5.2).
 

@@ -88,6 +88,8 @@ class ExperienceAgent(BaseAgent):
 
         # Build location/weather guidance from collaboration messages, if any.
         location_focus_parts: list[str] = []
+        from agents.refinement_modes import CRITIQUE_MESSAGE_TYPE
+
         for msg in self._messages_for_me(state):
             data = msg.get("data", {})
             # Weather constraint: schedule around heat or rain
@@ -96,6 +98,17 @@ class ExperienceAgent(BaseAgent):
                 location_focus_parts.append(
                     f"Weather advisory: prefer {' or '.join(times)} activities; "
                     "include indoor alternatives to avoid midday heat or rain."
+                )
+            # two_way ablation: move activities toward the hotel (protocol §3)
+            elif msg.get("message_type") == "constraint" and data.get("near_location"):
+                location_focus_parts.append(
+                    f"Prefer activities located in or near {data['near_location']}."
+                )
+            # broadcast: prose critique addressed to the whole team (protocol §3)
+            elif msg.get("message_type") == CRITIQUE_MESSAGE_TYPE and msg.get("content"):
+                location_focus_parts.append(
+                    "Coordinator feedback on the whole plan: "
+                    f"{msg['content']} Adjust your recommendations where it concerns activities."
                 )
         location_focus = " ".join(location_focus_parts)
 
