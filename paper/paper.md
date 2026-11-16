@@ -29,9 +29,9 @@ Travel planning is the reference domain, and the package includes a working plan
 
 Multi-agent LLM frameworks provide orchestration, messaging, and role definitions [@wu2023autogen; @hong2023metagpt; @li2023camel; @langgraph]. However, they do not treat cross-agent consistency as a measurable property of a run. Recent failure analyses of multi-agent systems identify inter-agent misalignment and missing verification as major causes of task failure [@cemri2025why]. Practitioners who need a coherent combined output typically choose between serializing the agents and using critique loops. Serializing agents gives up the latency benefit of parallelism. In critique loops, agents debate or revise their answers over several rounds [@du2023debate; @liang2023encouraging; @madaan2023selfrefine; @shinn2023reflexion]. Critique loops are effective. However, their cost grows with the number of rounds and agents. Also, natural-language critique does not guarantee that a particular constraint reaches the agent able to act on it.
 
-Voyager is a system for researchers studying multi-agent coordination and LLM-system evaluation. It is also for engineers who need measurable conflict handling. Voyager provides the following features.
+Voyager-TPF is a system for researchers studying multi-agent coordination and LLM-system evaluation. It is also for engineers who need measurable conflict handling. Voyager-TPF provides the following features.
 
-* Typed, deterministic conflict detection: Each conflict carries machine-checkable evidence and a content-addressed fingerprint. This allows us to follow the same conflict across rounds and count its lifecycle states: introduced, resolved, persisting, or reopened.
+* Typed, deterministic conflict detection: Each conflict carries machine-checkable evidence and a content-addressed fingerprint. This makes it possible to follow the same conflict across rounds and count its lifecycle states: introduced, resolved, persisting, or reopened.
 * Targeted routing and selective re-execution: Each conflict type has exactly one resolving agent. Only agents that receive a constraint run again. They apply the constraint when choosing among their candidate results. If no candidate qualifies, the agent falls back explicitly.
 * Lifecycle metrics per query and per round: resolution rate, convergence round, post-refinement introductions, and agent calls saved compared with re-running every agent.
 * Three inventory modes, mock, capture and replay: Benchmarks against real flight, hotel and weather APIs can be captured once as hash-verified fixtures and re-run by anyone without API keys for those services.
@@ -46,7 +46,7 @@ Voyager-TPF is complementary to these tools. It does not replace them; instead, 
 
 Voyager-TPF is a Python (>=3.11) FastAPI service with a React/TypeScript front end that streams the collaboration feed to the user via WebSocket. The coordination logic is a LangGraph state machine [@langgraph; @langchain] over a typed shared state, with Anthropic Claude models assigned by tier (a more capable model for synthesis and coordination, a cheaper one for the retrieval-style agents) and per-model token and cost tracking all built in.
 
-The architecture has five properties that distinguish it from a conventional pipeline. We describe each property below.
+The architecture has five properties that distinguish it from a conventional pipeline.
 
 (1) Parallel research and deterministic detection: The system uses five domain agents that run concurrently; these agents are flight, hotel, experience, weather, and visa or safety. A Collaboration Hub coordinates between rounds. The hub applies deterministic, typed conflict rules such as location mismatch, timing inefficiency, and weather or activity mismatch. The system does not use an LLM to check if outputs are consistent.
 
@@ -56,7 +56,7 @@ The architecture has five properties that distinguish it from a conventional pip
 
 (4) Structural round bounds: The architecture limits the number of coordination rounds by the structure of the graph. It does not use a counter to track rounds. Each conflict type has one resolution direction. This design removed an oscillation failure mode that appeared in earlier versions.
 
-(5) Evidence-gated use of LLMs in detection: The system has an optional hybrid mode which is off by default. In this mode, a large language model (LLM) can propose conflict candidates and the rule layer must validate these candidates. In the bundled evaluation, the LLM found all three conflict classes that the rules do not cover, but none of its ten candidates passed validation, because validators for those classes do not exist yet. We publish this negative result alongside the mechanism.
+(5) Evidence-gated use of LLMs in detection: The system has an optional hybrid mode which is off by default. In this mode, a large language model (LLM) can propose conflict candidates and the rule layer must validate these candidates. In the bundled evaluation, the LLM found all three conflict classes that the rules do not cover, but none of its ten candidates passed validation, because validators for those classes do not exist yet. This negative result is published alongside the mechanism.
 
 Reproducibility is a core part of the design: All external calls, such as flight and hotel inventories, weather, and geocoding, run in one of three modes. The modes are deterministic mocks for development, capture of live API responses into hash-verified and privacy-sanitized fixtures, and replay of those fixtures with a date-anchored manifest. Since version 1.4, the LLM outputs that feed conflict detection (the parsed request and the experience list) are recorded and replayed as well. The system sets model sampling temperature in one place and a single script (scripts/reproduce.sh) replays the benchmark suite and compares the output.
 
@@ -64,17 +64,25 @@ The script compares the output to committed expected results with documented tol
 
 # Research impact statement
 
-Voyager-TPF is a testbed for empirical study of multi-agent coordination mechanisms. It produces result artifacts as evidence for its design goals. We use synthetic inventory, constructed so that every query starts in conflict, to show that rule-based coordination resolves all detected conflicts by the second round. On real travel inventory captured from SerpApi, Nuitee, and OpenWeather, the hub resolved 10% of conflicts. In 8 of the 12 queries (67%), an agent that received a constraint found no qualifying option and kept its original choice. This is a property of the data, not the detector. The system reports unresolved conflicts explicitly and does not hide them.
+Voyager-TPF is a testbed for empirical study of multi-agent coordination mechanisms. It produces result artifacts as evidence for its design goals. On synthetic inventory, constructed so that every query starts in conflict, rule-based coordination resolves all detected conflicts by the second round. On real travel inventory captured from SerpApi, Nuitee, and OpenWeather, the hub resolved 10% of conflicts. In 8 of the 12 queries (67%), an agent that received a constraint found no qualifying option and kept its original choice. This is a property of the data, not the detector. The system reports unresolved conflicts explicitly and does not hide them.
 
-We use a hybrid LLM-detector evaluation to measure where language-model judgment helps and where it fails. For example, LLMs help with semantic conflict classes that rules cannot detect. However, in the routing test, none of the LLM’s candidates passed rule validation, because validators for those classes do not yet exist. This provides concrete evidence for the ‘LLM proposes, rules validate’ design pattern. The reproducibility architecture allows independent third parties to replay the benchmark suite and verify all reported checks. Two consecutive replay runs of the 12-query benchmark produce identical results on all 24 query and mode pairs. An independent contributor filed confirmed bug reports and reproduced the benchmark on their own machine: before version 1.4, two quick-benchmark runs each failed 2 of 12 checks; after the fix, both runs passed all 12. We expect the testbed to help researchers who study coordination protocols, agent evaluation methodology, and reproducibility of LLM systems. Practitioners can also use it as a reference implementation for measurable conflict handling in production agentic pipelines.
+A hybrid LLM-detector evaluation measures where language-model judgment helps and where it fails. For example, LLMs help with semantic conflict classes that rules cannot detect. However, in the routing test, none of the LLM’s candidates passed rule validation, because validators for those classes do not yet exist. This provides concrete evidence for the ‘LLM proposes, rules validate’ design pattern. The reproducibility architecture allows independent third parties to replay the benchmark suite and verify all reported checks. Two consecutive replay runs of the 12-query benchmark produce identical results on all 24 query and mode pairs. An independent contributor filed confirmed bug reports and reproduced the benchmark on their own machine: before version 1.4, two quick-benchmark runs each failed 2 of 12 checks; after the fix, both runs passed all 12. The testbed is intended for researchers who study coordination protocols, agent evaluation methodology, and reproducibility of LLM systems. Practitioners can also use it as a reference implementation for measurable conflict handling in production agentic pipelines.
+
+A manuscript reporting a controlled evaluation of the coordination pattern, built with this software, is in preparation for IEEE Software.
 
 # AI usage disclosure
 
-Anthropic’s Claude Code was used to help write and refactor parts of the code, to draft unit tests and documentation. Grammarly was used for grammar and tone. 
+Generative AI was used in this work.
+
+Code and documentation: Anthropic's Claude Code (Claude Opus 5 and Claude Opus 5.5) helped write and refactor parts of the code and draft unit tests and documentation.
+
+Paper: Grammarly was used to review the draft, to suggest wording or rephrasing for some sentences, and for grammar and editing.
+
+The author made the core design decisions (typed conflict detection, single-agent routing, selective re-execution, lifecycle metrics, and the replay architecture), reviewed and edited all AI-assisted code, tests, documentation, and text, and validated every reported result against committed result files.
 
 # Acknowledgements
 
-The author thanks Kalyan Matta for independent reproduction runs, for reporting the replay variance and environment issues that led to the version 1.4 fixes, and for the refactor that unified the conflict-routing maps. 
+The author thanks Kalyan Matta for independent reproduction runs, for reporting the replay variance and environment issues that led to the version 1.4 fixes, and for the refactor that unified the conflict-routing maps. This work received no external funding; the author declares no competing interests.
 
 # References
 
