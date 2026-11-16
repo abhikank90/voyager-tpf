@@ -170,3 +170,26 @@ def test_save_plan_writes_only_when_dir_set(tmp_path, monkeypatch):
     saved = json.loads((tmp_path / "abc.json").read_text())
     assert saved["query"] == "q" and saved["trip_options"] == [{"style": "balanced"}]
     assert "agent_messages" not in saved
+
+
+# ── Condition runs keep v1.4 results untouched ───────────────────────────────
+
+def test_conditions_summary_goes_next_to_session_log(tmp_path, monkeypatch):
+    from scripts import benchmark_queries as bq
+    monkeypatch.setenv("VOYAGER_METRICS_PATH", str(tmp_path / "smoke" / "sessions.jsonl"))
+    assert Path(bq._conditions_results_dir()) == (tmp_path / "smoke").resolve()
+
+
+def test_conditions_summary_default_is_under_v15(monkeypatch):
+    from scripts import benchmark_queries as bq
+    monkeypatch.delenv("VOYAGER_METRICS_PATH", raising=False)
+    assert Path(bq._conditions_results_dir()) == Path("results") / "v1.5" / "summary"
+
+
+def test_write_results_honours_results_dir(tmp_path, monkeypatch):
+    from scripts import benchmark_queries as bq
+    monkeypatch.setenv("VOYAGER_METRICS_PATH", str(tmp_path / "sessions.jsonl"))
+    monkeypatch.setenv("VOYAGER_RESULTS_DIR", str(tmp_path / "out"))
+    (tmp_path / "sessions.jsonl").write_text("")
+    bq._write_results("mock")
+    assert (tmp_path / "out" / "run_summary.json").exists()

@@ -167,6 +167,23 @@ async def run_conditions(
     print(f"\n  conditions: {ok}/{total} sessions succeeded")
 
 
+def _results_dir() -> str | None:
+    """Where summary artifacts go. ``VOYAGER_RESULTS_DIR`` wins; None means results/."""
+    return os.environ.get("VOYAGER_RESULTS_DIR") or None
+
+
+def _conditions_results_dir() -> str:
+    """v1.5 condition runs never write to results/, which holds the v1.4 artifacts.
+
+    Next to the session log when ``VOYAGER_METRICS_PATH`` is set, so one run's
+    sessions and summaries stay together; otherwise results/v1.5/summary.
+    """
+    metrics_path = os.environ.get("VOYAGER_METRICS_PATH")
+    if metrics_path:
+        return str(Path(metrics_path).resolve().parent)
+    return str(Path("results") / "v1.5" / "summary")
+
+
 def _write_results(inventory_mode: str) -> None:
     """Write standardized results artifacts (run_summary.json, CSVs, manifest)."""
     from agents.inventory import load_manifest
@@ -174,7 +191,9 @@ def _write_results(inventory_mode: str) -> None:
 
     sessions = load_sessions()
     manifest = load_manifest()
-    out_dir = write_results_artifacts(sessions, inventory_manifest=manifest, inventory_mode=inventory_mode)
+    out_dir = write_results_artifacts(
+        sessions, inventory_manifest=manifest, out_dir=_results_dir(), inventory_mode=inventory_mode
+    )
     print(f"\nResults written → {out_dir} (inventory_mode={inventory_mode})")
 
 
@@ -255,6 +274,7 @@ def main() -> None:
     if args.mode == "conditions":
         # Delivered plans are kept for the H2c coherence audit (protocol §11).
         os.environ.setdefault("VOYAGER_PLANS_DIR", str(Path("results") / "v1.5" / "plans"))
+        os.environ.setdefault("VOYAGER_RESULTS_DIR", _conditions_results_dir())
         conditions = [c.strip() for c in args.conditions.split(",") if c.strip()]
         unknown = set(conditions) - set(CONDITIONS)
         if unknown:
@@ -266,6 +286,9 @@ def main() -> None:
             return
         print(f"\nRunning {len(tagged)} queries x {len(conditions)} conditions x "
               f"{args.repeats} runs (inventory={inventory_mode})")
+        print(f"Sessions  → {os.environ.get('VOYAGER_METRICS_PATH', 'metrics/sessions.jsonl')}")
+        print(f"Plans     → {os.environ['VOYAGER_PLANS_DIR']}")
+        print(f"Summaries → {os.environ['VOYAGER_RESULTS_DIR']}\n")
 
         async def _run_conditions() -> None:
             await run_conditions(tagged, conditions, args.repeats)
