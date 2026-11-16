@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.2] - 2026-11-16
+
+### Fixed
+
+- Trip options showed $0 for flights, hotels and experiences. The option
+  generator read `price` and `price_per_night`, which no agent writes; it now
+  reads `price_usd`, `total_usd`, `price_per_night_usd` and `cost_usd`.
+- Trip options could use a different flight or hotel from the one the
+  refinement rounds settled on, so a delivered option could still contain a
+  conflict that the final audit reported as resolved. All three options are now
+  built on the coordinated `selected_flight` and `selected_hotel`; the styles
+  differ in experiences, food and extras.
+- The itinerary prompt now includes the flight's arrival time, the hotel's area
+  and the month's weather, and asks for Day 1 to start after arrival.
+
+Conflict detection, routing and the `scripts/reproduce.sh` metrics are
+unchanged: the option generator runs after the final audit.
+
 ## [1.4.1] - 2026-11-14
 - Added JOSS paper (paper/paper.md) and draft-PDF workflow.
 
