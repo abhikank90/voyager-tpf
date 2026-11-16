@@ -253,6 +253,8 @@ def main() -> None:
         tagged = tagged[:limit]
 
     if args.mode == "conditions":
+        # Delivered plans are kept for the H2c coherence audit (protocol §11).
+        os.environ.setdefault("VOYAGER_PLANS_DIR", str(Path("results") / "v1.5" / "plans"))
         conditions = [c.strip() for c in args.conditions.split(",") if c.strip()]
         unknown = set(conditions) - set(CONDITIONS)
         if unknown:

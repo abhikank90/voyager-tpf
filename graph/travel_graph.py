@@ -468,6 +468,35 @@ async def run_travel_query(user_query: str, user_id: str = "anonymous") -> dict:
     return await travel_graph.ainvoke(initial_state)
 
 
+_PLAN_FIELDS = (
+    "session_id", "intent", "selected_flight", "selected_hotel", "experiences",
+    "weather", "trip_window", "trip_options",
+)
+
+
+def _save_plan(final_state: dict, query: str, session_tags: dict | None) -> None:
+    """Write the delivered plan to VOYAGER_PLANS_DIR/<session_id>.json, if set.
+
+    The session log keeps metrics only; the H2c coherence audit needs the plan a
+    user would actually receive (protocol §11).
+    """
+    import json
+    import os
+    from pathlib import Path
+
+    plans_dir = os.environ.get("VOYAGER_PLANS_DIR")
+    if not plans_dir:
+        return
+    plan = {k: final_state.get(k) for k in _PLAN_FIELDS}
+    plan["query"] = query
+    plan["session_tags"] = session_tags or {}
+    path = Path(plans_dir)
+    path.mkdir(parents=True, exist_ok=True)
+    (path / f"{final_state.get('session_id', 'unknown')}.json").write_text(
+        json.dumps(plan, indent=2, default=str) + "\n"
+    )
+
+
 @traceable(name="voyager_collaborative_query")
 async def run_collaborative_travel_query(
     user_query: str,
@@ -527,6 +556,7 @@ async def run_collaborative_travel_query(
     estimated_cost = compute_session_cost(usage) if usage else 0.0
 
     if record_metrics:
+        _save_plan(final_state, user_query, session_tags)
         record_session(
             final_state,
             query=user_query,

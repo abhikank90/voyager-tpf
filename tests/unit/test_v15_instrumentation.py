@@ -215,3 +215,46 @@ def test_timed_node_merges_metrics_and_adds_duration():
     out = asyncio.run(_timed_node("n", node)({"run_metrics": {"a": 1}}))
     assert out["run_metrics"]["a"] == 1 and out["run_metrics"]["b"] == 2
     assert "n" in out["run_metrics"]["node_durations_s"]
+
+
+# ── Option generator uses the coordinated selections ─────────────────────────
+
+def _option_agent():
+    from unittest.mock import patch
+
+    from agents.option_generator import OptionGeneratorAgent
+    with patch("agents.option_generator.Anthropic"):
+        return OptionGeneratorAgent()
+
+
+@pytest.mark.parametrize("style", ["budget", "balanced", "premium"])
+def test_every_option_uses_coordinated_flight_and_hotel(style):
+    agent = _option_agent()
+    late = {"airline": "UA", "price_usd": 680, "arrival": "2027-03-15T22:30:00"}
+    early = {"airline": "LH", "price_usd": 890, "arrival": "2027-03-15T13:00:00"}
+    beach = {"name": "Beach", "location": "Beachfront", "total_usd": 1100, "rating": 4.8}
+    near = {"name": "Plaka Stay", "location": "Plaka", "total_usd": 1300, "rating": 4.0}
+    assert agent._select_flight([late, early], style, early) is early
+    assert agent._select_hotel([beach, near], style, near) is near
+
+
+def test_price_helpers_read_agent_fields():
+    from agents.option_generator import (
+        _experience_cost,
+        _flight_price,
+        _hotel_per_night,
+        _hotel_total,
+    )
+    assert _flight_price({"price_usd": 680}) == 680
+    assert _hotel_total({"total_usd": 1105}, 13) == 1105
+    assert _hotel_total({"price_per_night_usd": 85}, 13) == 85 * 13
+    assert _hotel_per_night({"price_per_night_usd": 85}) == 85
+    assert _experience_cost({"cost_usd": 40}) == 40
+    assert _experience_cost({"price": 12}) == 12  # legacy hand-built states
+
+
+def test_itinerary_prompt_facts():
+    agent = _option_agent()
+    assert "22:30" in agent._format_arrival_for_prompt({"airline": "UA", "arrival": "2027-03-15T22:30:00"})
+    text = agent._format_weather_for_prompt({"avg_temp_c": 33.8, "precipitation_mm": 10.2, "summary": ""})
+    assert "33.8" in text and "10.2" in text

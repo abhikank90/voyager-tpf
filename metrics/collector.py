@@ -227,6 +227,8 @@ def record_session(
 
     record["refinement_mode"] = refinement_mode or ("targeted" if mode == "full" else mode)
     record["trip_window"] = final_state.get("trip_window", {})
+    from config.settings import get_settings
+    record["inventory_mode"] = get_settings().inventory_mode
     record["effective_temperatures"] = (token_usage.to_dict().get("temperatures", {})
                                         if token_usage is not None else {})
     record["node_durations_s"] = run_metrics.get("node_durations_s", {})
