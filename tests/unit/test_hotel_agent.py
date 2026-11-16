@@ -546,3 +546,13 @@ def test_location_hint_feedback_centroid_unsatisfiable():
     assert feedback["feedback_satisfiable"] is False
     assert feedback["fallback_to_original_selection"] is True
     assert feedback["reason"] == "no_qualifying_option"
+
+
+@pytest.mark.asyncio
+async def test_total_usd_matches_window_when_duration_missing():
+    """No duration in the request: the stay is the window's default, priced as such."""
+    from agents.trip_window import DEFAULT_DURATION_DAYS
+    agent = HotelAgent()
+    result = await agent._execute({"intent": {**INTENT_BASE, "duration_days": None}})
+    for hotel in result["hotels"]:
+        assert hotel["total_usd"] == hotel["price_per_night_usd"] * DEFAULT_DURATION_DAYS

@@ -10,6 +10,7 @@ import json
 from anthropic import Anthropic
 
 from agents.base_agent import BaseAgent
+from agents.trip_window import record_nights
 from config import effective_temperature, get_api_config
 from graph.state import TravelState, TripOption
 from metrics.token_tracker import record_temperature, track_usage
@@ -116,7 +117,11 @@ class OptionGeneratorAgent(BaseAgent):
         # delivered option could carry a conflict refinement had resolved.
         flight = self._select_flight(flights, style, state.get("selected_flight"))
         hotel = self._select_hotel(hotels, style, state.get("selected_hotel"))
-        num_nights = intent.get("duration_days") or 7  # Handle None value
+        # The window's nights when there is one, so option costs match the
+        # stay the hotel was priced for; otherwise the request's duration.
+        num_nights = (
+            record_nights(state.get("trip_window")) or intent.get("duration_days") or 7
+        )
         selected_experiences = self._select_experiences(
             experiences, style, target_spend, flight, hotel, num_nights
         )

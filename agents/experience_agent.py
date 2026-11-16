@@ -9,6 +9,7 @@ from metrics.token_tracker import TokenTrackingCallback
 
 from . import inventory
 from .base_agent import BaseAgent
+from .trip_window import RULE_MONTH
 
 DESTINATIONS_DB = Path(__file__).parent.parent / "data" / "knowledge_base" / "destinations.json"
 
@@ -79,6 +80,11 @@ class ExperienceAgent(BaseAgent):
         interests = intent.get("interests", [])
         budget = intent.get("budget_usd", 2000)
         duration = intent.get("duration_days", 14)
+        window = self._trip_window(intent)
+        if window.rule == RULE_MONTH:
+            # Plan activities for the stay the window books. Legacy replay keeps
+            # the v1.4 value, which is part of the recorded experience key.
+            duration = window.nights
         activity_budget = budget * 0.10
 
         context = self._get_destination_context(destination)

@@ -9,6 +9,7 @@ from metrics.token_tracker import TokenTrackingCallback
 
 from . import inventory
 from .base_agent import BaseAgent
+from .trip_window import RULE_MONTH
 
 # LiteAPI sandbox limits ~5 req/s. A single query fires up to 7 requests
 # (1 places + 1 rates + up to 5 details); bursty benchmark runs trip the 429
@@ -120,6 +121,10 @@ class HotelAgent(BaseAgent):
 
         window = self._trip_window(intent, legacy_duration_days=duration)
         check_in, check_out = window.departure_iso, window.return_iso
+        if window.rule == RULE_MONTH:
+            # Price the stay the window books (13 nights by default), not the
+            # legacy 14-night default. Legacy replay keeps v1.4 behaviour.
+            duration = window.nights
         hotel_budget = budget * 0.45
 
         # Extract location constraint from collaboration messages, if any.

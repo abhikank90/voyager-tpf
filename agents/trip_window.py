@@ -55,10 +55,15 @@ class TripWindow:
     def return_iso(self) -> str:
         return self.return_date.isoformat()
 
+    @property
+    def nights(self) -> int:
+        return (self.return_date - self.departure).days
+
     def as_record(self) -> dict:
         return {
             "departure": self.departure_iso,
             "return": self.return_iso,
+            "nights": self.nights,
             "month": self.month,
             "rule": self.rule,
             "anchor": self.anchor.isoformat(),
@@ -139,3 +144,17 @@ def assert_after_anchor(window: TripWindow) -> None:
             f"trip window departs {window.departure_iso}, not after anchor "
             f"{window.anchor.isoformat()} (rule {window.rule})"
         )
+
+
+def record_nights(record: dict | None) -> int | None:
+    """Nights in a recorded trip window (``TripWindow.as_record``), or None."""
+    if not record:
+        return None
+    if record.get("nights"):
+        return int(record["nights"])
+    try:
+        dep = date.fromisoformat(record["departure"])
+        ret = date.fromisoformat(record["return"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    return (ret - dep).days or None
