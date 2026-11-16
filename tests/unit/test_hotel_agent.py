@@ -485,14 +485,18 @@ async def test_centroid_selects_nearest_hotel(monkeypatch, tmp_path):
     assert result["feedback_metrics"]["reason"] == "qualifying_option_found"
 
 
-def test_effective_dates_capture_is_future(monkeypatch):
+def test_trip_window_capture_is_future(monkeypatch, tmp_path):
     from datetime import date
 
+    from config.settings import reload_settings
+
+    monkeypatch.setenv("VOYAGER_INVENTORY_DIR", str(tmp_path))
+    reload_settings()
     agent = HotelAgent()
     monkeypatch.setattr(agent, "_inventory_mode", lambda: "capture")
-    check_in, check_out = agent._effective_dates(2026, 7)
-    assert date.fromisoformat(check_in) > date.today()
-    assert date.fromisoformat(check_out) > date.fromisoformat(check_in)
+    window = agent._trip_window({"travel_month": "June", "duration_days": 7})
+    assert window.departure > date.today()
+    assert (window.return_date - window.departure).days == 7
 
 
 def test_location_hint_feedback_satisfiable():

@@ -114,12 +114,12 @@ class HotelAgent(BaseAgent):
 
         destination = intent.get("destination", "")
         budget = intent.get("budget_usd", 2000)
-        travel_year = intent.get("travel_year", 2026)
         group_size = intent.get("group_size", 1)
         duration = intent.get("duration_days") or 14
         intent.get("accommodation_preference", "hotel")
 
-        check_in, check_out = self._effective_dates(travel_year, duration)
+        window = self._trip_window(intent, legacy_duration_days=duration)
+        check_in, check_out = window.departure_iso, window.return_iso
         hotel_budget = budget * 0.45
 
         # Extract location constraint from collaboration messages, if any.

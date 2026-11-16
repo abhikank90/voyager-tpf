@@ -65,15 +65,20 @@ class IntentParserAgent(BaseAgent):
         if not query:
             return self._error_state("No user_query in state")
 
+        from config.settings import get_settings
+        settings = get_settings()
+        # "Today" for the parser is the session anchor in mock mode, so synthetic
+        # sessions reason from the same date on every run (protocol §5.2).
+        today = settings.mock_anchor_date if settings.inventory_mode == "mock" else date.today()
+
         async def _parse() -> dict:
             intent: TravelIntent = await self.chain.ainvoke({
-                "today": date.today().isoformat(),
+                "today": today.isoformat(),
                 "query": query,
             })
             return {"intent": intent.model_dump()}
 
-        from config.settings import get_settings
-        if get_settings().inventory_mode in ("capture", "replay"):
+        if settings.inventory_mode in ("capture", "replay"):
             # Parsed intent feeds every downstream query id and prompt. Record it
             # per raw query so a replay starts from the same structured intent
             # instead of re-parsing (which can vary, and depends on today's date).

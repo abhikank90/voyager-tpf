@@ -95,6 +95,7 @@ class TravelState(TypedDict, total=False):
 
     weather: dict[str, Any]
     travel_month: str
+    trip_window: dict[str, Any]  # resolved inventory dates (protocol §5.2)
 
     visa_safety: dict[str, Any]
 

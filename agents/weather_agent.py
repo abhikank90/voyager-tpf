@@ -91,7 +91,10 @@ class WeatherAgent(BaseAgent):
             return self._error_state("No intent in state")
 
         destination = intent.get("destination", "")
-        travel_month = (intent.get("travel_month") or "July").lower()
+        # The month comes from the resolved trip window, so weather and the
+        # flight/hotel search describe the same dates (protocol §5.2). Under the
+        # legacy rule this is the parsed month, or July, as in v1.4.1.
+        travel_month = self._trip_window(intent).month
 
         mode = self._inventory_mode()
         query_id = inventory.inventory_query_id(

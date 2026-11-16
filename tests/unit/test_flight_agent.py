@@ -116,14 +116,19 @@ def test_arrival_hour_returns_25_on_bad_input():
     assert _arrival_hour("not-a-date") == 25
 
 
-def test_effective_dates_capture_is_future(monkeypatch):
+def test_trip_window_capture_is_future(monkeypatch, tmp_path):
     from datetime import date
 
+    from config.settings import reload_settings
+
+    monkeypatch.setenv("VOYAGER_INVENTORY_DIR", str(tmp_path))
+    reload_settings()
     agent = FlightAgent()
     monkeypatch.setattr(agent, "_inventory_mode", lambda: "capture")
-    departure, return_date = agent._effective_dates(2026, 13)
-    assert date.fromisoformat(departure) > date.today()
-    assert date.fromisoformat(return_date) > date.fromisoformat(departure)
+    window = agent._trip_window({"travel_month": "March", "duration_days": 13})
+    assert window.departure > date.today()
+    assert window.return_date > window.departure
+    assert window.month == "march"
 
 
 # ── SerpApi (Google Flights) normalization ───────────────────────────────────

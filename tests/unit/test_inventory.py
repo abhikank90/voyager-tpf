@@ -78,8 +78,10 @@ def test_capture_and_replay_produce_identical_selections(tmp_inventory_dir):
     # derived per-mode (capture/replay both anchor on the same date source), so
     # the fixture is found across days. Capture under the id replay computes.
     probe = FlightAgent()
+    probe_intent = {"travel_year": 2026, "travel_month": "July"}
     with patch.object(probe, "_inventory_mode", return_value="replay"):
-        dep, ret = probe._effective_dates(2026)
+        window = probe._trip_window(probe_intent)
+    dep, ret = window.departure_iso, window.return_iso
     query_id = inventory.inventory_query_id(
         "serpapi", origin="New York", destination="Greece",
         departure_date=dep, return_date=ret, adults=1,

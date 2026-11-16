@@ -216,10 +216,10 @@ class FlightAgent(BaseAgent):
         origin = intent.get("origin") or "New York"
         budget = intent.get("budget_usd", 2000)
         intent.get("travel_month", "July")
-        travel_year = intent.get("travel_year", 2026)
         group_size = intent.get("group_size", 1)
 
-        departure_date, return_date = self._effective_dates(travel_year)
+        window = self._trip_window(intent)
+        departure_date, return_date = window.departure_iso, window.return_iso
         flight_budget = budget * 0.45
 
         # Parse preferred_arrival constraint from collaboration messages, if any.
@@ -298,6 +298,7 @@ class FlightAgent(BaseAgent):
             "selected_flight": best,
             "flight_cost_usd": best["price_usd"] if best else 0,
             "feedback_metrics": feedback["metrics"],
+            "trip_window": window.as_record(),
         }
 
     def _inventory_mode(self) -> str:

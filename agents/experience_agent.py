@@ -137,14 +137,17 @@ class ExperienceAgent(BaseAgent):
             # detectors (location_mismatch, weather_activity_mismatch). Record it
             # with the API fixtures so a replay reuses it instead of regenerating
             # it; regenerating it was the source of run-to-run conflict variance.
-            query_id = inventory.inventory_query_id(
-                "experiences",
-                destination=destination,
-                interests=sorted(interests),
-                duration_days=duration,
-                activity_budget=round(activity_budget),
-                location_focus=location_focus,
-            )
+            key_params = {
+                "destination": destination,
+                "interests": sorted(interests),
+                "duration_days": duration,
+                "activity_budget": round(activity_budget),
+                "location_focus": location_focus,
+            }
+            inbox = self._inbox_digest(state)
+            if inbox:
+                key_params["inbox"] = inbox
+            query_id = inventory.inventory_query_id("experiences", **key_params)
             recorded = await inventory.replay_or_record(
                 "experiences", query_id, _generate, run_label="experience-capture",
             )

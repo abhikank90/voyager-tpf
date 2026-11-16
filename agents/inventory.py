@@ -20,7 +20,7 @@ from __future__ import annotations
 import hashlib
 import json
 from collections.abc import Awaitable, Callable
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -163,6 +163,43 @@ def _write_manifest(manifest: dict[str, Any]) -> None:
     base = _fixtures_dir()
     base.mkdir(parents=True, exist_ok=True)
     (base / _MANIFEST_NAME).write_text(json.dumps(manifest, indent=2, default=str) + "\n")
+
+
+def trip_window_rule() -> str | None:
+    """Trip-window rule a fixture set was captured under, or None (pre-v1.5)."""
+    return _load_manifest().get("trip_window_rule")
+
+
+def ensure_capture_anchor(rule: str) -> date:
+    """Return the capture anchor, writing it on the first capture of a set.
+
+    A capture set records ``replay_anchor_date`` (local date of the capture) and
+    the ``trip_window_rule`` it was captured under, so replay recomputes the same
+    windows and fixture keys on any later day. Capturing under the v1.5 rule into
+    a fixture set that already holds pre-v1.5 fixtures is refused: the two sets
+    would mix incompatible keys. Point ``VOYAGER_INVENTORY_DIR`` at a fresh dir.
+    """
+    manifest = _load_manifest()
+    existing_rule = manifest.get("trip_window_rule")
+    has_fixtures = bool(manifest.get("fixtures"))
+    if existing_rule is None and has_fixtures:
+        raise RuntimeError(
+            f"{_fixtures_dir()} holds fixtures captured before trip_window_rule was "
+            "recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR."
+        )
+    if existing_rule is not None and existing_rule != rule:
+        raise RuntimeError(
+            f"fixture set was captured under {existing_rule!r}, not {rule!r}"
+        )
+    anchor = manifest.get("replay_anchor_date")
+    if anchor:
+        return date.fromisoformat(anchor)
+    today = date.today()
+    manifest["replay_anchor_date"] = today.isoformat()
+    manifest["trip_window_rule"] = rule
+    manifest.setdefault("fixtures", {})
+    _write_manifest(manifest)
+    return today
 
 
 def inventory_query_id(source: str, **query_params: Any) -> str:
