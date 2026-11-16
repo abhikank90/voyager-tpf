@@ -65,6 +65,8 @@ class TokenUsage:
     output_tokens: int = 0
     models_used: dict = field(default_factory=dict)  # model_id → call_count
     per_model: dict = field(default_factory=dict)    # model_id → {"input": int, "output": int}
+    # component → sorted distinct decoding temperatures actually used this session
+    temperatures: dict = field(default_factory=dict)
 
     @property
     def total_tokens(self) -> int:
@@ -77,6 +79,7 @@ class TokenUsage:
             "total_tokens": self.total_tokens,
             "models_used": dict(self.models_used),
             "per_model": {m: dict(v) for m, v in self.per_model.items()},
+            "temperatures": {c: list(v) for c, v in self.temperatures.items()},
         }
 
 
@@ -101,6 +104,20 @@ def track_usage(input_tokens: int, output_tokens: int, model: str = "") -> None:
             pm = usage.per_model.setdefault(model, {"input": 0, "output": 0})
             pm["input"] += input_tokens
             pm["output"] += output_tokens
+
+
+def record_temperature(component: str, temperature: float | None) -> None:
+    """Log the decoding temperature one LLM call used (protocol §2).
+
+    Replay pins every agent to 0 and VOYAGER_TEMPERATURE_OVERRIDE forces a single
+    value; the log makes either visible in the session record.
+    """
+    usage = _current.get()
+    if usage is None or temperature is None:
+        return
+    seen = set(usage.temperatures.get(component, []))
+    seen.add(float(temperature))
+    usage.temperatures[component] = sorted(seen)
 
 
 def get_current() -> TokenUsage | None:
@@ -161,11 +178,16 @@ class TokenTrackingCallback(BaseCallbackHandler):
       2. msg.response_metadata["usage"]  — Anthropic provider-specific fallback
     """
 
-    def __init__(self, model: str = ""):
+    def __init__(self, model: str = "", component: str = "", temperature: float | None = None):
         super().__init__()
         self.model = model
+        # Set by BaseAgent after _setup, from the ChatAnthropic it is attached to.
+        self.component = component
+        self.temperature = temperature
 
     def on_llm_end(self, response: LLMResult, **kwargs) -> None:
+        if self.component:
+            record_temperature(self.component, self.temperature)
         for generations in response.generations:
             for gen in generations:
                 msg = getattr(gen, "message", None)

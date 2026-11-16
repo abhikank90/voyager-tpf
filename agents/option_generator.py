@@ -12,7 +12,7 @@ from anthropic import Anthropic
 from agents.base_agent import BaseAgent
 from config import effective_temperature, get_api_config
 from graph.state import TravelState, TripOption
-from metrics.token_tracker import track_usage
+from metrics.token_tracker import record_temperature, track_usage
 
 
 # Field names the research agents actually emit. v1.4 read "price" and
@@ -353,13 +353,15 @@ Return ONLY a JSON array of day objects with this structure:
 ]
 """
 
+        option_temperature = effective_temperature(0.7)
         response = self.client.messages.create(
             model=self.model,
             max_tokens=3000,
-            temperature=effective_temperature(0.7),
+            temperature=option_temperature,
             messages=[{"role": "user", "content": prompt}]
         )
         track_usage(response.usage.input_tokens, response.usage.output_tokens, model=self.model)
+        record_temperature("option_generator", option_temperature)
 
         itinerary_text = response.content[0].text
 

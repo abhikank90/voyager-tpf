@@ -227,6 +227,14 @@ def record_session(
 
     record["refinement_mode"] = refinement_mode or ("targeted" if mode == "full" else mode)
     record["trip_window"] = final_state.get("trip_window", {})
+    record["effective_temperatures"] = (token_usage.to_dict().get("temperatures", {})
+                                        if token_usage is not None else {})
+    record["node_durations_s"] = run_metrics.get("node_durations_s", {})
+    record["agent_durations_s"] = {
+        f"round_{r}": run_metrics.get(f"round_{r}_agent_durations_s", {}) for r in (1, 2, 3)
+    }
+    record["unresolved_conflicts"] = run_metrics.get("unresolved_conflicts", [])
+    record["unresolved_reason_counts"] = run_metrics.get("unresolved_reason_counts", {})
     for key, value in (session_tags or {}).items():
         record.setdefault(key, value)
 

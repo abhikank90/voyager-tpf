@@ -41,6 +41,7 @@ from agents import (
 )
 from agents.conflicts import CONFLICT_RESOLVER, ConflictLifecycleTracker
 from agents.refinement_modes import round_3_agents, transform_messages, validate_mode
+from agents.unresolved import classify_unresolved, reason_counts
 from graph.state import TravelState
 
 _AGENTS_ALL = {"flight", "hotel", "experience", "weather", "visa_safety"}
@@ -87,25 +88,67 @@ def _merge_results(merged: dict, results: list) -> None:
         merged["errors"] = errors
 
 
+_RUNNERS = {
+    "flight": _flight,
+    "hotel": _hotel,
+    "experience": _experience,
+    "weather": _weather,
+    "visa_safety": _visa_safety,
+}
+
+
+async def _run_agents(state: TravelState, names: list[str]) -> tuple[list, dict, dict]:
+    """Run research agents in parallel; time each one and keep its feedback.
+
+    Returns (results, durations_s, feedback). Per-agent wall time lets the
+    analysis check that a round's time is set by its slowest agent (H1d), and
+    per-agent feedback keeps a flight and a hotel fallback in the same round
+    from overwriting each other (the merged ``feedback_metrics`` key is
+    last-writer-wins).
+    """
+    async def timed(name: str):
+        t0 = time.perf_counter()
+        try:
+            result = await _RUNNERS[name].run(state)
+        except Exception as exc:  # recorded by _merge_results, like gather(return_exceptions)
+            result = exc
+        return name, result, round(time.perf_counter() - t0, 2)
+
+    outcomes = await asyncio.gather(*(timed(n) for n in names)) if names else []
+    results = [r for _, r, _ in outcomes]
+    durations = {n: d for n, _, d in outcomes}
+    feedback = {
+        n: r["feedback_metrics"]
+        for n, r, _ in outcomes
+        if isinstance(r, dict) and r.get("feedback_metrics")
+    }
+    return results, durations, feedback
+
+
+def _with_feedback(existing: dict, round_num: int, feedback: dict) -> dict:
+    by_round = dict(existing.get("feedback_by_round") or {})
+    if feedback:
+        by_round[str(round_num)] = feedback
+    return by_round
+
+
 async def research_round_1(state: TravelState) -> TravelState:
     """Round 1: Initial research — all 5 agents run in parallel."""
     state["collaboration_round"] = 1
     t0 = time.perf_counter()
 
-    results = await asyncio.gather(
-        _flight.run(state),
-        _hotel.run(state),
-        _experience.run(state),
-        _weather.run(state),
-        _visa_safety.run(state),
-        return_exceptions=True,
-    )
+    results, durations, feedback = await _run_agents(state, sorted(_AGENTS_ALL))
 
     merged: TravelState = {"collaboration_round": 1}
     _merge_results(merged, results)
 
     existing = state.get("run_metrics") or {}
-    merged["run_metrics"] = {**existing, "round_1_duration_s": round(time.perf_counter() - t0, 2)}
+    merged["run_metrics"] = {
+        **existing,
+        "round_1_duration_s": round(time.perf_counter() - t0, 2),
+        "round_1_agent_durations_s": durations,
+        "feedback_by_round": _with_feedback(existing, 1, feedback),
+    }
     return merged
 
 
@@ -148,28 +191,8 @@ async def research_round_2(state: TravelState) -> TravelState:
     full_rerun = has_all_message or hatch
     rerun_names = sorted(_AGENTS_ALL) if full_rerun else sorted(agents_to_rerun)
 
-    if full_rerun:
-        results = await asyncio.gather(
-            _flight.run(state),
-            _hotel.run(state),
-            _experience.run(state),
-            _weather.run(state),
-            _visa_safety.run(state),
-            return_exceptions=True,
-        )
-    else:
-        tasks = []
-        if "flight" in agents_to_rerun:
-            tasks.append(_flight.run(state))
-        if "hotel" in agents_to_rerun:
-            tasks.append(_hotel.run(state))
-        if "experience" in agents_to_rerun:
-            tasks.append(_experience.run(state))
-        if "weather" in agents_to_rerun:
-            tasks.append(_weather.run(state))
-        if "visa_safety" in agents_to_rerun:
-            tasks.append(_visa_safety.run(state))
-        results = await asyncio.gather(*tasks, return_exceptions=True) if tasks else []
+    rerun_names = [n for n in rerun_names if n in _RUNNERS]
+    results, durations, feedback = await _run_agents(state, rerun_names)
 
     merged: TravelState = {"collaboration_round": 2}
     _merge_results(merged, results)
@@ -181,6 +204,8 @@ async def research_round_2(state: TravelState) -> TravelState:
         "round_2_agents_rerun_count": len(rerun_names),
         "round_2_full_rerun": full_rerun,
         "round_2_duration_s": round(time.perf_counter() - t0, 2),
+        "round_2_agent_durations_s": durations,
+        "feedback_by_round": _with_feedback(existing, 2, feedback),
     }
     return merged
 
@@ -220,13 +245,7 @@ async def research_round_3(state: TravelState) -> TravelState:
     # for a location conflict. See agents/refinement_modes.py.
     rerunnable = round_3_agents(_mode(state), conflicts, CONFLICT_RESOLVER)
 
-    runners = {
-        "flight": _flight, "hotel": _hotel, "experience": _experience,
-        "weather": _weather, "visa_safety": _visa_safety,
-    }
-    tasks = [runners[name].run(state) for name in sorted(rerunnable)]
-
-    results = await asyncio.gather(*tasks, return_exceptions=True) if tasks else []
+    results, durations, feedback = await _run_agents(state, sorted(rerunnable))
 
     merged: TravelState = {"collaboration_round": 3}
     _merge_results(merged, results)
@@ -237,6 +256,8 @@ async def research_round_3(state: TravelState) -> TravelState:
         "round_3_agents_rerun": sorted(rerunnable),
         "round_3_agents_rerun_count": len(rerunnable),
         "round_3_duration_s": round(time.perf_counter() - t0, 2),
+        "round_3_agent_durations_s": durations,
+        "feedback_by_round": _with_feedback(existing, 3, feedback),
     }
     return merged
 
@@ -270,6 +291,16 @@ async def final_conflict_audit_node(state: TravelState) -> TravelState:
         "conflict_lifecycle_state": audit["conflict_lifecycle_state"],
     }
     result["run_metrics"]["convergence_summary"] = tracker.convergence_summary()
+
+    unresolved = classify_unresolved(
+        audit["conflicts_current"],
+        tracker.to_state()["records"],
+        existing,
+        CONFLICT_RESOLVER,
+        refinement_enabled=state.get("enable_refinement", True),
+    )
+    result["run_metrics"]["unresolved_conflicts"] = unresolved
+    result["run_metrics"]["unresolved_reason_counts"] = reason_counts(unresolved)
     return result
 
 
@@ -333,20 +364,41 @@ def route_after_hub_2(
 
 
 # ── Graph assembly ───────────────────────────────────────────────────────────
+def _timed_node(name: str, fn):
+    """Wrap a node so its wall time lands in run_metrics["node_durations_s"].
+
+    run_metrics has no reducer, so a node's update replaces the whole dict; the
+    wrapper merges the incoming and returned dicts before adding the timing.
+    """
+    async def wrapper(state: TravelState) -> TravelState:
+        t0 = time.perf_counter()
+        result = await fn(state) or {}
+        elapsed = round(time.perf_counter() - t0, 2)
+        metrics = {**(state.get("run_metrics") or {}), **(result.get("run_metrics") or {})}
+        metrics["node_durations_s"] = {**(metrics.get("node_durations_s") or {}), name: elapsed}
+        return {**result, "run_metrics": metrics}
+
+    wrapper.__name__ = getattr(fn, "__name__", name)
+    return wrapper
+
+
 def build_collaborative_graph() -> CompiledStateGraph:
     """Build the collaborative multi-agent graph."""
     g = StateGraph(TravelState)
 
-    g.add_node("personalisation", personalisation_node)
-    g.add_node("intent_parser", intent_parser_node)
-    g.add_node("research_round_1", research_round_1)
-    g.add_node("collaboration_hub_1", collaboration_hub_1_node)
-    g.add_node("research_round_2", research_round_2)
-    g.add_node("collaboration_hub_2", collaboration_hub_2_node)
-    g.add_node("research_round_3", research_round_3)
-    g.add_node("final_conflict_audit", final_conflict_audit_node)
-    g.add_node("budget_guardrail", budget_guardrail_node)
-    g.add_node("option_generator", option_generator_node)
+    for name, fn in [
+        ("personalisation", personalisation_node),
+        ("intent_parser", intent_parser_node),
+        ("research_round_1", research_round_1),
+        ("collaboration_hub_1", collaboration_hub_1_node),
+        ("research_round_2", research_round_2),
+        ("collaboration_hub_2", collaboration_hub_2_node),
+        ("research_round_3", research_round_3),
+        ("final_conflict_audit", final_conflict_audit_node),
+        ("budget_guardrail", budget_guardrail_node),
+        ("option_generator", option_generator_node),
+    ]:
+        g.add_node(name, _timed_node(name, fn))
 
     g.set_entry_point("personalisation")
     g.add_edge("personalisation", "intent_parser")

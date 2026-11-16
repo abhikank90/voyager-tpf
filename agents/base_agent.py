@@ -17,6 +17,15 @@ class BaseAgent(ABC):
     def __init__(self, config: dict | None = None):
         self.config = config or {}
         self._setup()
+        self._label_token_callbacks()
+
+    def _label_token_callbacks(self) -> None:
+        """Tell this agent's token callback who it is and which temperature it runs at."""
+        llm = getattr(self, "llm", None)
+        for cb in getattr(llm, "callbacks", None) or []:
+            if hasattr(cb, "component") and hasattr(cb, "temperature"):
+                cb.component = self.name
+                cb.temperature = getattr(llm, "temperature", None)
 
     def _setup(self):
         """Override to add agent-specific setup."""
