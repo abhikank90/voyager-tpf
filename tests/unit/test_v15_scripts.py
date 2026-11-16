@@ -9,7 +9,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from scripts.build_h2c_packets import allocate, build, eligible, render_packet  # noqa: E402
-from scripts.model_manifest import CANARIES, compare_snapshots  # noqa: E402
+from scripts.model_manifest import CANARIES, compare_snapshots, instability  # noqa: E402
 
 # ── Model manifest ───────────────────────────────────────────────────────────
 
@@ -19,7 +19,7 @@ def _snap(label, created="2026-02-17T00:00:00Z", canary_hash="a"):
         "canary_prompts": CANARIES,
         "models": {"claude-sonnet-4-6": {
             "entry": {"id": "claude-sonnet-4-6", "created_at": created, "display_name": "Sonnet 4.6"},
-            "canaries": {name: {"sha256": canary_hash} for name in CANARIES},
+            "canaries": {name: {"sha256": [canary_hash]} for name in CANARIES},
         }},
     }
 
@@ -36,6 +36,20 @@ def test_created_at_change_is_reported():
 def test_canary_drift_is_reported():
     diffs = compare_snapshots(_snap("start"), _snap("end", canary_hash="b"))
     assert len(diffs) == len(CANARIES)
+
+
+def test_overlapping_hash_sets_are_not_drift():
+    start, end = _snap("start"), _snap("end")
+    start["models"]["claude-sonnet-4-6"]["canaries"]["json"]["sha256"] = ["a", "x"]
+    end["models"]["claude-sonnet-4-6"]["canaries"]["json"]["sha256"] = ["x"]
+    assert compare_snapshots(start, end) == []
+    assert len(instability(start)) == 1 and instability(end) == []
+
+
+def test_legacy_single_hash_snapshots_still_compare():
+    start = _snap("start")
+    start["models"]["claude-sonnet-4-6"]["canaries"]["json"]["sha256"] = "a"
+    assert compare_snapshots(start, _snap("end")) == []
 
 
 def test_changed_canary_prompts_invalidate_comparison():

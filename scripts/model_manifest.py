@@ -7,8 +7,14 @@ start and end of the window:
 
 - the ``/v1/models`` entry for every model ID the system is configured to use
   (including ``created_at``), and
-- five fixed canary prompts per model at temperature 0, with the SHA-256 of each
-  output, which catches behavioural drift that ``created_at`` would not.
+- five fixed canary prompts per model at temperature 0, each asked
+  ``CANARY_REPEATS`` times, with the SHA-256 of every output, which catches
+  behavioural drift that ``created_at`` would not.
+
+Temperature 0 is not bit-deterministic across API calls, so a canary is only
+flagged when its start and end outputs share no hash at all. Canaries ask for
+short, constrained answers to keep that residual variation rare, and any
+variation inside one snapshot is reported separately as instability.
 
 Usage (from the repo root, ANTHROPIC_API_KEY set):
     python3 scripts/model_manifest.py snapshot --label start
@@ -32,6 +38,7 @@ sys.path.insert(0, str(ROOT))
 
 DEFAULT_PATH = ROOT / "results" / "v1.5" / "model_manifest.json"
 CANARY_MAX_TOKENS = 64
+CANARY_REPEATS = 3
 
 # Fixed for the whole window. Changing these between snapshots invalidates the
 # comparison, so they are stored in every snapshot and checked by `compare`.
@@ -40,7 +47,7 @@ CANARIES: dict[str, str] = {
     "json": 'Return exactly this JSON and nothing else: {"city": "Athens", "nights": 3}',
     "arith": "What is 17 multiplied by 23? Answer with the number only.",
     "capital": "What is the capital of Australia? Answer with one word.",
-    "travel": "In one sentence, name one indoor activity for a hot afternoon in Athens.",
+    "month": "Which month comes after March? Answer with the month name only.",
 }
 
 
@@ -76,20 +83,36 @@ def _canary(client, model_id: str, prompt: str) -> dict:
     return {"sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(), "output": text}
 
 
+def _canary_set(client, model_id: str, prompt: str) -> dict:
+    runs = [_canary(client, model_id, prompt) for _ in range(CANARY_REPEATS)]
+    return {
+        "sha256": sorted({r["sha256"] for r in runs}),
+        "outputs": sorted({r["output"] for r in runs}),
+    }
+
+
 def take_snapshot(client, label: str, models: list[str]) -> dict:
     return {
         "label": label,
         "taken_at": datetime.now(UTC).isoformat(),
         "canary_prompts": CANARIES,
         "canary_max_tokens": CANARY_MAX_TOKENS,
+        "canary_repeats": CANARY_REPEATS,
         "models": {
             model_id: {
                 "entry": _model_entry(client, model_id),
-                "canaries": {name: _canary(client, model_id, p) for name, p in CANARIES.items()},
+                "canaries": {name: _canary_set(client, model_id, p) for name, p in CANARIES.items()},
             }
             for model_id in models
         },
     }
+
+
+def _hashes(canary: dict | None) -> set[str]:
+    value = (canary or {}).get("sha256")
+    if isinstance(value, str):  # single-output snapshots from before repeats
+        return {value}
+    return set(value or [])
 
 
 def load(path: Path) -> dict:
@@ -110,11 +133,21 @@ def compare_snapshots(first: dict, last: dict) -> list[str]:
             if a["entry"].get(field) != b["entry"].get(field):
                 diffs.append(f"{model_id}: {field} {a['entry'].get(field)!r} -> {b['entry'].get(field)!r}")
         for name in sorted(set(a["canaries"]) | set(b["canaries"])):
-            ha = (a["canaries"].get(name) or {}).get("sha256")
-            hb = (b["canaries"].get(name) or {}).get("sha256")
-            if ha != hb:
+            ha, hb = _hashes(a["canaries"].get(name)), _hashes(b["canaries"].get(name))
+            if not ha & hb:
                 diffs.append(f"{model_id}: canary {name!r} output changed")
     return diffs
+
+
+def instability(snapshot: dict) -> list[str]:
+    """Canaries whose repeated outputs differed inside one snapshot."""
+    return [
+        f"{model_id}: canary {name!r} gave {len(_hashes(c))} distinct outputs "
+        f"in {snapshot.get('canary_repeats', 1)} calls"
+        for model_id, m in snapshot["models"].items()
+        for name, c in m["canaries"].items()
+        if len(_hashes(c)) > 1
+    ]
 
 
 def main() -> int:
@@ -143,6 +176,11 @@ def main() -> int:
         print("need at least two snapshots to compare")
         return 2
     diffs = compare_snapshots(snaps[0], snaps[-1])
+    noisy = instability(snaps[0]) + instability(snaps[-1])
+    if noisy:
+        print("temperature-0 variation within a snapshot (not drift; report under RQ3):")
+        for n in noisy:
+            print(f"  - {n}")
     if diffs:
         print(f"CHANGED between '{snaps[0]['label']}' and '{snaps[-1]['label']}' "
               "(declare as an RQ3 variance source):")
