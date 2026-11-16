@@ -15,6 +15,27 @@ from graph.state import TravelState, TripOption
 from metrics.token_tracker import track_usage
 
 
+# Field names the research agents actually emit. v1.4 read "price" and
+# "price_per_night", which no agent writes, so every cost was 0. The old names
+# are still accepted as fallbacks for hand-built states in tests.
+def _flight_price(f: dict) -> float:
+    return float(f.get("price_usd", f.get("price", 0)) or 0)
+
+
+def _hotel_total(h: dict, nights: int) -> float:
+    if h.get("total_usd") is not None:
+        return float(h["total_usd"])
+    per_night = h.get("price_per_night_usd", h.get("price_per_night", 0)) or 0
+    return float(per_night) * nights
+
+
+def _hotel_per_night(h: dict) -> float:
+    return float(h.get("price_per_night_usd", h.get("price_per_night", 0)) or 0)
+
+
+def _experience_cost(e: dict) -> float:
+    return float(e.get("cost_usd", e.get("price", 0)) or 0)
+
 class OptionGeneratorAgent(BaseAgent):
     """Generates 3 diverse trip options from refined research."""
 
@@ -88,16 +109,22 @@ class OptionGeneratorAgent(BaseAgent):
         intent = state.get("intent", {})
         weather = state.get("weather", {})
 
-        # Select flight/hotel based on style
-        flight = self._select_flight(flights, style)
-        hotel = self._select_hotel(hotels, style)
-        selected_experiences = self._select_experiences(experiences, style, target_spend, flight, hotel)
+        # Every option is built on the coordinated flight and hotel — the
+        # selections the hub's refinement rounds settled on and the final audit
+        # checks. Styles differ in experiences, food and extras. v1.4 picked a
+        # fresh flight/hotel per style from the full candidate list, so a
+        # delivered option could carry a conflict refinement had resolved.
+        flight = self._select_flight(flights, style, state.get("selected_flight"))
+        hotel = self._select_hotel(hotels, style, state.get("selected_hotel"))
+        num_nights = intent.get("duration_days") or 7  # Handle None value
+        selected_experiences = self._select_experiences(
+            experiences, style, target_spend, flight, hotel, num_nights
+        )
 
         # Calculate total cost
-        num_nights = intent.get("duration_days") or 7  # Handle None value
-        flight_cost = flight.get("price", 0)
-        hotel_total = hotel.get("price_per_night", 0) * num_nights
-        experience_cost = sum(e.get("price", 0) for e in selected_experiences)
+        flight_cost = _flight_price(flight)
+        hotel_total = _hotel_total(hotel, num_nights)
+        experience_cost = sum(_experience_cost(e) for e in selected_experiences)
         food_estimate = num_nights * (60 if style == "premium" else 40 if style == "balanced" else 25)
         misc_estimate = 100
 
@@ -150,13 +177,15 @@ class OptionGeneratorAgent(BaseAgent):
 
         return option
 
-    def _select_flight(self, flights: list[dict], style: str) -> dict:
-        """Select flight based on option style."""
+    def _select_flight(self, flights: list[dict], style: str, selected: dict | None = None) -> dict:
+        """The coordinated flight; style-based choice only when there is none."""
+        if selected:
+            return selected
         if not flights:
             return {}
 
         if style == "budget":
-            return min(flights, key=lambda f: f.get("price", 999999))
+            return min(flights, key=lambda f: _flight_price(f) or 999999)
         elif style == "premium":
             # Prefer direct flights and higher comfort
             direct_flights = [f for f in flights if f.get("stops", 1) == 0]
@@ -167,13 +196,15 @@ class OptionGeneratorAgent(BaseAgent):
             # Best value: price/comfort ratio
             return self._best_value_flight(flights)
 
-    def _select_hotel(self, hotels: list[dict], style: str) -> dict:
-        """Select hotel based on option style."""
+    def _select_hotel(self, hotels: list[dict], style: str, selected: dict | None = None) -> dict:
+        """The coordinated hotel; style-based choice only when there is none."""
+        if selected:
+            return selected
         if not hotels:
             return {}
 
         if style == "budget":
-            return min(hotels, key=lambda h: h.get("price_per_night", 999999))
+            return min(hotels, key=lambda h: _hotel_per_night(h) or 999999)
         elif style == "premium":
             # Highest rated with good location
             return max(hotels, key=lambda h: h.get("rating", 0))
@@ -186,20 +217,21 @@ class OptionGeneratorAgent(BaseAgent):
         style: str,
         budget: float,
         flight: dict,
-        hotel: dict
+        hotel: dict,
+        num_nights: int = 7,
     ) -> list[dict]:
         """Select experiences based on style and remaining budget."""
         if not experiences:
             return []
 
         # Calculate remaining budget for experiences
-        flight_cost = flight.get("price", 0)
-        hotel_cost = hotel.get("price_per_night", 0) * 7  # Assume 7 nights
+        flight_cost = _flight_price(flight)
+        hotel_cost = _hotel_total(hotel, num_nights)
         experience_budget = budget - flight_cost - hotel_cost - 400  # Leave room for food/misc
 
         if style == "budget":
             # Free or cheap experiences
-            selected = [e for e in experiences if e.get("price", 0) < 50][:4]
+            selected = [e for e in experiences if _experience_cost(e) < 50][:4]
         elif style == "premium":
             # Include premium experiences
             selected = experiences[:6]
@@ -211,7 +243,7 @@ class OptionGeneratorAgent(BaseAgent):
         total = 0
         final_selected = []
         for exp in selected:
-            exp_cost = exp.get("price", 0)
+            exp_cost = _experience_cost(exp)
             if total + exp_cost <= experience_budget:
                 final_selected.append(exp)
                 total += exp_cost
@@ -224,7 +256,7 @@ class OptionGeneratorAgent(BaseAgent):
             return {}
 
         def value_score(f: dict) -> float:
-            price = f.get("price", 999999)
+            price = _flight_price(f) or 999999
             duration = f.get("duration_hours", 24)
             stops = f.get("stops", 2)
             # Lower score is better
@@ -238,12 +270,33 @@ class OptionGeneratorAgent(BaseAgent):
             return {}
 
         def value_score(h: dict) -> float:
-            price = h.get("price_per_night", 999999)
+            price = _hotel_per_night(h) or 999999
             rating = h.get("rating", 3.0)
             # Higher score is better (invert for min)
             return -(rating * 100 - price)
 
         return min(hotels, key=value_score)
+
+    @staticmethod
+    def _format_arrival_for_prompt(flight: dict) -> str:
+        arrival = flight.get("arrival") or ""
+        if not arrival:
+            return "Unknown arrival time"
+        airline = flight.get("airline", "")
+        return f"Flight {airline} lands {arrival.replace('T', ' at ')[:19]}".strip()
+
+    @staticmethod
+    def _format_weather_for_prompt(weather: dict) -> str:
+        if not weather:
+            return "Unknown"
+        parts = []
+        if weather.get("avg_temp_c") is not None:
+            parts.append(f"average high {weather['avg_temp_c']}°C")
+        if weather.get("precipitation_mm") is not None:
+            parts.append(f"{weather['precipitation_mm']} mm rain in the month")
+        if weather.get("summary"):
+            parts.append(weather["summary"])
+        return "; ".join(parts) or "Unknown"
 
     async def _generate_itinerary(
         self,
@@ -266,15 +319,20 @@ class OptionGeneratorAgent(BaseAgent):
 - Style: {style}
 - Budget Level: {"Luxury" if style == "premium" else "Mid-range" if style == "balanced" else "Budget-conscious"}
 - Interests: {intent.get('interests', [])}
-- Weather: {weather.get('conditions', 'Unknown')}
+- Weather: {self._format_weather_for_prompt(weather)}
+
+**Arrival:**
+{self._format_arrival_for_prompt(flight)}
 
 **Accommodations:**
-{hotel.get('name', 'Unknown Hotel')} - {hotel.get('description', '')}
+{hotel.get('name', 'Unknown Hotel')} in {hotel.get('location', 'unknown area')} - {hotel.get('description', '')}
 
 **Available Experiences:**
 {self._format_experiences_for_prompt(experiences)}
 
 Create a day-by-day plan with:
+- Day 1 starting only after the arrival time above (nothing scheduled before it)
+- Activities reachable from the hotel's area on the same day
 - Morning activity
 - Afternoon activity
 - Evening activity
@@ -423,7 +481,7 @@ Return ONLY a JSON array of day objects with this structure:
 
         if style == "budget":
             highlights.append(f"Save ${target_spend - total_cost:.0f} vs. target budget")
-            highlights.append(f"{len([e for e in experiences if e.get('price', 0) == 0])} free experiences included")
+            highlights.append(f"{len([e for e in experiences if _experience_cost(e) == 0])} free experiences included")
             highlights.append("Authentic local experiences")
 
             if flight.get("stops", 0) > 0:

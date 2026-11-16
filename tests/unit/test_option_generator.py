@@ -390,3 +390,88 @@ async def test_all_options_have_titles(agent, complete_state):
         assert len(option["title"]) > 0
         # Title should mention destination
         assert "Greece" in option["title"] or option["style"].title() in option["title"]
+
+
+# ── v1.4.2: coordinated selections and agent price fields ────────────────────
+
+@pytest.fixture
+def agent_shaped_state():
+    """Research outputs with the field names the agents actually emit."""
+    late = {"airline": "UA", "price_usd": 680, "stops": 1,
+            "arrival": "2027-03-15T22:30:00"}
+    early = {"airline": "LH", "price_usd": 890, "stops": 0,
+             "arrival": "2027-03-15T13:00:00"}
+    beach = {"name": "Beach Resort", "location": "Beachfront",
+             "price_per_night_usd": 85, "total_usd": 85 * 7, "rating": 4.8}
+    plaka = {"name": "Plaka Stay", "location": "Plaka",
+             "price_per_night_usd": 110, "total_usd": 110 * 7, "rating": 4.0}
+    return {
+        "intent": {"destination": "Athens", "budget_usd": 5000,
+                   "duration_days": 7, "interests": ["history"]},
+        "flights": [late, early],
+        "hotels": [beach, plaka],
+        "selected_flight": early,
+        "selected_hotel": plaka,
+        "experiences": [
+            {"name": "Acropolis", "cost_usd": 30, "location": "Plaka"},
+            {"name": "Street food walk", "cost_usd": 40, "location": "Psyrri"},
+        ],
+        "weather": {"avg_temp_c": 19, "precipitation_mm": 25,
+                    "summary": "Warm spring."},
+        "visa_safety": {},
+    }
+
+
+@pytest.mark.asyncio
+async def test_every_option_uses_coordinated_flight_and_hotel(agent, agent_shaped_state):
+    result = await agent._execute(agent_shaped_state)
+    for option in result["trip_options"]:
+        assert option["flight"] is agent_shaped_state["selected_flight"]
+        assert option["hotel"] is agent_shaped_state["selected_hotel"]
+
+
+@pytest.mark.asyncio
+async def test_costs_read_agent_price_fields(agent, agent_shaped_state):
+    result = await agent._execute(agent_shaped_state)
+    for option in result["trip_options"]:
+        breakdown = option["itinerary"]["breakdown"]
+        assert breakdown["flight"] == 890
+        assert breakdown["hotel"] == 110 * 7
+        assert breakdown["experiences"] == sum(
+            e["cost_usd"] for e in option["experiences"]
+        )
+        assert option["total_cost_usd"] > 890 + 110 * 7
+
+
+def test_style_choice_used_only_without_coordinated_selection(agent):
+    cheap = {"airline": "A", "price_usd": 400}
+    dear = {"airline": "B", "price_usd": 900}
+    assert agent._select_flight([cheap, dear], "budget") is cheap
+    assert agent._select_flight([cheap, dear], "budget", dear) is dear
+
+
+def test_price_helpers_read_agent_fields():
+    from agents.option_generator import (
+        _experience_cost,
+        _flight_price,
+        _hotel_per_night,
+        _hotel_total,
+    )
+    assert _flight_price({"price_usd": 680}) == 680
+    assert _hotel_total({"total_usd": 1105}, 13) == 1105
+    assert _hotel_total({"price_per_night_usd": 85}, 13) == 85 * 13
+    assert _hotel_per_night({"price_per_night_usd": 85}) == 85
+    assert _experience_cost({"cost_usd": 40}) == 40
+    assert _experience_cost({"price": 12}) == 12  # legacy hand-built states
+
+
+def test_itinerary_prompt_facts(agent):
+    arrival = agent._format_arrival_for_prompt(
+        {"airline": "UA", "arrival": "2027-03-15T22:30:00"}
+    )
+    assert "22:30" in arrival
+    weather = agent._format_weather_for_prompt(
+        {"avg_temp_c": 33.8, "precipitation_mm": 10.2, "summary": ""}
+    )
+    assert "33.8" in weather and "10.2" in weather
+    assert agent._format_weather_for_prompt({}) == "Unknown"
