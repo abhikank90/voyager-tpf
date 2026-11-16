@@ -60,8 +60,10 @@ class ItineraryBuilderAgent(BaseAgent):
     async def _execute(self, state: dict) -> dict:
         intent = state.get("intent", {})
         budget_breakdown = state.get("budget_breakdown", {})
-        travel_year = intent.get("travel_year", 2026)
-        duration = intent.get("duration_days", 14)
+        # duration_days / travel_year can be present with a None value when the
+        # request doesn't name them, so `or` rather than a .get default.
+        travel_year = intent.get("travel_year") or 2026
+        duration = intent.get("duration_days") or 14
 
         chain = self.prompt | self.llm
         response = await chain.ainvoke({
