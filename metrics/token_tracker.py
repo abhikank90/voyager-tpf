@@ -65,6 +65,9 @@ class TokenUsage:
     output_tokens: int = 0
     models_used: dict = field(default_factory=dict)  # model_id → call_count
     per_model: dict = field(default_factory=dict)    # model_id → {"input": int, "output": int}
+    # component → {"model", "input", "output"} — every LLM call site attributes its tokens
+    # to a component so H3b can partition cost variance across the agents that vary.
+    per_component: dict = field(default_factory=dict)
     # component → sorted distinct decoding temperatures actually used this session
     temperatures: dict = field(default_factory=dict)
 
@@ -79,6 +82,15 @@ class TokenUsage:
             "total_tokens": self.total_tokens,
             "models_used": dict(self.models_used),
             "per_model": {m: dict(v) for m, v in self.per_model.items()},
+            "per_component": {
+                c: {
+                    "model": v["model"],
+                    "input": v["input"],
+                    "output": v["output"],
+                    "cost_usd": compute_cost(v["input"], v["output"], v["model"]),
+                }
+                for c, v in self.per_component.items()
+            },
             "temperatures": {c: list(v) for c, v in self.temperatures.items()},
         }
 
@@ -93,8 +105,15 @@ def start_session() -> TokenUsage:
     return usage
 
 
-def track_usage(input_tokens: int, output_tokens: int, model: str = "") -> None:
-    """Add tokens from one LLM call to the running session total."""
+def track_usage(
+    input_tokens: int, output_tokens: int, model: str = "", component: str = ""
+) -> None:
+    """Add tokens from one LLM call to the running session total.
+
+    ``component`` names the call site (e.g. ``option_generator``,
+    ``collaboration_hub_narrative``, ``critique_flight``) so per-component usage can be
+    reconciled against the per-model totals (H3b variance attribution).
+    """
     usage = _current.get()
     if usage is not None:
         usage.input_tokens += input_tokens
@@ -104,6 +123,11 @@ def track_usage(input_tokens: int, output_tokens: int, model: str = "") -> None:
             pm = usage.per_model.setdefault(model, {"input": 0, "output": 0})
             pm["input"] += input_tokens
             pm["output"] += output_tokens
+        if component:
+            pc = usage.per_component.setdefault(component, {"model": model, "input": 0, "output": 0})
+            pc["model"] = pc["model"] or model
+            pc["input"] += input_tokens
+            pc["output"] += output_tokens
 
 
 def record_temperature(component: str, temperature: float | None) -> None:
@@ -201,6 +225,7 @@ class TokenTrackingCallback(BaseCallbackHandler):
                         input_tokens=usage_meta.get("input_tokens", 0),
                         output_tokens=usage_meta.get("output_tokens", 0),
                         model=self.model,
+                        component=self.component,
                     )
                     continue
 
@@ -212,4 +237,5 @@ class TokenTrackingCallback(BaseCallbackHandler):
                         input_tokens=usage.get("input_tokens", 0),
                         output_tokens=usage.get("output_tokens", 0),
                         model=self.model,
+                        component=self.component,
                     )

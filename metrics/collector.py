@@ -242,8 +242,9 @@ def record_session(
     from config.settings import get_settings
     record["inventory_mode"] = get_settings().inventory_mode
     record["inventory_profile"] = final_state.get("inventory_profile", "default")
-    record["effective_temperatures"] = (token_usage.to_dict().get("temperatures", {})
-                                        if token_usage is not None else {})
+    usage_dict = token_usage.to_dict() if token_usage is not None else {}
+    record["effective_temperatures"] = usage_dict.get("temperatures", {})
+    record["per_component_usage"] = usage_dict.get("per_component", {})
     record["node_durations_s"] = run_metrics.get("node_durations_s", {})
     record["agent_durations_s"] = {
         f"round_{r}": run_metrics.get(f"round_{r}_agent_durations_s", {}) for r in (1, 2, 3)

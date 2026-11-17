@@ -5,6 +5,7 @@ Creates budget, balanced, and premium variants with different flight/hotel/exper
 combinations, each with booking URLs and trade-off analysis.
 """
 
+import asyncio
 import json
 
 from anthropic import Anthropic
@@ -67,29 +68,32 @@ class OptionGeneratorAgent(BaseAgent):
         if not flights or not hotels:
             return self._error_state("Insufficient research data to generate options")
 
-        # Generate 3 options
-        option_budget = await self._generate_option(
-            state,
-            option_id=0,
-            style="budget",
-            target_spend=budget * 0.75,
-            priorities=["cost_effective", "local_experiences", "value"]
-        )
-
-        option_balanced = await self._generate_option(
-            state,
-            option_id=1,
-            style="balanced",
-            target_spend=budget,
-            priorities=["comfort", "variety", "efficiency", "good_value"]
-        )
-
-        option_premium = await self._generate_option(
-            state,
-            option_id=2,
-            style="premium",
-            target_spend=budget * 1.15,
-            priorities=["luxury", "unique_experiences", "convenience", "comfort"]
+        # Generate 3 options concurrently: each option's itinerary is one Sonnet
+        # call, and the sync client would otherwise block the event loop and run
+        # the three calls sequentially. gather preserves budget/balanced/premium
+        # order.
+        option_budget, option_balanced, option_premium = await asyncio.gather(
+            self._generate_option(
+                state,
+                option_id=0,
+                style="budget",
+                target_spend=budget * 0.75,
+                priorities=["cost_effective", "local_experiences", "value"],
+            ),
+            self._generate_option(
+                state,
+                option_id=1,
+                style="balanced",
+                target_spend=budget,
+                priorities=["comfort", "variety", "efficiency", "good_value"],
+            ),
+            self._generate_option(
+                state,
+                option_id=2,
+                style="premium",
+                target_spend=budget * 1.15,
+                priorities=["luxury", "unique_experiences", "convenience", "comfort"],
+            ),
         )
 
         return {
@@ -366,15 +370,21 @@ Return ONLY a JSON array of day objects with this structure:
 """
 
         option_temperature = effective_temperature(0.7)
-        response = self.client.messages.create(
+        # The sync Anthropic client blocks the event loop; run it in a worker
+        # thread so the three option itineraries generate concurrently.
+        response = await asyncio.to_thread(
+            self.client.messages.create,
             model=self.model,
             # 3000 truncated the JSON for 13-14 day trips, so every option fell
             # back to the template below. Billing is for tokens used, not the cap.
             max_tokens=ITINERARY_MAX_TOKENS,
             temperature=option_temperature,
-            messages=[{"role": "user", "content": prompt}]
+            messages=[{"role": "user", "content": prompt}],
         )
-        track_usage(response.usage.input_tokens, response.usage.output_tokens, model=self.model)
+        track_usage(
+            response.usage.input_tokens, response.usage.output_tokens,
+            model=self.model, component="option_generator",
+        )
         record_temperature("option_generator", option_temperature)
 
         itinerary_text = response.content[0].text

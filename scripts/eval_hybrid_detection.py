@@ -455,6 +455,12 @@ def main(argv=None):
         help="merge a filled labeling sheet into rq4_probes.json (next to SHEET) "
              "and exit (no LLM calls)",
     )
+    parser.add_argument(
+        "--out", metavar="PATH", default=None,
+        help="write a machine-readable report (per probe, per repetition: rule types and "
+             "fingerprints, LLM candidate types and agents, validated/unverified extras) "
+             "to PATH.json",
+    )
     args = parser.parse_args(argv)
 
     if args.build_sheet:
@@ -503,6 +509,7 @@ def main(argv=None):
     agree_on_rule_conflicts = 0
     rule_conflict_states = 0
     novel_real, novel_noise = 0, 0
+    machine_results: list[dict] = []
 
     for name, state, human_truth in states:
         rules = hub.detect_conflicts_only(state)
@@ -537,6 +544,29 @@ def main(argv=None):
         validated, unverified = detector.validate(extras, state)
         validated_extra += len(validated)
         unverified_extra += len(unverified)
+
+        if args.out:
+            from agents.conflicts import conflict_fingerprint
+
+            def _candidate(c):
+                return {
+                    "type": c.get("type", "?"),
+                    "agents": sorted(c.get("agents", []) or []),
+                }
+
+            machine_results.append({
+                "probe": name,
+                "rules": [
+                    {"type": c.get("type"), "fingerprint": conflict_fingerprint(c)}
+                    for c in rules
+                ],
+                "llm_runs": [
+                    {"run": 1, "candidates": [_candidate(c) for c in run1]},
+                    {"run": 2, "candidates": [_candidate(c) for c in run2]},
+                ],
+                "validated": [v.to_dict() for v in validated],
+                "unverified": [u.to_dict() for u in unverified],
+            })
 
         # Recall gain / noise (unchanged semantics)
         if not rules and human_truth:
@@ -587,6 +617,33 @@ def main(argv=None):
     print("  unverified_extra     → extras that must NOT route (false-positive risk).")
     print("  hallucinations > 0   → unvalidated LLM detection would trigger")
     print("                         unnecessary re-runs and inflate cost.")
+
+    if args.out:
+        from datetime import UTC, datetime
+
+        report = {
+            "variant": "isolation",
+            "model": model,
+            "temperature": 0.0,
+            "timestamp": datetime.now(UTC).isoformat(),
+            "summary": {
+                "rule_conflicts": total_rule_conflicts,
+                "llm_candidates": total_llm_candidates,
+                "exact_agreement": exact_agreement,
+                "missed_by_llm": missed_by_llm,
+                "extra_llm_candidates": extra_llm_candidates,
+                "validated_extra_conflicts": validated_extra,
+                "unverified_extra_candidates": unverified_extra,
+                "precision": precision,
+                "recall": recall,
+                "false_positive_rate": fpr,
+                "self_consistency": self_consistency,
+            },
+            "results": machine_results,
+        }
+        out_path = Path(args.out)
+        out_path.write_text(json.dumps(report, indent=2) + "\n")
+        print(f"wrote {out_path}")
 
 
 if __name__ == "__main__":

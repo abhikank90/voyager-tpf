@@ -145,15 +145,28 @@ class BaseAgent(ABC):
             return {"interpretation": parsed if isinstance(parsed, dict) else {}}
 
         source = f"critique_{role}"
-        if self._inventory_mode() in ("capture", "replay"):
-            key = inventory.inventory_query_id(
-                source, prompt=hashlib.sha256(prompt.encode("utf-8")).hexdigest(),
-            )
-            recorded = await inventory.replay_or_record(
-                source, key, _ask, run_label=f"{role}-critique",
-            )
-        else:
-            recorded = await _ask()
+
+        # Attribute these tokens to the critique interpreter, not the agent's
+        # main call, so per-component usage separates the broadcast-mode critique
+        # interpretation from the agent's own selection work.
+        def _set_component(component: str) -> None:
+            for cb in getattr(self.llm, "callbacks", None) or []:
+                if hasattr(cb, "component"):
+                    cb.component = component
+
+        _set_component(source)
+        try:
+            if self._inventory_mode() in ("capture", "replay"):
+                key = inventory.inventory_query_id(
+                    source, prompt=hashlib.sha256(prompt.encode("utf-8")).hexdigest(),
+                )
+                recorded = await inventory.replay_or_record(
+                    source, key, _ask, run_label=f"{role}-critique",
+                )
+            else:
+                recorded = await _ask()
+        finally:
+            _set_component(self.name)
         return recorded.get("interpretation", {}) or {}
 
     def _trip_window(self, intent: dict, legacy_duration_days: int = 13):

@@ -59,7 +59,10 @@ class CollaborationHubAgent(BaseAgent):
                 "content": analysis_prompt
             }]
         )
-        track_usage(response.usage.input_tokens, response.usage.output_tokens, model=self.model)
+        track_usage(
+            response.usage.input_tokens, response.usage.output_tokens,
+            model=self.model, component="collaboration_hub_narrative",
+        )
         record_temperature("collaboration_hub_narrative", narrative_temperature)
 
         # Generates a narrative summary of cross-agent findings for display in
@@ -164,6 +167,7 @@ class CollaborationHubAgent(BaseAgent):
                     response.usage.input_tokens,
                     response.usage.output_tokens,
                     model=self.model,
+                    component="collaboration_hub_llm_detector",
                 )
                 parsed = parse_llm_candidates(response.content[0].text)
             except Exception:
