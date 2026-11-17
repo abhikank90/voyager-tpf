@@ -158,11 +158,19 @@ async def collaboration_hub_1_node(state: TravelState) -> TravelState:
 
     # Preserve the Round-1 conflicts before hub_2 may overwrite state["conflicts"]
     conflicts = result.get("conflicts") if result.get("conflicts") is not None else state.get("conflicts", [])
+    hub_messages = list(result.get("agent_messages", []) or [])
     result["agent_messages"] = transform_messages(
-        _mode(state), result.get("agent_messages", []), conflicts, state, round_num=1,
+        _mode(state), hub_messages, conflicts, state, round_num=1,
     )
     existing = {**(state.get("run_metrics") or {}), **(result.get("run_metrics") or {})}
-    result["run_metrics"] = {**existing, "round_1_conflicts": list(conflicts)}
+    # Snapshot Round 1 before later hubs replace agent_messages: the hub's typed
+    # messages (conflict evidence) and what the condition actually delivered.
+    result["run_metrics"] = {
+        **existing,
+        "round_1_conflicts": list(conflicts),
+        "round_1_hub_messages": hub_messages,
+        "round_1_messages": list(result["agent_messages"]),
+    }
 
     # ── Lifecycle audit (Round 1) ──────────────────────────────────────────
     tracker = ConflictLifecycleTracker.from_state(state.get("conflict_lifecycle_state"))

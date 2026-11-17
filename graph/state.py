@@ -29,6 +29,7 @@ class TripOption(TypedDict, total=False):
     # Full itinerary
     itinerary: dict[str, Any]
     day_by_day: list[dict]
+    itinerary_fallback: str | None  # "max_tokens"/"json_error" when day_by_day is the template
 
     # Booking links
     flight_booking_url: str | None

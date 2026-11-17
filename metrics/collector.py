@@ -116,8 +116,12 @@ def record_session(
     # preferred_arrival, weather_concerns, etc.) that explain WHY each conflict fired.
     # Conflict dicts from _identify_conflicts have no data field; we recover the
     # payload here by matching conflict type → (to_agent, message_type).
+    # agent_messages in the final state belong to the LAST hub, so Round 1 is
+    # read from the snapshot hub_1 takes (falls back for pre-v1.5 states).
+    r1_hub_messages: list[dict] = run_metrics.get("round_1_hub_messages", messages) or []
+    r1_messages: list[dict] = run_metrics.get("round_1_messages", messages) or []
     r1_msg_data: dict[tuple[str, str], dict] = {}
-    for msg in messages:
+    for msg in r1_hub_messages:
         if msg.get("round") == 1 and msg.get("from_agent") == "collaboration_hub":
             key = (msg.get("to_agent", ""), msg.get("message_type", ""))
             if key[0] and msg.get("data"):
@@ -161,8 +165,11 @@ def record_session(
             }
             for c in round_1_conflicts
         ],
-        "round_1_messages_sent": len(messages),
-        "round_1_agents_targeted": sorted({m.get("to_agent") for m in messages if m.get("to_agent") != "all"}),
+        "round_1_messages_sent": len(r1_messages),
+        "round_1_agents_targeted": sorted(
+            {m.get("to_agent") for m in r1_messages if m.get("to_agent") != "all"}
+        ),
+        "round_1_message_recipients": [m.get("to_agent") for m in r1_messages],
         "synergy_count": len(synergies),
 
         # Final state
@@ -223,6 +230,11 @@ def record_session(
 
         # ── Unsatisfiable feedback conditions ─────────────────────────────
         "feedback_metrics": final_state.get("feedback_metrics", {}),
+        "feedback_by_round": run_metrics.get("feedback_by_round", {}),
+        "itinerary_fallback_styles": [
+            o.get("style") for o in (final_state.get("trip_options") or [])
+            if o.get("itinerary_fallback")
+        ],
     }
 
     record["refinement_mode"] = refinement_mode or ("targeted" if mode == "full" else mode)

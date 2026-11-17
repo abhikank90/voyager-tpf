@@ -37,6 +37,9 @@ def _hotel_per_night(h: dict) -> float:
 def _experience_cost(e: dict) -> float:
     return float(e.get("cost_usd", e.get("price", 0)) or 0)
 
+ITINERARY_MAX_TOKENS = 8192
+
+
 class OptionGeneratorAgent(BaseAgent):
     """Generates 3 diverse trip options from refined research."""
 
@@ -140,6 +143,9 @@ class OptionGeneratorAgent(BaseAgent):
             state, flight, hotel, selected_experiences, style, num_nights
         )
 
+        fallback_reasons = {d.get("fallback_reason") for d in day_by_day if isinstance(d, dict)}
+        itinerary_fallback = next(iter(fallback_reasons - {None}), None)
+
         # Generate booking URLs
         flight_url = self._generate_flight_booking_url(flight, intent)
         hotel_url = self._generate_hotel_booking_url(hotel, intent)
@@ -173,6 +179,7 @@ class OptionGeneratorAgent(BaseAgent):
                 }
             },
             "day_by_day": day_by_day,
+            "itinerary_fallback": itinerary_fallback,
             "flight_booking_url": flight_url,
             "hotel_booking_url": hotel_url,
             "experience_booking_urls": experience_urls,
@@ -361,7 +368,9 @@ Return ONLY a JSON array of day objects with this structure:
         option_temperature = effective_temperature(0.7)
         response = self.client.messages.create(
             model=self.model,
-            max_tokens=3000,
+            # 3000 truncated the JSON for 13-14 day trips, so every option fell
+            # back to the template below. Billing is for tokens used, not the cap.
+            max_tokens=ITINERARY_MAX_TOKENS,
             temperature=option_temperature,
             messages=[{"role": "user", "content": prompt}]
         )
@@ -381,7 +390,10 @@ Return ONLY a JSON array of day objects with this structure:
             day_by_day = json.loads(itinerary_text.strip())
             return day_by_day
         except json.JSONDecodeError:
-            # Fallback to simple structure
+            # Fallback to simple structure. Marked so it is never mistaken for a
+            # generated plan (the option records it as itinerary_fallback).
+            reason = getattr(response, "stop_reason", None)
+            reason = reason if reason == "max_tokens" else "json_error"
             return [
                 {
                     "day": i + 1,
@@ -390,7 +402,8 @@ Return ONLY a JSON array of day objects with this structure:
                     "afternoon": "Activity",
                     "evening": "Dinner and relaxation",
                     "meals": {"breakfast": "Hotel", "lunch": "Local restaurant", "dinner": "Local restaurant"},
-                    "notes": ""
+                    "notes": "",
+                    "fallback_reason": reason,
                 }
                 for i in range(num_days)
             ]
