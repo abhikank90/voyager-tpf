@@ -17,10 +17,14 @@ Usage:
 Cost: ~16 LLM calls (8 states x 2 runs), small prompts. A few cents.
 """
 
+import argparse
+import csv
+import io
 import json
 import os
 import sys
 from collections import Counter
+from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
@@ -61,6 +65,116 @@ def _base():
         "visa_safety": {"visa_required": False, "safety_level": "safe"},
         "flights": [], "hotels": [], "agent_messages": [], "conflicts": [],
     }
+
+
+RULES = ("location_mismatch", "timing_inefficiency", "weather_activity_mismatch")
+
+
+def load_probes(path: str) -> dict:
+    """Load the v1.5 RQ4 probe file (``results/v1.5/rq4_probes.json``)."""
+    with open(path) as fh:
+        doc = json.load(fh)
+    if doc.get("version") != 1 or "probes" not in doc:
+        raise ValueError(f"{path} is not a version-1 probe file")
+    return doc
+
+
+def probes_to_states(doc: dict) -> list[tuple[str, dict, set]]:
+    """Convert probes to the ``make_states()`` tuple shape the eval loop consumes.
+
+    Truth is ``gold`` when filled in, else ``pilot_truth_v141``, else empty. Gold is
+    null until Abhishek labels the probes, so an unlabelled probe contributes to
+    agreement/consistency but not to the recall-gain/noise counts.
+    """
+    states = []
+    for p in doc["probes"]:
+        truth = p.get("gold") or p.get("pilot_truth_v141") or []
+        states.append((p["id"], p["state"], set(truth)))
+    return states
+
+
+def state_summary(state: dict) -> str:
+    """One-line, deterministic summary of a probe state for the labeling sheet.
+
+    Generated from the raw fields only — never from an LLM and never from rule
+    output — so the rater sees the same facts the detectors see.
+    """
+    intent = state.get("intent", {})
+    hotel = state.get("selected_hotel", {})
+    flight = state.get("selected_flight", {})
+    weather = state.get("weather", {})
+    visa = state.get("visa_safety", {})
+    exps = []
+    for e in state.get("experiences", [])[:5]:
+        parts = [e.get("name", "")]
+        if e.get("category"):
+            parts.append(f"[{e['category']}]")
+        if e.get("location"):
+            parts.append(f"@{e['location']}")
+        exps.append(" ".join(parts))
+    arrival = flight.get("arrival", "")
+    arrival_hhmm = arrival.split("T")[1][:5] if "T" in arrival else arrival
+    return (
+        f"dest={intent.get('destination', '')} budget={intent.get('budget_usd', '')}"
+        f" | hotel=\"{hotel.get('name', '')}\" @{hotel.get('location', '')}"
+        f" | arrival={arrival_hhmm}"
+        f" | climate={weather.get('avg_temp_c', '')}C/{weather.get('precipitation_mm', '')}mm"
+        f" \"{weather.get('summary', '')}\""
+        f" | exps={'; '.join(exps)}"
+        f" | flight_cost={flight.get('price_usd', '')} hotel_cost={hotel.get('total_usd', '')}"
+        f" | visa_req={visa.get('visa_required', '')} visa_days={visa.get('processing_days', '')}"
+    )
+
+
+SHEET_SEED = 20261116  # committed: never change, or the blinded shuffle order changes
+
+
+def _shuffled_probe_order(n: int) -> list[int]:
+    """Seeded permutation of probe indices so the sheet is blind but reproducible."""
+    import random
+
+    rng = random.Random(SHEET_SEED)
+    order = list(range(n))
+    rng.shuffle(order)
+    return order
+
+
+def build_labeling_sheet(doc: dict) -> str:
+    """Blind CSV for ``rq4_labeling_sheet.csv``.
+
+    Rows are in a seeded shuffled order with neutral ids (``S01..Snn``), and no probe
+    id, name or group appears, so gold labelled from this sheet cannot restate the
+    design. ``gold_types`` and ``notes`` stay blank.
+    """
+    probes = doc["probes"]
+    order = _shuffled_probe_order(len(probes))
+    buf = io.StringIO()
+    writer = csv.DictWriter(
+        buf, fieldnames=["sheet_id", "state_summary", "gold_types", "notes"]
+    )
+    writer.writeheader()
+    for row, probe_idx in enumerate(order, 1):
+        p = probes[probe_idx]
+        writer.writerow({
+            "sheet_id": f"S{row:02d}",
+            "state_summary": state_summary(p["state"]),
+            "gold_types": "",
+            "notes": "",
+        })
+    return buf.getvalue()
+
+
+def build_sheet_key(doc: dict) -> str:
+    """Mapping ``sheet_id`` → ``probe_id`` for the blinded labeling sheet."""
+    probes = doc["probes"]
+    order = _shuffled_probe_order(len(probes))
+    buf = io.StringIO()
+    buf.write("# Key mapping sheet_id -> probe_id. Do not open before labeling is done.\n")
+    writer = csv.DictWriter(buf, fieldnames=["sheet_id", "probe_id"])
+    writer.writeheader()
+    for row, probe_idx in enumerate(order, 1):
+        writer.writerow({"sheet_id": f"S{row:02d}", "probe_id": probes[probe_idx]["id"]})
+    return buf.getvalue()
 
 
 def make_states():
@@ -194,7 +308,32 @@ def _to_candidates(conflicts):
     return candidates
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument(
+        "--probes", default=None,
+        help="load RQ4 probe states from a JSON file (v1.5); default: the 8-state pilot",
+    )
+    parser.add_argument(
+        "--build-sheet", action="store_true",
+        help="write rq4_labeling_sheet.csv and rq4_sheet_key.csv next to --probes "
+             "and exit (no LLM calls)",
+    )
+    args = parser.parse_args(argv)
+
+    if args.build_sheet:
+        if not args.probes:
+            parser.error("--build-sheet requires --probes")
+        doc = load_probes(args.probes)
+        base = Path(args.probes).resolve().parent
+        sheet_path = base / "rq4_labeling_sheet.csv"
+        key_path = base / "rq4_sheet_key.csv"
+        sheet_path.write_text(build_labeling_sheet(doc))
+        key_path.write_text(build_sheet_key(doc))
+        print(f"wrote {sheet_path}")
+        print(f"wrote {key_path}")
+        return
+
     if not os.getenv("ANTHROPIC_API_KEY"):
         sys.exit("Set ANTHROPIC_API_KEY first.")
     model = os.getenv("HYBRID_EVAL_MODEL", "claude-sonnet-4-6")
@@ -204,7 +343,7 @@ def main():
     from agents.hybrid_conflict_detector import HybridConflictDetector
     detector = HybridConflictDetector(hub)
 
-    states = make_states()
+    states = probes_to_states(load_probes(args.probes)) if args.probes else make_states()
     print(f"Model under test: {model}\n{'=' * 78}")
 
     # ── Aggregate counters (Priority 2.5 expanded output) ──────────────────

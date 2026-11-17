@@ -1,0 +1,2318 @@
+{
+  "version": 1,
+  "types": [
+    "location_mismatch",
+    "timing_inefficiency",
+    "weather_activity_mismatch",
+    "checkin_impossible",
+    "budget_violation",
+    "visa_timing",
+    "preference_mismatch"
+  ],
+  "probes": [
+    {
+      "id": "PILOT-01",
+      "name": "clean_no_conflicts",
+      "group": "pilot",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": []
+    },
+    {
+      "id": "PILOT-02",
+      "name": "location_mismatch",
+      "group": "pilot",
+      "construction": {
+        "location_mismatch": "fires",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Aegean Bliss",
+          "location": "Beachfront",
+          "total_usd": 595,
+          "lat": 36.4,
+          "lon": 25.4
+        },
+        "experiences": [
+          {
+            "name": "Sunset",
+            "category": "culture",
+            "location": "Oia, Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Boat Tour",
+            "category": "outdoor",
+            "location": "Fira center",
+            "lat": 36.39,
+            "lon": 25.46
+          },
+          {
+            "name": "Dinner",
+            "category": "food",
+            "location": "Oia village",
+            "lat": 36.46,
+            "lon": 25.38
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": [
+        "location_mismatch"
+      ]
+    },
+    {
+      "id": "PILOT-03",
+      "name": "late_arrival_timing",
+      "group": "pilot",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "fires",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "UA",
+          "arrival": "2026-07-01T22:30:00",
+          "price_usd": 680
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": [
+        "timing_inefficiency"
+      ]
+    },
+    {
+      "id": "PILOT-04",
+      "name": "weather_vs_outdoor",
+      "group": "pilot",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "fires"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach Day",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Outdoor Hike",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.4,
+            "lon": 25.43,
+            "description": "outdoor cliff trail"
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 35,
+          "summary": "extreme heat wave",
+          "precipitation_mm": 0
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": [
+        "weather_activity_mismatch"
+      ]
+    },
+    {
+      "id": "PILOT-05",
+      "name": "arrival_after_desk_close",
+      "group": "pilot",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "fires",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Boutique Inn",
+          "location": "Santorini",
+          "total_usd": 700,
+          "front_desk_hours": "07:00-22:00",
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "UA",
+          "arrival": "2026-07-01T23:40:00",
+          "price_usd": 680
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": [
+        "checkin_impossible"
+      ]
+    },
+    {
+      "id": "PILOT-06",
+      "name": "component_sum_over_budget",
+      "group": "pilot",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 1100,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 1200
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": [
+        "budget_violation"
+      ]
+    },
+    {
+      "id": "PILOT-07",
+      "name": "visa_lead_time_too_short",
+      "group": "pilot",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026",
+          "booking_date": "2026-06-20"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": true,
+          "processing_days": 30,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": [
+        "visa_timing"
+      ]
+    },
+    {
+      "id": "PILOT-08",
+      "name": "preference_contradiction",
+      "group": "pilot",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "vegetarian fine dining"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Seafood Grill Crawl",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46,
+            "description": "five-stop seafood tasting"
+          },
+          {
+            "name": "Octopus BBQ",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.47,
+            "description": "traditional seafood barbecue"
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": [
+        "preference_mismatch"
+      ]
+    },
+    {
+      "id": "LOC-01",
+      "name": "location_positive_far_hotel",
+      "group": "location",
+      "construction": {
+        "location_mismatch": "fires",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Athens Centre Hotel",
+          "location": "Athens",
+          "total_usd": 650,
+          "lat": 37.98,
+          "lon": 23.73
+        },
+        "experiences": [
+          {
+            "name": "Oia Sunset",
+            "category": "culture",
+            "location": "Oia, Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Akrotiri, Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Fira Museum",
+            "category": "culture",
+            "location": "Fira, Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "LOC-02",
+      "name": "location_string_false_positive",
+      "group": "location",
+      "construction": {
+        "location_mismatch": "fires",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Lisbon",
+          "budget_usd": 2500,
+          "interests": [
+            "food",
+            "history"
+          ],
+          "travel_month": "May 2027"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Lisbon Hotel",
+          "location": "Lisbon",
+          "total_usd": 550,
+          "lat": 38.72,
+          "lon": -9.14
+        },
+        "experiences": [
+          {
+            "name": "Alfama Walking Tour",
+            "category": "culture",
+            "location": "Alfama",
+            "lat": 38.71,
+            "lon": -9.13
+          },
+          {
+            "name": "Bel\u00e9m Tower",
+            "category": "culture",
+            "location": "Bel\u00e9m",
+            "lat": 38.7,
+            "lon": -9.2
+          },
+          {
+            "name": "Baixa Food Hall",
+            "category": "food",
+            "location": "Baixa",
+            "lat": 38.71,
+            "lon": -9.14
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "LOC-03",
+      "name": "location_string_false_negative",
+      "group": "location",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Airport Hotel",
+          "location": "Santorini Airport Area",
+          "total_usd": 400,
+          "lat": 36.4,
+          "lon": 25.48
+        },
+        "experiences": [
+          {
+            "name": "Oia Caldera Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Fira Dinner",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "TIM-01",
+      "name": "timing_exactly_2000",
+      "group": "timing",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "fires",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "A3",
+          "arrival": "2026-07-01T20:00:00",
+          "price_usd": 500
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "TIM-02",
+      "name": "timing_1959_silent",
+      "group": "timing",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "A3",
+          "arrival": "2026-07-01T19:59:00",
+          "price_usd": 500
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "TIM-03",
+      "name": "timing_2340_desk_closes_2300",
+      "group": "timing",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "fires",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "front_desk_hours": "07:00-23:00",
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "UA",
+          "arrival": "2026-07-01T23:40:00",
+          "price_usd": 680
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "TIM-04",
+      "name": "timing_2100_short_transfer",
+      "group": "timing",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "fires",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "UA",
+          "arrival": "2026-07-01T21:00:00",
+          "price_usd": 680,
+          "note": "short transfer, hotel 10 minutes away"
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "WEA-01",
+      "name": "weather_32c_two_outdoor",
+      "group": "weather",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "fires"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Cliff Hike",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.4,
+            "lon": 25.43,
+            "description": "outdoor coastal trail"
+          },
+          {
+            "name": "Kayak Tour",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4,
+            "description": "outdoor sea kayaking"
+          },
+          {
+            "name": "Wine Tasting",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 32,
+          "summary": "hot",
+          "precipitation_mm": 0
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "WEA-02",
+      "name": "weather_31_9c_two_outdoor_silent",
+      "group": "weather",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Cliff Hike",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.4,
+            "lon": 25.43,
+            "description": "outdoor coastal trail"
+          },
+          {
+            "name": "Kayak Tour",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4,
+            "description": "outdoor sea kayaking"
+          },
+          {
+            "name": "Wine Tasting",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 31.9,
+          "summary": "hot",
+          "precipitation_mm": 0
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "WEA-03",
+      "name": "weather_51mm_one_outdoor_silent",
+      "group": "weather",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Cliff Hike",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.4,
+            "lon": 25.43,
+            "description": "outdoor coastal trail"
+          },
+          {
+            "name": "Wine Tasting",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 25,
+          "summary": "heavy rain",
+          "precipitation_mm": 51
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "WEA-04",
+      "name": "weather_monsoon_keyword_two_outdoor",
+      "group": "weather",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "fires"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Cliff Hike",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.4,
+            "lon": 25.43,
+            "description": "outdoor coastal trail"
+          },
+          {
+            "name": "Kayak Tour",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4,
+            "description": "outdoor sea kayaking"
+          },
+          {
+            "name": "Wine Tasting",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 25,
+          "summary": "monsoon season",
+          "precipitation_mm": 10
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "WEA-05",
+      "name": "weather_51mm_two_outdoor",
+      "group": "weather",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "fires"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Cliff Hike",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.4,
+            "lon": 25.43,
+            "description": "outdoor coastal trail"
+          },
+          {
+            "name": "Kayak Tour",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4,
+            "description": "outdoor sea kayaking"
+          },
+          {
+            "name": "Wine Tasting",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 25,
+          "summary": "overcast",
+          "precipitation_mm": 51
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "WEA-06",
+      "name": "weather_50mm_two_outdoor_silent",
+      "group": "weather",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Cliff Hike",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.4,
+            "lon": 25.43,
+            "description": "outdoor coastal trail"
+          },
+          {
+            "name": "Kayak Tour",
+            "category": "outdoor",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4,
+            "description": "outdoor sea kayaking"
+          },
+          {
+            "name": "Wine Tasting",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 25,
+          "summary": "overcast",
+          "precipitation_mm": 50
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "SEM-01",
+      "name": "checkin_after_desk_close",
+      "group": "semantic",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "front_desk_hours": "07:00-15:00",
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "A3",
+          "arrival": "2026-07-01T18:00:00",
+          "price_usd": 400
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "SEM-02",
+      "name": "component_sum_over_budget",
+      "group": "semantic",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 900,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 1500
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "SEM-03",
+      "name": "visa_lead_time_short",
+      "group": "semantic",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026",
+          "booking_date": "2026-06-28"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": true,
+          "processing_days": 14,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "SEM-04",
+      "name": "preference_vegan_vs_meat",
+      "group": "semantic",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2000,
+          "interests": [
+            "vegan"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 700,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Steakhouse Dinner",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46,
+            "description": "grilled meat restaurant"
+          },
+          {
+            "name": "BBQ Grill",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.47,
+            "description": "meat barbecue"
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 890
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "CLN-01",
+      "name": "clean_lisbon",
+      "group": "clean",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Lisbon",
+          "budget_usd": 2000,
+          "interests": [
+            "culture"
+          ],
+          "travel_month": "May 2027"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Lisbon Hotel",
+          "location": "Lisbon",
+          "total_usd": 600,
+          "lat": 38.72,
+          "lon": -9.14
+        },
+        "experiences": [
+          {
+            "name": "Lisbon Old Town",
+            "category": "culture",
+            "location": "Lisbon",
+            "lat": 38.72,
+            "lon": -9.14
+          },
+          {
+            "name": "Lisbon Museum",
+            "category": "culture",
+            "location": "Lisbon",
+            "lat": 38.72,
+            "lon": -9.14
+          },
+          {
+            "name": "Lisbon Market",
+            "category": "food",
+            "location": "Lisbon",
+            "lat": 38.72,
+            "lon": -9.14
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-05-01T13:00:00",
+          "price_usd": 800
+        },
+        "weather": {
+          "avg_temp_c": 20,
+          "summary": "mild",
+          "precipitation_mm": 12
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "CLN-02",
+      "name": "clean_tokyo",
+      "group": "clean",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Tokyo",
+          "budget_usd": 2000,
+          "interests": [
+            "culture"
+          ],
+          "travel_month": "April 2027"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Shinjuku Hotel",
+          "location": "Shinjuku",
+          "total_usd": 600,
+          "lat": 35.69,
+          "lon": 139.7
+        },
+        "experiences": [
+          {
+            "name": "Shinjuku Old Town",
+            "category": "culture",
+            "location": "Shinjuku",
+            "lat": 35.69,
+            "lon": 139.7
+          },
+          {
+            "name": "Shinjuku Museum",
+            "category": "culture",
+            "location": "Shinjuku",
+            "lat": 35.69,
+            "lon": 139.7
+          },
+          {
+            "name": "Shinjuku Market",
+            "category": "food",
+            "location": "Shinjuku",
+            "lat": 35.69,
+            "lon": 139.7
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-04-01T14:00:00",
+          "price_usd": 800
+        },
+        "weather": {
+          "avg_temp_c": 18,
+          "summary": "mild",
+          "precipitation_mm": 10
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "CLN-03",
+      "name": "clean_cancun",
+      "group": "clean",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Cancun",
+          "budget_usd": 2000,
+          "interests": [
+            "culture"
+          ],
+          "travel_month": "March 2027"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Cancun Hotel",
+          "location": "Cancun",
+          "total_usd": 600,
+          "lat": 21.16,
+          "lon": -86.85
+        },
+        "experiences": [
+          {
+            "name": "Cancun Old Town",
+            "category": "culture",
+            "location": "Cancun",
+            "lat": 21.16,
+            "lon": -86.85
+          },
+          {
+            "name": "Cancun Museum",
+            "category": "culture",
+            "location": "Cancun",
+            "lat": 21.16,
+            "lon": -86.85
+          },
+          {
+            "name": "Cancun Market",
+            "category": "food",
+            "location": "Cancun",
+            "lat": 21.16,
+            "lon": -86.85
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-03-01T12:00:00",
+          "price_usd": 800
+        },
+        "weather": {
+          "avg_temp_c": 27,
+          "summary": "mild",
+          "precipitation_mm": 15
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "CLN-04",
+      "name": "clean_sydney",
+      "group": "clean",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Sydney",
+          "budget_usd": 2000,
+          "interests": [
+            "culture"
+          ],
+          "travel_month": "December 2027"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Sydney Hotel",
+          "location": "Sydney",
+          "total_usd": 600,
+          "lat": -33.87,
+          "lon": 151.21
+        },
+        "experiences": [
+          {
+            "name": "Sydney Old Town",
+            "category": "culture",
+            "location": "Sydney",
+            "lat": -33.87,
+            "lon": 151.21
+          },
+          {
+            "name": "Sydney Museum",
+            "category": "culture",
+            "location": "Sydney",
+            "lat": -33.87,
+            "lon": 151.21
+          },
+          {
+            "name": "Sydney Market",
+            "category": "food",
+            "location": "Sydney",
+            "lat": -33.87,
+            "lon": 151.21
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-12-01T10:00:00",
+          "price_usd": 800
+        },
+        "weather": {
+          "avg_temp_c": 24,
+          "summary": "mild",
+          "precipitation_mm": 18
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "CLN-05",
+      "name": "clean_edinburgh",
+      "group": "clean",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Edinburgh",
+          "budget_usd": 2000,
+          "interests": [
+            "culture"
+          ],
+          "travel_month": "September 2027"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Edinburgh Hotel",
+          "location": "Edinburgh",
+          "total_usd": 600,
+          "lat": 55.95,
+          "lon": -3.19
+        },
+        "experiences": [
+          {
+            "name": "Edinburgh Old Town",
+            "category": "culture",
+            "location": "Edinburgh",
+            "lat": 55.95,
+            "lon": -3.19
+          },
+          {
+            "name": "Edinburgh Museum",
+            "category": "culture",
+            "location": "Edinburgh",
+            "lat": 55.95,
+            "lon": -3.19
+          },
+          {
+            "name": "Edinburgh Market",
+            "category": "food",
+            "location": "Edinburgh",
+            "lat": 55.95,
+            "lon": -3.19
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-09-01T13:00:00",
+          "price_usd": 800
+        },
+        "weather": {
+          "avg_temp_c": 13,
+          "summary": "mild",
+          "precipitation_mm": 20
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "BUD-01",
+      "name": "budget_bait_2300_of_2500",
+      "group": "budget_bait",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2500,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 1000,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 1300
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    },
+    {
+      "id": "BUD-02",
+      "name": "budget_bait_2300_of_2600",
+      "group": "budget_bait",
+      "construction": {
+        "location_mismatch": "silent",
+        "timing_inefficiency": "silent",
+        "weather_activity_mismatch": "silent"
+      },
+      "state": {
+        "intent": {
+          "destination": "Greece",
+          "budget_usd": 2600,
+          "interests": [
+            "beaches"
+          ],
+          "travel_month": "July 2026"
+        },
+        "collaboration_round": 1,
+        "selected_hotel": {
+          "name": "Santorini Resort",
+          "location": "Santorini",
+          "total_usd": 900,
+          "lat": 36.39,
+          "lon": 25.46
+        },
+        "experiences": [
+          {
+            "name": "Red Beach",
+            "category": "beach",
+            "location": "Santorini",
+            "lat": 36.36,
+            "lon": 25.4
+          },
+          {
+            "name": "Oia Walk",
+            "category": "culture",
+            "location": "Santorini",
+            "lat": 36.46,
+            "lon": 25.37
+          },
+          {
+            "name": "Taverna",
+            "category": "food",
+            "location": "Santorini",
+            "lat": 36.39,
+            "lon": 25.46
+          }
+        ],
+        "selected_flight": {
+          "airline": "LH",
+          "arrival": "2026-07-01T13:00:00",
+          "price_usd": 1400
+        },
+        "weather": {
+          "avg_temp_c": 28,
+          "summary": "warm",
+          "precipitation_mm": 2
+        },
+        "visa_safety": {
+          "visa_required": false,
+          "safety_level": "safe"
+        },
+        "flights": [],
+        "hotels": [],
+        "agent_messages": [],
+        "conflicts": []
+      },
+      "gold": null,
+      "pilot_truth_v141": null
+    }
+  ]
+}
