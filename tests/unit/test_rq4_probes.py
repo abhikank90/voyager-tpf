@@ -94,3 +94,26 @@ def test_state_summaries_are_blind(doc):
         assert p["group"].lower() not in summary, f"{p['id']}: group leaked"
         for word in BANNED_WORDS:
             assert word not in summary, f"{p['id']}: banned word {word!r} in summary"
+
+
+def _leaf_values(obj, skip=("collaboration_round",)):
+    if isinstance(obj, dict):
+        for key, value in obj.items():
+            if key in skip:
+                continue
+            yield from _leaf_values(value, skip)
+    elif isinstance(obj, list):
+        if obj:
+            for item in obj:
+                yield from _leaf_values(item, skip)
+    elif obj is not None:
+        yield str(obj).lower()
+
+
+def test_state_summary_is_complete(doc):
+    from scripts.eval_hybrid_detection import state_summary
+
+    for p in doc["probes"]:
+        summary = state_summary(p["state"]).lower()
+        for value in _leaf_values(p["state"]):
+            assert value in summary, f"{p['id']}: value {value!r} missing from summary"

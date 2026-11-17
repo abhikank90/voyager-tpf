@@ -93,37 +93,84 @@ def probes_to_states(doc: dict) -> list[tuple[str, dict, set]]:
     return states
 
 
+def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    """Great-circle distance in km between two coordinates (no LLM, no rules)."""
+    from math import asin, cos, radians, sin, sqrt
+
+    lat1, lon1, lat2, lon2 = map(radians, (lat1, lon1, lat2, lon2))
+    dlat, dlon = lat2 - lat1, lon2 - lon1
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    return 2 * 6371.0 * asin(sqrt(a))
+
+
 def state_summary(state: dict) -> str:
     """One-line, deterministic summary of a probe state for the labeling sheet.
 
-    Generated from the raw fields only — never from an LLM and never from rule
-    output — so the rater sees the same facts the detectors see.
+    Renders every leaf field present in the state (except ``collaboration_round``
+    and empty lists), plus the haversine hotel-to-experience distances. Generated
+    from the raw fields only — never from an LLM and never from rule output — so
+    the rater sees the same facts the detectors see.
     """
     intent = state.get("intent", {})
     hotel = state.get("selected_hotel", {})
     flight = state.get("selected_flight", {})
     weather = state.get("weather", {})
     visa = state.get("visa_safety", {})
+    parts: list[str] = []
+
+    head = [f"dest={intent.get('destination', '')}", f"budget={intent.get('budget_usd', '')}"]
+    if intent.get("interests"):
+        head.append(f"interests={'+'.join(intent['interests'])}")
+    if intent.get("travel_month"):
+        head.append(f"month={intent['travel_month']}")
+    if intent.get("booking_date"):
+        head.append(f"booked={intent['booking_date']}")
+    parts.append(" ".join(head))
+
+    hotel_bits = [f"hotel={hotel.get('name', '')}", f"loc={hotel.get('location', '')}"]
+    if hotel.get("lat") is not None and hotel.get("lon") is not None:
+        hotel_bits.append(f"coord=({hotel['lat']},{hotel['lon']})")
+    if hotel.get("total_usd") is not None:
+        hotel_bits.append(f"hotel_cost={hotel['total_usd']}")
+    if hotel.get("front_desk_hours"):
+        hotel_bits.append(f"desk={hotel['front_desk_hours']}")
+    parts.append(" ".join(hotel_bits))
+
+    flight_bits = [f"arrival={flight.get('arrival', '')}"]
+    if flight.get("airline"):
+        flight_bits.append(f"airline={flight['airline']}")
+    if flight.get("price_usd") is not None:
+        flight_bits.append(f"flight_cost={flight['price_usd']}")
+    if flight.get("note"):
+        flight_bits.append(f"flight_note={flight['note']}")
+    parts.append(" ".join(flight_bits))
+
+    if weather:
+        parts.append(
+            f"climate={weather.get('avg_temp_c', '')}C/{weather.get('precipitation_mm', '')}mm"
+            f" \"{weather.get('summary', '')}\""
+        )
+
+    visa_bits = [f"visa_req={visa.get('visa_required', '')}"]
+    if visa.get("processing_days") is not None:
+        visa_bits.append(f"visa_days={visa['processing_days']}")
+    if visa.get("safety_level"):
+        visa_bits.append(f"safety={visa['safety_level']}")
+    parts.append(" ".join(visa_bits))
+
     exps = []
     for e in state.get("experiences", [])[:5]:
-        parts = [e.get("name", "")]
-        if e.get("category"):
-            parts.append(f"[{e['category']}]")
-        if e.get("location"):
-            parts.append(f"@{e['location']}")
-        exps.append(" ".join(parts))
-    arrival = flight.get("arrival", "")
-    arrival_hhmm = arrival.split("T")[1][:5] if "T" in arrival else arrival
-    return (
-        f"dest={intent.get('destination', '')} budget={intent.get('budget_usd', '')}"
-        f" | hotel=\"{hotel.get('name', '')}\" @{hotel.get('location', '')}"
-        f" | arrival={arrival_hhmm}"
-        f" | climate={weather.get('avg_temp_c', '')}C/{weather.get('precipitation_mm', '')}mm"
-        f" \"{weather.get('summary', '')}\""
-        f" | exps={'; '.join(exps)}"
-        f" | flight_cost={flight.get('price_usd', '')} hotel_cost={hotel.get('total_usd', '')}"
-        f" | visa_req={visa.get('visa_required', '')} visa_days={visa.get('processing_days', '')}"
-    )
+        bits = [f"{e.get('name', '')} [{e.get('category', '')}] @{e.get('location', '')}"]
+        if e.get("lat") is not None and e.get("lon") is not None:
+            bits.append(f"coord=({e['lat']},{e['lon']})")
+            if hotel.get("lat") is not None and hotel.get("lon") is not None:
+                bits.append(f"dist={_haversine_km(hotel['lat'], hotel['lon'], e['lat'], e['lon']):.1f}km")
+        if e.get("description"):
+            bits.append(f"desc=\"{e['description']}\"")
+        exps.append(" ".join(bits))
+    parts.append(f"exps={'; '.join(exps)}")
+
+    return " | ".join(parts)
 
 
 SHEET_SEED = 20261116  # committed: never change, or the blinded shuffle order changes
@@ -149,6 +196,18 @@ def build_labeling_sheet(doc: dict) -> str:
     probes = doc["probes"]
     order = _shuffled_probe_order(len(probes))
     buf = io.StringIO()
+    buf.write(
+        "# RQ4 detector evaluation — labeling instructions\n"
+        "# Allowed types (enter \"none\" or \";\"-separated types in gold_types):\n"
+        "#   location_mismatch      hotel and activities are in different places\n"
+        "#   timing_inefficiency    the inbound flight lands too late to use Day 1\n"
+        "#   weather_activity_mismatch  planned activities clash with the weather\n"
+        "#   checkin_impossible     the flight arrives after the hotel desk closes\n"
+        "#   budget_violation       flight + hotel costs exceed the stated budget\n"
+        "#   visa_timing            the visa cannot be processed before travel\n"
+        "#   preference_mismatch    activities contradict a stated interest/dietary need\n"
+        "# Label what a careful human planner would flag, not what any rule would output.\n"
+    )
     writer = csv.DictWriter(
         buf, fieldnames=["sheet_id", "state_summary", "gold_types", "notes"]
     )
