@@ -133,6 +133,7 @@ async def run_conditions(
     queries: list[tuple[str, str]],
     conditions: list[str],
     repeats: int,
+    inventory_profile: str = "default",
 ) -> None:
     """Run every condition for each query back to back, repeated ``repeats`` times.
 
@@ -160,6 +161,7 @@ async def run_conditions(
                         session_tags={
                             "query_id": query_id, "condition": condition, "run_index": run_idx,
                         },
+                        inventory_profile=inventory_profile,
                     )
                     ok += 1
                 except Exception as exc:  # protocol §8: logged, re-run by hand
@@ -251,6 +253,14 @@ def main() -> None:
         reload_settings()
     inventory_mode = get_settings().inventory_mode
 
+    # The control mock profiles are mock-only (protocol §5, item 5a). Fail fast
+    # here rather than letting every session fail inside the agents.
+    if args.query_set == "control" and inventory_mode != "mock":
+        raise SystemExit(
+            f"the control set requires mock inventory mode (got {inventory_mode!r}); "
+            "control profiles exist only for the mock path"
+        )
+
     if args.summary:
         from metrics.collector import print_summary
         print_summary()
@@ -290,8 +300,10 @@ def main() -> None:
         print(f"Plans     → {os.environ['VOYAGER_PLANS_DIR']}")
         print(f"Summaries → {os.environ['VOYAGER_RESULTS_DIR']}\n")
 
+        profile = "control" if args.query_set == "control" else "default"
+
         async def _run_conditions() -> None:
-            await run_conditions(tagged, conditions, args.repeats)
+            await run_conditions(tagged, conditions, args.repeats, inventory_profile=profile)
             _write_results(inventory_mode)
 
         asyncio.run(_run_conditions())

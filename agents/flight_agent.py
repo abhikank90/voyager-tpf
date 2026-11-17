@@ -9,6 +9,7 @@ from metrics.token_tracker import TokenTrackingCallback
 
 from . import inventory
 from .base_agent import BaseAgent
+from .mock_control import mock_control_flights
 
 # Airport IATA codes for common origins/destinations. SerpAPI (Google Flights)
 # requires valid 3-letter IATA codes — sending a raw city name ("Tokyo") or
@@ -258,6 +259,11 @@ class FlightAgent(BaseAgent):
         api_key = os.getenv("SERPAPI_API_KEY")
 
         mode = self._inventory_mode()
+        profile = state.get("inventory_profile", "default")
+        if profile == "control" and mode != "mock":
+            raise ValueError(
+                "inventory_profile 'control' is only valid in mock inventory mode"
+            )
         # Dates are derived per-mode: capture uses today+90, replay derives from
         # the fixtures' capture date so the query id (and thus the fixture found)
         # is identical no matter when the replay is run.
@@ -287,10 +293,16 @@ class FlightAgent(BaseAgent):
         elif mode == "mock":
             # Mock mode is fully offline even when API keys are set: the
             # deterministic fixture is the whole point (CI, unit tests, demos).
-            result = _mock_flight_data(
-                origin, destination, departure_date, return_date, group_size,
-                preferred_arrival_hour=preferred_arrival_hour,
-            )
+            if profile == "control":
+                result = mock_control_flights(
+                    origin, destination, departure_date, return_date, group_size,
+                    preferred_arrival_hour=preferred_arrival_hour,
+                )
+            else:
+                result = _mock_flight_data(
+                    origin, destination, departure_date, return_date, group_size,
+                    preferred_arrival_hour=preferred_arrival_hour,
+                )
         elif api_key:
             result = await search_flights.ainvoke({
                 "origin": origin,

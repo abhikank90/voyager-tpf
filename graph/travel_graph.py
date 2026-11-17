@@ -514,6 +514,7 @@ async def run_collaborative_travel_query(
     record_metrics: bool = True,
     refinement_mode: str | None = None,
     session_tags: dict | None = None,
+    inventory_profile: str | None = None,
 ) -> dict:
     """Entry point: run collaborative multi-agent graph (generates 3 options).
 
@@ -527,6 +528,9 @@ async def run_collaborative_travel_query(
             settings.refinement_mode. Ignored when enable_refinement is False.
         session_tags: extra fields written into the session record (e.g.
             query_id, run index) so benchmark pairing never relies on query text.
+        inventory_profile: "default" | "control". Selects the control mock
+            inventory for the flight and hotel agents (protocol §5); honoured
+            only in mock mode.
     """
     import uuid
 
@@ -554,6 +558,7 @@ async def run_collaborative_travel_query(
         "run_metrics": {},
         "enable_refinement": enable_refinement,
         "refinement_mode": mode,
+        "inventory_profile": inventory_profile or "default",
     }
 
     t0 = time.perf_counter()

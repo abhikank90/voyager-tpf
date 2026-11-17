@@ -9,6 +9,7 @@ from metrics.token_tracker import TokenTrackingCallback
 
 from . import inventory
 from .base_agent import BaseAgent
+from .mock_control import mock_control_hotels
 from .trip_window import RULE_MONTH
 
 # LiteAPI sandbox limits ~5 req/s. A single query fires up to 7 requests
@@ -173,6 +174,11 @@ class HotelAgent(BaseAgent):
 
         api_key = os.getenv("NUITEE_API_KEY", "")
         mode = self._inventory_mode()
+        profile = state.get("inventory_profile", "default")
+        if profile == "control" and mode != "mock":
+            raise ValueError(
+                "inventory_profile 'control' is only valid in mock inventory mode"
+            )
         # Dates derived per-mode (see flight_agent): replay anchors on the
         # fixtures' capture date so the query id reproduced matches capture.
         query_id = inventory.inventory_query_id(
@@ -191,7 +197,12 @@ class HotelAgent(BaseAgent):
         elif mode == "mock":
             # Mock mode is fully offline even when API keys are set: the
             # deterministic fixture is the whole point (CI, unit tests, demos).
-            result = _mock_hotel_data(destination, check_in, check_out, group_size, duration, location_hint)
+            if profile == "control":
+                result = mock_control_hotels(
+                    destination, check_in, check_out, group_size, duration, location_hint
+                )
+            else:
+                result = _mock_hotel_data(destination, check_in, check_out, group_size, duration, location_hint)
         elif api_key:
             result = await self._fetch_real(destination, check_in, check_out, group_size, hotel_budget)
         else:

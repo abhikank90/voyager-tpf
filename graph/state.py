@@ -98,6 +98,7 @@ class TravelState(TypedDict, total=False):
     travel_month: str
     trip_window: dict[str, Any]  # resolved inventory dates (protocol §5.2)
     refinement_mode: str  # targeted | full_rerun | broadcast | two_way (protocol §3)
+    inventory_profile: str  # "default" | "control" (mock inventory selection, protocol §5)
 
     visa_safety: dict[str, Any]
 
