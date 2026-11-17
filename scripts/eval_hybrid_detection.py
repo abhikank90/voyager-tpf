@@ -199,11 +199,13 @@ def build_labeling_sheet(doc: dict) -> str:
     buf.write(
         "# RQ4 detector evaluation — labeling instructions\n"
         "# Allowed types (enter \"none\" or \";\"-separated types in gold_types):\n"
-        "#   location_mismatch      hotel and activities are in different places\n"
+        "#   location_mismatch      the hotel is far from where the planned activities\n"
+        "#                          take place (judge by the distances shown, not by\n"
+        "#                          whether place names differ)\n"
         "#   timing_inefficiency    the inbound flight lands too late to use Day 1\n"
         "#   weather_activity_mismatch  planned activities clash with the weather\n"
         "#   checkin_impossible     the flight arrives after the hotel desk closes\n"
-        "#   budget_violation       flight + hotel costs exceed the stated budget\n"
+        "#   budget_violation       the listed costs add up to more than the stated budget\n"
         "#   visa_timing            the visa cannot be processed before travel\n"
         "#   preference_mismatch    activities contradict a stated interest/dietary need\n"
         "# Label what a careful human planner would flag, not what any rule would output.\n"
@@ -234,6 +236,76 @@ def build_sheet_key(doc: dict) -> str:
     for row, probe_idx in enumerate(order, 1):
         writer.writerow({"sheet_id": f"S{row:02d}", "probe_id": probes[probe_idx]["id"]})
     return buf.getvalue()
+
+
+def _parse_csv_with_comments(text: str) -> list[dict]:
+    """Parse a comment-prefixed CSV (``#`` lines skipped) into a list of row dicts."""
+    lines = [line for line in text.splitlines() if line.strip() and not line.lstrip().startswith("#")]
+    reader = csv.reader(lines)
+    header = next(reader)
+    return [dict(zip(header, row)) for row in reader]
+
+
+def _sheet_id_map(rows: list[dict]) -> dict[str, dict]:
+    ids = [row["sheet_id"] for row in rows]
+    if len(ids) != len(set(ids)):
+        raise ValueError("duplicate sheet_id in the sheet")
+    return {row["sheet_id"]: row for row in rows}
+
+
+def merge_gold(probes_path: str, sheet_path: str) -> dict:
+    """Merge a filled labeling sheet back into ``rq4_probes.json``.
+
+    Writes each probe's ``gold`` (a sorted list of types, ``[]`` for ``none``) and saves
+    the file. Refuses — raising without writing anything — when the sheet is stale, has
+    unknown or duplicated ``sheet_id``s, a blank ``gold_types``, an unknown type,
+    ``none`` combined with a type, or leaves any probe unlabelled.
+    """
+    probes_path = Path(probes_path)
+    sheet_path = Path(sheet_path)
+    doc = load_probes(str(probes_path))
+    probes = doc["probes"]
+    allowed_types = set(doc["types"])
+
+    key_rows = _parse_csv_with_comments(
+        (probes_path.parent / "rq4_sheet_key.csv").read_text()
+    )
+    key = {row["sheet_id"]: row["probe_id"] for row in key_rows}
+
+    fresh_rows = _parse_csv_with_comments(build_labeling_sheet(doc))
+    fresh = _sheet_id_map(fresh_rows)
+    filled = _sheet_id_map(_parse_csv_with_comments(sheet_path.read_text()))
+
+    if set(filled) != set(fresh):
+        raise ValueError("sheet sheet_ids do not match a fresh build")
+    if not set(filled) <= set(key):
+        raise ValueError("sheet contains unknown sheet_id(s)")
+
+    gold_by_probe: dict[str, list] = {}
+    for sid, row in filled.items():
+        if row["state_summary"] != fresh[sid]["state_summary"]:
+            raise ValueError(f"stale sheet: {sid} summary differs from a fresh build")
+        raw = (row.get("gold_types") or "").strip()
+        if not raw:
+            raise ValueError(f"blank gold_types for {sid}")
+        types = [t.strip() for t in raw.split(";") if t.strip()]
+        if "none" in types:
+            if len(types) > 1:
+                raise ValueError(f"'none' combined with other types in {sid}")
+            gold_by_probe[key[sid]] = []
+            continue
+        unknown = [t for t in types if t not in allowed_types]
+        if unknown:
+            raise ValueError(f"unknown type(s) {sorted(unknown)} in {sid}")
+        gold_by_probe[key[sid]] = sorted(set(types))
+
+    for probe in probes:
+        if probe["id"] not in gold_by_probe:
+            raise ValueError(f"probe {probe['id']} is not labelled")
+        probe["gold"] = gold_by_probe[probe["id"]]
+
+    probes_path.write_text(json.dumps(doc, indent=2) + "\n")
+    return doc
 
 
 def make_states():
@@ -378,6 +450,11 @@ def main(argv=None):
         help="write rq4_labeling_sheet.csv and rq4_sheet_key.csv next to --probes "
              "and exit (no LLM calls)",
     )
+    parser.add_argument(
+        "--merge-gold", metavar="SHEET", default=None,
+        help="merge a filled labeling sheet into rq4_probes.json (next to SHEET) "
+             "and exit (no LLM calls)",
+    )
     args = parser.parse_args(argv)
 
     if args.build_sheet:
@@ -391,6 +468,15 @@ def main(argv=None):
         key_path.write_text(build_sheet_key(doc))
         print(f"wrote {sheet_path}")
         print(f"wrote {key_path}")
+        return
+
+    if args.merge_gold:
+        sheet = Path(args.merge_gold).resolve()
+        probes = sheet.parent / "rq4_probes.json"
+        if not probes.exists():
+            parser.error(f"no rq4_probes.json next to {sheet}")
+        merged = merge_gold(str(probes), str(sheet))
+        print(f"merged {len(merged['probes'])} probes into {probes}")
         return
 
     if not os.getenv("ANTHROPIC_API_KEY"):

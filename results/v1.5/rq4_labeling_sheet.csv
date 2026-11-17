@@ -1,10 +1,12 @@
 # RQ4 detector evaluation — labeling instructions
 # Allowed types (enter "none" or ";"-separated types in gold_types):
-#   location_mismatch      hotel and activities are in different places
+#   location_mismatch      the hotel is far from where the planned activities
+#                          take place (judge by the distances shown, not by
+#                          whether place names differ)
 #   timing_inefficiency    the inbound flight lands too late to use Day 1
 #   weather_activity_mismatch  planned activities clash with the weather
 #   checkin_impossible     the flight arrives after the hotel desk closes
-#   budget_violation       flight + hotel costs exceed the stated budget
+#   budget_violation       the listed costs add up to more than the stated budget
 #   visa_timing            the visa cannot be processed before travel
 #   preference_mismatch    activities contradict a stated interest/dietary need
 # Label what a careful human planner would flag, not what any rule would output.

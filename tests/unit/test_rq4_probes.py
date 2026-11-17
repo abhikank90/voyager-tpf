@@ -1,5 +1,8 @@
 """RQ4 probe states: schema, rule construction, and the labeling sheet."""
+import csv
+import io
 import json
+import shutil
 from pathlib import Path
 from unittest.mock import patch
 
@@ -117,3 +120,106 @@ def test_state_summary_is_complete(doc):
         summary = state_summary(p["state"]).lower()
         for value in _leaf_values(p["state"]):
             assert value in summary, f"{p['id']}: value {value!r} missing from summary"
+
+
+def _parse_rows(text):
+    lines = [line for line in text.splitlines()
+             if line.strip() and not line.lstrip().startswith("#")]
+    reader = csv.reader(lines)
+    header = next(reader)
+    return [dict(zip(header, row)) for row in reader]
+
+
+def _serialize(rows):
+    buf = io.StringIO()
+    writer = csv.DictWriter(buf, fieldnames=["sheet_id", "state_summary", "gold_types", "notes"])
+    writer.writeheader()
+    writer.writerows(rows)
+    return buf.getvalue()
+
+
+def _filled_sheet_text(doc, labeler):
+    from scripts.eval_hybrid_detection import build_labeling_sheet
+
+    rows = _parse_rows(build_labeling_sheet(doc))
+    for row in rows:
+        row["gold_types"] = labeler(row)
+    return _serialize(rows)
+
+
+@pytest.fixture
+def tmp_probes(tmp_path):
+    probes = tmp_path / "rq4_probes.json"
+    shutil.copy(PROBES_PATH, probes)
+    shutil.copy(KEY_PATH, tmp_path / "rq4_sheet_key.csv")
+    return probes
+
+
+def test_merge_gold_happy_path(tmp_probes):
+    from scripts.eval_hybrid_detection import merge_gold
+
+    doc = json.loads(tmp_probes.read_text())
+    key = {r["sheet_id"]: r["probe_id"] for r in _parse_rows((tmp_probes.parent / "rq4_sheet_key.csv").read_text())}
+    sheet = tmp_probes.parent / "filled.csv"
+    sheet.write_text(_filled_sheet_text(
+        doc,
+        lambda r: "location_mismatch;timing_inefficiency" if r["sheet_id"] == "S01" else "none",
+    ))
+    merged = merge_gold(str(tmp_probes), str(sheet))
+    by_id = {p["id"]: p["gold"] for p in merged["probes"]}
+    assert by_id[key["S01"]] == ["location_mismatch", "timing_inefficiency"]
+    for probe_id, gold in by_id.items():
+        if probe_id != key["S01"]:
+            assert gold == [], f"{probe_id}: expected [] got {gold}"
+    # the file was rewritten with gold filled in
+    assert all(p["gold"] is not None for p in json.loads(tmp_probes.read_text())["probes"])
+
+
+def _assert_refused(tmp_probes, doc, labeler, mutate=None, match=None):
+    from scripts.eval_hybrid_detection import build_labeling_sheet, merge_gold
+
+    before = tmp_probes.read_text()
+    rows = _parse_rows(build_labeling_sheet(doc))
+    for row in rows:
+        row["gold_types"] = labeler(row)
+    if mutate:
+        mutate(rows)
+    sheet = tmp_probes.parent / "filled.csv"
+    sheet.write_text(_serialize(rows))
+    with pytest.raises(ValueError, match=match):
+        merge_gold(str(tmp_probes), str(sheet))
+    assert tmp_probes.read_text() == before
+
+
+def test_merge_gold_blank_refused(tmp_probes):
+    doc = json.loads(tmp_probes.read_text())
+    _assert_refused(tmp_probes, doc, lambda r: "none",
+                    mutate=lambda rows: rows[0].update(gold_types=""), match="blank")
+
+
+def test_merge_gold_unknown_type_refused(tmp_probes):
+    doc = json.loads(tmp_probes.read_text())
+    _assert_refused(tmp_probes, doc, lambda r: "foo", match="unknown type")
+
+
+def test_merge_gold_none_combined_refused(tmp_probes):
+    doc = json.loads(tmp_probes.read_text())
+    _assert_refused(tmp_probes, doc, lambda r: "none;location_mismatch", match="combined")
+
+
+def test_merge_gold_unknown_sheet_id_refused(tmp_probes):
+    doc = json.loads(tmp_probes.read_text())
+    _assert_refused(tmp_probes, doc, lambda r: "none",
+                    mutate=lambda rows: rows[0].update(sheet_id="S99"), match="sheet_ids")
+
+
+def test_merge_gold_duplicate_sheet_id_refused(tmp_probes):
+    doc = json.loads(tmp_probes.read_text())
+    _assert_refused(tmp_probes, doc, lambda r: "none",
+                    mutate=lambda rows: rows.append(dict(rows[0])), match="duplicate")
+
+
+def test_merge_gold_stale_refused(tmp_probes):
+    doc = json.loads(tmp_probes.read_text())
+    _assert_refused(tmp_probes, doc, lambda r: "none",
+                    mutate=lambda rows: rows[0].update(state_summary="tampered"), match="stale")
