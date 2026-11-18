@@ -9,6 +9,7 @@ from metrics.token_tracker import TokenTrackingCallback
 
 from . import inventory
 from .base_agent import BaseAgent
+from .http_retry import request_with_retries
 from .mock_control import mock_control_flights
 
 # Airport IATA codes for common origins/destinations. SerpAPI (Google Flights)
@@ -113,7 +114,9 @@ async def search_flights(
         params["return_date"] = return_date
 
     async with httpx.AsyncClient(timeout=30) as client:
-        resp = await client.get("https://serpapi.com/search.json", params=params)
+        resp = await request_with_retries(
+            client, "GET", "https://serpapi.com/search.json", params=params,
+        )
         resp.raise_for_status()
         data = resp.json()
 
@@ -198,13 +201,14 @@ class FlightAgent(BaseAgent):
 
     def _setup(self):
         try:
-            from config import effective_temperature, get_api_config
+            from config import effective_temperature, get_api_config, get_settings
             model = get_api_config().llm.flight_agent_model
         except Exception:
             model = "claude-haiku-4-5-20251001"
         self.llm = ChatAnthropic(
             model=model,
             temperature=effective_temperature(0),
+            max_retries=get_settings().llm_max_retries,
             callbacks=[TokenTrackingCallback(model=model)],
         )
 

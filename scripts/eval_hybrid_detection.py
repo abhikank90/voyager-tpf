@@ -43,6 +43,13 @@ def build_rules_hub():
         return CollaborationHubAgent()
 
 
+def make_client():
+    """Anthropic client with the §8 retry policy (VOYAGER_LLM_MAX_RETRIES)."""
+    from config.settings import get_settings
+
+    return Anthropic(max_retries=get_settings().llm_max_retries)
+
+
 # ── Evaluation states ─────────────────────────────────────────────────────────
 # Each: (name, state, conflicts_a_human_would_flag) — the last field is the
 # ground truth used to judge LLM "extras" as real recall vs. noise.
@@ -559,7 +566,7 @@ def main(argv=None):
     if not os.getenv("ANTHROPIC_API_KEY"):
         sys.exit("Set ANTHROPIC_API_KEY first.")
     model = os.getenv("HYBRID_EVAL_MODEL", "claude-sonnet-4-6")
-    client = Anthropic()
+    client = make_client()
     hub = build_rules_hub()
 
     from agents.hybrid_conflict_detector import HybridConflictDetector

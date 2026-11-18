@@ -63,7 +63,7 @@ def test_out_writes_machine_readable_json(monkeypatch, tmp_path, probe_file):
     rules_hub = CollaborationHubAgent.__new__(CollaborationHubAgent)
 
     monkeypatch.setenv("ANTHROPIC_API_KEY", "ci-test-key")
-    monkeypatch.setattr(ev, "Anthropic", lambda: fake_client)
+    monkeypatch.setattr(ev, "Anthropic", lambda **kwargs: fake_client)
     monkeypatch.setattr(ev, "build_rules_hub", lambda: rules_hub)
 
     out = tmp_path / "report.json"
@@ -102,7 +102,7 @@ def test_out_writes_shipped_variant(monkeypatch, tmp_path, probe_file):
     hub.client.messages.create.return_value = fake_response
 
     monkeypatch.setenv("ANTHROPIC_API_KEY", "ci-test-key")
-    monkeypatch.setattr(ev, "Anthropic", lambda: MagicMock())
+    monkeypatch.setattr(ev, "Anthropic", lambda **kwargs: MagicMock())
     monkeypatch.setattr(ev, "build_rules_hub", lambda: hub)
 
     out = tmp_path / "shipped.json"

@@ -43,7 +43,7 @@ class ItineraryBuilderAgent(BaseAgent):
 
     def _setup(self):
         try:
-            from config import effective_temperature, get_api_config
+            from config import effective_temperature, get_api_config, get_settings
             model = get_api_config().llm.itinerary_builder_model
         except Exception:
             model = "claude-sonnet-4-6"
@@ -51,6 +51,7 @@ class ItineraryBuilderAgent(BaseAgent):
             model=model,
             temperature=effective_temperature(0.4),
             max_tokens=4096,
+            max_retries=get_settings().llm_max_retries,
             callbacks=[TokenTrackingCallback(model=model)],
         )
         self.prompt = ChatPromptTemplate.from_messages([

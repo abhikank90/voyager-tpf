@@ -12,7 +12,7 @@ from anthropic import Anthropic
 
 from agents.base_agent import BaseAgent
 from agents.trip_window import record_nights
-from config import effective_temperature, get_api_config
+from config import effective_temperature, get_api_config, get_settings
 from graph.state import TravelState, TripOption
 from metrics.token_tracker import record_temperature, track_usage
 
@@ -49,7 +49,10 @@ class OptionGeneratorAgent(BaseAgent):
 
     def _setup(self):
         config = get_api_config()
-        self.client = Anthropic(api_key=config.llm.api_key)
+        self.client = Anthropic(
+            api_key=config.llm.api_key,
+            max_retries=get_settings().llm_max_retries,
+        )
         self.model = config.llm.option_generator_model
         self.api_config = config
 

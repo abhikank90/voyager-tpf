@@ -33,6 +33,8 @@ import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
+from anthropic import Anthropic
+
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
@@ -150,6 +152,13 @@ def instability(snapshot: dict) -> list[str]:
     ]
 
 
+def make_client():
+    """Anthropic client with the §8 retry policy (VOYAGER_LLM_MAX_RETRIES)."""
+    from config.settings import get_settings
+
+    return Anthropic(max_retries=get_settings().llm_max_retries)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -162,9 +171,7 @@ def main() -> int:
 
     manifest = load(args.path)
     if args.cmd == "snapshot":
-        from anthropic import Anthropic
-
-        snapshot = take_snapshot(Anthropic(), args.label, configured_models())
+        snapshot = take_snapshot(make_client(), args.label, configured_models())
         manifest["snapshots"].append(snapshot)
         args.path.parent.mkdir(parents=True, exist_ok=True)
         args.path.write_text(json.dumps(manifest, indent=2) + "\n")
