@@ -1,0 +1,825 @@
+{
+  "session_id": "cfe37b94-e6f2-4003-86d6-df6549e283f8",
+  "intent": {
+    "destination": "Greece",
+    "origin": "New York City (NYC)",
+    "budget_usd": 2000.0,
+    "duration_days": null,
+    "travel_month": "June",
+    "travel_year": 2026,
+    "interests": [
+      "beaches",
+      "local food"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Greece under $2000, beaches and local food, summer 2026, flying from NYC"
+  },
+  "selected_flight": {
+    "price_usd": 680,
+    "airline": "UA",
+    "departure": "2027-06-15T08:00:00",
+    "arrival": "2027-06-15T22:30:00",
+    "stops": 1,
+    "duration": "PT14H30M"
+  },
+  "selected_hotel": {
+    "name": "Aegean Bliss Resort, Greece",
+    "price_per_night_usd": 85,
+    "total_usd": 1105,
+    "rating": 4.3,
+    "amenities": [
+      "beach access",
+      "breakfast included",
+      "wifi",
+      "pool"
+    ],
+    "location": "Beachfront"
+  },
+  "experiences": [
+    {
+      "name": "Navagio Beach (Shipwreck Beach) Visit",
+      "description": "Take a boat tour to the iconic Navagio Beach on Zakynthos, one of Greece's most photographed beaches. The stunning turquoise waters, dramatic limestone cliffs, and the famous shipwreck make this an unmissable experience. Boats depart regularly from Porto Vromi or Zakynthos Town.",
+      "cost_usd": 15,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Navagio Beach, Zakynthos Island"
+    },
+    {
+      "name": "Athens Central Market Food Tour",
+      "description": "Explore the vibrant Varvakios Agora (Athens Central Market) and surrounding streets. Sample local cheeses, olives, cured meats, fresh seafood, and traditional street foods like souvlaki and spanakopita. Engage with local vendors and discover authentic Greek flavors that have been traded here for centuries.",
+      "cost_usd": 30,
+      "category": "local food",
+      "best_time_of_day": "morning",
+      "location": "Varvakios Agora, Monastiraki, Athens"
+    },
+    {
+      "name": "Elafonissi Beach Day Trip",
+      "description": "Visit the breathtaking Elafonissi Beach in southwestern Crete, famous for its pink-tinged sand caused by crushed coral and its shallow, crystal-clear lagoon. Wade across the sandbar to the small islet, snorkel in warm waters, and relax in one of Greece's most naturally beautiful coastal settings.",
+      "cost_usd": 20,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Elafonissi Beach, Chania, Crete"
+    },
+    {
+      "name": "Traditional Taverna Dinner in Plaka",
+      "description": "Enjoy a leisurely dinner at a traditional Greek taverna in the historic Plaka neighborhood beneath the Acropolis. Feast on mezedes including tzatziki, grilled octopus, fresh horiatiki salad, lamb kleftiko, and local Assyrtiko wine. Experience the warm Greek hospitality and live bouzouki music in an authentic setting.",
+      "cost_usd": 45,
+      "category": "local food",
+      "best_time_of_day": "evening",
+      "location": "Plaka District, Athens"
+    },
+    {
+      "name": "Mykonos Beach Hopping by ATV",
+      "description": "Rent an ATV and spend a day exploring Mykonos's stunning coastline, hopping between Paradise Beach, Super Paradise Beach, and the quieter Agios Sostis Beach. Each beach offers a different vibe \u2014 from lively beach bars to serene coves with crystal-clear Aegean waters perfect for swimming and snorkeling.",
+      "cost_usd": 55,
+      "category": "beaches",
+      "best_time_of_day": "afternoon",
+      "location": "Paradise Beach & Super Paradise Beach, Mykonos"
+    }
+  ],
+  "weather": {
+    "avg_temp_c": 29,
+    "avg_temp_f": 84,
+    "precipitation_mm": 8,
+    "sunshine_hours": 11,
+    "sea_temp_c": 23,
+    "summary": "Hot and sunny. Sea warm enough for swimming.",
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-06-15",
+    "return": "2027-06-28",
+    "nights": 13,
+    "month": "june",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Greece",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 2210.0,
+      "flight": {
+        "price_usd": 680,
+        "airline": "UA",
+        "departure": "2027-06-15T08:00:00",
+        "arrival": "2027-06-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Greece",
+        "price_per_night_usd": 85,
+        "total_usd": 1105,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "Greece",
+        "style": "budget",
+        "total_cost": 2210.0,
+        "breakdown": {
+          "flight": 680.0,
+          "hotel": 1105.0,
+          "experiences": 0,
+          "food": 325,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "Day 1 - June 15",
+          "morning": "N/A - Flight arrives at 22:30",
+          "afternoon": "N/A - In transit",
+          "evening": "Arrive at Athens International Airport at 22:30. Clear customs, collect luggage, and take the X95 express bus or Metro Line 3 to central Athens (budget-friendly options under \u20ac10). Transfer to Aegean Bliss Resort. Check in, freshen up, and get settled.",
+          "meals": {
+            "breakfast": "N/A - on flight",
+            "lunch": "N/A - on flight",
+            "dinner": "Grab a quick late-night snack from a 24-hour kiosk (periptero) near the hotel \u2014 try a tyropita (cheese pie) or spanakopita for under \u20ac2. Hydrate and rest."
+          },
+          "notes": "Keep arrival night simple. Download offline maps (Google Maps or Maps.me) for Greece before landing. Exchange a small amount of euros at the airport if needed, but ATMs offer better rates. Set an early alarm to make the most of Day 2."
+        },
+        {
+          "day": 2,
+          "date": "Day 2 - June 16",
+          "morning": "Wake up early and take your first walk along the beachfront near Aegean Bliss Resort. Enjoy the warm June morning sun and dip your toes in the Aegean Sea. Explore the immediate coastal area, spot local fishing boats, and photograph the scenery. Settle into the Greek pace of life.",
+          "afternoon": "Head to the nearest local beach (within walking distance of the resort). Spend the afternoon swimming in the warm sea (average 24\u201326\u00b0C in June), sunbathing, and relaxing. Explore any beach-side rock pools or coves nearby. Rent a sun lounger only if budget allows \u2014 otherwise a towel on the sand is perfectly fine.",
+          "evening": "Stroll into the nearest village or town center at sunset (around 8:30 PM in June). Explore the waterfront promenade, browse local shops, and soak in the atmosphere. Find a traditional taverna for dinner.",
+          "meals": {
+            "breakfast": "Simple breakfast at a local bakery (fournos) \u2014 fresh koulouri (sesame bread ring) and Greek coffee for under \u20ac3.",
+            "lunch": "Pack snacks from a nearby mini-market (fruit, bread, local olives, cheese) and enjoy a picnic on the beach \u2014 budget \u20ac4\u20135.",
+            "dinner": "Dinner at a local taverna \u2014 order grilled sardines (sardeles) or moussaka with a village salad and house wine. Expect to spend \u20ac10\u201314 per person."
+          },
+          "notes": "Apply sunscreen generously \u2014 29\u00b0C with direct sun and sea reflection is intense. Buy a large bottle of water from a supermarket (\u20ac0.50) rather than tourist kiosks. Ask hotel staff for their favorite local taverna recommendation."
+        },
+        {
+          "day": 3,
+          "date": "Day 3 - June 17",
+          "morning": "Visit the local morning market (laiki agora) if available in the nearest town \u2014 typically held on specific weekdays. Browse stalls selling fresh fruit, vegetables, olives, honey, and local cheeses. This is a great way to buy affordable, authentic Greek produce and interact with locals.",
+          "afternoon": "Explore a nearby historical or archaeological site accessible by local bus or on foot. Many Greek islands and coastal towns have ancient ruins, Byzantine churches, or Venetian fortresses within easy reach. Admission to many smaller sites is free or under \u20ac5.",
+          "evening": "Return to the beach for a late afternoon swim during the golden hour. The sea is warm and crowds thin out after 6 PM. Watch the sunset from the shoreline \u2014 one of Greece's greatest free experiences.",
+          "meals": {
+            "breakfast": "Greek yogurt with local honey and walnuts from a caf\u00e9 or bought at the market \u2014 \u20ac2\u20133.",
+            "lunch": "Souvlaki wrap (pita gyros) from a local fast-food grill \u2014 filling, delicious, and under \u20ac3.",
+            "dinner": "Try a mezedes (small plates) dinner at a local ouzeri \u2014 order 3\u20134 shared dishes like tzatziki, grilled octopus, fava, and taramasalata with bread and ouzo or local wine. Budget \u20ac12\u201315 per person."
+          },
+          "notes": "Carry a reusable water bottle and refill at hotel. Local buses (KTEL) are very affordable \u2014 typically \u20ac1.50\u2013\u20ac5 for regional routes. Check schedules the night before as they can be infrequent."
+        },
+        {
+          "day": 4,
+          "date": "Day 4 - June 18",
+          "morning": "Take a morning hike or walk along a coastal path near the resort. Greece's coastlines often have scenic trails connecting beaches and coves. Start early (7\u20139 AM) before the heat peaks. Bring water and wear a hat. Discover a hidden or less-crowded beach along the way.",
+          "afternoon": "Spend the afternoon at the secluded beach discovered during the morning walk. Swim, snorkel (bring your own mask if possible \u2014 saves rental cost), and relax. Collect sea glass or shells as free souvenirs.",
+          "evening": "Head back to the resort to shower and rest during the hottest part of the late afternoon. In the evening, explore the local neighborhood on foot \u2014 find a small family-run restaurant away from the tourist strip for a more authentic and affordable meal.",
+          "meals": {
+            "breakfast": "Make your own breakfast with supermarket finds \u2014 local bread, feta cheese, tomatoes, olives, and instant coffee. Budget \u20ac3\u20134.",
+            "lunch": "Bring a packed lunch to the beach \u2014 spanakopita or tiropita from a bakery (\u20ac1.50 each), fruit, and water.",
+            "dinner": "Psarotaverna (fish tavern) dinner \u2014 try fried calamari or grilled sea bream with lemon and olive oil, house salad, and local beer. Budget \u20ac13\u201316 per person."
+          },
+          "notes": "Snorkeling in Greece's clear waters is spectacular even with basic gear. Many budget stores sell affordable masks and snorkels. Avoid restaurants directly on the main tourist promenade \u2014 prices are often 30\u201340% higher."
+        },
+        {
+          "day": 5,
+          "date": "Day 5 - June 19",
+          "morning": "Take a local bus or ferry to a nearby town or village for a day trip. Explore the main square (plateia), visit the local church, and wander through narrow whitewashed alleyways. Visit any free local museum or gallery if available.",
+          "afternoon": "Find the town's main public beach or a recommended nearby beach. Public beaches in Greece are always free. Enjoy swimming and people-watching. Look for a beach-side kiosk selling fresh coconut or cold drinks.",
+          "evening": "Attend a free outdoor event if available (summer festivals, open-air cinema, or live music in the plateia are common in June). Return to the resort by local bus before late evening.",
+          "meals": {
+            "breakfast": "Coffee and a bougatsa (custard or cheese-filled pastry) at a local caf\u00e9 in the day-trip town \u2014 \u20ac3.",
+            "lunch": "Lunch at a local canteen (mageirio) \u2014 these traditional eateries serve daily home-cooked dishes like stifado, pastitsio, or gemista at very low prices. Expect a full meal for \u20ac7\u20139.",
+            "dinner": "Simple dinner back near the resort \u2014 grilled chicken skewers from a grill house with tzatziki and pita. Budget \u20ac8\u201310."
+          },
+          "notes": "Mageiria (traditional canteens) are the best-kept budget secret in Greece \u2014 they serve generous portions of slow-cooked food at local prices. Look for handwritten menus on chalkboards and locals eating inside. Return bus times are critical \u2014 check the last bus schedule before departing."
+        },
+        {
+          "day": 6,
+          "date": "Day 6 - June 20",
+          "morning": "Dedicated beach morning at the resort's beachfront. Arrive early to secure a good spot. Practice swimming, floating, or simply enjoy the crystal-clear Aegean water. June water temperatures are ideal \u2014 around 24\u201325\u00b0C.",
+          "afternoon": "Join a free or low-cost activity \u2014 many beach resorts offer free beach volleyball or organize informal water sports. Alternatively, rent a paddleboard or kayak for 1 hour (\u20ac10\u201315) to explore the coastline from the water.",
+          "evening": "Take a sunset boat trip if a budget option is available locally (group tours can be \u20ac15\u201325). Otherwise, find a clifftop or elevated viewpoint near the resort to watch the sunset with a cold local beer from a mini-market.",
+          "meals": {
+            "breakfast": "Greek frapp\u00e9 coffee and a cheese pie from a local bakery \u2014 \u20ac3.",
+            "lunch": "Beach snack \u2014 fresh watermelon (sold cheaply by vendors on many Greek beaches), bread, and local cheese. Budget \u20ac4.",
+            "dinner": "Cook a simple meal using supermarket ingredients at the hotel if facilities allow \u2014 Greek salad, olives, feta, and local bread is a perfect and cheap dinner. Otherwise, souvlaki shop for \u20ac8\u201310."
+          },
+          "notes": "Watermelon is a Greek summer staple and incredibly refreshing in the heat. Supermarkets sell large slices very cheaply. If renting water sports equipment, always negotiate \u2014 prices are often flexible, especially mid-week."
+        },
+        {
+          "day": 7,
+          "date": "Day 7 - June 21",
+          "morning": "Explore the local fishing harbor (limani) early in the morning when fishermen return with their catch. This is a wonderful, authentic Greek experience. Watch the fish being sorted and sold. Chat with locals if possible \u2014 Greeks are famously warm and welcoming.",
+          "afternoon": "Visit a local olive grove, vineyard, or farm if accessible nearby \u2014 many offer free or very cheap tastings. Alternatively, spend the afternoon exploring a different section of the coastline by foot or local bus.",
+          "evening": "Treat yourself to a slightly nicer dinner to mark the halfway point of the trip \u2014 find a well-reviewed taverna and order the fresh catch of the day. Splurge slightly but still keep it reasonable.",
+          "meals": {
+            "breakfast": "Eggs (strapatsada \u2014 scrambled eggs with tomato) at a local caf\u00e9 \u2014 a hearty Greek breakfast for \u20ac4\u20135.",
+            "lunch": "Fresh seafood from the harbor market \u2014 some vendors sell cooked or grilled items on the spot. Budget \u20ac6\u20138.",
+            "dinner": "Mid-range taverna dinner \u2014 fresh fish of the day, Greek salad, grilled vegetables, and a carafe of local wine. Budget \u20ac18\u201322 per person as a slight treat."
+          },
+          "notes": "The best fish in Greece is always the freshest \u2014 ask what came in that morning. Avoid pre-packaged or frozen fish (often labeled '\u03ba\u03b1\u03c4\u03b5\u03c8\u03c5\u03b3\u03bc\u03ad\u03bd\u03bf' \u2014 katepsygmeno). Fresh fish (\u03c6\u03c1\u03ad\u03c3\u03ba\u03bf \u2014 fresko) is always worth the slight premium."
+        },
+        {
+          "day": 8,
+          "date": "Day 8 - June 22",
+          "morning": "Take a longer day trip by KTEL bus or local ferry to a more distant town, village, or island nearby. Research the most scenic or culturally interesting destination within a 1\u20132 hour travel radius. Spend the morning traveling and arriving.",
+          "afternoon": "Explore the day-trip destination fully \u2014 visit its beach, main attractions, and local market. Grab lunch there and soak in a different local atmosphere.",
+          "evening": "Return to Aegean Bliss Resort by early evening. Rest, shower, and enjoy a quiet evening near the hotel \u2014 perhaps a walk along the beachfront under the stars.",
+          "meals": {
+            "breakfast": "Early light breakfast before departure \u2014 bread, honey, and coffee from the hotel or a nearby bakery. \u20ac2\u20133.",
+            "lunch": "Local specialty of the day-trip destination \u2014 every Greek region has its own food pride. Ask locals what to try. Budget \u20ac8\u201312.",
+            "dinner": "Simple and relaxed dinner near the resort \u2014 a gyros wrap or a small mezedes plate with local wine. Budget \u20ac8\u201310."
+          },
+          "notes": "Research ferry or bus schedules at least the day before and buy tickets early if possible. KTEL buses are reliable and very affordable for inter-city/inter-town travel. Keep a paper or screenshot of return schedules."
+        },
+        {
+          "day": 9,
+          "date": "Day 9 - June 23",
+          "morning": "Slow morning \u2014 sleep in slightly, then enjoy a leisurely breakfast. Take a long walk along the beach collecting thoughts and enjoying the scenery. Visit any local church or chapel along the coast (most are open and free to enter \u2014 dress modestly).",
+          "afternoon": "Spend the afternoon at a beach you haven't visited yet. Greece rewards those who explore \u2014 even a 20-minute walk often reveals a quieter, more beautiful cove. Bring snorkeling gear and explore underwater rocks and sea life.",
+          "evening": "Attend a local cultural event, open-air cinema (therin\u00e1 sinematogr\u00e1fia \u2014 a beloved Greek summer tradition), or simply enjoy the evening promenade (volta) with locals.",
+          "meals": {
+            "breakfast": "Lazy brunch at a caf\u00e9 \u2014 Greek omelette with feta and vegetables, fresh orange juice, and coffee. Budget \u20ac6\u20138.",
+            "lunch": "Picnic on the new beach \u2014 supermarket supplies: hummus, pita, olives, cherry tomatoes, and fruit. Budget \u20ac5.",
+            "dinner": "Try a different cuisine for variety \u2014 many Greek towns have affordable Italian or Middle Eastern options. Or revisit a favorite taverna. Budget \u20ac10\u201313."
+          },
+          "notes": "Open-air cinemas in Greece are a magical summer experience \u2014 films are usually shown in original language with Greek subtitles. Tickets are typically \u20ac6\u20138. Check local listings or ask hotel staff."
+        },
+        {
+          "day": 10,
+          "date": "Day 10 - June 24",
+          "morning": "Early morning swim before the beach gets busy \u2014 the sea is glassy and beautiful in the early hours. Afterward, visit a local bakery for fresh bread and explore any weekly market happening in the area.",
+          "afternoon": "Take a cooking or food-focused activity \u2014 visit a local honey producer, olive oil shop, or spice market. Many offer free tastings. Buy local products as affordable, authentic souvenirs (olive oil, thyme honey, dried herbs, local spirits like tsipouro).",
+          "evening": "Prepare or assemble a Greek feast using locally purchased ingredients \u2014 a mezedes spread of olives, feta, tzatziki (easy to make), fresh bread, and cold cuts. Enjoy it on the hotel balcony or near the beach at sunset.",
+          "meals": {
+            "breakfast": "Fresh bread from the bakery with local honey and butter \u2014 \u20ac2\u20133.",
+            "lunch": "Loukoumades (Greek honey doughnuts) from a street vendor as a sweet treat \u2014 \u20ac3. Plus fresh fruit.",
+            "dinner": "DIY mezedes feast assembled from local market purchases \u2014 budget \u20ac10\u201312 total for a generous spread."
+          },
+          "notes": "Greek honey (especially thyme honey from the islands) and olive oil make the best budget souvenirs \u2014 they're authentic, locally produced, and far cheaper than airport shops. Stock up at local markets or directly from producers."
+        },
+        {
+          "day": 11,
+          "date": "Day 11 - June 25",
+          "morning": "Visit any nearby ancient ruins, archaeological site, or historical landmark that hasn't been explored yet. Many smaller sites in Greece have free or very low admission. Bring water and a hat for the morning heat.",
+          "afternoon": "Return to the beach for a final extended swim session. Try to visit the clearest water spot you've discovered during the trip. Enjoy the warm Aegean one more time with no agenda.",
+          "evening": "Explore the local nightlife gently \u2014 Greek evenings are lively in summer. Find a rooftop bar or a seaside caf\u00e9 for a local cocktail (try an Aperol Spritz or a local tsipouro with meze). Enjoy the warm night air.",
+          "meals": {
+            "breakfast": "Coffee and pastry at a local caf\u00e9 with a view \u2014 \u20ac3\u20134.",
+            "lunch": "Grilled corn from a street vendor (a Greek summer staple) plus a souvlaki \u2014 budget \u20ac4\u20135.",
+            "dinner": "Return to your favorite taverna of the trip for a farewell-style dinner \u2014 order your favorite dishes and enjoy the atmosphere. Budget \u20ac12\u201315."
+          },
+          "notes": "Greek evenings don't start until late \u2014 dinner rarely begins before 9 PM for locals. Embrace the late schedule and enjoy the cooler evening temperatures for dining and socializing."
+        },
+        {
+          "day": 12,
+          "date": "Day 12 - June 26",
+          "morning": "Final full beach morning \u2014 arrive at sunrise if possible for a magical, crowd-free experience. Take photos, swim, and reflect on the trip. Collect any last memories of the Aegean.",
+          "afternoon": "Spend the afternoon doing any last-minute exploration, souvenir shopping at local markets (avoid tourist trap shops), or revisiting a favorite spot. Pack any non-essential items to make the final morning easier.",
+          "evening": "Final dinner in Greece \u2014 make it special but still budget-conscious. Find the best-reviewed local taverna and order a full Greek spread: mezedes, main course, dessert (galaktoboureko or baklava), and local wine or ouzo.",
+          "meals": {
+            "breakfast": "Sunrise breakfast on the beach if possible \u2014 yogurt, honey, and fresh fruit from the supermarket. \u20ac3\u20134.",
+            "lunch": "Light lunch \u2014 fresh salad, bread, and grilled halloumi at a beach caf\u00e9. Budget \u20ac8\u201310.",
+            "dinner": "Celebratory final dinner \u2014 full Greek taverna experience with mezedes, fresh fish or grilled meat, dessert, and wine. Budget \u20ac20\u201325 per person as a final treat."
+          },
+          "notes": "Buy any remaining local food souvenirs today \u2014 vacuum-packed olives, local wine, and packaged Greek products are allowed in carry-on or checked luggage. Keep receipts for customs if needed. Confirm departure logistics with hotel staff."
+        },
+        {
+          "day": 13,
+          "date": "Day 13 - June 27",
+          "morning": "Wake up early for a final quick swim if time allows \u2014 nothing beats a last dip in the Aegean. Check out of Aegean Bliss Resort. Store luggage at the hotel if checkout is before your transfer.",
+          "afternoon": "Head to the airport or ferry port for departure. Take the budget transport option (bus or metro) used on arrival. Arrive at the airport at least 2.5\u20133 hours before international departure. Browse duty-free for any last Greek treats (Greek coffee, mastiha products, or local spirits).",
+          "evening": "Departure. Reflect on 13 days of Greek beaches, incredible food, warm seas, and authentic local experiences \u2014 all on a budget.",
+          "meals": {
+            "breakfast": "Final Greek breakfast \u2014 a proper caf\u00e9 stop near the hotel for coffee, fresh orange juice, and a cheese pie. \u20ac4\u20135.",
+            "lunch": "Airport meal or use up remaining euros on a final souvlaki near the airport. Budget \u20ac6\u20138.",
+            "dinner": "In-flight meal or airport food depending on departure time."
+          },
+          "notes": "Keep \u20ac20\u201330 in cash for transport to the airport and any last-minute expenses. Check in online the night before to save time. Greece's departure tax is included in most ticket prices. \u039a\u03b1\u03bb\u03cc \u03c4\u03b1\u03be\u03af\u03b4\u03b9 \u2014 Have a great journey!"
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City (NYC)+to+Greece+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Greece&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "Save $-710 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Greece Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 2405.0,
+      "flight": {
+        "price_usd": 680,
+        "airline": "UA",
+        "departure": "2027-06-15T08:00:00",
+        "arrival": "2027-06-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Greece",
+        "price_per_night_usd": 85,
+        "total_usd": 1105,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "Greece",
+        "style": "balanced",
+        "total_cost": 2405.0,
+        "breakdown": {
+          "flight": 680.0,
+          "hotel": 1105.0,
+          "experiences": 0,
+          "food": 520,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15",
+          "morning": "No activities scheduled \u2014 late night arrival",
+          "afternoon": "No activities scheduled \u2014 late night arrival",
+          "evening": "Arrive at Athens International Airport at 22:30 on flight UA. Clear customs, collect luggage, and arrange pre-booked transfer or taxi to Aegean Bliss Resort. Check in, freshen up, and get oriented with the property.",
+          "meals": {
+            "breakfast": "Not applicable",
+            "lunch": "Not applicable",
+            "dinner": "Light snack from airport or a small mezze plate at the hotel bar upon arrival if still serving"
+          },
+          "notes": "Keep Day 1 very light. Pre-arrange airport transfer in advance to avoid delays at night. Confirm hotel check-in details since arrival is after 22:00. Pack a snack for the flight in case you're hungry on arrival."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16",
+          "morning": "Sleep in and recover from travel. Enjoy a leisurely breakfast at the resort. Take a slow walk along the beachfront promenade to get your bearings, breathe in the sea air, and enjoy the stunning morning views of the Aegean.",
+          "afternoon": "Spend the afternoon settling into beach life \u2014 claim a sun lounger on the resort's beachfront, take your first dip in the warm Aegean Sea (water temperature around 24\u201325\u00b0C), and simply decompress from travel. Explore the immediate resort area and nearby beach shops.",
+          "evening": "Head into the nearest local village for a relaxed first dinner out. Stroll the waterfront, browse small shops, and soak in the Greek evening atmosphere as the sun sets over the sea.",
+          "meals": {
+            "breakfast": "Full buffet breakfast at Aegean Bliss Resort \u2014 fresh fruit, Greek yogurt with honey, eggs, and pastries",
+            "lunch": "Casual lunch at a beach taverna near the resort \u2014 try a Greek salad, grilled calamari, and fresh bread with olive oil (\u20ac15\u201320 per person)",
+            "dinner": "Dinner at a local waterfront taverna in the village \u2014 order fresh grilled fish of the day, tzatziki, and a carafe of local house wine (\u20ac25\u201335 per person)"
+          },
+          "notes": "Don't overplan this day \u2014 your body needs to adjust to the time zone and travel fatigue. Apply sunscreen generously as the Greek sun at 29\u00b0C can be intense even in the late afternoon."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17",
+          "morning": "Early morning swim at the beach before the crowds arrive \u2014 the sea is calm and crystal clear in the mornings. After your swim, visit a local bakery (fournos) for a traditional breakfast of spanakopita (spinach pie) or tiropita (cheese pie) with a Greek coffee.",
+          "afternoon": "Explore a nearby historic site or ancient ruins within day-trip distance from the resort. Visit a local archaeological museum or Byzantine church to get a taste of Greek history and culture between beach sessions.",
+          "evening": "Return to the resort for a sunset swim, then enjoy dinner at a slightly more upscale local restaurant. Try dishes that go beyond the tourist menu \u2014 ask the waiter for the daily specials.",
+          "meals": {
+            "breakfast": "Tiropita or spanakopita with Greek coffee at a local bakery (\u20ac4\u20136 per person)",
+            "lunch": "Packed picnic from a local deli or supermarket \u2014 olives, feta, fresh bread, tomatoes, and cold cuts eaten at a scenic viewpoint (\u20ac8\u201310 per person)",
+            "dinner": "Mid-range taverna dinner \u2014 moussaka, slow-braised lamb, village salad, and local Assyrtiko white wine (\u20ac28\u201338 per person)"
+          },
+          "notes": "Wear comfortable walking shoes for the afternoon sightseeing. Carry water as temperatures can reach 29\u00b0C and dehydration is common. Most archaeological sites are open from 08:00\u201320:00 in June."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18",
+          "morning": "Rent a scooter or join a small group jeep tour to explore hidden coves and secluded beaches in the surrounding area that are not easily accessible on foot. Pack a bag with towel, snacks, and sunscreen.",
+          "afternoon": "Find a quiet, less-touristed beach discovered on the morning exploration. Spend the afternoon swimming, snorkeling in the clear Aegean waters, and relaxing on the sand. Look for sea urchins and small fish in the rocky shallows.",
+          "evening": "Back at the resort, shower and change, then head to a local ouzeri (ouzo bar) for pre-dinner drinks and mezedes (small sharing plates). Experience the Greek tradition of slow, social eating.",
+          "meals": {
+            "breakfast": "Greek yogurt with local thyme honey, walnuts, and seasonal fruit at the resort restaurant",
+            "lunch": "Fresh seafood at a small fishing village taverna near the hidden cove \u2014 grilled octopus, shrimp saganaki, and house salad (\u20ac20\u201328 per person)",
+            "dinner": "Ouzeri experience \u2014 order a carafe of ouzo or tsipouro and share 6\u20138 mezedes including dolmades, taramosalata, grilled sardines, and fried zucchini (\u20ac22\u201330 per person)"
+          },
+          "notes": "Book scooter or jeep rental the day before. Always wear a helmet if renting a scooter. The ouzeri tradition involves eating slowly and sharing \u2014 embrace the pace and don't rush."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-19",
+          "morning": "Take a morning boat trip or ferry excursion to a nearby island or sea cave. Many resorts in Greece offer half-day boat tours departing around 09:00 that include swimming stops at sea caves and secluded bays.",
+          "afternoon": "Continue the boat excursion or return and spend the afternoon at the resort pool or beach with a good book. This is a perfect mid-trip rest afternoon to avoid burnout.",
+          "evening": "Cooking class or food tour in the local village. Learn to make traditional Greek dishes like spanakopita, tzatziki, and baklava with a local host. This is a wonderful way to connect with the food culture.",
+          "meals": {
+            "breakfast": "Early light breakfast at the resort before the boat trip \u2014 yogurt, fruit, and coffee",
+            "lunch": "Lunch on the boat or at a taverna on the island stop \u2014 fresh fish, salad, and cold beer (\u20ac18\u201325 per person, sometimes included in boat tour price)",
+            "dinner": "Enjoy the dishes you cooked in the cooking class as your dinner, paired with local wine (cooking class typically \u20ac55\u201375 per person including food and wine)"
+          },
+          "notes": "Book the boat excursion at least 2 days in advance through the hotel concierge or a local tour operator. Book the cooking class in advance online \u2014 they fill up quickly in June. Bring motion sickness tablets if you're sensitive on boats."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-20",
+          "morning": "Visit a local weekly market (laiki agora) if one is operating nearby. Browse stalls selling fresh produce, local cheeses, olives, honey, herbs, and handmade goods. This is an authentic slice of Greek daily life and perfect for picking up local food souvenirs.",
+          "afternoon": "Head to one of the area's most scenic or popular beaches for a full afternoon of swimming and sunbathing. Rent a paddleboard or kayak from a beach vendor for some active fun on the water.",
+          "evening": "Sunset cocktails at a clifftop bar or rooftop terrace with panoramic sea views, then dinner at a restaurant specializing in fresh seafood \u2014 ideally one where you can see the day's catch displayed at the entrance.",
+          "meals": {
+            "breakfast": "Street food breakfast from the market \u2014 fresh bread, local cheese, olives, and a coffee from a market vendor (\u20ac5\u20138 per person)",
+            "lunch": "Light lunch at a beach snack bar \u2014 club sandwich, fresh juice, or a toasted pita with gyros (\u20ac10\u201314 per person)",
+            "dinner": "Fresh seafood restaurant \u2014 whole grilled sea bream or sea bass, grilled vegetables, and a bottle of local white wine (\u20ac35\u201345 per person)"
+          },
+          "notes": "Check local market days with the hotel concierge as they vary by location and day of the week. Bring a reusable bag to the market. Paddleboard and kayak rentals typically cost \u20ac10\u201315 per hour."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-21",
+          "morning": "Mid-trip slower morning \u2014 sleep in, enjoy a long resort breakfast, and then take a gentle yoga session on the beach if the resort offers one (many beachfront resorts do). Alternatively, take a peaceful morning walk along the coastal path.",
+          "afternoon": "Visit a nearby traditional Greek village inland \u2014 away from the beach crowds. Explore narrow whitewashed alleyways, visit a small Orthodox church, and chat with locals. Pick up local honey, olive oil, or herbs as gifts.",
+          "evening": "Return to the beachfront for a classic Greek taverna dinner as the sun sets. Tonight, try dishes you haven't yet eaten \u2014 perhaps pastitsio, stifado (beef stew), or fresh mussels.",
+          "meals": {
+            "breakfast": "Long leisurely breakfast at the resort \u2014 full spread with eggs made to order, fresh pastries, and fresh-squeezed orange juice",
+            "lunch": "Traditional kafeneion (Greek coffee house) lunch in the inland village \u2014 simple mezedes, local wine, and village bread (\u20ac12\u201316 per person)",
+            "dinner": "Beachfront taverna at sunset \u2014 pastitsio or stifado, Greek salad, and local red wine from the barrel (\u20ac25\u201332 per person)"
+          },
+          "notes": "Day 7 is intentionally slower \u2014 a mid-trip reset is important for a 13-day journey. The inland village visit offers great contrast to the beach-heavy days and gives a more complete picture of Greek life."
+        },
+        {
+          "day": 8,
+          "date": "2027-06-22",
+          "morning": "Early morning snorkeling excursion at a rocky reef or marine area near the resort. Rent snorkel gear from a local dive shop or beach vendor and explore the underwater world \u2014 look for octopus, sea bream, and colorful sea life.",
+          "afternoon": "Visit a local winery or olive oil producer for a tasting tour. Many Greek islands and coastal regions have small family-run wineries offering tours and tastings of indigenous grape varieties like Assyrtiko, Moschofilero, or Agiorgitiko.",
+          "evening": "Wine and food pairing dinner at the winery restaurant or a nearby farm-to-table restaurant using hyper-local ingredients. This is a highlight dining experience for food lovers.",
+          "meals": {
+            "breakfast": "Light breakfast before snorkeling \u2014 coffee, fruit, and a croissant at a caf\u00e9 near the beach",
+            "lunch": "Winery or olive farm lunch \u2014 mezedes, local cheeses, charcuterie, fresh bread, and olive oil tasting paired with wines (\u20ac20\u201330 per person, sometimes included in tour)",
+            "dinner": "Farm-to-table restaurant near the winery \u2014 seasonal Greek cuisine with locally sourced ingredients and regional wine pairings (\u20ac35\u201348 per person)"
+          },
+          "notes": "Book the winery tour in advance \u2014 many small Greek wineries require reservations. Snorkel gear rental is typically \u20ac8\u201312 per day. Designate a non-drinking member of the group to drive if you rented a scooter or car."
+        },
+        {
+          "day": 9,
+          "date": "2027-06-23",
+          "morning": "Take a day trip to a nearby island or peninsula that requires a short ferry or boat ride. Spend the morning on the ferry enjoying the sea views and arriving at the destination refreshed.",
+          "afternoon": "Explore the day-trip destination \u2014 visit its main town, beaches, and any notable landmarks. Swim at a beach that's different in character from your home base (perhaps a black sand beach, a lagoon, or a dramatic cliff-backed cove).",
+          "evening": "Dinner at the day-trip destination before catching the return ferry, or return in time for dinner at a new restaurant near the resort that you've been curious about.",
+          "meals": {
+            "breakfast": "Quick breakfast at the port before boarding the ferry \u2014 coffee and a bougatsa (custard pastry) from a port-side caf\u00e9 (\u20ac4\u20136 per person)",
+            "lunch": "Lunch at a taverna on the day-trip island \u2014 fresh catch of the day, horta (wild greens), and local wine (\u20ac22\u201330 per person)",
+            "dinner": "Try a restaurant you've passed but haven't visited yet near the resort \u2014 perhaps a mezedopoleio (mezze restaurant) for a shared feast (\u20ac25\u201335 per person)"
+          },
+          "notes": "Check ferry schedules carefully and buy return tickets in advance in June as boats can sell out. Bring a light jacket for the ferry ride as sea breezes can be cool even in summer. Keep an eye on the last return ferry time."
+        },
+        {
+          "day": 10,
+          "date": "2027-06-24",
+          "morning": "Beach morning at a new spot \u2014 ask locals or the hotel concierge for their personal favorite beach that tourists often miss. Arrive early to get the best spot before the midday sun brings more visitors.",
+          "afternoon": "Afternoon siesta in true Greek style \u2014 rest at the hotel during the hottest part of the day (14:00\u201317:00), then re-energize with a late afternoon swim as the sun becomes less intense and the light turns golden.",
+          "evening": "Explore the local nightlife and evening culture. Greeks eat late \u2014 dinner at 21:00 or later is normal. After dinner, stroll the waterfront, stop for a freddo espresso or frappe, and enjoy the lively evening atmosphere.",
+          "meals": {
+            "breakfast": "Greek breakfast at a local caf\u00e9 \u2014 feta omelette, village bread, tomatoes, olives, and strong Greek coffee (\u20ac8\u201312 per person)",
+            "lunch": "Beach snacks and cold drinks from a beach vendor \u2014 save your appetite for a big dinner later",
+            "dinner": "Late dinner at a traditional psarotaverna (fish taverna) \u2014 mixed seafood platter, taramasalata, and chilled local beer or wine (\u20ac30\u201340 per person)"
+          },
+          "notes": "Embracing the Greek siesta rhythm is one of the best ways to experience local culture authentically. The golden hour light between 17:00\u201319:00 is also the best time for beach photos."
+        },
+        {
+          "day": 11,
+          "date": "2027-06-25",
+          "morning": "Join a guided hiking or nature walk along a coastal trail or through a scenic gorge near the resort area. Many Greek coastal regions have marked trails with stunning sea views and interesting flora. Start early before the heat peaks.",
+          "afternoon": "After the hike, reward yourself with a long beach afternoon \u2014 swimming, reading, and relaxing. Visit a local spa or wellness center near the resort for a traditional Greek massage or treatment if you're feeling the need for recovery.",
+          "evening": "Farewell-style special dinner at one of the best-rated restaurants in the area \u2014 choose somewhere with a strong reputation for authentic Greek cuisine. Order generously and treat yourself to a nice bottle of Greek wine.",
+          "meals": {
+            "breakfast": "Energy-boosting breakfast before the hike \u2014 eggs, whole grain bread, honey, nuts, and coffee at the resort",
+            "lunch": "Post-hike taverna lunch \u2014 grilled lamb chops (paidakia), roasted potatoes, and a cold Mythos beer (\u20ac18\u201325 per person)",
+            "dinner": "Top-rated local restaurant \u2014 lamb kleftiko, grilled vegetables, artisan bread, and a bottle of Nemea red wine (\u20ac38\u201350 per person)"
+          },
+          "notes": "Wear sturdy shoes and carry 1.5\u20132 liters of water per person for the hike. Start no later than 08:00 to avoid peak heat. Book the evening restaurant in advance as the best places fill up quickly in June."
+        },
+        {
+          "day": 12,
+          "date": "2027-06-26",
+          "morning": "Final full beach morning \u2014 return to your favorite beach of the trip for one last long swim. Take time to really absorb the colors of the Aegean, the smell of the sea, and the warmth of the Greek sun.",
+          "afternoon": "Last-minute souvenir shopping in the local village \u2014 pick up Greek olive oil, local honey, dried herbs, ceramic goods, evil eye jewelry, or handmade leather sandals. Visit any spots you haven't yet explored.",
+          "evening": "Sunset boat cruise if available (many operators offer evening sunset cruises with drinks and music), followed by a final dinner at your favorite restaurant of the trip \u2014 revisit the best meal you had.",
+          "meals": {
+            "breakfast": "Splurge on a nice final resort breakfast \u2014 order everything you love from the menu",
+            "lunch": "Light lunch at a beachside caf\u00e9 \u2014 fresh fruit salad, a club sandwich, and fresh lemonade (\u20ac12\u201316 per person)",
+            "dinner": "Return to your favorite restaurant of the trip for a nostalgic final dinner \u2014 order the dishes that made it memorable and toast to the trip with Greek wine (\u20ac30\u201345 per person)"
+          },
+          "notes": "Book the sunset cruise in advance. Do any last-minute laundry or packing tonight. Set aside any food souvenirs that need to be packed carefully \u2014 olive oil and honey should go in checked luggage."
+        },
+        {
+          "day": 13,
+          "date": "2027-06-27",
+          "morning": "Final morning \u2014 wake up early for one last sunrise walk along the beach. Take photos, collect a small stone or shell as a memento, and say goodbye to the Aegean Sea. Enjoy a relaxed final breakfast at the resort.",
+          "afternoon": "Check out of Aegean Bliss Resort. Depending on your departure flight time, either head directly to the airport or store luggage at the hotel and enjoy a final few hours in the area. Visit a local caf\u00e9 for one last Greek coffee.",
+          "evening": "Depart Greece with wonderful memories, a sun-kissed glow, and a suitcase full of local food treasures. Reflect on the highlights of the 13-day journey.",
+          "meals": {
+            "breakfast": "Final Greek breakfast at the resort \u2014 savor every bite of the yogurt with honey, fresh fruit, and strong coffee",
+            "lunch": "Light lunch at the airport or a caf\u00e9 near the hotel before departure \u2014 a gyros wrap or cheese pie for the road (\u20ac6\u201310 per person)",
+            "dinner": "Airport or in-flight meal depending on departure time"
+          },
+          "notes": "Confirm checkout time with the hotel (typically 11:00\u201312:00). Ask the hotel to store luggage if your flight is in the evening. Allow extra time for airport transfers and security in summer \u2014 Greek airports can be busy in June. Keep your travel documents, valuables, and any fragile food souvenirs in your carry-on."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City (NYC)+to+Greece+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Greece&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "Best value for money",
+        "4.3\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "$405 over budget",
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Greece Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 2775.0,
+      "flight": {
+        "price_usd": 680,
+        "airline": "UA",
+        "departure": "2027-06-15T08:00:00",
+        "arrival": "2027-06-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Greece",
+        "price_per_night_usd": 85,
+        "total_usd": 1105,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [
+        {
+          "name": "Navagio Beach (Shipwreck Beach) Visit",
+          "description": "Take a boat tour to the iconic Navagio Beach on Zakynthos, one of Greece's most photographed beaches. The stunning turquoise waters, dramatic limestone cliffs, and the famous shipwreck make this an unmissable experience. Boats depart regularly from Porto Vromi or Zakynthos Town.",
+          "cost_usd": 15,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Navagio Beach, Zakynthos Island"
+        },
+        {
+          "name": "Athens Central Market Food Tour",
+          "description": "Explore the vibrant Varvakios Agora (Athens Central Market) and surrounding streets. Sample local cheeses, olives, cured meats, fresh seafood, and traditional street foods like souvlaki and spanakopita. Engage with local vendors and discover authentic Greek flavors that have been traded here for centuries.",
+          "cost_usd": 30,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Varvakios Agora, Monastiraki, Athens"
+        },
+        {
+          "name": "Elafonissi Beach Day Trip",
+          "description": "Visit the breathtaking Elafonissi Beach in southwestern Crete, famous for its pink-tinged sand caused by crushed coral and its shallow, crystal-clear lagoon. Wade across the sandbar to the small islet, snorkel in warm waters, and relax in one of Greece's most naturally beautiful coastal settings.",
+          "cost_usd": 20,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Elafonissi Beach, Chania, Crete"
+        },
+        {
+          "name": "Traditional Taverna Dinner in Plaka",
+          "description": "Enjoy a leisurely dinner at a traditional Greek taverna in the historic Plaka neighborhood beneath the Acropolis. Feast on mezedes including tzatziki, grilled octopus, fresh horiatiki salad, lamb kleftiko, and local Assyrtiko wine. Experience the warm Greek hospitality and live bouzouki music in an authentic setting.",
+          "cost_usd": 45,
+          "category": "local food",
+          "best_time_of_day": "evening",
+          "location": "Plaka District, Athens"
+        }
+      ],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "Greece",
+        "style": "premium",
+        "total_cost": 2775.0,
+        "breakdown": {
+          "flight": 680.0,
+          "hotel": 1105.0,
+          "experiences": 110.0,
+          "food": 780,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15 (Monday)",
+          "morning": "No activities scheduled \u2014 flight arrives at 22:30",
+          "afternoon": "No activities scheduled \u2014 in transit",
+          "evening": "Arrive at Athens International Airport at 22:30. Private luxury transfer arranged to Aegean Bliss Resort. Check-in, unwind with a welcome drink at the resort bar, and settle into your beachfront suite.",
+          "meals": {
+            "breakfast": "On the flight or at the airport",
+            "lunch": "On the flight or at the airport",
+            "dinner": "Light late-night mezze platter and chilled local white wine at the resort's 24-hour lounge upon arrival"
+          },
+          "notes": "Pre-arrange a private airport transfer with the resort concierge before departure. Request a late check-in amenity such as chilled champagne and fruit in your suite. Keep this night low-key to recover from travel fatigue."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16 (Tuesday)",
+          "morning": "Leisurely breakfast at the resort's beachfront restaurant, then spend the morning exploring the resort's private beach. Enjoy a refreshing morning swim in the warm Aegean Sea, followed by a relaxing sunbathing session on a premium sunlounger with dedicated beach butler service.",
+          "afternoon": "Embark on a guided snorkeling excursion arranged by the resort, exploring the crystal-clear waters and vibrant marine life just off the beachfront. Return for a spa treatment \u2014 opt for a traditional Greek olive oil massage at the resort's luxury spa to ease travel fatigue.",
+          "evening": "Sunset cocktails at the resort's clifftop or poolside bar. Enjoy a premium dinner at the resort's signature fine-dining restaurant, sampling modern Greek cuisine with fresh local seafood and regional wines.",
+          "meals": {
+            "breakfast": "Full Greek breakfast buffet at the resort's beachfront restaurant \u2014 fresh pastries, local honey, feta, olives, eggs, and freshly squeezed orange juice",
+            "lunch": "Light beach club lunch \u2014 grilled octopus, Greek salad, and a chilled glass of Assyrtiko white wine from Santorini",
+            "dinner": "Signature restaurant at Aegean Bliss Resort \u2014 tasting menu featuring grilled sea bream, lobster pasta, and local desserts paired with premium Greek wines"
+          },
+          "notes": "This day is intentionally relaxed to allow full recovery from travel. Confirm all upcoming excursion bookings with the resort concierge today."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17 (Wednesday)",
+          "morning": "Athens Central Market Food Tour \u2014 depart from the resort by private car to Athens. Explore the vibrant Varvakios Agora (Athens Central Market) with a knowledgeable local guide. Sample artisan cheeses, cured meats, fresh spices, olives, and pastries while learning about Greek culinary traditions.",
+          "afternoon": "After the market tour, visit the historic Plaka neighborhood for a leisurely afternoon stroll. Browse boutique shops for high-quality Greek products \u2014 local honey, olive oil, and handcrafted ceramics. Visit the Roman Agora and Tower of the Winds nearby.",
+          "evening": "Traditional Taverna Dinner in Plaka \u2014 enjoy a long, leisurely dinner at a top-rated traditional Greek taverna beneath the Acropolis. Savor classic dishes like slow-roasted lamb, spanakopita, and baklava, accompanied by local retsina or an aged Nemea red wine.",
+          "meals": {
+            "breakfast": "At the resort before departure \u2014 Greek yogurt with thyme honey, walnuts, and a selection of fresh fruits",
+            "lunch": "Tastings throughout the Athens Central Market Food Tour serve as a generous and authentic lunch experience",
+            "dinner": "Traditional Taverna Dinner in Plaka \u2014 premium mezze spread followed by slow-cooked lamb kleftiko and local wine pairings"
+          },
+          "notes": "Private round-trip car transfer from resort to Athens is recommended. The market tour is best enjoyed on an empty stomach. Book the Plaka taverna reservation in advance to secure an outdoor table with Acropolis views."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18 (Thursday)",
+          "morning": "Private yacht charter departure from the nearest marina. Sail along the stunning coastline, stopping at secluded coves and sea caves only accessible by boat. Swim and snorkel in pristine turquoise waters with full onboard amenities including a captain and crew.",
+          "afternoon": "Continue the private yacht excursion \u2014 anchor at a hidden beach for a gourmet onboard lunch prepared by the yacht's private chef. Enjoy sunbathing on deck, paddleboarding, and swimming in the warm Aegean. Return to the marina by late afternoon.",
+          "evening": "Back at the resort, freshen up and head to the resort's rooftop terrace or beach bar for sunset aperitifs. Enjoy a relaxed dinner at the resort's seafood-focused restaurant, featuring the day's freshest catch.",
+          "meals": {
+            "breakfast": "Early breakfast at the resort before marina departure \u2014 eggs Benedict, smoked salmon, and fresh-pressed juices",
+            "lunch": "Gourmet onboard lunch prepared by the yacht's private chef \u2014 fresh grilled fish, lobster, seasonal salads, and chilled ros\u00e9 wine",
+            "dinner": "Resort seafood restaurant \u2014 whole grilled Mediterranean sea bass, saffron risotto with local clams, and a Cretan dessert platter"
+          },
+          "notes": "Book the private yacht charter at least 2\u20133 days in advance through the resort concierge. Apply high-SPF sunscreen generously and bring a hat and sunglasses for the full day at sea. Temperatures on the water can feel intense under direct sun."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-19 (Friday)",
+          "morning": "Morning at leisure \u2014 enjoy a slow start with breakfast on your private balcony or terrace overlooking the sea. Follow with a yoga or meditation session on the beach, available through the resort's wellness program. Take a long, peaceful swim in the calm morning waters.",
+          "afternoon": "Visit a nearby traditional Greek village by private car. Explore narrow whitewashed alleys, visit a local olive oil producer or winery for a private tasting, and interact with locals to get an authentic feel for Greek island life away from tourist crowds.",
+          "evening": "Return to the resort for a private in-suite or beach dining experience \u2014 arrange with the resort's butler service for a romantic candlelit dinner set up directly on the beach with personalized menu and dedicated service.",
+          "meals": {
+            "breakfast": "In-suite private breakfast on your balcony \u2014 freshly baked bread, local marmalades, charcuterie, poached eggs, and Nespresso or Greek mountain tea",
+            "lunch": "At the village \u2014 mezze lunch at a small family-run taverna, featuring homemade tzatziki, grilled halloumi, stuffed vine leaves, and local draft wine",
+            "dinner": "Private beach dinner arranged by the resort butler \u2014 grilled lobster, truffle pasta, and a bottle of premium Santorini Assyrtiko under the stars"
+          },
+          "notes": "This is an ideal rest and immersion day. Ask the resort concierge to arrange the private beach dinner setup at least 24 hours in advance. The village visit is a wonderful opportunity to purchase authentic local products directly from producers."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-20 (Saturday)",
+          "morning": "Fly or take a high-speed ferry to Zakynthos (Zante). Check into a premium suite or villa at a luxury resort on the island. Freshen up and head to one of Zakynthos's lesser-known beaches for a quiet morning swim and exploration.",
+          "afternoon": "Navagio Beach (Shipwreck Beach) Visit \u2014 board a private or small-group luxury boat tour from Porto Vromi or Zakynthos Town. Arrive at the iconic Navagio Beach, set within towering limestone cliffs. Swim in the electric-blue waters beside the famous shipwreck, explore sea caves, and take in the breathtaking scenery.",
+          "evening": "Return to Zakynthos Town for the evening. Stroll the elegant Venetian-influenced waterfront, browse local shops, and enjoy a premium dinner at a top-rated restaurant overlooking the harbor.",
+          "meals": {
+            "breakfast": "At the Aegean Bliss Resort before departure \u2014 continental spread with local pastries, cold cuts, and fresh fruit",
+            "lunch": "Onboard the boat during the Navagio excursion \u2014 packed gourmet picnic with local cheeses, charcuterie, fruit, and chilled white wine",
+            "dinner": "Upscale harborfront restaurant in Zakynthos Town \u2014 fresh grilled swordfish, local Zakynthian salad with capers, and a bottle of Robola wine from Kefalonia"
+          },
+          "notes": "Navagio Beach can only be accessed by boat \u2014 no land access exists. Book the boat tour in advance, especially on weekends. The beach is most photogenic in the morning light before large tour boats arrive. Bring waterproof sandals as the shore is pebbly."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-21 (Sunday)",
+          "morning": "Explore Zakynthos's Blue Caves on the northern tip of the island \u2014 a private speedboat tour allows you to glide into the stunning sea caves where sunlight refracts through the water creating brilliant blue and turquoise hues. Snorkel in the surrounding crystal waters.",
+          "afternoon": "Visit Keri Lake and the southern cliffs of Zakynthos for panoramic views. Stop at a local honey farm or olive grove for a private tasting session. Return to the resort for an afternoon spa treatment \u2014 try a Greek-inspired seaweed or sea salt body scrub.",
+          "evening": "Sunset at the Bohali Venetian Castle above Zakynthos Town \u2014 one of the most spectacular sunset viewpoints on the island. Enjoy evening drinks at a rooftop or terrace bar in town before a leisurely dinner at a fine taverna.",
+          "meals": {
+            "breakfast": "At the Zakynthos resort \u2014 full Greek breakfast with local Zakynthian mandolato nougat, fresh pastries, and honey",
+            "lunch": "Seaside lunch at a cliffside restaurant near Keri \u2014 grilled calamari, dakos salad, and chilled local ros\u00e9",
+            "dinner": "Fine dining at a top Zakynthos restaurant \u2014 lamb chops with rosemary and lemon, moussaka reinvented with premium ingredients, and local dessert wine"
+          },
+          "notes": "The Blue Caves are best visited in the morning when sunlight penetrates the water most vividly. Wear light, breathable clothing for the castle visit as the hilltop can be exposed to sun and wind."
+        },
+        {
+          "day": 8,
+          "date": "2027-06-22 (Monday)",
+          "morning": "Fly from Zakynthos to Crete (Heraklion or Chania Airport). Private luxury transfer to your premium beachfront accommodation in southwestern Crete, ideally near Chania for proximity to Elafonissi. Check in and enjoy a refreshing welcome drink.",
+          "afternoon": "Explore the charming old town of Chania \u2014 walk through the Venetian harbor, visit the lighthouse, and browse the covered market for local Cretan specialties including extra virgin olive oil, thyme honey, and herbal teas. Visit a high-end local deli for premium Cretan products.",
+          "evening": "Dinner at one of Chania's finest restaurants in the old town, ideally with a table overlooking the Venetian harbor. Savor authentic Cretan cuisine \u2014 known as one of the pillars of the Mediterranean diet.",
+          "meals": {
+            "breakfast": "Light breakfast at the Zakynthos resort before departure",
+            "lunch": "Mezze lunch at a traditional Cretan kafeneion near the Chania market \u2014 dakos, graviera cheese, Cretan sausage, and local raki",
+            "dinner": "Premium restaurant at Chania's Venetian harbor \u2014 slow-braised Cretan goat with wild herbs, handmade pasta with local cheese, and aged Cretan Vidiano white wine"
+          },
+          "notes": "Flights between Greek islands often connect through Athens \u2014 allow adequate layover time. Confirm your Crete accommodation has arranged a private airport transfer. Chania's old town is best explored on foot."
+        },
+        {
+          "day": 9,
+          "date": "2027-06-23 (Tuesday)",
+          "morning": "Elafonissi Beach Day Trip \u2014 depart by private car from Chania to Elafonissi Beach (approximately 75 minutes). Arrive early to secure the best spot and enjoy the beach before it gets busy. Marvel at the famous pink-tinged sand caused by crushed coral and shells. Swim in the shallow, warm turquoise lagoon.",
+          "afternoon": "Continue exploring Elafonissi \u2014 wade across the shallow sandbar to the small island, snorkel in the clear waters, and relax on the beach. The water temperature is ideal for swimming. Explore the protected dune and nature area behind the beach.",
+          "evening": "Return to Chania by private car. Freshen up at the resort and enjoy a sunset cocktail at your hotel's terrace or pool bar. Dinner at a sophisticated restaurant in Chania or at the resort's fine dining venue.",
+          "meals": {
+            "breakfast": "Early breakfast at the Crete resort before departure \u2014 Greek yogurt with Cretan honey, fresh fruit, and warm tiropita (cheese pie)",
+            "lunch": "Beachside lunch at the Elafonissi beach taverna \u2014 fresh grilled fish, Greek salad, and cold Mythos beer or local lemonade",
+            "dinner": "Upscale Cretan restaurant back in Chania \u2014 octopus carpaccio, lamb with stamnagathi (wild greens), and a tasting flight of premium Cretan wines"
+          },
+          "notes": "Elafonissi is a protected nature reserve \u2014 no umbrellas with spikes are allowed in certain zones. Bring your own shade solution or rent from the beach taverna. Arrive before 9:00 AM to enjoy the beach at its most serene. Apply strong sunscreen as the beach offers little natural shade."
+        },
+        {
+          "day": 10,
+          "date": "2027-06-24 (Wednesday)",
+          "morning": "Private guided food tour of Chania's covered market and surrounding streets \u2014 meet local producers, taste aged graviera cheese, Cretan olive oil varieties, fresh herbs, and traditional kalitsounia pastries. Visit a local bakery for fresh-baked Cretan bread.",
+          "afternoon": "Samaria Gorge scenic drive and viewpoint visit (without the full hike) \u2014 drive to the top of the gorge for dramatic panoramic views. Alternatively, visit the Botanical Park and Gardens of Crete for a curated walk through Cretan flora with a gourmet lunch in the garden restaurant.",
+          "evening": "Private cooking class with a Cretan chef \u2014 learn to prepare traditional dishes such as dakos, stuffed zucchini blossoms, and honey-walnut desserts using local ingredients. Enjoy the meal you've prepared as your dinner.",
+          "meals": {
+            "breakfast": "At the resort \u2014 full Cretan breakfast with local honey, rusks, fresh tomatoes, olive oil, and herbal mountain tea",
+            "lunch": "Botanical Park garden restaurant or a scenic taverna near the gorge \u2014 vegetable mezze, grilled lamb chops, and local wine",
+            "dinner": "The dishes prepared during your private Cretan cooking class \u2014 enjoy with a curated selection of local wines in an intimate setting"
+          },
+          "notes": "The private cooking class should be booked at least 2\u20133 days in advance through the resort concierge. This is one of the most immersive and memorable experiences of the trip, combining food interests with cultural depth."
+        },
+        {
+          "day": 11,
+          "date": "2027-06-25 (Thursday)",
+          "morning": "Private boat charter from a nearby Cretan marina \u2014 sail west along the stunning coastline, stopping at the Balos Lagoon or Gramvousa Island. Swim in the milky turquoise waters of Balos, one of the most spectacular lagoons in Europe, accessible only by boat or a rugged hike.",
+          "afternoon": "Continue the boat charter \u2014 anchor at a secluded cove for a private lunch onboard. Snorkel, paddleboard, or simply relax on deck. The warm June sea is perfect for extended swimming. Return to the marina by late afternoon.",
+          "evening": "Farewell Crete dinner \u2014 reserve a table at one of Crete's most acclaimed fine dining restaurants. Celebrate the penultimate island night with a premium tasting menu showcasing the very best of Cretan gastronomy.",
+          "meals": {
+            "breakfast": "Early breakfast at the resort before the boat departure",
+            "lunch": "Gourmet onboard lunch \u2014 fresh Cretan cheeses, cured meats, grilled vegetables, fresh bread, and chilled Cretan white wine",
+            "dinner": "Acclaimed Cretan fine dining restaurant \u2014 multi-course tasting menu with wine pairings featuring aged graviera, Cretan-fed beef, fresh seafood, and carob-based desserts"
+          },
+          "notes": "Balos Lagoon is a protected area \u2014 no anchoring directly in the lagoon. The boat will anchor nearby and guests can swim or take a dinghy ashore. The lagoon's shallow waters are exceptionally warm and clear in June."
+        },
+        {
+          "day": 12,
+          "date": "2027-06-26 (Friday)",
+          "morning": "Fly from Crete back to Athens. Private luxury transfer to a premium hotel in Athens (e.g., Hotel Grande Bretagne or King George Hotel on Syntagma Square) for the final two nights. Check in, freshen up, and enjoy the rooftop pool with stunning Acropolis views.",
+          "afternoon": "Visit the Acropolis and Parthenon with a private expert guide \u2014 skip-the-line tickets ensure a seamless experience. Explore the Acropolis Museum afterward, one of the world's finest archaeological museums, featuring original sculptures and artifacts in a stunning modern building.",
+          "evening": "Rooftop cocktails at your Athens hotel with panoramic Acropolis views \u2014 one of the most iconic city vistas in the world, especially magical at golden hour. Dinner at a Michelin-recognized or highly acclaimed Athens restaurant featuring modern Greek cuisine.",
+          "meals": {
+            "breakfast": "Light breakfast at the Crete resort before departure",
+            "lunch": "Elegant lunch at a rooftop restaurant near the Acropolis \u2014 fresh Greek salads, grilled prawns, and chilled white wine with a view",
+            "dinner": "Acclaimed modern Greek restaurant in Athens \u2014 innovative dishes reimagining classic Greek flavors with premium ingredients, accompanied by a curated Greek wine list"
+          },
+          "notes": "The Acropolis is best visited in the afternoon when morning tour groups have thinned. Private guides provide a far richer experience than audio tours. Book skip-the-line tickets and private guide well in advance, especially for summer."
+        },
+        {
+          "day": 13,
+          "date": "2027-06-27 (Saturday)",
+          "morning": "Final morning in Athens \u2014 leisurely breakfast at the hotel's rooftop restaurant with Acropolis views. Visit the upscale Kolonaki neighborhood for last-minute luxury shopping \u2014 high-end Greek jewelry, designer olive oil sets, and premium local products make perfect souvenirs.",
+          "afternoon": "Visit the National Archaeological Museum of Athens \u2014 the world's premier collection of ancient Greek artifacts. Alternatively, enjoy a final spa treatment at the hotel's luxury spa. Last swim at the hotel's rooftop pool before preparing for departure.",
+          "evening": "Farewell dinner at a celebrated Athens restaurant \u2014 choose a rooftop venue for a final view of the illuminated Acropolis. Toast to an extraordinary 13-day journey through Greece's finest beaches, flavors, and experiences. Private transfer to Athens International Airport for departure.",
+          "meals": {
+            "breakfast": "Lavish hotel rooftop breakfast \u2014 full Greek and international spread with panoramic Acropolis views, including fresh pastries, eggs to order, smoked salmon, and premium coffee",
+            "lunch": "Casual but refined lunch in Kolonaki \u2014 a stylish bistro or wine bar with mezze, artisan cheeses, and a glass of Greek sparkling wine",
+            "dinner": "Grand farewell dinner at a rooftop restaurant near the Acropolis \u2014 premium lamb rack, truffle-infused Greek pasta, and a bottle of aged Naoussa Xinomavro red wine to close the trip in style"
+          },
+          "notes": "Confirm departure flight time and arrange the private airport transfer with the hotel concierge the night before. Allow at least 3 hours before international departure for Athens airport check-in and security. Pack any purchased local food items \u2014 olive oil, honey, and wine \u2014 carefully in checked luggage to comply with airline regulations."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City (NYC)+to+Greece+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Greece&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Greece",
+        "https://www.getyourguide.com/s/?q=Greece",
+        "https://www.getyourguide.com/s/?q=Greece",
+        "https://www.getyourguide.com/s/?q=Greece"
+      ],
+      "highlights": [
+        "4.3\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$475 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Greece under $2000, beaches and local food, summer 2026, flying from NYC",
+  "session_tags": {
+    "query_id": "SYN-01",
+    "condition": "broadcast",
+    "run_index": 1
+  }
+}
