@@ -20,6 +20,9 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from statistics import median
 
+# Make the project root importable when run directly (python scripts/paper_numbers.py).
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from scripts.paper_stats import (
     bootstrap_mean_diff,
     cohen_kappa,
