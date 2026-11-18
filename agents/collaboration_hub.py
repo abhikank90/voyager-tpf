@@ -29,7 +29,10 @@ class CollaborationHubAgent(BaseAgent):
 
     def _setup(self):
         config = get_api_config()
-        self.client = Anthropic(api_key=config.llm.api_key)
+        self.client = Anthropic(
+            api_key=config.llm.api_key,
+            max_retries=get_settings().llm_max_retries,
+        )
         self.model = config.llm.collaboration_hub_model
         self._hybrid_detector = HybridConflictDetector(self)
 

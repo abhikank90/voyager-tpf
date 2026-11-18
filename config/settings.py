@@ -61,6 +61,12 @@ class Settings(BaseSettings):
     # benchmarks do not drift with the day they run (VOYAGER_MOCK_ANCHOR_DATE).
     mock_anchor_date: date = date(2026, 12, 1)
 
+    # ── LLM retry policy (protocol §8) ────────────────────────────────────
+    # Applied to every Anthropic client and every ChatAnthropic construction,
+    # so API errors and timeouts retry up to this many times with exponential
+    # backoff inside the session (VOYAGER_LLM_MAX_RETRIES).
+    llm_max_retries: int = 3
+
 
 def effective_temperature(default_temperature: float) -> float:
     """Resolve the decoding temperature an agent should use for an LLM call.

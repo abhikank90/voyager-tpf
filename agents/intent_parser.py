@@ -43,7 +43,7 @@ class IntentParserAgent(BaseAgent):
 
     def _setup(self):
         try:
-            from config import effective_temperature, get_api_config
+            from config import effective_temperature, get_api_config, get_settings
             model = get_api_config().llm.intent_parser_model
         except Exception:
             model = "claude-sonnet-4-6"
@@ -55,6 +55,7 @@ class IntentParserAgent(BaseAgent):
         self.llm = ChatAnthropic(
             model=model,
             temperature=temperature,
+            max_retries=get_settings().llm_max_retries,
             callbacks=[TokenTrackingCallback(
                 model=model, component="intent_parser", temperature=temperature,
             )],

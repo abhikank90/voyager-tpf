@@ -129,18 +129,27 @@ def load_manifest_queries(path: str, query_set: str) -> list[tuple[str, str]]:
     return [(r["query_id"], r["query_text"]) for r in rows]
 
 
+def _manifest_rows(path: str) -> list[dict]:
+    import csv
+
+    with open(path, newline="") as fh:
+        return list(csv.DictReader(fh))
+
+
 async def run_conditions(
     queries: list[tuple[str, str]],
     conditions: list[str],
     repeats: int,
     inventory_profile: str = "default",
+    query_set: str | None = None,
 ) -> None:
     """Run every condition for each query back to back, repeated ``repeats`` times.
 
     Interleaving by query keeps time-of-day and provider-load effects out of the
     paired comparison. The condition order rotates by query index so no
     condition always runs first. Each session is tagged with query_id,
-    condition and run index.
+    condition and run index. A failed session is logged to the failure log
+    (§8) and re-run once via ``--rerun-failures``.
     """
     from graph.travel_graph import run_collaborative_travel_query
 
@@ -164,9 +173,77 @@ async def run_conditions(
                         inventory_profile=inventory_profile,
                     )
                     ok += 1
-                except Exception as exc:  # protocol §8: logged, re-run by hand
+                except Exception as exc:  # protocol §8: logged, re-run once
                     print(f"           ✗ {exc}")
+                    if query_set:
+                        _log_failure(query_set, query_id, condition, run_idx, exc)
     print(f"\n  conditions: {ok}/{total} sessions succeeded")
+
+
+def _log_failure(
+    query_set: str, query_id: str, condition: str, run_index: int, exc: BaseException,
+) -> None:
+    """Append one row to the §8 failure log (``VOYAGER_FAILURES_PATH``)."""
+    from scripts.failure_log import append_failure, reason_for
+
+    append_failure({
+        "set": query_set,
+        "query_id": query_id,
+        "condition": condition,
+        "run_index": run_index,
+        "reason": reason_for(exc),
+        "rerun_ok": "",
+    })
+
+
+async def rerun_failures(manifest_path: str) -> None:
+    """Re-run every failure row with empty ``rerun_ok`` once (protocol §8).
+
+    Sessions are appended to the current ``VOYAGER_METRICS_PATH``; each row's
+    ``rerun_ok`` is then set to "true" (re-run succeeded) or "false" (the re-run
+    failed too, so the query is dropped from every condition in its set).
+    """
+    from graph.travel_graph import run_collaborative_travel_query
+    from scripts.failure_log import failures_path, load_failures, set_rerun_ok
+
+    path = failures_path()
+    rows = [r for r in load_failures(path) if str(r.get("rerun_ok", "")).strip() == ""]
+    if not rows:
+        print(f"\nNo failure rows with empty rerun_ok in {path}; nothing to re-run.")
+        return
+
+    manifest = {(r["set"], r["query_id"]): r["query_text"] for r in _manifest_rows(manifest_path)}
+    print(f"\nRe-running {len(rows)} failed session(s) once (§8):")
+    print(f"Failures → {path}")
+    print(f"Sessions → {os.environ.get('VOYAGER_METRICS_PATH', 'metrics/sessions.jsonl')}\n")
+
+    ok = 0
+    for row in rows:
+        set_name = row["set"]
+        query_id = row["query_id"]
+        condition = row["condition"]
+        run_index = int(row["run_index"])
+        query = manifest.get((set_name, query_id))
+        if query is None:
+            print(f"  skip {set_name} {query_id}: query text not in {manifest_path}")
+            continue
+        print(f"  {set_name} {query_id} {condition} run {run_index}")
+        try:
+            await run_collaborative_travel_query(
+                query,
+                enable_refinement=(condition != "baseline"),
+                refinement_mode=None if condition == "baseline" else condition,
+                session_tags={
+                    "query_id": query_id, "condition": condition, "run_index": run_index,
+                },
+                inventory_profile="control" if set_name == "control" else "default",
+            )
+            set_rerun_ok(set_name, query_id, condition, run_index, "true")
+            ok += 1
+        except Exception as exc:
+            print(f"           ✗ {exc}")
+            set_rerun_ok(set_name, query_id, condition, run_index, "false")
+    print(f"\n  rerun: {ok}/{len(rows)} sessions succeeded; rerun_ok updated in {path}")
 
 
 def _results_dir() -> str | None:
@@ -246,6 +323,11 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true", help="Print queries without running")
     parser.add_argument("--summary", action="store_true", help="Print summary of existing runs")
     parser.add_argument("--limit", type=int, default=None, help="Run only first N queries")
+    parser.add_argument(
+        "--rerun-failures",
+        action="store_true",
+        help="re-run every failures.csv row with empty rerun_ok once (protocol §8)",
+    )
     args = parser.parse_args()
 
     if args.inventory:
@@ -260,6 +342,18 @@ def main() -> None:
             f"the control set requires mock inventory mode (got {inventory_mode!r}); "
             "control profiles exist only for the mock path"
         )
+
+    if args.rerun_failures:
+        if not args.manifest:
+            raise SystemExit("--rerun-failures needs --manifest (maps set/query_id back to query text)")
+        os.environ.setdefault("VOYAGER_PLANS_DIR", str(Path("results") / "v1.5" / "plans"))
+        os.environ.setdefault("VOYAGER_RESULTS_DIR", _conditions_results_dir())
+
+        async def _rerun() -> None:
+            await rerun_failures(args.manifest)
+
+        asyncio.run(_rerun())
+        return
 
     if args.summary:
         from metrics.collector import print_summary
@@ -303,7 +397,10 @@ def main() -> None:
         profile = "control" if args.query_set == "control" else "default"
 
         async def _run_conditions() -> None:
-            await run_conditions(tagged, conditions, args.repeats, inventory_profile=profile)
+            await run_conditions(
+                tagged, conditions, args.repeats,
+                inventory_profile=profile, query_set=args.query_set,
+            )
             _write_results(inventory_mode)
 
         asyncio.run(_run_conditions())

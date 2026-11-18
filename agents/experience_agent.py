@@ -9,6 +9,7 @@ from metrics.token_tracker import TokenTrackingCallback
 
 from . import inventory
 from .base_agent import BaseAgent
+from .http_retry import request_with_retries
 from .trip_window import RULE_MONTH
 
 DESTINATIONS_DB = Path(__file__).parent.parent / "data" / "knowledge_base" / "destinations.json"
@@ -41,13 +42,14 @@ class ExperienceAgent(BaseAgent):
 
     def _setup(self):
         try:
-            from config import effective_temperature, get_api_config
+            from config import effective_temperature, get_api_config, get_settings
             model = get_api_config().llm.experience_agent_model
         except Exception:
             model = "claude-sonnet-4-6"
         self.llm = ChatAnthropic(
             model=model,
             temperature=effective_temperature(0.3),
+            max_retries=get_settings().llm_max_retries,
             callbacks=[TokenTrackingCallback(model=model)],
         )
         self.prompt = ChatPromptTemplate.from_messages([
@@ -211,8 +213,8 @@ class ExperienceAgent(BaseAgent):
                 if not query:
                     continue
                 try:
-                    resp = await client.get(
-                        GEOCODE_URL,
+                    resp = await request_with_retries(
+                        client, "GET", GEOCODE_URL,
                         params={"q": query, "limit": 1, "appid": api_key},
                     )
                     geo = resp.json()

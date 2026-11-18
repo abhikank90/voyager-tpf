@@ -4,6 +4,7 @@ import httpx
 
 from . import inventory
 from .base_agent import BaseAgent
+from .http_retry import request_with_retries
 from .trip_window import MONTHS, RULE_MONTH
 
 CLIMATOLOGY_SOURCE = "climatology"
@@ -190,9 +191,11 @@ class WeatherAgent(BaseAgent):
     async def _fetch_climatology(self, destination: str, month: str, api_key: str) -> dict:
         """Geocode the destination, then build its climatology for ``month``.
 
-        Falls back to the static climate table (marked in ``source``) when the
-        destination cannot be geocoded or the archive returns no usable rows, so
-        a capture never silently records an empty weather fixture.
+        Falls back to the static climate table (marked in ``source``) only when
+        the destination cannot be geocoded or the archive returns no usable rows.
+        An HTTP failure (timeout, transport error, 429, 5xx) is retried by
+        ``request_with_retries`` and then propagates: in capture mode it fails the
+        session (§8) rather than baking degraded data into the fixtures.
         """
         fallback = {
             **self._historical_climate(destination, month),
@@ -202,20 +205,26 @@ class WeatherAgent(BaseAgent):
             return fallback
         async with httpx.AsyncClient(timeout=30) as client:
             try:
-                geo = (await client.get(
-                    OPENWEATHER_GEO, params={"q": destination, "limit": 1, "appid": api_key},
-                )).json()
+                geo_resp = await request_with_retries(
+                    client, "GET", OPENWEATHER_GEO,
+                    params={"q": destination, "limit": 1, "appid": api_key},
+                )
+                geo = geo_resp.json()
                 if not isinstance(geo, list) or not geo:
                     return fallback
                 lat, lon = geo[0]["lat"], geo[0]["lon"]
-                data = (await client.get(OPEN_METEO_ARCHIVE, params={
-                    "latitude": lat,
-                    "longitude": lon,
-                    "start_date": f"{CLIMATOLOGY_YEARS[0]}-01-01",
-                    "end_date": f"{CLIMATOLOGY_YEARS[1]}-12-31",
-                    "daily": "temperature_2m_max,precipitation_sum",
-                    "timezone": "auto",
-                })).json()
+                data_resp = await request_with_retries(
+                    client, "GET", OPEN_METEO_ARCHIVE,
+                    params={
+                        "latitude": lat,
+                        "longitude": lon,
+                        "start_date": f"{CLIMATOLOGY_YEARS[0]}-01-01",
+                        "end_date": f"{CLIMATOLOGY_YEARS[1]}-12-31",
+                        "daily": "temperature_2m_max,precipitation_sum",
+                        "timezone": "auto",
+                    },
+                )
+                data = data_resp.json()
                 daily = data.get("daily") or {}
                 climate = monthly_climatology(
                     daily.get("time") or [],
@@ -223,15 +232,15 @@ class WeatherAgent(BaseAgent):
                     daily.get("precipitation_sum") or [],
                     month,
                 )
-            except (httpx.HTTPError, ValueError, KeyError, TypeError):
+            except (ValueError, KeyError, TypeError):
                 return fallback
         return {**climate, "latitude": lat, "longitude": lon}
 
     async def _fetch_forecast(self, destination: str, api_key: str) -> dict:
         async with httpx.AsyncClient() as client:
             try:
-                geo_resp = await client.get(
-                    "http://api.openweathermap.org/geo/1.0/direct",
+                geo_resp = await request_with_retries(
+                    client, "GET", OPENWEATHER_GEO,
                     params={"q": destination, "limit": 1, "appid": api_key},
                 )
                 geo = geo_resp.json()
@@ -241,8 +250,8 @@ class WeatherAgent(BaseAgent):
                     return self._historical_climate(destination, "july")
                 lat, lon = geo[0]["lat"], geo[0]["lon"]
 
-                weather_resp = await client.get(
-                    "https://api.openweathermap.org/data/3.0/onecall",
+                weather_resp = await request_with_retries(
+                    client, "GET", "https://api.openweathermap.org/data/3.0/onecall",
                     params={
                         "lat": lat,
                         "lon": lon,
