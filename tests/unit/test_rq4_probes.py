@@ -51,8 +51,13 @@ def test_probe_ids_are_unique(doc):
     assert len(ids) == len(set(ids))
 
 
-def test_every_gold_is_null(doc):
-    assert all(p.get("gold") is None for p in doc["probes"])
+def test_every_gold_is_labelled(doc):
+    """After the merge, every probe carries a gold list of allowed types ([] for none)."""
+    allowed = set(doc["types"])
+    for p in doc["probes"]:
+        assert isinstance(p.get("gold"), list), f"{p['id']}: gold must be a list, got {p.get('gold')!r}"
+        for label in p["gold"]:
+            assert label in allowed, f"{p['id']}: unknown gold type {label!r}"
 
 
 def test_pilot_probes_carry_v141_truth(doc):

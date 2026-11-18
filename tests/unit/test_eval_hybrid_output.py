@@ -85,3 +85,37 @@ def test_out_writes_machine_readable_json(monkeypatch, tmp_path, probe_file):
     # checkin_impossible has no deterministic validator → unverified
     assert result["validated"] == []
     assert any(u["reason"] for u in result["unverified"])
+
+
+def test_out_writes_shipped_variant(monkeypatch, tmp_path, probe_file):
+    """--variant shipped drives the hub's own candidate path (union of 3, validated)."""
+    import scripts.eval_hybrid_detection as ev
+
+    hub = ev.build_rules_hub()
+    fake_response = MagicMock()
+    fake_response.content = [MagicMock(text=json.dumps({"candidates": [
+        {"conflict_type": "checkin_impossible", "agents": ["flight"],
+         "hypothesis": "late arrival after desk close", "evidence": ["arrival 23:40"],
+         "suggested_rule": None, "confidence": 0.9},
+    ]}))]
+    fake_response.usage = MagicMock(input_tokens=1, output_tokens=1)
+    hub.client.messages.create.return_value = fake_response
+
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "ci-test-key")
+    monkeypatch.setattr(ev, "Anthropic", lambda: MagicMock())
+    monkeypatch.setattr(ev, "build_rules_hub", lambda: hub)
+
+    out = tmp_path / "shipped.json"
+    ev.main(["--probes", str(probe_file), "--variant", "shipped", "--out", str(out)])
+
+    report = json.loads(out.read_text())
+    assert report["variant"] == "shipped"
+    assert report["temperature"] == 0.0
+    result = report["results"][0]
+    assert result["probe"] == "T-01"
+    assert result["rules"] == []  # clean probe: rules silent
+    assert result["candidates"][0]["conflict_type"] == "checkin_impossible"
+    assert result["validated"] == []
+    assert any(u["reason"] for u in result["unverified"])
+    # the union of 3 identical replies deduplicates to one candidate
+    assert report["summary"]["candidates"] == 1

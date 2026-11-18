@@ -439,6 +439,71 @@ def _to_candidates(conflicts):
     return candidates
 
 
+def _write_shipped_report(args, hub, model: str, states) -> None:
+    """Drive the hub's own shipped candidate path and write the report (§12.2).
+
+    The shipped configuration is the in-graph detector: the feature flag on,
+    ``llm_detector_repetitions`` calls whose candidates are unioned (deduplicated by
+    (type, agents)), then deterministic validation. Written to ``--out`` with
+    ``variant: "shipped"``.
+    """
+    from datetime import UTC, datetime
+
+    from agents.conflicts import conflict_fingerprint
+    from config.settings import reload_settings
+
+    previous = os.environ.get("VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES")
+    os.environ["VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES"] = "1"
+    reload_settings()
+    try:
+        results = []
+        total_candidates = total_validated = total_unverified = 0
+        for name, state, _truth in states:
+            rules = hub.detect_conflicts_only(state)
+            out = hub._run_hybrid_detection(state)
+            candidates = out["llm_candidate_conflicts"]
+            validated = out["validated_llm_conflicts"]
+            unverified = out["unverified_llm_conflicts"]
+            total_candidates += len(candidates)
+            total_validated += len(validated)
+            total_unverified += len(unverified)
+            results.append({
+                "probe": name,
+                "rules": [
+                    {"type": c.get("type"), "fingerprint": conflict_fingerprint(c)}
+                    for c in rules
+                ],
+                "candidates": candidates,
+                "validated": validated,
+                "unverified": unverified,
+            })
+    finally:
+        if previous is None:
+            os.environ.pop("VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES", None)
+        else:
+            os.environ["VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES"] = previous
+        reload_settings()
+
+    print(f"shipped: {len(results)} probes, candidates={total_candidates}, "
+          f"validated={total_validated}, unverified={total_unverified}")
+
+    if args.out:
+        report = {
+            "variant": "shipped",
+            "model": model,
+            "temperature": 0.0,
+            "timestamp": datetime.now(UTC).isoformat(),
+            "summary": {
+                "candidates": total_candidates,
+                "validated": total_validated,
+                "unverified": total_unverified,
+            },
+            "results": results,
+        }
+        Path(args.out).write_text(json.dumps(report, indent=2) + "\n")
+        print(f"wrote {args.out}")
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument(
@@ -460,6 +525,12 @@ def main(argv=None):
         help="write a machine-readable report (per probe, per repetition: rule types and "
              "fingerprints, LLM candidate types and agents, validated/unverified extras) "
              "to PATH.json",
+    )
+    parser.add_argument(
+        "--variant", choices=["isolation", "shipped"], default="isolation",
+        help="isolation: the standalone detector (temperature 0, two repetitions); "
+             "shipped: the hub's own candidate path (VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES=1, "
+             "llm_detector_repetitions=3, union) — protocol §12.2",
     )
     args = parser.parse_args(argv)
 
@@ -495,6 +566,11 @@ def main(argv=None):
     detector = HybridConflictDetector(hub)
 
     states = probes_to_states(load_probes(args.probes)) if args.probes else make_states()
+
+    if args.variant == "shipped":
+        _write_shipped_report(args, hub, model, states)
+        return
+
     print(f"Model under test: {model}\n{'=' * 78}")
 
     # ── Aggregate counters (Priority 2.5 expanded output) ──────────────────
