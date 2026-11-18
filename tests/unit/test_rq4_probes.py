@@ -122,6 +122,26 @@ def test_state_summary_is_complete(doc):
             assert value in summary, f"{p['id']}: value {value!r} missing from summary"
 
 
+_MONTH_NUM = {m: i + 1 for i, m in enumerate(
+    ["january", "february", "march", "april", "may", "june",
+     "july", "august", "september", "october", "november", "december"])}
+
+
+def test_arrival_dates_fall_in_travel_month(doc):
+    """A planner reads the arrival date against the stated month; they must agree."""
+    from datetime import datetime
+
+    for p in doc["probes"]:
+        travel_month = p["state"]["intent"].get("travel_month", "")
+        arrival = p["state"]["selected_flight"].get("arrival", "")
+        name, year = travel_month.split()
+        month = _MONTH_NUM[name.lower()]
+        arrival_dt = datetime.fromisoformat(arrival)
+        assert (arrival_dt.month, arrival_dt.year) == (month, int(year)), (
+            f"{p['id']}: arrival {arrival} not in {travel_month}"
+        )
+
+
 def _parse_rows(text):
     lines = [line for line in text.splitlines()
              if line.strip() and not line.lstrip().startswith("#")]
