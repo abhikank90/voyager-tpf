@@ -47,10 +47,17 @@ class IntentParserAgent(BaseAgent):
             model = get_api_config().llm.intent_parser_model
         except Exception:
             model = "claude-sonnet-4-6"
+        # The callback must be labelled here: `.with_structured_output()` wraps the LLM
+        # so `BaseAgent._label_token_callbacks` (which reads `llm.callbacks`) can no
+        # longer reach it, and an unlabelled callback would drop the parser's tokens
+        # from `per_component_usage`.
+        temperature = effective_temperature(0)
         self.llm = ChatAnthropic(
             model=model,
-            temperature=effective_temperature(0),
-            callbacks=[TokenTrackingCallback(model=model)],
+            temperature=temperature,
+            callbacks=[TokenTrackingCallback(
+                model=model, component="intent_parser", temperature=temperature,
+            )],
         ).with_structured_output(TravelIntent)
 
         self.prompt = ChatPromptTemplate.from_messages([
