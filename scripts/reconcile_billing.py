@@ -13,9 +13,17 @@ window. The tracked side is every source of LLM spend, reported separately:
 The window is ``--start``/``--end`` or, by default, the first and last snapshot
 timestamps in ``results/v1.5/model_manifest.json``.
 
-The Console export format is not fixed, so the parser detects date / model /
-input / output / cost columns by header-name matching and fails with a clear
-message listing the headers it saw when a required column is missing.
+The Console export format is not fixed. Each export file is classified by its
+headers into one of three layouts and parsed accordingly:
+
+  * ``cost``  — ``cost_usd`` + ``model`` + ``api_key`` + ``usage_date_utc``
+    (the Console *cost* export; tokens live in the other file);
+  * ``token`` — ``usage_output_tokens`` + ``model_version`` + ``api_key`` +
+    ``usage_date_utc`` (the Console *tokens* export; cost lives in the other);
+  * ``combined`` — a single file carrying date / model / input / output / cost
+    columns, detected by header-name matching (the original path).
+
+The cost and token sides are aggregated separately (no row-level join).
 ``--key-filter``/``--workspace-filter`` isolate a dedicated API key's or
 workspace's rows when the export carries such a column.
 
@@ -43,6 +51,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 THRESHOLD_PCT = 1.0
+
+# Console cost-export display name (normalised) → tracked model id. Any other
+# non-zero-cost display name fails loudly; zero-cost rows are ignored.
+MODEL_NAME_TO_ID = {
+    "claudesonnet46": "claude-sonnet-4-6",
+    "claudehaiku45": "claude-haiku-4-5-20251001",
+}
 
 
 # ── Column detection (tolerant of unknown export layouts) ─────────────────────
@@ -157,6 +172,276 @@ def _parse_export(
             "cost": _to_float(row.get(cost_col)),
         })
     return rows
+
+
+def _read_export(path: Path) -> tuple[csv.DictReader | None, dict[str, str]]:
+    """Open one CSV export: (reader, normalised-header → original-header map)."""
+    lines = [
+        line for line in path.read_text().splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    ]
+    if not lines:
+        return None, {}
+    reader = csv.DictReader(io.StringIO("\n".join(lines)))
+    return reader, {_norm(h): h for h in (reader.fieldnames or [])}
+
+
+def _classify(headers: dict[str, str]) -> str:
+    """``'cost'``, ``'token'`` or ``'combined'`` from an export's header set."""
+    norms = set(headers)
+    cost = ({"costusd", "model", "apikey", "usagedateutc"} <= norms
+            and "usageoutputtokens" not in norms)
+    token = ({"usageoutputtokens", "modelversion", "apikey", "usagedateutc"} <= norms
+             and "costusd" not in norms)
+    if cost:
+        return "cost"
+    if token:
+        return "token"
+    return "combined"
+
+
+def _parse_cost_file(
+    path: Path,
+    key_filter: str | None,
+    workspace_filter: str | None,
+    start: date,
+    end: date,
+    key_id_filter: str | None = None,
+) -> dict:
+    """Parse a Console *cost* export → per-model cost.
+
+    Display model names are mapped to tracked ids through ``MODEL_NAME_TO_ID``;
+    any other non-zero-cost name fails loudly. Zero-cost non-model rows
+    (``code_execution``/``session_runtime``/``web_search``/``--``) are ignored
+    and counted. No token columns are read here.
+
+    ``by_id`` always carries the name-filtered per-``api_key_id`` per-model cost;
+    ``models`` carries only the requested id (or every id when ``key_id_filter``
+    is ``None``).
+    """
+    reader, headers = _read_export(path)
+    assert reader is not None
+    date_col = _pick(headers, "date", "time")
+    model_col = _pick(headers, "model")
+    cost_col = _pick(headers, "cost", "usd")
+    key_col = _pick(headers, "key")
+    key_id_col = _pick(headers, "keyid")
+    workspace_col = _pick(headers, "workspace")
+    if key_filter is not None and key_col is None:
+        raise SystemExit(
+            f"cannot apply --key-filter to export {path}: no API-key column. "
+            f"Headers seen: {sorted(headers.values())}"
+        )
+    if key_id_filter is not None and key_id_col is None:
+        raise SystemExit(
+            f"cannot apply --key-id-filter to export {path}: no api_key_id column. "
+            f"Headers seen: {sorted(headers.values())}"
+        )
+    if workspace_filter is not None and workspace_col is None:
+        raise SystemExit(
+            f"cannot apply --workspace-filter to export {path}: no workspace column. "
+            f"Headers seen: {sorted(headers.values())}"
+        )
+
+    models: dict[str, dict] = defaultdict(lambda: {"cost": 0.0})
+    by_id: dict[str, dict] = defaultdict(lambda: defaultdict(float))
+    ignored_rows = 0
+    for row in reader:
+        if key_filter is not None and key_filter.lower() not in (row.get(key_col) or "").lower():
+            continue
+        if workspace_filter is not None and workspace_filter.lower() not in (row.get(workspace_col) or "").lower():
+            continue
+        if not _in_window(_to_date(row.get(date_col)), start, end):
+            continue
+        name = (row.get(model_col) or "").strip()
+        cost = _to_float(row.get(cost_col))
+        model_id = MODEL_NAME_TO_ID.get(_norm(name))
+        if model_id is None:
+            if cost != 0.0:
+                raise SystemExit(
+                    f"unknown non-zero-cost model {name!r} in {path} (cost={cost}); "
+                    f"known models: {sorted(MODEL_NAME_TO_ID.values())}"
+                )
+            ignored_rows += 1
+            continue
+        key_id = (row.get(key_id_col) or "").strip()
+        by_id[key_id][model_id] += cost
+        if key_id_filter is None or key_id == key_id_filter:
+            models[model_id]["cost"] += cost
+    return {"models": dict(models),
+            "by_id": {k: dict(v) for k, v in by_id.items()},
+            "ignored_rows": ignored_rows}
+
+
+def _parse_token_file(
+    path: Path,
+    key_filter: str | None,
+    workspace_filter: str | None,
+    start: date,
+    end: date,
+) -> dict:
+    """Parse a Console *tokens* export → per-model input/output tokens.
+
+    Input tokens are the sum of ``no_cache`` + ``cache_write_5m`` +
+    ``cache_write_1h`` + ``cache_read``; the parts are returned separately.
+    ``model_version`` is already a tracked model id. No cost column is read here.
+    """
+    reader, headers = _read_export(path)
+    assert reader is not None
+    date_col = _pick(headers, "date", "time")
+    model_col = _pick(headers, "model")
+    out_col = _pick(headers, "outputtokens")
+    part_cols = {
+        "no_cache": _pick(headers, "inputtokensnocache"),
+        "cache_write_5m": _pick(headers, "inputtokenscachewrite5m"),
+        "cache_write_1h": _pick(headers, "inputtokenscachewrite1h"),
+        "cache_read": _pick(headers, "inputtokenscacheread"),
+    }
+    key_col = _pick(headers, "key")
+    workspace_col = _pick(headers, "workspace")
+    if key_filter is not None and key_col is None:
+        raise SystemExit(
+            f"cannot apply --key-filter to export {path}: no API-key column. "
+            f"Headers seen: {sorted(headers.values())}"
+        )
+    if workspace_filter is not None and workspace_col is None:
+        raise SystemExit(
+            f"cannot apply --workspace-filter to export {path}: no workspace column. "
+            f"Headers seen: {sorted(headers.values())}"
+        )
+    if out_col is None or any(col is None for col in part_cols.values()):
+        missing = [k for k, v in {"output": out_col, **part_cols}.items() if v is None]
+        raise SystemExit(
+            f"cannot parse tokens export {path}: missing column(s) for {missing}. "
+            f"Headers seen: {sorted(headers.values())}"
+        )
+
+    models: dict[str, dict] = defaultdict(lambda: {"input": 0, "output": 0})
+    token_parts: dict[str, int] = defaultdict(int)
+    for row in reader:
+        if key_filter is not None and key_filter.lower() not in (row.get(key_col) or "").lower():
+            continue
+        if workspace_filter is not None and workspace_filter.lower() not in (row.get(workspace_col) or "").lower():
+            continue
+        if not _in_window(_to_date(row.get(date_col)), start, end):
+            continue
+        model_id = (row.get(model_col) or "").strip()
+        if not model_id:
+            continue
+        parts = {part: _to_int(row.get(col)) for part, col in part_cols.items()}
+        for part, val in parts.items():
+            token_parts[part] += val
+        models[model_id]["input"] += sum(parts.values())
+        models[model_id]["output"] += _to_int(row.get(out_col))
+    return {"models": dict(models), "token_parts": dict(token_parts)}
+
+
+def _model_prices(model_id: str) -> tuple[float, float]:
+    """(input, output) USD per MTok, from the tracker's pricing table."""
+    from metrics.token_tracker import MODEL_PRICING
+
+    if model_id in MODEL_PRICING:
+        return MODEL_PRICING[model_id]
+    for key, rates in MODEL_PRICING.items():
+        if key in model_id or model_id in key:
+            return rates
+    return MODEL_PRICING.get("claude-sonnet-4-6", (3.00, 15.00))
+
+
+def _parse_token_file_split(
+    path: Path,
+    key_filter: str | None,
+    workspace_filter: str | None,
+    start: date,
+    end: date,
+    cost_by_id: dict[str, dict[str, float]],
+    key_id_filter: str,
+) -> dict:
+    """Parse a Console *tokens* export, splitting same-name keys by list-price cost.
+
+    The tokens export has no ``api_key_id`` column. Each row's list-price cost
+    (input × in-price + output × out-price) is matched against the per-id
+    per-model cost totals in ``cost_by_id``; a row is ambiguous (and fails) when
+    no id or more than one id matches within 1%. Only rows assigned to
+    ``key_id_filter`` are kept.
+    """
+    reader, headers = _read_export(path)
+    assert reader is not None
+    date_col = _pick(headers, "date", "time")
+    model_col = _pick(headers, "model")
+    out_col = _pick(headers, "outputtokens")
+    part_cols = {
+        "no_cache": _pick(headers, "inputtokensnocache"),
+        "cache_write_5m": _pick(headers, "inputtokenscachewrite5m"),
+        "cache_write_1h": _pick(headers, "inputtokenscachewrite1h"),
+        "cache_read": _pick(headers, "inputtokenscacheread"),
+    }
+    key_col = _pick(headers, "key")
+    workspace_col = _pick(headers, "workspace")
+    if key_filter is not None and key_col is None:
+        raise SystemExit(
+            f"cannot apply --key-filter to export {path}: no API-key column. "
+            f"Headers seen: {sorted(headers.values())}"
+        )
+    if workspace_filter is not None and workspace_col is None:
+        raise SystemExit(
+            f"cannot apply --workspace-filter to export {path}: no workspace column. "
+            f"Headers seen: {sorted(headers.values())}"
+        )
+    if out_col is None or any(col is None for col in part_cols.values()):
+        missing = [k for k, v in {"output": out_col, **part_cols}.items() if v is None]
+        raise SystemExit(
+            f"cannot parse tokens export {path}: missing column(s) for {missing}. "
+            f"Headers seen: {sorted(headers.values())}"
+        )
+
+    models: dict[str, dict] = defaultdict(lambda: {"input": 0, "output": 0})
+    token_parts: dict[str, int] = defaultdict(int)
+    mapping: list[dict] = []
+    for row in reader:
+        if key_filter is not None and key_filter.lower() not in (row.get(key_col) or "").lower():
+            continue
+        if workspace_filter is not None and workspace_filter.lower() not in (row.get(workspace_col) or "").lower():
+            continue
+        if not _in_window(_to_date(row.get(date_col)), start, end):
+            continue
+        model_id = (row.get(model_col) or "").strip()
+        if not model_id:
+            continue
+        parts = {part: _to_int(row.get(col)) for part, col in part_cols.items()}
+        in_tok = sum(parts.values())
+        out_tok = _to_int(row.get(out_col))
+        in_price, out_price = _model_prices(model_id)
+        # The Console rounds each token-type row to cents before summing, so
+        # replicate that (round input and output separately) or small rows
+        # (e.g. Haiku at $0.12) would be ~8% off a naive aggregate.
+        in_cost = round(in_tok * in_price / 1e6, 2)
+        out_cost = round(out_tok * out_price / 1e6, 2)
+        list_cost = in_cost + out_cost
+        candidates = []
+        for key_id, model_costs in cost_by_id.items():
+            id_cost = model_costs.get(model_id, 0.0)
+            if id_cost <= 0.0:
+                continue
+            if abs(list_cost - id_cost) <= 0.01 * max(id_cost, 1e-9):
+                candidates.append((key_id, id_cost))
+        if len(candidates) != 1:
+            raise SystemExit(
+                f"ambiguous token row in {path} (model={model_id}, "
+                f"list_cost={list_cost:.6f}): matched {len(candidates)} key id(s) "
+                f"{[c[0] for c in candidates]}; "
+                f"per-id costs for {model_id}: "
+                f"{ {k: round(v.get(model_id, 0.0), 6) for k, v in cost_by_id.items()} }"
+            )
+        key_id, id_cost = candidates[0]
+        mapping.append({"model": model_id, "list_cost_usd": round(list_cost, 6),
+                        "key_id": key_id, "id_cost_usd": round(id_cost, 6)})
+        if key_id == key_id_filter:
+            for part, val in parts.items():
+                token_parts[part] += val
+            models[model_id]["input"] += in_tok
+            models[model_id]["output"] += out_tok
+    return {"models": dict(models), "token_parts": dict(token_parts), "mapping": mapping}
 
 
 # ── Window ────────────────────────────────────────────────────────────────────
@@ -300,10 +585,52 @@ def _load_billed(
     end: date,
     key_filter: str | None = None,
     workspace_filter: str | None = None,
+    key_id_filter: str | None = None,
 ) -> dict:
     models: dict[str, dict] = defaultdict(lambda: {"input": 0, "output": 0, "cost": 0.0})
-    total = {"input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0}
+    token_parts: dict[str, int] = defaultdict(int)
+    ignored_rows = 0
+    token_mapping: list[dict] = []
+    cost_files: list[Path] = []
+    token_files: list[Path] = []
+    other_files: list[Path] = []
     for path in export_paths:
+        reader, headers = _read_export(path)
+        if reader is None:
+            continue
+        kind = _classify(headers)
+        if kind == "cost":
+            cost_files.append(path)
+        elif kind == "token":
+            token_files.append(path)
+        else:
+            other_files.append(path)
+
+    cost_by_id: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    for path in cost_files:
+        parsed = _parse_cost_file(path, key_filter, workspace_filter, start, end,
+                                  key_id_filter=key_id_filter)
+        ignored_rows += parsed["ignored_rows"]
+        for key_id, model_costs in parsed["by_id"].items():
+            for model, cost in model_costs.items():
+                cost_by_id[key_id][model] += cost
+        for model, usage in parsed["models"].items():
+            models[model]["cost"] += usage["cost"]
+
+    for path in token_files:
+        if key_id_filter is not None:
+            parsed = _parse_token_file_split(path, key_filter, workspace_filter, start, end,
+                                             dict(cost_by_id), key_id_filter)
+            token_mapping.extend(parsed.get("mapping", []))
+        else:
+            parsed = _parse_token_file(path, key_filter, workspace_filter, start, end)
+        for part, val in parsed["token_parts"].items():
+            token_parts[part] += val
+        for model, usage in parsed["models"].items():
+            models[model]["input"] += usage["input"]
+            models[model]["output"] += usage["output"]
+
+    for path in other_files:
         for row in _parse_export(path, key_filter, workspace_filter):
             if not _in_window(row["date"], start, end):
                 continue
@@ -311,10 +638,16 @@ def _load_billed(
             models[model]["input"] += row["input"]
             models[model]["output"] += row["output"]
             models[model]["cost"] += row["cost"]
-            total["input_tokens"] += row["input"]
-            total["output_tokens"] += row["output"]
-            total["cost_usd"] += row["cost"]
-    return {"models": dict(models), "totals": total}
+
+    total = {"input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0}
+    for model, usage in models.items():
+        total["input_tokens"] += usage["input"]
+        total["output_tokens"] += usage["output"]
+        total["cost_usd"] += usage["cost"]
+    return {"models": dict(models), "totals": total,
+            "token_parts": dict(token_parts), "ignored_rows": ignored_rows,
+            "token_mapping": token_mapping,
+            "key_ids_seen": sorted(cost_by_id)}
 
 
 # ── Deltas and pass ───────────────────────────────────────────────────────────
@@ -379,7 +712,20 @@ def _md(doc: dict) -> str:
     for name, source in sorted(doc["tracked_sources"].items()):
         lines.append(f"| {name} | {source['input_tokens']} | {source['output_tokens']} | "
                      f"{source['cost_usd']:.6f} |")
-    lines += ["", "## Per model", "",
+    token_parts = doc["billed"].get("token_parts") or {}
+    lines += ["", "## Billed input-token parts (Console tokens export)", "",
+              "| part | tokens |", "|---|---|"]
+    for part in ("no_cache", "cache_write_5m", "cache_write_1h", "cache_read"):
+        lines.append(f"| {part} | {token_parts.get(part, 0)} |")
+    token_mapping = doc["billed"].get("token_mapping") or []
+    if token_mapping:
+        lines += ["", "## Token-file key split (list-price cost match)", "",
+                  "| model | list-price cost | key id | id cost |", "|---|---|---|---|"]
+        for m in token_mapping:
+            lines.append(f"| {m['model']} | {m['list_cost_usd']:.6f} | "
+                         f"{m['key_id']} | {m['id_cost_usd']:.6f} |")
+    lines += ["", f"ignored zero-cost billed rows: {doc['billed'].get('ignored_rows', 0)}",
+              "", "## Per model", "",
               "| model | billed in/out | tracked in/out | Δ in/out |",
               "|---|---|---|---|"]
     for model, row in sorted(d["models"].items()):
@@ -403,20 +749,25 @@ def main(argv=None) -> int:
                         help="output prefix → <out>.json and <out>.md")
     parser.add_argument("--key-filter", default=None,
                         help="keep only billed rows whose API-key column matches (substring)")
+    parser.add_argument("--key-id-filter", default=None,
+                        help="keep only billed rows whose api_key_id column matches (exact; "
+                             "token files are split to this id by list-price cost)")
     parser.add_argument("--workspace-filter", default=None,
                         help="keep only billed rows whose workspace column matches (substring)")
     args = parser.parse_args(argv)
 
     root = args.root
     start, end, source = _window(args, root)
-    billed = _load_billed(args.exports, start, end, args.key_filter, args.workspace_filter)
+    billed = _load_billed(args.exports, start, end, args.key_filter,
+                          args.workspace_filter, args.key_id_filter)
     tracked = _load_tracked(root, start, end)
     deltas = _reconcile(billed, tracked)
 
     doc = {
         "window": {"start": start.isoformat(), "end": end.isoformat(), "source": source},
         "threshold_pct": THRESHOLD_PCT,
-        "filters": {"key": args.key_filter, "workspace": args.workspace_filter},
+        "filters": {"key": args.key_filter, "key_id": args.key_id_filter,
+                    "workspace": args.workspace_filter},
         "billed": billed,
         "tracked": {"models": tracked["models"], "totals": tracked["totals"]},
         "tracked_sources": {
