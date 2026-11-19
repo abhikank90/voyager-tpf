@@ -71,10 +71,15 @@ def _resolve_iata(location: str) -> str:
     if not location or not str(location).strip():
         return ""
     value = str(location).strip()
+    key = value.lower()
+    # Known city/region names (including 3-letter city codes like "NYC"/"LA") must
+    # map before the passthrough, otherwise "NYC" passes through as a departure_id
+    # that SerpAPI cannot resolve and the flight list comes back empty.
+    if key in IATA_MAP:
+        return IATA_MAP[key]
     if value.isupper() and len(value) == 3 and value.isalpha():
         return value
-    key = value.lower()
-    return IATA_MAP.get(key, "")
+    return ""
 
 
 @tool

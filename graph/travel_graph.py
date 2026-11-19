@@ -565,6 +565,17 @@ async def run_collaborative_travel_query(
     final_state = await collaborative_travel_graph.ainvoke(initial_state)
     duration = round(time.perf_counter() - t0, 2)
 
+    # In capture/replay, an agent that ended in an error state means the session is
+    # unusable (e.g. a fixture that could not be captured). Raise before recording so
+    # the session lands in failures.csv and goes through rerun-once (§8) instead of
+    # being recorded as a "success" with errors. Mock keeps its current behaviour.
+    if record_metrics and (final_state.get("errors") or {}):
+        if get_settings().inventory_mode in ("capture", "replay"):
+            raise RuntimeError(
+                "session completed with agent errors: "
+                + ", ".join(sorted(final_state["errors"]))
+            )
+
     usage = get_current()
     estimated_cost = compute_session_cost(usage) if usage else 0.0
 

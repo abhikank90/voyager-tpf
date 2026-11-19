@@ -315,6 +315,21 @@ def _write_results(inventory_mode: str) -> None:
     print(f"\nResults written → {out_dir} (inventory_mode={inventory_mode})")
 
 
+def _stamp_capture_anchor(inventory_mode: str) -> None:
+    """Stamp the replay anchor and trip-window rule once, before any session runs.
+
+    The intent parser captures its fixture before the research agents, so stamping
+    lazily (in ``ensure_capture_anchor``'s first caller) left the manifest holding
+    fixtures with no ``trip_window_rule``, which the v1.5 guard rejects. The agents'
+    own calls stay (they are idempotent); this one runs first.
+    """
+    if inventory_mode == "capture":
+        from agents import inventory
+        from agents.trip_window import RULE_MONTH
+
+        inventory.ensure_capture_anchor(RULE_MONTH)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Voyager metrics benchmark")
     parser.add_argument(
@@ -379,6 +394,10 @@ def main() -> None:
         os.environ["VOYAGER_INVENTORY_MODE"] = args.inventory
         reload_settings()
     inventory_mode = get_settings().inventory_mode
+
+    # In capture mode, stamp the replay anchor and trip-window rule once, at process
+    # start, before any session runs (see _stamp_capture_anchor).
+    _stamp_capture_anchor(inventory_mode)
 
     # The control mock profiles are mock-only (protocol §5, item 5a). Fail fast
     # here rather than letting every session fail inside the agents.

@@ -265,6 +265,8 @@ def test_resolve_iata_known_cities():
     assert _resolve_iata("Costa Rica") == "SJO"
     assert _resolve_iata("Seoul") == "ICN"
     assert _resolve_iata("LA") == "LAX"
+    assert _resolve_iata("NYC") == "JFK"  # 3-letter city code, not an airport code
+    assert _resolve_iata("SFO") == "SFO"  # already-valid IATA passthrough
 
 
 def test_resolve_iata_unknown_returns_empty_not_garbage():
