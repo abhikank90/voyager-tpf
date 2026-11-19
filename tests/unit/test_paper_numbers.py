@@ -234,13 +234,13 @@ def test_h4_recall_gain_fp_cost_and_detector(tmp_path):
     ]}
     shipped = {"results": [
         {"probe": "P1", "rules": [],
-         "candidates": [{"type": "checkin_impossible", "agents": ["flight"]}],
+         "candidates": [{"conflict_type": "checkin_impossible", "agents": ["flight"]}],
          "validated": [{"type": "checkin_impossible", "agents": ["flight"], "fingerprint": "v",
                         "data": {}, "confidence": 0.9, "suggested_rule": None}]},
         {"probe": "P2", "rules": [{"type": "location_mismatch", "fingerprint": "f"}],
          "candidates": [], "validated": []},
         {"probe": "P3", "rules": [],
-         "candidates": [{"type": "timing_inefficiency", "agents": ["flight"]}],
+         "candidates": [{"conflict_type": "timing_inefficiency", "agents": ["flight"]}],
          "validated": [{"type": "timing_inefficiency", "agents": ["flight"], "fingerprint": "v2",
                         "data": {}, "confidence": 0.9, "suggested_rule": None}]},
     ]}

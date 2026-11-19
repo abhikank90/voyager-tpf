@@ -684,7 +684,9 @@ def row_h4(root: Path, manifest, sessions: dict[str, list[dict]], allow_missing:
                 if {c["type"] for c in run1} == {c["type"] for c in run2}:
                     consistent += 1
             else:
-                llm_pred[res["probe"]] = {c["type"] for c in res.get("candidates", [])}
+                llm_pred[res["probe"]] = {
+                    c.get("type", c.get("conflict_type")) for c in res.get("candidates", [])
+                }
                 valid_list[res["probe"]] = [v["type"] for v in res.get("validated", [])]
         out["rules"][label] = _precision_recall(rules_pred, probe_gold, probe_types)
         out["llm"][label] = _precision_recall(llm_pred, probe_gold, probe_types)
