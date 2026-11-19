@@ -54,10 +54,15 @@ def make_client():
 
 def _usage_tokens(response) -> tuple[int, int]:
     usage = getattr(response, "usage", None)
-    return (
-        int(getattr(usage, "input_tokens", 0) or 0),
-        int(getattr(usage, "output_tokens", 0) or 0),
-    )
+    in_tok = getattr(usage, "input_tokens", None) if usage is not None else None
+    out_tok = getattr(usage, "output_tokens", None) if usage is not None else None
+    if not isinstance(in_tok, int) or not isinstance(out_tok, int):
+        # A stub/mock client yields MagicMock fields that ``int()`` would coerce to 1,
+        # silently pretending a real call happened. Fail fast instead.
+        raise RuntimeError(
+            "LLM response carried no real integer usage (stub client?); refusing to record"
+        )
+    return in_tok, out_tok
 
 
 class _UsageAccumulator:
@@ -517,25 +522,50 @@ def _to_candidates(conflicts):
     return candidates
 
 
-def _write_shipped_report(args, hub, model: str, states) -> None:
+def _guard_usage(usage: _UsageAccumulator, variant: str, require_calls: bool = True) -> None:
+    """Refuse to write a report whose LLM usage is implausible (§12: no stub calls).
+
+    A stub/mock client returns MagicMock fields that ``int()`` coerces to 1, and a
+    mis-wired hub carries the ``"unused"`` placeholder model. Either would silently
+    publish a report of zero real detections, so raise instead of writing.
+    """
+    if require_calls and not usage.calls:
+        raise RuntimeError(f"{variant} made 0 LLM calls — refusing to write a report")
+    for call in usage.calls:
+        if not call.get("model") or call["model"] in ("unused", "None"):
+            raise RuntimeError(f"{variant} recorded a call with model {call['model']!r}")
+        if not isinstance(call.get("input_tokens"), int) or not isinstance(call.get("output_tokens"), int):
+            raise RuntimeError(f"{variant} recorded non-integer token usage")
+
+
+def _write_shipped_report(args, hub, model: str, client, states) -> None:
     """Drive the hub's own shipped candidate path and write the report (§12.2).
 
     The shipped configuration is the in-graph detector: the feature flag on,
     ``llm_detector_repetitions`` calls whose candidates are unioned (deduplicated by
     (type, agents)), then deterministic validation. Written to ``--out`` with
-    ``variant: "shipped"``.
+    ``variant: "shipped"``. The hub's own client and model come from the caller —
+    ``build_rules_hub`` gives the hub a stubbed client and the ``"unused"`` model,
+    which must never reach the shipped LLM calls.
     """
     from datetime import UTC, datetime
 
     from agents.conflicts import conflict_fingerprint
-    from config.settings import reload_settings
+    from config import get_api_config
+    from config.settings import reload_settings, get_settings
 
     previous = os.environ.get("VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES")
     os.environ["VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES"] = "1"
     reload_settings()
-    usage = _UsageAccumulator("rq4_shipped", getattr(hub, "model", None) or model)
+    settings = get_settings()
+    repetitions = settings.llm_detector_repetitions
+    detector_temperature = settings.llm_detector_temperature
+    shipped_model = get_api_config().llm.collaboration_hub_model or model
+
+    usage = _UsageAccumulator("rq4_shipped", shipped_model)
     original_client = hub.client
-    hub.client = _RecordingClient(original_client, usage)
+    hub.client = _RecordingClient(client, usage)
+    hub.model = shipped_model
     try:
         results = []
         total_candidates = total_validated = total_unverified = 0
@@ -569,11 +599,14 @@ def _write_shipped_report(args, hub, model: str, states) -> None:
     print(f"shipped: {len(results)} probes, candidates={total_candidates}, "
           f"validated={total_validated}, unverified={total_unverified}")
 
+    _guard_usage(usage, "shipped")
+
     if args.out:
         report = {
             "variant": "shipped",
-            "model": model,
-            "temperature": 0.0,
+            "model": shipped_model,
+            "temperature": detector_temperature,
+            "llm_detector_repetitions": repetitions,
             "timestamp": datetime.now(UTC).isoformat(),
             "usage": usage.total(),
             "summary": {
@@ -659,7 +692,7 @@ def main(argv=None):
     states = probes_to_states(load_probes(args.probes)) if args.probes else make_states()
 
     if args.variant == "shipped":
-        _write_shipped_report(args, hub, model, states)
+        _write_shipped_report(args, hub, model, client, states)
         return
 
     print(f"Model under test: {model}\n{'=' * 78}")
@@ -790,6 +823,7 @@ def main(argv=None):
     if args.out:
         from datetime import UTC, datetime
 
+        _guard_usage(usage, "isolation")
         report = {
             "variant": "isolation",
             "model": model,

@@ -81,10 +81,12 @@ def test_shipped_report_records_usage(tmp_path, monkeypatch, probe_file):
     fake_response = MagicMock()
     fake_response.content = [MagicMock(text=json.dumps({"candidates": []}))]
     fake_response.usage = MagicMock(input_tokens=2, output_tokens=3)
-    hub.client.messages.create.return_value = fake_response
+
+    fake_client = MagicMock()
+    fake_client.messages.create.return_value = fake_response
 
     monkeypatch.setenv("ANTHROPIC_API_KEY", "ci-test-key")
-    monkeypatch.setattr(ev, "make_client", lambda: MagicMock())
+    monkeypatch.setattr(ev, "make_client", lambda: fake_client)
     monkeypatch.setattr(ev, "build_rules_hub", lambda: hub)
 
     out = tmp_path / "shipped.json"
