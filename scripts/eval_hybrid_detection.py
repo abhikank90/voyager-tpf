@@ -588,6 +588,14 @@ def _write_shipped_report(args, hub, model: str, states) -> None:
 
 
 def main(argv=None):
+    # Load .env like the other entry points, so the key never needs to be passed on
+    # a command line (a secret on argv is visible in the process listing).
+    try:
+        from dotenv import load_dotenv
+        load_dotenv()
+    except ImportError:
+        pass
+
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument(
         "--probes", default=None,

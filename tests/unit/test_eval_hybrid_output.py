@@ -87,6 +87,30 @@ def test_out_writes_machine_readable_json(monkeypatch, tmp_path, probe_file):
     assert any(u["reason"] for u in result["unverified"])
 
 
+def test_main_loads_dotenv_before_key_check(monkeypatch, tmp_path, probe_file):
+    """main() reads the key from .env — it must not need it on a command line."""
+    import scripts.eval_hybrid_detection as ev
+    from agents.collaboration_hub import CollaborationHubAgent
+
+    (tmp_path / ".env").write_text("ANTHROPIC_API_KEY=dotenv-test-key\n")
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.chdir(tmp_path)
+
+    fake_client = MagicMock()
+    fake_response = MagicMock()
+    fake_response.content = [MagicMock(text="[]")]
+    fake_client.messages.create.return_value = fake_response
+    monkeypatch.setattr(ev, "Anthropic", lambda **kw: fake_client)
+    monkeypatch.setattr(
+        ev, "build_rules_hub",
+        lambda: CollaborationHubAgent.__new__(CollaborationHubAgent),
+    )
+
+    out = tmp_path / "report.json"
+    ev.main(["--probes", str(probe_file), "--out", str(out)])
+    assert out.exists()
+
+
 def test_out_writes_shipped_variant(monkeypatch, tmp_path, probe_file):
     """--variant shipped drives the hub's own candidate path (union of 3, validated)."""
     import scripts.eval_hybrid_detection as ev
