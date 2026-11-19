@@ -142,20 +142,22 @@ async def run_conditions(
     repeats: int,
     inventory_profile: str = "default",
     query_set: str | None = None,
+    run_index_start: int = 1,
 ) -> None:
     """Run every condition for each query back to back, repeated ``repeats`` times.
 
     Interleaving by query keeps time-of-day and provider-load effects out of the
     paired comparison. The condition order rotates by query index so no
     condition always runs first. Each session is tagged with query_id,
-    condition and run index. A failed session is logged to the failure log
-    (§8) and re-run once via ``--rerun-failures``.
+    condition and run index (``run_index_start`` … ``run_index_start + repeats − 1``).
+    A failed session is logged to the failure log (§8) and re-run once via
+    ``--rerun-failures``.
     """
     from graph.travel_graph import run_collaborative_travel_query
 
     total = len(queries) * len(conditions) * repeats
     done = ok = 0
-    for run_idx in range(1, repeats + 1):
+    for run_idx in range(run_index_start, run_index_start + repeats):
         for qi, (query_id, query) in enumerate(queries):
             shift = qi % len(conditions)
             order = conditions[shift:] + conditions[:shift]
@@ -300,6 +302,12 @@ def main() -> None:
     )
     parser.add_argument("--repeats", type=int, default=1, help="runs per condition (--mode conditions)")
     parser.add_argument(
+        "--run-index-start",
+        type=int,
+        default=1,
+        help="first run_index for --mode conditions (default 1; replays use 2 and 3)",
+    )
+    parser.add_argument(
         "--manifest",
         default=None,
         help="read queries and IDs from a query manifest CSV (with --set)",
@@ -400,6 +408,7 @@ def main() -> None:
             await run_conditions(
                 tagged, conditions, args.repeats,
                 inventory_profile=profile, query_set=args.query_set,
+                run_index_start=args.run_index_start,
             )
             _write_results(inventory_mode)
 

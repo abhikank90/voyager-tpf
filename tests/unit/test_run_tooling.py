@@ -338,3 +338,118 @@ def test_status_parses_fixture_log(tmp_path, capsys, monkeypatch):
     assert " 1 " in captured      # shard_1 failures
     assert " 2 " in captured      # 429 + overloaded
     assert "15.0" in captured     # mean session time
+
+
+# ── run-index offset (§6 replays use 2 and 3) ────────────────────────────────
+
+def test_run_conditions_offsets_run_index(tmp_path):
+    seen = []
+
+    async def fake_run(query, **kwargs):
+        seen.append(kwargs["session_tags"])
+
+    with patch("graph.travel_graph.run_collaborative_travel_query", fake_run):
+        asyncio.run(bq.run_conditions(
+            [("SYN-01", "q1")], ["baseline", "targeted"], 2, run_index_start=2,
+        ))
+
+    assert seen == [
+        {"query_id": "SYN-01", "condition": "baseline", "run_index": 2},
+        {"query_id": "SYN-01", "condition": "targeted", "run_index": 2},
+        {"query_id": "SYN-01", "condition": "baseline", "run_index": 3},
+        {"query_id": "SYN-01", "condition": "targeted", "run_index": 3},
+    ]
+
+
+def test_run_conditions_failure_row_carries_offset(tmp_path, monkeypatch):
+    monkeypatch.setenv("VOYAGER_FAILURES_PATH", str(tmp_path / "failures.csv"))
+
+    async def fake_run(query, **kwargs):
+        raise RuntimeError("boom")
+
+    with patch("graph.travel_graph.run_collaborative_travel_query", fake_run):
+        asyncio.run(bq.run_conditions(
+            [("SYN-01", "q1")], ["baseline"], 1, query_set="synthetic", run_index_start=3,
+        ))
+
+    rows = fl.load_failures(tmp_path / "failures.csv")
+    assert len(rows) == 1
+    assert rows[0]["run_index"] == "3"
+
+
+def test_merge_expects_offset_range(tmp_path, monkeypatch):
+    out = _plan(tmp_path)
+    plan = json.loads((out / "plan.json").read_text())
+    plan["run_index_start"] = 2
+    (out / "plan.json").write_text(json.dumps(plan))
+    (out / "shard_1").mkdir()
+    (out / "shard_2").mkdir()
+    (out / "shard_1" / "sessions.jsonl").write_text(
+        json.dumps(_session("SYN-01", "baseline", 2)) + "\n"
+        + json.dumps(_session("SYN-01", "targeted", 2)) + "\n"
+    )
+    (out / "shard_2" / "sessions.jsonl").write_text(
+        json.dumps(_session("SYN-02", "baseline", 2)) + "\n"
+        + json.dumps(_session("SYN-02", "targeted", 2)) + "\n"
+    )
+    failures = tmp_path / "failures.csv"
+    _write_failures(failures, [])
+    monkeypatch.setenv("VOYAGER_FAILURES_PATH", str(failures))
+
+    rc = rs.cmd_merge(argparse.Namespace(out=str(out)))
+    assert rc == 0
+
+
+def test_plan_stores_run_index_start(tmp_path):
+    manifest = _write_manifest(tmp_path / "manifest.csv", n=3)
+    out = tmp_path / "out"
+    rs.cmd_plan(argparse.Namespace(
+        set="synthetic", shards=1, repeats=1, run_index_start=2, out=str(out),
+        conditions=["baseline"], manifest=str(manifest), inventory=None,
+    ))
+    plan = json.loads((out / "plan.json").read_text())
+    assert plan["run_index_start"] == 2
+    cmd = rs._shard_command(plan, plan["shards"][0], "replay")
+    assert "--run-index-start 2" in " ".join(cmd)
+
+
+# ── combine ───────────────────────────────────────────────────────────────────
+
+def test_combine_reports_coverage_per_run_index(tmp_path, capsys):
+    d1 = tmp_path / "d1"
+    d1.mkdir()
+    d2 = tmp_path / "d2"
+    d2.mkdir()
+    (d1 / "sessions.jsonl").write_text(
+        json.dumps(_session("SYN-01", "baseline", 1)) + "\n"
+        + json.dumps(_session("SYN-01", "baseline", 2)) + "\n"
+    )
+    (d2 / "sessions.jsonl").write_text(
+        json.dumps(_session("SYN-01", "targeted", 1)) + "\n"
+    )
+    out = tmp_path / "combined"
+    rc = rs.cmd_combine(argparse.Namespace(out=str(out), from_=[str(d1), str(d2)]))
+    assert rc == 0
+    combined = [json.loads(line) for line in (out / "sessions.jsonl").read_text().splitlines()
+                if line.strip()]
+    assert len(combined) == 3
+    out_text = capsys.readouterr().out
+    assert "run_index 1: 2" in out_text
+    assert "run_index 2: 1" in out_text
+
+
+def test_combine_catches_duplicate_keys(tmp_path):
+    d1 = tmp_path / "d1"
+    d1.mkdir()
+    d2 = tmp_path / "d2"
+    d2.mkdir()
+    (d1 / "sessions.jsonl").write_text(
+        json.dumps(_session("SYN-01", "baseline", 1)) + "\n"
+    )
+    (d2 / "sessions.jsonl").write_text(
+        json.dumps(_session("SYN-01", "baseline", 1, marker="dup")) + "\n"
+    )
+    out = tmp_path / "combined"
+    rc = rs.cmd_combine(argparse.Namespace(out=str(out), from_=[str(d1), str(d2)]))
+    assert rc == 2
+    assert not (out / "sessions.jsonl").exists()

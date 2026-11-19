@@ -130,6 +130,7 @@ def _shard_command(plan: dict, shard: dict, inventory_mode: str | None = None) -
         sys.executable, "scripts/benchmark_queries.py", "--mode", "conditions",
         "--manifest", plan["manifest"], "--set", plan["set"],
         "--repeats", str(plan["repeats"]), "--limit", str(shard["limit"]),
+        "--run-index-start", str(plan.get("run_index_start", 1)),
     ]
     if plan["conditions"] != list(CONDITIONS):
         cmd += ["--conditions", ",".join(plan["conditions"])]
@@ -198,8 +199,10 @@ def cmd_plan(args) -> int:
         })
         idx += size
 
+    run_index_start = getattr(args, "run_index_start", 1)
     plan = {
         "set": args.set, "shard_count": args.shards, "repeats": args.repeats,
+        "run_index_start": run_index_start,
         "conditions": conditions, "manifest": args.manifest,
         "queries": [{"query_id": qid, "query_text": text} for qid, text in queries],
         "shards": shards,
@@ -208,7 +211,8 @@ def cmd_plan(args) -> int:
 
     inventory_mode = args.inventory
     print(f"\n{len(queries)} queries → {args.shards} shard(s) "
-          f"(× {len(conditions)} conditions × {args.repeats} runs)\n")
+          f"(× {len(conditions)} conditions × {args.repeats} runs, "
+          f"run_index {run_index_start}..{run_index_start + args.repeats - 1})\n")
     for shard in shards:
         env = _shard_env(plan, shard, out)
         cmd = _shard_command(plan, shard, inventory_mode)
@@ -336,9 +340,11 @@ def cmd_merge(args) -> int:
         else:
             dup_errors.append(key)
 
+    run_index_start = plan.get("run_index_start", 1)
     expected = {
         (q["query_id"], c, r)
-        for q in plan["queries"] for c in conditions for r in range(1, repeats + 1)
+        for q in plan["queries"] for c in conditions
+        for r in range(run_index_start, run_index_start + repeats)
     }
     present = set(by_key)
 
@@ -452,6 +458,48 @@ def cmd_status(args) -> int:
     return 0
 
 
+# ── combine ───────────────────────────────────────────────────────────────────
+
+def cmd_combine(args) -> int:
+    """Concatenate already-merged ``sessions.jsonl`` files into one run set."""
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+
+    sessions = []
+    for src in args.from_:
+        f = Path(src) / "sessions.jsonl"
+        if not f.exists():
+            raise SystemExit(f"{f} missing")
+        for line in f.read_text().splitlines():
+            if line.strip():
+                sessions.append(json.loads(line))
+
+    by_key: dict[tuple, list[dict]] = defaultdict(list)
+    for s in sessions:
+        by_key[_session_key(s)].append(s)
+
+    dupes = {k for k, v in by_key.items() if len(v) > 1}
+    if dupes:
+        print(f"\nERROR: {len(dupes)} duplicate (query_id, condition, run_index) key(s):")
+        for key in sorted(dupes):
+            print(f"  {key}")
+        return 2
+
+    (out / "sessions.jsonl").write_text(
+        "".join(json.dumps(s) + "\n" for s in sessions)
+    )
+
+    runs: dict[int, int] = defaultdict(int)
+    for key in by_key:
+        runs[key[2]] += 1
+    print(f"combined {len(sessions)} session(s) from {len(args.from_)} source(s) "
+          f"into {out / 'sessions.jsonl'}")
+    print("cells per run_index:")
+    for r in sorted(runs):
+        print(f"  run_index {r}: {runs[r]}")
+    return 0
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def build_parser() -> argparse.ArgumentParser:
@@ -462,6 +510,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_plan.add_argument("--set", required=True, choices=["synthetic", "real", "control"])
     p_plan.add_argument("--shards", type=int, required=True)
     p_plan.add_argument("--repeats", type=int, required=True)
+    p_plan.add_argument("--run-index-start", type=int, default=1,
+                        help="first run_index (default 1; replays 2 and 3 use 2/3)")
     p_plan.add_argument("--out", required=True)
     p_plan.add_argument("--conditions", nargs="+", default=None,
                         help=f"space-separated conditions (default: {' '.join(CONDITIONS)})")
@@ -481,6 +531,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_status = sub.add_parser("status", help="per-shard progress and ETA")
     p_status.add_argument("--out", required=True)
     p_status.set_defaults(func=cmd_status)
+
+    p_combine = sub.add_parser("combine", help="concatenate merged sessions.jsonl files")
+    p_combine.add_argument("--out", required=True)
+    p_combine.add_argument("--from", dest="from_", nargs="+", required=True,
+                           help="source DIRs whose DIR/sessions.jsonl are concatenated")
+    p_combine.set_defaults(func=cmd_combine)
 
     return parser
 
