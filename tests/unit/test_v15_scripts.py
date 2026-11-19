@@ -1,6 +1,7 @@
 """Model manifest (§2) and H2c packet builder (§11)."""
 import csv
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -106,9 +107,25 @@ def corpus(tmp_path):
 
 def test_eligibility_filters(corpus):
     sessions, plans, _ = corpus
-    ids = {s["session_id"] for s in eligible(sessions, plans)}
+    candidates, exclusions = eligible(sessions, plans)
+    ids = {s["session_id"] for s in candidates}
     assert len(ids) == 40
     assert not ids & {"base", "unresolved", "clean", "noplan"}
+    assert len(exclusions["baseline"]) == 1
+    assert len(exclusions["unresolved_final"]) == 1
+    assert len(exclusions["no_round1_conflict"]) == 1
+    assert len(exclusions["no_plan_file"]) == 1
+
+
+def test_no_balanced_option_is_excluded_and_counted(tmp_path):
+    plans = tmp_path / "plans"
+    plans.mkdir()
+    sessions = [_session("s000", query_id="SYN-01", run_index=1)]
+    (plans / "s000.json").write_text(json.dumps(
+        {**_plan("s000"), "trip_options": [{"style": "budget"}]}))
+    candidates, exclusions = eligible(sessions, plans)
+    assert candidates == []
+    assert [s["session_id"] for s in exclusions["no_balanced_option"]] == ["s000"]
 
 
 def test_allocation_is_proportional_and_covers_every_stratum():
@@ -136,11 +153,21 @@ def test_build_is_seeded_and_writes_blinded_packets(corpus):
     with open(out_a / "rater" / "rater_scores.csv") as fh:
         assert [row["plan_id"] + ".md" for row in csv.DictReader(fh)] == rater
 
+    uuid_re = re.compile(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
     for packet in (out_a / "author").glob("plan_*.md"):
         text = packet.read_text().lower()
-        for leak in ("targeted", "full_rerun", "broadcast", "two_way", "session", "s0", "round",
-                     "conflict", "fingerprint"):
+        for leak in ("targeted", "full_rerun", "broadcast", "two_way", "baseline",
+                     "session", "s0", "round", "conflict", "fingerprint", "run_index"):
             assert leak not in text, (packet.name, leak)
+        assert not uuid_re.search(text), packet.name
+
+
+def test_same_seed_gives_same_sample(corpus):
+    sessions, plans, tmp = corpus
+    build(sessions, plans, tmp / "a", seed=20261117, n=20, n_double=6)
+    build(sessions, plans, tmp / "b", seed=20261117, n=20, n_double=6)
+    assert (tmp / "a" / "KEY_DO_NOT_SHARE.csv").read_text() == \
+        (tmp / "b" / "KEY_DO_NOT_SHARE.csv").read_text()
 
 
 def test_different_seed_draws_differently(corpus):

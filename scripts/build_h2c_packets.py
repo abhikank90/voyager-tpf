@@ -37,6 +37,8 @@ from pathlib import Path
 PACKET_STYLE = "balanced"
 SCORE_HEADER = ["plan_id", "D1_temporal", "D2_budget", "D3_preference", "D4_logistics",
                 "fully_coherent", "notes"]
+EXCLUSION_REASONS = ("baseline", "no_round1_conflict", "unresolved_final",
+                     "no_plan_file", "no_balanced_option", "calibration_excluded")
 
 
 def load_sessions(paths: list[Path]) -> list[dict]:
@@ -47,18 +49,52 @@ def load_sessions(paths: list[Path]) -> list[dict]:
     return sessions
 
 
-def eligible(sessions: list[dict], plans_dir: Path) -> list[dict]:
-    out = []
+def set_of(s: dict) -> str:
+    qid = (s.get("query_id") or "").upper()
+    if qid.startswith("SYN-"):
+        return "synthetic"
+    if qid.startswith("CTL-"):
+        return "control"
+    if qid.startswith("REAL-"):
+        return "real"
+    return "unknown"
+
+
+def _has_balanced_option(plan: dict) -> bool:
+    return any((o or {}).get("style") == PACKET_STYLE for o in plan.get("trip_options") or [])
+
+
+def _exclusion_reason(s: dict, plans_dir: Path, excluded_ids: set[str]) -> str | None:
+    condition = s.get("refinement_mode") or s.get("condition")
+    if s.get("session_id") in excluded_ids:
+        return "calibration_excluded"
+    if condition in (None, "baseline"):
+        return "baseline"
+    if not s.get("round_1_conflict_count"):
+        return "no_round1_conflict"
+    if s.get("final_conflict_count", 1) != 0:
+        return "unresolved_final"
+    plan_path = plans_dir / f"{s.get('session_id')}.json"
+    if not plan_path.exists():
+        return "no_plan_file"
+    if not _has_balanced_option(json.loads(plan_path.read_text())):
+        return "no_balanced_option"
+    return None
+
+
+def eligible(sessions: list[dict], plans_dir: Path,
+             excluded_ids: set[str] | None = None) -> tuple[list[dict], dict[str, list[dict]]]:
+    """Return (candidates, exclusions) with exclusions keyed by reason."""
+    excluded_ids = excluded_ids or set()
+    candidates: list[dict] = []
+    exclusions: dict[str, list[dict]] = {r: [] for r in EXCLUSION_REASONS}
     for s in sessions:
-        condition = s.get("refinement_mode") or s.get("condition")
-        if condition in (None, "baseline"):
-            continue
-        if not s.get("round_1_conflict_count") or s.get("final_conflict_count", 1) != 0:
-            continue
-        if not (plans_dir / f"{s.get('session_id')}.json").exists():
-            continue
-        out.append(s)
-    return out
+        reason = _exclusion_reason(s, plans_dir, excluded_ids)
+        if reason is None:
+            candidates.append(s)
+        else:
+            exclusions[reason].append(s)
+    return candidates, exclusions
 
 
 def allocate(sizes: dict[tuple, int], n: int) -> dict[tuple, int]:
@@ -170,11 +206,25 @@ def _blank_sheet(path: Path, plan_ids: list[str]) -> None:
             w.writerow([pid] + [""] * (len(SCORE_HEADER) - 1))
 
 
-def build(sessions: list[dict], plans_dir: Path, out: Path, seed: int, n: int, n_double: int) -> dict:
-    candidates = eligible(sessions, plans_dir)
+def build(sessions: list[dict], plans_dir: Path, out: Path, seed: int, n: int,
+          n_double: int, session_paths: list[Path] | None = None,
+          excluded_ids: set[str] | None = None) -> dict:
+    candidates, exclusions = eligible(sessions, plans_dir, excluded_ids)
     if not candidates:
         raise SystemExit("no resolved outcomes with saved plans")
     sample, double = draw(candidates, n, n_double, seed)
+
+    eligible_by_stratum: dict[str, int] = {}
+    for s in candidates:
+        inv, cond = stratum(s)
+        eligible_by_stratum[f"{inv}x{cond}"] = eligible_by_stratum.get(f"{inv}x{cond}", 0) + 1
+    exclusions_by_reason: dict[str, dict[str, int]] = {}
+    for reason, sess in exclusions.items():
+        per_set: dict[str, int] = {}
+        for s in sess:
+            key = set_of(s)
+            per_set[key] = per_set.get(key, 0) + 1
+        exclusions_by_reason[reason] = per_set
 
     (out / "author").mkdir(parents=True, exist_ok=True)
     (out / "rater").mkdir(parents=True, exist_ok=True)
@@ -189,19 +239,31 @@ def build(sessions: list[dict], plans_dir: Path, out: Path, seed: int, n: int, n
             (out / "rater" / f"{pid}.md").write_text(packet)
             rater_ids.append(pid)
         inv, cond = stratum(s)
-        key_rows.append([pid, s["session_id"], cond, inv, s.get("query_id", ""),
-                         s.get("run_index", ""), s["session_id"] in double])
+        fb_balanced = "true" if "balanced" in (s.get("itinerary_fallback_styles") or []) else "false"
+        key_rows.append([pid, s["session_id"], set_of(s), cond, inv, s.get("query_id", ""),
+                         s.get("run_index", ""), fb_balanced, s["session_id"] in double])
 
     with open(out / "KEY_DO_NOT_SHARE.csv", "w", newline="") as fh:
         w = csv.writer(fh)
-        w.writerow(["plan_id", "session_id", "condition", "inventory_mode", "query_id",
-                    "run_index", "double_scored"])
+        w.writerow(["plan_id", "session_id", "set", "condition", "inventory_mode",
+                    "query_id", "run_index", "itinerary_fallback_balanced", "double_scored"])
         w.writerows(key_rows)
     _blank_sheet(out / "author" / "author_scores.csv", author_ids)
     _blank_sheet(out / "rater" / "rater_scores.csv", rater_ids)
+
+    import hashlib
+    input_files = []
+    for path in sorted(session_paths or []):
+        input_files.append({
+            "path": str(path),
+            "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        })
     (out / "SAMPLING.json").write_text(json.dumps({
         "seed": seed, "n": len(sample), "n_double": len(rater_ids),
         "eligible": len(candidates), "packet_style": PACKET_STYLE,
+        "eligible_by_stratum": dict(sorted(eligible_by_stratum.items())),
+        "exclusions_by_reason": {r: exclusions_by_reason[r] for r in EXCLUSION_REASONS},
+        "input_files": input_files,
     }, indent=2) + "\n")
     return {"sampled": len(sample), "double": len(rater_ids), "eligible": len(candidates)}
 
@@ -214,8 +276,13 @@ def main() -> None:
     parser.add_argument("--seed", type=int, required=True, help="commit this value before scoring")
     parser.add_argument("--n", type=int, default=30)
     parser.add_argument("--double", type=int, default=10)
+    parser.add_argument("--exclude-sessions", default="",
+                        help="comma-separated session ids to force-exclude (calibration leakage)")
     args = parser.parse_args()
-    result = build(load_sessions(args.sessions), args.plans_dir, args.out, args.seed, args.n, args.double)
+    excluded = {x.strip() for x in args.exclude_sessions.split(",") if x.strip()}
+    result = build(load_sessions(args.sessions), args.plans_dir, args.out, args.seed,
+                   args.n, args.double, session_paths=list(args.sessions),
+                   excluded_ids=excluded)
     print(f"{result['sampled']} plans from {result['eligible']} resolved outcomes; "
           f"{result['double']} double-scored -> {args.out}")
 
