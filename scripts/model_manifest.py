@@ -74,7 +74,7 @@ def _model_entry(client, model_id: str) -> dict:
         return {"error": f"{type(exc).__name__}: {exc}"}
 
 
-def _canary(client, model_id: str, prompt: str) -> dict:
+def _canary(client, model_id: str, prompt: str) -> tuple[dict, dict]:
     response = client.messages.create(
         model=model_id,
         max_tokens=CANARY_MAX_TOKENS,
@@ -82,31 +82,62 @@ def _canary(client, model_id: str, prompt: str) -> dict:
         messages=[{"role": "user", "content": prompt}],
     )
     text = "".join(getattr(b, "text", "") for b in response.content)
-    return {"sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(), "output": text}
+    from metrics.token_tracker import compute_cost
+
+    usage = getattr(response, "usage", None)
+    input_tokens = int(getattr(usage, "input_tokens", 0) or 0)
+    output_tokens = int(getattr(usage, "output_tokens", 0) or 0)
+    return (
+        {"sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(), "output": text},
+        {
+            "component": "canary",
+            "model": model_id,
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "cost_usd": compute_cost(input_tokens, output_tokens, model_id),
+        },
+    )
 
 
-def _canary_set(client, model_id: str, prompt: str) -> dict:
-    runs = [_canary(client, model_id, prompt) for _ in range(CANARY_REPEATS)]
-    return {
-        "sha256": sorted({r["sha256"] for r in runs}),
-        "outputs": sorted({r["output"] for r in runs}),
-    }
+def _canary_set(client, model_id: str, prompt: str) -> tuple[dict, list[dict]]:
+    results, calls = [], []
+    for _ in range(CANARY_REPEATS):
+        result, call = _canary(client, model_id, prompt)
+        results.append(result)
+        calls.append(call)
+    return (
+        {
+            "sha256": sorted({r["sha256"] for r in results}),
+            "outputs": sorted({r["output"] for r in results}),
+        },
+        calls,
+    )
 
 
 def take_snapshot(client, label: str, models: list[str]) -> dict:
+    calls: list[dict] = []
+    models_out = {}
+    for model_id in models:
+        entry = _model_entry(client, model_id)
+        canaries = {}
+        for name, prompt in CANARIES.items():
+            canaries[name], model_calls = _canary_set(client, model_id, prompt)
+            calls.extend(model_calls)
+        models_out[model_id] = {"entry": entry, "canaries": canaries}
     return {
         "label": label,
         "taken_at": datetime.now(UTC).isoformat(),
         "canary_prompts": CANARIES,
         "canary_max_tokens": CANARY_MAX_TOKENS,
         "canary_repeats": CANARY_REPEATS,
-        "models": {
-            model_id: {
-                "entry": _model_entry(client, model_id),
-                "canaries": {name: _canary_set(client, model_id, p) for name, p in CANARIES.items()},
-            }
-            for model_id in models
+        "usage": {
+            "component": "canary",
+            "input_tokens": sum(c["input_tokens"] for c in calls),
+            "output_tokens": sum(c["output_tokens"] for c in calls),
+            "cost_usd": round(sum(c["cost_usd"] for c in calls), 6),
+            "calls": calls,
         },
+        "models": models_out,
     }
 
 
