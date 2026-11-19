@@ -56,6 +56,17 @@ def _read_csv(path: Path) -> list[dict]:
         return list(csv.DictReader(fh))
 
 
+def _read_csv_skipping_comments(path: Path) -> list[dict]:
+    """Read a CSV whose first lines may be ``#`` comments (labeling sheets)."""
+    import io
+
+    lines = [
+        line for line in path.read_text().splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    ]
+    return list(csv.DictReader(io.StringIO("\n".join(lines))))
+
+
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -771,6 +782,107 @@ def row_h5(root: Path, sessions: dict[str, list[dict]], allow_missing: bool) -> 
     return out
 
 
+def row_rq4_gold_agreement(root: Path, allow_missing: bool) -> dict:
+    """RQ4 inter-labeler agreement: Kalyan's labels vs Abhishek's merged gold.
+
+    Reads ``rq4_labels_kalyan.csv`` (same columns as ``rq4_labeling_sheet.csv``:
+    ``sheet_id,state_summary,gold_types,notes``), maps rows to probes through
+    ``rq4_sheet_key.csv``, and compares presence/absence per type plus the exact
+    set against the merged ``gold`` in ``rq4_probes.json``. A missing Kalyan file
+    is ``missing_input``; an unknown type or a blank row fails loudly.
+    """
+    kalyan_path = root / "rq4_labels_kalyan.csv"
+    key_path = root / "rq4_sheet_key.csv"
+    probes_path = root / "rq4_probes.json"
+
+    missing = [p.name for p in (probes_path, key_path, kalyan_path) if not p.exists()]
+    if missing:
+        return _missing(missing)
+
+    probes = _read_json(probes_path)
+    types = list(probes.get("types") or [])
+    probe_gold = {p["id"]: set(p.get("gold") or []) for p in probes.get("probes", [])}
+
+    key = {r["sheet_id"]: r["probe_id"] for r in _read_csv_skipping_comments(key_path)}
+
+    kalyan: dict[str, set[str]] = {}
+    for row in _read_csv_skipping_comments(kalyan_path):
+        sheet_id = (row.get("sheet_id") or "").strip()
+        raw = (row.get("gold_types") or "").strip()
+        if not sheet_id:
+            raise SystemExit("rq4_labels_kalyan.csv: a data row has a blank sheet_id")
+        if not raw:
+            raise SystemExit(
+                f"rq4_labels_kalyan.csv: blank gold_types for sheet {sheet_id!r} "
+                "(enter 'none' or ';'-separated types)"
+            )
+        labels: set[str] = set()
+        if raw.lower() != "none":
+            for t in raw.split(";"):
+                t = t.strip()
+                if not t:
+                    continue
+                if t not in types:
+                    raise SystemExit(
+                        f"rq4_labels_kalyan.csv: unknown type {t!r} for sheet {sheet_id!r}; "
+                        f"allowed types are {types}"
+                    )
+                labels.add(t)
+        kalyan[sheet_id] = labels
+
+    abhishek: list[set[str]] = []
+    second: list[set[str]] = []
+    disagreements: list[tuple[str, list, list]] = []
+    for sheet_id in sorted(key):
+        probe_id = key[sheet_id]
+        if probe_id not in probe_gold:
+            raise SystemExit(
+                f"rq4_sheet_key.csv: sheet {sheet_id!r} maps to unknown probe {probe_id!r}"
+            )
+        if sheet_id not in kalyan:
+            raise SystemExit(f"rq4_labels_kalyan.csv: missing row for sheet {sheet_id!r}")
+        a = probe_gold[probe_id]
+        k = kalyan[sheet_id]
+        abhishek.append(a)
+        second.append(k)
+        if a != k:
+            disagreements.append((probe_id, sorted(a), sorted(k)))
+
+    per_type = {}
+    for t in types:
+        a_bits = [1 if t in s else 0 for s in abhishek]
+        k_bits = [1 if t in s else 0 for s in second]
+        per_type[t] = {
+            "percent_agreement": percent_agreement(a_bits, k_bits),
+            "cohen_kappa": cohen_kappa(a_bits, k_bits),
+        }
+
+    exact = sum(1 for a, k in zip(abhishek, second) if a == k)
+    return {
+        "status": "ok",
+        "method": "Second labeler (Kalyan) vs Abhishek's merged gold in rq4_probes.json: "
+                  "per-type presence/absence percent agreement and Cohen's κ, plus the "
+                  "exact-set agreement rate; disagreements listed as (probe, Abhishek, Kalyan)",
+        "n_probes": len(abhishek),
+        "exact_set_agreement_rate": round(exact / len(abhishek), 6) if abhishek else None,
+        "per_type": per_type,
+        "disagreements": disagreements,
+        "sources": ["rq4_labels_kalyan.csv", "rq4_sheet_key.csv", "rq4_probes.json"],
+    }
+
+
+def load_billing(root: Path) -> dict:
+    """Billing reconciliation summary for the header (written by reconcile_billing.py)."""
+    path = root / "billing_reconciliation.json"
+    if not path.exists():
+        return {"status": "missing_input"}
+    doc = _read_json(path)
+    return {
+        "pass": doc.get("pass"),
+        "delta_pct": doc.get("deltas", {}).get("cost_delta_pct"),
+    }
+
+
 # ── Report assembly and output ────────────────────────────────────────────────
 
 def build_report(root: Path, allow_missing: bool) -> tuple[dict, list[str]]:
@@ -808,6 +920,7 @@ def build_report(root: Path, allow_missing: bool) -> tuple[dict, list[str]]:
         "H3b": row_h3b(root, sessions, allow_missing),
         "H4": row_h4(root, manifest, sessions, allow_missing),
         "H5": row_h5(root, sessions, allow_missing),
+        "rq4_gold_agreement": row_rq4_gold_agreement(root, allow_missing),
     }
 
     mm_diffs = load_model_manifest_diffs(root)
@@ -820,6 +933,7 @@ def build_report(root: Path, allow_missing: bool) -> tuple[dict, list[str]]:
             "unchanged": mm_diffs is not None and len(mm_diffs) == 0,
             "method": "compare_snapshots diff list; empty = unchanged",
         },
+        "billing": load_billing(root),
     }
     return {"header": header, "rows": rows}, missing
 

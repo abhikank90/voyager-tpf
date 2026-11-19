@@ -1,4 +1,5 @@
 """Tests for scripts/paper_numbers.py — small in-memory fixtures, no live data."""
+import csv
 import json
 from pathlib import Path
 
@@ -278,6 +279,86 @@ def test_missing_inputs_rows_with_flag(tmp_path):
     doc, missing = pn.build_report(tmp_path, allow_missing=True)
     assert missing
     assert all(row.get("status") == "missing_input" for row in doc["rows"].values())
+
+
+# ── RQ4 inter-labeler agreement ──────────────────────────────────────────────
+
+def _write_rq4_agreement_inputs(root, *, kalyan_rows=None, probes=None, key=None):
+    """Write rq4_probes.json, rq4_sheet_key.csv and rq4_labels_kalyan.csv fixtures."""
+    if probes is None:
+        probes = {"version": 1,
+                  "types": ["location_mismatch", "timing_inefficiency",
+                            "weather_activity_mismatch", "checkin_impossible",
+                            "budget_violation", "visa_timing", "preference_mismatch"],
+                  "probes": [
+                      {"id": "P1", "gold": ["timing_inefficiency"]},
+                      {"id": "P2", "gold": []},
+                      {"id": "P3", "gold": ["budget_violation", "visa_timing"]},
+                  ]}
+    if key is None:
+        key = [("S01", "P1"), ("S02", "P2"), ("S03", "P3")]
+    if kalyan_rows is None:
+        kalyan_rows = [("S01", "timing_inefficiency"), ("S02", "none"),
+                       ("S03", "budget_violation;visa_timing")]
+
+    (root / "rq4_probes.json").write_text(json.dumps(probes))
+    with open(root / "rq4_sheet_key.csv", "w", newline="") as fh:
+        fh.write("# Key mapping sheet_id -> probe_id.\n")
+        w = csv.writer(fh)
+        w.writerow(["sheet_id", "probe_id"])
+        w.writerows(key)
+    with open(root / "rq4_labels_kalyan.csv", "w", newline="") as fh:
+        fh.write("# instructions\n")
+        w = csv.writer(fh)
+        w.writerow(["sheet_id", "state_summary", "gold_types", "notes"])
+        for sid, gold in kalyan_rows:
+            w.writerow([sid, "state", gold, ""])
+
+
+def test_rq4_gold_agreement(tmp_path):
+    _write_rq4_agreement_inputs(tmp_path)
+    row = pn.row_rq4_gold_agreement(tmp_path, allow_missing=True)
+    assert row["status"] == "ok"
+    assert row["n_probes"] == 3
+    assert row["exact_set_agreement_rate"] == pytest.approx(1.0)
+    assert row["disagreements"] == []
+    assert row["per_type"]["timing_inefficiency"]["percent_agreement"] == 1.0
+    assert row["per_type"]["budget_violation"]["cohen_kappa"] == 1.0
+
+
+def test_rq4_gold_agreement_lists_disagreements(tmp_path):
+    _write_rq4_agreement_inputs(tmp_path, kalyan_rows=[
+        ("S01", "timing_inefficiency"), ("S02", "none"),
+        ("S03", "visa_timing"),  # Abhishek: budget_violation + visa_timing
+    ])
+    row = pn.row_rq4_gold_agreement(tmp_path, allow_missing=True)
+    assert row["exact_set_agreement_rate"] == pytest.approx(2 / 3)
+    assert ("P3", ["budget_violation", "visa_timing"], ["visa_timing"]) in row["disagreements"]
+    assert row["per_type"]["budget_violation"]["percent_agreement"] == pytest.approx(2 / 3)
+
+
+def test_rq4_gold_agreement_missing_kalyan_file(tmp_path):
+    (tmp_path / "rq4_probes.json").write_text(json.dumps({"types": [], "probes": []}))
+    (tmp_path / "rq4_sheet_key.csv").write_text("sheet_id,probe_id\n")
+    row = pn.row_rq4_gold_agreement(tmp_path, allow_missing=True)
+    assert row["status"] == "missing_input"
+    assert "rq4_labels_kalyan.csv" in row["missing"]
+
+
+def test_rq4_gold_agreement_unknown_type_fails(tmp_path):
+    _write_rq4_agreement_inputs(tmp_path, kalyan_rows=[
+        ("S01", "timing_inefficiency"), ("S02", "none"), ("S03", "not_a_type"),
+    ])
+    with pytest.raises(SystemExit):
+        pn.row_rq4_gold_agreement(tmp_path, allow_missing=True)
+
+
+def test_rq4_gold_agreement_blank_row_fails(tmp_path):
+    _write_rq4_agreement_inputs(tmp_path, kalyan_rows=[
+        ("S01", "timing_inefficiency"), ("S02", "none"), ("S03", ""),
+    ])
+    with pytest.raises(SystemExit):
+        pn.row_rq4_gold_agreement(tmp_path, allow_missing=True)
 
 
 def test_json_deterministic(tmp_path):
