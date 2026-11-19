@@ -51,14 +51,19 @@ def test_intent_fixture_before_anchor_raises(tmp_path, monkeypatch):
 
 # ── Fix B: agent errors are session failures outside mock ─────────────────────
 
-def _run_state(monkeypatch, inventory_mode, errors, tmp_path):
+def _run_state(monkeypatch, inventory_mode, errors, tmp_path, flights=None, hotels=None):
     monkeypatch.setenv("VOYAGER_INVENTORY_MODE", inventory_mode)
     monkeypatch.setenv("VOYAGER_METRICS_PATH", str(tmp_path / "sessions.jsonl"))
     reload_settings()
     from graph.travel_graph import run_collaborative_travel_query
 
+    state = {"errors": errors}
+    if flights is not None:
+        state["flights"] = flights
+    if hotels is not None:
+        state["hotels"] = hotels
     graph = MagicMock()
-    graph.ainvoke = AsyncMock(return_value={"errors": errors})
+    graph.ainvoke = AsyncMock(return_value=state)
     with patch("graph.travel_graph.collaborative_travel_graph", graph):
         return asyncio.run(run_collaborative_travel_query("q", record_metrics=True))
 
@@ -68,9 +73,20 @@ def test_capture_session_with_agent_errors_raises(tmp_path, monkeypatch):
         _run_state(monkeypatch, "capture", {"flight_agent": "boom"}, tmp_path)
 
 
-def test_replay_session_with_agent_errors_raises(tmp_path, monkeypatch):
+def test_replay_research_error_state_raises(tmp_path, monkeypatch):
     with pytest.raises(RuntimeError, match="agent errors"):
-        _run_state(monkeypatch, "replay", {"option_generator": "boom"}, tmp_path)
+        _run_state(monkeypatch, "replay", {"hotel_agent": "No intent in state"}, tmp_path)
+
+
+def test_option_generator_error_with_inventory_raises(tmp_path, monkeypatch):
+    with pytest.raises(RuntimeError, match="agent errors"):
+        _run_state(monkeypatch, "capture", {"option_generator": "boom"}, tmp_path,
+                   flights=[{"airline": "A"}], hotels=[{"name": "H"}])
+
+
+def test_option_generator_only_error_with_empty_inventory_is_recorded(tmp_path, monkeypatch):
+    out = _run_state(monkeypatch, "capture", {"option_generator": "boom"}, tmp_path)
+    assert out["errors"] == {"option_generator": "boom"}
 
 
 def test_mock_session_with_agent_errors_does_not_raise(tmp_path, monkeypatch):

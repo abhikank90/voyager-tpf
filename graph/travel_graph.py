@@ -565,16 +565,26 @@ async def run_collaborative_travel_query(
     final_state = await collaborative_travel_graph.ainvoke(initial_state)
     duration = round(time.perf_counter() - t0, 2)
 
-    # In capture/replay, an agent that ended in an error state means the session is
-    # unusable (e.g. a fixture that could not be captured). Raise before recording so
-    # the session lands in failures.csv and goes through rerun-once (§8) instead of
-    # being recorded as a "success" with errors. Mock keeps its current behaviour.
+    # In capture/replay, a research-agent error means the session is unusable (e.g. a
+    # fixture that could not be captured), and an option-generator error with data present
+    # means the synthesis itself failed — both raise before recording so they land in
+    # failures.csv and go through rerun-once (§8). An option-generator-only "insufficient
+    # research data" result, on the other hand, is a legitimate outcome when the real
+    # searches returned nothing: record it as a normal session. Mock is unchanged.
     if record_metrics and (final_state.get("errors") or {}):
         if get_settings().inventory_mode in ("capture", "replay"):
-            raise RuntimeError(
-                "session completed with agent errors: "
-                + ", ".join(sorted(final_state["errors"]))
+            errors = final_state.get("errors") or {}
+            non_option = [key for key in errors if key != "option_generator"]
+            option_generator_with_inventory = (
+                "option_generator" in errors
+                and bool(final_state.get("flights"))
+                and bool(final_state.get("hotels"))
             )
+            if non_option or option_generator_with_inventory:
+                raise RuntimeError(
+                    "session completed with agent errors: "
+                    + ", ".join(sorted(errors))
+                )
 
     usage = get_current()
     estimated_cost = compute_session_cost(usage) if usage else 0.0
