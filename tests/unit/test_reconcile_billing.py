@@ -34,8 +34,8 @@ def _session(model, in_tokens, out_tokens, cost, timestamp="2026-11-18T10:00:00+
 
 
 def _write_sessions(root: Path, sessions):
-    (root / "runs" / "synthetic").mkdir(parents=True)
-    with open(root / "runs" / "synthetic" / "sessions.jsonl", "w") as fh:
+    (root / "runs" / "synthetic" / "shard_1").mkdir(parents=True)
+    with open(root / "runs" / "synthetic" / "shard_1" / "sessions.jsonl", "w") as fh:
         for s in sessions:
             fh.write(json.dumps(s) + "\n")
 

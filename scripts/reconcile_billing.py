@@ -1,20 +1,30 @@
 """Billing reconciliation for the v1.5 window (protocol §10 step 16, §7).
 
-Compares Anthropic Console usage/cost exports against the tracked tokens and
-``estimated_cost_usd`` in every session under ``results/v1.5/runs/*/sessions.jsonl``
-(plus any usage recorded in ``results/v1.5/rq4/*.json``), inside the window. The
-window is ``--start``/``--end`` or, by default, the first and last snapshot
+Compares Anthropic Console usage/cost exports against the tracked usage in the
+window. The tracked side is every source of LLM spend, reported separately:
+
+  * sessions        — raw per-shard ``runs/**/shard_*/sessions.jsonl`` (never a
+                      merged or combined ``sessions.jsonl``)
+  * rerun sessions  — ``runs/**/reruns.jsonl`` (recursive)
+  * failed sessions — the partial-usage columns of ``failures.csv``
+  * RQ4             — the ``usage`` recorded in ``results/v1.5/rq4/*.json``
+  * canaries        — the per-snapshot ``usage`` in ``model_manifest.json``
+
+The window is ``--start``/``--end`` or, by default, the first and last snapshot
 timestamps in ``results/v1.5/model_manifest.json``.
 
 The Console export format is not fixed, so the parser detects date / model /
 input / output / cost columns by header-name matching and fails with a clear
 message listing the headers it saw when a required column is missing.
+``--key-filter``/``--workspace-filter`` isolate a dedicated API key's or
+workspace's rows when the export carries such a column.
 
 Passes when ``|tracked − billed| ≤ 1%`` of billed cost (the v1.4 standard).
 
 Usage:
     python scripts/reconcile_billing.py --exports usage1.csv usage2.csv \
-        [--start 2026-11-18 --end 2026-11-20] [--root results/v1.5]
+        [--start 2026-11-18 --end 2026-11-20] [--root results/v1.5] \
+        [--key-filter sk-ant-...]
 """
 from __future__ import annotations
 
@@ -22,6 +32,7 @@ import argparse
 import csv
 import io
 import json
+import os
 import re
 import sys
 from collections import defaultdict
@@ -85,8 +96,17 @@ def _to_date(value) -> date | None:
     return None
 
 
-def _parse_export(path: Path) -> list[dict]:
-    """Parse one Console export into [{date, model, input, output, cost}]."""
+def _parse_export(
+    path: Path,
+    key_filter: str | None = None,
+    workspace_filter: str | None = None,
+) -> list[dict]:
+    """Parse one Console export into [{date, model, input, output, cost}].
+
+    Optionally keeps only rows whose API-key/workspace column matches the given
+    filter (case-insensitive substring). Fails clearly when a required column
+    is missing, or when a filter names a column the export does not have.
+    """
     lines = [
         line for line in path.read_text().splitlines()
         if line.strip() and not line.lstrip().startswith("#")
@@ -101,6 +121,8 @@ def _parse_export(path: Path) -> list[dict]:
     input_col = _pick(headers, "inputtoken", "input")
     output_col = _pick(headers, "outputtoken", "output")
     cost_col = _pick(headers, "cost", "amount", "usd")
+    key_col = _pick(headers, "key")
+    workspace_col = _pick(headers, "workspace")
 
     required = {"date": date_col, "model": model_col, "input tokens": input_col,
                 "output tokens": output_col, "cost": cost_col}
@@ -110,9 +132,23 @@ def _parse_export(path: Path) -> list[dict]:
             f"cannot parse export {path}: missing column(s) for {missing}. "
             f"Headers seen: {sorted(reader.fieldnames or [])}"
         )
+    if key_filter is not None and key_col is None:
+        raise SystemExit(
+            f"cannot apply --key-filter to export {path}: no API-key column. "
+            f"Headers seen: {sorted(reader.fieldnames or [])}"
+        )
+    if workspace_filter is not None and workspace_col is None:
+        raise SystemExit(
+            f"cannot apply --workspace-filter to export {path}: no workspace column. "
+            f"Headers seen: {sorted(reader.fieldnames or [])}"
+        )
 
     rows = []
     for row in reader:
+        if key_filter is not None and key_filter.lower() not in (row.get(key_col) or "").lower():
+            continue
+        if workspace_filter is not None and workspace_filter.lower() not in (row.get(workspace_col) or "").lower():
+            continue
         rows.append({
             "date": _to_date(row.get(date_col)),
             "model": (row.get(model_col) or "").strip(),
@@ -154,78 +190,121 @@ def _in_window(value: date | None, start: date, end: date) -> bool:
     return not ((start and value < start) or (end and value > end))
 
 
-# ── Tracked side ──────────────────────────────────────────────────────────────
+# ── Tracked side (reported per source) ────────────────────────────────────────
 
-def _scan_rq4(root: Path) -> dict:
-    """Any token usage recorded inside rq4/*.json (none today; forward-compatible)."""
-    found: list[str] = []
+def _empty_source(**extra) -> dict:
+    return {"input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0, **extra}
+
+
+def _session_source(root: Path, pattern: str, start: date, end: date) -> dict:
+    """Sum one class of raw session file and record which files were read.
+
+    ``pattern`` is a ``Path.glob`` pattern relative to ``root``. Merged
+    ``sessions.jsonl`` files and combined run sets are *not* matched: sessions
+    come only from per-shard files, and reruns only from ``reruns.jsonl``.
+    """
     models: dict[str, dict] = defaultdict(lambda: {"input": 0, "output": 0})
-    total = {"input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0}
-
-    def walk(node) -> None:
-        if isinstance(node, dict):
-            if "input_tokens" in node or "output_tokens" in node:
-                i = _to_int(node.get("input_tokens"))
-                o = _to_int(node.get("output_tokens"))
-                model = node.get("model")
-                if model:
-                    models[model]["input"] += i
-                    models[model]["output"] += o
-                total["input_tokens"] += i
-                total["output_tokens"] += o
-                total["cost_usd"] += _to_float(node.get("cost_usd"))
-            for value in node.values():
-                walk(value)
-        elif isinstance(node, list):
-            for value in node:
-                walk(value)
-
-    for path in sorted((root / "rq4").glob("*.json")):
-        try:
-            doc = json.loads(path.read_text())
-        except (OSError, json.JSONDecodeError):
-            continue
-        found.append(path.name)
-        walk(doc)
-    return {"files": found, "models": dict(models), **total}
-
-
-def _load_tracked(root: Path, start: date, end: date) -> dict:
-    models: dict[str, dict] = defaultdict(lambda: {"input": 0, "output": 0})
-    total = {"input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0}
-    n_sessions = 0
-    for path in sorted((root / "runs").glob("*/sessions.jsonl")):
+    total = _empty_source(n=0, files=[])
+    for path in sorted(root.glob(pattern)):
+        total["files"].append(str(path.relative_to(root)))
         for line in path.read_text().splitlines():
             if not line.strip():
                 continue
             session = json.loads(line)
             if not _in_window(_to_date(session.get("timestamp")), start, end):
                 continue
-            n_sessions += 1
+            total["n"] += 1
             for model, usage in (session.get("per_model_tokens") or {}).items():
                 models[model]["input"] += _to_int(usage.get("input"))
                 models[model]["output"] += _to_int(usage.get("output"))
             total["input_tokens"] += _to_int(session.get("input_tokens"))
             total["output_tokens"] += _to_int(session.get("output_tokens"))
             total["cost_usd"] += _to_float(session.get("estimated_cost_usd"))
+    return {"models": dict(models), **total}
 
-    rq4 = _scan_rq4(root)
-    for model, usage in rq4["models"].items():
-        models[model]["input"] += usage["input"]
-        models[model]["output"] += usage["output"]
-    total["input_tokens"] += rq4["input_tokens"]
-    total["output_tokens"] += rq4["output_tokens"]
-    total["cost_usd"] += rq4["cost_usd"]
-    return {"models": dict(models), "totals": total, "n_sessions": n_sessions, "rq4": rq4}
+
+def _failed_source(root: Path) -> dict:
+    """Partial usage recorded on the failure log's trailing columns."""
+    path = Path(os.environ.get("VOYAGER_FAILURES_PATH", root / "failures.csv"))
+    total = _empty_source(n=0)
+    if not path.exists():
+        return total
+    with open(path, newline="") as fh:
+        for row in csv.DictReader(fh):
+            total["n"] += 1
+            total["input_tokens"] += _to_int(row.get("input_tokens"))
+            total["output_tokens"] += _to_int(row.get("output_tokens"))
+            total["cost_usd"] += _to_float(row.get("cost_usd"))
+    return total
+
+
+def _rq4_source(root: Path) -> dict:
+    """Usage recorded in rq4/*.json (the ``usage`` field of each report)."""
+    total = _empty_source(files=[])
+    for path in sorted((root / "rq4").glob("*.json")):
+        try:
+            doc = json.loads(path.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        total["files"].append(path.name)
+        usage = doc.get("usage")
+        if isinstance(usage, dict):
+            total["input_tokens"] += _to_int(usage.get("input_tokens"))
+            total["output_tokens"] += _to_int(usage.get("output_tokens"))
+            total["cost_usd"] += _to_float(usage.get("cost_usd"))
+    return total
+
+
+def _canary_source(root: Path) -> dict:
+    """Per-snapshot canary usage in model_manifest.json."""
+    manifest = root / "model_manifest.json"
+    total = _empty_source(snapshots=0)
+    if not manifest.exists():
+        return total
+    doc = json.loads(manifest.read_text())
+    for snapshot in doc.get("snapshots") or []:
+        total["snapshots"] += 1
+        usage = snapshot.get("usage")
+        if isinstance(usage, dict):
+            total["input_tokens"] += _to_int(usage.get("input_tokens"))
+            total["output_tokens"] += _to_int(usage.get("output_tokens"))
+            total["cost_usd"] += _to_float(usage.get("cost_usd"))
+    return total
+
+
+def _load_tracked(root: Path, start: date, end: date) -> dict:
+    sources = {
+        "sessions": _session_source(root, "runs/**/shard_*/sessions.jsonl", start, end),
+        "rerun_sessions": _session_source(root, "runs/**/reruns.jsonl", start, end),
+        "failed_sessions": _failed_source(root),
+        "rq4": _rq4_source(root),
+        "canary": _canary_source(root),
+    }
+    models: dict[str, dict] = defaultdict(lambda: {"input": 0, "output": 0})
+    total = _empty_source()
+    for name, source in sources.items():
+        total["input_tokens"] += source["input_tokens"]
+        total["output_tokens"] += source["output_tokens"]
+        total["cost_usd"] += source["cost_usd"]
+        for model, usage in source.get("models", {}).items():
+            models[model]["input"] += usage["input"]
+            models[model]["output"] += usage["output"]
+    return {"models": dict(models), "totals": total, "sources": sources}
 
 
 # ── Billed side ───────────────────────────────────────────────────────────────
 
-def _load_billed(export_paths: list[Path], start: date, end: date) -> dict:
+def _load_billed(
+    export_paths: list[Path],
+    start: date,
+    end: date,
+    key_filter: str | None = None,
+    workspace_filter: str | None = None,
+) -> dict:
     models: dict[str, dict] = defaultdict(lambda: {"input": 0, "output": 0, "cost": 0.0})
     total = {"input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0}
     for path in export_paths:
-        for row in _parse_export(path):
+        for row in _parse_export(path, key_filter, workspace_filter):
             if not _in_window(row["date"], start, end):
                 continue
             model = row["model"] or "(unknown)"
@@ -293,10 +372,16 @@ def _md(doc: dict) -> str:
         f"{doc['tracked']['totals']['cost_usd']:.6f} |",
         f"| Δ | {d['input_tokens']} | {d['output_tokens']} | {d['cost_usd']:.6f} |",
         "", f"cost Δ = {d['cost_delta_pct']}%", "",
-        "## Per model", "",
-        "| model | billed in/out | tracked in/out | Δ in/out |",
+        "## Tracked sources", "",
+        "| source | input tokens | output tokens | cost (USD) |",
         "|---|---|---|---|",
     ]
+    for name, source in sorted(doc["tracked_sources"].items()):
+        lines.append(f"| {name} | {source['input_tokens']} | {source['output_tokens']} | "
+                     f"{source['cost_usd']:.6f} |")
+    lines += ["", "## Per model", "",
+              "| model | billed in/out | tracked in/out | Δ in/out |",
+              "|---|---|---|---|"]
     for model, row in sorted(d["models"].items()):
         lines.append(
             f"| {model} | {row['billed']['input_tokens']}/{row['billed']['output_tokens']} | "
@@ -316,24 +401,27 @@ def main(argv=None) -> int:
                         help="results root (default results/v1.5)")
     parser.add_argument("--out", default="results/v1.5/billing_reconciliation",
                         help="output prefix → <out>.json and <out>.md")
+    parser.add_argument("--key-filter", default=None,
+                        help="keep only billed rows whose API-key column matches (substring)")
+    parser.add_argument("--workspace-filter", default=None,
+                        help="keep only billed rows whose workspace column matches (substring)")
     args = parser.parse_args(argv)
 
     root = args.root
     start, end, source = _window(args, root)
-    billed = _load_billed(args.exports, start, end)
+    billed = _load_billed(args.exports, start, end, args.key_filter, args.workspace_filter)
     tracked = _load_tracked(root, start, end)
     deltas = _reconcile(billed, tracked)
 
     doc = {
         "window": {"start": start.isoformat(), "end": end.isoformat(), "source": source},
         "threshold_pct": THRESHOLD_PCT,
+        "filters": {"key": args.key_filter, "workspace": args.workspace_filter},
         "billed": billed,
-        "tracked": {k: v for k, v in tracked.items() if k != "rq4"},
+        "tracked": {"models": tracked["models"], "totals": tracked["totals"]},
         "tracked_sources": {
-            "sessions": tracked["n_sessions"],
-            "rq4_files": tracked["rq4"]["files"],
-            "rq4_note": "rq4 reports carry no token usage today; their billed "
-                        "calls are not in the tracked total until they record usage.",
+            name: {k: v for k, v in source.items() if k != "models"}
+            for name, source in tracked["sources"].items()
         },
         "deltas": deltas,
         "pass": deltas["pass"],

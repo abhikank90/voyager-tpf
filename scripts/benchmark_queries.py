@@ -182,20 +182,54 @@ async def run_conditions(
     print(f"\n  conditions: {ok}/{total} sessions succeeded")
 
 
+def _current_partial_usage() -> tuple[int, int, float] | None:
+    """The ``TokenUsage`` a failed session accumulated (still bound to this task)."""
+    from metrics.token_tracker import compute_session_cost, get_current
+
+    usage = get_current()
+    if usage is None:
+        return None
+    return usage.input_tokens, usage.output_tokens, round(compute_session_cost(usage), 6)
+
+
 def _log_failure(
     query_set: str, query_id: str, condition: str, run_index: int, exc: BaseException,
 ) -> None:
-    """Append one row to the §8 failure log (``VOYAGER_FAILURES_PATH``)."""
+    """Append one row to the §8 failure log, with the partial usage so far.
+
+    The session's ``TokenUsage`` is still bound to this task's context when the
+    graph raises, so the tokens spent before the crash are recorded and can be
+    counted by the billing reconciliation instead of silently inflating its Δ.
+    """
     from scripts.failure_log import append_failure, reason_for
 
-    append_failure({
+    row = {
         "set": query_set,
         "query_id": query_id,
         "condition": condition,
         "run_index": run_index,
         "reason": reason_for(exc),
         "rerun_ok": "",
-    })
+    }
+    partial = _current_partial_usage()
+    if partial is not None:
+        row["input_tokens"], row["output_tokens"], row["cost_usd"] = partial
+    append_failure(row)
+
+
+def _record_rerun_failure_usage(
+    set_name: str, query_id: str, condition: str, run_index: int,
+) -> None:
+    """Sum a failed re-run's partial usage into the row (never overwrite)."""
+    from scripts.failure_log import add_partial_usage
+
+    partial = _current_partial_usage()
+    if partial is None:
+        return
+    add_partial_usage(
+        set_name, query_id, condition, run_index,
+        input_tokens=partial[0], output_tokens=partial[1], cost_usd=partial[2],
+    )
 
 
 async def rerun_failures(manifest_path: str) -> None:
@@ -203,7 +237,9 @@ async def rerun_failures(manifest_path: str) -> None:
 
     Sessions are appended to the current ``VOYAGER_METRICS_PATH``; each row's
     ``rerun_ok`` is then set to "true" (re-run succeeded) or "false" (the re-run
-    failed too, so the query is dropped from every condition in its set).
+    failed too, so the query is dropped from every condition in its set). A
+    failed re-run's partial usage is summed into the row's trailing usage
+    columns, so nothing billed mid-crash is lost from the reconciliation.
     """
     from graph.travel_graph import run_collaborative_travel_query
     from scripts.failure_log import failures_path, load_failures, set_rerun_ok
@@ -244,6 +280,7 @@ async def rerun_failures(manifest_path: str) -> None:
             ok += 1
         except Exception as exc:
             print(f"           ✗ {exc}")
+            _record_rerun_failure_usage(set_name, query_id, condition, run_index)
             set_rerun_ok(set_name, query_id, condition, run_index, "false")
     print(f"\n  rerun: {ok}/{len(rows)} sessions succeeded; rerun_ok updated in {path}")
 

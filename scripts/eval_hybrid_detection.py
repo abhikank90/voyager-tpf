@@ -50,6 +50,75 @@ def make_client():
     return Anthropic(max_retries=get_settings().llm_max_retries)
 
 
+# ── Usage recording (§8: every window call must be tracked) ───────────────────
+
+def _usage_tokens(response) -> tuple[int, int]:
+    usage = getattr(response, "usage", None)
+    return (
+        int(getattr(usage, "input_tokens", 0) or 0),
+        int(getattr(usage, "output_tokens", 0) or 0),
+    )
+
+
+class _UsageAccumulator:
+    """Accumulates per-call usage and prices it with token_tracker.MODEL_PRICING."""
+
+    def __init__(self, component: str, model: str):
+        from metrics.token_tracker import compute_cost
+
+        self.component = component
+        self.model = model
+        self._compute_cost = compute_cost
+        self.input_tokens = 0
+        self.output_tokens = 0
+        self.calls: list[dict] = []
+
+    def record(self, model: str, response) -> None:
+        input_tokens, output_tokens = _usage_tokens(response)
+        self.input_tokens += input_tokens
+        self.output_tokens += output_tokens
+        self.calls.append({
+            "component": self.component,
+            "model": model,
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "cost_usd": self._compute_cost(input_tokens, output_tokens, model),
+        })
+
+    def total(self) -> dict:
+        return {
+            "component": self.component,
+            "model": self.model,
+            "input_tokens": self.input_tokens,
+            "output_tokens": self.output_tokens,
+            "cost_usd": self._compute_cost(self.input_tokens, self.output_tokens, self.model),
+            "calls": self.calls,
+        }
+
+
+class _RecordingMessages:
+    def __init__(self, messages, accumulator: _UsageAccumulator):
+        self._messages = messages
+        self._accumulator = accumulator
+
+    def create(self, **kwargs):
+        response = self._messages.create(**kwargs)
+        self._accumulator.record(kwargs.get("model") or self._accumulator.model, response)
+        return response
+
+
+class _RecordingClient:
+    """Proxies a client and records usage from every ``messages.create`` call."""
+
+    def __init__(self, client, accumulator: _UsageAccumulator):
+        self._client = client
+        self._accumulator = accumulator
+
+    @property
+    def messages(self):
+        return _RecordingMessages(self._client.messages, self._accumulator)
+
+
 # ── Evaluation states ─────────────────────────────────────────────────────────
 # Each: (name, state, conflicts_a_human_would_flag) — the last field is the
 # ground truth used to judge LLM "extras" as real recall vs. noise.
@@ -401,12 +470,14 @@ Combined agent findings:
 """
 
 
-def llm_detect(client, model, state):
+def llm_detect(client, model, state, usage: _UsageAccumulator | None = None):
     prompt = DETECT_PROMPT.format(state_json=json.dumps(state, indent=2))
     resp = client.messages.create(
         model=model, max_tokens=1000, temperature=0.0,
         messages=[{"role": "user", "content": prompt}],
     )
+    if usage is not None:
+        usage.record(model, resp)
     text = resp.content[0].text.strip()
     if text.startswith("```"):
         text = text.strip("`").lstrip("json").strip()
@@ -462,6 +533,9 @@ def _write_shipped_report(args, hub, model: str, states) -> None:
     previous = os.environ.get("VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES")
     os.environ["VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES"] = "1"
     reload_settings()
+    usage = _UsageAccumulator("rq4_shipped", getattr(hub, "model", None) or model)
+    original_client = hub.client
+    hub.client = _RecordingClient(original_client, usage)
     try:
         results = []
         total_candidates = total_validated = total_unverified = 0
@@ -485,6 +559,7 @@ def _write_shipped_report(args, hub, model: str, states) -> None:
                 "unverified": unverified,
             })
     finally:
+        hub.client = original_client
         if previous is None:
             os.environ.pop("VOYAGER_ENABLE_LLM_CONFLICT_CANDIDATES", None)
         else:
@@ -500,6 +575,7 @@ def _write_shipped_report(args, hub, model: str, states) -> None:
             "model": model,
             "temperature": 0.0,
             "timestamp": datetime.now(UTC).isoformat(),
+            "usage": usage.total(),
             "summary": {
                 "candidates": total_candidates,
                 "validated": total_validated,
@@ -580,6 +656,8 @@ def main(argv=None):
 
     print(f"Model under test: {model}\n{'=' * 78}")
 
+    usage = _UsageAccumulator("rq4_isolation", model)
+
     # ── Aggregate counters (Priority 2.5 expanded output) ──────────────────
     total_rule_conflicts = 0
     total_llm_candidates = 0
@@ -600,8 +678,8 @@ def main(argv=None):
         rule_agents = {a for c in rules for a in c.get("agents", [])}
         total_rule_conflicts += len(rules)
 
-        run1 = llm_detect(client, model, state)
-        run2 = llm_detect(client, model, state)
+        run1 = llm_detect(client, model, state, usage)
+        run2 = llm_detect(client, model, state, usage)
         t1, t2 = types_of(run1), types_of(run2)
         is_consistent = set(t1) == set(t2)
         consistent += is_consistent
@@ -709,6 +787,7 @@ def main(argv=None):
             "model": model,
             "temperature": 0.0,
             "timestamp": datetime.now(UTC).isoformat(),
+            "usage": usage.total(),
             "summary": {
                 "rule_conflicts": total_rule_conflicts,
                 "llm_candidates": total_llm_candidates,
