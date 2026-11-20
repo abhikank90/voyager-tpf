@@ -57,12 +57,16 @@ def _read_csv(path: Path) -> list[dict]:
 
 
 def _read_csv_skipping_comments(path: Path) -> list[dict]:
-    """Read a CSV whose first lines may be ``#`` comments (labeling sheets)."""
+    """Read a CSV whose first lines may be ``#`` comments (labeling sheets).
+
+    Tolerates a leading BOM and Google-Sheets quoted comment rows (``"..."``),
+    which the raw exports carry.
+    """
     import io
 
     lines = [
-        line for line in path.read_text().splitlines()
-        if line.strip() and not line.lstrip().startswith("#")
+        line for line in path.read_text(encoding="utf-8-sig").splitlines()
+        if line.strip() and not line.lstrip().startswith(("#", '"'))
     ]
     return list(csv.DictReader(io.StringIO("\n".join(lines))))
 
@@ -396,11 +400,13 @@ def row_h2c(root: Path, allow_missing: bool) -> dict:
     """H2c: coherence audit from the author/rater score sheets (§11)."""
     author_path = root / "h2c" / "author" / "author_scores.csv"
     rater_path = root / "h2c" / "rater" / "rater_scores.csv"
+    rater2_path = root / "h2c" / "rater" / "rater_scores_round2.csv"
     key_path = root / "h2c" / "KEY_DO_NOT_SHARE.csv"
     if not all(p.exists() for p in (author_path, rater_path, key_path)):
         return _missing(["h2c/author/author_scores.csv", "h2c/rater/rater_scores.csv"])
     author = _read_csv(author_path)
     rater = _read_csv(rater_path)
+    rater2 = _read_csv(rater2_path) if rater2_path.exists() else []
 
     def assessable(rows):
         return [r for r in rows
@@ -417,28 +423,48 @@ def row_h2c(root: Path, allow_missing: bool) -> dict:
         return [r for r in rows if not any(r.get(d) == "F" for d in H2C_DIMENSIONS)]
     u_as_coherent = (len(no_f(author)) / len(author)) if author else None
 
-    rater_by_id = {r.get("plan_id"): r for r in rater}
-    agreements = {}
-    for d in H2C_DIMENSIONS + ("fully_coherent",):
-        a_vals = [r.get(d) for r in author if r.get("plan_id") in rater_by_id]
-        b_vals = [rater_by_id[r.get("plan_id")].get(d) for r in author if r.get("plan_id") in rater_by_id]
-        agreements[d] = {
-            "percent_agreement": percent_agreement(a_vals, b_vals),
-            "cohen_kappa": cohen_kappa(a_vals, b_vals),
-        }
-    contingency = any(
-        (agreements[d]["percent_agreement"] or 0.0) < 0.80 for d in H2C_DIMENSIONS
-    )
+    author_by_id = {r.get("plan_id"): r for r in author}
+
+    def agreements(rater_rows):
+        out = {}
+        for d in H2C_DIMENSIONS + ("fully_coherent",):
+            pairs = [(author_by_id[r["plan_id"]].get(d), r.get(d))
+                     for r in rater_rows if r.get("plan_id") in author_by_id]
+            a_vals = [p[0] for p in pairs]
+            b_vals = [p[1] for p in pairs]
+            out[d] = {
+                "percent_agreement": percent_agreement(a_vals, b_vals),
+                "cohen_kappa": cohen_kappa(a_vals, b_vals),
+            }
+        return out
+
+    def contingency(agr):
+        return any((agr[d]["percent_agreement"] or 0.0) < 0.80 for d in H2C_DIMENSIONS)
+
+    rounds = {}
+    rounds["round1"] = {"n_plans": len(rater), "double_scored": agreements(rater)}
+    rounds["round1"]["contingency_triggered"] = contingency(rounds["round1"]["double_scored"])
+    if rater2:
+        rounds["round2"] = {"n_plans": len(rater2), "double_scored": agreements(rater2)}
+        rounds["round2"]["contingency_triggered"] = contingency(rounds["round2"]["double_scored"])
+        combined = rater + rater2
+        rounds["combined"] = {"n_plans": len(combined), "double_scored": agreements(combined)}
+        rounds["combined"]["contingency_triggered"] = contingency(rounds["combined"]["double_scored"])
+
     return {
         "status": "ok",
         "method": "fully coherent = no F among D1–D4; assessable = no U; "
-                  "threshold 0.90 on assessable plans; agreement/κ on the double-scored subset",
+                  "threshold 0.90 on assessable plans; agreement/κ per double-scoring "
+                  "round and combined (rounds.round1/round2/combined)",
         "author_n": len(author), "assessable_n": len(a_assess),
         "fully_coherent_rate": rate, "threshold": 0.90,
         "pass": rate is not None and rate >= 0.90,
         "u_rate": u_rate, "u_as_coherent": u_as_coherent,
-        "double_scored": agreements, "contingency_triggered": contingency,
-        "sources": ["h2c/author/author_scores.csv", "h2c/rater/rater_scores.csv"],
+        "rounds": rounds,
+        "double_scored": rounds["round1"]["double_scored"],
+        "contingency_triggered": rounds["round1"]["contingency_triggered"],
+        "sources": ["h2c/author/author_scores.csv", "h2c/rater/rater_scores.csv",
+                    "h2c/rater/rater_scores_round2.csv"],
     }
 
 
@@ -784,54 +810,46 @@ def row_h5(root: Path, sessions: dict[str, list[dict]], allow_missing: bool) -> 
     return out
 
 
-def row_rq4_gold_agreement(root: Path, allow_missing: bool) -> dict:
-    """RQ4 inter-labeler agreement: Kalyan's labels vs Abhishek's merged gold.
+def _read_kalyan_labels(path: Path, types: list[str], *, strict: bool) -> dict[str, set[str]]:
+    """Read a Kalyan labeling CSV → {sheet_id: set(types)}.
 
-    Reads ``rq4_labels_kalyan.csv`` (same columns as ``rq4_labeling_sheet.csv``:
-    ``sheet_id,state_summary,gold_types,notes``), maps rows to probes through
-    ``rq4_sheet_key.csv``, and compares presence/absence per type plus the exact
-    set against the merged ``gold`` in ``rq4_probes.json``. A missing Kalyan file
-    is ``missing_input``; an unknown type or a blank row fails loudly.
+    ``strict`` mirrors the cleaned ``rq4_labels_kalyan.csv`` (a blank sheet id or a
+    blank ``gold_types`` fails loudly). The raw first-pass export may carry a stray
+    all-empty row, which ``strict=False`` skips.
     """
-    kalyan_path = root / "rq4_labels_kalyan.csv"
-    key_path = root / "rq4_sheet_key.csv"
-    probes_path = root / "rq4_probes.json"
-
-    missing = [p.name for p in (probes_path, key_path, kalyan_path) if not p.exists()]
-    if missing:
-        return _missing(missing)
-
-    probes = _read_json(probes_path)
-    types = list(probes.get("types") or [])
-    probe_gold = {p["id"]: set(p.get("gold") or []) for p in probes.get("probes", [])}
-
-    key = {r["sheet_id"]: r["probe_id"] for r in _read_csv_skipping_comments(key_path)}
-
-    kalyan: dict[str, set[str]] = {}
-    for row in _read_csv_skipping_comments(kalyan_path):
+    labels: dict[str, set[str]] = {}
+    for row in _read_csv_skipping_comments(path):
         sheet_id = (row.get("sheet_id") or "").strip()
         raw = (row.get("gold_types") or "").strip()
         if not sheet_id:
-            raise SystemExit("rq4_labels_kalyan.csv: a data row has a blank sheet_id")
+            if strict:
+                raise SystemExit(f"{path.name}: a data row has a blank sheet_id")
+            continue
         if not raw:
             raise SystemExit(
-                f"rq4_labels_kalyan.csv: blank gold_types for sheet {sheet_id!r} "
+                f"{path.name}: blank gold_types for sheet {sheet_id!r} "
                 "(enter 'none' or ';'-separated types)"
             )
-        labels: set[str] = set()
-        if raw.lower() != "none":
-            for t in raw.split(";"):
-                t = t.strip()
-                if not t:
-                    continue
-                if t not in types:
-                    raise SystemExit(
-                        f"rq4_labels_kalyan.csv: unknown type {t!r} for sheet {sheet_id!r}; "
-                        f"allowed types are {types}"
-                    )
-                labels.add(t)
-        kalyan[sheet_id] = labels
+        if raw.lower() == "none":
+            labels[sheet_id] = set()
+            continue
+        lbl: set[str] = set()
+        for t in raw.split(";"):
+            t = t.strip()
+            if not t:
+                continue
+            if t not in types:
+                raise SystemExit(
+                    f"{path.name}: unknown type {t!r} for sheet {sheet_id!r}; "
+                    f"allowed types are {types}"
+                )
+            lbl.add(t)
+        labels[sheet_id] = lbl
+    return labels
 
+
+def _rq4_agreement(probe_gold: dict[str, set[str]], types: list[str],
+                   key: dict[str, str], kalyan: dict[str, set[str]], label: str) -> dict:
     abhishek: list[set[str]] = []
     second: list[set[str]] = []
     disagreements: list[tuple[str, list, list]] = []
@@ -842,7 +860,7 @@ def row_rq4_gold_agreement(root: Path, allow_missing: bool) -> dict:
                 f"rq4_sheet_key.csv: sheet {sheet_id!r} maps to unknown probe {probe_id!r}"
             )
         if sheet_id not in kalyan:
-            raise SystemExit(f"rq4_labels_kalyan.csv: missing row for sheet {sheet_id!r}")
+            raise SystemExit(f"{label}: missing row for sheet {sheet_id!r}")
         a = probe_gold[probe_id]
         k = kalyan[sheet_id]
         abhishek.append(a)
@@ -861,16 +879,56 @@ def row_rq4_gold_agreement(root: Path, allow_missing: bool) -> dict:
 
     exact = sum(1 for a, k in zip(abhishek, second) if a == k)
     return {
-        "status": "ok",
-        "method": "Second labeler (Kalyan) vs Abhishek's merged gold in rq4_probes.json: "
-                  "per-type presence/absence percent agreement and Cohen's κ, plus the "
-                  "exact-set agreement rate; disagreements listed as (probe, Abhishek, Kalyan)",
         "n_probes": len(abhishek),
         "exact_set_agreement_rate": round(exact / len(abhishek), 6) if abhishek else None,
         "per_type": per_type,
         "disagreements": disagreements,
+    }
+
+
+def row_rq4_gold_agreement(root: Path, allow_missing: bool) -> dict:
+    """RQ4 inter-labeler agreement: Kalyan's labels vs Abhishek's merged gold.
+
+    Reports the self-checked labels (``rq4_labels_kalyan.csv``) at the top level and,
+    when present, the same statistics for Kalyan's raw first pass
+    (``rq4_kalyan/rq4_labels_kalyan_raw_export.csv``, cleaned the same way, without
+    the three self-check changes) under ``raw_first_pass``.
+    """
+    kalyan_path = root / "rq4_labels_kalyan.csv"
+    key_path = root / "rq4_sheet_key.csv"
+    probes_path = root / "rq4_probes.json"
+    raw_path = root / "rq4_kalyan" / "rq4_labels_kalyan_raw_export.csv"
+
+    missing = [p.name for p in (probes_path, key_path, kalyan_path) if not p.exists()]
+    if missing:
+        return _missing(missing)
+
+    probes = _read_json(probes_path)
+    types = list(probes.get("types") or [])
+    probe_gold = {p["id"]: set(p.get("gold") or []) for p in probes.get("probes", [])}
+    key = {r["sheet_id"]: r["probe_id"] for r in _read_csv_skipping_comments(key_path)}
+
+    final = _rq4_agreement(probe_gold, types, key,
+                           _read_kalyan_labels(kalyan_path, types, strict=True), "final")
+    result = {
+        "status": "ok",
+        "method": "Second labeler (Kalyan) vs Abhishek's merged gold in rq4_probes.json: "
+                  "per-type presence/absence percent agreement and Cohen's κ, plus the "
+                  "exact-set agreement rate; disagreements listed as (probe, Abhishek, Kalyan). "
+                  "Top level = self-checked labels; raw_first_pass = the raw export",
+        "n_probes": final["n_probes"],
+        "exact_set_agreement_rate": final["exact_set_agreement_rate"],
+        "per_type": final["per_type"],
+        "disagreements": final["disagreements"],
         "sources": ["rq4_labels_kalyan.csv", "rq4_sheet_key.csv", "rq4_probes.json"],
     }
+    if raw_path.exists():
+        raw = _rq4_agreement(probe_gold, types, key,
+                             _read_kalyan_labels(raw_path, types, strict=False),
+                             "raw_first_pass")
+        result["raw_first_pass"] = raw
+        result["sources"].append("rq4_kalyan/rq4_labels_kalyan_raw_export.csv")
+    return result
 
 
 def load_billing(root: Path) -> dict:

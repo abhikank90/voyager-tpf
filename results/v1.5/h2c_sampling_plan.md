@@ -57,3 +57,21 @@ control 1 (the CTL-05 spurious session), real 9 (all empty-inventory sessions wh
 weather conflict cleared, hence no trip options — see Task 17 preamble). The final
 counts, after the `balanced`-option condition, are recorded in
 `results/v1.5/h2c/SAMPLING.json` when the draw runs.
+
+## Round 2 (contingency, §11)
+
+Triggered because round-1 double-scoring had D1_temporal percent agreement 0.70
+(< 0.80). Rubric clarified after round 1 (see
+`docs/H2C_RATER_GUIDE.md` §"Clarification (2026-11-20…)"). No first-round score was
+changed.
+
+Draw rule (deterministic, no discretion):
+- remaining set = the 20 author-scored plan IDs **not** in `rater/rater_scores.csv`,
+  sorted;
+- `random.Random(20261117).sample(remaining, 10)`, then re-sorted for numbering.
+
+Round-2 plan IDs:
+
+```
+plan_01, plan_07, plan_08, plan_10, plan_11, plan_14, plan_23, plan_26, plan_27, plan_29
+```

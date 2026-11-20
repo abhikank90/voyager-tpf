@@ -144,6 +144,40 @@ def test_h2c_u_handling_and_contingency(tmp_path):
     assert row["contingency_triggered"] is True  # D3 agreement = 0.0 < 0.80
 
 
+def test_h2c_round2_and_combined(tmp_path):
+    author = [
+        {"plan_id": "p1", "D1_temporal": "P", "D2_budget": "P", "D3_preference": "P",
+         "D4_logistics": "P", "fully_coherent": "Y", "notes": ""},
+        {"plan_id": "p2", "D1_temporal": "F", "D2_budget": "P", "D3_preference": "P",
+         "D4_logistics": "P", "fully_coherent": "N", "notes": ""},
+        {"plan_id": "p3", "D1_temporal": "P", "D2_budget": "P", "D3_preference": "P",
+         "D4_logistics": "P", "fully_coherent": "Y", "notes": ""},
+    ]
+    rater1 = [
+        {"plan_id": "p1", "D1_temporal": "P", "D2_budget": "P", "D3_preference": "F",
+         "D4_logistics": "P", "fully_coherent": "Y", "notes": ""},
+    ]
+    rater2 = [
+        {"plan_id": "p2", "D1_temporal": "F", "D2_budget": "P", "D3_preference": "P",
+         "D4_logistics": "P", "fully_coherent": "N", "notes": ""},
+    ]
+    _write_h2c(tmp_path, author, rater1)
+    import csv
+    with open(tmp_path / "h2c" / "rater" / "rater_scores_round2.csv", "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["plan_id"] + list(pn.H2C_DIMENSIONS)
+                           + ["fully_coherent", "notes"])
+        w.writeheader()
+        w.writerows(rater2)
+
+    row = pn.row_h2c(tmp_path, allow_missing=True)
+    assert row["rounds"]["round1"]["n_plans"] == 1
+    assert row["rounds"]["round2"]["n_plans"] == 1
+    assert row["rounds"]["combined"]["n_plans"] == 2
+    assert row["rounds"]["round2"]["double_scored"]["D1_temporal"]["percent_agreement"] == 1.0
+    assert row["rounds"]["round2"]["contingency_triggered"] is False
+    assert row["contingency_triggered"] is True
+
+
 # ── H3a mismatch detection ────────────────────────────────────────────────────
 
 def test_h3a_signature_detects_mismatch():
@@ -335,6 +369,27 @@ def test_rq4_gold_agreement_lists_disagreements(tmp_path):
     assert row["exact_set_agreement_rate"] == pytest.approx(2 / 3)
     assert ("P3", ["budget_violation", "visa_timing"], ["visa_timing"]) in row["disagreements"]
     assert row["per_type"]["budget_violation"]["percent_agreement"] == pytest.approx(2 / 3)
+
+
+def test_rq4_gold_agreement_raw_first_pass(tmp_path):
+    import csv
+    _write_rq4_agreement_inputs(tmp_path)  # final: S03 = budget_violation;visa_timing
+    (tmp_path / "rq4_kalyan").mkdir()
+    with open(tmp_path / "rq4_kalyan" / "rq4_labels_kalyan_raw_export.csv", "w", newline="") as fh:
+        fh.write("# instructions\n")
+        w = csv.writer(fh)
+        w.writerow(["sheet_id", "state_summary", "gold_types", "notes"])
+        w.writerow(["", "", "", ""])  # stray blank row from the raw export
+        w.writerow(["S01", "state", "timing_inefficiency", ""])
+        w.writerow(["S02", "state", "none", ""])
+        w.writerow(["S03", "state", "visa_timing", ""])  # raw pass missed budget_violation
+
+    row = pn.row_rq4_gold_agreement(tmp_path, allow_missing=True)
+    assert row["exact_set_agreement_rate"] == pytest.approx(1.0)  # self-checked file
+    raw = row["raw_first_pass"]
+    assert raw["exact_set_agreement_rate"] == pytest.approx(2 / 3)
+    assert ("P3", ["budget_violation", "visa_timing"], ["visa_timing"]) in raw["disagreements"]
+    assert raw["per_type"]["budget_violation"]["percent_agreement"] == pytest.approx(2 / 3)
 
 
 def test_rq4_gold_agreement_missing_kalyan_file(tmp_path):
