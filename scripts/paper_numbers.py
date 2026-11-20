@@ -451,11 +451,21 @@ def row_h2c(root: Path, allow_missing: bool) -> dict:
         rounds["combined"] = {"n_plans": len(combined), "double_scored": agreements(combined)}
         rounds["combined"]["contingency_triggered"] = contingency(rounds["combined"]["double_scored"])
 
+    # Post hoc (not pre-registered): the H2c verdict's dependence on D1.
+    post_hoc = {
+        "fully_coherent_rate_excluding_d1": (
+            len([r for r in author
+                 if not any(r.get(d) == "F" for d in H2C_DIMENSIONS[1:])]) / len(author)
+        ) if author else None,
+        "f_counts": {d: sum(1 for r in author if r.get(d) == "F") for d in H2C_DIMENSIONS},
+    }
+
     return {
         "status": "ok",
         "method": "fully coherent = no F among D1–D4; assessable = no U; "
                   "threshold 0.90 on assessable plans; agreement/κ per double-scoring "
-                  "round and combined (rounds.round1/round2/combined)",
+                  "round and combined (rounds.round1/round2/combined); "
+                  "post_hoc_sensitivity is post hoc (excluding D1, per-dimension F counts)",
         "author_n": len(author), "assessable_n": len(a_assess),
         "fully_coherent_rate": rate, "threshold": 0.90,
         "pass": rate is not None and rate >= 0.90,
@@ -463,6 +473,7 @@ def row_h2c(root: Path, allow_missing: bool) -> dict:
         "rounds": rounds,
         "double_scored": rounds["round1"]["double_scored"],
         "contingency_triggered": rounds["round1"]["contingency_triggered"],
+        "post_hoc_sensitivity": post_hoc,
         "sources": ["h2c/author/author_scores.csv", "h2c/rater/rater_scores.csv",
                     "h2c/rater/rater_scores_round2.csv"],
     }

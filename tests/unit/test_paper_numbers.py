@@ -178,6 +178,27 @@ def test_h2c_round2_and_combined(tmp_path):
     assert row["contingency_triggered"] is True
 
 
+def test_h2c_post_hoc_sensitivity(tmp_path):
+    author = [
+        {"plan_id": "p1", "D1_temporal": "F", "D2_budget": "P", "D3_preference": "P",
+         "D4_logistics": "P", "fully_coherent": "N", "notes": ""},
+        {"plan_id": "p2", "D1_temporal": "P", "D2_budget": "F", "D3_preference": "P",
+         "D4_logistics": "P", "fully_coherent": "N", "notes": ""},
+        {"plan_id": "p3", "D1_temporal": "P", "D2_budget": "P", "D3_preference": "P",
+         "D4_logistics": "P", "fully_coherent": "Y", "notes": ""},
+    ]
+    rater = [
+        {"plan_id": "p1", "D1_temporal": "F", "D2_budget": "P", "D3_preference": "P",
+         "D4_logistics": "P", "fully_coherent": "N", "notes": ""},
+    ]
+    _write_h2c(tmp_path, author, rater)
+    row = pn.row_h2c(tmp_path, allow_missing=True)
+    ph = row["post_hoc_sensitivity"]
+    assert ph["fully_coherent_rate_excluding_d1"] == pytest.approx(2 / 3)
+    assert ph["f_counts"] == {"D1_temporal": 1, "D2_budget": 1,
+                              "D3_preference": 0, "D4_logistics": 0}
+
+
 # ── H3a mismatch detection ────────────────────────────────────────────────────
 
 def test_h3a_signature_detects_mismatch():
