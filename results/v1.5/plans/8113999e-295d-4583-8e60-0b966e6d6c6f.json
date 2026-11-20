@@ -1,0 +1,578 @@
+{
+  "session_id": "8113999e-295d-4583-8e60-0b966e6d6c6f",
+  "intent": {
+    "destination": "San Diego",
+    "origin": "Phoenix",
+    "budget_usd": 3500.0,
+    "duration_days": 5,
+    "travel_month": "August",
+    "travel_year": 2027,
+    "interests": [
+      "beaches",
+      "family activities"
+    ],
+    "group_size": 4,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "San Diego family beach trip, $3500 family of 4, 5 days, August 2027, from Phoenix"
+  },
+  "selected_flight": {
+    "price_usd": 880,
+    "airline": "WN",
+    "departure": "2027-08-15T08:00:00",
+    "arrival": "2027-08-15T12:00:00",
+    "stops": 0,
+    "duration": "PT1H20M"
+  },
+  "selected_hotel": {
+    "name": "Mission Bay Family Resort",
+    "price_per_night_usd": 180,
+    "total_usd": 900,
+    "rating": 4.4,
+    "amenities": [
+      "beach access",
+      "wifi",
+      "pool"
+    ],
+    "location": "San Diego"
+  },
+  "experiences": [
+    {
+      "name": "La Jolla Cove Snorkeling and Beach Day",
+      "description": "Explore the stunning La Jolla Cove with the family. Snorkel among colorful fish and sea lions in the protected marine reserve, then relax on the sandy beach. Kids love spotting seals at the nearby Children's Pool. Equipment rentals are available nearby.",
+      "cost_usd": 40,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "La Jolla Cove, La Jolla"
+    },
+    {
+      "name": "San Diego Zoo Visit",
+      "description": "One of the world's most famous zoos, home to over 3,500 animals across 650 species. Kids and adults alike will love the giant pandas, giraffes, and the Skyfari aerial tram. Plan for a full day to explore all exhibits and shows.",
+      "cost_usd": 140,
+      "category": "family activities",
+      "best_time_of_day": "morning",
+      "location": "Balboa Park, Midtown San Diego"
+    },
+    {
+      "name": "Coronado Beach and Ferry Ride",
+      "description": "Take the scenic Coronado Ferry from downtown San Diego to Coronado Island and spend the day at one of America's most beautiful beaches. Build sandcastles, swim in calm waters, and grab fish tacos at a nearby beachside eatery. The iconic Hotel del Coronado makes a stunning backdrop.",
+      "cost_usd": 30,
+      "category": "beaches",
+      "best_time_of_day": "afternoon",
+      "location": "Coronado Island, Coronado"
+    },
+    {
+      "name": "Old Town San Diego State Historic Park",
+      "description": "Step back into California's early history at this free outdoor museum. Explore adobe buildings, watch live demonstrations of 1800s crafts, and enjoy authentic Mexican food at the surrounding restaurants. Kids enjoy the hands-on exhibits and costumed interpreters.",
+      "cost_usd": 50,
+      "category": "culture",
+      "best_time_of_day": "afternoon",
+      "location": "Old Town San Diego, Mission Hills"
+    },
+    {
+      "name": "Belmont Park and Mission Beach Boardwalk",
+      "description": "Enjoy classic seaside amusement park fun at Belmont Park, featuring the historic Giant Dipper roller coaster, mini golf, and arcade games. Afterward, stroll or rent bikes along the Mission Beach Boardwalk with ocean views. A perfect mix of beach and family entertainment.",
+      "cost_usd": 60,
+      "category": "family activities",
+      "best_time_of_day": "afternoon",
+      "location": "Mission Beach, Pacific Beach"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-08-15",
+    "return": "2027-08-20",
+    "nights": 5,
+    "month": "august",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - San Diego",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 2075.0,
+      "flight": {
+        "price_usd": 880,
+        "airline": "WN",
+        "departure": "2027-08-15T08:00:00",
+        "arrival": "2027-08-15T12:00:00",
+        "stops": 0,
+        "duration": "PT1H20M"
+      },
+      "hotel": {
+        "name": "Mission Bay Family Resort",
+        "price_per_night_usd": 180,
+        "total_usd": 900,
+        "rating": 4.4,
+        "amenities": [
+          "beach access",
+          "wifi",
+          "pool"
+        ],
+        "location": "San Diego"
+      },
+      "experiences": [
+        {
+          "name": "La Jolla Cove Snorkeling and Beach Day",
+          "description": "Explore the stunning La Jolla Cove with the family. Snorkel among colorful fish and sea lions in the protected marine reserve, then relax on the sandy beach. Kids love spotting seals at the nearby Children's Pool. Equipment rentals are available nearby.",
+          "cost_usd": 40,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "La Jolla Cove, La Jolla"
+        },
+        {
+          "name": "Coronado Beach and Ferry Ride",
+          "description": "Take the scenic Coronado Ferry from downtown San Diego to Coronado Island and spend the day at one of America's most beautiful beaches. Build sandcastles, swim in calm waters, and grab fish tacos at a nearby beachside eatery. The iconic Hotel del Coronado makes a stunning backdrop.",
+          "cost_usd": 30,
+          "category": "beaches",
+          "best_time_of_day": "afternoon",
+          "location": "Coronado Island, Coronado"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "San Diego",
+        "style": "budget",
+        "total_cost": 2075.0,
+        "breakdown": {
+          "flight": 880.0,
+          "hotel": 900.0,
+          "experiences": 70.0,
+          "food": 125,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Saturday)",
+          "morning": "Flight arrives at 12:00 PM \u2014 no morning activities scheduled. Collect luggage, arrange ground transportation, and head to Mission Bay Family Resort to check in or drop off bags.",
+          "afternoon": "After settling in, take a short walk or drive to Mission Bay Park (just steps from the resort). Enjoy the free sandy shores, calm bay waters perfect for kids, and scenic walking paths. Rent a bike or paddle boat affordably from the park vendors to explore the bay.",
+          "evening": "Stroll over to Belmont Park on Mission Beach (free to enter the boardwalk area). Watch the kids enjoy the beach atmosphere and window-shop the boardwalk. Grab a budget-friendly dinner nearby before heading back to rest.",
+          "meals": {
+            "breakfast": "Grab a snack or coffee at the airport before landing.",
+            "lunch": "Pick up affordable tacos at Rigoberto's Taco Shop near Mission Bay \u2014 a San Diego staple with generous portions under $10.",
+            "dinner": "Eat at Rubio's Coastal Grill on Mission Blvd for fish tacos and burritos \u2014 a San Diego original with combo meals around $10\u2013$13."
+          },
+          "notes": "Since arrival is at noon, keep Day 1 relaxed. Mission Bay Resort's location makes the bay and Belmont Park easily walkable. Check resort amenities \u2014 many family resorts offer free pool access which is a great free afternoon option for kids."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16 (Sunday)",
+          "morning": "Head to La Jolla Cove for a family snorkeling and beach day. Arrive early (by 9 AM) to secure a good spot and see the most sea life. Rent snorkel gear affordably from La Jolla Kayak or bring your own. Watch sea lions on the rocks and snorkel among colorful fish in the protected cove \u2014 a truly memorable free-entry experience.",
+          "afternoon": "Walk along the La Jolla Cove Ecological Reserve trail and visit the Children's Pool (sea lion viewing area) nearby \u2014 both free. Explore the tide pools at low tide with the kids. Relax on the beach before heading back.",
+          "evening": "Drive or take the bus back toward Mission Bay. Stop at Pacific Beach for a casual sunset walk along the boardwalk. Enjoy the lively beach town atmosphere before dinner.",
+          "meals": {
+            "breakfast": "Pack a simple breakfast from a nearby grocery store (Vons or Ralphs) \u2014 cereal, fruit, and yogurt to save money before heading out.",
+            "lunch": "Pack a picnic lunch to enjoy at La Jolla Cove \u2014 sandwiches, fruit, and snacks from the grocery store. Picnic tables are available near the park.",
+            "dinner": "Try Kono's Cafe on Crystal Pier in Pacific Beach \u2014 legendary breakfast-all-day spot with budget-friendly plates under $12. Or grab fish tacos at Oscar's Mexican Seafood for around $3\u2013$5 per taco."
+          },
+          "notes": "La Jolla Cove is free to visit \u2014 only snorkel gear rental costs apply (approx. $15\u2013$20/person). Parking can be tricky on weekends; arrive early or use street parking a few blocks away. Bring sunscreen, water shoes, and reef-safe sunscreen. The MTS Bus Route 30 connects Mission Bay to La Jolla affordably."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17 (Monday)",
+          "morning": "Take the scenic Coronado Ferry from Broadway Pier in downtown San Diego to Coronado Island (approx. $5.75 per person each way \u2014 a budget-friendly adventure in itself). Enjoy the stunning bay views of the San Diego skyline during the 15-minute ride.",
+          "afternoon": "Spend the afternoon at Coronado Beach \u2014 consistently ranked one of the best beaches in the USA. Build sandcastles, swim in the Pacific, and admire the iconic Hotel del Coronado from the shore (free to walk around the exterior). The wide, white-sand beach is perfect for families.",
+          "evening": "Return via the Coronado Ferry back to downtown San Diego. Walk through the Gaslamp Quarter to enjoy the street atmosphere and public art before dinner.",
+          "meals": {
+            "breakfast": "Grab breakfast at the resort or stop at a local bakery. Clayton's Coffee Shop on Coronado (post-ferry) is a beloved diner with plates under $12.",
+            "lunch": "Pick up food at the Coronado Ferry Landing Marketplace \u2014 several casual vendors and cafes with sandwiches and snacks in the $8\u2013$14 range.",
+            "dinner": "Head to Puesto at the Headquarters in downtown San Diego for creative tacos at $4\u2013$6 each, or try Pokez Mexican Restaurant in the Gaslamp for hearty, affordable meals under $13."
+          },
+          "notes": "Ferry departs from Broadway Pier (990 N Harbor Dr). Round-trip ferry cost is approximately $11.50 per adult and $5.75 for children. Coronado Beach parking is free but limited \u2014 the ferry is the budget-smart and fun choice. Bring beach gear from the hotel to avoid rental costs."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18 (Tuesday)",
+          "morning": "Visit Balboa Park \u2014 San Diego's crown jewel of free outdoor space. Explore the beautiful Spanish Colonial architecture, free gardens (Japanese Friendship Garden has a small fee but others are free), and open plazas. The park is enormous and endlessly entertaining for families.",
+          "afternoon": "Take advantage of the free Tuesday museum program at Balboa Park \u2014 San Diego residents get free admission to rotating museums on Tuesdays (visitors can still access many exhibits at low cost). Visit the San Diego Natural History Museum or the Fleet Science Center with reduced family pricing. Alternatively, enjoy the free outdoor Spreckels Organ Pavilion.",
+          "evening": "Return to Mission Bay area and enjoy a relaxed evening at the resort pool or take a sunset walk along Mission Beach Boardwalk \u2014 a 3-mile flat boardwalk perfect for families on bikes, scooters, or foot.",
+          "meals": {
+            "breakfast": "Visit Snooze AM Eatery near Balboa Park for fun pancakes and egg dishes ($10\u2013$15/person) \u2014 a local favorite worth the splurge for one morning.",
+            "lunch": "Eat at the Panama 66 outdoor restaurant inside Balboa Park for a casual, scenic meal \u2014 sandwiches and salads in the $12\u2013$16 range in a beautiful garden setting.",
+            "dinner": "Head to Hodad's in Ocean Beach (about 10 minutes from Mission Bay) for massive, legendary burgers under $12 \u2014 a San Diego institution the whole family will love."
+          },
+          "notes": "Balboa Park is free to enter \u2014 only specific museums charge admission. Check the Balboa Park website for the free Tuesday museum schedule as it rotates monthly. The park is easily accessible by car or MTS Bus. Wear comfortable walking shoes as the park is large. Free parking is available in several lots around the park."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19 (Wednesday)",
+          "morning": "Spend your final morning at Mission Bay itself \u2014 right at the resort's doorstep. Enjoy a leisurely swim, play on the bay beach, or rent a kayak or stand-up paddleboard from Mission Bay Sportcenter (approx. $20\u2013$30/hour for a family kayak). The calm bay water is ideal for kids and beginners.",
+          "afternoon": "Visit Old Town San Diego State Historic Park \u2014 a free, fascinating look at California's early history with adobe buildings, live demonstrations, and free museums. Browse the colorful shops and enjoy the festive Mexican-California atmosphere. Kids love the historic feel and open spaces.",
+          "evening": "Enjoy a final San Diego sunset back at Mission Beach Boardwalk or Sunset Cliffs Natural Park in Ocean Beach (free, stunning cliffside views). Pack up and prepare for departure the next day.",
+          "meals": {
+            "breakfast": "Enjoy a relaxed breakfast at the resort or grab pastries and coffee at a nearby caf\u00e9 to savor your last morning.",
+            "lunch": "Eat at Casa de Reyes in Old Town San Diego \u2014 a lively outdoor Mexican restaurant with margaritas and traditional dishes. Lunch entrees run $12\u2013$18, making it a festive and affordable final-day treat.",
+            "dinner": "Return to a favorite spot from the trip or try Lucha Libre Gourmet Taco Shop in Mission Hills \u2014 famous for creative tacos at $3\u2013$5 each, a perfect budget-friendly San Diego farewell meal."
+          },
+          "notes": "Old Town San Diego State Historic Park is free to enter. Check for free weekend events or live music in the plaza. If your departure flight is early the next day, keep the evening low-key and pack bags tonight. Consider picking up affordable San Diego souvenirs at Old Town's shops rather than tourist traps near the waterfront."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Phoenix+to+San Diego+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=San Diego&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=San Diego",
+        "https://www.getyourguide.com/s/?q=San Diego"
+      ],
+      "highlights": [
+        "Save $550 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic San Diego Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 2400.0,
+      "flight": {
+        "price_usd": 880,
+        "airline": "WN",
+        "departure": "2027-08-15T08:00:00",
+        "arrival": "2027-08-15T12:00:00",
+        "stops": 0,
+        "duration": "PT1H20M"
+      },
+      "hotel": {
+        "name": "Mission Bay Family Resort",
+        "price_per_night_usd": 180,
+        "total_usd": 900,
+        "rating": 4.4,
+        "amenities": [
+          "beach access",
+          "wifi",
+          "pool"
+        ],
+        "location": "San Diego"
+      },
+      "experiences": [
+        {
+          "name": "La Jolla Cove Snorkeling and Beach Day",
+          "description": "Explore the stunning La Jolla Cove with the family. Snorkel among colorful fish and sea lions in the protected marine reserve, then relax on the sandy beach. Kids love spotting seals at the nearby Children's Pool. Equipment rentals are available nearby.",
+          "cost_usd": 40,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "La Jolla Cove, La Jolla"
+        },
+        {
+          "name": "San Diego Zoo Visit",
+          "description": "One of the world's most famous zoos, home to over 3,500 animals across 650 species. Kids and adults alike will love the giant pandas, giraffes, and the Skyfari aerial tram. Plan for a full day to explore all exhibits and shows.",
+          "cost_usd": 140,
+          "category": "family activities",
+          "best_time_of_day": "morning",
+          "location": "Balboa Park, Midtown San Diego"
+        },
+        {
+          "name": "Coronado Beach and Ferry Ride",
+          "description": "Take the scenic Coronado Ferry from downtown San Diego to Coronado Island and spend the day at one of America's most beautiful beaches. Build sandcastles, swim in calm waters, and grab fish tacos at a nearby beachside eatery. The iconic Hotel del Coronado makes a stunning backdrop.",
+          "cost_usd": 30,
+          "category": "beaches",
+          "best_time_of_day": "afternoon",
+          "location": "Coronado Island, Coronado"
+        },
+        {
+          "name": "Old Town San Diego State Historic Park",
+          "description": "Step back into California's early history at this free outdoor museum. Explore adobe buildings, watch live demonstrations of 1800s crafts, and enjoy authentic Mexican food at the surrounding restaurants. Kids enjoy the hands-on exhibits and costumed interpreters.",
+          "cost_usd": 50,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Old Town San Diego, Mission Hills"
+        },
+        {
+          "name": "Belmont Park and Mission Beach Boardwalk",
+          "description": "Enjoy classic seaside amusement park fun at Belmont Park, featuring the historic Giant Dipper roller coaster, mini golf, and arcade games. Afterward, stroll or rent bikes along the Mission Beach Boardwalk with ocean views. A perfect mix of beach and family entertainment.",
+          "cost_usd": 60,
+          "category": "family activities",
+          "best_time_of_day": "afternoon",
+          "location": "Mission Beach, Pacific Beach"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "San Diego",
+        "style": "balanced",
+        "total_cost": 2400.0,
+        "breakdown": {
+          "flight": 880.0,
+          "hotel": 900.0,
+          "experiences": 320.0,
+          "food": 200,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Saturday)",
+          "morning": "Arrival at San Diego Airport at 12:00 PM \u2014 no morning activities scheduled. Collect luggage, pick up rental car or rideshare, and head to Mission Bay Family Resort to check in and get settled.",
+          "afternoon": "After check-in, take a leisurely stroll along Mission Bay Park, just steps from the resort. Let the kids splash in the calm bay waters, explore the grassy picnic areas, and soak in the gorgeous waterfront scenery. Rent bikes or surreys from a nearby rental shop along the boardwalk to explore the area at a relaxed pace.",
+          "evening": "Head to Belmont Park on Mission Beach Boardwalk (only minutes from the resort) for a fun early-evening outing. Ride the historic Giant Dipper wooden roller coaster, enjoy carnival games, and walk the lively Mission Beach Boardwalk as the sun sets over the Pacific.",
+          "meals": {
+            "breakfast": "Grab something at the airport before landing or a snack on the plane.",
+            "lunch": "Rubio's Coastal Grill near Mission Bay \u2014 affordable, family-friendly fish tacos and burritos, a San Diego staple.",
+            "dinner": "World Famous Restaurant on Mission Beach \u2014 casual waterfront dining with great burgers, seafood, and ocean views. Mid-range pricing, perfect for families."
+          },
+          "notes": "Keep Day 1 light since you're arriving at noon. Mission Bay and Belmont Park are both extremely close to the resort, making them ideal for a low-stress first afternoon and evening. Purchase Belmont Park wristbands online in advance for a small discount."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16 (Sunday)",
+          "morning": "Full day at the San Diego Zoo in Balboa Park. Arrive right when it opens at 9:00 AM to beat the crowds and the midday heat. Explore the iconic exhibits including the Giant Panda habitat, African Savanna, and Children's Zoo. Take the Skyfari Aerial Tram for panoramic views of the park and the city.",
+          "afternoon": "Continue exploring the San Diego Zoo \u2014 don't miss the Elephant Odyssey and the reptile house. Grab lunch inside the zoo at one of several mid-range dining options, then catch one of the daily animal shows or keeper talks in the afternoon.",
+          "evening": "After the zoo, drive through Balboa Park and admire the Spanish Colonial Revival architecture. Head back toward Mission Bay and enjoy a relaxed evening swim at the resort pool or bay beach before dinner.",
+          "meals": {
+            "breakfast": "Breakfast at the resort or a quick stop at a nearby spot like Broken Yolk Cafe in Pacific Beach for hearty family-friendly omelets and pancakes.",
+            "lunch": "Albert's Restaurant inside the San Diego Zoo \u2014 sit-down mid-range dining with burgers, sandwiches, and salads in a beautiful treetop garden setting.",
+            "dinner": "Sushi Ota or Kono's Surf Club Cafe in Pacific Beach \u2014 casual, affordable, and beloved by locals. Kono's is great for families with big portions and a fun beachy vibe."
+          },
+          "notes": "Purchase San Diego Zoo tickets online in advance to skip the box office lines. Wear comfortable walking shoes and bring sunscreen and hats. The zoo is large \u2014 plan to spend 6\u20137 hours to see the highlights. Stroller rentals are available at the entrance."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17 (Monday)",
+          "morning": "Head to La Jolla Cove for a snorkeling and beach day. Arrive by 9:00 AM to secure parking and a good spot on the beach. Rent snorkel gear from La Jolla Water Sports or bring your own. Snorkel the crystal-clear protected waters of the cove to spot colorful fish, garibaldi, and playful sea lions up close.",
+          "afternoon": "After snorkeling, walk along the La Jolla Cove trails to Children's Pool to watch the harbor seals lounging on the beach. Explore the charming village of La Jolla \u2014 browse boutique shops, art galleries, and enjoy the stunning coastal cliffs. Let the kids play on the sandy beach near the cove.",
+          "evening": "Drive back toward Mission Bay and enjoy a sunset walk along the Mission Beach Boardwalk. Stop for ice cream at one of the beachside shops and watch the surfers catch the last waves of the day.",
+          "meals": {
+            "breakfast": "The Cottage La Jolla \u2014 a beloved local breakfast and brunch spot with garden patio seating, known for their French toast and egg dishes. Mid-range and family-friendly.",
+            "lunch": "Brockton Villa Restaurant in La Jolla \u2014 stunning ocean views, great sandwiches, salads, and casual coastal fare right above the cove.",
+            "dinner": "Firehouse American Eatery & Lounge near Mission Bay \u2014 casual American comfort food, great burgers, and a relaxed atmosphere ideal for families after a long beach day."
+          },
+          "notes": "La Jolla Cove is a protected marine reserve \u2014 no touching or disturbing the sea lions or marine life. Water shoes are helpful on the rocky entry points. Parking in La Jolla can be competitive; arrive early or use a paid lot. Apply reef-safe sunscreen before snorkeling."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18 (Tuesday)",
+          "morning": "Take the Coronado Ferry from the Broadway Pier in downtown San Diego. The scenic 15-minute ferry ride across the bay is a fun experience in itself with great views of the skyline and Coronado Bridge. Arrive on Coronado Island and head straight to Coronado Beach \u2014 consistently rated one of the most beautiful beaches in the US.",
+          "afternoon": "Spend the afternoon relaxing and playing on the wide, white-sand shores of Coronado Beach. Build sandcastles, bodysurf the gentle waves, and take a walk along the shoreline toward the iconic Hotel del Coronado. Tour the exterior of this stunning Victorian landmark and let the kids explore the beach in front of it.",
+          "evening": "Explore Coronado's charming Orange Avenue \u2014 browse shops and pick up souvenirs. Take the ferry back to downtown San Diego and spend the early evening exploring the Gaslamp Quarter's lively streets before heading back to the resort.",
+          "meals": {
+            "breakfast": "Grab pastries and coffee at a local caf\u00e9 near the resort or try Cafe 976 in Mission Bay for a quick, casual morning bite.",
+            "lunch": "Coronado Brewing Company on Orange Avenue \u2014 family-friendly brewpub with great burgers, sandwiches, fish tacos, and craft sodas for kids. Mid-range pricing.",
+            "dinner": "Puesto at the Headquarters in downtown San Diego \u2014 vibrant Mexican cuisine with creative tacos and fresh guacamole in a beautifully restored historic building near the waterfront."
+          },
+          "notes": "The Coronado Ferry departs from Broadway Pier (Pier 1) in downtown San Diego. Check the ferry schedule in advance as it runs on a set timetable. Round-trip tickets are affordable for families. The Hotel del Coronado offers self-guided history tours that are free to walk through the public areas."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19 (Wednesday)",
+          "morning": "Visit Old Town San Diego State Historic Park for a free and fascinating morning. Explore the adobe buildings, visit the Whaley House Museum (one of America's most haunted homes), watch live demonstrations of blacksmithing and candle-making, and browse the colorful Mexican market stalls. Great for kids who love history and hands-on experiences.",
+          "afternoon": "Head back to Mission Beach and Belmont Park for one final afternoon of classic San Diego fun. Ride any attractions the kids may have missed on Day 1, play arcade games, and enjoy the beach one last time. Pack and prepare for departure the following day.",
+          "evening": "Enjoy a special farewell dinner back near the resort or in Pacific Beach. Take a final sunset walk along Mission Bay, reflect on the trip, and enjoy the warm San Diego evening.",
+          "meals": {
+            "breakfast": "Breakfast Republic in Pacific Beach \u2014 colorful, fun, and family-friendly breakfast spot known for creative pancakes, eggs Benedict, and fresh juices.",
+            "lunch": "Casa de Reyes in Old Town San Diego \u2014 festive outdoor Mexican restaurant with great enchiladas, tacos, and fresh-squeezed margaritas (agua fresca for kids) right inside the historic park.",
+            "dinner": "The Mission Restaurant in Mission Beach \u2014 beloved local favorite for creative California-Mexican fusion, great for families, with generous portions and a relaxed beachy atmosphere. Perfect farewell dinner."
+          },
+          "notes": "Old Town San Diego State Historic Park is free to enter, making it a budget-friendly morning. The Whaley House Museum charges a small admission fee but is well worth it for older kids. Begin packing in the afternoon to make departure day smooth. Check resort checkout time and arrange transportation to the airport in advance."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Phoenix+to+San Diego+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=San Diego&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=San Diego",
+        "https://www.getyourguide.com/s/?q=San Diego",
+        "https://www.getyourguide.com/s/?q=San Diego",
+        "https://www.getyourguide.com/s/?q=San Diego",
+        "https://www.getyourguide.com/s/?q=San Diego"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium San Diego Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 2500.0,
+      "flight": {
+        "price_usd": 880,
+        "airline": "WN",
+        "departure": "2027-08-15T08:00:00",
+        "arrival": "2027-08-15T12:00:00",
+        "stops": 0,
+        "duration": "PT1H20M"
+      },
+      "hotel": {
+        "name": "Mission Bay Family Resort",
+        "price_per_night_usd": 180,
+        "total_usd": 900,
+        "rating": 4.4,
+        "amenities": [
+          "beach access",
+          "wifi",
+          "pool"
+        ],
+        "location": "San Diego"
+      },
+      "experiences": [
+        {
+          "name": "La Jolla Cove Snorkeling and Beach Day",
+          "description": "Explore the stunning La Jolla Cove with the family. Snorkel among colorful fish and sea lions in the protected marine reserve, then relax on the sandy beach. Kids love spotting seals at the nearby Children's Pool. Equipment rentals are available nearby.",
+          "cost_usd": 40,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "La Jolla Cove, La Jolla"
+        },
+        {
+          "name": "San Diego Zoo Visit",
+          "description": "One of the world's most famous zoos, home to over 3,500 animals across 650 species. Kids and adults alike will love the giant pandas, giraffes, and the Skyfari aerial tram. Plan for a full day to explore all exhibits and shows.",
+          "cost_usd": 140,
+          "category": "family activities",
+          "best_time_of_day": "morning",
+          "location": "Balboa Park, Midtown San Diego"
+        },
+        {
+          "name": "Coronado Beach and Ferry Ride",
+          "description": "Take the scenic Coronado Ferry from downtown San Diego to Coronado Island and spend the day at one of America's most beautiful beaches. Build sandcastles, swim in calm waters, and grab fish tacos at a nearby beachside eatery. The iconic Hotel del Coronado makes a stunning backdrop.",
+          "cost_usd": 30,
+          "category": "beaches",
+          "best_time_of_day": "afternoon",
+          "location": "Coronado Island, Coronado"
+        },
+        {
+          "name": "Old Town San Diego State Historic Park",
+          "description": "Step back into California's early history at this free outdoor museum. Explore adobe buildings, watch live demonstrations of 1800s crafts, and enjoy authentic Mexican food at the surrounding restaurants. Kids enjoy the hands-on exhibits and costumed interpreters.",
+          "cost_usd": 50,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Old Town San Diego, Mission Hills"
+        },
+        {
+          "name": "Belmont Park and Mission Beach Boardwalk",
+          "description": "Enjoy classic seaside amusement park fun at Belmont Park, featuring the historic Giant Dipper roller coaster, mini golf, and arcade games. Afterward, stroll or rent bikes along the Mission Beach Boardwalk with ocean views. A perfect mix of beach and family entertainment.",
+          "cost_usd": 60,
+          "category": "family activities",
+          "best_time_of_day": "afternoon",
+          "location": "Mission Beach, Pacific Beach"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "San Diego",
+        "style": "premium",
+        "total_cost": 2500.0,
+        "breakdown": {
+          "flight": 880.0,
+          "hotel": 900.0,
+          "experiences": 320.0,
+          "food": 300,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Saturday)",
+          "morning": "Arrival at San Diego Airport at 12:00 PM \u2014 no morning activities scheduled. Private luxury transfer arranged from the airport to Mission Bay Family Resort. Check-in, settle into your suite, and enjoy a welcome amenity from the resort.",
+          "afternoon": "After freshening up, take a leisurely stroll along the Mission Bay waterfront. Rent premium paddleboards or a private pontoon boat through the resort's concierge to explore the calm bay waters as a family. Enjoy the scenic surroundings and get oriented with the area.",
+          "evening": "Dinner at Catamaran Resort's Oceana Coastal Kitchen or The Shores Restaurant at La Jolla Beach & Tennis Club \u2014 both offer upscale California coastal cuisine with stunning waterfront views. After dinner, enjoy a relaxed sunset walk along Mission Beach Boardwalk.",
+          "meals": {
+            "breakfast": "N/A \u2014 arriving at noon",
+            "lunch": "Welcome lunch at the resort's poolside dining \u2014 order from the premium cabana menu with fresh seafood tacos, lobster bisque, and tropical drinks",
+            "dinner": "The Shores Restaurant at La Jolla Beach & Tennis Club \u2014 acclaimed fine dining with fresh local seafood, craft cocktails, and ocean views; reservations recommended"
+          },
+          "notes": "Flight WN arrives at 12:00 PM. Pre-arrange a luxury SUV or private car transfer. Contact the resort concierge in advance to pre-stock the room with family favorites and arrange early check-in if possible. Keep Day 1 light to allow the family to decompress after travel."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16 (Sunday)",
+          "morning": "Full-day adventure starting with a guided La Jolla Cove Snorkeling experience. Book a private family snorkel tour with a certified guide to explore the La Jolla Underwater Park Ecological Reserve \u2014 swim with colorful garibaldi fish, leopard sharks, and playful sea lions in crystal-clear waters. Premium gear (wetsuits, high-quality masks, fins) provided.",
+          "afternoon": "After snorkeling, relax on the pristine La Jolla Cove beach. Enjoy the sea caves viewpoint walk and watch sea lions basking on the rocks. Head to Prospect Street in La Jolla Village for boutique shopping and a leisurely afternoon exploring the upscale galleries and shops.",
+          "evening": "Dinner in La Jolla's renowned restaurant row. George's at the Cove (rooftop Ocean Terrace) offers iconic views of La Jolla Cove with exceptional California cuisine \u2014 a must-do luxury dining experience. After dinner, stroll the bluffs at sunset for panoramic Pacific Ocean views.",
+          "meals": {
+            "breakfast": "Gourmet in-room breakfast or resort restaurant \u2014 eggs benedict, acai bowls, fresh-pressed juices, and pastries",
+            "lunch": "Picnic-style premium beach lunch arranged by the tour operator, or dine at The Marine Room \u2014 a legendary La Jolla restaurant built right on the beach with waves crashing at the windows",
+            "dinner": "George's at the Cove (Ocean Terrace Rooftop) \u2014 contemporary California cuisine, world-class wine list, and breathtaking La Jolla Cove views; advance reservations essential"
+          },
+          "notes": "Book the private snorkel tour at least 2 weeks in advance through a premium operator like SD Expeditions or Everyday California. Best snorkeling is typically in the morning when waters are calmest. Apply reef-safe sunscreen only. Children should be comfortable in the water; life vests available for younger kids."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17 (Monday)",
+          "morning": "Spend the morning at the world-famous San Diego Zoo. Arrive at opening (9:00 AM) to beat the crowds and enjoy the animals at their most active. Book the VIP Experience or Backstage Pass for exclusive behind-the-scenes access to animal habitats \u2014 including private encounters with giraffes, koalas, and big cats. Use the Skyfari aerial tram for panoramic park views.",
+          "afternoon": "Continue exploring the San Diego Zoo \u2014 visit the Children's Zoo, Africa Rocks, and the Giant Panda exhibit. Take a guided bus tour of the park for an overview. Around 2:00 PM, head to nearby Balboa Park to explore the beautiful Spanish Colonial Revival architecture, fountains, and gardens. Visit the Natural History Museum or the Fleet Science Center if the family is interested.",
+          "evening": "Dinner in the vibrant Gaslamp Quarter in downtown San Diego. Nobu San Diego offers a premium Japanese fusion experience, or try Cowboy Star Restaurant & Butcher Shop for a luxury steakhouse experience. After dinner, enjoy a rooftop bar experience at the Pendry San Diego hotel for craft cocktails and city views.",
+          "meals": {
+            "breakfast": "Resort breakfast buffet or order from the \u00e0 la carte menu \u2014 smoked salmon bagels, Belgian waffles, and a full hot breakfast spread",
+            "lunch": "Albert's Restaurant inside the San Diego Zoo \u2014 sit-down dining with views of the gorilla habitat; enjoy gourmet burgers, salads, and sustainable seafood",
+            "dinner": "Nobu San Diego in the Hard Rock Hotel \u2014 world-renowned Japanese-Peruvian fusion cuisine, premium omakase options, and an extensive sake and cocktail menu"
+          },
+          "notes": "The San Diego Zoo VIP Experience must be booked well in advance and includes a private guided tour, priority access, and exclusive animal encounters. Wear comfortable walking shoes as the zoo involves significant walking on hilly terrain. The zoo is typically less crowded on weekday mornings. Balboa Park is free to enter; individual museum admission fees apply."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18 (Tuesday)",
+          "morning": "Take the scenic Coronado Ferry from Broadway Pier in downtown San Diego to Coronado Island (approximately 15-minute ride with beautiful bay views). Upon arrival, rent luxury beach cruiser bikes and ride along the iconic Coronado Beach \u2014 consistently rated one of America's most beautiful beaches. Enjoy the wide, white sandy shores and the dramatic backdrop of the Hotel del Coronado.",
+          "afternoon": "Spend the afternoon at Coronado Beach \u2014 build sandcastles, swim in the Pacific surf, and relax under a premium beach cabana (reserve in advance through Hotel del Coronado's beach services). Tour the legendary Hotel del Coronado, a Victorian-era National Historic Landmark. Explore its grand halls, shops, and oceanfront grounds. The kids will love the history and grandeur.",
+          "evening": "Dinner at 1500 OCEAN at the Hotel del Coronado \u2014 a sophisticated farm-to-table restaurant with stunning ocean terrace views. After dinner, take the ferry back to the mainland at sunset for spectacular bay and skyline views, then return to Mission Bay Resort for a relaxing evening by the pool.",
+          "meals": {
+            "breakfast": "Breakfast at the resort \u2014 fresh fruit platters, avocado toast, and specialty coffee from the resort's caf\u00e9 before heading to the ferry",
+            "lunch": "Picnic-style gourmet lunch on the beach \u2014 arrange a premium beach picnic basket through the Hotel del Coronado concierge, featuring charcuterie, artisan sandwiches, local cheeses, and sparkling lemonade",
+            "dinner": "1500 OCEAN at Hotel del Coronado \u2014 upscale coastal California cuisine with locally sourced ingredients, exceptional wine pairings, and alfresco ocean terrace seating"
+          },
+          "notes": "The Coronado Ferry departs from Broadway Pier; check the schedule in advance (ferries run approximately every 60 minutes). Purchase ferry tickets online to avoid queues. The Hotel del Coronado beach cabana service should be reserved at least one week ahead during peak summer season. Coronado Beach can be windy in the afternoon \u2014 bring light layers for the kids."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19 (Wednesday)",
+          "morning": "Begin the final full day with a visit to Belmont Park and the Mission Beach Boardwalk \u2014 just minutes from Mission Bay Resort. Ride the historic Giant Dipper wooden roller coaster (built in 1925, a true San Diego landmark), enjoy the FlowRider surf simulator, and explore the classic seaside amusement attractions. The boardwalk is lively and perfect for a fun family morning.",
+          "afternoon": "Return to Old Town San Diego State Historic Park for a cultural afternoon. Explore the living history museum with adobe buildings, costumed interpreters, and authentic 1800s California heritage. Browse the artisan shops for premium souvenirs \u2014 hand-crafted jewelry, leather goods, and authentic Mexican folk art. Visit the Whaley House Museum, considered one of the most haunted houses in America, for a fun and unique family experience.",
+          "evening": "Final night luxury farewell dinner. Addison Restaurant in Del Mar (Michelin-starred) offers an extraordinary tasting menu \u2014 the pinnacle of San Diego fine dining. Alternatively, dine at Juniper & Ivy in Little Italy for innovative California cuisine in a stunning converted warehouse. End the evening back at Mission Bay Resort with a private bonfire on the beach (arranged through the concierge) \u2014 roast s'mores, stargaze, and reflect on an incredible San Diego adventure.",
+          "meals": {
+            "breakfast": "Celebratory final morning breakfast at the resort \u2014 order the full premium spread including eggs any style, smoked salmon, fresh pastries, mimosas for adults, and fresh-squeezed juices for kids",
+            "lunch": "Casa Guadalajara in Old Town \u2014 an iconic, beautifully decorated Mexican restaurant with authentic dishes, award-winning margaritas, and a lively mariachi atmosphere; a perfect Old Town dining experience",
+            "dinner": "Addison at Fairmont Grand Del Mar \u2014 San Diego's only Michelin two-star restaurant offering a refined French-California tasting menu with impeccable service; advance reservations are essential and highly competitive"
+          },
+          "notes": "Belmont Park opens at 11:00 AM on weekdays \u2014 arrive early to enjoy rides before afternoon crowds. Old Town San Diego State Historic Park is free to enter; guided tours are available and highly recommended for families. For the farewell bonfire, contact the Mission Bay Resort concierge at least 48 hours in advance to arrange setup, premium s'mores kits, and beach blankets. Addison reservations should be made 4\u20136 weeks in advance."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Phoenix+to+San Diego+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=San Diego&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=San Diego",
+        "https://www.getyourguide.com/s/?q=San Diego",
+        "https://www.getyourguide.com/s/?q=San Diego",
+        "https://www.getyourguide.com/s/?q=San Diego",
+        "https://www.getyourguide.com/s/?q=San Diego"
+      ],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Direct flight (no layovers)",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-1525 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "San Diego family beach trip, $3500 family of 4, 5 days, August 2027, from Phoenix",
+  "session_tags": {
+    "query_id": "CTL-09",
+    "condition": "two_way",
+    "run_index": 3
+  }
+}

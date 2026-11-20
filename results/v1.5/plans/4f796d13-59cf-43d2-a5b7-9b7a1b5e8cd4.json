@@ -1,0 +1,890 @@
+{
+  "session_id": "4f796d13-59cf-43d2-a5b7-9b7a1b5e8cd4",
+  "intent": {
+    "destination": "New Zealand South Island",
+    "origin": null,
+    "budget_usd": 4000.0,
+    "duration_days": null,
+    "travel_month": "November",
+    "travel_year": 2026,
+    "interests": [
+      "hiking",
+      "bungee jumping"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "New Zealand South Island, $4000, hiking and bungee jumping, November 2026"
+  },
+  "selected_flight": {
+    "price_usd": 890,
+    "airline": "LH",
+    "departure": "2027-11-15T06:00:00",
+    "arrival": "2027-11-15T13:00:00",
+    "stops": 1,
+    "duration": "PT7H00M"
+  },
+  "selected_hotel": {
+    "name": "Queenstown Boutique Stay",
+    "price_per_night_usd": 95,
+    "total_usd": 1235,
+    "rating": 4.4,
+    "amenities": [
+      "wifi",
+      "breakfast included",
+      "rooftop terrace"
+    ],
+    "location": "Queenstown"
+  },
+  "experiences": [
+    {
+      "name": "Tongariro Alpine Crossing Day Hike",
+      "description": "One of New Zealand's greatest day hikes, crossing volcanic terrain with emerald lakes and panoramic views. Book an early shuttle from Queenstown or Wanaka to maximize daylight hours. Avoid scheduling on Day 1 due to late flight arrival.",
+      "cost_usd": 55,
+      "category": "hiking",
+      "best_time_of_day": "Early Morning (depart by 07:00)",
+      "location": "Tongariro National Park, Central Plateau"
+    },
+    {
+      "name": "Nevis Bungy Jump",
+      "description": "New Zealand's highest bungy jump at 134 meters above the Nevis River gorge. Operated by AJ Hackett, this is a bucket-list adrenaline experience. Stay in central Queenstown to be within 10 minutes of the booking office and shuttle pickup point.",
+      "cost_usd": 195,
+      "category": "bungee jumping",
+      "best_time_of_day": "Morning (09:00\u201312:00)",
+      "location": "Nevis Valley, near Queenstown Central"
+    },
+    {
+      "name": "Routeburn Track Guided Day Walk",
+      "description": "A stunning alpine hike through Fiordland and Mount Aspiring National Parks with waterfalls, beech forests, and mountain views. Choose a guided day section to avoid multi-day logistics. Stay in Glenorchy or central Queenstown for easy early morning access.",
+      "cost_usd": 85,
+      "category": "hiking",
+      "best_time_of_day": "Early Morning (depart by 08:00)",
+      "location": "Glenorchy, near Queenstown"
+    },
+    {
+      "name": "Milford Sound Kayak and Walk Combo",
+      "description": "Paddle through the iconic fiord surrounded by towering cliffs and waterfalls, then hike the Milford foreshore trail. Book accommodation in Te Anau the night before to avoid the long drive on activity day and ensure an early start.",
+      "cost_usd": 45,
+      "category": "activities",
+      "best_time_of_day": "Morning (08:00\u201313:00)",
+      "location": "Milford Sound, Fiordland"
+    },
+    {
+      "name": "Hanmer Springs Thermal Pools and Forest Walk",
+      "description": "Relax in geothermal pools after days of intense hiking and adventure activities, then explore the surrounding Hanmer Forest Park trails. Centrally located in the township for easy access to pools, cafes, and trailheads \u2014 ideal for a mid-trip recovery day.",
+      "cost_usd": 20,
+      "category": "culture",
+      "best_time_of_day": "Afternoon (14:00\u201318:00)",
+      "location": "Hanmer Springs Township, Canterbury"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-11-15",
+    "return": "2027-11-28",
+    "nights": 13,
+    "month": "november",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - New Zealand South Island",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 2615.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-11-15T06:00:00",
+        "arrival": "2027-11-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Queenstown Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 1235,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Queenstown"
+      },
+      "experiences": [
+        {
+          "name": "Milford Sound Kayak and Walk Combo",
+          "description": "Paddle through the iconic fiord surrounded by towering cliffs and waterfalls, then hike the Milford foreshore trail. Book accommodation in Te Anau the night before to avoid the long drive on activity day and ensure an early start.",
+          "cost_usd": 45,
+          "category": "activities",
+          "best_time_of_day": "Morning (08:00\u201313:00)",
+          "location": "Milford Sound, Fiordland"
+        },
+        {
+          "name": "Hanmer Springs Thermal Pools and Forest Walk",
+          "description": "Relax in geothermal pools after days of intense hiking and adventure activities, then explore the surrounding Hanmer Forest Park trails. Centrally located in the township for easy access to pools, cafes, and trailheads \u2014 ideal for a mid-trip recovery day.",
+          "cost_usd": 20,
+          "category": "culture",
+          "best_time_of_day": "Afternoon (14:00\u201318:00)",
+          "location": "Hanmer Springs Township, Canterbury"
+        }
+      ],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "New Zealand South Island",
+        "style": "budget",
+        "total_cost": 2615.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 1235.0,
+          "experiences": 65.0,
+          "food": 325,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-11-15 (Sunday)",
+          "morning": "Flight arrives at 13:00 - no morning activities scheduled",
+          "afternoon": "Arrive at Queenstown Airport at 13:00. Take the Orbus public bus (Route 1, ~$2 NZD) into Queenstown town centre. Check in to Queenstown Boutique Stay, freshen up, and take a leisurely self-guided walk along the Queenstown lakefront promenade on Lake Wakatipu. Enjoy the stunning views of the Remarkables mountain range at no cost.",
+          "evening": "Explore Queenstown town centre on foot. Visit the free Queenstown Gardens (a 10-minute walk from the lakefront) for a relaxing sunset stroll. Head back into town for dinner.",
+          "meals": {
+            "breakfast": "Eat on the plane or grab a snack at Queenstown Airport",
+            "lunch": "Grab a budget-friendly bite at Fergburger (iconic Queenstown burger joint, ~$15-18 NZD) or pick up groceries at Countdown supermarket to save money",
+            "dinner": "Vudu Cafe & Larder for affordable cabinet food and hearty meals (~$15-20 NZD), or cook a simple meal using groceries from Countdown supermarket"
+          },
+          "notes": "Day 1 is intentionally light due to afternoon arrival. Use the evening to rest and acclimatise. Buy a Bee Card for discounted bus travel throughout your stay. Stock up on groceries at Countdown to keep meal costs down throughout the trip."
+        },
+        {
+          "day": 2,
+          "date": "2027-11-16 (Monday)",
+          "morning": "Rise early and hike the iconic Ben Lomond Track from Queenstown. Start from the Queenstown Gardens trailhead and hike up to the saddle (approximately 3-4 hours return to saddle, or 6-7 hours to the summit at 1748m). This is a free, world-class hike with panoramic views of Lake Wakatipu and surrounding peaks.",
+          "afternoon": "Return from the hike and cool down. Visit the Queenstown Hill Time Walk (Te Tapu-nuku) as a shorter afternoon alternative if energy is low \u2014 a 2-hour loop with great town and lake views, completely free.",
+          "evening": "Recover with a soak at the Queenstown waterfront. Browse the free local arts and crafts market if available (seasonal). Head to dinner in town.",
+          "meals": {
+            "breakfast": "Self-catered oats or toast at the accommodation before the hike",
+            "lunch": "Pack a homemade sandwich and snacks for the trail to save money",
+            "dinner": "The Cow Restaurant for affordable pasta and pizza in a cosy setting (~$18-25 NZD), or grab takeaway fish and chips from Fishbone Bar & Grill (~$15 NZD)"
+          },
+          "notes": "Wear sturdy hiking boots and carry at least 2L of water for Ben Lomond. Check weather conditions the night before \u2014 the summit can be exposed and windy. The track is well-marked but steep in sections. Start by 7:30am to avoid afternoon heat."
+        },
+        {
+          "day": 3,
+          "date": "2027-11-17 (Tuesday)",
+          "morning": "Bungee jumping day! Head to the Kawarau Bridge Bungy (the world's first commercial bungee site, operated by AJ Hackett). The 43m jump over the Kawarau River is the most affordable AJ Hackett option (~$205 NZD). Book online in advance for best pricing. The site is 23km from Queenstown \u2014 take the AJ Hackett shuttle or a rideshare (~$10-15 NZD each way).",
+          "afternoon": "After the adrenaline rush, walk the free Kawarau Gorge Suspension Bridge viewing area and enjoy the scenery. Return to Queenstown and visit the free Kiwi Birdlife Park entrance area, or hike the short Queenstown Hill lookout track for more views.",
+          "evening": "Celebrate your bungee jump with a well-earned meal out. Explore the Queenstown night scene along the lakefront.",
+          "meals": {
+            "breakfast": "Self-catered light breakfast at accommodation (important to eat before the jump but not too heavily)",
+            "lunch": "Fergburger or a bakery pie (~$8-12 NZD) near the town centre after returning from Kawarau",
+            "dinner": "Rata (budget-friendly shared plates option) or Winnies Gourmet Pizza (~$18-22 NZD per pizza, great for sharing)"
+          },
+          "notes": "Book the Kawarau Bridge Bungy well in advance online \u2014 prices are cheaper when pre-booked. Wear comfortable, close-fitting clothing. Avoid heavy meals 2 hours before the jump. Photos and videos are available for purchase on-site but are an added cost (~$30-50 NZD) \u2014 consider whether it fits your budget."
+        },
+        {
+          "day": 4,
+          "date": "2027-11-18 (Wednesday)",
+          "morning": "Take a day trip to Glenorchy (45 minutes from Queenstown by car or shuttle, ~$25-30 NZD return on Glenorchy Air or shared shuttle). Begin the Routeburn Track day walk \u2014 hike to Routeburn Flats or Routeburn Falls Hut (approximately 4 hours return from the Routeburn car park). Stunning alpine scenery, beech forest, and waterfalls.",
+          "afternoon": "Continue exploring the Glenorchy area. Walk the short Glenorchy Lagoon Walkway (1 hour loop, free) through wetlands with views of the Dart River valley and snow-capped peaks. Visit the historic Glenorchy wharf.",
+          "evening": "Return to Queenstown by shuttle or arranged transport. Rest and prepare for the next day.",
+          "meals": {
+            "breakfast": "Self-catered breakfast before departing for Glenorchy",
+            "lunch": "Pack your own lunch and snacks for the Routeburn day walk to save significantly",
+            "dinner": "Self-catered dinner at accommodation using supermarket groceries, or Pasta Cucina for affordable Italian (~$16-20 NZD)"
+          },
+          "notes": "The Routeburn Track is one of New Zealand's Great Walks \u2014 day walking is free and does not require a hut pass. Carry rain gear as weather can change rapidly in this alpine zone. Confirm shuttle times in advance and book your return seat. Alternatively, rent a car for the day (~$50-70 NZD) to share costs with fellow travellers."
+        },
+        {
+          "day": 5,
+          "date": "2027-11-19 (Thursday)",
+          "morning": "Drive or take a bus from Queenstown to Te Anau (~2 hours, InterCity bus ~$25-35 NZD one way). Check in to budget accommodation in Te Anau (hostel ~$30-45 NZD/night). Visit the free Te Anau lakefront and explore the small town. Walk the Kepler Track starting point for a short preview hike along the lake edge.",
+          "afternoon": "Hike the Kepler Track day walk \u2014 the section from the Kepler Track car park to Brod Bay along Lake Te Anau is a beautiful, flat, 2-hour return walk through beech forest. Completely free and suitable for all fitness levels.",
+          "evening": "Explore Te Anau township. Visit the Te Anau Glowworm Caves if budget allows (~$89 NZD, book in advance) \u2014 a unique underground experience. Alternatively, enjoy the free lakefront sunset views.",
+          "meals": {
+            "breakfast": "Self-catered before departing Queenstown",
+            "lunch": "Pack lunch for the bus journey and afternoon hike",
+            "dinner": "The Sandfly Cafe in Te Anau for hearty, affordable meals (~$18-22 NZD), or self-catered using the Four Square supermarket in Te Anau"
+          },
+          "notes": "Te Anau is the gateway to Milford Sound and Fiordland National Park. Stock up on groceries and snacks at the Four Square supermarket as food options become very limited (and expensive) closer to Milford Sound. Confirm your Milford Sound experience booking for Day 6-7."
+        },
+        {
+          "day": 6,
+          "date": "2027-11-20 (Friday)",
+          "morning": "Depart Te Anau early (7:00am) for the scenic 2-hour drive to Milford Sound along the Milford Road \u2014 one of the world's most scenic drives. Stop at the Mirror Lakes (free, 5-minute walk) and the Avenue of the Disappearing Mountain for photos. Arrive at Milford Sound by 9:00am.",
+          "afternoon": "Begin the Milford Sound Kayak and Walk Combo experience \u2014 paddle through the iconic fiord surrounded by towering cliffs, Mitre Peak, and stunning waterfalls including Stirling Falls and Lady Bowen Falls. The kayaking portion offers a unique water-level perspective of the fiord. This full experience typically runs 4-6 hours.",
+          "evening": "Complete the walk component of the Milford Sound Kayak and Walk Combo along a section of the Milford Track or foreshore. Return to Te Anau by early evening (allow 2.5 hours for the drive back). Rest and recover.",
+          "meals": {
+            "breakfast": "Early self-catered breakfast before 7:00am departure from Te Anau",
+            "lunch": "Pack your own lunch and snacks \u2014 food at Milford Sound is very expensive. A packed lunch is strongly recommended",
+            "dinner": "Self-catered dinner at Te Anau accommodation using pre-purchased groceries"
+          },
+          "notes": "The Milford Road can be closed due to avalanche risk or weather \u2014 check the NZ Transport Agency website the night before. Book the Milford Sound Kayak and Walk Combo well in advance as spots fill up quickly in summer. Wear layers as the fiord is significantly cooler and wetter than Queenstown. Sandflies are intense at Milford Sound \u2014 bring strong insect repellent."
+        },
+        {
+          "day": 7,
+          "date": "2027-11-21 (Saturday)",
+          "morning": "Hike the Kepler Track \u2014 take the longer day walk from the Kepler Track car park up to the Luxmore Hut (approximately 6-7 hours return, 1400m elevation gain). This is one of the best day hikes in Fiordland with spectacular views over Lake Te Anau and Lake Manapouri from the limestone bluffs and alpine tops. Free to walk, no hut pass needed for day walkers.",
+          "afternoon": "Continue ascending toward the Luxmore Hut if time and energy allow, enjoying the panoramic views of the Fiordland mountains. Begin descent back to the trailhead in the mid-afternoon.",
+          "evening": "Return to Te Anau by late afternoon. Enjoy a well-earned rest and a hot shower. Visit the Te Anau lakefront for a sunset walk.",
+          "meals": {
+            "breakfast": "Self-catered hearty breakfast before the big hike \u2014 porridge, eggs, or toast",
+            "lunch": "Packed lunch and high-energy snacks (nuts, chocolate, muesli bars) for the trail",
+            "dinner": "Treat yourself at the Pio Pio Restaurant or Redcliff Cafe in Te Anau (~$22-28 NZD mains) after the long hike, or self-cater"
+          },
+          "notes": "This is a strenuous day hike \u2014 start no later than 8:00am. Carry at least 2L of water and rain gear. The upper sections of the Kepler Track are exposed and weather can change rapidly. Check the Department of Conservation (DOC) website for track conditions. This is a Great Walk \u2014 day walking is free."
+        },
+        {
+          "day": 8,
+          "date": "2027-11-22 (Sunday)",
+          "morning": "Depart Te Anau and drive or take a bus toward Wanaka (~2.5 hours from Te Anau via Queenstown, or ~3 hours direct). Stop at the Lake Hayes scenic reserve near Queenstown for a short walk and photos of the mirror-like lake (free, 30 minutes).",
+          "afternoon": "Arrive in Wanaka. Check in to budget hostel accommodation (~$30-45 NZD/night). Walk to the famous 'That Wanaka Tree' (a lone willow tree in Lake Wanaka, free) and stroll along the Wanaka lakefront. Explore the charming town centre.",
+          "evening": "Hike the short Wanaka Outlet Track along the lake edge at sunset (1 hour, free). Enjoy dinner in town.",
+          "meals": {
+            "breakfast": "Self-catered before departing Te Anau",
+            "lunch": "Pack lunch for the journey or stop at a bakery in Queenstown if passing through",
+            "dinner": "Francesca's Italian Kitchen in Wanaka for affordable pasta (~$18-22 NZD), or pick up groceries from New World supermarket in Wanaka"
+          },
+          "notes": "Wanaka is a quieter, more affordable alternative to Queenstown with equally stunning scenery. The InterCity bus from Te Anau to Wanaka may require a change in Queenstown \u2014 check schedules in advance. If renting a car, the drive via the Crown Range Road offers spectacular views and is the highest sealed road in New Zealand."
+        },
+        {
+          "day": 9,
+          "date": "2027-11-23 (Monday)",
+          "morning": "Hike Roys Peak \u2014 one of the most iconic hikes in New Zealand (16km return, 1200m elevation gain, 5-6 hours). The summit at 1578m offers jaw-dropping 360-degree views of Lake Wanaka, Mount Aspiring, and the surrounding ranges. Start early (7:00am) to beat the crowds and heat. Free to hike.",
+          "afternoon": "Descend Roys Peak and return to Wanaka by early afternoon. Note: Roys Peak is closed from October 1 to November 10 for lambing season \u2014 by November 23 it should be open, but verify with DOC before going.",
+          "evening": "Rest and recover from the big hike. Visit the free Lake Wanaka lakefront for a gentle sunset walk. Browse the Wanaka town centre.",
+          "meals": {
+            "breakfast": "Self-catered hearty breakfast before the hike \u2014 this is a demanding climb",
+            "lunch": "Packed lunch and plenty of snacks and water for the Roys Peak trail",
+            "dinner": "Burgerburger Wanaka for a budget-friendly meal (~$15-18 NZD), or self-catered at accommodation"
+          },
+          "notes": "Roys Peak is extremely popular \u2014 starting at 7:00am or earlier is strongly recommended to avoid crowds at the summit and to complete the hike before afternoon heat. Carry 2-3L of water as there is no water on the track. The iconic 'Instagram ridge' photo spot is about 500m below the true summit. Verify the track is open with DOC as opening dates can vary."
+        },
+        {
+          "day": 10,
+          "date": "2027-11-24 (Tuesday)",
+          "morning": "Visit Mount Aspiring National Park \u2014 drive or take a local shuttle to the Makarora area (1 hour from Wanaka). Hike the Blue Pools Track (1 hour return, free) to see stunning crystal-clear blue pools fed by glacial meltwater. A short suspension bridge crossing adds to the adventure.",
+          "afternoon": "Hike the Young Valley Track from the Makarora River for a longer forest and river valley walk (3-4 hours return, free). Alternatively, explore the Haast Pass area and stop at Thunder Creek Falls (a 5-minute walk from the road to a 28m waterfall, free).",
+          "evening": "Return to Wanaka. Visit Puzzling World (exterior is free to view, interior ~$22 NZD if budget allows) or simply enjoy the lakefront. Attend a movie at the charming Cinema Paradiso (~$15 NZD) for a unique Wanaka experience.",
+          "meals": {
+            "breakfast": "Self-catered before departing for Makarora",
+            "lunch": "Packed lunch for the Blue Pools and valley walks",
+            "dinner": "Ritual Cafe or Kika restaurant in Wanaka (~$18-24 NZD), or self-catered"
+          },
+          "notes": "The Blue Pools are one of the South Island's hidden gems \u2014 worth the drive. The water is extremely cold (glacial) \u2014 swimming is possible but only for the brave. Check road conditions on the Haast Pass (SH6) before departing. This is a great lower-intensity day after the demanding Roys Peak hike."
+        },
+        {
+          "day": 11,
+          "date": "2027-11-25 (Wednesday)",
+          "morning": "Drive from Wanaka to Hanmer Springs (~3.5-4 hours via the Lewis Pass route, or ~4.5 hours via Christchurch). This is a scenic driving day through the Canterbury Plains and into the Southern Alps foothills. Stop at Lake Tekapo en route (1.5 hours from Wanaka) to visit the iconic Church of the Good Shepherd (free) and walk the short lakeside path with views of the turquoise lake and Mount Cook.",
+          "afternoon": "Continue driving to Hanmer Springs. Check in to budget hostel accommodation (~$30-40 NZD/night). Begin the Hanmer Springs Thermal Pools and Forest Walk experience \u2014 soak in the geothermal pools (entry ~$30-35 NZD, worth every cent after days of hiking) to relieve tired muscles.",
+          "evening": "Enjoy the thermal pools into the early evening. Explore the small Hanmer Springs village. Relax and recover for the remaining days.",
+          "meals": {
+            "breakfast": "Self-catered early breakfast in Wanaka before departure",
+            "lunch": "Pack lunch for the road trip, or stop at a cafe in Lake Tekapo (Kohan Restaurant or a bakery, ~$12-15 NZD)",
+            "dinner": "Hanmer Springs Tavern for affordable pub meals (~$18-22 NZD), or self-catered using the local Four Square supermarket"
+          },
+          "notes": "Lake Tekapo is a UNESCO Dark Sky Reserve \u2014 if you arrive after dark on any night here, stargazing is exceptional. The drive via Lewis Pass is scenic and less travelled \u2014 a beautiful alternative to the main highway. Book Hanmer Springs Thermal Pools entry online in advance for potential discounts. The pools are the perfect recovery after days of intense hiking."
+        },
+        {
+          "day": 12,
+          "date": "2027-11-26 (Thursday)",
+          "morning": "Complete the forest walk component of the Hanmer Springs Thermal Pools and Forest Walk experience. Hike the Conical Hill Track (2 hours return, free) through beautiful native and exotic forest with panoramic views over the Hanmer Basin and surrounding mountains. This is a moderate hike with a rewarding summit viewpoint.",
+          "afternoon": "Hike the Dog Stream Waterfall Walk (1.5 hours return, free) through pine forest to a scenic waterfall. Alternatively, explore the Hanmer Forest Park on the extensive network of free walking and mountain biking tracks. Visit the Thermal Pools again for an afternoon soak if budget allows (re-entry may be available).",
+          "evening": "Final evening in Hanmer Springs. Enjoy a relaxing dinner in the village. Pack bags and prepare for the journey back toward Christchurch or your departure point.",
+          "meals": {
+            "breakfast": "Self-catered at accommodation",
+            "lunch": "Packed lunch for the forest walks, or grab a pie from the local bakery in Hanmer Springs (~$6-8 NZD)",
+            "dinner": "No.31 Restaurant or Malabar restaurant in Hanmer Springs (~$20-25 NZD for a slightly more special final South Island dinner), or self-catered"
+          },
+          "notes": "Hanmer Springs is a wonderful wind-down location after the more intense hiking days. The combination of thermal pools and gentle forest walks is ideal for muscle recovery. If you want one final adrenaline hit, Hanmer Springs Adventure Centre offers quad biking and jet boating at moderate prices (~$60-100 NZD)."
+        },
+        {
+          "day": 13,
+          "date": "2027-11-27 (Friday)",
+          "morning": "Depart Hanmer Springs for Christchurch (~1.5 hours drive). Arrive in Christchurch and explore the city's free attractions: visit the Christchurch Botanic Gardens (free, world-class gardens along the Avon River), the Cardboard Cathedral (free to view exterior, small entry fee inside), and the Re:START Container Mall area.",
+          "afternoon": "Visit the Canterbury Museum (free entry, one of New Zealand's best museums) to learn about South Island history, Maori culture, and Antarctic exploration. Walk along the Avon River Precinct (free). If time allows, take the free Christchurch Tram first loop for orientation (paid rides available ~$25 NZD for unlimited day pass).",
+          "evening": "Final dinner in Christchurch before any onward travel. Reflect on 13 incredible days on the South Island. Head to your accommodation or airport as needed.",
+          "meals": {
+            "breakfast": "Self-catered early breakfast in Hanmer Springs before departure",
+            "lunch": "Christchurch Public Market or Little High Eatery food hall for affordable, diverse options (~$12-16 NZD)",
+            "dinner": "Harlequin Public House or Hello Sunday cafe in Christchurch for affordable, quality meals (~$18-24 NZD), or grab fish and chips for a classic NZ farewell meal (~$12-15 NZD)"
+          },
+          "notes": "Christchurch is still rebuilding after the 2011 earthquake \u2014 the city has a vibrant, creative energy with many free street art installations and pop-up spaces worth exploring. The Canterbury Museum is genuinely world-class and completely free. If departing from Christchurch Airport, allow at least 1.5 hours before your flight. The Orbus city bus connects the city centre to the airport (~$3 NZD)."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=None+to+New Zealand South Island+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=New Zealand South Island&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=New Zealand South Island",
+        "https://www.getyourguide.com/s/?q=New Zealand South Island"
+      ],
+      "highlights": [
+        "Save $385 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic New Zealand South Island Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 3145.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-11-15T06:00:00",
+        "arrival": "2027-11-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Queenstown Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 1235,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Queenstown"
+      },
+      "experiences": [
+        {
+          "name": "Tongariro Alpine Crossing Day Hike",
+          "description": "One of New Zealand's greatest day hikes, crossing volcanic terrain with emerald lakes and panoramic views. Book an early shuttle from Queenstown or Wanaka to maximize daylight hours. Avoid scheduling on Day 1 due to late flight arrival.",
+          "cost_usd": 55,
+          "category": "hiking",
+          "best_time_of_day": "Early Morning (depart by 07:00)",
+          "location": "Tongariro National Park, Central Plateau"
+        },
+        {
+          "name": "Nevis Bungy Jump",
+          "description": "New Zealand's highest bungy jump at 134 meters above the Nevis River gorge. Operated by AJ Hackett, this is a bucket-list adrenaline experience. Stay in central Queenstown to be within 10 minutes of the booking office and shuttle pickup point.",
+          "cost_usd": 195,
+          "category": "bungee jumping",
+          "best_time_of_day": "Morning (09:00\u201312:00)",
+          "location": "Nevis Valley, near Queenstown Central"
+        },
+        {
+          "name": "Routeburn Track Guided Day Walk",
+          "description": "A stunning alpine hike through Fiordland and Mount Aspiring National Parks with waterfalls, beech forests, and mountain views. Choose a guided day section to avoid multi-day logistics. Stay in Glenorchy or central Queenstown for easy early morning access.",
+          "cost_usd": 85,
+          "category": "hiking",
+          "best_time_of_day": "Early Morning (depart by 08:00)",
+          "location": "Glenorchy, near Queenstown"
+        },
+        {
+          "name": "Milford Sound Kayak and Walk Combo",
+          "description": "Paddle through the iconic fiord surrounded by towering cliffs and waterfalls, then hike the Milford foreshore trail. Book accommodation in Te Anau the night before to avoid the long drive on activity day and ensure an early start.",
+          "cost_usd": 45,
+          "category": "activities",
+          "best_time_of_day": "Morning (08:00\u201313:00)",
+          "location": "Milford Sound, Fiordland"
+        },
+        {
+          "name": "Hanmer Springs Thermal Pools and Forest Walk",
+          "description": "Relax in geothermal pools after days of intense hiking and adventure activities, then explore the surrounding Hanmer Forest Park trails. Centrally located in the township for easy access to pools, cafes, and trailheads \u2014 ideal for a mid-trip recovery day.",
+          "cost_usd": 20,
+          "category": "culture",
+          "best_time_of_day": "Afternoon (14:00\u201318:00)",
+          "location": "Hanmer Springs Township, Canterbury"
+        }
+      ],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "New Zealand South Island",
+        "style": "balanced",
+        "total_cost": 3145.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 1235.0,
+          "experiences": 400.0,
+          "food": 520,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-11-15 (Sunday)",
+          "morning": "No activities scheduled \u2014 flight LH arrives at 13:00. Rest and travel time.",
+          "afternoon": "Arrive at Queenstown Airport at 13:00. Transfer to Queenstown Boutique Stay, check in, freshen up, and take a leisurely stroll along the Queenstown lakefront promenade to get oriented. Enjoy views of Lake Wakatipu and the Remarkables mountain range.",
+          "evening": "Explore central Queenstown on foot \u2014 browse the waterfront, visit Steamer Wharf, and get your bearings around town. Light evening walk up to the lakefront viewpoint near Marine Parade.",
+          "meals": {
+            "breakfast": "Meal on the flight or grab a bite at the airport upon arrival.",
+            "lunch": "Fergburger (iconic Queenstown institution) \u2014 grab a classic burger to kick off the trip. Budget ~NZD 15\u201320.",
+            "dinner": "The Bunker Restaurant \u2014 cozy, intimate spot with New Zealand lamb and craft beers. Mid-range, ~NZD 40\u201355 per person."
+          },
+          "notes": "Keep Day 1 light \u2014 jet lag may be a factor. Pick up a NZ SIM card at the airport. Confirm all activity bookings for the week ahead. Weather in November is late spring \u2014 pack layers."
+        },
+        {
+          "day": 2,
+          "date": "2027-11-16 (Monday)",
+          "morning": "Nevis Bungy Jump \u2014 New Zealand's highest bungy at 134 meters above the Nevis River gorge with AJ Hackett. Depart from the AJ Hackett booking station in central Queenstown at 8:30 AM. Transfer by 4WD to the platform takes about 30 minutes.",
+          "afternoon": "Return to Queenstown by early afternoon. Recover and recharge with a relaxed walk along the Queenstown Gardens \u2014 a peaceful lakeside park perfect for post-adrenaline unwinding. Explore the rose garden and foreshore trails.",
+          "evening": "Head up the Skyline Gondola at sunset for panoramic views over Lake Wakatipu and the Remarkables. Watch the sun set over the mountains from the observation deck.",
+          "meals": {
+            "breakfast": "Vudu Cafe & Larder \u2014 excellent eggs benedict and strong flat whites. ~NZD 18\u201325.",
+            "lunch": "Grab a packed lunch or quick bite from a Queenstown deli before the jump \u2014 something light is recommended. Try Devil Burger. ~NZD 15.",
+            "dinner": "Skyline Restaurant at the top of the gondola \u2014 buffet with local New Zealand cuisine and stunning views. ~NZD 55\u201365 per person including gondola."
+          },
+          "notes": "Book the Nevis Bungy well in advance \u2014 it sells out fast. Weight and health restrictions apply; check AJ Hackett's website. Minimum age 10, minimum weight 45kg. Video package available as an add-on (~NZD 50)."
+        },
+        {
+          "day": 3,
+          "date": "2027-11-17 (Tuesday)",
+          "morning": "Routeburn Track Guided Day Walk \u2014 depart Queenstown early (around 7:00 AM) via shuttle to the Routeburn trailhead. This stunning alpine hike passes through Fiordland and Mount Aspiring National Parks with beech forests, waterfalls, and mountain panoramas.",
+          "afternoon": "Continue the Routeburn walk through the afternoon, reaching the alpine meadows and viewpoints near Routeburn Flats or Routeburn Falls hut. The guided experience includes interpretation of local flora, fauna, and M\u0101ori history.",
+          "evening": "Return shuttle to Queenstown arriving approximately 6:00\u20137:00 PM. Rest at the boutique stay, shower, and enjoy a quieter evening in town.",
+          "meals": {
+            "breakfast": "Early breakfast at the hotel or grab a takeaway coffee and muffin from a Queenstown caf\u00e9 before departure.",
+            "lunch": "Packed lunch provided by the guided walk operator \u2014 typically sandwiches, fruit, and snacks eaten at a scenic rest stop.",
+            "dinner": "Rata Restaurant \u2014 award-winning New Zealand cuisine using local South Island produce. ~NZD 45\u201360 per person."
+          },
+          "notes": "Wear sturdy hiking boots and moisture-wicking layers. The Routeburn is a multi-day Great Walk but guided day versions cover the most scenic sections. Total walking distance on the day walk is approximately 16\u201320 km. Trekking poles recommended."
+        },
+        {
+          "day": 4,
+          "date": "2027-11-18 (Wednesday)",
+          "morning": "Active rest day morning \u2014 gentle hike up Ben Lomond Track from Queenstown town centre. The lower section to the saddle is achievable in 2\u20133 hours return and offers sweeping views over the lake and town without the full summit commitment.",
+          "afternoon": "Visit Arrowtown, a charming historic gold-rush village 20 minutes from Queenstown. Explore the Chinese Settlement, Arrow River gorge walk, and browse the boutique shops and galleries on Buckingham Street.",
+          "evening": "Return to Queenstown. Enjoy the vibrant bar scene around the waterfront \u2014 try Zephyr or Atlas Beer Cafe for craft New Zealand beers and live music.",
+          "meals": {
+            "breakfast": "Eichardt's Private Hotel Bar \u2014 indulgent brunch with lake views. ~NZD 25\u201335.",
+            "lunch": "Provisions of Arrowtown \u2014 excellent artisan sandwiches, pies, and locally roasted coffee in a charming heritage setting. ~NZD 15\u201320.",
+            "dinner": "The Fork and Tap, Arrowtown (if staying late) or Botswana Butchery in Queenstown \u2014 premium New Zealand beef and lamb. ~NZD 45\u201360."
+          },
+          "notes": "Arrowtown is a great half-day detour and can be reached by car rental, local shuttle, or taxi. The Arrow River walk from town is flat and easy \u2014 good for tired legs. November daylight lasts until around 9:00 PM."
+        },
+        {
+          "day": 5,
+          "date": "2027-11-19 (Thursday)",
+          "morning": "Drive or shuttle from Queenstown to Te Anau (approximately 2.5 hours). Check in to a Te Anau accommodation or leave bags at storage. Visit the Te Anau Glowworm Caves \u2014 a boat trip across the lake leads to an underground world of glowworms and limestone formations.",
+          "afternoon": "Explore the Te Anau lakefront and surrounding trails. Walk the easy Kepler Track day section near the control gates \u2014 a flat, scenic lakeside trail through beech forest perfect for a gentle afternoon hike.",
+          "evening": "Settle into Te Anau for the night \u2014 this is the gateway town for Milford Sound and an overnight stay is essential for an early Milford departure.",
+          "meals": {
+            "breakfast": "Hotel breakfast in Queenstown before departure or stop at a caf\u00e9 in Kingston on the drive south.",
+            "lunch": "Sandfly Cafe, Te Anau \u2014 hearty soups, sandwiches, and cabinet food. ~NZD 15\u201320.",
+            "dinner": "Ristorante Pizzeria Paradiso, Te Anau \u2014 excellent wood-fired pizzas and pasta, popular with hikers and travellers. ~NZD 30\u201345."
+          },
+          "notes": "Book Te Anau accommodation in advance \u2014 the town is small and fills up quickly in summer. The glowworm cave tour must be pre-booked through Real Journeys (~NZD 85 per person). Drive from Queenstown to Te Anau is scenic via the Mossburn route."
+        },
+        {
+          "day": 6,
+          "date": "2027-11-20 (Friday)",
+          "morning": "Milford Sound Kayak and Walk Combo \u2014 depart Te Anau at 6:30 AM for the 2-hour scenic drive through Fiordland National Park to Milford Sound. Begin the kayaking portion in the morning \u2014 paddle through the iconic fiord beneath Mitre Peak with towering cliffs and cascading waterfalls all around.",
+          "afternoon": "Complete the walk component of the combo \u2014 hike a section of the Milford Track foreshore trail. Enjoy views of Stirling Falls and the fiord from land. Optional cruise on the fiord if time permits.",
+          "evening": "Return drive to Te Anau (2 hours). Rest and reflect on one of New Zealand's most iconic landscapes.",
+          "meals": {
+            "breakfast": "Very early \u2014 packed breakfast or snacks from a Te Anau supermarket the night before. Eat on the road.",
+            "lunch": "Packed lunch provided by the kayak operator or bring your own \u2014 eaten at a rest point along the fiord.",
+            "dinner": "The Ranch Bar & Grill, Te Anau \u2014 casual steaks, burgers, and local craft beer. ~NZD 30\u201345."
+          },
+          "notes": "The Milford Sound road (SH94) is one of the most scenic drives in the world \u2014 stop at the Mirror Lakes, Eglinton Valley, and Homer Tunnel viewpoints. Check road conditions before departure as the Homer Tunnel can close due to rockfall or avalanche risk in early season. Wet weather gear is essential \u2014 Milford receives over 7 meters of rain annually."
+        },
+        {
+          "day": 7,
+          "date": "2027-11-21 (Saturday)",
+          "morning": "Drive from Te Anau to Wanaka (approximately 2.5 hours via Queenstown or 3 hours via the Crown Range). Stop at Cardrona for photos and a coffee at the historic Cardrona Hotel. Arrive in Wanaka and check in or drop bags.",
+          "afternoon": "Roy's Peak Track \u2014 one of Wanaka's signature hikes. The 16 km return trail climbs steeply to 1,578 meters with jaw-dropping views over Lake Wanaka and the Southern Alps. Allow 5\u20136 hours for the full hike.",
+          "evening": "Return to Wanaka township. Enjoy the laid-back lakefront atmosphere \u2014 far less crowded than Queenstown. Stroll along the lake edge and visit the famous 'That Wanaka Tree' at sunset.",
+          "meals": {
+            "breakfast": "Eat at the Te Anau accommodation before checking out, or stop at a caf\u00e9 in Queenstown if passing through.",
+            "lunch": "Packed lunch on Roy's Peak \u2014 eaten at the summit with panoramic views.",
+            "dinner": "Francesca's Italian Kitchen, Wanaka \u2014 locally loved for fresh pasta and wood-fired dishes. ~NZD 35\u201350."
+          },
+          "notes": "Roy's Peak is steep and exposed \u2014 start early to avoid the midday heat and afternoon crowds. Carry 2+ liters of water, sunscreen, and layers. The track is well-marked but can be slippery if wet. No shade on the upper sections. Wanaka is a great alternative base to Queenstown \u2014 quieter and equally beautiful."
+        },
+        {
+          "day": 8,
+          "date": "2027-11-22 (Sunday)",
+          "morning": "Active rest morning in Wanaka \u2014 visit Puzzling World for a fun cultural break, or explore the Outlet Track, a flat 3 km lakeside walk from the town centre to the lake outlet. Perfect for a gentle morning after Roy's Peak.",
+          "afternoon": "Drive to Haast Pass (1.5 hours from Wanaka) \u2014 one of New Zealand's most dramatic mountain passes. Walk the short Fantail Falls Track (20 minutes return) and Thunder Creek Falls Track (10 minutes return) along the way. Continue to the West Coast if time allows.",
+          "evening": "Return to Wanaka or continue to Fox Glacier for an overnight stay if the itinerary calls for a West Coast extension.",
+          "meals": {
+            "breakfast": "Kika Wanaka \u2014 a local favourite for creative brunch dishes with locally sourced ingredients. ~NZD 20\u201328.",
+            "lunch": "Picnic supplies from New World supermarket in Wanaka \u2014 eaten at Haast Pass or by a West Coast river.",
+            "dinner": "Relishes Caf\u00e9, Wanaka \u2014 warm, welcoming caf\u00e9-restaurant with excellent New Zealand lamb and vegetarian options. ~NZD 35\u201345."
+          },
+          "notes": "The Haast Pass road (SH6) is stunning but can be affected by slips and flooding \u2014 check NZTA road conditions. The West Coast is a significant detour; only extend if time and energy allow. November weather on the West Coast can be unpredictable \u2014 always carry rain gear."
+        },
+        {
+          "day": 9,
+          "date": "2027-11-23 (Monday)",
+          "morning": "Drive from Wanaka back to Queenstown (1.5 hours via Crown Range \u2014 the highest sealed road in New Zealand with incredible views). Stop at the Crown Range summit lookout. Return to Queenstown Boutique Stay and check back in.",
+          "afternoon": "Queenstown Hill Time Walk \u2014 a 2\u20133 hour return hike directly from the town centre up to the summit of Queenstown Hill (Te Tapu-nui). Excellent 360-degree views over the lake, Remarkables, and surrounding ranges. A hidden gem compared to Ben Lomond.",
+          "evening": "Celebrate the halfway point of the trip with a nice dinner and a walk along the waterfront. Visit the Steamer Wharf area for evening atmosphere.",
+          "meals": {
+            "breakfast": "Breakfast in Wanaka before departure \u2014 try Federal Diner for excellent eggs and coffee. ~NZD 20\u201325.",
+            "lunch": "Stop at Arrowtown on the way back for lunch \u2014 Provisions caf\u00e9 again or try The Chop Shop. ~NZD 15\u201320.",
+            "dinner": "Pier 19, Queenstown \u2014 lakeside dining with fresh South Island seafood and pasta. ~NZD 40\u201355."
+          },
+          "notes": "The Crown Range road is steep and winding \u2014 take it slow, especially in wet conditions. It is not recommended for campervans or large vehicles. Queenstown Hill walk is dog-friendly and very popular with locals \u2014 go early or late to avoid crowds."
+        },
+        {
+          "day": 10,
+          "date": "2027-11-24 (Tuesday)",
+          "morning": "Jet boat on the Shotover River \u2014 the iconic Shotover Jet departs from Arthurs Point, 10 minutes from Queenstown. 25-minute ride through narrow canyon walls at high speed with 360-degree spins. A classic Queenstown adrenaline experience.",
+          "afternoon": "Gibbston Valley wine region \u2014 hire a bike or join a tour to explore the wineries of the 'Valley of the Vines'. Gibbston Valley Winery, Peregrine, and Chard Farm all offer tastings. The area is 20 minutes from Queenstown by car.",
+          "evening": "Return to Queenstown. Relaxed evening with a riverside walk along the Kawarau River near Frankton.",
+          "meals": {
+            "breakfast": "Bespoke Kitchen, Queenstown \u2014 wholesome, health-focused breakfast bowls and smoothies. ~NZD 18\u201325.",
+            "lunch": "Gibbston Valley Winery Restaurant \u2014 excellent platters of local cheese, charcuterie, and bread paired with Central Otago Pinot Noir. ~NZD 30\u201345.",
+            "dinner": "Hawker & Roll, Queenstown \u2014 Asian street food-inspired dishes, casual and affordable. ~NZD 20\u201330."
+          },
+          "notes": "Shotover Jet must be pre-booked (~NZD 169 per person). Gibbston Valley is Central Otago's premium wine region \u2014 Pinot Noir is the star variety. If cycling between wineries, the Gibbston River Trail is a flat, scenic 10 km trail. Designated driver or shuttle recommended for wine tasting."
+        },
+        {
+          "day": 11,
+          "date": "2027-11-25 (Wednesday)",
+          "morning": "Day trip to Hanmer Springs Thermal Pools \u2014 drive from Queenstown north via SH8 and SH7 (approximately 3.5\u20134 hours). This is a longer drive but the destination offers perfect recovery for tired hiking legs. Arrive mid-morning.",
+          "afternoon": "Hanmer Springs Thermal Pools & Spa \u2014 soak in multiple geothermal pools of varying temperatures surrounded by mountain scenery. Then explore the Hanmer Forest Park with a gentle walk through the Conical Hill Loop Track (1.5 hours, easy) through exotic and native forest.",
+          "evening": "Overnight in Hanmer Springs or begin the drive back toward Christchurch for the following days.",
+          "meals": {
+            "breakfast": "Early breakfast at the hotel before departure \u2014 pack snacks for the road.",
+            "lunch": "Hanmer Springs township \u2014 The Powerhouse Cafe for hearty pies, soups, and cabinet food. ~NZD 15\u201320.",
+            "dinner": "Monteiths Brewery Bar, Hanmer Springs \u2014 casual pub dining with local craft beers and classic New Zealand comfort food. ~NZD 30\u201340."
+          },
+          "notes": "Hanmer Springs Thermal Pools entry is ~NZD 30\u201345 per person depending on pools accessed. The drive from Queenstown is long \u2014 consider an overnight stay in Hanmer Springs to make it worthwhile. Alternatively, this day can be swapped to a Christchurch transit day if the drive feels too ambitious."
+        },
+        {
+          "day": 12,
+          "date": "2027-11-26 (Thursday)",
+          "morning": "Drive from Hanmer Springs to Christchurch (1.5 hours) or return toward Queenstown depending on departure logistics. If heading to Christchurch, stop at Kaik\u014dura on the coast (1.5 hours north of Hanmer) for a short walk along the Kaik\u014dura Peninsula Walkway with seal colony viewing.",
+          "afternoon": "Explore Christchurch \u2014 visit the Botanic Gardens, punting on the Avon River, and the Re:START container mall. Walk through the rebuilt city centre and visit the stunning Cardboard Cathedral.",
+          "evening": "Final evening on the South Island \u2014 enjoy a farewell dinner in Christchurch's vibrant dining precinct around Victoria Street and the Oxford Terrace.",
+          "meals": {
+            "breakfast": "Hanmer Springs caf\u00e9 breakfast before checkout \u2014 try the Powerhouse Caf\u00e9 again or Old Post Office Restaurant.",
+            "lunch": "The Pier Hotel, Kaik\u014dura \u2014 fresh local crayfish (a Kaik\u014dura specialty) with ocean views. ~NZD 35\u201355.",
+            "dinner": "Twenty Seven Steps, Christchurch \u2014 elegant New Zealand cuisine in a heritage building. ~NZD 45\u201360."
+          },
+          "notes": "Kaik\u014dura is famous for its marine wildlife \u2014 whale watching tours are available but require advance booking and a half-day commitment. The peninsula walkway seal colony is free and takes about 2 hours. Christchurch is the main South Island hub for return flights \u2014 confirm flight details for the following day."
+        },
+        {
+          "day": 13,
+          "date": "2027-11-27 (Friday)",
+          "morning": "Final morning in New Zealand \u2014 if departing from Christchurch, enjoy a leisurely breakfast and a last walk through the Botanic Gardens or along the Avon River. If departing from Queenstown, allow 3.5 hours travel time back from Christchurch.",
+          "afternoon": "Transfer to Christchurch Airport or Queenstown Airport depending on departure routing. Allow extra time for baggage check-in and security. Pick up last-minute New Zealand souvenirs \u2014 Whittaker's chocolate, Manuka honey, and merino wool items are popular choices.",
+          "evening": "Depart New Zealand \u2014 farewell to the South Island. Reflect on 13 incredible days of hiking, adventure, and natural beauty.",
+          "meals": {
+            "breakfast": "Addington Coffee Co-op, Christchurch \u2014 beloved local institution with excellent flat whites and brekkie options. ~NZD 18\u201325.",
+            "lunch": "Light meal at the airport \u2014 Christchurch International has several mid-range dining options airside.",
+            "dinner": "In-flight meal or airport dining depending on departure time."
+          },
+          "notes": "Christchurch Airport is approximately 15\u201320 minutes from the city centre. Queenstown Airport is 10 minutes from the town centre. Check baggage allowances for any outdoor gear purchased or rented. New Zealand has strict biosecurity \u2014 declare all food items and ensure hiking boots are clean. No departure tax is separately charged (included in airfare)."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=None+to+New Zealand South Island+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=New Zealand South Island&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=New Zealand South Island",
+        "https://www.getyourguide.com/s/?q=New Zealand South Island",
+        "https://www.getyourguide.com/s/?q=New Zealand South Island",
+        "https://www.getyourguide.com/s/?q=New Zealand South Island",
+        "https://www.getyourguide.com/s/?q=New Zealand South Island"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium New Zealand South Island Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 3405.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-11-15T06:00:00",
+        "arrival": "2027-11-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Queenstown Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 1235,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Queenstown"
+      },
+      "experiences": [
+        {
+          "name": "Tongariro Alpine Crossing Day Hike",
+          "description": "One of New Zealand's greatest day hikes, crossing volcanic terrain with emerald lakes and panoramic views. Book an early shuttle from Queenstown or Wanaka to maximize daylight hours. Avoid scheduling on Day 1 due to late flight arrival.",
+          "cost_usd": 55,
+          "category": "hiking",
+          "best_time_of_day": "Early Morning (depart by 07:00)",
+          "location": "Tongariro National Park, Central Plateau"
+        },
+        {
+          "name": "Nevis Bungy Jump",
+          "description": "New Zealand's highest bungy jump at 134 meters above the Nevis River gorge. Operated by AJ Hackett, this is a bucket-list adrenaline experience. Stay in central Queenstown to be within 10 minutes of the booking office and shuttle pickup point.",
+          "cost_usd": 195,
+          "category": "bungee jumping",
+          "best_time_of_day": "Morning (09:00\u201312:00)",
+          "location": "Nevis Valley, near Queenstown Central"
+        },
+        {
+          "name": "Routeburn Track Guided Day Walk",
+          "description": "A stunning alpine hike through Fiordland and Mount Aspiring National Parks with waterfalls, beech forests, and mountain views. Choose a guided day section to avoid multi-day logistics. Stay in Glenorchy or central Queenstown for easy early morning access.",
+          "cost_usd": 85,
+          "category": "hiking",
+          "best_time_of_day": "Early Morning (depart by 08:00)",
+          "location": "Glenorchy, near Queenstown"
+        },
+        {
+          "name": "Milford Sound Kayak and Walk Combo",
+          "description": "Paddle through the iconic fiord surrounded by towering cliffs and waterfalls, then hike the Milford foreshore trail. Book accommodation in Te Anau the night before to avoid the long drive on activity day and ensure an early start.",
+          "cost_usd": 45,
+          "category": "activities",
+          "best_time_of_day": "Morning (08:00\u201313:00)",
+          "location": "Milford Sound, Fiordland"
+        },
+        {
+          "name": "Hanmer Springs Thermal Pools and Forest Walk",
+          "description": "Relax in geothermal pools after days of intense hiking and adventure activities, then explore the surrounding Hanmer Forest Park trails. Centrally located in the township for easy access to pools, cafes, and trailheads \u2014 ideal for a mid-trip recovery day.",
+          "cost_usd": 20,
+          "category": "culture",
+          "best_time_of_day": "Afternoon (14:00\u201318:00)",
+          "location": "Hanmer Springs Township, Canterbury"
+        }
+      ],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "New Zealand South Island",
+        "style": "premium",
+        "total_cost": 3405.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 1235.0,
+          "experiences": 400.0,
+          "food": 780,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-11-15",
+          "morning": "Arrival at Queenstown Airport at 13:00 \u2014 no morning activities scheduled. Flight LH lands at 1:00 PM.",
+          "afternoon": "Private transfer from Queenstown Airport to Queenstown Boutique Stay. Check in, freshen up, and take a leisurely stroll along the Queenstown waterfront promenade on Lake Wakatipu. Explore the charming town centre, browse boutique shops on Beach Street, and enjoy views of the Remarkables mountain range.",
+          "evening": "Welcome dinner at Queenstown's finest restaurant. Enjoy a scenic gondola ride up Bob's Peak for sunset panoramic views over Lake Wakatipu and the Remarkables, followed by dinner at The Skyline Restaurant's premium a la carte experience.",
+          "meals": {
+            "breakfast": "Not applicable \u2014 mid-day arrival",
+            "lunch": "Light welcome refreshments at the Queenstown Boutique Stay upon check-in, or a casual stop at Vudu Cafe & Larder for artisan sandwiches and locally roasted coffee",
+            "dinner": "Skyline Queenstown's Stratosfare Restaurant \u2014 premium a la carte dining with panoramic lake and mountain views; try the Canterbury lamb rack and Central Otago Pinot Noir"
+          },
+          "notes": "Day 1 activities begin only after the 13:00 arrival. Request an early check-in with the boutique stay in advance. Confirm private airport transfer booking ahead of travel. Pack layers \u2014 Queenstown evenings in November can be cool despite it being early summer."
+        },
+        {
+          "day": 2,
+          "date": "2027-11-16",
+          "morning": "Nevis Bungy Jump \u2014 New Zealand's highest bungy jump at 134 meters above the Nevis River gorge, operated by AJ Hackett. Depart from the AJ Hackett base in central Queenstown at 8:30 AM via the dedicated shuttle to the Nevis platform. Experience the ultimate adrenaline rush over the dramatic canyon. Optional: add Nevis Swing or Nevis Arc for a full morning of thrills.",
+          "afternoon": "Return to Queenstown by early afternoon. Decompress with a relaxing 90-minute premium massage and recovery treatment at the Queenstown Boutique Stay's spa facilities or at the renowned Eforea Spa. Alternatively, take a scenic e-bike ride along the Queenstown Trail along the lakefront to Kelvin Heights.",
+          "evening": "Sunset cruise on Lake Wakatipu aboard a private charter catamaran or the historic TSS Earnslaw steamship. Enjoy champagne and canap\u00e9s on the water with views of Walter Peak Station and the surrounding ranges.",
+          "meals": {
+            "breakfast": "In-hotel breakfast at the Queenstown Boutique Stay \u2014 full New Zealand farm breakfast with eggs, locally smoked salmon, and fresh seasonal fruit",
+            "lunch": "Rata Restaurant on The Mall \u2014 Chef Josh Emett's flagship Queenstown restaurant; try the venison tartare and truffle fries in a relaxed post-bungy celebration lunch",
+            "dinner": "Aboard the TSS Earnslaw or post-cruise at Botswana Butchery \u2014 premium aged New Zealand beef and Central Otago wine selection in a stunning lakeside setting"
+          },
+          "notes": "Book the Nevis Bungy well in advance through AJ Hackett \u2014 slots fill quickly, especially in the November summer season. Weight and health restrictions apply; confirm eligibility before booking. Weather conditions can occasionally delay or reschedule the Nevis experience \u2014 AJ Hackett will notify guests of any changes."
+        },
+        {
+          "day": 3,
+          "date": "2027-11-17",
+          "morning": "Routeburn Track Guided Day Walk \u2014 depart Queenstown early (7:00 AM) via private guided transfer to the Routeburn Shelter trailhead. Begin the stunning alpine hike through Fiordland and Mount Aspiring National Parks. Walk through ancient beech forests, past cascading waterfalls including Routeburn Falls, and up to the alpine meadows of the Routeburn Flats.",
+          "afternoon": "Continue the guided Routeburn walk to the upper reaches, reaching Routeburn Falls Hut and the dramatic alpine terrain above the treeline. Enjoy panoramic views of the Darran Mountains and Harris Saddle area. A premium guided service includes gourmet trail lunch, expert commentary on local flora and fauna, and photography stops at the most spectacular viewpoints.",
+          "evening": "Return to Queenstown by private transfer (approximately 5:30\u20136:00 PM). Enjoy a long, hot soak and recovery at the hotel before a refined dinner.",
+          "meals": {
+            "breakfast": "Early departure breakfast box prepared by the Queenstown Boutique Stay \u2014 filled croissants, fresh fruit, yoghurt, and thermos coffee",
+            "lunch": "Gourmet packed trail lunch provided by the guided walk operator \u2014 artisan wraps, local cheeses, bliss balls, and fresh juices enjoyed at Routeburn Falls with mountain views",
+            "dinner": "Amisfield Winery & Bistro (en route back or via short detour to Lake Hayes) \u2014 farm-to-table tasting menu paired with estate-grown Central Otago Pinot Noir; one of New Zealand's most celebrated dining experiences"
+          },
+          "notes": "The Routeburn Track is a Great Walk \u2014 book the guided day walk with a reputable operator such as Ultimate Hikes or Guided Walks NZ. Wear sturdy waterproof hiking boots and bring sun protection. November weather in the Southern Alps can change rapidly; pack a waterproof jacket. The full guided day walk covers approximately 16\u201320 km depending on the chosen route variation."
+        },
+        {
+          "day": 4,
+          "date": "2027-11-18",
+          "morning": "Active recovery morning \u2014 enjoy a guided sunrise kayak on Lake Wakatipu departing from Queenstown Bay at 7:30 AM. Paddle along the crystal-clear glacial lake with views of the Remarkables and Cecil Peak reflected in the water. This gentle 2-hour paddle is perfect for muscle recovery after the Routeburn hike.",
+          "afternoon": "Explore the Queenstown Gardens and Queenstown Hill Walking Track (Te Tapu-nui). The 2-hour return walk to the summit offers 360-degree views of Lake Wakatipu, Coronet Peak, and the Remarkables. The trail winds through pine forests and open tussock terrain \u2014 a moderate and rewarding afternoon hike directly accessible from the town centre.",
+          "evening": "Luxury wine and food experience at a private cellar door in the Gibbston Valley \u2014 the 'Valley of the Vines.' Book a premium private tasting at Peregrine Wines or Amisfield, including a guided vineyard walk and barrel room tour, followed by a paired dinner or cheese and charcuterie board.",
+          "meals": {
+            "breakfast": "Breakfast at Vudu Larder & Cafe on the Queenstown waterfront \u2014 smashed avocado on sourdough, poached eggs, and single-origin flat white",
+            "lunch": "The Sherwood Hotel Garden Bar \u2014 seasonal plant-forward menu using locally sourced ingredients; try the Central Otago stone fruit salad and house-smoked salmon",
+            "dinner": "Private cellar door dinner at Peregrine Wines, Gibbston Valley \u2014 matched wine and food pairing experience in a stunning underground barrel cave setting"
+          },
+          "notes": "The Gibbston Valley cellar door experiences require advance booking. A private transfer or designated driver is recommended for the evening wine experience. The Lake Wakatipu kayak tour should also be pre-booked through operators like Queenstown Kayaks."
+        },
+        {
+          "day": 5,
+          "date": "2027-11-19",
+          "morning": "Depart Queenstown early for Milford Sound (approximately 4-hour scenic drive via Te Anau). Stop at Mirror Lakes and the Avenue of the Disappearing Mountain for photography. Arrive at Milford Sound by late morning. Begin the Milford Sound Kayak and Walk Combo \u2014 start with a guided kayak through the iconic fiord, paddling beneath towering Mitre Peak and past Stirling Falls and Bowen Falls.",
+          "afternoon": "Continue the Milford Sound experience with the guided walk portion of the combo along the Milford Track foreshore or the Chasm Walk, exploring the dramatic rainforest environment. Alternatively, upgrade to a premium small-group Milford Sound cruise aboard a luxury vessel with a gourmet lunch and underwater observatory visit.",
+          "evening": "Depart Milford Sound and drive back to Te Anau for the night, or continue to Queenstown if time permits (total return drive approximately 4\u20135 hours). Overnight in Te Anau at a premium lakeside lodge is recommended to break the journey.",
+          "meals": {
+            "breakfast": "Early breakfast at the Queenstown Boutique Stay before departure \u2014 full cooked breakfast with eggs, bacon, and fresh juice",
+            "lunch": "Gourmet lunch aboard the premium Milford Sound cruise vessel \u2014 fresh New Zealand seafood, including Bluff oysters and South Island salmon, with local wines",
+            "dinner": "Fiordland Lodge Restaurant in Te Anau (if overnighting) \u2014 award-winning restaurant with sweeping lake views; try the Fiordland venison and local craft beers. Alternatively, a packed premium dinner box if returning to Queenstown."
+          },
+          "notes": "The Milford Sound road (SH94) is one of New Zealand's most scenic drives but requires full attention. Depart no later than 7:30 AM from Queenstown to allow adequate time. Sandflies at Milford Sound are notorious \u2014 bring strong insect repellent. Book kayak and walk combo with Rosco's Milford Kayaks or Real Journeys well in advance. Consider overnighting in Te Anau to reduce driving fatigue."
+        },
+        {
+          "day": 6,
+          "date": "2027-11-20",
+          "morning": "If overnighting in Te Anau \u2014 morning guided walk to the Te Anau Glowworm Caves, a magical underground limestone cave system accessible only by boat across Lake Te Anau. The 2-hour guided tour includes a short boat crossing and a walk through illuminated caverns filled with thousands of glowworms (Arachnocampa luminosa).",
+          "afternoon": "Scenic drive back to Queenstown (approximately 2 hours) via the Kawarau Gorge. Stop at the historic Kawarau Gorge Suspension Bridge \u2014 the world's first commercial bungy jump site, operated by AJ Hackett at 43 meters above the Kawarau River. Watch other jumpers or take the plunge for a second bungy experience in a completely different iconic setting.",
+          "evening": "Return to the Queenstown Boutique Stay. Enjoy a relaxed evening with a private in-room dining experience or a sunset cocktail at a rooftop bar overlooking the lake.",
+          "meals": {
+            "breakfast": "Breakfast at Fiordland Lodge or a Te Anau caf\u00e9 such as The Fat Duck \u2014 eggs benedict with local smoked salmon and freshly baked sourdough",
+            "lunch": "Picnic lunch at the Kawarau Gorge viewpoint \u2014 premium packed lunch prepared by a local Queenstown deli, enjoyed with dramatic gorge views",
+            "dinner": "Finz Seafood & Grill on Steamer Wharf, Queenstown \u2014 premium New Zealand seafood with stunning lake and mountain views; try the green-lipped mussels, Cloudy Bay clams, and South Island crayfish"
+          },
+          "notes": "The Te Anau Glowworm Caves tour must be booked through Real Journeys \u2014 departure times are fixed and sell out quickly. The Kawarau Bridge bungy is a different and equally iconic experience to the Nevis \u2014 consider adding it if the adrenaline appetite remains. If returning directly to Queenstown without the Te Anau overnight, this day's itinerary can be condensed."
+        },
+        {
+          "day": 7,
+          "date": "2027-11-21",
+          "morning": "Heli-hike experience \u2014 one of the South Island's most exclusive adventures. Board a private helicopter from Queenstown Airport and fly to a remote alpine location on the Remarkables, Richardson Mountains, or a glacier in Mount Aspiring National Park. A certified mountain guide leads a 3\u20134 hour hike through pristine wilderness inaccessible by road.",
+          "afternoon": "Return by helicopter to Queenstown by early afternoon. Visit the Queenstown Farmers Market (held Saturdays at Earnslaw Park) to sample local artisan produce, Central Otago stone fruits, craft cheeses, and fresh breads. Alternatively, explore the Arrowtown heritage precinct \u2014 a charming 19th-century gold rush village 20 minutes from Queenstown.",
+          "evening": "Premium dining experience at Queenstown's most exclusive restaurant \u2014 book the chef's table at Amisfield Winery or an exclusive private dining room at one of Queenstown's top establishments.",
+          "meals": {
+            "breakfast": "In-hotel breakfast at the Queenstown Boutique Stay \u2014 smoked salmon eggs royale, fresh fruit platter, and barista coffee",
+            "lunch": "Arrowtown's The Chop Shop Food Merchants or Provisions of Arrowtown \u2014 artisan caf\u00e9 with exceptional seasonal menus, local cheeses, and Central Otago wines in a heritage gold rush setting",
+            "dinner": "Rata Restaurant, Queenstown \u2014 Chef Josh Emett's flagship fine dining experience; seven-course tasting menu featuring New Zealand's finest seasonal ingredients with matched wine pairings"
+          },
+          "notes": "Heli-hike experiences should be booked through operators such as Over The Top Helicopters or Glacier Southern Lakes Helicopters. These are weather-dependent \u2014 have a backup activity planned. November is generally excellent weather for heli-hiking. The Arrowtown excursion is a great self-guided afternoon if the helicopter experience runs longer than expected."
+        },
+        {
+          "day": 8,
+          "date": "2027-11-22",
+          "morning": "Coronet Peak or The Remarkables morning hike \u2014 take the Coronet Peak access road to the ski area base (lifts not operating in November but the trails are open) and hike the Coronet Peak summit trail for sweeping views over Queenstown, Arrowtown, and the Wakatipu Basin. The 3\u20134 hour return hike is moderately challenging with rewarding panoramas.",
+          "afternoon": "Jet boat experience on the Shotover River \u2014 board the world-famous Shotover Jet for a high-speed ride through the narrow Shotover Canyons. Follow this with a visit to the Onsen Hot Pools, private cedar hot tubs perched above the Shotover River gorge, for a premium 45-minute private soak.",
+          "evening": "Sunset at Queenstown Hill summit (a shorter evening stroll) followed by cocktails at Minus 5\u00b0 Ice Bar \u2014 a unique Queenstown experience where everything is crafted from ice \u2014 before a refined dinner.",
+          "meals": {
+            "breakfast": "Breakfast at Vudu Cafe \u2014 avocado toast, house-cured gravlax, and freshly squeezed Central Otago cherry juice",
+            "lunch": "The Kiwi Pub & Kitchen at Arthurs Point near the Shotover \u2014 casual premium lunch with craft beers and New Zealand-style gourmet burgers with local Wagyu beef",
+            "dinner": "The Bunker Restaurant, Queenstown \u2014 intimate, exclusive basement restaurant with an exceptional wine cellar; try the pan-seared hapuku (New Zealand grouper) and aged Canterbury beef fillet"
+          },
+          "notes": "Book the Onsen Hot Pools private cedar tubs well in advance \u2014 they are extremely popular and often sold out. The Shotover Jet is one of Queenstown's most iconic experiences and pairs perfectly with the hot pools for an afternoon sequence. Coronet Peak road access may require a 4WD or the shuttle service."
+        },
+        {
+          "day": 9,
+          "date": "2027-11-23",
+          "morning": "Full-day scenic flight and hike to Mount Cook (Aoraki) National Park \u2014 the highest peak in New Zealand at 3,724 meters. Depart Queenstown by scenic flight or private charter to Mount Cook Village (approximately 45-minute flight). Begin the Hooker Valley Track, one of New Zealand's most spectacular and accessible alpine walks \u2014 a 3-hour return hike through glacial terrain to the Hooker Glacier terminal lake.",
+          "afternoon": "Continue exploring the Aoraki/Mount Cook area with a guided glacier walk on the Tasman Glacier \u2014 the largest glacier in New Zealand. A short boat trip across the Tasman Glacier Lake (filled with floating icebergs) leads to the glacier face for a guided walk on ancient ice.",
+          "evening": "Return flight to Queenstown by late afternoon. Quiet evening at the Queenstown Boutique Stay with in-room dining or a low-key dinner at a favourite Queenstown restaurant.",
+          "meals": {
+            "breakfast": "Early in-hotel breakfast before departure \u2014 continental spread with local honey, artisan breads, and fresh fruit",
+            "lunch": "The Old Mountaineers' Caf\u00e9 at Mount Cook Village \u2014 legendary alpine caf\u00e9 with stunning direct views of Aoraki; try the venison pie and hot chocolate",
+            "dinner": "In-room private dining at the Queenstown Boutique Stay \u2014 arrange a chef-prepared dinner with the hotel's concierge; Central Otago lamb rack with roasted seasonal vegetables and a bottle of Felton Road Pinot Noir"
+          },
+          "notes": "The Mount Cook day trip is weather-dependent \u2014 flights may be cancelled in poor visibility. Book with Air Milford, Mount Cook Ski Planes, or a private charter operator. The Tasman Glacier boat and walk experience is operated by Glacier Explorers and should be pre-booked. This is a long and full day \u2014 comfortable hiking footwear and warm layers are essential even in November."
+        },
+        {
+          "day": 10,
+          "date": "2027-11-24",
+          "morning": "Depart Queenstown for the West Coast via the scenic Haast Pass (SH6) \u2014 one of the world's great scenic drives through Mount Aspiring National Park and the UNESCO-listed Te Wahipounamu World Heritage Area. Stop at Thunder Creek Falls and the Blue Pools walking track (30-minute return walk through ancient beech forest to stunning turquoise glacial pools).",
+          "afternoon": "Continue north along the West Coast to Fox Glacier or Franz Josef Glacier. Check in at a premium West Coast lodge. Take an afternoon guided heli-hike on Fox Glacier \u2014 board a helicopter to the upper glacier neve and walk on ancient blue ice with a certified glacier guide, exploring ice caves, seracs, and crevasse formations.",
+          "evening": "Return to the lodge for dinner. The West Coast is known for its wild, remote atmosphere \u2014 enjoy a fireside dinner at the lodge restaurant.",
+          "meals": {
+            "breakfast": "Breakfast at the Queenstown Boutique Stay before departure \u2014 full cooked breakfast for the long drive day",
+            "lunch": "Picnic lunch at the Blue Pools, Haast Pass \u2014 premium packed lunch with local cheeses, cured meats, sourdough, and sparkling water, enjoyed beside the turquoise river",
+            "dinner": "The Matheson Caf\u00e9 at Lake Matheson (near Fox Glacier) \u2014 award-winning caf\u00e9 and restaurant with iconic views of Mount Cook and Mount Tasman reflected in the Mirror Lake; try the West Coast whitebait fritters and local craft beer"
+          },
+          "notes": "The Haast Pass drive is approximately 4\u20135 hours from Queenstown to Fox Glacier. Depart by 8:00 AM to allow time for stops and the afternoon glacier experience. Heli-hiking on Fox Glacier is operated by Fox Glacier Guiding and is subject to weather and glacier conditions. Book well in advance. The West Coast weather is notoriously changeable \u2014 pack full waterproofs."
+        },
+        {
+          "day": 11,
+          "date": "2027-11-25",
+          "morning": "Morning walk to Lake Matheson \u2014 the famous 'Mirror Lake' reflecting Aoraki/Mount Cook and Mount Tasman in its dark tannin-stained waters. The 1.5-hour loop walk through kahikatea and rimu forest is best at dawn when the reflections are perfectly still. This is one of New Zealand's most photographed landscapes.",
+          "afternoon": "Drive north to Hokitika (approximately 2.5 hours). Visit the Hokitika Gorge \u2014 a short but spectacular 30-minute walk to a vivid turquoise gorge with a swing bridge and dramatic limestone cliffs. Explore Hokitika's famous greenstone (pounamu jade) galleries and artisan workshops \u2014 consider commissioning a bespoke piece of New Zealand greenstone jewellery.",
+          "evening": "Continue to Greymouth or return south, or fly back to Queenstown from Hokitika Airport for the final nights of the trip. Alternatively, overnight in Hokitika at a premium boutique accommodation.",
+          "meals": {
+            "breakfast": "Early breakfast at the West Coast lodge before the Lake Matheson walk \u2014 continental spread with fresh West Coast whitebait if in season",
+            "lunch": "Stumpers Bar & Caf\u00e9 in Hokitika \u2014 relaxed local favourite with excellent whitebait fritters (a West Coast delicacy), fresh fish and chips, and local craft beer",
+            "dinner": "Hokitika's Stations Inn or a premium restaurant in Greymouth \u2014 West Coast venison, lamb, and seafood with New Zealand craft wines"
+          },
+          "notes": "The Lake Matheson reflection is best in the first 2 hours after dawn or just before sunset \u2014 plan the walk accordingly. West Coast whitebait season runs from August to November, so this is an excellent time to try this iconic New Zealand delicacy. Hokitika greenstone galleries include Westland Greenstone and Mountain Jade \u2014 authentic pounamu pieces make exceptional luxury souvenirs."
+        },
+        {
+          "day": 12,
+          "date": "2027-11-26",
+          "morning": "Return to Queenstown \u2014 fly from Hokitika or Greymouth Airport (Air New Zealand link flights) or drive the scenic inland route via Arthur's Pass (SH73), stopping at the dramatic Otira Gorge and the alpine village of Arthur's Pass for a short walk to Devil's Punchbowl Waterfall (1-hour return). Arthur's Pass is home to the cheeky alpine kea parrot.",
+          "afternoon": "Arrive back in Queenstown by mid-afternoon. Final afternoon at leisure \u2014 optional last-minute adventure activity such as a tandem paraglide from Queenstown Hill for a bird's-eye view of the entire Wakatipu Basin, or a relaxing afternoon at the Onsen Hot Pools if not previously visited.",
+          "evening": "Premium farewell dinner at Queenstown's finest establishment \u2014 celebrate the end of an extraordinary South Island adventure.",
+          "meals": {
+            "breakfast": "Breakfast at the West Coast or Arthur's Pass accommodation before the return journey",
+            "lunch": "Arthur's Pass Village Caf\u00e9 or a packed gourmet lunch en route, enjoyed at a scenic South Island viewpoint",
+            "dinner": "Farewell dinner at Botswana Butchery, Queenstown \u2014 premium New Zealand beef and lamb in a stunning lakeside heritage building; order the whole roasted Canterbury lamb shoulder and pair with a magnum of Felton Road Block 3 Pinot Noir"
+          },
+          "notes": "The Arthur's Pass route (SH73) is a longer but incredibly scenic alternative to flying \u2014 allow 5\u20136 hours for the full drive with stops. The TranzAlpine train from Greymouth to Christchurch is also an option if the itinerary is adjusted, though it does not connect directly to Queenstown. Confirm the farewell dinner reservation well in advance."
+        },
+        {
+          "day": 13,
+          "date": "2027-11-27",
+          "morning": "Final morning in Queenstown \u2014 leisurely breakfast at the Queenstown Boutique Stay. Take a final walk along the Queenstown waterfront and Queenstown Gardens to soak in the last views of Lake Wakatipu and the Remarkables. Visit the Queenstown Museum or browse final souvenir shopping on Beach Street \u2014 local Pinot Noir wines, manuka honey, and merino wool products make excellent luxury gifts.",
+          "afternoon": "Check out from the Queenstown Boutique Stay. Private transfer to Queenstown Airport for onward flights. Depending on departure time, enjoy a final lunch at a waterfront restaurant before heading to the airport.",
+          "evening": "Departure from Queenstown Airport. End of an extraordinary 13-day premium South Island New Zealand adventure.",
+          "meals": {
+            "breakfast": "Final full breakfast at the Queenstown Boutique Stay \u2014 eggs your way, smoked salmon, fresh fruit, New Zealand manuka honey on toast, and a final flat white",
+            "lunch": "Pier 19 on Steamer Wharf \u2014 casual lakeside dining with stunning final views of Lake Wakatipu; green-lipped mussels, fresh fish of the day, and a farewell glass of Central Otago Pinot Gris",
+            "dinner": "Airport or in-flight dining \u2014 request a premium meal service on the departing flight"
+          },
+          "notes": "Allow at least 2 hours before departure for Queenstown Airport check-in, especially during the busy November summer season. Consider purchasing Central Otago wines at the airport duty-free \u2014 Felton Road, Rippon, and Ata Rangi are exceptional choices. Ensure all adventure activity certificates and photos (bungy jump, heli-hike, glacier walk) are downloaded and saved as premium keepsakes from the trip."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=None+to+New Zealand South Island+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=New Zealand South Island&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=New Zealand South Island",
+        "https://www.getyourguide.com/s/?q=New Zealand South Island",
+        "https://www.getyourguide.com/s/?q=New Zealand South Island",
+        "https://www.getyourguide.com/s/?q=New Zealand South Island",
+        "https://www.getyourguide.com/s/?q=New Zealand South Island"
+      ],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-1195 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "New Zealand South Island, $4000, hiking and bungee jumping, November 2026",
+  "session_tags": {
+    "query_id": "SYN-11",
+    "condition": "broadcast",
+    "run_index": 4
+  }
+}

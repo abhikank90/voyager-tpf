@@ -1,0 +1,616 @@
+{
+  "session_id": "0758a86c-c132-4af9-ae18-4a9e3405937a",
+  "intent": {
+    "destination": "Cancun",
+    "origin": "Dallas",
+    "budget_usd": 3000.0,
+    "duration_days": 6,
+    "travel_month": "March",
+    "travel_year": 2027,
+    "interests": [
+      "beaches"
+    ],
+    "group_size": 2,
+    "accommodation_preference": "resort",
+    "flexibility": "moderate",
+    "raw_query": "Cancun beach resort, $3000 couple, 6 days, March 2027, from Dallas"
+  },
+  "selected_flight": {
+    "price_usd": 520,
+    "airline": "AA",
+    "departure": "2027-03-15T07:00:00",
+    "arrival": "2027-03-15T11:00:00",
+    "stops": 0,
+    "duration": "PT2H30M"
+  },
+  "selected_hotel": {
+    "name": "Cancun Beach Resort",
+    "price_per_night_usd": 150,
+    "total_usd": 900,
+    "rating": 4.4,
+    "amenities": [
+      "beach access",
+      "wifi",
+      "pool"
+    ],
+    "location": "Cancun"
+  },
+  "experiences": [
+    {
+      "name": "Playa Delfines Beach Day",
+      "description": "Spend a relaxing day at one of Cancun's most beautiful and uncrowded public beaches. Playa Delfines offers stunning turquoise waters, soft white sand, and the iconic Cancun sign for photos. No entry fee and less crowded than hotel zone beaches, perfect for swimming and sunbathing.",
+      "cost_usd": 10,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Hotel Zone (Zona Hotelera), southern end, Cancun"
+    },
+    {
+      "name": "Isla Mujeres Snorkeling and Beach Tour",
+      "description": "Take a ferry to the nearby island of Isla Mujeres and explore the crystal-clear waters teeming with colorful fish and coral reefs. Enjoy the pristine Playa Norte, rated one of the best beaches in the Caribbean, with calm shallow waters ideal for swimming and relaxing.",
+      "cost_usd": 85,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Isla Mujeres, off the coast of Cancun"
+    },
+    {
+      "name": "Xel-Ha Eco Water Park",
+      "description": "Explore this natural aquatic theme park built around a stunning coastal lagoon. Snorkel through mangroves and cenotes, float down lazy rivers, and discover diverse marine life including tropical fish, rays, and sea turtles. All-inclusive entry covers food, drinks, and equipment rental.",
+      "cost_usd": 110,
+      "category": "activities",
+      "best_time_of_day": "morning",
+      "location": "Riviera Maya, approximately 75 km south of Cancun"
+    },
+    {
+      "name": "Sunset Catamaran Cruise",
+      "description": "Sail along the Caribbean coastline aboard a catamaran as the sun sets over the lagoon. Enjoy open bar, snorkeling stops at coral reefs, and breathtaking views of the Cancun skyline. A perfect blend of beach, sea, and social atmosphere with fellow travelers.",
+      "cost_usd": 65,
+      "category": "activities",
+      "best_time_of_day": "evening",
+      "location": "Marina Aquatours, Hotel Zone (Zona Hotelera), Cancun"
+    },
+    {
+      "name": "Cenote Dos Ojos Swim and Dive",
+      "description": "Discover the magical underground world of the Yucatan Peninsula by swimming or snorkeling in the crystal-clear freshwater of Cenote Dos Ojos. This iconic cenote system features stunning stalactites, stalagmites, and ethereal light filtering through the water, offering a unique natural beach alternative.",
+      "cost_usd": 30,
+      "category": "culture",
+      "best_time_of_day": "afternoon",
+      "location": "Tulum, approximately 130 km south of Cancun"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-03-15",
+    "return": "2027-03-21",
+    "nights": 6,
+    "month": "march",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Cancun",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1710.0,
+      "flight": {
+        "price_usd": 520,
+        "airline": "AA",
+        "departure": "2027-03-15T07:00:00",
+        "arrival": "2027-03-15T11:00:00",
+        "stops": 0,
+        "duration": "PT2H30M"
+      },
+      "hotel": {
+        "name": "Cancun Beach Resort",
+        "price_per_night_usd": 150,
+        "total_usd": 900,
+        "rating": 4.4,
+        "amenities": [
+          "beach access",
+          "wifi",
+          "pool"
+        ],
+        "location": "Cancun"
+      },
+      "experiences": [
+        {
+          "name": "Playa Delfines Beach Day",
+          "description": "Spend a relaxing day at one of Cancun's most beautiful and uncrowded public beaches. Playa Delfines offers stunning turquoise waters, soft white sand, and the iconic Cancun sign for photos. No entry fee and less crowded than hotel zone beaches, perfect for swimming and sunbathing.",
+          "cost_usd": 10,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Hotel Zone (Zona Hotelera), southern end, Cancun"
+        },
+        {
+          "name": "Cenote Dos Ojos Swim and Dive",
+          "description": "Discover the magical underground world of the Yucatan Peninsula by swimming or snorkeling in the crystal-clear freshwater of Cenote Dos Ojos. This iconic cenote system features stunning stalactites, stalagmites, and ethereal light filtering through the water, offering a unique natural beach alternative.",
+          "cost_usd": 30,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Tulum, approximately 130 km south of Cancun"
+        }
+      ],
+      "itinerary": {
+        "num_days": 6,
+        "destination": "Cancun",
+        "style": "budget",
+        "total_cost": 1710.0,
+        "breakdown": {
+          "flight": 520.0,
+          "hotel": 900.0,
+          "experiences": 40.0,
+          "food": 150,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-03-15 (Monday)",
+          "morning": "Arrival at Cancun International Airport at 11:00 AM on Flight AA. Clear customs, collect luggage, and take the ADO bus (cheapest airport transfer option, ~$10 USD) to the Hotel Zone. Check in to Cancun Beach Resort and get settled.",
+          "afternoon": "After check-in, take a short walk to the nearest public beach access point in the Hotel Zone. Relax on the beach, swim in the turquoise Caribbean waters, and decompress from travel. Bring sunscreen and a reusable water bottle to save money.",
+          "evening": "Stroll along Boulevard Kukulcan and explore the local area around the hotel. Grab a casual dinner at a nearby local spot and get an early rest to recover from travel.",
+          "meals": {
+            "breakfast": "Grab a snack or coffee at the airport before or after landing (~$5 USD)",
+            "lunch": "Pick up affordable tacos or a torta from a street food vendor near the Hotel Zone (~$4-6 USD)",
+            "dinner": "El Fish Fritanga or a similar local Mexican seafood spot near the Hotel Zone with combo plates under $10 USD"
+          },
+          "notes": "Do NOT exchange currency at the airport \u2014 rates are poor. Use a no-foreign-fee debit card at an ATM in town. ADO bus from the airport is the most budget-friendly transfer option at roughly $10-12 USD one way."
+        },
+        {
+          "day": 2,
+          "date": "2027-03-16 (Tuesday)",
+          "morning": "Head to Playa Delfines Beach Day \u2014 one of Cancun's best free public beaches with stunning turquoise water and far fewer crowds than hotel beaches. Arrive early (by 9 AM) to claim a good spot. Swim, snorkel, and enjoy the scenery. Entrance is completely free.",
+          "afternoon": "Continue enjoying Playa Delfines or explore the surrounding area. Rent a snorkel set from a local vendor if needed (~$5-8 USD). Walk along the shoreline and take in the iconic Cancun sign for photos. The beach has free parking and public restrooms.",
+          "evening": "Return to the hotel to freshen up, then head out to explore Mercado 28 \u2014 a local market about 20 minutes by bus from the Hotel Zone where you can find authentic food and souvenirs at local prices.",
+          "meals": {
+            "breakfast": "Grab fresh fruit, yogurt, or pan dulce from a local panaderia or convenience store near the hotel (~$3-5 USD)",
+            "lunch": "Pack a lunch from a nearby supermarket (OXXO or Chedraui) to eat at the beach \u2014 sandwiches, fruit, and drinks (~$5 USD)",
+            "dinner": "Eat at one of the local comedores (small family restaurants) inside Mercado 28 for authentic Mexican dishes like cochinita pibil or sopa de lima for ~$6-9 USD"
+          },
+          "notes": "Playa Delfines is accessible by the R-1 or R-2 local bus along Boulevard Kukulcan for only 12-15 pesos (~$0.70 USD) each way \u2014 much cheaper than taxis. Bring cash for bus fare."
+        },
+        {
+          "day": 3,
+          "date": "2027-03-17 (Wednesday)",
+          "morning": "Take a day trip to Cenote Dos Ojos for swimming and snorkeling in the crystal-clear underground freshwater caves. Book in advance online for the best rates (~$25-35 USD including snorkel gear). The cenote is about 1.5 hours from Cancun \u2014 take an ADO bus to Tulum (~$8-10 USD) then a short taxi.",
+          "afternoon": "Continue exploring Cenote Dos Ojos \u2014 there are two main cavern systems (the Bat Cave and the Barbie Line) offering different experiences. Spend 2-3 hours snorkeling through the magical stalactite formations. Bring an underwater camera or waterproof phone case for photos.",
+          "evening": "Return to Cancun by ADO bus. Stop in downtown Cancun (El Centro) on the way back to grab dinner at a local restaurant \u2014 far cheaper than Hotel Zone dining.",
+          "meals": {
+            "breakfast": "Eat at the hotel or grab a quick breakfast torta from a street vendor before departure (~$3-5 USD)",
+            "lunch": "Pack snacks and water for the cenote trip, or buy from the small food stand at Dos Ojos (~$5-8 USD)",
+            "dinner": "La Habichuela Downtown or a local taqueria in El Centro \u2014 tacos al pastor or cochinita for ~$6-10 USD"
+          },
+          "notes": "Book Cenote Dos Ojos tickets online in advance to avoid higher walk-in prices. Bring biodegradable sunscreen \u2014 regular sunscreen is prohibited in cenotes to protect the ecosystem. Water shoes are helpful but not required."
+        },
+        {
+          "day": 4,
+          "date": "2027-03-18 (Thursday)",
+          "morning": "Spend the morning at Playa Tortugas or Playa Langosta \u2014 two more free public beaches in the northern Hotel Zone that are calmer and great for swimming. These beaches are easily walkable or a short bus ride from most hotels.",
+          "afternoon": "Rent a kayak or stand-up paddleboard from a local beach vendor (~$10-15 USD/hour) and explore the coastline. Alternatively, join a free beach volleyball game or simply relax and read. Visit the free public lookout points along Boulevard Kukulcan for panoramic views.",
+          "evening": "Explore the Hotel Zone's free entertainment \u2014 many beach clubs have happy hours with affordable drinks. Walk along the strip and enjoy the lively atmosphere without spending much. Watch the sunset from the beach.",
+          "meals": {
+            "breakfast": "Fresh fruit smoothie and egg tacos from a street cart in the Hotel Zone (~$4-6 USD)",
+            "lunch": "Grab affordable ceviche or fish tacos from a beachside food stand (~$5-8 USD)",
+            "dinner": "Visit a local loncheria (casual diner) in the nearby residential area just off the Hotel Zone for a full comida corrida (set meal with soup, main, and drink) for ~$6-8 USD"
+          },
+          "notes": "The local R-1/R-2 bus runs the entire length of the Hotel Zone for under $1 USD and is the best way to move between beaches without spending on taxis. Keep small bills and coins for bus fare."
+        },
+        {
+          "day": 5,
+          "date": "2027-03-19 (Friday)",
+          "morning": "Take a budget day trip to Isla Mujeres via the public ferry from Puerto Juarez (not the tourist ferry \u2014 the local ferry is significantly cheaper at ~$5 USD round trip vs $20+ USD). Arrive on the island and rent a golf cart (~$40-50 USD split between travel companions) to explore.",
+          "afternoon": "Visit Playa Norte on Isla Mujeres \u2014 consistently rated one of the best beaches in Mexico with calm, shallow turquoise water. Snorkel near the coral reef on the eastern side of the island. Explore the colorful downtown streets and browse local artisan shops.",
+          "evening": "Return to Cancun on the local ferry before sunset. Celebrate your last full evening with a nice but affordable dinner in El Centro (downtown Cancun) where local prices are much lower than the Hotel Zone.",
+          "meals": {
+            "breakfast": "Eat a light breakfast at the hotel before heading to the ferry (~$3-5 USD)",
+            "lunch": "Fresh seafood lunch at a local restaurant on Isla Mujeres \u2014 fish tacos, ceviche, or grilled shrimp for ~$8-12 USD",
+            "dinner": "El Rinc\u00f3n del Vino or a similar local restaurant in downtown Cancun \u2014 try poc chuc (Yucatecan grilled pork) for ~$8-12 USD"
+          },
+          "notes": "Take the local ferry from Puerto Juarez, not the tourist ferry from the Hotel Zone \u2014 it saves $15+ USD per person. Buses run from the Hotel Zone to Puerto Juarez for under $1 USD. Isla Mujeres is walkable if you skip the golf cart rental to save money."
+        },
+        {
+          "day": 6,
+          "date": "2027-03-20 (Saturday)",
+          "morning": "Final morning \u2014 enjoy one last swim at the hotel beach or the nearest public beach. Take a slow morning walk along the shoreline and soak in the last views of the Caribbean Sea. Pack up and check out of the hotel.",
+          "afternoon": "Head to downtown Cancun (El Centro) for last-minute souvenir shopping at Mercado 23 \u2014 the smallest and most local of Cancun's markets with the best prices on hammocks, textiles, and local goods. Grab any last snacks or treats to bring home.",
+          "evening": "Take the ADO bus back to Cancun International Airport (~$10 USD). Arrive at least 2.5-3 hours before your departure flight. Enjoy a final Mexican meal at one of the airport's more affordable food court options before boarding.",
+          "meals": {
+            "breakfast": "Final hotel breakfast or grab pan dulce and coffee from a local bakery (~$3-5 USD)",
+            "lunch": "Affordable farewell meal at a local taqueria in El Centro \u2014 try a final order of tacos de canasta for ~$4-6 USD",
+            "dinner": "Airport food court or pack snacks bought at Chedraui supermarket for the flight (~$5-8 USD)"
+          },
+          "notes": "Keep enough pesos for the ADO bus to the airport and any last food purchases. Exchange leftover pesos back to USD at a bank in El Centro before heading to the airport \u2014 airport exchange rates are unfavorable. Confirm your return flight details the night before."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Dallas+to+Cancun+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Cancun&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Cancun",
+        "https://www.getyourguide.com/s/?q=Cancun"
+      ],
+      "highlights": [
+        "Save $540 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Cancun Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 2060.0,
+      "flight": {
+        "price_usd": 520,
+        "airline": "AA",
+        "departure": "2027-03-15T07:00:00",
+        "arrival": "2027-03-15T11:00:00",
+        "stops": 0,
+        "duration": "PT2H30M"
+      },
+      "hotel": {
+        "name": "Cancun Beach Resort",
+        "price_per_night_usd": 150,
+        "total_usd": 900,
+        "rating": 4.4,
+        "amenities": [
+          "beach access",
+          "wifi",
+          "pool"
+        ],
+        "location": "Cancun"
+      },
+      "experiences": [
+        {
+          "name": "Playa Delfines Beach Day",
+          "description": "Spend a relaxing day at one of Cancun's most beautiful and uncrowded public beaches. Playa Delfines offers stunning turquoise waters, soft white sand, and the iconic Cancun sign for photos. No entry fee and less crowded than hotel zone beaches, perfect for swimming and sunbathing.",
+          "cost_usd": 10,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Hotel Zone (Zona Hotelera), southern end, Cancun"
+        },
+        {
+          "name": "Isla Mujeres Snorkeling and Beach Tour",
+          "description": "Take a ferry to the nearby island of Isla Mujeres and explore the crystal-clear waters teeming with colorful fish and coral reefs. Enjoy the pristine Playa Norte, rated one of the best beaches in the Caribbean, with calm shallow waters ideal for swimming and relaxing.",
+          "cost_usd": 85,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Isla Mujeres, off the coast of Cancun"
+        },
+        {
+          "name": "Xel-Ha Eco Water Park",
+          "description": "Explore this natural aquatic theme park built around a stunning coastal lagoon. Snorkel through mangroves and cenotes, float down lazy rivers, and discover diverse marine life including tropical fish, rays, and sea turtles. All-inclusive entry covers food, drinks, and equipment rental.",
+          "cost_usd": 110,
+          "category": "activities",
+          "best_time_of_day": "morning",
+          "location": "Riviera Maya, approximately 75 km south of Cancun"
+        },
+        {
+          "name": "Sunset Catamaran Cruise",
+          "description": "Sail along the Caribbean coastline aboard a catamaran as the sun sets over the lagoon. Enjoy open bar, snorkeling stops at coral reefs, and breathtaking views of the Cancun skyline. A perfect blend of beach, sea, and social atmosphere with fellow travelers.",
+          "cost_usd": 65,
+          "category": "activities",
+          "best_time_of_day": "evening",
+          "location": "Marina Aquatours, Hotel Zone (Zona Hotelera), Cancun"
+        },
+        {
+          "name": "Cenote Dos Ojos Swim and Dive",
+          "description": "Discover the magical underground world of the Yucatan Peninsula by swimming or snorkeling in the crystal-clear freshwater of Cenote Dos Ojos. This iconic cenote system features stunning stalactites, stalagmites, and ethereal light filtering through the water, offering a unique natural beach alternative.",
+          "cost_usd": 30,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Tulum, approximately 130 km south of Cancun"
+        }
+      ],
+      "itinerary": {
+        "num_days": 6,
+        "destination": "Cancun",
+        "style": "balanced",
+        "total_cost": 2060.0,
+        "breakdown": {
+          "flight": 520.0,
+          "hotel": 900.0,
+          "experiences": 300.0,
+          "food": 240,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-03-15 (Monday)",
+          "morning": "Arrival at Cancun International Airport at 11:00 AM on flight AA. Clear customs, collect luggage, and arrange airport transfer to Cancun Beach Resort. Check-in, freshen up, and get oriented with the hotel amenities and surroundings.",
+          "afternoon": "Take a leisurely stroll along the Hotel Zone (Zona Hotelera) beachfront to get your bearings. Spend the first afternoon relaxing on the resort beach, dipping into the Caribbean Sea, and unwinding after travel. Pick up any essentials at a nearby convenience store or pharmacy.",
+          "evening": "Enjoy a welcome dinner at a mid-range restaurant close to the hotel. La Habichuela Downtown or a local seafood spot on Kukulcan Boulevard offers great atmosphere and authentic Mexican Caribbean cuisine at reasonable prices.",
+          "meals": {
+            "breakfast": "Grab a light bite at the airport before or after landing \u2014 a caf\u00e9 sandwich or fruit cup to tide you over.",
+            "lunch": "Casual poolside or beachside snack at the resort \u2014 nachos, guacamole, or a light sandwich from the hotel bar menu.",
+            "dinner": "Dinner at La Fisheria or a similar mid-range seafood restaurant on Kukulcan Blvd \u2014 budget around $20\u201335 USD per person including drinks."
+          },
+          "notes": "Since the flight arrives at 11:00 AM, keep Day 1 light. Don't over-schedule \u2014 jet lag and travel fatigue are real. Focus on settling in, hydrating, and enjoying the beach vibe. Apply sunscreen immediately; the Cancun sun is intense even in March."
+        },
+        {
+          "day": 2,
+          "date": "2027-03-16 (Tuesday)",
+          "morning": "Head to Playa Delfines Beach Day \u2014 one of Cancun's most scenic and less crowded public beaches. Arrive early (around 9:00 AM) to claim a good spot. Enjoy the turquoise water, soft white sand, and the iconic 'CANCUN' sign for photos. The beach has free public access with parking and basic facilities nearby.",
+          "afternoon": "Continue enjoying Playa Delfines or walk along the shoreline. Visit the El Rey Archaeological Zone nearby \u2014 a small but fascinating Mayan ruin site just minutes away from the beach, perfect for a brief cultural detour. Return to the hotel by late afternoon for a rest.",
+          "evening": "Explore the Mercado 28 area or Parque Las Palapas in downtown Cancun for an authentic local evening. Browse artisan crafts, enjoy street food, and soak up the local atmosphere away from the tourist strip.",
+          "meals": {
+            "breakfast": "Breakfast at the hotel or a nearby caf\u00e9 \u2014 eggs, fresh tropical fruit, and coffee. Budget around $8\u201312 USD.",
+            "lunch": "Pack a light lunch or grab food from a beach vendor near Playa Delfines \u2014 tacos, fresh coconut water, or elotes (grilled corn).",
+            "dinner": "Dinner at Mercado 28 \u2014 try the famous shrimp cocktail (coctel de camarones) or a full seafood platter at one of the market restaurants. Very affordable at $10\u201320 USD per person."
+          },
+          "notes": "Playa Delfines is a public beach with no lounge chair rentals, so bring your own towel or mat. There are no large resort facilities, so pack water, snacks, and sunscreen. The El Rey ruins are open Tuesday\u2013Sunday, 8:00 AM\u20135:00 PM, with a small entrance fee (around $3\u20135 USD)."
+        },
+        {
+          "day": 3,
+          "date": "2027-03-17 (Wednesday)",
+          "morning": "Full-day excursion to Isla Mujeres Snorkeling and Beach Tour. Take an early ferry from Puerto Juarez or Playa Tortugas (ferries run from around 8:00 AM). Upon arrival on the island, join a snorkeling tour to explore vibrant coral reefs and swim alongside colorful tropical fish in crystal-clear Caribbean waters.",
+          "afternoon": "After snorkeling, explore Isla Mujeres town on foot or rent a golf cart \u2014 the most popular and fun way to see the island. Visit Punta Sur (the southernmost tip of Mexico), browse local shops, and relax at Playa Norte, consistently ranked one of the most beautiful beaches in the world with its calm, shallow turquoise water.",
+          "evening": "Return ferry back to Cancun by early evening (ferries run until around 8:00\u20139:00 PM). Enjoy a relaxed dinner back in the Hotel Zone or at the resort.",
+          "meals": {
+            "breakfast": "Early breakfast at the hotel before departure \u2014 keep it light: yogurt, fruit, and toast.",
+            "lunch": "Lunch on Isla Mujeres at a beachfront restaurant \u2014 fresh fish tacos, ceviche, or grilled lobster (in season). Mid-range options available for $15\u201325 USD per person.",
+            "dinner": "Casual dinner at the resort or a nearby Zona Hotelera restaurant \u2014 try Taco & Beer or a similar casual spot for $12\u201320 USD per person."
+          },
+          "notes": "Book the Isla Mujeres snorkeling tour in advance through the hotel concierge or a reputable local operator. Round-trip ferry tickets cost approximately $10\u201315 USD. Bring reef-safe sunscreen (required in Mexican marine parks), a dry bag for valuables, and motion sickness tablets if needed. Arrive at the ferry terminal at least 20 minutes early."
+        },
+        {
+          "day": 4,
+          "date": "2027-03-18 (Thursday)",
+          "morning": "Full-day adventure at Xel-Ha Eco Water Park. Depart early from the hotel (the park is about 75 minutes south along the Riviera Maya). Spend the morning snorkeling through the natural coastal lagoon, drifting along the river, and exploring mangrove channels filled with tropical fish.",
+          "afternoon": "Continue at Xel-Ha \u2014 try the cliff jump, zip line over the lagoon, or simply float lazily through the natural inlet. The all-inclusive admission covers snorkel gear, life vests, lockers, food, and drinks, making it excellent value for a mid-range budget. Spend the afternoon exploring every corner of the park.",
+          "evening": "Return to Cancun by early evening (hotel shuttle or shared transport). Enjoy a quiet dinner at the resort or a nearby restaurant to rest after an active day.",
+          "meals": {
+            "breakfast": "Breakfast at the hotel before departure \u2014 fuel up with a hearty meal: eggs, pancakes, juice, and coffee.",
+            "lunch": "All-inclusive lunch at Xel-Ha \u2014 the park's restaurants offer buffet-style and \u00e0 la carte options included in admission. Enjoy fresh seafood, salads, and tropical drinks.",
+            "dinner": "Light and casual dinner back in the Hotel Zone \u2014 try Se\u00f1or Frogs for a fun atmosphere or a quiet local taqueria for $10\u201318 USD per person."
+          },
+          "notes": "Xel-Ha all-inclusive admission is approximately $80\u2013100 USD per person but covers nearly everything inside the park. Book online in advance for discounts. Wear water shoes if possible \u2014 the rocky lagoon floor can be sharp. Bring a change of clothes and a small dry bag. The park opens at 8:30 AM; arriving early maximizes your experience before crowds build."
+        },
+        {
+          "day": 5,
+          "date": "2027-03-19 (Friday)",
+          "morning": "Morning adventure to Cenote Dos Ojos Swim and Dive. Depart early (about 90 minutes south near Tulum) to explore one of the most spectacular cenotes in the Yucatan Peninsula. Swim or snorkel through the crystal-clear underground cave system with its ethereal stalactites, stalagmites, and otherworldly blue light filtering through the water.",
+          "afternoon": "After the cenote experience, stop in nearby Tulum town or Tulum's beach zone for a late lunch and a brief beach visit. Tulum's beaches are stunning and less crowded than Cancun's Hotel Zone. Browse the bohemian shops or visit the Tulum Mayan ruins overlooking the Caribbean Sea (open 8:00 AM\u20135:00 PM, entrance ~$5 USD).",
+          "evening": "Return to Cancun in time for the Sunset Catamaran Cruise. Board a catamaran along the Caribbean coastline for a magical sunset sail with open bar, snacks, and music. This is the perfect way to celebrate your last full evening in Cancun.",
+          "meals": {
+            "breakfast": "Early breakfast at the hotel before the day trip \u2014 eggs, fruit, and strong coffee to energize for the adventure.",
+            "lunch": "Late lunch in Tulum \u2014 try a mid-range restaurant in Tulum town such as El Camello Jr. for fresh seafood tacos and ceviche at $12\u201320 USD per person.",
+            "dinner": "Light bites and drinks included on the Sunset Catamaran Cruise. If still hungry after, grab street tacos or a snack near the hotel for $5\u201310 USD."
+          },
+          "notes": "Cenote Dos Ojos entrance fee is approximately $20\u201325 USD; snorkel gear rental is extra (~$10 USD). The cenote is located near Tulum \u2014 combine both in one day trip to maximize travel time. Book the Sunset Catamaran Cruise in advance as it fills up quickly, especially on weekends. Cruise typically departs around 5:00\u20136:00 PM and lasts 2\u20132.5 hours. Bring a light jacket for the boat \u2014 sea breezes can be cool after sunset."
+        },
+        {
+          "day": 6,
+          "date": "2027-03-20 (Saturday)",
+          "morning": "Final morning \u2014 enjoy a leisurely breakfast at the hotel and take one last swim in the Caribbean Sea or the resort pool. Pack your bags and check out. If time allows before departure, visit a local market or souvenir shop along Kukulcan Boulevard to pick up gifts \u2014 vanilla, hot sauce, local crafts, or hand-painted pottery are popular choices.",
+          "afternoon": "Depending on your departure flight time, enjoy a final relaxed lunch in the Hotel Zone. If your flight is late afternoon or evening, spend extra time at the beach or explore the La Isla Shopping Village for last-minute shopping and people-watching in a beautiful open-air lagoon-side setting.",
+          "evening": "Transfer to Cancun International Airport for departure. Allow at least 2.5\u20133 hours before your flight for check-in, security, and customs at this busy international airport.",
+          "meals": {
+            "breakfast": "Final breakfast at the hotel \u2014 treat yourself to a full spread: fresh tropical fruit, chilaquiles or huevos rancheros, and fresh-squeezed juice.",
+            "lunch": "Farewell lunch at a mid-range Zona Hotelera restaurant \u2014 try Lorenzillo's for a splurge-worthy final meal, or keep it casual at Harry's Grill for $15\u201330 USD per person.",
+            "dinner": "Airport dining if departing in the evening \u2014 Cancun Airport has decent food options in the international terminal."
+          },
+          "notes": "Check hotel checkout time (usually 12:00 PM noon) and arrange luggage storage if your flight departs later. Confirm your airport transfer the night before. Exchange any remaining Mexican pesos back to your home currency at the airport or keep them as souvenirs \u2014 coins make great mementos. Leave a tip for hotel housekeeping before checkout (standard is $1\u20132 USD per night)."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Dallas+to+Cancun+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Cancun&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Cancun",
+        "https://www.getyourguide.com/s/?q=Cancun",
+        "https://www.getyourguide.com/s/?q=Cancun",
+        "https://www.getyourguide.com/s/?q=Cancun",
+        "https://www.getyourguide.com/s/?q=Cancun"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Cancun Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 2180.0,
+      "flight": {
+        "price_usd": 520,
+        "airline": "AA",
+        "departure": "2027-03-15T07:00:00",
+        "arrival": "2027-03-15T11:00:00",
+        "stops": 0,
+        "duration": "PT2H30M"
+      },
+      "hotel": {
+        "name": "Cancun Beach Resort",
+        "price_per_night_usd": 150,
+        "total_usd": 900,
+        "rating": 4.4,
+        "amenities": [
+          "beach access",
+          "wifi",
+          "pool"
+        ],
+        "location": "Cancun"
+      },
+      "experiences": [
+        {
+          "name": "Playa Delfines Beach Day",
+          "description": "Spend a relaxing day at one of Cancun's most beautiful and uncrowded public beaches. Playa Delfines offers stunning turquoise waters, soft white sand, and the iconic Cancun sign for photos. No entry fee and less crowded than hotel zone beaches, perfect for swimming and sunbathing.",
+          "cost_usd": 10,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Hotel Zone (Zona Hotelera), southern end, Cancun"
+        },
+        {
+          "name": "Isla Mujeres Snorkeling and Beach Tour",
+          "description": "Take a ferry to the nearby island of Isla Mujeres and explore the crystal-clear waters teeming with colorful fish and coral reefs. Enjoy the pristine Playa Norte, rated one of the best beaches in the Caribbean, with calm shallow waters ideal for swimming and relaxing.",
+          "cost_usd": 85,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Isla Mujeres, off the coast of Cancun"
+        },
+        {
+          "name": "Xel-Ha Eco Water Park",
+          "description": "Explore this natural aquatic theme park built around a stunning coastal lagoon. Snorkel through mangroves and cenotes, float down lazy rivers, and discover diverse marine life including tropical fish, rays, and sea turtles. All-inclusive entry covers food, drinks, and equipment rental.",
+          "cost_usd": 110,
+          "category": "activities",
+          "best_time_of_day": "morning",
+          "location": "Riviera Maya, approximately 75 km south of Cancun"
+        },
+        {
+          "name": "Sunset Catamaran Cruise",
+          "description": "Sail along the Caribbean coastline aboard a catamaran as the sun sets over the lagoon. Enjoy open bar, snorkeling stops at coral reefs, and breathtaking views of the Cancun skyline. A perfect blend of beach, sea, and social atmosphere with fellow travelers.",
+          "cost_usd": 65,
+          "category": "activities",
+          "best_time_of_day": "evening",
+          "location": "Marina Aquatours, Hotel Zone (Zona Hotelera), Cancun"
+        },
+        {
+          "name": "Cenote Dos Ojos Swim and Dive",
+          "description": "Discover the magical underground world of the Yucatan Peninsula by swimming or snorkeling in the crystal-clear freshwater of Cenote Dos Ojos. This iconic cenote system features stunning stalactites, stalagmites, and ethereal light filtering through the water, offering a unique natural beach alternative.",
+          "cost_usd": 30,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Tulum, approximately 130 km south of Cancun"
+        }
+      ],
+      "itinerary": {
+        "num_days": 6,
+        "destination": "Cancun",
+        "style": "premium",
+        "total_cost": 2180.0,
+        "breakdown": {
+          "flight": 520.0,
+          "hotel": 900.0,
+          "experiences": 300.0,
+          "food": 360,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-03-15",
+          "morning": "Arrival at Cancun International Airport at 11:00 AM. Private luxury transfer to Cancun Beach Resort. Check-in, unpack, and settle into your premium suite. Enjoy a welcome amenity and take in the stunning ocean views from your private balcony.",
+          "afternoon": "Head down to the resort's private beach for a relaxed first afternoon. Enjoy complimentary beach butler service, premium loungers, and a dip in the turquoise Caribbean waters. Explore the resort pools and spa facilities to decompress after travel.",
+          "evening": "Sunset cocktails at the resort's oceanfront bar. Enjoy a welcome dinner at the resort's signature fine-dining restaurant overlooking the Caribbean Sea.",
+          "meals": {
+            "breakfast": "Skip or grab a light snack at the airport before landing.",
+            "lunch": "Beachside grill at the resort \u2014 grilled seafood platters, fresh ceviche, and tropical cocktails served directly to your lounger.",
+            "dinner": "Dinner at the resort's signature restaurant \u2014 think butter-poached lobster, fresh Yucatan-style fish, and an extensive wine list. Reserve a table with ocean views."
+          },
+          "notes": "Request early check-in in advance if possible. Ask the concierge to arrange your activity schedule for the week upon arrival. Tip your private transfer driver and resort bellhop generously for a great start to your luxury experience."
+        },
+        {
+          "day": 2,
+          "date": "2027-03-16",
+          "morning": "Start the day with a gourmet breakfast at the resort before heading out for a full-day Isla Mujeres Snorkeling and Beach Tour. Board a private or small-group luxury catamaran ferry to Isla Mujeres and explore the crystal-clear waters teeming with vibrant marine life, including colorful reef fish and sea turtles.",
+          "afternoon": "Arrive on Isla Mujeres and explore the charming island village by golf cart \u2014 a beloved local tradition. Relax on the pristine Playa Norte, consistently ranked among the best beaches in the Caribbean, with calm turquoise waters and powdery white sand. Enjoy snorkeling in the Garrafon Natural Reef Park.",
+          "evening": "Return by ferry to Cancun in the late afternoon. Freshen up at the resort before heading out for a premium dinner in the Hotel Zone.",
+          "meals": {
+            "breakfast": "Resort breakfast buffet or \u00e0 la carte \u2014 fresh tropical fruits, eggs Benedict, smoked salmon, and freshly brewed Mexican coffee.",
+            "lunch": "Lunch at a top restaurant on Isla Mujeres such as Mango Caf\u00e9 or Olivia Restaurant \u2014 fresh grilled lobster, Mediterranean-inspired dishes, and local seafood with ocean views.",
+            "dinner": "Dinner at Harry's Prime Steakhouse & Raw Bar in Cancun's Hotel Zone \u2014 premium dry-aged steaks, fresh oysters, and an award-winning wine cellar."
+          },
+          "notes": "Book the Isla Mujeres tour in advance through the concierge to secure a premium private catamaran option. Bring reef-safe sunscreen, a light cover-up, and waterproof sandals. The ferry ride takes approximately 20\u201330 minutes each way."
+        },
+        {
+          "day": 3,
+          "date": "2027-03-17",
+          "morning": "After a leisurely resort breakfast, depart for the Cenote Dos Ojos Swim and Dive experience \u2014 one of the most spectacular natural wonders of the Yucatan Peninsula. Explore the magical underground cave system with crystal-clear freshwater pools, dramatic stalactites, and otherworldly light effects. Snorkeling and guided diving options available.",
+          "afternoon": "Continue exploring the Dos Ojos cenote system or nearby cenotes in the area. Many tour packages include access to multiple cenote pools. Return to Cancun in the mid-to-late afternoon and unwind with a treatment at the resort spa \u2014 a deep-tissue massage or hydrating after-sun facial is highly recommended.",
+          "evening": "Elegant evening at the resort or a short drive to a premium restaurant in the Hotel Zone. Enjoy a nightcap at a rooftop bar with panoramic views of the Nichupt\u00e9 Lagoon and Caribbean Sea.",
+          "meals": {
+            "breakfast": "Resort \u00e0 la carte breakfast \u2014 avocado toast, huevos rancheros, fresh-squeezed juices, and artisan pastries.",
+            "lunch": "Packed gourmet picnic lunch arranged by the resort concierge to enjoy near the cenotes, or lunch at a nearby upscale restaurant in Tulum or Playa del Carmen if the tour passes through.",
+            "dinner": "Dinner at Porfirio's Cancun \u2014 a legendary Mexican fine-dining institution with stunning lagoon views, premium tequila selections, live music, and elevated Mexican cuisine including tableside guacamole and prime cuts."
+          },
+          "notes": "The drive to Cenote Dos Ojos is approximately 1.5\u20132 hours from Cancun. Arrange private transportation through the concierge for a seamless, comfortable experience. Wear a swimsuit under your clothes and bring a change of clothes and a dry bag for valuables."
+        },
+        {
+          "day": 4,
+          "date": "2027-03-18",
+          "morning": "Spend a relaxed morning at Playa Delfines \u2014 one of Cancun's most beautiful and uncrowded public beaches with a stunning panoramic view of the Caribbean. Arrive early to secure the best spot. Enjoy the natural, unobstructed beach scenery with fewer crowds than the Hotel Zone beaches. Bring premium beach gear from the resort.",
+          "afternoon": "Return to the resort for a poolside lunch and an indulgent afternoon at the resort's luxury spa. Book a couples' or solo treatment package \u2014 options may include a traditional Mayan ritual massage using local herbs and volcanic stones, body wraps, or hydrotherapy circuits.",
+          "evening": "Board a Sunset Catamaran Cruise along the Caribbean coastline. Sail as the sun dips below the lagoon horizon, with open bar service featuring premium spirits, fresh guacamole, and light appetizers. Enjoy live music or a DJ on board as the sky turns shades of orange and pink.",
+          "meals": {
+            "breakfast": "Resort breakfast \u2014 smoked salmon bagels, fresh fruit platters, granola parfaits, and specialty coffees.",
+            "lunch": "Poolside dining at the resort \u2014 lobster tacos, shrimp ceviche tostadas, and fresh coconut water served at your lounger.",
+            "dinner": "Post-cruise dinner at La Fisheria or Elefanta \u2014 upscale seafood and international cuisine in the Hotel Zone, with a vibrant yet refined atmosphere."
+          },
+          "notes": "Playa Delfines is a public beach with no resort services, so bring your own towels, water, and snacks or arrange for the resort to pack a luxury beach bag for you. The Sunset Catamaran Cruise typically departs around 5:00\u20136:00 PM and lasts 2\u20133 hours. Book in advance through the concierge."
+        },
+        {
+          "day": 5,
+          "date": "2027-03-19",
+          "morning": "Full-day adventure at Xel-Ha Eco Water Park \u2014 a breathtaking natural aquatic theme park built around a stunning coastal lagoon. Snorkel through mangroves, swim in the crystal-clear inlet, and explore the diverse marine ecosystem. The all-inclusive premium admission covers food, drinks, snorkel gear, life jackets, and activities.",
+          "afternoon": "Continue enjoying Xel-Ha's offerings \u2014 cliff jumping platforms, lazy river tubing, sea trek underwater walking, and relaxing hammocks over the water. Take advantage of the all-inclusive premium food and beverage stations throughout the park.",
+          "evening": "Return to Cancun in the early evening. Enjoy a final evening of resort luxury \u2014 a private in-room dinner on your balcony with ocean views, arranged by the resort's butler service, or a celebratory dinner at one of Cancun's most exclusive restaurants.",
+          "meals": {
+            "breakfast": "Early resort breakfast before departure \u2014 power bowls, tropical smoothies, and eggs to fuel the active day ahead.",
+            "lunch": "All-inclusive gourmet lunch at Xel-Ha \u2014 fresh seafood buffet, grilled fish, tropical fruits, and unlimited premium beverages included with park admission.",
+            "dinner": "Private in-suite or balcony dinner arranged by the resort butler \u2014 a curated multi-course tasting menu with wine pairings, or dinner at Tempo by Mart\u00edn Berasategui, a Michelin-recognized fine-dining experience in the Hotel Zone."
+          },
+          "notes": "Xel-Ha is approximately 75 km south of Cancun (about 1\u20131.5 hours). Arrange private round-trip transportation through the concierge. Wear water shoes and reef-safe sunscreen. Upgrade to the premium all-inclusive package for the best experience, which includes premium alcohol and specialty activities."
+        },
+        {
+          "day": 6,
+          "date": "2027-03-20",
+          "morning": "Final morning in Cancun \u2014 enjoy a slow, luxurious breakfast at the resort. Take one last walk along the resort's private beach or swim in the ocean. Visit the resort's boutique for any last-minute souvenirs or gifts. Pack and prepare for checkout.",
+          "afternoon": "Depending on departure time, enjoy a final poolside session or a light spa treatment (manicure, pedicure, or express facial). Check out of the resort and transfer to Cancun International Airport via private luxury vehicle arranged by the concierge.",
+          "evening": "Departure or, if flight is late, enjoy a farewell dinner at a Hotel Zone restaurant close to the airport.",
+          "meals": {
+            "breakfast": "Grand farewell breakfast at the resort \u2014 a full spread of both international and Mexican specialties, fresh juices, champagne mimosas, and artisan coffee.",
+            "lunch": "Light poolside lunch or a quick gourmet bite at the resort's caf\u00e9 \u2014 lobster rolls, fresh fruit, and sparkling water.",
+            "dinner": "If time permits before departure, dinner at Lorenzillo's \u2014 a Cancun classic waterfront restaurant on the lagoon famous for its live lobster tanks and premium seafood since 1979."
+          },
+          "notes": "Confirm checkout time with the resort and arrange late checkout if your flight departs in the evening \u2014 many luxury resorts accommodate this with advance notice. Ensure your private airport transfer is booked the night before. Arrive at Cancun International Airport at least 2.5\u20133 hours before an international flight."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Dallas+to+Cancun+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Cancun&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Cancun",
+        "https://www.getyourguide.com/s/?q=Cancun",
+        "https://www.getyourguide.com/s/?q=Cancun",
+        "https://www.getyourguide.com/s/?q=Cancun",
+        "https://www.getyourguide.com/s/?q=Cancun"
+      ],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Direct flight (no layovers)",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-1270 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Cancun beach resort, $3000 couple, 6 days, March 2027, from Dallas",
+  "session_tags": {
+    "query_id": "CTL-05",
+    "condition": "broadcast",
+    "run_index": 2
+  }
+}

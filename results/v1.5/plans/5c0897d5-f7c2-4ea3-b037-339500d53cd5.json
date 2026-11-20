@@ -1,0 +1,558 @@
+{
+  "session_id": "5c0897d5-f7c2-4ea3-b037-339500d53cd5",
+  "intent": {
+    "destination": "Montreal",
+    "origin": "Toronto",
+    "budget_usd": 1500.0,
+    "duration_days": 4,
+    "travel_month": "July",
+    "travel_year": 2027,
+    "interests": [
+      "local food",
+      "festivals"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Montreal food and festivals, $1500 solo, 4 days, July 2027, from Toronto"
+  },
+  "selected_flight": {
+    "price_usd": 130,
+    "airline": "AC",
+    "departure": "2027-07-15T09:00:00",
+    "arrival": "2027-07-15T13:00:00",
+    "stops": 0,
+    "duration": "PT1H00M"
+  },
+  "selected_hotel": {
+    "name": "Old Montreal Stay",
+    "price_per_night_usd": 110,
+    "total_usd": 440,
+    "rating": 4.3,
+    "amenities": [
+      "wifi",
+      "breakfast included"
+    ],
+    "location": "Montreal"
+  },
+  "experiences": [
+    {
+      "name": "Jean-Talon Market Food Tour",
+      "description": "Explore one of North America's largest open-air markets, sampling Quebec cheeses, maple products, fresh produce, and local charcuterie. Chat with vendors and discover seasonal specialties unique to Quebec's culinary scene.",
+      "cost_usd": 25,
+      "category": "local food",
+      "best_time_of_day": "morning",
+      "location": "Little Italy, Mile End district"
+    },
+    {
+      "name": "Old Montreal Street Food & History Walk",
+      "description": "Wander the cobblestone streets of Old Montreal, stopping at local bakeries, poutine spots, and sugar shacks. Soak in the 17th-century architecture while tasting iconic Quebecois dishes like tourti\u00e8re and bagels from the famous St-Viateur Bagel shop.",
+      "cost_usd": 30,
+      "category": "local food",
+      "best_time_of_day": "afternoon",
+      "location": "Old Montreal (Vieux-Montr\u00e9al)"
+    },
+    {
+      "name": "Montreal Jazz Festival (Festival International de Jazz)",
+      "description": "Attend one of the world's largest jazz festivals featuring hundreds of free outdoor concerts and affordable ticketed shows. Experience world-class musicians across multiple stages in the heart of the city, with food stalls and a vibrant street atmosphere.",
+      "cost_usd": 20,
+      "category": "festivals",
+      "best_time_of_day": "evening",
+      "location": "Quartier des Spectacles, Downtown Montreal"
+    },
+    {
+      "name": "Just for Laughs Festival Street Performances",
+      "description": "Enjoy free outdoor comedy performances, street acts, and parades during one of the world's most celebrated comedy festivals. Grab a local craft beer from nearby bars and join the lively crowd for spontaneous laughs and entertainment throughout the Plateau.",
+      "cost_usd": 15,
+      "category": "festivals",
+      "best_time_of_day": "afternoon",
+      "location": "Saint-Denis Street, Plateau-Mont-Royal"
+    },
+    {
+      "name": "Mile End Foodie Neighbourhood Crawl",
+      "description": "Discover Montreal's hippest neighbourhood by hopping between iconic spots: grab a smoked meat sandwich at Schwartz's Deli, try world-famous bagels at Fairmount Bagel, and sample craft beers at local microbreweries. This self-guided crawl captures the multicultural soul of Montreal's food scene.",
+      "cost_usd": 40,
+      "category": "local food",
+      "best_time_of_day": "morning",
+      "location": "Mile End, Plateau-Mont-Royal"
+    }
+  ],
+  "weather": {
+    "avg_temp_c": 25,
+    "avg_temp_f": 77,
+    "precipitation_mm": 30,
+    "sunshine_hours": 8,
+    "summary": "Warm summer weather expected.",
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-07-15",
+    "return": "2027-07-19",
+    "nights": 4,
+    "month": "july",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Montreal",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 860.0,
+      "flight": {
+        "price_usd": 130,
+        "airline": "AC",
+        "departure": "2027-07-15T09:00:00",
+        "arrival": "2027-07-15T13:00:00",
+        "stops": 0,
+        "duration": "PT1H00M"
+      },
+      "hotel": {
+        "name": "Old Montreal Stay",
+        "price_per_night_usd": 110,
+        "total_usd": 440,
+        "rating": 4.3,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Montreal"
+      },
+      "experiences": [
+        {
+          "name": "Jean-Talon Market Food Tour",
+          "description": "Explore one of North America's largest open-air markets, sampling Quebec cheeses, maple products, fresh produce, and local charcuterie. Chat with vendors and discover seasonal specialties unique to Quebec's culinary scene.",
+          "cost_usd": 25,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Little Italy, Mile End district"
+        },
+        {
+          "name": "Old Montreal Street Food & History Walk",
+          "description": "Wander the cobblestone streets of Old Montreal, stopping at local bakeries, poutine spots, and sugar shacks. Soak in the 17th-century architecture while tasting iconic Quebecois dishes like tourti\u00e8re and bagels from the famous St-Viateur Bagel shop.",
+          "cost_usd": 30,
+          "category": "local food",
+          "best_time_of_day": "afternoon",
+          "location": "Old Montreal (Vieux-Montr\u00e9al)"
+        },
+        {
+          "name": "Montreal Jazz Festival (Festival International de Jazz)",
+          "description": "Attend one of the world's largest jazz festivals featuring hundreds of free outdoor concerts and affordable ticketed shows. Experience world-class musicians across multiple stages in the heart of the city, with food stalls and a vibrant street atmosphere.",
+          "cost_usd": 20,
+          "category": "festivals",
+          "best_time_of_day": "evening",
+          "location": "Quartier des Spectacles, Downtown Montreal"
+        },
+        {
+          "name": "Just for Laughs Festival Street Performances",
+          "description": "Enjoy free outdoor comedy performances, street acts, and parades during one of the world's most celebrated comedy festivals. Grab a local craft beer from nearby bars and join the lively crowd for spontaneous laughs and entertainment throughout the Plateau.",
+          "cost_usd": 15,
+          "category": "festivals",
+          "best_time_of_day": "afternoon",
+          "location": "Saint-Denis Street, Plateau-Mont-Royal"
+        }
+      ],
+      "itinerary": {
+        "num_days": 4,
+        "destination": "Montreal",
+        "style": "budget",
+        "total_cost": 860.0,
+        "breakdown": {
+          "flight": 130.0,
+          "hotel": 440.0,
+          "experiences": 90.0,
+          "food": 100,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-07-15 (Wednesday)",
+          "morning": "Arrival at Montreal \u2014 Flight AC lands at 13:00, so no morning activities scheduled. Use this time to rest on the plane.",
+          "afternoon": "After landing and collecting luggage, take the 747 STM airport express bus (~$11 CAD) to downtown, then connect to Old Montreal. Check into your accommodation, freshen up, and take a relaxed self-guided walk through the cobblestone streets of Old Montreal to get your bearings \u2014 explore Place Jacques-Cartier, the waterfront Vieux-Port, and admire the Notre-Dame Basilica exterior for free.",
+          "evening": "Head to the Montreal Jazz Festival (Festival International de Jazz) at the Quartier des Spectacles, just a short Metro or bus ride from Old Montreal. Enjoy the free outdoor stages featuring world-class jazz, blues, and world music performances. Soak in the festive atmosphere with thousands of locals.",
+          "meals": {
+            "breakfast": "On the plane or grab a quick bite at the airport.",
+            "lunch": "Pick up a budget-friendly poutine or smoked meat sandwich from a grab-and-go spot near Old Montreal after check-in \u2014 try Chez Claudette or a nearby d\u00e9panneur snack (~$10\u201314 CAD).",
+            "dinner": "Grab a crepe or a hot dog qu\u00e9b\u00e9cois from one of the many affordable food stands and food trucks set up around the Jazz Festival grounds at Quartier des Spectacles (~$8\u201312 CAD). Pair with a local Bor\u00e9ale beer from a festival vendor."
+          },
+          "notes": "The 747 STM bus is the most budget-friendly airport transfer (~$11 CAD, covers 24-hour transit pass). Jazz Festival free outdoor concerts run nightly \u2014 no ticket needed for the main outdoor stages. Wear comfortable walking shoes for cobblestones."
+        },
+        {
+          "day": 2,
+          "date": "2027-07-16 (Thursday)",
+          "morning": "Jean-Talon Market Food Tour \u2014 Take the Metro (Orange Line) north to Jean-Talon station. Spend the morning exploring one of North America's largest open-air markets. Sample Quebec cheeses, maple products, fresh fruits, artisan breads, and local charcuterie. Many vendors offer free tastings. Stock up on affordable picnic supplies like fresh produce, local cheese, and baguettes for later.",
+          "afternoon": "Return to the Plateau-Mont-Royal neighbourhood and explore Avenue du Mont-Royal and Saint-Denis Street on foot. Browse eclectic boutiques and murals, then head to Parc La Fontaine for a relaxing picnic with your Jean-Talon Market finds. Enjoy the park's beautiful lake and gardens \u2014 a favourite local hangout.",
+          "evening": "Return to the Montreal Jazz Festival at Quartier des Spectacles for another evening of free outdoor concerts. Tonight, explore the side streets around Saint-Denis and Ontario for live music spilling out of small bars and terrasses.",
+          "meals": {
+            "breakfast": "Grab a fresh croissant and caf\u00e9 au lait from a local boulangerie near your Old Montreal accommodation (~$5\u20137 CAD). Try Olive + Gourmando if open, or a nearby corner bakery.",
+            "lunch": "Picnic in Parc La Fontaine using fresh market finds from Jean-Talon \u2014 cheese, bread, fruit, and charcuterie purchased for ~$10\u201314 CAD total.",
+            "dinner": "Try a classic Quebec meal at a budget-friendly BYOB (apportez votre vin) restaurant on Saint-Denis Street \u2014 look for a table d'h\u00f4te (set menu) deal, often $18\u201325 CAD for a full meal. Try La Banquise for a legendary poutine dinner (~$14\u201318 CAD) \u2014 open 24 hours and a Montreal institution."
+          },
+          "notes": "Jean-Talon Market is best visited early morning (9\u201311 AM) for the freshest selection and fewest crowds. The Metro day pass (~$11 CAD) is great value if you plan multiple trips. BYOB restaurants are a uniquely Montreal budget-friendly dining tradition \u2014 grab a bottle of wine from a SAQ or d\u00e9panneur beforehand."
+        },
+        {
+          "day": 3,
+          "date": "2027-07-17 (Friday)",
+          "morning": "Old Montreal Street Food & History Walk \u2014 Start the morning with a self-guided (free) or budget walking tour of Old Montreal's historic streets. Visit Rue Saint-Paul for local bakeries and pastry shops. Stop at a traditional boulangerie for a pain au chocolat, then explore the Bonsecours Market building (free to enter) and the historic waterfront. Hunt for maple taffy samples and sugar shack treats at specialty shops.",
+          "afternoon": "Just for Laughs Festival Street Performances \u2014 The Just for Laughs (Just pour rire) Festival runs in mid-July. Head to Saint-Denis Street and the Latin Quarter to catch free outdoor comedy performances, street acts, clowns, and surprise parades. The street programming is entirely free and runs throughout the afternoon into the evening.",
+          "evening": "Continue enjoying the Just for Laughs Festival street atmosphere as it peaks in the evening. Grab street food from vendors along the festival route, then wind down with a stroll back through Old Montreal along the illuminated waterfront.",
+          "meals": {
+            "breakfast": "Freshly baked bagel (Montreal-style, wood-fired) from a local spot \u2014 grab a half-dozen from Fairmount Bagel or St-Viateur Bagel (both ~$1 CAD per bagel) with cream cheese (~$6\u20138 total). Worth the short trip to the Plateau.",
+            "lunch": "Grab a budget street food lunch near the Just for Laughs festival zone \u2014 shawarma wraps on Saint-Denis are excellent value (~$9\u201312 CAD). Try a local Lebanese or Middle Eastern spot, which are plentiful and affordable in the area.",
+            "dinner": "Enjoy a casual dinner at a terrasse (outdoor patio) restaurant near Old Montreal or the waterfront. Try moules-frites (mussels and fries) at a brasserie \u2014 look for early-bird or happy hour specials (~$18\u201322 CAD). Alternatively, grab a smoked meat sandwich at a deli-style spot (~$12\u201315 CAD)."
+          },
+          "notes": "Just for Laughs street performances are 100% free \u2014 no tickets required. Check the festival app or website for the daily parade schedule so you don't miss it. Friday evenings are especially lively. Wear sunscreen \u2014 the warm summer weather (25\u00b0C) means you'll be outside most of the day."
+        },
+        {
+          "day": 4,
+          "date": "2027-07-18 (Saturday)",
+          "morning": "Hike or walk up Mont Royal \u2014 Take Bus 11 from Mont-Royal Metro station to the top of the mountain (included in transit fare). Enjoy panoramic views of the entire city from the Kondiaronk Belvedere lookout. Walk through the forested trails, spot local wildlife, and visit Beaver Lake (Lac aux Castors). This is a beloved free activity that every Montrealer cherishes.",
+          "afternoon": "Descend Mont Royal and explore the Mile End neighbourhood \u2014 one of Montreal's hippest and most culturally rich areas. Wander Bernard Avenue and Laurier Street, admire street art and murals, and pop into independent record shops and boutiques. Visit the famous Alley (Ruelle Verte) murals. End the afternoon with one final loop through the Quartier des Spectacles to soak up any remaining festival energy from both Jazz Fest and Just for Laughs.",
+          "evening": "Spend your final evening back in Old Montreal for a farewell walk along the Vieux-Port waterfront as the sun sets over the St. Lawrence River. Enjoy the golden hour views, then treat yourself to a slightly indulgent but still budget-friendly farewell dinner before wrapping up your Montreal adventure.",
+          "meals": {
+            "breakfast": "Pick up a hearty breakfast sandwich or avocado toast from a caf\u00e9 in Old Montreal before heading to Mont Royal (~$8\u201310 CAD). Alternatively, grab pastries and coffee from a local d\u00e9panneur to eat at the mountain summit.",
+            "lunch": "Pack a picnic or grab a sandwich from a Mile End caf\u00e9 to enjoy in the neighbourhood (~$10\u201313 CAD). Try a smoked meat sandwich from a local deli or a falafel wrap from a Mile End Middle Eastern spot.",
+            "dinner": "Farewell dinner at a beloved Old Montreal restaurant \u2014 treat yourself to a Quebec-inspired meal. Try a tourti\u00e8re (meat pie) or a Quebecois tasting plate at a mid-range spot where you can eat well for ~$22\u201328 CAD. Look for happy hour specials or a table d'h\u00f4te. End with a traditional sugar pie (tarte au sucre) for dessert (~$5 CAD)."
+          },
+          "notes": "Mont Royal is free to access and one of the best budget activities in the city. Bring water and sunscreen. Saturday markets and street festivals are especially lively \u2014 keep an eye out for impromptu drum circles at Mont Royal (a beloved Montreal tradition, especially Sunday afternoons). Check transit schedules if departing Montreal on this day or the next morning."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Toronto+to+Montreal+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Montreal&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal"
+      ],
+      "highlights": [
+        "Save $265 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Montreal Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 960.0,
+      "flight": {
+        "price_usd": 130,
+        "airline": "AC",
+        "departure": "2027-07-15T09:00:00",
+        "arrival": "2027-07-15T13:00:00",
+        "stops": 0,
+        "duration": "PT1H00M"
+      },
+      "hotel": {
+        "name": "Old Montreal Stay",
+        "price_per_night_usd": 110,
+        "total_usd": 440,
+        "rating": 4.3,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Montreal"
+      },
+      "experiences": [
+        {
+          "name": "Jean-Talon Market Food Tour",
+          "description": "Explore one of North America's largest open-air markets, sampling Quebec cheeses, maple products, fresh produce, and local charcuterie. Chat with vendors and discover seasonal specialties unique to Quebec's culinary scene.",
+          "cost_usd": 25,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Little Italy, Mile End district"
+        },
+        {
+          "name": "Old Montreal Street Food & History Walk",
+          "description": "Wander the cobblestone streets of Old Montreal, stopping at local bakeries, poutine spots, and sugar shacks. Soak in the 17th-century architecture while tasting iconic Quebecois dishes like tourti\u00e8re and bagels from the famous St-Viateur Bagel shop.",
+          "cost_usd": 30,
+          "category": "local food",
+          "best_time_of_day": "afternoon",
+          "location": "Old Montreal (Vieux-Montr\u00e9al)"
+        },
+        {
+          "name": "Montreal Jazz Festival (Festival International de Jazz)",
+          "description": "Attend one of the world's largest jazz festivals featuring hundreds of free outdoor concerts and affordable ticketed shows. Experience world-class musicians across multiple stages in the heart of the city, with food stalls and a vibrant street atmosphere.",
+          "cost_usd": 20,
+          "category": "festivals",
+          "best_time_of_day": "evening",
+          "location": "Quartier des Spectacles, Downtown Montreal"
+        },
+        {
+          "name": "Just for Laughs Festival Street Performances",
+          "description": "Enjoy free outdoor comedy performances, street acts, and parades during one of the world's most celebrated comedy festivals. Grab a local craft beer from nearby bars and join the lively crowd for spontaneous laughs and entertainment throughout the Plateau.",
+          "cost_usd": 15,
+          "category": "festivals",
+          "best_time_of_day": "afternoon",
+          "location": "Saint-Denis Street, Plateau-Mont-Royal"
+        },
+        {
+          "name": "Mile End Foodie Neighbourhood Crawl",
+          "description": "Discover Montreal's hippest neighbourhood by hopping between iconic spots: grab a smoked meat sandwich at Schwartz's Deli, try world-famous bagels at Fairmount Bagel, and sample craft beers at local microbreweries. This self-guided crawl captures the multicultural soul of Montreal's food scene.",
+          "cost_usd": 40,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Mile End, Plateau-Mont-Royal"
+        }
+      ],
+      "itinerary": {
+        "num_days": 4,
+        "destination": "Montreal",
+        "style": "balanced",
+        "total_cost": 960.0,
+        "breakdown": {
+          "flight": 130.0,
+          "hotel": 440.0,
+          "experiences": 130.0,
+          "food": 160,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-07-15 (Wednesday)",
+          "morning": "Arrival at Montreal-Trudeau Airport at 13:00 \u2014 no morning activities scheduled. Travel to Old Montreal hotel, check in, freshen up, and get oriented in the neighbourhood.",
+          "afternoon": "Old Montreal Street Food & History Walk: After settling in, explore the cobblestone streets of Old Montreal on foot. Stop at local bakeries for fresh croissants, grab classic poutine at a neighbourhood spot, and discover the area's rich history around Place Jacques-Cartier and the Notre-Dame Basilica exterior.",
+          "evening": "Head to the Montreal Jazz Festival (Festival International de Jazz) at the Quartier des Spectacles, just a short walk or Metro ride from Old Montreal. Enjoy free outdoor concerts on the main stages \u2014 the festival runs nightly with world-class performers in a vibrant open-air atmosphere.",
+          "meals": {
+            "breakfast": "Skip or grab a light snack at the airport before landing.",
+            "lunch": "Pick up a quick bite near the hotel upon arrival \u2014 try a classic smoked meat sandwich or poutine at a casual Old Montreal caf\u00e9 such as Olive & Gourmando or a nearby diner (~$15\u201320 CAD).",
+            "dinner": "Dine at Taverne Gaspar on Rue de la Commune in Old Montreal \u2014 a mid-range brasserie with local Qu\u00e9b\u00e9cois dishes, craft beers, and a lively terrace perfect for a first night out (~$35\u201350 CAD per person)."
+          },
+          "notes": "Since the flight lands at 13:00, allow roughly 1.5\u20132 hours for baggage, customs, and transit to the hotel before beginning the afternoon walk. The Jazz Festival runs from late June through mid-July \u2014 confirm the exact schedule and free stage lineup on the official festival website before attending. Wear comfortable walking shoes for the cobblestone streets."
+        },
+        {
+          "day": 2,
+          "date": "2027-07-16 (Thursday)",
+          "morning": "Jean-Talon Market Food Tour: Take the Metro (Orange Line) north to Jean-Talon Market, one of North America's largest open-air markets. Spend the morning sampling Quebec artisan cheeses, fresh maple products, local fruits, charcuterie, and seasonal produce. Chat with vendors and pick up snacks for later in the day.",
+          "afternoon": "Mile End Foodie Neighbourhood Crawl: Walk or take a short bus ride to the Mile End neighbourhood. Hop between iconic spots \u2014 grab a smoked meat sandwich at Schwartz's Deli, sample freshly baked bagels at St-Viateur Bagel, and browse quirky boutiques and street art along Boulevard Saint-Laurent and Avenue Fairmount.",
+          "evening": "Return to the Quartier des Spectacles for another evening at the Montreal Jazz Festival. Tonight, consider purchasing a ticket for an indoor ticketed show for a more intimate concert experience with a renowned jazz artist.",
+          "meals": {
+            "breakfast": "Eat at the hotel or grab a fresh Montreal-style bagel with cream cheese and lox from a caf\u00e9 near Old Montreal (~$8\u201312 CAD).",
+            "lunch": "Graze through Jean-Talon Market during the food tour \u2014 assemble a market lunch from cheese, charcuterie, fresh bread, and fruit stalls (~$15\u201320 CAD self-curated).",
+            "dinner": "Try Damas Restaurant in Mile End or Provisions on Avenue Laurier for a mid-range dinner featuring locally sourced Qu\u00e9b\u00e9cois cuisine with seasonal ingredients (~$40\u201355 CAD per person)."
+          },
+          "notes": "Jean-Talon Market is busiest and most vibrant in the morning \u2014 arrive by 9:30\u201310:00 AM for the best experience. The Mile End is about a 15-minute walk from Jean-Talon, making it easy to combine both in one day. Keep some cash on hand as some market vendors and small Mile End spots may prefer it."
+        },
+        {
+          "day": 3,
+          "date": "2027-07-17 (Friday)",
+          "morning": "Explore Old Montreal at a leisurely pace \u2014 visit the stunning interior of Notre-Dame Basilica (book tickets in advance, ~$15 CAD), then stroll along the Old Port waterfront. Rent a bike along the Lachine Canal path for a scenic morning ride along the water.",
+          "afternoon": "Just for Laughs Festival Street Performances: Head to the Quartier Latin and surrounding streets to catch free outdoor comedy performances, street acts, juggling shows, and colourful parades. The Just for Laughs Festival fills the streets with spontaneous entertainment \u2014 wander and stumble upon acts throughout the afternoon.",
+          "evening": "Combine both festivals: return to the Quartier des Spectacles for the Jazz Festival evening programming. Enjoy the electric atmosphere as both festivals overlap in this part of the city, with food trucks, street vendors, and multiple stages creating a true Montreal summer celebration.",
+          "meals": {
+            "breakfast": "Sit-down breakfast at Crew Collective & Caf\u00e9 (housed in a stunning former bank) or L'Gros Luxe near Old Montreal for eggs, fresh pastries, and strong coffee (~$15\u201320 CAD).",
+            "lunch": "Grab a casual lunch during the Just for Laughs street festivities \u2014 food trucks and local vendors offer everything from tacos to Qu\u00e9b\u00e9cois classics (~$15\u201320 CAD).",
+            "dinner": "Dine at Restaurant L'Orignal in Old Montreal, a mid-range spot known for creative charcuterie boards, local meats, and natural wines in a warm, rustic setting (~$40\u201355 CAD per person)."
+          },
+          "notes": "July 17 falls during peak Just for Laughs season \u2014 check the official schedule for any free Gala previews or street show times to plan your afternoon route. The Quartier des Spectacles is walkable from Old Montreal (~20 minutes on foot or 5 minutes by Metro). Book Notre-Dame Basilica tickets online in advance to avoid queues."
+        },
+        {
+          "day": 4,
+          "date": "2027-07-18 (Saturday)",
+          "morning": "Climb up to Mont Royal Park for a morning hike to the Kondiaronk Belvedere lookout for panoramic views of the city skyline. Rent a paddle boat on Lac aux Castors or simply relax on the grass and soak in the warm summer weather. Locals gather here on weekends \u2014 it's the true heartbeat of Montreal.",
+          "afternoon": "Return to the Plateau-Mont-Royal neighbourhood for a final afternoon of leisurely exploration. Browse the vibrant stretch of Avenue du Mont-Royal \u2014 independent boutiques, vintage shops, and local caf\u00e9s. Pick up edible souvenirs like maple butter, local hot sauce, or Quebec chocolates to bring home.",
+          "evening": "Final evening farewell dinner in Old Montreal, followed by a last stroll along the illuminated waterfront of the Old Port. If the Jazz Festival is still running, end the trip with one final free outdoor concert under the summer sky.",
+          "meals": {
+            "breakfast": "Fuel up before the hike at Olive & Gourmando in Old Montreal \u2014 beloved for their hearty sandwiches, homemade granola, and excellent coffee (~$15\u201320 CAD).",
+            "lunch": "Enjoy a casual lunch on the Plateau at Caf\u00e9 Sardine or Comptoir 21 \u2014 neighbourhood spots with fresh, creative menus and relaxed vibes (~$20\u201330 CAD).",
+            "dinner": "Splurge slightly for the farewell meal at Maison Boulud in the Ritz-Carlton (upscale mid-range, ~$60\u201380 CAD per person) or keep it local and festive with a rooftop patio dinner at Terrasse Place d'Armes in Old Montreal (~$45\u201360 CAD per person)."
+          },
+          "notes": "Mont Royal is best reached by bus (80 or 11) from downtown or a 30-minute walk from the Plateau. Wear sunscreen and bring water as the summit can be warm in July. Saturday markets and street life on the Plateau are especially lively \u2014 leave extra time to wander. Confirm any early checkout requirements with the hotel if departing the following morning."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Toronto+to+Montreal+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Montreal&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.3\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Montreal Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 1040.0,
+      "flight": {
+        "price_usd": 130,
+        "airline": "AC",
+        "departure": "2027-07-15T09:00:00",
+        "arrival": "2027-07-15T13:00:00",
+        "stops": 0,
+        "duration": "PT1H00M"
+      },
+      "hotel": {
+        "name": "Old Montreal Stay",
+        "price_per_night_usd": 110,
+        "total_usd": 440,
+        "rating": 4.3,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Montreal"
+      },
+      "experiences": [
+        {
+          "name": "Jean-Talon Market Food Tour",
+          "description": "Explore one of North America's largest open-air markets, sampling Quebec cheeses, maple products, fresh produce, and local charcuterie. Chat with vendors and discover seasonal specialties unique to Quebec's culinary scene.",
+          "cost_usd": 25,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Little Italy, Mile End district"
+        },
+        {
+          "name": "Old Montreal Street Food & History Walk",
+          "description": "Wander the cobblestone streets of Old Montreal, stopping at local bakeries, poutine spots, and sugar shacks. Soak in the 17th-century architecture while tasting iconic Quebecois dishes like tourti\u00e8re and bagels from the famous St-Viateur Bagel shop.",
+          "cost_usd": 30,
+          "category": "local food",
+          "best_time_of_day": "afternoon",
+          "location": "Old Montreal (Vieux-Montr\u00e9al)"
+        },
+        {
+          "name": "Montreal Jazz Festival (Festival International de Jazz)",
+          "description": "Attend one of the world's largest jazz festivals featuring hundreds of free outdoor concerts and affordable ticketed shows. Experience world-class musicians across multiple stages in the heart of the city, with food stalls and a vibrant street atmosphere.",
+          "cost_usd": 20,
+          "category": "festivals",
+          "best_time_of_day": "evening",
+          "location": "Quartier des Spectacles, Downtown Montreal"
+        },
+        {
+          "name": "Just for Laughs Festival Street Performances",
+          "description": "Enjoy free outdoor comedy performances, street acts, and parades during one of the world's most celebrated comedy festivals. Grab a local craft beer from nearby bars and join the lively crowd for spontaneous laughs and entertainment throughout the Plateau.",
+          "cost_usd": 15,
+          "category": "festivals",
+          "best_time_of_day": "afternoon",
+          "location": "Saint-Denis Street, Plateau-Mont-Royal"
+        },
+        {
+          "name": "Mile End Foodie Neighbourhood Crawl",
+          "description": "Discover Montreal's hippest neighbourhood by hopping between iconic spots: grab a smoked meat sandwich at Schwartz's Deli, try world-famous bagels at Fairmount Bagel, and sample craft beers at local microbreweries. This self-guided crawl captures the multicultural soul of Montreal's food scene.",
+          "cost_usd": 40,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Mile End, Plateau-Mont-Royal"
+        }
+      ],
+      "itinerary": {
+        "num_days": 4,
+        "destination": "Montreal",
+        "style": "premium",
+        "total_cost": 1040.0,
+        "breakdown": {
+          "flight": 130.0,
+          "hotel": 440.0,
+          "experiences": 130.0,
+          "food": 240,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-07-15",
+          "morning": "Arrival at Montreal-Trudeau Airport at 13:00 \u2014 no morning activities scheduled. Private luxury transfer arranged from the airport to your boutique hotel in Old Montreal.",
+          "afternoon": "Old Montreal Street Food & History Walk: After settling into your hotel, embark on a guided cobblestone stroll through Old Montreal's historic Vieux-Port district. Visit artisan bakeries, sample authentic poutine at a beloved local institution, and discover the rich colonial architecture of Place Jacques-Cartier and Notre-Dame Basilica. Your premium guide provides insider context on Quebec's culinary and cultural heritage.",
+          "evening": "Montreal Jazz Festival (Festival International de Jazz): Head to the Quartier des Spectacles for an unforgettable evening at one of the world's largest jazz festivals. Enjoy curated ticketed indoor performances by internationally acclaimed artists, followed by the vibrant free outdoor stage atmosphere. The warm July evening makes for a magical open-air experience.",
+          "meals": {
+            "breakfast": "N/A \u2014 mid-day arrival",
+            "lunch": "Grab artisan bites during the Old Montreal Street Food Walk \u2014 think fresh-baked bagels, Quebec cheese curds, and house-made poutine from celebrated local stops along the route.",
+            "dinner": "Toqu\u00e9! \u2014 Montreal's legendary flagship of Qu\u00e9b\u00e9cois haute cuisine. Chef Bernard Cassini's tasting menu showcases hyper-local, seasonal ingredients with impeccable wine pairings. Reservation essential. Located steps from Old Montreal."
+          },
+          "notes": "Pack light layers for the evening Jazz Festival outdoor venues. Book Toqu\u00e9! well in advance as it fills quickly during festival season. Private airport transfer recommended for a seamless luxury arrival experience."
+        },
+        {
+          "day": 2,
+          "date": "2027-07-16",
+          "morning": "Jean-Talon Market Food Tour: Take a chauffeured ride to the Plateau to explore Jean-Talon Market, one of North America's grandest open-air markets. Your expert guide leads you through stalls overflowing with Quebec artisan cheeses, heritage maple syrups, heirloom vegetables, charcuterie, and freshly baked pastries. Sample generously and pick up premium provisions to take home.",
+          "afternoon": "Mile End Foodie Neighbourhood Crawl: Continue the culinary journey in Montreal's coolest neighbourhood. Begin with a legendary smoked meat sandwich at Schwartz's Deli, then hop to St-Viateur Bagel for wood-fired bagels fresh from the oven, followed by a stop at a craft coffee roaster and a local chocolatier. Stroll through vibrant street art and indie boutiques between tastings.",
+          "evening": "Montreal Jazz Festival (Festival International de Jazz): Return to the Quartier des Spectacles for another evening of world-class jazz. Tonight, opt for a premium reserved-seat concert at Salle Wilfrid-Pelletier or Maison Symphonique for an elevated indoor performance experience, followed by a nightcap at a rooftop bar overlooking the festival grounds.",
+          "meals": {
+            "breakfast": "In-hotel breakfast at your Old Montreal boutique property \u2014 expect a curated spread of local pastries, Quebec yogurt, seasonal fruit, and specialty coffee.",
+            "lunch": "Grazing lunch throughout the Jean-Talon Market and Mile End Crawl \u2014 smoked meat, artisan bagels, imported and local cheeses, maple taffy, and fresh-pressed juice from market vendors.",
+            "dinner": "Le Mousso \u2014 a celebrated avant-garde tasting menu restaurant helmed by Chef Antonin Monat. Inventive, boundary-pushing Qu\u00e9b\u00e9cois cuisine with an exceptional natural wine list. One of Montreal's most talked-about fine dining destinations."
+          },
+          "notes": "Jean-Talon Market is best experienced early \u2014 aim to arrive by 9:00 AM for the freshest produce and smallest crowds. Wear comfortable walking shoes for the Mile End crawl. Jazz Festival ticketed evening shows should be booked in advance online."
+        },
+        {
+          "day": 3,
+          "date": "2027-07-17",
+          "morning": "Leisurely morning exploring Old Montreal at your own pace \u2014 visit the stunning Notre-Dame Basilica for a private guided tour, stroll along the Vieux-Port waterfront promenade, and browse high-end Quebec artisan galleries and boutiques along Rue Saint-Paul.",
+          "afternoon": "Just for Laughs Festival Street Performances: Head to the downtown festival zone to soak in the infectious energy of the Just for Laughs Festival. Enjoy free outdoor comedy performances, elaborate street parades, costumed characters, and surprise pop-up acts scattered across Saint-Denis and Sainte-Catherine streets. The afternoon atmosphere is lively, family-friendly, and quintessentially Montreal.",
+          "evening": "Just for Laughs Gala Show: Upgrade your evening with premium tickets to a headline Gala performance at Th\u00e9\u00e2tre St-Denis or the Bell Centre \u2014 featuring top-tier international comedians in a polished, ticketed format. A perfect blend of world-class entertainment and Montreal's festival spirit.",
+          "meals": {
+            "breakfast": "Olive + Gourmando (Old Montreal) \u2014 a beloved brunch institution known for its house-baked sourdough, ricotta toasts, slow-roasted sandwiches, and exceptional coffee. Arrive early or expect a short queue.",
+            "lunch": "Jun I \u2014 an intimate, critically acclaimed Japanese-Qu\u00e9b\u00e9cois fusion restaurant in the downtown core. Chef Jun Tanaka's omakase-style lunch blends pristine Japanese technique with local Quebec ingredients. Perfect pre-festival afternoon fuel.",
+            "dinner": "Maison Boulud (Ritz-Carlton Montreal) \u2014 Chef Daniel Boulud's Montreal outpost offers refined French-inspired cuisine in one of the city's most glamorous dining rooms. The summer terrace is ideal for a warm July evening. Exceptional wine cellar and impeccable service."
+          },
+          "notes": "The Just for Laughs street performances are free and family-friendly \u2014 no tickets required for outdoor shows. Wear sunscreen for the afternoon outdoor festival. Book the Gala show tickets well in advance as premium seats sell out quickly."
+        },
+        {
+          "day": 4,
+          "date": "2027-07-18",
+          "morning": "Relaxed farewell morning \u2014 enjoy a slow breakfast before a final leisurely walk through Old Montreal's quieter morning streets. Visit March\u00e9 Bonsecours for last-minute premium Quebec souvenirs including artisan maple products, local ceramics, and handcrafted jewellery.",
+          "afternoon": "Montreal Jazz Festival Final Afternoon Session: Spend your last afternoon at the Jazz Festival's free outdoor stages in the Quartier des Spectacles. The afternoon programming often features emerging artists and world music acts in a relaxed, sun-soaked setting \u2014 a perfect, unhurried farewell to Montreal's festival culture.",
+          "evening": "Farewell Dinner before departure preparations \u2014 a memorable final meal to close out a spectacular Montreal experience.",
+          "meals": {
+            "breakfast": "Crew Collective & Caf\u00e9 or in-hotel breakfast \u2014 indulge in a leisurely final morning spread with Quebec pastries, smoked salmon, local cheeses, and artisan coffee.",
+            "lunch": "Garde Manger (Old Montreal) \u2014 Chef Chuck Hughes' celebrated seafood-forward bistro in a stunning stone-walled Old Montreal setting. Known for its indulgent lobster poutine, fresh oysters, and convivial atmosphere. A Montreal icon.",
+            "dinner": "Pastel (Mile End) \u2014 a critically lauded, intimate fine dining experience offering a creative seasonal tasting menu with Quebec-forward ingredients and a thoughtfully curated natural wine list. A stunning final culinary memory of Montreal."
+          },
+          "notes": "Check hotel checkout time and arrange luggage storage if your departure flight is in the evening. The Quartier des Spectacles Jazz Festival afternoon shows are free \u2014 no tickets needed. Consider a private luxury transfer back to the airport to close the trip in style."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Toronto+to+Montreal+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Montreal&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal",
+        "https://www.getyourguide.com/s/?q=Montreal"
+      ],
+      "highlights": [
+        "4.3\u2605 luxury hotel",
+        "Direct flight (no layovers)",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-685 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Montreal food and festivals, $1500 solo, 4 days, July 2027, from Toronto",
+  "session_tags": {
+    "query_id": "CTL-10",
+    "condition": "full_rerun",
+    "run_index": 3
+  }
+}

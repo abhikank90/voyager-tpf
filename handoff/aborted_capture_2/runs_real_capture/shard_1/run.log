@@ -1,0 +1,476 @@
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.

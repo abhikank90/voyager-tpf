@@ -1,0 +1,768 @@
+{
+  "session_id": "1f0b66cd-00c6-4682-b8c3-e11ce1456a3b",
+  "intent": {
+    "destination": "Hawaii",
+    "origin": "Seattle",
+    "budget_usd": 5000.0,
+    "duration_days": 10,
+    "travel_month": "August",
+    "travel_year": 2026,
+    "interests": [
+      "beaches",
+      "family activities"
+    ],
+    "group_size": 2,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Hawaii family beach vacation, $5000, 10 days, August 2026 from Seattle"
+  },
+  "selected_flight": {
+    "price_usd": 1360,
+    "airline": "UA",
+    "departure": "2027-08-15T08:00:00",
+    "arrival": "2027-08-15T22:30:00",
+    "stops": 1,
+    "duration": "PT14H30M"
+  },
+  "selected_hotel": {
+    "name": "Aegean Bliss Resort, Hawaii",
+    "price_per_night_usd": 85,
+    "total_usd": 850,
+    "rating": 4.3,
+    "amenities": [
+      "beach access",
+      "breakfast included",
+      "wifi",
+      "pool"
+    ],
+    "location": "Beachfront"
+  },
+  "experiences": [
+    {
+      "name": "Snorkeling at Hanauma Bay",
+      "description": "Explore one of Hawaii's most pristine marine sanctuaries with the whole family. The calm, shallow waters are perfect for kids and beginners, with colorful tropical fish and sea turtles visible just below the surface. Reserve spots in advance as daily entry is limited.",
+      "cost_usd": 60,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Hanauma Bay Nature Preserve, East Oahu"
+    },
+    {
+      "name": "Polynesian Cultural Center Visit",
+      "description": "A full-day family adventure showcasing the cultures of Hawaii, Samoa, Tonga, Fiji, Tahiti, and New Zealand through live performances, hands-on activities, and a spectacular evening luau show. Kids can try traditional crafts, canoe rides, and fire-making demonstrations.",
+      "cost_usd": 180,
+      "category": "culture",
+      "best_time_of_day": "afternoon",
+      "location": "Laie, North Shore Oahu"
+    },
+    {
+      "name": "Kaanapali Beach Family Day",
+      "description": "Spend a relaxing day at one of Maui's most family-friendly beaches featuring calm, clear waters ideal for swimming and boogie boarding. Watch cliff divers at Black Rock (Puu Kekaa), build sandcastles, and enjoy beachside shave ice from nearby vendors.",
+      "cost_usd": 40,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Kaanapali Beach, West Maui"
+    },
+    {
+      "name": "Road to Hana Waterfall Adventure",
+      "description": "Drive the legendary Road to Hana with the family, stopping at stunning waterfalls like Wailua Falls and Twin Falls, lush rainforest trails, and black sand beaches. Pack a picnic and let kids splash in natural freshwater pools. A scenic and memorable full-day experience.",
+      "cost_usd": 80,
+      "category": "activities",
+      "best_time_of_day": "morning",
+      "location": "Hana Highway, East Maui"
+    },
+    {
+      "name": "Traditional Hawaiian Luau at Old Lahaina Luau",
+      "description": "Experience an authentic Hawaiian luau featuring a traditional imu ceremony (underground pig roast), hula dancing, live music, and a feast of local dishes including poi, kalua pork, and haupia coconut pudding. A magical sunset setting makes this a highlight of any Hawaii family trip.",
+      "cost_usd": 130,
+      "category": "culture",
+      "best_time_of_day": "evening",
+      "location": "Lahaina, West Maui"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-08-15",
+    "return": "2027-08-25",
+    "nights": 10,
+    "month": "august",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Hawaii",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 2600.0,
+      "flight": {
+        "price_usd": 1360,
+        "airline": "UA",
+        "departure": "2027-08-15T08:00:00",
+        "arrival": "2027-08-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Hawaii",
+        "price_per_night_usd": 85,
+        "total_usd": 850,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [
+        {
+          "name": "Kaanapali Beach Family Day",
+          "description": "Spend a relaxing day at one of Maui's most family-friendly beaches featuring calm, clear waters ideal for swimming and boogie boarding. Watch cliff divers at Black Rock (Puu Kekaa), build sandcastles, and enjoy beachside shave ice from nearby vendors.",
+          "cost_usd": 40,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Kaanapali Beach, West Maui"
+        }
+      ],
+      "itinerary": {
+        "num_days": 10,
+        "destination": "Hawaii",
+        "style": "budget",
+        "total_cost": 2600.0,
+        "breakdown": {
+          "flight": 1360.0,
+          "hotel": 850.0,
+          "experiences": 40.0,
+          "food": 250,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Arrival Day)",
+          "morning": "No activities \u2014 flight arrives at 22:30",
+          "afternoon": "No activities \u2014 flight arrives at 22:30",
+          "evening": "Arrive at Honolulu/Maui airport at 22:30 on Flight UA. Collect luggage, arrange budget shuttle or shared ride to Aegean Bliss Resort. Check in, unpack essentials, and get a good night's rest.",
+          "meals": {
+            "breakfast": "On the plane or at departure airport",
+            "lunch": "On the plane or at layover airport",
+            "dinner": "Grab a quick bite at the airport \u2014 look for local plate lunch counters or a convenience store near the resort for snacks under $10"
+          },
+          "notes": "Keep arrival night simple. Pre-download offline maps (Google Maps) for the area around your resort. Pick up a reusable water bottle \u2014 Hawaii's tap water is safe and will save money daily. Confirm resort check-in accepts late arrivals."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16",
+          "morning": "Sleep in and recover from travel. After a leisurely wake-up, walk the beachfront outside Aegean Bliss Resort. Explore the immediate shoreline, watch the sunrise, and get your bearings. Pack sunscreen, reef-safe of course, and enjoy a slow start as a family.",
+          "afternoon": "Head to Kaanapali Beach for your first full Hawaiian beach experience. The calm, clear waters are perfect for families with kids. Rent snorkel gear from a local budget shop (~$10\u2013$15/person) and explore the reef near Black Rock (Pu'u Keka'a). Build sandcastles, swim, and soak in the scenery.",
+          "evening": "Stroll the Kaanapali Boardwalk at sunset \u2014 it's free and stunning. Watch the traditional cliff diving ceremony at Black Rock (free to observe, happens around sunset). Head back to the resort area for a relaxed evening.",
+          "meals": {
+            "breakfast": "Pick up groceries at a nearby Safeway or Foodland \u2014 grab yogurt, fruit, and granola bars for a cheap in-room breakfast (~$5\u2013$8/person)",
+            "lunch": "Pack sandwiches or snacks from the grocery store to enjoy on the beach \u2014 budget ~$5\u2013$7/person",
+            "dinner": "Aloha Mixed Plate in Lahaina \u2014 a beloved local spot with generous Hawaiian plate lunches (kalua pork, lomi salmon, rice, mac salad) for ~$12\u2013$16/person"
+          },
+          "notes": "Buy a small cooler bag and stock up at the grocery store today \u2014 this single investment will save significant money on lunches and snacks throughout the trip. Apply reef-safe sunscreen 30 minutes before entering the water."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17",
+          "morning": "Visit the historic town of Lahaina (if accessible \u2014 check local conditions). Walk Front Street, explore the giant Banyan Tree Park (free), and browse the local art galleries and shops. Kids love climbing around the massive banyan tree roots.",
+          "afternoon": "Head to Kapalua Beach, one of Maui's most protected and family-friendly coves. The calm bay is excellent for beginner snorkeling and swimming with young children. The beach is free and has restroom facilities. Bring your packed lunch cooler.",
+          "evening": "Return to the resort. Enjoy a family game night or watch the sunset from the beachfront. Look for free local entertainment \u2014 many resort areas have free hula or live music performances in the evenings.",
+          "meals": {
+            "breakfast": "In-room breakfast from grocery supplies \u2014 fruit, cereal, or toast if you have access to a kitchenette (~$4\u2013$6/person)",
+            "lunch": "Packed cooler lunch at Kapalua Beach \u2014 sandwiches, chips, fruit (~$5\u2013$7/person)",
+            "dinner": "Maui Tacos \u2014 a local chain with affordable and delicious Mexican-Hawaiian fusion. Fish tacos and burritos run ~$10\u2013$14/person"
+          },
+          "notes": "Lahaina has significant history \u2014 the Banyan Tree was planted in 1873. Check if any free community events or farmers markets are happening this evening in the Lahaina area. Kids get a lot of joy from the tree alone!"
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18",
+          "morning": "Early morning visit to the Maui Ocean Center in Ma'alaea (budget tip: book tickets online in advance for ~10% discount, ~$30\u2013$35/adult, ~$20\u2013$25/child). This world-class aquarium features Hawaiian sea turtles, sharks, and a stunning walk-through ocean tunnel \u2014 a huge hit with kids.",
+          "afternoon": "After the aquarium, head to Ma'alaea Harbor and walk the harbor boardwalk for free. Watch fishing boats come in. Then drive to Kihei for the afternoon \u2014 explore Kamaole Beach Parks I, II, and III (all free). These are some of Maui's best family beaches with lifeguards on duty.",
+          "evening": "Explore Kihei town for dinner. Browse the Kihei Kalama Village outdoor market area. Enjoy the relaxed South Maui vibe before heading back north to the resort.",
+          "meals": {
+            "breakfast": "In-room breakfast \u2014 oatmeal packets, bananas, and coffee (~$3\u2013$5/person)",
+            "lunch": "Da Kitchen in Kihei \u2014 massive local plate lunches at great value. The loco moco and kalua pig plates are legendary (~$12\u2013$15/person)",
+            "dinner": "Eskimo Candy Seafood Market & Cafe in Kihei \u2014 fresh, affordable seafood in a casual setting. Fish and chips or poke bowls ~$14\u2013$18/person"
+          },
+          "notes": "Maui Ocean Center is worth the splurge \u2014 it's educational and entertaining for all ages. Check their website for family bundle pricing. Kamaole Beach Parks have free parking and restrooms. Lifeguards make these beaches especially family-safe."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19",
+          "morning": "Drive the scenic Road to Hana \u2014 start early (by 7:30 AM) to beat traffic. Stop at Twin Falls (free, easy hike for families), the Waikamoi Nature Trail (free short walk through bamboo forest), and Ho'okipa Beach overlook for stunning views and sea turtle spotting.",
+          "afternoon": "Continue the Road to Hana. Stop at Wai'anapanapa State Park \u2014 black sand beach, sea caves, and lava arches. Reservation required in advance (~$5/person + $10 parking). Eat your packed lunch here with a dramatic backdrop. Continue to Hana town briefly, then turn back.",
+          "evening": "Return drive \u2014 take the same route back (the Piilani Highway return route can be rough for standard rental cars). Arrive back at the resort tired but exhilarated. Order takeout or use resort facilities for a low-key dinner.",
+          "meals": {
+            "breakfast": "Early in-room breakfast before departure \u2014 granola bars, fruit, and coffee to go (~$3\u2013$5/person)",
+            "lunch": "Packed cooler lunch \u2014 this is essential for Road to Hana as food options are very limited and expensive. Budget ~$6\u2013$8/person",
+            "dinner": "Takeout from a local spot near the resort \u2014 pizza, plate lunch, or deli items. Budget ~$10\u2013$15/person"
+          },
+          "notes": "Road to Hana is a full-day commitment \u2014 plan for 10\u201312 hours. Reserve Wai'anapanapa State Park well in advance at hawaiistateparks.reserveamerica.com. Bring motion sickness remedies if anyone in the family is sensitive \u2014 the road has 600+ curves. Pack extra water, snacks, and a first-aid kit."
+        },
+        {
+          "day": 6,
+          "date": "2027-08-20",
+          "morning": "Rest and recovery day after Road to Hana. Enjoy a slow morning at the resort's beachfront. Let kids play in the sand and shallow water right outside the hotel. Adults can relax with a book while kids explore.",
+          "afternoon": "Visit the Lahaina Farmers Market or Honokowai Farmers Market (check days/times \u2014 typically Tuesday/Friday mornings, so plan accordingly). Browse fresh tropical fruits, local snacks, and handmade crafts. Then spend the afternoon at a nearby beach \u2014 try Honokowai Beach Park, a quiet local favorite with calm waters and a grassy picnic area.",
+          "evening": "Sunset picnic on the beach using fresh items from the farmers market. This is a magical, budget-friendly family experience. Watch the sky turn pink and orange over the Pacific.",
+          "meals": {
+            "breakfast": "Splurge slightly \u2014 visit a local bakery like Leoda's Kitchen and Pie Shop in Olowalu for fresh pastries (~$6\u2013$10/person, worth it!)",
+            "lunch": "Farmers market finds \u2014 fresh fruit, tamales, or local snacks (~$8\u2013$12/person)",
+            "dinner": "Beach picnic with farmers market purchases plus grocery store additions \u2014 poke, fruit, crackers, cheese, juice (~$10\u2013$14/person)"
+          },
+          "notes": "This is a perfect recharge day. Leoda's is a beloved local institution \u2014 their pies are incredible. Honokowai Beach Park has free parking, restrooms, and a playground, making it ideal for families with young children."
+        },
+        {
+          "day": 7,
+          "date": "2027-08-21",
+          "morning": "Hike the Waihee Ridge Trail \u2014 one of Maui's best free hikes with panoramic views. The trail is moderately challenging (3 miles round trip, 1,500 ft elevation gain) and best for families with older children (8+). Start early to avoid heat. Younger kids can enjoy the lower portion of the trail.",
+          "afternoon": "After the hike, cool off at Waihee Beach Park \u2014 a local, uncrowded beach near the trailhead. Rinse off, relax, and let the kids play. Then head to Kahului for some practical shopping at Costco or Target to restock budget-friendly food supplies.",
+          "evening": "Explore Kahului town. Visit the Maui Arts & Cultural Center grounds (free to walk around). Check if any free or low-cost community events are scheduled. Head back to the resort for a home-cooked style meal.",
+          "meals": {
+            "breakfast": "In-room breakfast \u2014 pack extra for the hike (~$4\u2013$6/person)",
+            "lunch": "Post-hike reward at Tin Roof in Kahului \u2014 Chef Sheldon Simeon's casual spot with incredible local food at great prices. Garlic noodles and mochiko chicken ~$12\u2013$16/person",
+            "dinner": "Cook in-room or on resort grounds if facilities available \u2014 pick up fresh fish from Costco or a local fish market and grill (~$10\u2013$14/person)"
+          },
+          "notes": "Waihee Ridge Trail requires a free permit \u2014 check hawaii.gov for current requirements. Bring plenty of water (at least 2L per person) and sunscreen. Tin Roof often has lines \u2014 arrive before noon or after 1:30 PM to minimize wait time. It is absolutely worth it."
+        },
+        {
+          "day": 8,
+          "date": "2027-08-22",
+          "morning": "Morning snorkeling adventure at Molokini Crater \u2014 book a budget snorkel tour through a company like Pride of Maui or Frogman Charters (~$40\u2013$55/person for budget options vs. $100+ for luxury tours). Depart from Ma'alaea Harbor around 7 AM. The underwater visibility at Molokini is world-class.",
+          "afternoon": "Return from the boat tour by early afternoon. Spend the rest of the afternoon at Kaanapali Beach \u2014 revisit your favorite family beach for a relaxed swim and sandcastle session. Rent a boogie board (~$5\u2013$8/hour) for some wave-riding fun.",
+          "evening": "Celebrate the week's adventures with a slightly nicer dinner out. Look for early-bird specials or happy hour menus at local restaurants to keep costs down.",
+          "meals": {
+            "breakfast": "Light in-room breakfast before the early boat departure \u2014 fruit, granola bars, and water (~$3\u2013$5/person)",
+            "lunch": "Many snorkel tours include a light snack \u2014 supplement with packed cooler items. Or grab a quick plate at the harbor (~$10\u2013$13/person)",
+            "dinner": "Hula Grill Kaanapali \u2014 enjoy their barefoot bar happy hour (4\u20135 PM) for reduced prices on appetizers and drinks. Budget ~$18\u2013$25/person for a special evening meal"
+          },
+          "notes": "Book the Molokini snorkel tour at least 3\u20135 days in advance for best pricing. Bring underwater cameras or a waterproof phone case \u2014 the marine life at Molokini is spectacular. Motion sickness patches available at pharmacies if needed for the boat ride."
+        },
+        {
+          "day": 9,
+          "date": "2027-08-23",
+          "morning": "Visit Iao Valley State Monument \u2014 a stunning green valley with the iconic Iao Needle rock formation. Admission is ~$5/person (+ $10 parking). Easy paved walking paths make it very family-friendly. Learn about the significant historical battle of Kepaniwai that took place here.",
+          "afternoon": "Stop at Kepaniwai Heritage Gardens in the valley \u2014 a free park celebrating Hawaii's multicultural heritage with gardens representing different ethnic groups. Then head to Baldwin Beach Park in Paia for a classic North Shore beach afternoon. Paia town is charming and walkable.",
+          "evening": "Explore Paia town \u2014 browse the eclectic boutiques (window shopping is free!), and enjoy the bohemian North Shore vibe. This is your second-to-last evening, so take time to reflect and enjoy the moment.",
+          "meals": {
+            "breakfast": "Charley's Restaurant & Saloon in Paia \u2014 a North Shore institution with hearty, affordable breakfasts. Pancakes and eggs ~$12\u2013$16/person",
+            "lunch": "Paia Fish Market \u2014 legendary fish tacos and plates at reasonable prices (~$14\u2013$18/person). Lines move fast.",
+            "dinner": "Pick up fresh poke bowls from a Foodland or local poke shop \u2014 assemble a feast back at the resort for a relaxed final full evening (~$12\u2013$16/person)"
+          },
+          "notes": "Iao Valley is culturally sacred to Native Hawaiians \u2014 please be respectful and stay on designated paths. Baldwin Beach has strong currents at times \u2014 check conditions before letting kids swim. Paia is about 45 minutes from Kaanapali, so plan drive times accordingly."
+        },
+        {
+          "day": 10,
+          "date": "2027-08-24 (Final Day)",
+          "morning": "Last morning in Hawaii \u2014 wake up early for one final sunrise beach walk from the resort. Swim one last time in the warm Pacific. Pack up your belongings and check out of Aegean Bliss Resort (store luggage with the front desk if your flight is later in the day).",
+          "afternoon": "Depending on your departure flight time, enjoy a final activity near the airport area. Visit Kanaha Beach Park in Kahului \u2014 a beautiful, uncrowded beach near the airport. Watch windsurfers and kitesurfers, which Maui is world-famous for. A perfect, free final Hawaiian memory.",
+          "evening": "Head to Kahului Airport (OGG) with plenty of time. Grab a final meal at the airport or nearby. Reflect on an incredible 10-day budget Hawaii adventure with the family.",
+          "meals": {
+            "breakfast": "Final in-room or resort breakfast using remaining grocery supplies \u2014 keep it simple (~$4\u2013$6/person)",
+            "lunch": "Down to Earth Natural Foods in Kahului \u2014 a local health food store with an affordable hot bar and deli. Great for a final local meal (~$10\u2013$14/person)",
+            "dinner": "Airport dining or use up any remaining budget on a final treat \u2014 Maui Brewing Company has a location in Kahului for a farewell meal (~$15\u2013$20/person)"
+          },
+          "notes": "Use any remaining cash for last-minute souvenirs at local shops rather than airport stores (prices are 30\u201350% higher at airports). Macadamia nuts, Kona coffee, and Hawaiian sea salt are affordable, lightweight gifts. Arrive at the airport at least 2.5 hours before departure. Mahalo for an amazing trip \u2014 aloha!"
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Seattle+to+Hawaii+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Hawaii&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Hawaii"
+      ],
+      "highlights": [
+        "Save $1150 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Hawaii Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 3200.0,
+      "flight": {
+        "price_usd": 1360,
+        "airline": "UA",
+        "departure": "2027-08-15T08:00:00",
+        "arrival": "2027-08-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Hawaii",
+        "price_per_night_usd": 85,
+        "total_usd": 850,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [
+        {
+          "name": "Snorkeling at Hanauma Bay",
+          "description": "Explore one of Hawaii's most pristine marine sanctuaries with the whole family. The calm, shallow waters are perfect for kids and beginners, with colorful tropical fish and sea turtles visible just below the surface. Reserve spots in advance as daily entry is limited.",
+          "cost_usd": 60,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Hanauma Bay Nature Preserve, East Oahu"
+        },
+        {
+          "name": "Polynesian Cultural Center Visit",
+          "description": "A full-day family adventure showcasing the cultures of Hawaii, Samoa, Tonga, Fiji, Tahiti, and New Zealand through live performances, hands-on activities, and a spectacular evening luau show. Kids can try traditional crafts, canoe rides, and fire-making demonstrations.",
+          "cost_usd": 180,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Laie, North Shore Oahu"
+        },
+        {
+          "name": "Kaanapali Beach Family Day",
+          "description": "Spend a relaxing day at one of Maui's most family-friendly beaches featuring calm, clear waters ideal for swimming and boogie boarding. Watch cliff divers at Black Rock (Puu Kekaa), build sandcastles, and enjoy beachside shave ice from nearby vendors.",
+          "cost_usd": 40,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Kaanapali Beach, West Maui"
+        },
+        {
+          "name": "Road to Hana Waterfall Adventure",
+          "description": "Drive the legendary Road to Hana with the family, stopping at stunning waterfalls like Wailua Falls and Twin Falls, lush rainforest trails, and black sand beaches. Pack a picnic and let kids splash in natural freshwater pools. A scenic and memorable full-day experience.",
+          "cost_usd": 80,
+          "category": "activities",
+          "best_time_of_day": "morning",
+          "location": "Hana Highway, East Maui"
+        },
+        {
+          "name": "Traditional Hawaiian Luau at Old Lahaina Luau",
+          "description": "Experience an authentic Hawaiian luau featuring a traditional imu ceremony (underground pig roast), hula dancing, live music, and a feast of local dishes including poi, kalua pork, and haupia coconut pudding. A magical sunset setting makes this a highlight of any Hawaii family trip.",
+          "cost_usd": 130,
+          "category": "culture",
+          "best_time_of_day": "evening",
+          "location": "Lahaina, West Maui"
+        }
+      ],
+      "itinerary": {
+        "num_days": 10,
+        "destination": "Hawaii",
+        "style": "balanced",
+        "total_cost": 3200.0,
+        "breakdown": {
+          "flight": 1360.0,
+          "hotel": 850.0,
+          "experiences": 490.0,
+          "food": 400,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Sunday)",
+          "morning": "N/A \u2013 Late night arrival. Flight UA lands at 22:30. Transfer to Aegean Bliss Resort and check in.",
+          "afternoon": "N/A \u2013 In transit",
+          "evening": "Arrive at Aegean Bliss Resort Beachfront property. Check in, unpack, and get settled. Take a short stroll along the beachfront to enjoy the night air and ocean sounds.",
+          "meals": {
+            "breakfast": "N/A \u2013 In transit",
+            "lunch": "N/A \u2013 In transit",
+            "dinner": "Light snack from the resort's late-night room service or grab a quick bite at the airport before landing."
+          },
+          "notes": "Keep Day 1 light \u2014 arrival is at 22:30. Confirm resort offers late check-in. Pack a light carry-on snack for the journey. Rest is the priority tonight to recover from travel."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16 (Monday)",
+          "morning": "Sleep in and enjoy a leisurely resort breakfast. After breakfast, take a relaxed walk along the beachfront to get oriented with the area. Dip your toes in the ocean and let the family decompress from travel.",
+          "afternoon": "Head to the resort pool or the beachfront for a casual family beach afternoon. Build sandcastles, splash in the waves, and enjoy the warm Hawaiian sun. Rent snorkel gear from the resort's beach shack for a gentle intro snorkel session in the calm waters near the resort.",
+          "evening": "Explore the local area near the resort for dinner. Enjoy a relaxed sunset from the beach before heading in for the night.",
+          "meals": {
+            "breakfast": "Resort buffet breakfast at Aegean Bliss Resort \u2013 enjoy tropical fruits, eggs, and local Hawaiian staples like poi and fresh pineapple.",
+            "lunch": "Casual beachside lunch at the resort's beach bar \u2013 burgers, fish tacos, and fresh coconut water.",
+            "dinner": "Nearby mid-range restaurant \u2013 try a local Hawaiian plate lunch spot or a casual seafood grill close to the resort. Look for places serving fresh ahi poke bowls and grilled mahi-mahi."
+          },
+          "notes": "This is an orientation and recovery day. Don't over-schedule \u2014 the family needs to adjust to the time zone. Hawaii Standard Time is UTC-10, so jet lag adjustment may be needed."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17 (Tuesday)",
+          "morning": "Snorkeling at Hanauma Bay \u2013 Depart early (arrive by 7:00\u20138:00 AM to beat crowds and secure entry, as daily visitor numbers are capped). Explore one of Hawaii's most pristine marine sanctuaries. The calm, shallow waters are perfect for families. Watch sea turtles, colorful reef fish, and vibrant coral up close.",
+          "afternoon": "Continue exploring Hanauma Bay through midday, then head back toward the resort. Stop at a local shave ice stand on the way back for a classic Hawaiian treat. Spend the late afternoon relaxing at the resort beach.",
+          "evening": "Enjoy a sunset from the resort's beachfront. Freshen up and head out for a family dinner at a nearby mid-range restaurant.",
+          "meals": {
+            "breakfast": "Early light breakfast at the resort before departure \u2013 grab fruit, pastries, and coffee to go.",
+            "lunch": "Pack a picnic lunch or purchase from the snack stand near Hanauma Bay. Sandwiches, fruit, and plenty of water are recommended.",
+            "dinner": "Mid-range Hawaiian seafood restaurant near the resort \u2013 try fresh poke, garlic shrimp, and haupia (coconut pudding) for dessert."
+          },
+          "notes": "Hanauma Bay requires advance reservations online \u2013 book at least 2 days ahead. Entry fee applies (~$25/adult, children under 12 free). Bring reef-safe sunscreen only (Hawaii law). Arrive early to avoid the heat and crowds."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18 (Wednesday)",
+          "morning": "Polynesian Cultural Center Visit \u2013 Depart mid-morning for a full-day family adventure. The center showcases the cultures of Hawaii, Samoa, Tonga, Fiji, Tahiti, and New Zealand through interactive village experiences. Kids can try fire-making, weaving, and traditional games.",
+          "afternoon": "Continue exploring the Polynesian Cultural Center villages. Catch the afternoon canoe pageant on the waterway \u2014 a colorful and entertaining show featuring all six island cultures. Enjoy the center's included activities and exhibits.",
+          "evening": "Stay at the Polynesian Cultural Center for the spectacular 'Ha: Breath of Life' evening show \u2014 a world-class Polynesian theatrical performance featuring fire dancing, drumming, and incredible storytelling. Dinner package available on-site.",
+          "meals": {
+            "breakfast": "Resort breakfast before departure.",
+            "lunch": "Gateway Buffet at the Polynesian Cultural Center \u2013 an all-you-can-eat spread featuring Hawaiian, Polynesian, and American dishes. Mid-range pricing, great value for families.",
+            "dinner": "Ali'i Luau dinner package at the Polynesian Cultural Center \u2013 included with evening show packages. Features traditional Hawaiian dishes, kalua pork, poi, and tropical desserts."
+          },
+          "notes": "Book Polynesian Cultural Center tickets in advance online \u2013 combo packages (with Ali'i Luau and Ha show) offer the best value. The center is located on the North Shore of Oahu. Allow a full day \u2013 gates open around 11:45 AM. Great for all ages."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19 (Thursday)",
+          "morning": "Rest and resort morning. Enjoy breakfast at the resort and a leisurely swim in the ocean or pool. This is a mid-trip recovery day to recharge before the second half of the itinerary.",
+          "afternoon": "Explore the local area near the resort on foot or by rental car. Visit a nearby farmers market if available (many run on weekday afternoons in Hawaii) to sample local tropical fruits, macadamia nuts, and Hawaiian honey. Browse local shops for souvenirs.",
+          "evening": "Traditional Hawaiian Luau at Old Lahaina Luau \u2013 Experience an authentic Hawaiian luau featuring a traditional imu ceremony (underground pig roast), live Hawaiian music, hula dancing, and a feast of local dishes. One of the most authentic luau experiences in Hawaii.",
+          "meals": {
+            "breakfast": "Resort breakfast \u2013 enjoy a full sit-down meal with fresh tropical juices and local Hawaiian specialties.",
+            "lunch": "Local farmers market snacks and plate lunch from a food truck or casual eatery near the market.",
+            "dinner": "Old Lahaina Luau \u2013 Dinner is included with the luau experience. Feast on kalua pig, poi, lomi salmon, haupia, and tropical fruits in an open-air oceanfront setting."
+          },
+          "notes": "Old Lahaina Luau is one of the most sought-after luau experiences in Hawaii \u2013 book well in advance as it sells out months ahead. Check current availability and confirm location details post-2023 Maui recovery. Gates open about 45 minutes before sunset. Dress in aloha attire."
+        },
+        {
+          "day": 6,
+          "date": "2027-08-20 (Friday)",
+          "morning": "Kaanapali Beach Family Day \u2013 Head to Kaanapali Beach, one of Maui's most family-friendly beaches featuring calm, clear waters ideal for swimming and snorkeling. Arrive early to claim a good spot on the beach. Rent beach chairs and umbrellas from a local vendor.",
+          "afternoon": "Continue enjoying Kaanapali Beach. Try a stand-up paddleboard lesson for older kids and adults, or rent a kayak for a family paddle along the coastline. Walk the beachfront Kaanapali Boardwalk and explore the Whaler's Village outdoor mall for shopping and people-watching.",
+          "evening": "Watch the famous Black Rock cliff diving ceremony at Kaanapali Beach at sunset \u2013 a local tradition where a torch lighter dives from the lava rock promontory. Head to Whaler's Village for dinner before returning to the resort.",
+          "meals": {
+            "breakfast": "Grab breakfast at a local caf\u00e9 near Kaanapali \u2013 try a plate of loco moco (rice, hamburger patty, fried egg, and gravy) at a diner-style spot.",
+            "lunch": "Beachside casual lunch at a Kaanapali beach bar \u2013 fish tacos, a\u00e7a\u00ed bowls, and fresh tropical smoothies.",
+            "dinner": "Mid-range restaurant at Whaler's Village, Kaanapali \u2013 options include fresh seafood, Hawaiian fusion, and family-friendly American fare with ocean views."
+          },
+          "notes": "Kaanapali Beach is located on Maui's west coast. Plan a 30\u201345 minute drive from most resort areas. Parking is available at Whaler's Village (validated with purchase). The Black Rock cliff diving ceremony typically happens at sunset \u2013 check exact timing locally."
+        },
+        {
+          "day": 7,
+          "date": "2027-08-21 (Saturday)",
+          "morning": "Road to Hana Waterfall Adventure \u2013 Depart early (6:30\u20137:00 AM) for the legendary Road to Hana drive. Stop at Wailua Falls for a stunning waterfall view early in the morning before crowds arrive. Continue along the winding coastal highway, stopping at scenic lookouts and black sand beaches.",
+          "afternoon": "Continue the Road to Hana, stopping at Twin Falls for a short hike and swimming hole, the Garden of Eden Arboretum for lush tropical scenery, and Ke'anae Peninsula for dramatic ocean views. Enjoy a refreshing banana bread stop from a roadside stand \u2013 a beloved Hana road tradition.",
+          "evening": "Begin the return journey from Hana in the late afternoon. The drive back takes 2\u20133 hours. Arrive back at the resort by early evening, tired but exhilarated. Enjoy a relaxing dinner close to the resort.",
+          "meals": {
+            "breakfast": "Very early light breakfast at the resort or pack portable items \u2013 granola bars, fruit, and coffee in a travel mug.",
+            "lunch": "Roadside stops along the Road to Hana \u2013 famous banana bread from Aunty Sandy's, fresh fruit stands, and a casual plate lunch at a small local eatery in Hana town.",
+            "dinner": "Low-key dinner near the resort \u2013 a casual sit-down restaurant or resort dining. Keep it simple after a long day on the road."
+          },
+          "notes": "The Road to Hana is approximately 64 miles with 620 curves and 59 bridges \u2013 allow a full 10\u201312 hour day. Rent a comfortable car (SUV recommended). Download offline maps as cell service is spotty. Bring motion sickness remedies for young children. Gas up before departing. Start early to avoid traffic."
+        },
+        {
+          "day": 8,
+          "date": "2027-08-22 (Sunday)",
+          "morning": "Rest and recovery morning after the Road to Hana adventure. Sleep in, enjoy a leisurely resort breakfast, and spend time at the resort pool or beach. Let the kids play freely while adults relax.",
+          "afternoon": "Visit a nearby beach for a gentle, low-key afternoon. Try boogie boarding in the shore break or simply walk along the coastline collecting shells. Consider a short family hike on a nearby easy coastal trail if energy permits.",
+          "evening": "Enjoy a special family dinner at a slightly nicer mid-range restaurant to celebrate the midpoint of the trip. Look for a restaurant with ocean views and live Hawaiian music.",
+          "meals": {
+            "breakfast": "Full resort breakfast \u2013 take your time and enjoy the spread.",
+            "lunch": "Light lunch at the resort beach bar or a nearby casual caf\u00e9.",
+            "dinner": "Mid-range restaurant with Hawaiian ambiance \u2013 try fresh island fish, macadamia-crusted mahi-mahi, and a tropical dessert like liliko'i (passion fruit) cheesecake."
+          },
+          "notes": "This is a deliberate rest day to prevent burnout and keep the family energized for the final stretch of the trip. Hawaii's beauty is best enjoyed when you're not exhausted \u2013 balance activity days with recovery days."
+        },
+        {
+          "day": 9,
+          "date": "2027-08-23 (Monday)",
+          "morning": "Return to a favorite beach for a final full beach day. Consider revisiting Hanauma Bay or a new beach discovered during the trip. Bring snorkel gear for one last underwater adventure. Spend the morning fully immersed in the ocean.",
+          "afternoon": "Beach afternoon continues. Try a new water activity the family hasn't done yet \u2013 parasailing, a glass-bottom boat tour, or a family surf lesson with a local instructor. Many surf schools cater specifically to beginners and families.",
+          "evening": "Souvenir shopping at a local market or shopping center. Pick up macadamia nut chocolates, Kona coffee, Hawaiian quilts, and aloha wear for friends and family back home. End the evening with a sunset beach walk.",
+          "meals": {
+            "breakfast": "Casual breakfast at a local spot near the beach \u2013 try a\u00e7a\u00ed bowls, fresh fruit, and Kona coffee.",
+            "lunch": "Beachside picnic or casual food truck lunch \u2013 Hawaiian plate lunches with rice, macaroni salad, and teriyaki chicken or kalua pork.",
+            "dinner": "Farewell-style dinner at a well-regarded mid-range Hawaiian restaurant \u2013 celebrate the near-end of the trip with a memorable meal featuring fresh island seafood and tropical cocktails (or mocktails for kids)."
+          },
+          "notes": "Book surf lessons in advance as popular instructors fill up quickly. If the family wants a final snorkel at Hanauma Bay, reserve the entry slot online the day before. Begin packing non-essentials this evening to ease the final morning."
+        },
+        {
+          "day": 10,
+          "date": "2027-08-24 (Tuesday)",
+          "morning": "Final morning in Hawaii. Wake up early for one last sunrise on the beach \u2013 a magical way to say goodbye to the islands. Take photos, collect a handful of sand, and soak in the peaceful morning atmosphere. Enjoy a final resort breakfast.",
+          "afternoon": "Check out of Aegean Bliss Resort (standard checkout is typically 11:00 AM \u2013 request late checkout if flight allows). If time permits before departure, visit a nearby beach or take a final stroll along the coastline. Head to the airport with plenty of time for the return flight.",
+          "evening": "Departure. Carry the aloha spirit home with you.",
+          "meals": {
+            "breakfast": "Final resort breakfast \u2013 savor every bite of fresh tropical fruits, eggs, and local Hawaiian favorites.",
+            "lunch": "Light lunch near the airport or at the airport terminal \u2013 many Hawaii airports have good local food options including poke bowls and plate lunches.",
+            "dinner": "Airport dining or in-flight meal depending on departure time."
+          },
+          "notes": "Request late checkout from Aegean Bliss Resort if your flight departs in the evening \u2013 most resorts accommodate this based on availability. Store luggage with the concierge if checkout is before the flight. Allow extra time at the airport as Hawaiian airports can be busy in summer. Mahalo for a wonderful trip!"
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Seattle+to+Hawaii+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Hawaii&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.3\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Hawaii Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 3400.0,
+      "flight": {
+        "price_usd": 1360,
+        "airline": "UA",
+        "departure": "2027-08-15T08:00:00",
+        "arrival": "2027-08-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Hawaii",
+        "price_per_night_usd": 85,
+        "total_usd": 850,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [
+        {
+          "name": "Snorkeling at Hanauma Bay",
+          "description": "Explore one of Hawaii's most pristine marine sanctuaries with the whole family. The calm, shallow waters are perfect for kids and beginners, with colorful tropical fish and sea turtles visible just below the surface. Reserve spots in advance as daily entry is limited.",
+          "cost_usd": 60,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Hanauma Bay Nature Preserve, East Oahu"
+        },
+        {
+          "name": "Polynesian Cultural Center Visit",
+          "description": "A full-day family adventure showcasing the cultures of Hawaii, Samoa, Tonga, Fiji, Tahiti, and New Zealand through live performances, hands-on activities, and a spectacular evening luau show. Kids can try traditional crafts, canoe rides, and fire-making demonstrations.",
+          "cost_usd": 180,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Laie, North Shore Oahu"
+        },
+        {
+          "name": "Kaanapali Beach Family Day",
+          "description": "Spend a relaxing day at one of Maui's most family-friendly beaches featuring calm, clear waters ideal for swimming and boogie boarding. Watch cliff divers at Black Rock (Puu Kekaa), build sandcastles, and enjoy beachside shave ice from nearby vendors.",
+          "cost_usd": 40,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Kaanapali Beach, West Maui"
+        },
+        {
+          "name": "Road to Hana Waterfall Adventure",
+          "description": "Drive the legendary Road to Hana with the family, stopping at stunning waterfalls like Wailua Falls and Twin Falls, lush rainforest trails, and black sand beaches. Pack a picnic and let kids splash in natural freshwater pools. A scenic and memorable full-day experience.",
+          "cost_usd": 80,
+          "category": "activities",
+          "best_time_of_day": "morning",
+          "location": "Hana Highway, East Maui"
+        },
+        {
+          "name": "Traditional Hawaiian Luau at Old Lahaina Luau",
+          "description": "Experience an authentic Hawaiian luau featuring a traditional imu ceremony (underground pig roast), hula dancing, live music, and a feast of local dishes including poi, kalua pork, and haupia coconut pudding. A magical sunset setting makes this a highlight of any Hawaii family trip.",
+          "cost_usd": 130,
+          "category": "culture",
+          "best_time_of_day": "evening",
+          "location": "Lahaina, West Maui"
+        }
+      ],
+      "itinerary": {
+        "num_days": 10,
+        "destination": "Hawaii",
+        "style": "premium",
+        "total_cost": 3400.0,
+        "breakdown": {
+          "flight": 1360.0,
+          "hotel": 850.0,
+          "experiences": 490.0,
+          "food": 600,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15",
+          "morning": "No activities scheduled \u2014 late night arrival at 22:30",
+          "afternoon": "No activities scheduled \u2014 late night arrival at 22:30",
+          "evening": "Arrive at airport, private luxury transfer to Aegean Bliss Resort. Check in to your Beachfront suite, enjoy a welcome amenity and light refreshments prepared by the resort. Take a quiet stroll along the moonlit beach to unwind from travel.",
+          "meals": {
+            "breakfast": "Not applicable \u2014 travel day",
+            "lunch": "Not applicable \u2014 travel day",
+            "dinner": "In-room dining from the resort's late-night premium menu \u2014 charcuterie board, fresh tropical fruits, and a bottle of champagne to celebrate arrival"
+          },
+          "notes": "Arrange private airport transfer in advance. Request early check-in or a day-use room if arriving after a long flight. Keep Day 1 light to allow the family to rest and acclimate to Hawaii time."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16",
+          "morning": "Leisurely resort morning \u2014 enjoy a sunrise beach walk along your private beachfront, followed by a relaxing breakfast with ocean views. Let the family settle in, explore the resort pool, and get acquainted with the property amenities.",
+          "afternoon": "Snorkeling at Hanauma Bay \u2014 explore one of Hawaii's most pristine marine sanctuaries with the whole family. The calm, shallow waters make it ideal for all ages. Book a premium guided snorkel tour for personalized instruction and the best wildlife spotting.",
+          "evening": "Return to the resort for sunset cocktails on the beachfront terrace. Enjoy a refined dinner at the resort's signature oceanfront restaurant, savoring fresh Hawaiian seafood and local farm-to-table cuisine.",
+          "meals": {
+            "breakfast": "Resort's oceanfront breakfast restaurant \u2014 fresh a\u00e7a\u00ed bowls, eggs Benedict with kalua pork, tropical fruit platters, and Kona coffee",
+            "lunch": "Beachside light bites at Hanauma Bay area \u2014 pack a premium resort picnic basket or dine at a nearby upscale caf\u00e9",
+            "dinner": "Aegean Bliss Resort signature restaurant \u2014 fresh-caught mahi-mahi, lobster bisque, and a curated Hawaiian wine list"
+          },
+          "notes": "Hanauma Bay requires advance reservations \u2014 book online well ahead of your trip as slots fill quickly. Bring reef-safe sunscreen only. Snorkel gear can be rented on-site or arranged through the resort concierge for premium equipment."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17",
+          "morning": "Private surf or stand-up paddleboard lesson arranged through the resort for the whole family. Enjoy the calm morning waters directly from your beachfront location before the day heats up.",
+          "afternoon": "Polynesian Cultural Center Visit \u2014 a full-day family adventure showcasing the cultures of Hawaii, Samoa, Tonga, Fiji, Tahiti, and New Zealand. Explore authentic village exhibits, watch live cultural demonstrations, and participate in hands-on activities. Upgrade to the Ali'i Luau package for a premium dining experience.",
+          "evening": "Polynesian Cultural Center evening show \u2014 the spectacular 'Ha: Breath of Life' night show featuring world-class Polynesian performers, fire dancers, and stunning stage production. Return to the resort by private transfer.",
+          "meals": {
+            "breakfast": "In-room premium breakfast delivered to your beachfront suite \u2014 freshly baked pastries, local fruits, smoked salmon, and fresh-pressed juices",
+            "lunch": "Polynesian Cultural Center \u2014 Ali'i Luau premium buffet featuring traditional Hawaiian and Polynesian dishes",
+            "dinner": "Polynesian Cultural Center Ali'i Luau dinner package \u2014 kalua pig, poi, lomi salmon, haupia, and tropical cocktails included with the evening show"
+          },
+          "notes": "The Polynesian Cultural Center is located on the North Shore of Oahu \u2014 arrange a private luxury vehicle or chauffeured transfer for the day. Book the Ali'i Luau package well in advance as it sells out quickly, especially in August."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18",
+          "morning": "Private catamaran or luxury yacht charter \u2014 sail along the coastline with your family, enjoying snorkeling stops, dolphin watching, and stunning views of the Hawaiian shoreline. Many premium charters include breakfast on board.",
+          "afternoon": "Return to the resort and spend a relaxed afternoon at the beachfront. Enjoy resort amenities including the infinity pool, beach cabana service, and optional kids' club activities if traveling with younger children.",
+          "evening": "Traditional Hawaiian Luau at Old Lahaina Luau \u2014 experience an authentic Hawaiian luau featuring a traditional imu ceremony (underground pig roast), hula performances, and live Hawaiian music. One of the most celebrated luau experiences in all of Hawaii.",
+          "meals": {
+            "breakfast": "On board the private catamaran \u2014 continental breakfast with tropical fruits, pastries, and mimosas served at sea",
+            "lunch": "Resort beach club \u2014 premium burgers, fresh poke bowls, lobster rolls, and fresh coconut water served at your private cabana",
+            "dinner": "Old Lahaina Luau \u2014 full traditional Hawaiian feast including kalua pig, fresh seafood, poi, sweet potato, and tropical desserts with open bar"
+          },
+          "notes": "Old Lahaina Luau is one of the most sought-after experiences in Hawaii \u2014 book as early as possible, ideally months in advance. Private catamaran charters can be arranged through the resort concierge and typically accommodate families of all sizes."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19",
+          "morning": "Road to Hana Waterfall Adventure \u2014 depart early for the legendary Road to Hana, stopping at stunning waterfalls like Wailua Falls, Twin Falls, and Makahiku Falls. A private guided tour ensures the family enjoys the best stops with expert local knowledge.",
+          "afternoon": "Continue the Road to Hana journey, exploring black sand beaches, bamboo forests, and lush rainforest trails. Stop at a private scenic overlook for a gourmet picnic lunch prepared by the resort.",
+          "evening": "Return from Road to Hana and relax at the resort. Enjoy a quiet, intimate dinner at the resort's fine dining restaurant, reflecting on the day's breathtaking scenery.",
+          "meals": {
+            "breakfast": "Early grab-and-go breakfast from the resort \u2014 gourmet sandwiches, fresh fruit, pastries, and thermos of Kona coffee for the road",
+            "lunch": "Private gourmet picnic basket prepared by the resort chef \u2014 artisan sandwiches, tropical fruit salad, cheese board, and sparkling water at a scenic Hana overlook",
+            "dinner": "Aegean Bliss Resort fine dining \u2014 wagyu beef tenderloin, fresh island fish, and a premium dessert selection with local Hawaiian flavors"
+          },
+          "notes": "Road to Hana is a full-day commitment \u2014 depart by 7:00\u20138:00 AM to maximize time. A private guided tour is strongly recommended for families to handle driving while you enjoy the scenery. Some road sections are narrow; a 4WD vehicle is ideal. Book a licensed local guide through the concierge."
+        },
+        {
+          "day": 6,
+          "date": "2027-08-20",
+          "morning": "Kaanapali Beach Family Day \u2014 spend a relaxing morning at one of Maui's most family-friendly beaches featuring calm, clear waters ideal for swimming, snorkeling, and building sandcastles. Reserve a premium beach cabana with full service.",
+          "afternoon": "Continue enjoying Kaanapali Beach \u2014 try parasailing, glass-bottom kayaking, or a family whale watching boat tour (seasonal). Explore the Whaler's Village open-air shopping mall for premium Hawaiian souvenirs and local boutiques.",
+          "evening": "Sunset dinner at one of Kaanapali's top beachfront restaurants. Watch the iconic Black Rock cliff diving ceremony at Sheraton Maui at sunset \u2014 a beloved local tradition.",
+          "meals": {
+            "breakfast": "Resort breakfast \u2014 eggs your way, Hawaiian sweet bread French toast, fresh-squeezed juice, and a smoothie bar",
+            "lunch": "Beachfront lunch at Kaanapali \u2014 Leilani's on the Beach or Hula Grill for fresh fish tacos, shrimp scampi, and tropical cocktails with ocean views",
+            "dinner": "Japengo at Hyatt Regency Maui or Dukes Beach House \u2014 premium Pacific Rim cuisine, fresh sushi, and a world-class sunset view from the terrace"
+          },
+          "notes": "Kaanapali Beach is located on Maui's west side \u2014 arrange a private transfer or rental car. The Black Rock cliff diving ceremony happens nightly at sunset at the Sheraton Maui and is free to watch. Premium beach cabanas at Kaanapali should be reserved in advance through your hotel concierge."
+        },
+        {
+          "day": 7,
+          "date": "2027-08-21",
+          "morning": "Sunrise helicopter tour over Maui or the Big Island \u2014 experience breathtaking aerial views of volcanic craters, lush valleys, hidden waterfalls, and dramatic coastlines. A doors-off private helicopter charter offers the ultimate luxury experience for the family.",
+          "afternoon": "Return to the resort for a spa afternoon \u2014 indulge in traditional Hawaiian lomi lomi massages, hot stone treatments, and family wellness experiences at the resort spa. Kids can enjoy resort activities while adults relax.",
+          "evening": "Private beachfront dinner experience \u2014 arrange a romantic and memorable private dinner set up directly on the beach with a personal chef, candlelight, and a curated menu of Hawaiian delicacies.",
+          "meals": {
+            "breakfast": "Light pre-flight breakfast at the resort \u2014 fresh fruit, yogurt parfait, granola, and green juice",
+            "lunch": "Resort poolside dining \u2014 fresh poke bowls, grilled fish tacos, a\u00e7a\u00ed smoothie bowls, and tropical fruit plates",
+            "dinner": "Private beachfront dinner arranged by resort concierge \u2014 five-course tasting menu featuring lobster, wagyu, fresh island fish, and a custom dessert with champagne"
+          },
+          "notes": "Private helicopter tours must be booked well in advance \u2014 Blue Hawaiian Helicopters and Sunshine Helicopters are top-rated operators. The private beachfront dinner experience should be arranged with the resort concierge at least 2\u20133 days in advance and is weather-dependent."
+        },
+        {
+          "day": 8,
+          "date": "2027-08-22",
+          "morning": "Visit the Maui Ocean Center \u2014 the premier aquarium in Hawaii featuring sharks, manta rays, sea turtles, and stunning coral reef exhibits. A fantastic family experience with interactive displays and educational programs for children.",
+          "afternoon": "Explore Lahaina Town \u2014 stroll through the historic whaling village, visit the iconic 150-year-old Banyan Tree, browse art galleries, and shop at premium local boutiques. Visit the Lahaina Heritage Museum for a deeper dive into Hawaiian history.",
+          "evening": "Sunset sailing cruise \u2014 board a luxury catamaran for a premium sunset sail along the Maui coastline with cocktails, appetizers, and live Hawaiian music. A magical way to end the day with the family.",
+          "meals": {
+            "breakfast": "Resort buffet breakfast \u2014 made-to-order omelets, fresh waffles, tropical fruit station, and a full pastry spread",
+            "lunch": "Lahaina Grill or Mala Ocean Tavern in Lahaina \u2014 farm-to-table Hawaiian cuisine, fresh seafood, and artisan cocktails in a charming historic setting",
+            "dinner": "On board the sunset sailing cruise \u2014 premium pupus (appetizers), charcuterie, tropical cocktails, and dessert served as the sun dips below the horizon"
+          },
+          "notes": "Maui Ocean Center is located in Ma'alaea, a short drive from Kaanapali. Lahaina Town is a walkable historic district \u2014 wear comfortable shoes. Sunset sailing cruises depart from Lahaina Harbor; book through the resort concierge for a private or small-group premium charter."
+        },
+        {
+          "day": 9,
+          "date": "2027-08-23",
+          "morning": "Haleakal\u0101 National Park sunrise experience \u2014 wake before dawn for the iconic sunrise above the clouds at the summit of Haleakal\u0101 volcano (10,023 feet). A once-in-a-lifetime experience for the whole family. Follow with a guided ranger tour of the crater.",
+          "afternoon": "Downhill bike tour from Haleakal\u0101 \u2014 glide down the volcano's slopes on a guided family bike tour through upcountry Maui's lavender farms, pineapple fields, and charming small towns. A thrilling and scenic afternoon activity.",
+          "evening": "Return to the resort for a final evening of relaxation. Enjoy a farewell dinner at the resort's best restaurant, celebrating an incredible Hawaiian journey with the family.",
+          "meals": {
+            "breakfast": "Early pre-sunrise coffee and pastries at the resort before departure \u2014 or enjoy sunrise snacks brought from the resort",
+            "lunch": "Upcountry Maui lunch stop \u2014 Kula Lodge or Grandma's Coffee House for fresh local produce, Maui onion soup, and homemade pies in a charming farm setting",
+            "dinner": "Aegean Bliss Resort signature restaurant \u2014 premium farewell dinner with the chef's tasting menu, wine pairing, and a special dessert to commemorate the trip"
+          },
+          "notes": "Haleakal\u0101 sunrise requires a timed entry reservation made through the National Park Service website \u2014 these sell out months in advance. Depart the resort by 3:00\u20134:00 AM for the summit. Bring warm layers as temperatures at the summit can drop to near freezing even in August. Downhill bike tours are suitable for children aged 12+ depending on the operator."
+        },
+        {
+          "day": 10,
+          "date": "2027-08-24",
+          "morning": "Final morning at the resort \u2014 enjoy a leisurely last breakfast with ocean views, take a final swim in the ocean or pool, and soak in the beauty of your beachfront surroundings. Last-minute shopping for premium Hawaiian souvenirs, local macadamia nut products, and Kona coffee.",
+          "afternoon": "Check out of Aegean Bliss Resort. Arrange a private luxury transfer to the airport. Depending on your departure time, enjoy a final lunch at a nearby upscale restaurant or the resort's poolside caf\u00e9.",
+          "evening": "Depart Hawaii \u2014 board your return flight with unforgettable memories of your 10-day luxury Hawaiian adventure.",
+          "meals": {
+            "breakfast": "Grand farewell breakfast at the resort \u2014 full spread of Hawaiian favorites, fresh-pressed juices, Kona coffee, and a special treat from the pastry chef",
+            "lunch": "Final lunch near the resort or airport \u2014 Roy's Hawaii or a premium local restaurant for one last taste of Hawaiian cuisine",
+            "dinner": "In-flight dining or airport lounge \u2014 request premium lounge access for a comfortable pre-flight experience"
+          },
+          "notes": "Request a late checkout from the resort (typically available for premium guests) to maximize your final morning. Ensure all souvenirs, especially agricultural products like fresh fruit or flowers, comply with TSA and USDA regulations for travel back to the mainland. Arrange airport transfer at least 3 hours before your flight departure."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Seattle+to+Hawaii+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Hawaii&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii"
+      ],
+      "highlights": [
+        "4.3\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-2350 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Hawaii family beach vacation, $5000, 10 days, August 2026 from Seattle",
+  "session_tags": {
+    "query_id": "SYN-24",
+    "condition": "broadcast",
+    "run_index": 4
+  }
+}

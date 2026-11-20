@@ -1,0 +1,619 @@
+{
+  "session_id": "7253ba25-8126-4323-a8cc-af710b7cf3f3",
+  "intent": {
+    "destination": "Banff, Alberta, Canada",
+    "origin": "Calgary",
+    "budget_usd": 2800.0,
+    "duration_days": 6,
+    "travel_month": "July",
+    "travel_year": 2027,
+    "interests": [
+      "hiking",
+      "lakes",
+      "nature"
+    ],
+    "group_size": 2,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Banff hiking and lakes, $2800 couple, 6 days, July 2027, from Calgary"
+  },
+  "selected_flight": {
+    "price_usd": 400,
+    "airline": "AC",
+    "departure": "2027-07-15T09:00:00",
+    "arrival": "2027-07-15T14:00:00",
+    "stops": 1,
+    "duration": "PT1H30M"
+  },
+  "selected_hotel": {
+    "name": "Banff Mountain Lodge",
+    "price_per_night_usd": 160,
+    "total_usd": 960,
+    "rating": 4.4,
+    "amenities": [
+      "wifi",
+      "breakfast included"
+    ],
+    "location": "Banff"
+  },
+  "experiences": [
+    {
+      "name": "Lake Louise Hike and Canoe",
+      "description": "Hike the iconic Plain of Six Glaciers trail above Lake Louise, offering breathtaking views of Victoria Glacier and turquoise glacial waters. Optionally rent a canoe on the lake for a serene paddling experience surrounded by towering peaks.",
+      "cost_usd": 60,
+      "category": "hiking",
+      "best_time_of_day": "morning",
+      "location": "Lake Louise Village, Banff National Park"
+    },
+    {
+      "name": "Moraine Lake Valley of the Ten Peaks Trek",
+      "description": "Hike the Rockpile Trail and Lakeshore Trail at the stunning Moraine Lake, one of the most photographed lakes in the world. The vivid blue water set against the Valley of the Ten Peaks is an unforgettable natural spectacle.",
+      "cost_usd": 20,
+      "category": "nature",
+      "best_time_of_day": "early morning",
+      "location": "Moraine Lake, Banff National Park"
+    },
+    {
+      "name": "Sulphur Mountain Gondola and Summit Hike",
+      "description": "Ride the Banff Gondola to the summit of Sulphur Mountain for panoramic views of six mountain ranges, then explore the Banff Skywalk boardwalk. Alternatively, hike up the Sulphur Mountain Trail for a rewarding 5.5 km climb and ride the gondola back down.",
+      "cost_usd": 65,
+      "category": "activities",
+      "best_time_of_day": "afternoon",
+      "location": "Sulphur Mountain, Town of Banff"
+    },
+    {
+      "name": "Johnston Canyon Waterfall Trail",
+      "description": "Walk along suspended catwalks bolted into canyon walls to reach the Lower and Upper Falls of Johnston Canyon. Continue further to the Ink Pots, a series of colorful cold-water springs set in an open meadow, making for a full day of immersive nature exploration.",
+      "cost_usd": 10,
+      "category": "hiking",
+      "best_time_of_day": "morning",
+      "location": "Johnston Canyon, Bow Valley Parkway"
+    },
+    {
+      "name": "Banff Townsite Food and Culture Walk",
+      "description": "Explore the charming streets of downtown Banff, visiting the Whyte Museum of the Canadian Rockies to learn about the region's history and Indigenous culture. Wrap up with a meal at a local restaurant featuring Canadian Rocky Mountain cuisine, including bison, elk, and locally sourced ingredients.",
+      "cost_usd": 75,
+      "category": "culture",
+      "best_time_of_day": "evening",
+      "location": "Downtown Banff, Town of Banff"
+    }
+  ],
+  "weather": {
+    "avg_temp_c": 25,
+    "avg_temp_f": 77,
+    "precipitation_mm": 30,
+    "sunshine_hours": 8,
+    "summary": "Warm summer weather expected.",
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-07-15",
+    "return": "2027-07-21",
+    "nights": 6,
+    "month": "july",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Banff, Alberta, Canada",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1640.0,
+      "flight": {
+        "price_usd": 400,
+        "airline": "AC",
+        "departure": "2027-07-15T09:00:00",
+        "arrival": "2027-07-15T14:00:00",
+        "stops": 1,
+        "duration": "PT1H30M"
+      },
+      "hotel": {
+        "name": "Banff Mountain Lodge",
+        "price_per_night_usd": 160,
+        "total_usd": 960,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Banff"
+      },
+      "experiences": [
+        {
+          "name": "Moraine Lake Valley of the Ten Peaks Trek",
+          "description": "Hike the Rockpile Trail and Lakeshore Trail at the stunning Moraine Lake, one of the most photographed lakes in the world. The vivid blue water set against the Valley of the Ten Peaks is an unforgettable natural spectacle.",
+          "cost_usd": 20,
+          "category": "nature",
+          "best_time_of_day": "early morning",
+          "location": "Moraine Lake, Banff National Park"
+        },
+        {
+          "name": "Johnston Canyon Waterfall Trail",
+          "description": "Walk along suspended catwalks bolted into canyon walls to reach the Lower and Upper Falls of Johnston Canyon. Continue further to the Ink Pots, a series of colorful cold-water springs set in an open meadow, making for a full day of immersive nature exploration.",
+          "cost_usd": 10,
+          "category": "hiking",
+          "best_time_of_day": "morning",
+          "location": "Johnston Canyon, Bow Valley Parkway"
+        }
+      ],
+      "itinerary": {
+        "num_days": 6,
+        "destination": "Banff, Alberta, Canada",
+        "style": "budget",
+        "total_cost": 1640.0,
+        "breakdown": {
+          "flight": 400.0,
+          "hotel": 960.0,
+          "experiences": 30.0,
+          "food": 150,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-07-15",
+          "morning": "No morning activities \u2014 flight arrives at 14:00. Travel from Calgary Airport to Banff (~1.5 hrs via Banff Airporter shuttle, ~$60 CAD one-way, book in advance for best rates).",
+          "afternoon": "Check in to Banff Mountain Lodge. Once settled, take a leisurely self-guided walk along the Bow River Trail in downtown Banff \u2014 a flat, scenic 3 km path along the river that is completely free. Get oriented with the town layout and pick up a free trail map at the Banff Visitor Centre on Banff Avenue.",
+          "evening": "Stroll Banff Avenue to explore the town. Head up to the free Bow River Falls viewpoint near the Fairmont Banff Springs Hotel for a beautiful sunset view. Easy 15-minute walk from downtown.",
+          "meals": {
+            "breakfast": "N/A \u2014 travel day, eat at Calgary Airport before departure.",
+            "lunch": "Grab a quick bite at a Calgary Airport food court or pack snacks for the shuttle ride.",
+            "dinner": "Nourish Bistro on Bear Street \u2014 known for affordable, healthy bowls and wraps (~$15\u2013$20 CAD). Great vegetarian and omnivore options. Alternatively, grab groceries at Nesters Market on Marten Street to stock up on breakfast items and trail snacks for the week."
+          },
+          "notes": "Use the Banff Airporter shuttle from Calgary Airport to save money vs. a taxi or rental car. Buy a Parks Canada Day Pass (~$11 CAD/person) or consider the Discovery Pass (~$75 CAD) if you plan to visit multiple national parks \u2014 it pays off over 6 days. Pick up the pass at the park gate on arrival."
+        },
+        {
+          "day": 2,
+          "date": "2027-07-16",
+          "morning": "Johnston Canyon Waterfall Trail \u2014 depart early (7:00 AM) to beat crowds and secure free parking at the Johnston Canyon trailhead (~25 km from Banff, accessible via Roam Transit Bus Route 8X for ~$6 CAD each way). Walk the suspended catwalks bolted into the canyon walls to reach the Lower Falls (1.1 km one-way) and Upper Falls (2.7 km one-way). Spectacular canyon scenery and cool mist from the waterfalls. Allow 2\u20133 hours for the full round trip to Upper Falls.",
+          "afternoon": "Continue on the trail past the Upper Falls to the Ink Pots \u2014 six natural mineral springs with vivid turquoise and green pools (~5.8 km one-way from trailhead). This adds roughly 3 km each way beyond the Upper Falls and is well worth the effort. Total round trip ~11.6 km with ~215 m elevation gain. Bring a packed lunch to eat at the Ink Pots.",
+          "evening": "Return to Banff by mid-afternoon. Rest and freshen up at the lodge. Evening walk to Tunnel Mountain Trailhead for a short 2.3 km hike to the summit for panoramic views of the Bow Valley at golden hour \u2014 free and easily walkable from downtown.",
+          "meals": {
+            "breakfast": "Prepare a simple breakfast at the lodge using groceries from Nesters Market (oatmeal, fruit, coffee). Budget ~$5 CAD.",
+            "lunch": "Pack a trail lunch from the lodge: sandwiches, granola bars, fruit, and a refillable water bottle. Save money and reduce waste.",
+            "dinner": "Banff Ave Brewing Co. \u2014 affordable pub food with great atmosphere. Burgers and mains from ~$18\u2013$24 CAD. Happy hour deals available on drinks."
+          },
+          "notes": "Start early to avoid crowds at Johnston Canyon \u2014 it is one of Banff's most popular trails. Roam Transit is the budget-friendly way to get there; check the schedule at roamtransit.com. Wear layers as the canyon can be cool and misty even on warm days."
+        },
+        {
+          "day": 3,
+          "date": "2027-07-17",
+          "morning": "Moraine Lake \u2014 Valley of the Ten Peaks Trek. Depart very early (6:00\u20136:30 AM) as Moraine Lake Road has a vehicle reservation system in summer \u2014 book your Parks Canada timed-entry permit in advance at reservation.pc.gc.ca (~$12 CAD/vehicle) or take the Roam Transit Route 10X shuttle from Banff (~$10 CAD each way). Hike the Rockpile Trail (0.8 km round trip) for the iconic Valley of the Ten Peaks panorama, then continue along the Lakeshore Trail (3.4 km round trip) hugging the vivid turquoise shoreline.",
+          "afternoon": "Extend the adventure with the Consolation Lakes Trail (5.8 km round trip, ~60 m gain) departing from the Moraine Lake parking area \u2014 a quieter, beautiful hike through boulder fields to two serene alpine lakes. Arrive back at Moraine Lake by early afternoon and take the shuttle back to Banff.",
+          "evening": "Relaxed evening in Banff. Browse the free Whyte Museum of the Canadian Rockies on Bear Street (free admission on Tuesday evenings, otherwise ~$10 CAD) for local history and art. Quiet dinner and early rest for the next big day.",
+          "meals": {
+            "breakfast": "Early packed breakfast from the lodge \u2014 energy bars, bananas, and instant coffee before the 6:00 AM departure.",
+            "lunch": "Packed trail lunch eaten at the Consolation Lakes shoreline \u2014 sandwiches, trail mix, and fruit.",
+            "dinner": "Melissa's Missteak on Lynx Street \u2014 a Banff institution with hearty portions. Pasta and burger options from ~$18\u2013$22 CAD. Great value for the portion size."
+          },
+          "notes": "Moraine Lake is extremely busy in summer. Timed-entry permits or shuttle reservations are MANDATORY and must be booked weeks in advance at reservation.pc.gc.ca. Do not attempt to drive without a permit \u2014 you will be turned away. The Roam Transit shuttle is the most reliable budget option."
+        },
+        {
+          "day": 4,
+          "date": "2027-07-18",
+          "morning": "Lake Louise Lakeshore Trail \u2014 Take the Roam Transit Route 8X to Lake Louise Village (~$6 CAD each way). Walk the flat, 4.2 km round-trip Lakeshore Trail along the impossibly blue glacial lake with the Victoria Glacier as a backdrop. One of the most scenic easy walks in the Rockies and completely free with your Parks Canada pass.",
+          "afternoon": "From Lake Louise, hike the Plain of Six Glaciers Trail (13.8 km round trip, ~365 m elevation gain) for breathtaking views of glaciers and the Continental Divide. Alternatively, take the shorter Big Beehive Trail (10.5 km round trip) for a bird's-eye view of Lake Louise from above. Both trails start at the lakeshore.",
+          "evening": "Return to Banff via Roam Transit. Soak tired legs at the Banff Upper Hot Springs (~$18 CAD adult admission) \u2014 a natural mineral hot spring pool open until 10:00 PM. An affordable and restorative treat after a big hiking day.",
+          "meals": {
+            "breakfast": "Lodge breakfast \u2014 instant oatmeal, fruit, and coffee from Nesters Market supplies.",
+            "lunch": "Pack a trail lunch. Note: the Plain of Six Glaciers Teahouse is a historic hut on the trail that serves light meals (~$15\u2013$20 CAD) \u2014 a fun optional treat if budget allows.",
+            "dinner": "Grab a hearty, affordable meal at Subway or A&W on Banff Avenue for a quick budget dinner (~$10\u2013$14 CAD) after the hot springs."
+          },
+          "notes": "Lake Louise gets very busy by 9:00 AM in summer. Arriving via the early Roam Transit bus is ideal. The Roam Transit Day Pass (~$15 CAD) is excellent value if you are taking multiple buses in one day. Check roamtransit.com for current schedules."
+        },
+        {
+          "day": 5,
+          "date": "2027-07-19",
+          "morning": "Sulphur Mountain Summit Hike \u2014 Hike up the Sulphur Mountain Trail (11 km round trip, ~655 m elevation gain) starting from the Upper Hot Springs parking area, a 15-minute walk from downtown. This moderate-to-strenuous hike takes 2\u20133 hours to the summit and saves the ~$40 CAD gondola fee. The views of six mountain ranges from the summit boardwalk are extraordinary.",
+          "afternoon": "Explore the Banff townsite on foot. Visit the free Cascade Gardens at the Banff Administration Building for a peaceful stroll. Walk across the bridge to see the confluence of the Bow and Spray Rivers. Browse the free exhibits inside the Cave and Basin National Historic Site exterior area (~$8 CAD for full interior access \u2014 birthplace of Canada's national park system).",
+          "evening": "Golden hour photography walk along the Vermilion Lakes \u2014 a 3 km flat trail just west of Banff townsite (free, accessible by bike or a 20-minute walk from downtown). The three shallow lakes reflect the mountains and are a prime spot for wildlife spotting (elk, beavers, osprey). Stay for sunset.",
+          "meals": {
+            "breakfast": "Early lodge breakfast \u2014 eggs or oatmeal prepared from grocery supplies.",
+            "lunch": "Packed summit lunch eaten at the Sulphur Mountain boardwalk with panoramic mountain views.",
+            "dinner": "Saltlik Steakhouse is a splurge, but for a budget option try the Bear Street Tavern on Bear Street \u2014 wood-fired pizzas from ~$18\u2013$22 CAD, great atmosphere and reasonable prices for Banff."
+          },
+          "notes": "The Sulphur Mountain hike is a great way to experience the gondola summit views for free. The trail is well-marked but steep \u2014 trekking poles are helpful. You can take the gondola down for ~$20 CAD if legs are too tired for the descent. Wildlife is common at Vermilion Lakes at dusk \u2014 bring bear spray (~$50 CAD rental from local outfitters) for all hikes."
+        },
+        {
+          "day": 6,
+          "date": "2027-07-20",
+          "morning": "Sunrise at Two Jack Lake \u2014 Take an early morning walk or cycle (~10 km from town, or drive/rideshare) to Two Jack Lake for a serene, crowd-free lakeside experience with classic Rockies reflections. The smaller Two Jack Lakeside area is far less visited than Lake Louise or Moraine Lake but equally stunning. Walk the short lakeshore path and enjoy the quiet before departure.",
+          "afternoon": "Return to Banff for a final stroll and last-minute souvenir shopping on Banff Avenue. Check out of Banff Mountain Lodge. Head to the Banff Visitor Centre for any last questions. Catch the Banff Airporter shuttle back to Calgary Airport \u2014 book the shuttle timed to your departure flight (allow at least 3 hours before flight for the drive plus check-in).",
+          "evening": "Travel home. Calgary Airport has a range of dining options for a final meal before departure.",
+          "meals": {
+            "breakfast": "Final lodge breakfast \u2014 use up remaining grocery supplies or treat yourself to a sit-down breakfast at Whitebark Caf\u00e9 on Bear Street (~$12\u2013$16 CAD for eggs and coffee).",
+            "lunch": "Quick and affordable lunch at Banff Ave Bakery or grab a wrap from Nesters Market deli before the shuttle.",
+            "dinner": "Calgary Airport food court or restaurant depending on flight departure time."
+          },
+          "notes": "Book the return Banff Airporter shuttle in advance at banffairporter.com. Check out time at Banff Mountain Lodge is typically 11:00 AM \u2014 arrange luggage storage at the front desk if your shuttle departs later. Two Jack Lake is within Banff National Park and covered by your Parks Canada pass. Leave no trace \u2014 pack out all waste from trails."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Calgary+to+Banff, Alberta, Canada+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Banff, Alberta, Canada&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada",
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada"
+      ],
+      "highlights": [
+        "Save $460 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Banff, Alberta, Canada Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 1930.0,
+      "flight": {
+        "price_usd": 400,
+        "airline": "AC",
+        "departure": "2027-07-15T09:00:00",
+        "arrival": "2027-07-15T14:00:00",
+        "stops": 1,
+        "duration": "PT1H30M"
+      },
+      "hotel": {
+        "name": "Banff Mountain Lodge",
+        "price_per_night_usd": 160,
+        "total_usd": 960,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Banff"
+      },
+      "experiences": [
+        {
+          "name": "Lake Louise Hike and Canoe",
+          "description": "Hike the iconic Plain of Six Glaciers trail above Lake Louise, offering breathtaking views of Victoria Glacier and turquoise glacial waters. Optionally rent a canoe on the lake for a serene paddling experience surrounded by towering peaks.",
+          "cost_usd": 60,
+          "category": "hiking",
+          "best_time_of_day": "morning",
+          "location": "Lake Louise Village, Banff National Park"
+        },
+        {
+          "name": "Moraine Lake Valley of the Ten Peaks Trek",
+          "description": "Hike the Rockpile Trail and Lakeshore Trail at the stunning Moraine Lake, one of the most photographed lakes in the world. The vivid blue water set against the Valley of the Ten Peaks is an unforgettable natural spectacle.",
+          "cost_usd": 20,
+          "category": "nature",
+          "best_time_of_day": "early morning",
+          "location": "Moraine Lake, Banff National Park"
+        },
+        {
+          "name": "Sulphur Mountain Gondola and Summit Hike",
+          "description": "Ride the Banff Gondola to the summit of Sulphur Mountain for panoramic views of six mountain ranges, then explore the Banff Skywalk boardwalk. Alternatively, hike up the Sulphur Mountain Trail for a rewarding 5.5 km climb and ride the gondola back down.",
+          "cost_usd": 65,
+          "category": "activities",
+          "best_time_of_day": "afternoon",
+          "location": "Sulphur Mountain, Town of Banff"
+        },
+        {
+          "name": "Johnston Canyon Waterfall Trail",
+          "description": "Walk along suspended catwalks bolted into canyon walls to reach the Lower and Upper Falls of Johnston Canyon. Continue further to the Ink Pots, a series of colorful cold-water springs set in an open meadow, making for a full day of immersive nature exploration.",
+          "cost_usd": 10,
+          "category": "hiking",
+          "best_time_of_day": "morning",
+          "location": "Johnston Canyon, Bow Valley Parkway"
+        },
+        {
+          "name": "Banff Townsite Food and Culture Walk",
+          "description": "Explore the charming streets of downtown Banff, visiting the Whyte Museum of the Canadian Rockies to learn about the region's history and Indigenous culture. Wrap up with a meal at a local restaurant featuring Canadian Rocky Mountain cuisine, including bison, elk, and locally sourced ingredients.",
+          "cost_usd": 75,
+          "category": "culture",
+          "best_time_of_day": "evening",
+          "location": "Downtown Banff, Town of Banff"
+        }
+      ],
+      "itinerary": {
+        "num_days": 6,
+        "destination": "Banff, Alberta, Canada",
+        "style": "balanced",
+        "total_cost": 1930.0,
+        "breakdown": {
+          "flight": 400.0,
+          "hotel": 960.0,
+          "experiences": 230.0,
+          "food": 240,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-07-15 (Arrival Day)",
+          "morning": "No activities scheduled \u2014 flight arrives at 14:00. Travel from Calgary International Airport to Banff (~1.5 hour drive). Consider renting a car or taking the Banff Airporter shuttle for convenience.",
+          "afternoon": "Check in to Banff Mountain Lodge upon arrival (~15:30). Freshen up and take a leisurely stroll through downtown Banff to get oriented \u2014 browse Banff Avenue, pick up any hiking supplies, and visit a local outfitter to plan the week ahead.",
+          "evening": "Explore the Banff Townsite at a relaxed pace. Walk down to the Bow River Bridge for a scenic sunset view of Mount Rundle. Easy introduction to the town atmosphere.",
+          "meals": {
+            "breakfast": "Eat before or during your flight \u2014 no breakfast scheduled in Banff.",
+            "lunch": "Grab a quick bite at the Calgary airport or en route to Banff at a roadside stop.",
+            "dinner": "Dinner at The Bison Restaurant & Terrace in downtown Banff \u2014 mid-range Canadian cuisine featuring locally sourced bison, elk, and seasonal ingredients. Expect ~$35\u201355 CAD per person."
+          },
+          "notes": "Pick up a Parks Canada day pass or annual Discovery Pass upon arrival \u2014 required for most park activities. Download the Parks Canada app for trail maps and conditions."
+        },
+        {
+          "day": 2,
+          "date": "2027-07-16",
+          "morning": "Moraine Lake Valley of the Ten Peaks Trek \u2014 Depart early (7:00 AM) as Moraine Lake Road requires a reservation or shuttle due to high demand. Hike the Rockpile Trail (short, 20 min, stunning panoramic views) followed by the Lakeshore Trail (3.4 km, easy, ~1.5 hrs) along the impossibly blue glacial lake framed by the iconic Ten Peaks.",
+          "afternoon": "Continue exploring Moraine Lake \u2014 rent a canoe (~$130 CAD/hr) on the lake for a serene paddle with jaw-dropping mountain reflections. Return to Banff by early afternoon and rest at the lodge or take a short walk along the Bow River Trail near town.",
+          "evening": "Relax and recover with a visit to the Banff Upper Hot Springs (~$20 CAD) \u2014 a perfect way to soothe muscles after the day's hiking. Soak in the outdoor mineral pools with mountain views as the sun sets.",
+          "meals": {
+            "breakfast": "Early breakfast at the lodge or pack a to-go breakfast \u2014 try Whitebark Cafe in Banff for coffee and pastries before departure.",
+            "lunch": "Pack a trail lunch \u2014 sandwiches, trail mix, and fruit purchased the evening before from a local grocery store (Nesters Market on Marten St). Eat at a picnic table at Moraine Lake.",
+            "dinner": "Dinner at Tooloulou's in Banff \u2014 casual Cajun-inspired comfort food, great value, lively atmosphere. ~$20\u201335 CAD per person."
+          },
+          "notes": "Moraine Lake Road requires advance shuttle reservations through Parks Canada \u2014 book online well in advance. Arrive at the shuttle lot by 6:30 AM. Bear spray is recommended; rentals available at outfitters in town."
+        },
+        {
+          "day": 3,
+          "date": "2027-07-17",
+          "morning": "Lake Louise Hike and Canoe \u2014 Drive to Lake Louise (45 min from Banff). Begin with the Plain of Six Glaciers Trail (13.8 km round trip, moderate, ~4\u20135 hrs). Hike past the iconic turquoise lake, through ancient moraines, and up to the historic Plain of Six Glaciers Teahouse with views of Victoria Glacier and surrounding peaks.",
+          "afternoon": "Descend back to Lake Louise and rent a canoe (~$130 CAD/hr) directly on the lake for a relaxing paddle with the Fairmont Chateau as your backdrop. The vivid turquoise water fed by glacial meltwater is truly unforgettable.",
+          "evening": "Return to Banff. Freshen up at the lodge and spend the evening on a Banff Townsite Food and Culture Walk \u2014 explore Banff Avenue, pop into the Whyte Museum of the Canadian Rockies (~$10 CAD admission) to learn about the history of the Rockies and Indigenous culture, then browse local galleries and shops.",
+          "meals": {
+            "breakfast": "Breakfast at the lodge or grab a hearty meal at Cows Banff (known for ice cream but also serves breakfast items) or a nearby caf\u00e9 before heading out.",
+            "lunch": "Stop for lunch at the Plain of Six Glaciers Teahouse mid-hike \u2014 a rustic, charming mountain teahouse serving soups, sandwiches, and baked goods. Cash only; ~$15\u201325 CAD per person. A true Rockies tradition.",
+            "dinner": "Dinner at Saltlik Steakhouse in Banff \u2014 a mid-range steakhouse with excellent Alberta beef, great ambiance, and a solid wine list. ~$40\u201360 CAD per person."
+          },
+          "notes": "Lake Louise parking fills by 7:00 AM in summer \u2014 take the Parks Canada shuttle from the Lake Louise Park & Ride (free with park pass). The Teahouse is open seasonally and does not accept reservations \u2014 arrive during off-peak lunch hours to minimize wait."
+        },
+        {
+          "day": 4,
+          "date": "2027-07-18",
+          "morning": "Johnston Canyon Waterfall Trail \u2014 Drive 25 minutes west of Banff to Johnston Canyon. Walk the iconic suspended catwalks bolted into the canyon walls to reach the Lower Falls (1.1 km, easy, 20 min) and Upper Falls (2.7 km, easy-moderate, 1 hr). The emerald green pools and roaring waterfalls are spectacular. Optionally continue to the Ink Pots \u2014 colourful cold springs another 3 km beyond (adds ~2 hrs, moderate).",
+          "afternoon": "On the return drive toward Banff, stop at Vermilion Lakes \u2014 a series of shallow lakes with stunning reflections of Mount Rundle. Walk the easy Vermilion Lakes Road (flat, 4.8 km one way) and keep an eye out for elk, beavers, and osprey. This is one of the best wildlife-watching spots in the park.",
+          "evening": "Relaxed evening in Banff \u2014 enjoy a sunset hike or walk up Tunnel Mountain Trail (4.8 km round trip, easy-moderate, ~1.5 hrs) for panoramic views of the Bow Valley and Banff townsite at golden hour.",
+          "meals": {
+            "breakfast": "Breakfast at Eddie Burger + Bar in Banff \u2014 casual, hearty breakfast options before heading out. ~$15\u201320 CAD per person.",
+            "lunch": "Pack a picnic lunch to enjoy at Johnston Canyon picnic area or near the Ink Pots. Pick up supplies from Nesters Market the night before.",
+            "dinner": "Dinner at Banff Ave Brewing Co. \u2014 a lively brewpub with locally crafted beers, burgers, poutine, and flatbreads. Great atmosphere and mid-range pricing. ~$20\u201335 CAD per person."
+          },
+          "notes": "Johnston Canyon is extremely popular \u2014 arrive by 8:00 AM to beat crowds and secure parking. The catwalks can be slippery near the falls; wear grippy hiking shoes. Wildlife sightings at Vermilion Lakes are best in early morning or evening."
+        },
+        {
+          "day": 5,
+          "date": "2027-07-19",
+          "morning": "Sulphur Mountain Gondola and Summit Hike \u2014 Take the Banff Gondola (~$65 CAD) from the base near the Upper Hot Springs up to 2,281 m elevation on Sulphur Mountain. Enjoy panoramic views of six mountain ranges and the Bow Valley. Walk the 1 km boardwalk along the ridge to Sanson Peak and the historic weather observatory. Alternatively, hike up the Sulphur Mountain Trail (9.6 km round trip, moderate, ~3 hrs up) and ride the gondola down.",
+          "afternoon": "After descending, head to Two Jack Lake and Lake Minnewanka \u2014 a short 15-minute drive from Banff. Walk the easy Lake Minnewanka Lakeshore Trail (1\u20133 km, flat) along the largest lake in Banff National Park, with striking mountain reflections and opportunities to spot bighorn sheep. Optional: book a Lake Minnewanka boat cruise (~$55 CAD, 1 hr).",
+          "evening": "Final full evening in Banff \u2014 celebrate the trip with a special dinner. Stroll along the Bow River after dinner and enjoy the alpenglow on the surrounding peaks.",
+          "meals": {
+            "breakfast": "Breakfast at the Banff Mountain Lodge or try Melissa's Missteak \u2014 a beloved Banff institution for hearty breakfasts. ~$15\u201325 CAD per person.",
+            "lunch": "Lunch at the Sky Bistro at the top of the Sulphur Mountain Gondola \u2014 panoramic mountain dining with soups, sandwiches, and mains. Mid-range; ~$25\u201340 CAD per person. Reserve in advance.",
+            "dinner": "Farewell dinner at The Maple Leaf Restaurant \u2014 upscale Canadian cuisine featuring Alberta beef, wild salmon, and local ingredients in an elegant yet welcoming setting. ~$45\u201370 CAD per person. Reserve ahead."
+          },
+          "notes": "Book the Banff Gondola online in advance to save time and sometimes money. The gondola runs from 8:00 AM in summer. If you plan to hike up Sulphur Mountain, start by 7:30 AM to avoid heat and afternoon crowds."
+        },
+        {
+          "day": 6,
+          "date": "2027-07-20 (Departure Day)",
+          "morning": "Wake up early for one last peaceful morning in the Rockies. Take a quiet sunrise walk along the Bow River Trail from downtown Banff (~3 km, flat, easy) \u2014 the morning light on the mountains is magical and the trail is uncrowded at dawn. Return to the lodge for a relaxed breakfast.",
+          "afternoon": "Check out of Banff Mountain Lodge. If time allows before heading to Calgary, make a final stop at Cascade Ponds \u2014 a beautiful picnic area just east of Banff with views of Cascade Mountain, perfect for a quiet farewell moment with the Rockies. Begin the drive back to Calgary International Airport (~1.5 hrs) \u2014 allow at least 2.5\u20133 hours before your flight for travel and check-in.",
+          "evening": "Travel home \u2014 flight departure from Calgary.",
+          "meals": {
+            "breakfast": "Leisurely final breakfast at the lodge or at Bear Street Tavern \u2014 a cozy spot with excellent eggs Benedict and coffee. ~$15\u201325 CAD per person.",
+            "lunch": "Quick lunch in Banff before departing or grab food at Calgary airport. Try Wild Flour Bakery on Bear Street for sandwiches and baked goods to go \u2014 perfect road trip fuel.",
+            "dinner": "In-flight or at Calgary airport."
+          },
+          "notes": "Check out time is typically 11:00 AM \u2014 confirm with the lodge. Leave adequate time for the Calgary drive especially during summer weekends when traffic near the park gates can be heavy. Return any rental gear or bear spray before leaving Banff."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Calgary+to+Banff, Alberta, Canada+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Banff, Alberta, Canada&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada",
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada",
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada",
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada",
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Banff, Alberta, Canada Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 2050.0,
+      "flight": {
+        "price_usd": 400,
+        "airline": "AC",
+        "departure": "2027-07-15T09:00:00",
+        "arrival": "2027-07-15T14:00:00",
+        "stops": 1,
+        "duration": "PT1H30M"
+      },
+      "hotel": {
+        "name": "Banff Mountain Lodge",
+        "price_per_night_usd": 160,
+        "total_usd": 960,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Banff"
+      },
+      "experiences": [
+        {
+          "name": "Lake Louise Hike and Canoe",
+          "description": "Hike the iconic Plain of Six Glaciers trail above Lake Louise, offering breathtaking views of Victoria Glacier and turquoise glacial waters. Optionally rent a canoe on the lake for a serene paddling experience surrounded by towering peaks.",
+          "cost_usd": 60,
+          "category": "hiking",
+          "best_time_of_day": "morning",
+          "location": "Lake Louise Village, Banff National Park"
+        },
+        {
+          "name": "Moraine Lake Valley of the Ten Peaks Trek",
+          "description": "Hike the Rockpile Trail and Lakeshore Trail at the stunning Moraine Lake, one of the most photographed lakes in the world. The vivid blue water set against the Valley of the Ten Peaks is an unforgettable natural spectacle.",
+          "cost_usd": 20,
+          "category": "nature",
+          "best_time_of_day": "early morning",
+          "location": "Moraine Lake, Banff National Park"
+        },
+        {
+          "name": "Sulphur Mountain Gondola and Summit Hike",
+          "description": "Ride the Banff Gondola to the summit of Sulphur Mountain for panoramic views of six mountain ranges, then explore the Banff Skywalk boardwalk. Alternatively, hike up the Sulphur Mountain Trail for a rewarding 5.5 km climb and ride the gondola back down.",
+          "cost_usd": 65,
+          "category": "activities",
+          "best_time_of_day": "afternoon",
+          "location": "Sulphur Mountain, Town of Banff"
+        },
+        {
+          "name": "Johnston Canyon Waterfall Trail",
+          "description": "Walk along suspended catwalks bolted into canyon walls to reach the Lower and Upper Falls of Johnston Canyon. Continue further to the Ink Pots, a series of colorful cold-water springs set in an open meadow, making for a full day of immersive nature exploration.",
+          "cost_usd": 10,
+          "category": "hiking",
+          "best_time_of_day": "morning",
+          "location": "Johnston Canyon, Bow Valley Parkway"
+        },
+        {
+          "name": "Banff Townsite Food and Culture Walk",
+          "description": "Explore the charming streets of downtown Banff, visiting the Whyte Museum of the Canadian Rockies to learn about the region's history and Indigenous culture. Wrap up with a meal at a local restaurant featuring Canadian Rocky Mountain cuisine, including bison, elk, and locally sourced ingredients.",
+          "cost_usd": 75,
+          "category": "culture",
+          "best_time_of_day": "evening",
+          "location": "Downtown Banff, Town of Banff"
+        }
+      ],
+      "itinerary": {
+        "num_days": 6,
+        "destination": "Banff, Alberta, Canada",
+        "style": "premium",
+        "total_cost": 2050.0,
+        "breakdown": {
+          "flight": 400.0,
+          "hotel": 960.0,
+          "experiences": 230.0,
+          "food": 360,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-07-15 (Wednesday)",
+          "morning": "No activities scheduled \u2014 flight AC arrives at 14:00. Travel time from Calgary International Airport to Banff Mountain Lodge is approximately 1.5\u20132 hours by private transfer.",
+          "afternoon": "Arrive at Banff Mountain Lodge and complete a seamless check-in with concierge assistance. Freshen up, then take a leisurely stroll along the Bow River Trail near the townsite to decompress after travel and soak in your first views of the Canadian Rockies. Stop at the iconic Bow Falls viewpoint for a scenic introduction to Banff.",
+          "evening": "Enjoy a welcome dinner at The Maple Leaf Restaurant, one of Banff's premier fine-dining establishments celebrated for its Canadian-inspired cuisine. Indulge in Alberta beef tenderloin or wild Pacific salmon paired with a curated selection from their extensive Canadian wine list. After dinner, take a tranquil evening walk along Banff Avenue to admire the mountain skyline at dusk.",
+          "meals": {
+            "breakfast": "Not applicable (in-flight or pre-arrival)",
+            "lunch": "Light snack or coffee at the airport or en route \u2014 consider picking up provisions at a Calgary caf\u00e9 before your transfer",
+            "dinner": "The Maple Leaf Restaurant, Banff \u2014 upscale Canadian cuisine; reserve a window table for mountain views"
+          },
+          "notes": "Arrange a private luxury transfer from Calgary Airport in advance (approximately 1.5\u20132 hours). Ask the lodge concierge to confirm all upcoming activity bookings and secure restaurant reservations for the week. Stay hydrated upon arrival as the elevation in Banff (~1,383 m) can cause mild altitude adjustment. Pack light layers for the evening walk."
+        },
+        {
+          "day": 2,
+          "date": "2027-07-16 (Thursday)",
+          "morning": "Embark on the iconic Lake Louise Hike and Canoe experience. Begin with a guided hike along the Plain of Six Glaciers Trail, a spectacular 14 km return route that ascends above the turquoise waters of Lake Louise toward the Victoria Glacier. The trail offers sweeping panoramas of the Beehive peaks, glacial moraines, and the Victoria and Lefroy glaciers. The historic Plain of Six Glaciers Teahouse near the top makes for a perfect mid-hike rest stop with homemade baked goods and hot drinks.",
+          "afternoon": "Descend back to Lake Louise and enjoy a premium canoe experience on the lake itself, paddling across the mirror-like turquoise surface with the iconic Fairmont Chateau Lake Louise as your backdrop. Rent a private canoe or book a guided paddle session for an intimate experience on one of Canada's most photographed lakes.",
+          "evening": "Return to Banff and dine at Eden Restaurant at the Rimrock Resort Hotel, consistently ranked among Canada's finest restaurants. Savor their tasting menu featuring locally sourced ingredients and expertly paired wines, with floor-to-ceiling windows framing spectacular mountain views.",
+          "meals": {
+            "breakfast": "Full gourmet breakfast at Banff Mountain Lodge \u2014 fuel up well before the long hike",
+            "lunch": "Plain of Six Glaciers Teahouse on the trail \u2014 rustic alpine charm with homemade soups, sandwiches, and baked goods (cash only; bring small bills)",
+            "dinner": "Eden Restaurant at the Rimrock Resort Hotel \u2014 award-winning fine dining; book the chef's tasting menu with wine pairing"
+          },
+          "notes": "Depart early (by 7:30 AM) to beat crowds at Lake Louise \u2014 it is one of the busiest sites in the Canadian Rockies. Wear sturdy hiking boots and bring trekking poles for the Plain of Six Glaciers trail. Carry a rain shell as afternoon weather can shift quickly. The Plain of Six Glaciers Teahouse operates seasonally and accepts cash only. Total hike distance is approximately 14 km with 365 m elevation gain \u2014 rated moderate."
+        },
+        {
+          "day": 3,
+          "date": "2027-07-17 (Friday)",
+          "morning": "Head to Moraine Lake for the Moraine Lake Valley of the Ten Peaks Trek. Start early with the Rockpile Trail (a short but rewarding 300-metre walk) to reach the legendary viewpoint overlooking Moraine Lake and the Valley of the Ten Peaks \u2014 arguably the most photographed scene in Canada. Then descend and join the Lakeshore Trail, a 3 km return walk along the lake's edge through ancient forest and glacial debris fields, with the Wenkchemna Peaks towering above.",
+          "afternoon": "After the morning trek, transition into a leisurely afternoon. Book a private guided canoe on Moraine Lake to experience the extraordinary blue-green waters up close. Afterward, travel back toward Banff and visit the Banff Upper Hot Springs for a luxurious soak in the natural mineral-rich thermal pools with panoramic mountain views \u2014 the perfect recovery after two days of hiking.",
+          "evening": "Enjoy dinner at Saltlik Steakhouse in downtown Banff, a premium chophouse known for AAA Alberta beef, prime dry-aged cuts, and an extensive wine cellar. Follow dinner with a nightcap at the Sky Lounge at the Banff Park Lodge for elevated cocktails and mountain ambiance.",
+          "meals": {
+            "breakfast": "Early gourmet breakfast at Banff Mountain Lodge before departure \u2014 aim to leave by 6:00\u20136:30 AM to access Moraine Lake (reservation or shuttle required)",
+            "lunch": "Picnic-style premium lunch \u2014 ask the lodge to prepare a gourmet picnic hamper with charcuterie, artisan sandwiches, and sparkling water to enjoy lakeside at Moraine Lake",
+            "dinner": "Saltlik Steakhouse, Banff \u2014 prime Alberta beef; request the sommelier's wine pairing recommendation"
+          },
+          "notes": "CRITICAL: Private vehicles are no longer permitted at Moraine Lake in peak season. Book the Parks Canada shuttle or a private guided tour well in advance \u2014 spaces fill up months ahead. Departure from Banff must be very early (shuttles often begin at 6:00 AM). The lodge concierge can assist with shuttle bookings. Bring warm layers as Moraine Lake sits at higher elevation and mornings can be cool even in July. The Banff Upper Hot Springs closes at 11:00 PM \u2014 plan the visit for late afternoon (around 4:00\u20135:00 PM)."
+        },
+        {
+          "day": 4,
+          "date": "2027-07-18 (Saturday)",
+          "morning": "Experience the Sulphur Mountain Gondola and Summit Hike. Board the Banff Gondola for an exhilarating 8-minute ride to the 2,281 m summit of Sulphur Mountain. At the top, walk the 1 km Sulphur Mountain Boardwalk Ridge to Sanson Peak, taking in breathtaking 360-degree panoramas of six mountain ranges, the Bow Valley, and the Banff townsite far below. Visit the restored Sanson's Peak Meteorological Station, a National Historic Site, and explore the rooftop interpretive exhibits.",
+          "afternoon": "For those seeking more adventure, hike down the Sulphur Mountain Trail (5.5 km descent) rather than taking the gondola down \u2014 a rewarding trail through subalpine forest with continued mountain views. Alternatively, take the gondola down and spend the afternoon exploring the Banff townsite: browse luxury outfitters and galleries along Banff Avenue, and visit the Whyte Museum of the Canadian Rockies for a cultural immersion into the art and history of the Rockies.",
+          "evening": "Indulge in a premium spa evening at the Willow Stream Spa at the Fairmont Banff Springs Hotel. Book a signature 'Rockies' treatment or a couples' massage, followed by access to their thermal mineral pools, steam rooms, and relaxation lounges. End the evening with cocktails and light bites at the Fairmont Banff Springs' Rundle Bar.",
+          "meals": {
+            "breakfast": "Breakfast at the Sky Bistro at the top of the Banff Gondola \u2014 an exceptional mountaintop dining experience with panoramic views and a premium brunch menu",
+            "lunch": "Lunch at Balkan Restaurant or Block Kitchen + Bar in downtown Banff \u2014 Block is a casual-upscale spot known for its creative small plates and local craft beers",
+            "dinner": "Light premium dinner or charcuterie board at the Rundle Bar inside the Fairmont Banff Springs Hotel after the spa \u2014 elegant castle setting with a refined bar menu"
+          },
+          "notes": "Book the Sky Bistro breakfast reservation at the top of the gondola in advance \u2014 it is a popular and unique dining experience. The gondola opens at 8:00 AM in summer; arriving early ensures the best light for photography and fewer crowds. The spa at Willow Stream should be booked well ahead, especially for weekend evenings. The Fairmont Banff Springs is a short drive or taxi from the Banff Mountain Lodge."
+        },
+        {
+          "day": 5,
+          "date": "2027-07-19 (Sunday)",
+          "morning": "Explore Johnston Canyon on the Johnston Canyon Waterfall Trail \u2014 one of Banff's most spectacular and accessible canyon experiences. Walk along suspended catwalks bolted directly into the canyon walls above the rushing creek, passing through dramatic limestone narrows to reach the Lower Falls (1.1 km) and Upper Falls (2.7 km from the trailhead). The cool microclimate of the canyon is refreshing on a warm summer day, and the emerald pools and roaring waterfalls make for extraordinary photography.",
+          "afternoon": "Continue beyond the Upper Falls to the Ink Pots \u2014 seven cold-water mineral springs that bubble up in vivid shades of blue, green, and grey in an open meadow (approximately 6 km return from the Upper Falls). The Ink Pots are far less visited and offer a serene, premium wilderness experience. Return to Banff in the mid-afternoon and enjoy a relaxed afternoon by the lodge pool or on your private balcony.",
+          "evening": "Join the Banff Townsite Food and Culture Walk for an immersive evening experience. Explore the charming streets of downtown Banff with a knowledgeable guide, visiting the Whyte Museum of the Canadian Rockies, learning about Indigenous Stoney Nakoda heritage, and sampling local artisan foods and culinary highlights from several of Banff's top establishments along the way.",
+          "meals": {
+            "breakfast": "Gourmet breakfast at Banff Mountain Lodge \u2014 enjoy a leisurely start before departing for Johnston Canyon",
+            "lunch": "Johnston Canyon Resort Restaurant or a premium picnic at the Ink Pots meadow \u2014 ask the lodge to prepare a gourmet picnic basket for the trail",
+            "dinner": "Crave Mountain Grill or a curated tasting stop as part of the Food and Culture Walk \u2014 the walk typically includes tastings, but supplement with a sit-down dinner at Crave for elevated comfort cuisine"
+          },
+          "notes": "Johnston Canyon is located approximately 25 km west of Banff \u2014 arrange a private vehicle or lodge transfer. Arrive early (before 9:00 AM) on weekends to avoid crowds on the catwalks. The extension to the Ink Pots adds approximately 5.6 km return and 215 m elevation gain \u2014 wear proper footwear. Confirm the Food and Culture Walk start time and meeting point with the operator; evening walks typically begin around 5:30\u20136:00 PM. The walk lasts approximately 2.5\u20133 hours."
+        },
+        {
+          "day": 6,
+          "date": "2027-07-20 (Monday)",
+          "morning": "Dedicate your final morning to a sunrise experience at one of Banff's most iconic viewpoints. Rise early for a private guided sunrise hike to the top of Tunnel Mountain (2.5 km, moderate), the most accessible peak in Banff, offering sweeping views over the Bow Valley, Hoodoos, and surrounding peaks bathed in golden morning light. Alternatively, arrange a private sunrise photography session at the Vermilion Lakes \u2014 a series of shallow lakes just west of Banff where elk, osprey, and beaver are frequently spotted in calm morning conditions.",
+          "afternoon": "Spend your final afternoon at leisure. Treat yourself to a premium shopping experience along Banff Avenue \u2014 browse luxury outfitters such as Lululemon, Rocky Mountain Soap Company, and fine art galleries. Visit the Cave and Basin National Historic Site, the birthplace of Canada's national park system, for a fascinating cultural and natural history experience. Return to the lodge for a final farewell soak in the hot tub or pool, and pack for departure.",
+          "evening": "Celebrate your final evening in Banff with a grand farewell dinner at The Bison Restaurant & Terrace, a beloved Banff institution known for its farm-to-table philosophy, locally sourced game meats, and exceptional wine list. Request the outdoor terrace table for al fresco dining with mountain views. Toast to an extraordinary week in the Canadian Rockies.",
+          "meals": {
+            "breakfast": "Sunrise picnic or thermos of premium coffee and pastries from the lodge packed for the Tunnel Mountain or Vermilion Lakes sunrise experience; full hot breakfast at the lodge upon return",
+            "lunch": "Lunch at Magpie & Stump Restaurant or a light premium lunch at the lodge \u2014 keep it relaxed on the final afternoon",
+            "dinner": "The Bison Restaurant & Terrace, Banff \u2014 farm-to-table, locally sourced Canadian cuisine; request the terrace for the farewell evening"
+          },
+          "notes": "Confirm your departure logistics with the lodge concierge \u2014 arrange a private luxury transfer back to Calgary International Airport if needed (allow at least 2.5 hours before your flight, accounting for traffic). Check-out time at Banff Mountain Lodge is typically 11:00 AM; request a late check-out if your flight is in the evening. Leave a generous gratuity for lodge staff who have supported your premium experience throughout the week. Carry any perishable picnic items in an insulated bag provided by the lodge."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Calgary+to+Banff, Alberta, Canada+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Banff, Alberta, Canada&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada",
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada",
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada",
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada",
+        "https://www.getyourguide.com/s/?q=Banff, Alberta, Canada"
+      ],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-1170 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Banff hiking and lakes, $2800 couple, 6 days, July 2027, from Calgary",
+  "session_tags": {
+    "query_id": "CTL-08",
+    "condition": "two_way",
+    "run_index": 1
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "set": "control",
+  "shard_count": 2,
+  "repeats": 3,
+  "run_index_start": 1,
+  "conditions": [
+    "baseline",
+    "targeted",
+    "full_rerun",
+    "broadcast",
+    "two_way"
+  ],
+  "manifest": "results/v1.5/query_manifest.csv",
+  "queries": [
+    {
+      "query_id": "CTL-01",
+      "query_text": "Lisbon city break, $2500 couple, food and history, 5 days, May 2027, from Boston"
+    },
+    {
+      "query_id": "CTL-02",
+      "query_text": "Kyoto temples and gardens, $3500 couple, 6 days, April 2027, from SFO"
+    },
+    {
+      "query_id": "CTL-03",
+      "query_text": "Vancouver food and nature, $1800 solo, 4 days, June 2027, from Seattle"
+    },
+    {
+      "query_id": "CTL-04",
+      "query_text": "Amsterdam museums and canals, $2200 solo, 5 days, May 2027, from NYC"
+    },
+    {
+      "query_id": "CTL-05",
+      "query_text": "Cancun beach resort, $3000 couple, 6 days, March 2027, from Dallas"
+    },
+    {
+      "query_id": "CTL-06",
+      "query_text": "Sydney harbour and beaches, $4500 couple, 8 days, December 2027, from LAX"
+    },
+    {
+      "query_id": "CTL-07",
+      "query_text": "Edinburgh history and whisky, $2000 solo, 5 days, September 2027, from London"
+    },
+    {
+      "query_id": "CTL-08",
+      "query_text": "Banff hiking and lakes, $2800 couple, 6 days, July 2027, from Calgary"
+    },
+    {
+      "query_id": "CTL-09",
+      "query_text": "San Diego family beach trip, $3500 family of 4, 5 days, August 2027, from Phoenix"
+    },
+    {
+      "query_id": "CTL-10",
+      "query_text": "Montreal food and festivals, $1500 solo, 4 days, July 2027, from Toronto"
+    }
+  ],
+  "shards": [
+    {
+      "shard_id": 1,
+      "offset": 0,
+      "limit": 5,
+      "query_ids": [
+        "CTL-01",
+        "CTL-02",
+        "CTL-03",
+        "CTL-04",
+        "CTL-05"
+      ]
+    },
+    {
+      "shard_id": 2,
+      "offset": 5,
+      "limit": 5,
+      "query_ids": [
+        "CTL-06",
+        "CTL-07",
+        "CTL-08",
+        "CTL-09",
+        "CTL-10"
+      ]
+    }
+  ]
+}

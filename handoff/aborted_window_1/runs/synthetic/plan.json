@@ -1,0 +1,171 @@
+{
+  "set": "synthetic",
+  "shard_count": 4,
+  "repeats": 5,
+  "run_index_start": 1,
+  "conditions": [
+    "baseline",
+    "targeted",
+    "full_rerun",
+    "broadcast",
+    "two_way"
+  ],
+  "manifest": "results/v1.5/query_manifest.csv",
+  "queries": [
+    {
+      "query_id": "SYN-01",
+      "query_text": "Greece under $2000, beaches and local food, summer 2026, flying from NYC"
+    },
+    {
+      "query_id": "SYN-02",
+      "query_text": "Maldives honeymoon for 2, $5000 budget, snorkeling and luxury resorts, March 2026"
+    },
+    {
+      "query_id": "SYN-03",
+      "query_text": "Bali for solo traveler, $1500 budget, beaches and yoga, July 2026 from LA"
+    },
+    {
+      "query_id": "SYN-04",
+      "query_text": "Thailand beaches, $1800 for couple, mix of island hopping and street food, October 2026"
+    },
+    {
+      "query_id": "SYN-05",
+      "query_text": "Portugal Algarve, $2200, beach holiday with wine tasting, September 2026 from London"
+    },
+    {
+      "query_id": "SYN-06",
+      "query_text": "Tokyo city break, $3000 for couple, food and tech culture, April 2026 from SFO"
+    },
+    {
+      "query_id": "SYN-07",
+      "query_text": "Rome art and food trip, $2500, 7 days, June 2026 from Chicago"
+    },
+    {
+      "query_id": "SYN-08",
+      "query_text": "Istanbul cultural exploration, $1800 solo, historical sites and cuisine, May 2026"
+    },
+    {
+      "query_id": "SYN-09",
+      "query_text": "Barcelona architecture and nightlife, $2000, 5 days, August 2026 from NYC"
+    },
+    {
+      "query_id": "SYN-10",
+      "query_text": "Seoul K-culture and food, $2200 couple, winter 2026 from LAX"
+    },
+    {
+      "query_id": "SYN-11",
+      "query_text": "New Zealand South Island, $4000, hiking and bungee jumping, November 2026"
+    },
+    {
+      "query_id": "SYN-12",
+      "query_text": "Costa Rica eco-adventure, $2500, zip-lining and wildlife, February 2026 from Miami"
+    },
+    {
+      "query_id": "SYN-13",
+      "query_text": "Nepal trekking Annapurna, $2000 solo, October 2026, 14 days"
+    },
+    {
+      "query_id": "SYN-14",
+      "query_text": "Iceland Northern Lights and hot springs, $3500 couple, January 2026"
+    },
+    {
+      "query_id": "SYN-15",
+      "query_text": "Patagonia hiking Torres del Paine, $4500, 12 days, December 2026"
+    },
+    {
+      "query_id": "SYN-16",
+      "query_text": "Vietnam on $800, backpacking 10 days, street food and culture, April 2026"
+    },
+    {
+      "query_id": "SYN-17",
+      "query_text": "Eastern Europe city hop Prague + Budapest, $1200, 8 days, September 2026"
+    },
+    {
+      "query_id": "SYN-18",
+      "query_text": "Morocco Marrakech and Sahara, $1000 solo, 7 days, March 2026"
+    },
+    {
+      "query_id": "SYN-19",
+      "query_text": "Mexico City food and culture, $900 solo, 5 days, any month 2026"
+    },
+    {
+      "query_id": "SYN-20",
+      "query_text": "Cambodia Angkor Wat + beaches, $1100, 10 days, November 2026"
+    },
+    {
+      "query_id": "SYN-21",
+      "query_text": "Disney World Orlando family of 4, $6000, 7 days, June 2026"
+    },
+    {
+      "query_id": "SYN-22",
+      "query_text": "Safari Kenya family of 3, $8000, 10 days, July 2026"
+    },
+    {
+      "query_id": "SYN-23",
+      "query_text": "Swiss Alps ski holiday family, $7000, 7 days, February 2026"
+    },
+    {
+      "query_id": "SYN-24",
+      "query_text": "Hawaii family beach vacation, $5000, 10 days, August 2026 from Seattle"
+    },
+    {
+      "query_id": "SYN-25",
+      "query_text": "Japan family with kids, $4500, cherry blossom season 2026, 10 days from NYC"
+    }
+  ],
+  "shards": [
+    {
+      "shard_id": 1,
+      "offset": 0,
+      "limit": 7,
+      "query_ids": [
+        "SYN-01",
+        "SYN-02",
+        "SYN-03",
+        "SYN-04",
+        "SYN-05",
+        "SYN-06",
+        "SYN-07"
+      ]
+    },
+    {
+      "shard_id": 2,
+      "offset": 7,
+      "limit": 6,
+      "query_ids": [
+        "SYN-08",
+        "SYN-09",
+        "SYN-10",
+        "SYN-11",
+        "SYN-12",
+        "SYN-13"
+      ]
+    },
+    {
+      "shard_id": 3,
+      "offset": 13,
+      "limit": 6,
+      "query_ids": [
+        "SYN-14",
+        "SYN-15",
+        "SYN-16",
+        "SYN-17",
+        "SYN-18",
+        "SYN-19"
+      ]
+    },
+    {
+      "shard_id": 4,
+      "offset": 19,
+      "limit": 6,
+      "query_ids": [
+        "SYN-20",
+        "SYN-21",
+        "SYN-22",
+        "SYN-23",
+        "SYN-24",
+        "SYN-25"
+      ]
+    }
+  ]
+}

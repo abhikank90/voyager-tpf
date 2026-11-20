@@ -1,0 +1,253 @@
+{
+  "git_head": "16466ca465f732bf79a6b191e32e382838a6bf3e",
+  "start_time": "2026-11-19T02:24:51.543759+00:00",
+  "inventory_mode": "mock",
+  "failures_path": "results/v1.5/failures.csv",
+  "plans_dir": "results/v1.5/plans",
+  "plan": {
+    "set": "control",
+    "shard_count": 2,
+    "repeats": 3,
+    "run_index_start": 1,
+    "conditions": [
+      "baseline",
+      "targeted",
+      "full_rerun",
+      "broadcast",
+      "two_way"
+    ],
+    "manifest": "results/v1.5/query_manifest.csv",
+    "queries": [
+      {
+        "query_id": "CTL-01",
+        "query_text": "Lisbon city break, $2500 couple, food and history, 5 days, May 2027, from Boston"
+      },
+      {
+        "query_id": "CTL-02",
+        "query_text": "Kyoto temples and gardens, $3500 couple, 6 days, April 2027, from SFO"
+      },
+      {
+        "query_id": "CTL-03",
+        "query_text": "Vancouver food and nature, $1800 solo, 4 days, June 2027, from Seattle"
+      },
+      {
+        "query_id": "CTL-04",
+        "query_text": "Amsterdam museums and canals, $2200 solo, 5 days, May 2027, from NYC"
+      },
+      {
+        "query_id": "CTL-05",
+        "query_text": "Cancun beach resort, $3000 couple, 6 days, March 2027, from Dallas"
+      },
+      {
+        "query_id": "CTL-06",
+        "query_text": "Sydney harbour and beaches, $4500 couple, 8 days, December 2027, from LAX"
+      },
+      {
+        "query_id": "CTL-07",
+        "query_text": "Edinburgh history and whisky, $2000 solo, 5 days, September 2027, from London"
+      },
+      {
+        "query_id": "CTL-08",
+        "query_text": "Banff hiking and lakes, $2800 couple, 6 days, July 2027, from Calgary"
+      },
+      {
+        "query_id": "CTL-09",
+        "query_text": "San Diego family beach trip, $3500 family of 4, 5 days, August 2027, from Phoenix"
+      },
+      {
+        "query_id": "CTL-10",
+        "query_text": "Montreal food and festivals, $1500 solo, 4 days, July 2027, from Toronto"
+      }
+    ],
+    "shards": [
+      {
+        "shard_id": 1,
+        "offset": 0,
+        "limit": 5,
+        "query_ids": [
+          "CTL-01",
+          "CTL-02",
+          "CTL-03",
+          "CTL-04",
+          "CTL-05"
+        ]
+      },
+      {
+        "shard_id": 2,
+        "offset": 5,
+        "limit": 5,
+        "query_ids": [
+          "CTL-06",
+          "CTL-07",
+          "CTL-08",
+          "CTL-09",
+          "CTL-10"
+        ]
+      }
+    ]
+  },
+  "shards": [
+    {
+      "shard_id": 1,
+      "command": [
+        "/Users/akankanala/voyager-tpf/.venv/bin/python",
+        "scripts/benchmark_queries.py",
+        "--mode",
+        "conditions",
+        "--manifest",
+        "results/v1.5/query_manifest.csv",
+        "--set",
+        "control",
+        "--repeats",
+        "3",
+        "--limit",
+        "5",
+        "--run-index-start",
+        "1",
+        "--inventory",
+        "mock"
+      ],
+      "env": {
+        "AGENT": "1",
+        "ALLOWED_ORIGINS": "http://localhost:5173,http://localhost:3000",
+        "AWS_REGION": "us-east-1",
+        "BUN_INSTALL": "/Users/akankanala/.bun",
+        "COLORTERM": "truecolor",
+        "CONDA_EXE": "/opt/homebrew/anaconda3/bin/conda",
+        "CONDA_PYTHON_EXE": "/opt/homebrew/anaconda3/bin/python",
+        "CONDA_SHLVL": "0",
+        "DYNAMODB_TABLE": "voyager-user-profiles",
+        "ENVIRONMENT": "development",
+        "FPATH": "/opt/homebrew/share/zsh/site-functions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.9/functions",
+        "HOME": "/Users/akankanala",
+        "HOMEBREW_CELLAR": "/opt/homebrew/Cellar",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "HOMEBREW_REPOSITORY": "/opt/homebrew",
+        "INFOPATH": "/opt/homebrew/share/info:",
+        "JAVA_HOME": "/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home",
+        "LANG": "en_US.UTF-8",
+        "LANGCHAIN_ENDPOINT": "https://api.smith.langchain.com",
+        "LANGCHAIN_TRACING_V2": "false",
+        "LANGSMITH_PROJECT": "voyager-travel-agent",
+        "LANGSMITH_TRACING": "false",
+        "LOGNAME": "akankanala",
+        "LOG_LEVEL": "INFO",
+        "M2_HOME": "/Users/akankanala/Downloads/apache-maven-3.9.2",
+        "OLDPWD": "/Users/akankanala",
+        "OPENCODE": "1",
+        "OPENCODE_PID": "38087",
+        "ORI_TELEMETRY": "0",
+        "OSLogRateLimit": "64",
+        "PATH": "/Users/akankanala/.bun/bin:/Users/akankanala/.local/bin:/opt/homebrew/anaconda3/condabin:/opt/homebrew/anaconda3/bin:/opt/homebrew/opt/openjdk/bin:/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/opt/homebrew/bin",
+        "PORT": "8000",
+        "PWD": "/Users/akankanala/voyager-tpf",
+        "SHELL": "/bin/zsh",
+        "SHLVL": "2",
+        "SSH_AUTH_SOCK": "/var/run/com.apple.launchd.RxjmMVNvXJ/Listeners",
+        "TERM": "xterm-256color",
+        "TERM_PROGRAM": "Apple_Terminal",
+        "TERM_PROGRAM_VERSION": "470.2",
+        "TERM_SESSION_ID": "F2D57BDC-33E2-433D-8017-1C487269B4B7",
+        "TMPDIR": "/var/folders/64/bh_4t00n2y16bfzbnhlwtp9h0000gn/T/",
+        "USER": "akankanala",
+        "VOYAGER_FAILURES_PATH": "results/v1.5/failures.csv",
+        "VOYAGER_INVENTORY_DIR": "fixtures/live_inventory_v1.5",
+        "VOYAGER_INVENTORY_MODE": "mock",
+        "VOYAGER_METRICS_PATH": "results/v1.5/runs/control/shard_1/sessions.jsonl",
+        "VOYAGER_PLANS_DIR": "results/v1.5/plans",
+        "VOYAGER_QUERY_OFFSET": "0",
+        "VOYAGER_RESULTS_DIR": "results/v1.5/runs/control/shard_1",
+        "XPC_FLAGS": "0x0",
+        "XPC_SERVICE_NAME": "0",
+        "_": "/usr/bin/nohup",
+        "_CE_CONDA": "",
+        "_CE_M": "",
+        "__CFBundleIdentifier": "com.apple.Terminal",
+        "__CF_USER_TEXT_ENCODING": "0x1F5:0x0:0x0"
+      },
+      "log": "results/v1.5/runs/control/shard_1/run.log",
+      "pid": 87136
+    },
+    {
+      "shard_id": 2,
+      "command": [
+        "/Users/akankanala/voyager-tpf/.venv/bin/python",
+        "scripts/benchmark_queries.py",
+        "--mode",
+        "conditions",
+        "--manifest",
+        "results/v1.5/query_manifest.csv",
+        "--set",
+        "control",
+        "--repeats",
+        "3",
+        "--limit",
+        "5",
+        "--run-index-start",
+        "1",
+        "--inventory",
+        "mock"
+      ],
+      "env": {
+        "AGENT": "1",
+        "ALLOWED_ORIGINS": "http://localhost:5173,http://localhost:3000",
+        "AWS_REGION": "us-east-1",
+        "BUN_INSTALL": "/Users/akankanala/.bun",
+        "COLORTERM": "truecolor",
+        "CONDA_EXE": "/opt/homebrew/anaconda3/bin/conda",
+        "CONDA_PYTHON_EXE": "/opt/homebrew/anaconda3/bin/python",
+        "CONDA_SHLVL": "0",
+        "DYNAMODB_TABLE": "voyager-user-profiles",
+        "ENVIRONMENT": "development",
+        "FPATH": "/opt/homebrew/share/zsh/site-functions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.9/functions",
+        "HOME": "/Users/akankanala",
+        "HOMEBREW_CELLAR": "/opt/homebrew/Cellar",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "HOMEBREW_REPOSITORY": "/opt/homebrew",
+        "INFOPATH": "/opt/homebrew/share/info:",
+        "JAVA_HOME": "/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home",
+        "LANG": "en_US.UTF-8",
+        "LANGCHAIN_ENDPOINT": "https://api.smith.langchain.com",
+        "LANGCHAIN_TRACING_V2": "false",
+        "LANGSMITH_PROJECT": "voyager-travel-agent",
+        "LANGSMITH_TRACING": "false",
+        "LOGNAME": "akankanala",
+        "LOG_LEVEL": "INFO",
+        "M2_HOME": "/Users/akankanala/Downloads/apache-maven-3.9.2",
+        "OLDPWD": "/Users/akankanala",
+        "OPENCODE": "1",
+        "OPENCODE_PID": "38087",
+        "ORI_TELEMETRY": "0",
+        "OSLogRateLimit": "64",
+        "PATH": "/Users/akankanala/.bun/bin:/Users/akankanala/.local/bin:/opt/homebrew/anaconda3/condabin:/opt/homebrew/anaconda3/bin:/opt/homebrew/opt/openjdk/bin:/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/opt/homebrew/bin",
+        "PORT": "8000",
+        "PWD": "/Users/akankanala/voyager-tpf",
+        "SHELL": "/bin/zsh",
+        "SHLVL": "2",
+        "SSH_AUTH_SOCK": "/var/run/com.apple.launchd.RxjmMVNvXJ/Listeners",
+        "TERM": "xterm-256color",
+        "TERM_PROGRAM": "Apple_Terminal",
+        "TERM_PROGRAM_VERSION": "470.2",
+        "TERM_SESSION_ID": "F2D57BDC-33E2-433D-8017-1C487269B4B7",
+        "TMPDIR": "/var/folders/64/bh_4t00n2y16bfzbnhlwtp9h0000gn/T/",
+        "USER": "akankanala",
+        "VOYAGER_FAILURES_PATH": "results/v1.5/failures.csv",
+        "VOYAGER_INVENTORY_DIR": "fixtures/live_inventory_v1.5",
+        "VOYAGER_INVENTORY_MODE": "mock",
+        "VOYAGER_METRICS_PATH": "results/v1.5/runs/control/shard_2/sessions.jsonl",
+        "VOYAGER_PLANS_DIR": "results/v1.5/plans",
+        "VOYAGER_QUERY_OFFSET": "5",
+        "VOYAGER_RESULTS_DIR": "results/v1.5/runs/control/shard_2",
+        "XPC_FLAGS": "0x0",
+        "XPC_SERVICE_NAME": "0",
+        "_": "/usr/bin/nohup",
+        "_CE_CONDA": "",
+        "_CE_M": "",
+        "__CFBundleIdentifier": "com.apple.Terminal",
+        "__CF_USER_TEXT_ENCODING": "0x1F5:0x0:0x0"
+      },
+      "log": "results/v1.5/runs/control/shard_2/run.log",
+      "pid": 87141
+    }
+  ]
+}
