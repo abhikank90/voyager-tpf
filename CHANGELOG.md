@@ -38,6 +38,12 @@ the narrowed capture guard; real-set provenance and sensitivity strata; the
 RQ4 shipped stub-client re-run; the `paper_numbers` candidate-field fix; the
 second labeler's self-check; the billing reconciliation fail (+1.18%) and its
 itemization; H2c eligibility and mock-only sample; the H2c contingency round.
+## [Unreleased]
+
+### Fixed
+
+- requirements-lock.txt installs on Python 3.11 (Deprecated 1.3.1, numpy 2.4.6); the
+  previous pins required Python 3.12.
 
 ## [1.4.2] - 2026-11-16
 
