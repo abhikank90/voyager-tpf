@@ -485,14 +485,18 @@ async def test_centroid_selects_nearest_hotel(monkeypatch, tmp_path):
     assert result["feedback_metrics"]["reason"] == "qualifying_option_found"
 
 
-def test_effective_dates_capture_is_future(monkeypatch):
+def test_trip_window_capture_is_future(monkeypatch, tmp_path):
     from datetime import date
 
+    from config.settings import reload_settings
+
+    monkeypatch.setenv("VOYAGER_INVENTORY_DIR", str(tmp_path))
+    reload_settings()
     agent = HotelAgent()
     monkeypatch.setattr(agent, "_inventory_mode", lambda: "capture")
-    check_in, check_out = agent._effective_dates(2026, 7)
-    assert date.fromisoformat(check_in) > date.today()
-    assert date.fromisoformat(check_out) > date.fromisoformat(check_in)
+    window = agent._trip_window({"travel_month": "June", "duration_days": 7})
+    assert window.departure > date.today()
+    assert (window.return_date - window.departure).days == 7
 
 
 def test_location_hint_feedback_satisfiable():
@@ -542,3 +546,13 @@ def test_location_hint_feedback_centroid_unsatisfiable():
     assert feedback["feedback_satisfiable"] is False
     assert feedback["fallback_to_original_selection"] is True
     assert feedback["reason"] == "no_qualifying_option"
+
+
+@pytest.mark.asyncio
+async def test_total_usd_matches_window_when_duration_missing():
+    """No duration in the request: the stay is the window's default, priced as such."""
+    from agents.trip_window import DEFAULT_DURATION_DAYS
+    agent = HotelAgent()
+    result = await agent._execute({"intent": {**INTENT_BASE, "duration_days": None}})
+    for hotel in result["hotels"]:
+        assert hotel["total_usd"] == hotel["price_per_night_usd"] * DEFAULT_DURATION_DAYS

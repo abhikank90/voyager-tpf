@@ -1,6 +1,18 @@
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 
 from typing_extensions import TypedDict
+
+
+def _merge_errors(left: dict, right: dict) -> dict:
+    """Merge two agent-error dicts so one agent's error never overwrites another's.
+
+    LangGraph applies this reducer at every node boundary, so a research-round error
+    survives through the hub and option-generator nodes instead of being replaced by
+    whichever error came last.
+    """
+    merged = dict(left or {})
+    merged.update(right or {})
+    return merged
 
 
 class CollaborationMessage(TypedDict, total=False):
@@ -29,6 +41,7 @@ class TripOption(TypedDict, total=False):
     # Full itinerary
     itinerary: dict[str, Any]
     day_by_day: list[dict]
+    itinerary_fallback: str | None  # "max_tokens"/"json_error" when day_by_day is the template
 
     # Booking links
     flight_booking_url: str | None
@@ -95,6 +108,9 @@ class TravelState(TypedDict, total=False):
 
     weather: dict[str, Any]
     travel_month: str
+    trip_window: dict[str, Any]  # resolved inventory dates (protocol §5.2)
+    refinement_mode: str  # targeted | full_rerun | broadcast | two_way (protocol §3)
+    inventory_profile: str  # "default" | "control" (mock inventory selection, protocol §5)
 
     visa_safety: dict[str, Any]
 
@@ -118,7 +134,7 @@ class TravelState(TypedDict, total=False):
 
     # Control
     status: str
-    errors: dict[str, str]
+    errors: Annotated[dict[str, str], _merge_errors]
 
     # When False: skip Rounds 2/3 (baseline comparison mode for benchmarking)
     enable_refinement: bool

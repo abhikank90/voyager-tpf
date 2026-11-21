@@ -1,0 +1,783 @@
+{
+  "session_id": "d455f47b-21cb-4cbe-adaa-01639a99d2c1",
+  "intent": {
+    "destination": "Greece",
+    "origin": "New York City (NYC)",
+    "budget_usd": 2000.0,
+    "duration_days": null,
+    "travel_month": "June",
+    "travel_year": 2026,
+    "interests": [
+      "beaches",
+      "local food"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Greece under $2000, beaches and local food, summer 2026, flying from NYC"
+  },
+  "selected_flight": {
+    "price_usd": 890,
+    "airline": "LH",
+    "departure": "2027-06-15T06:00:00",
+    "arrival": "2027-06-15T13:00:00",
+    "stops": 1,
+    "duration": "PT7H00M"
+  },
+  "selected_hotel": {
+    "name": "Navagio Beach, Zakynthos Boutique Stay",
+    "price_per_night_usd": 95,
+    "total_usd": 1235,
+    "rating": 4.4,
+    "amenities": [
+      "wifi",
+      "breakfast included",
+      "rooftop terrace"
+    ],
+    "location": "Navagio Beach, Zakynthos"
+  },
+  "experiences": [
+    {
+      "name": "Navagio Beach (Shipwreck Beach) Visit",
+      "description": "Take a boat tour to the iconic Navagio Beach on Zakynthos, one of Greece's most photographed beaches. The stunning turquoise waters, towering limestone cliffs, and the famous shipwreck make this an unmissable experience. Boat tours depart regularly from Porto Vromi or Agios Nikolaos port.",
+      "cost_usd": 20,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Navagio Beach, Zakynthos"
+    },
+    {
+      "name": "Athens Central Market Food Tour",
+      "description": "Explore the vibrant Varvakios Agora (Athens Central Market) and surrounding streets in Monastiraki. Sample local cheeses, olives, cured meats, fresh seafood, and traditional Greek street food like souvlaki and spanakopita. Engage with local vendors and discover authentic Greek culinary culture firsthand.",
+      "cost_usd": 35,
+      "category": "local food",
+      "best_time_of_day": "morning",
+      "location": "Monastiraki & Varvakios Agora, Athens"
+    },
+    {
+      "name": "Elafonissi Beach Day Trip",
+      "description": "Visit the breathtaking Elafonissi Beach in southwestern Crete, famous for its pink-tinged sand and shallow crystal-clear lagoon waters. Wade across the shallow sandbar to the small island, snorkel in the warm Aegean waters, and relax on one of Europe's most beautiful beaches. Accessible by local bus or rental car.",
+      "cost_usd": 25,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Elafonissi, Crete"
+    },
+    {
+      "name": "Traditional Cretan Cooking Class",
+      "description": "Join a hands-on cooking class in Chania's old town to learn how to prepare authentic Cretan dishes such as dakos (barley rusk salad), lamb with stamnagathi (wild greens), and loukoumades (honey donuts). Classes typically include a market visit to source fresh local ingredients and a full sit-down meal of everything you prepare.",
+      "cost_usd": 65,
+      "category": "local food",
+      "best_time_of_day": "morning",
+      "location": "Old Town, Chania, Crete"
+    },
+    {
+      "name": "Sunset Dinner at a Traditional Taverna in Oia",
+      "description": "Experience the world-famous Santorini sunset from the cliffside village of Oia while dining at a traditional Greek taverna. Enjoy fresh grilled octopus, fava dip made from local yellow split peas, fresh catch of the day, and a carafe of local Assyrtiko white wine as the sun dips below the caldera horizon in a spectacular display of color.",
+      "cost_usd": 55,
+      "category": "local food",
+      "best_time_of_day": "evening",
+      "location": "Oia, Santorini"
+    }
+  ],
+  "weather": {
+    "avg_temp_c": 29,
+    "avg_temp_f": 84,
+    "precipitation_mm": 8,
+    "sunshine_hours": 11,
+    "sea_temp_c": 23,
+    "summary": "Hot and sunny. Sea warm enough for swimming.",
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-06-15",
+    "return": "2027-06-28",
+    "nights": 13,
+    "month": "june",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Greece",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 2550.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-06-15T06:00:00",
+        "arrival": "2027-06-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Navagio Beach, Zakynthos Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 1235,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Navagio Beach, Zakynthos"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "Greece",
+        "style": "budget",
+        "total_cost": 2550.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 1235.0,
+          "experiences": 0,
+          "food": 325,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15",
+          "morning": "No activities scheduled - flight arrives at 13:00",
+          "afternoon": "Arrive at Athens International Airport at 13:00. Clear customs, collect luggage, and take the X96 express bus to Piraeus port (\u20ac6, ~1 hour). Check ferry schedules to Zakynthos departing from Killini or book an overnight ferry if available. Grab a quick bite near the port while waiting.",
+          "evening": "Board ferry from Killini to Zakynthos (ticket ~\u20ac8-10, ~1.5 hours). Arrive in Zakynthos Town, take a local bus or shared taxi toward Navagio Beach area. Check in to Navagio Beach Boutique Stay. Settle in, freshen up, and take a short walk around the local neighborhood to get your bearings.",
+          "meals": {
+            "breakfast": "Meal on the plane or skip",
+            "lunch": "Souvlaki wrap from a street kiosk near Piraeus port (~\u20ac3-4)",
+            "dinner": "Simple gyros or spanakopita from a local bakery near Navagio area (~\u20ac4-6)"
+          },
+          "notes": "Book ferry tickets in advance online at ferriesingreece.com to save time. Keep cash handy for buses and small vendors. The journey from Athens airport to Navagio takes approximately 5-6 hours total including transfers."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16",
+          "morning": "Wake up early and hike or take a local taxi to the famous Navagio Beach viewpoint (Shipwreck Lookout). Enjoy the stunning panoramic views of the iconic shipwreck and turquoise waters from the clifftop \u2014 completely free. Take photos and soak in the scenery before the crowds arrive.",
+          "afternoon": "Book a budget boat trip from Porto Vromi (the nearest small port, ~10 min by taxi) to access Navagio Beach directly by sea (~\u20ac15-20 per person for a group boat). Spend the afternoon swimming in the crystal-clear waters, exploring the shipwreck wreck up close, and sunbathing on the white pebble beach.",
+          "evening": "Return to the accommodation. Walk to the nearest village taverna for a relaxed evening meal. Try local Zakynthian dishes like sofrito (beef in garlic wine sauce) or bourdeto (spicy fish stew).",
+          "meals": {
+            "breakfast": "Greek yogurt with honey and fresh fruit from a local mini-market (~\u20ac2-3)",
+            "lunch": "Pack a simple picnic \u2014 bread, local cheese (graviera), olives, and tomatoes from a village shop (~\u20ac4-5)",
+            "dinner": "Village taverna meal \u2014 moussaka or grilled fish with a small carafe of house wine (~\u20ac10-13)"
+          },
+          "notes": "Navagio Beach can only be accessed by boat \u2014 there is no road access. Arrive at Porto Vromi early (before 10:00) for cheaper group boat fares. Bring sunscreen, a hat, and plenty of water as there is no shade on the beach."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17",
+          "morning": "Explore the Blue Caves (Kianoun Spilion) on the northern tip of Zakynthos. These stunning sea caves glow with electric blue light in the morning sun. Take a local boat tour from Agios Nikolaos port (~\u20ac12-15). The light is best before noon.",
+          "afternoon": "Visit the nearby Cape Skinari lighthouse area. Walk along the rocky coastline, snorkel in the clear water, and relax on the quiet rocky beaches. Bring your own snorkel gear if possible (or rent cheaply from a local shop ~\u20ac5).",
+          "evening": "Head back toward the Navagio area. Visit a local kafeneio (traditional Greek coffee house) for an iced frappe (~\u20ac2) and watch the sunset over the Ionian Sea. Stroll through the village in the cool evening air.",
+          "meals": {
+            "breakfast": "Tiropita (cheese pie) and coffee from a local bakery (~\u20ac2-3)",
+            "lunch": "Fresh grilled octopus or calamari at a small seaside taverna near Agios Nikolaos (~\u20ac8-10)",
+            "dinner": "Cook a simple meal at the accommodation using local market ingredients \u2014 pasta with local olive oil, tomatoes, and feta (~\u20ac4-5 total)"
+          },
+          "notes": "The Blue Caves are best visited in the morning when the sun angle creates the most vivid blue reflections. Wear swimwear under your clothes as swimming inside the caves is possible and highly recommended."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18",
+          "morning": "Rent a scooter or bicycle from a local rental shop near the accommodation (~\u20ac15-20/day for scooter) and explore the northern villages of Zakynthos. Visit the picturesque village of Volimes, known for its local honey, wine, and handmade crafts. Sample free tastings at local stalls.",
+          "afternoon": "Continue the scooter ride south to Makris Gialos and Alykanas beaches on the northeastern coast. These are quieter, less touristy beaches with calm, warm water ideal for swimming. Spend a few hours relaxing and swimming.",
+          "evening": "Return the scooter and walk to a local fish taverna for dinner. Try fresh catch of the day \u2014 often cheaper and fresher than tourist restaurants. Ask locals for their recommendations.",
+          "meals": {
+            "breakfast": "Homemade-style breakfast at the accommodation \u2014 bread, local honey from Volimes, and instant coffee (~\u20ac2)",
+            "lunch": "Souvlaki and chips from a roadside grill near Alykanas (~\u20ac5-6)",
+            "dinner": "Fresh grilled fish platter at a local taverna with a Greek salad and bread (~\u20ac12-14)"
+          },
+          "notes": "A scooter is the most cost-effective and flexible way to explore Zakynthos. Ensure you have a valid driving license (motorcycle category). Fuel costs approximately \u20ac5-6 for a full day of riding. Always wear a helmet."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-19",
+          "morning": "Visit Zakynthos Town (Zante Town) by local bus (~\u20ac2 each way). Explore the Venetian-era Bochali Castle (free entry) perched on a hill above the town with sweeping views over the bay. Walk through the charming Venetian-style streets and visit the free Byzantine Museum.",
+          "afternoon": "Stroll along the Zakynthos Town waterfront promenade. Browse the local market for cheap souvenirs \u2014 local olive oil, honey, and spices make great gifts. Visit Solomos Square, the main piazza, and admire the neoclassical architecture.",
+          "evening": "Enjoy the lively atmosphere of Zakynthos Town in the evening. Have dinner at a traditional ouzeri (Greek tapas bar) and try a selection of small mezedes plates \u2014 a great way to sample many local flavors affordably.",
+          "meals": {
+            "breakfast": "Loukoumades (honey doughnuts) and Greek coffee at a local caf\u00e9 in Zakynthos Town (~\u20ac3)",
+            "lunch": "Stuffed vine leaves (dolmades), tzatziki, and pita bread from a local deli or market stall (~\u20ac5-6)",
+            "dinner": "Ouzeri mezedes spread \u2014 taramasalata, grilled halloumi, saganaki, and olives shared between travelers (~\u20ac10-12 per person)"
+          },
+          "notes": "Local buses run regularly between Navagio area and Zakynthos Town. Check the KTEL Zakynthos schedule in advance. The Byzantine Museum houses important icons and artworks saved from the 1953 earthquake \u2014 worth a visit and free or very low cost."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-20",
+          "morning": "Take a morning swim at a quiet cove near the accommodation. Explore the rocky coastline on foot and discover hidden swimming spots that are off the tourist trail. The water is warm (around 24-25\u00b0C in June) and perfect for snorkeling.",
+          "afternoon": "Visit the Anafonitria Monastery, one of the oldest monasteries on Zakynthos, located near Navagio. Explore the medieval tower and peaceful grounds for free. Afterward, hike through the surrounding olive groves and pine forests.",
+          "evening": "Sunset watching from a clifftop near Navagio viewpoint \u2014 one of the best free experiences on the island. Bring a bottle of local wine (~\u20ac4-5 from a supermarket) and enjoy the view as the sun dips into the Ionian Sea.",
+          "meals": {
+            "breakfast": "Greek yogurt parfait with local honey and walnuts from the mini-market (~\u20ac3)",
+            "lunch": "Homemade picnic \u2014 local bread, olives, feta cheese, cucumber, and tomatoes (~\u20ac4-5)",
+            "dinner": "Simple pasta dish cooked at the accommodation with local ingredients or takeaway from a village souvlaki shop (~\u20ac5-7)"
+          },
+          "notes": "Dress modestly when visiting the monastery \u2014 shoulders and knees should be covered. The monastery is free to enter and offers a calm, authentic experience away from tourist crowds. Bring a torch for the evening clifftop visit as paths can be unlit."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-21",
+          "morning": "Take a day trip to Kefalonia island. Catch an early ferry from Agios Nikolaos port to Pessada, Kefalonia (~\u20ac8-10 one way, ~1.5 hours). Head to the famous Myrtos Beach, one of Greece's most photographed beaches, with dramatic white cliffs and vivid blue water.",
+          "afternoon": "Explore more of Kefalonia \u2014 visit the charming village of Assos perched on a peninsula with a Venetian castle (free to walk up). Swim in the calm bay below the village. Alternatively, visit Melissani Cave Lake (~\u20ac7 entry) \u2014 a magical underground lake lit by a hole in the ceiling.",
+          "evening": "Return ferry to Zakynthos from Pessada. Arrive back at the accommodation by evening. Have a relaxed dinner at a local taverna to recover from the day trip.",
+          "meals": {
+            "breakfast": "Early breakfast at the accommodation before the ferry \u2014 bread, cheese, and coffee (~\u20ac2)",
+            "lunch": "Fresh seafood or grilled meat at a local taverna in Assos village (~\u20ac10-12)",
+            "dinner": "Light meal back in Zakynthos \u2014 grilled chicken souvlaki with tzatziki and pita (~\u20ac6-8)"
+          },
+          "notes": "Check ferry times carefully as services between Zakynthos and Kefalonia can be limited. Book return ticket at the port in the morning. Hiring a local taxi or joining a budget day tour on Kefalonia (~\u20ac20-25) is the easiest way to reach Myrtos Beach from the port."
+        },
+        {
+          "day": 8,
+          "date": "2027-06-22",
+          "morning": "Explore Gerakas Beach on the southeastern tip of Zakynthos \u2014 a protected loggerhead sea turtle (Caretta caretta) nesting beach. Arrive early morning when turtles are most active near the shore. Swimming is permitted in designated areas.",
+          "afternoon": "Continue along the southeastern coast to Banana Beach and Agios Sostis Beach. These long sandy beaches are among the best on the island. Rent a sun lounger (\u20ac5-6 for two) or simply lay on the free sand. The sea is warm and calm.",
+          "evening": "Visit the small village of Vasilikos for a local dinner. This quiet village has authentic tavernas frequented by locals rather than tourists, offering better value and more genuine Greek food.",
+          "meals": {
+            "breakfast": "Spanakopita and coffee from a local bakery (~\u20ac2-3)",
+            "lunch": "Beachside snack bar \u2014 toasted sandwich, fresh juice, and Greek salad (~\u20ac7-8)",
+            "dinner": "Grilled lamb chops (paidakia) with roasted potatoes and village salad at a Vasilikos taverna (~\u20ac11-13)"
+          },
+          "notes": "Gerakas Beach has strict rules to protect nesting turtles \u2014 no umbrellas, no night visits, and no flash photography. Rangers are present and will guide visitors. This is a genuinely special wildlife experience and completely free."
+        },
+        {
+          "day": 9,
+          "date": "2027-06-23",
+          "morning": "Lazy morning at the accommodation \u2014 rest, swim in a nearby cove, and catch up on journaling or reading. Budget trips can be tiring; a slow morning recharges energy for the days ahead.",
+          "afternoon": "Visit the village of Lithakia and the nearby Keri Lake and Keri Caves on the southwestern coast. Rent a small paddleboat or kayak (~\u20ac10/hour) to explore the dramatic sea arches and rock formations. The water here is incredibly clear.",
+          "evening": "Watch the sunset from Keri Lighthouse, one of the most scenic spots on Zakynthos. The lighthouse sits on a cliff above the sea with unobstructed views westward. Completely free and magical at golden hour.",
+          "meals": {
+            "breakfast": "Homemade breakfast \u2014 scrambled eggs, local tomatoes, olives, and bread (~\u20ac3-4 from market)",
+            "lunch": "Packed lunch from the mini-market \u2014 sandwiches, fruit, and water (~\u20ac4-5)",
+            "dinner": "Traditional Greek stifado (beef and onion stew) at a taverna in Lithakia village (~\u20ac9-11)"
+          },
+          "notes": "Keri Caves are best explored by kayak or paddleboat \u2014 the sea arches are accessible only from the water. Wear water shoes as the rocky entry points can be slippery. The Keri Lighthouse area gets crowded at sunset so arrive 30 minutes early for a good spot."
+        },
+        {
+          "day": 10,
+          "date": "2027-06-24",
+          "morning": "Return to Zakynthos Town for a morning food market visit. The local laiki (street market) is held on certain mornings and offers fresh produce, local cheeses, olives, and street food at very low prices. Stock up on snacks and local specialties.",
+          "afternoon": "Visit the Skopos Hill area south of Zakynthos Town. Hike up to the Church of Panagia Skopiotissa (~45 min walk) for panoramic views over the entire island and the sea. The path winds through fragrant pine and cypress forest.",
+          "evening": "Explore the nightlife strip of Zakynthos Town on a budget \u2014 many bars offer cheap happy hour deals (beer from \u20ac2-3). Alternatively, join locals at a waterfront kafeneio for an evening of people-watching over iced coffee.",
+          "meals": {
+            "breakfast": "Fresh pastries and coffee from the laiki market (~\u20ac2-3)",
+            "lunch": "Market-fresh ingredients assembled into a picnic at Skopos Hill (~\u20ac4-5)",
+            "dinner": "Taverna in Zakynthos Town \u2014 pastitsio (Greek pasta bake) or gemista (stuffed vegetables) with bread and a beer (~\u20ac9-11)"
+          },
+          "notes": "Check the local market schedule at the tourist information office in Zakynthos Town. The Skopos hike is moderate \u2014 wear sturdy shoes and bring water. The church at the summit is still active and open to respectful visitors."
+        },
+        {
+          "day": 11,
+          "date": "2027-06-25",
+          "morning": "Spend a final leisurely morning at Navagio Beach area. Take one last boat trip to the shipwreck beach if budget allows, or simply enjoy the clifftop views and swim in a nearby cove. Reflect on the journey so far.",
+          "afternoon": "Pack and prepare for departure from Zakynthos. Take the ferry back from Zakynthos Town to Killini on the mainland (~\u20ac8-10). From Killini, take a KTEL bus toward Athens (Kifissos terminal, ~\u20ac15, ~3 hours). Check into a budget hostel in Athens city center (~\u20ac15-20/night in a dorm).",
+          "evening": "Arrive in Athens. Drop bags at the hostel and take a short walk to the Monastiraki neighborhood \u2014 the vibrant heart of Athens. Browse the flea market stalls and enjoy the electric atmosphere of the city.",
+          "meals": {
+            "breakfast": "Final Zakynthos breakfast \u2014 Greek yogurt, honey, and local pastry (~\u20ac3)",
+            "lunch": "Snack on the ferry or bus \u2014 packed food from the mini-market (~\u20ac3-4)",
+            "dinner": "Souvlaki and gyros in Monastiraki \u2014 one of Athens' best budget food streets (~\u20ac5-7)"
+          },
+          "notes": "Book the Athens hostel in advance for better rates \u2014 recommended options include Athens Backpackers or City Circus Hostel. Keep your ferry and bus tickets for expense tracking. Monastiraki is very safe and lively in the evenings."
+        },
+        {
+          "day": 12,
+          "date": "2027-06-26",
+          "morning": "Explore the Acropolis and Parthenon \u2014 the most iconic ancient site in Greece. Entry is \u20ac20 (reduced to \u20ac10 for EU students). Arrive at opening time (08:00) to beat the heat and crowds. The views over Athens from the top are extraordinary.",
+          "afternoon": "Walk down through the Ancient Agora (\u20ac10 entry or free with Acropolis combo ticket) and explore the Plaka neighborhood \u2014 Athens' oldest district with charming neoclassical streets, bougainvillea-draped houses, and artisan shops. Visit the free Hadrian's Arch nearby.",
+          "evening": "Head to Thissio or Koukaki neighborhoods for dinner \u2014 these areas have excellent local restaurants at lower prices than the tourist-heavy Plaka. Watch the illuminated Acropolis from a rooftop bar over a cold beer.",
+          "meals": {
+            "breakfast": "Koulouri (sesame bread ring) and coffee from a street vendor near Monastiraki (~\u20ac1.50-2)",
+            "lunch": "Cheap and filling lunch at a local taverna in Plaka \u2014 moussaka, salad, and water (~\u20ac8-10)",
+            "dinner": "Mezedes at a Koukaki ouzeri \u2014 dolmades, tzatziki, grilled vegetables, and ouzo (~\u20ac10-12)"
+          },
+          "notes": "The Acropolis combo ticket (\u20ac30) covers multiple ancient sites including the Ancient Agora, Roman Agora, Kerameikos, and more \u2014 excellent value if you plan to visit several sites. Free entry every first Sunday of the month from November to March (not applicable in June)."
+        },
+        {
+          "day": 13,
+          "date": "2027-06-27",
+          "morning": "Final morning in Athens. Visit the Athens Central Market (Varvakios Agora) near Omonia Square \u2014 a sensory feast of fresh fish, meat, spices, and local produce. Completely free to browse. Pick up last-minute food souvenirs \u2014 vacuum-packed olives, dried herbs, or local sweets.",
+          "afternoon": "Explore the National Garden (free entry) adjacent to Syntagma Square \u2014 a peaceful green oasis in the city. Watch the Evzone guards perform the changing of the guard ceremony at the Hellenic Parliament (free, every hour). Visit Syntagma Square and the metro station's free archaeological display.",
+          "evening": "Final dinner in Athens before departure preparations. Head to Exarcheia neighborhood for the most authentic and budget-friendly dining in the city \u2014 local tavernas here serve generous portions at rock-bottom prices. Toast to an amazing 13-day Greek adventure.",
+          "meals": {
+            "breakfast": "Full Greek breakfast at the hostel or nearby caf\u00e9 \u2014 eggs, feta, olives, bread, and coffee (~\u20ac4-5)",
+            "lunch": "Street food tour of Monastiraki \u2014 try tiropita, spanakopita, and loukoumades (~\u20ac5-6 total)",
+            "dinner": "Generous taverna meal in Exarcheia \u2014 roast chicken, Greek salad, chips, and a carafe of house wine (~\u20ac10-12)"
+          },
+          "notes": "Check flight departure time and arrange airport transfer accordingly \u2014 the X3 express bus from Syntagma to Athens Airport costs \u20ac6 and takes ~55 minutes. Allow at least 2.5 hours before departure for check-in and security. Keep a small amount of euros for airport snacks and final tips."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City (NYC)+to+Greece+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Greece&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "Save $-1050 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Greece Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 2745.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-06-15T06:00:00",
+        "arrival": "2027-06-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Navagio Beach, Zakynthos Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 1235,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Navagio Beach, Zakynthos"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "Greece",
+        "style": "balanced",
+        "total_cost": 2745.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 1235.0,
+          "experiences": 0,
+          "food": 520,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15",
+          "morning": "N/A - Flight arrives at 13:00",
+          "afternoon": "Arrive at Zakynthos International Airport at 13:00. Collect luggage and transfer by taxi or pre-booked shuttle (~45 min) to your Boutique Stay near Navagio Beach. Check in, freshen up, and take a leisurely stroll along the clifftop viewpoint overlooking the iconic Navagio (Shipwreck) Beach for your first breathtaking view of the turquoise Ionian Sea.",
+          "evening": "Head into the nearby village of Anafonitria or Volimes for a relaxed first dinner. Explore the quiet stone-paved streets and get your bearings around the northern Zakynthos area.",
+          "meals": {
+            "breakfast": "N/A - in transit",
+            "lunch": "Grab a quick bite at the airport caf\u00e9 or a souvlaki wrap from a snack kiosk near the port (\u20ac5\u20138)",
+            "dinner": "Dinner at a local taverna in Anafonitria village \u2014 try grilled fresh fish, horiatiki (Greek salad), and local white wine. Budget ~\u20ac20\u201328 per person."
+          },
+          "notes": "Keep Day 1 light \u2014 you've had a long travel day. Pre-book your transfer from the airport to avoid waiting. Stock up on water and snacks at a local mini-market near the hotel."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16",
+          "morning": "Take the boat trip down to Navagio (Shipwreck) Beach \u2014 the only way to access it is by sea. Book a short boat tour (30\u201345 min ride) departing from Porto Vromi Cove, just a few minutes from your hotel. Spend 2 hours on the legendary beach, swim in the crystal-clear blue water, and photograph the rusted shipwreck up close.",
+          "afternoon": "Return from Navagio and visit the dramatic clifftop viewpoint platform for panoramic photos. Afterwards, drive or take a taxi to the Blue Caves at Cape Skinari (northern tip of Zakynthos) for a small-boat cave excursion through sea arches glowing with electric blue light.",
+          "evening": "Return to the hotel to shower and rest. Head out for dinner in the village of Volimes, known for its local honey, cheese, and handicrafts. Browse a few artisan shops before eating.",
+          "meals": {
+            "breakfast": "Breakfast at your boutique hotel or a nearby caf\u00e9 \u2014 Greek yogurt with thyme honey, fresh bread, and coffee (\u20ac6\u201310)",
+            "lunch": "Packed snacks or a light meal at a small caf\u00e9 near Porto Vromi before or after the boat trip (\u20ac8\u201312)",
+            "dinner": "Taverna in Volimes \u2014 try pastitsada (slow-cooked meat pasta), tzatziki, and local Zakynthian wine. ~\u20ac22\u201330 per person."
+          },
+          "notes": "Book the Navagio boat trip in advance, especially in June. Wear reef-safe sunscreen and bring water shoes as the beach is pebbly near the water's edge. The Blue Caves tour can often be combined with Navagio in one boat excursion."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17",
+          "morning": "Rent a scooter or ATV from a local rental shop near Anafonitria and explore the rugged, scenic roads of northern Zakynthos at your own pace. Visit the 15th-century Monastery of Anafonitria, one of the oldest on the island, surrounded by olive groves and cypress trees.",
+          "afternoon": "Drive south along the west coast to reach Limnionas Beach \u2014 a secluded rocky cove with emerald waters perfect for snorkeling. Bring your own gear or rent from a nearby beach shack. Spend a few hours swimming and relaxing in the shade of the cliffs.",
+          "evening": "Drive back north and stop at a clifftop spot to watch the sunset over the Ionian Sea \u2014 one of the most spectacular in Greece. Return to the hotel and enjoy a quiet evening in.",
+          "meals": {
+            "breakfast": "At the hotel \u2014 fresh fruit, eggs, and Greek coffee",
+            "lunch": "Picnic-style lunch \u2014 pick up fresh bread, local cheese (kefalotiri), olives, and tomatoes from a Volimes market stall (\u20ac8\u201312 total)",
+            "dinner": "Cook-in or order from a local delivery taverna, or revisit a favourite spot from Day 1 or 2. ~\u20ac18\u201325 per person."
+          },
+          "notes": "Scooter/ATV rental costs approximately \u20ac25\u201340/day. Bring a paper map or download offline Google Maps as signal can be patchy in northern Zakynthos. Apply sunscreen generously \u2014 29\u00b0C with sea reflection is intense."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18",
+          "morning": "Take a day trip to Zakynthos Town (Zante Town) on the eastern coast (~1 hour drive or bus). Start with a walk around Solomos Square, the elegant main plaza named after the poet Dionysios Solomos. Visit the Byzantine Museum of Zakynthos to see post-Byzantine icons and art rescued after the 1953 earthquake.",
+          "afternoon": "Stroll through the Venetian-influenced streets and visit Bochali Hill for panoramic views over the town and harbour. Visit the ruins of the Venetian Castle (Kastro) surrounded by pine trees \u2014 great for photos and a light hike.",
+          "evening": "Enjoy the lively evening atmosphere of Zakynthos Town. Explore the waterfront promenade and dine at a harbour-side restaurant before returning to your hotel.",
+          "meals": {
+            "breakfast": "Caf\u00e9 in Zakynthos Town upon arrival \u2014 freddo espresso, tiropita (cheese pie), and fresh orange juice (\u20ac5\u20138)",
+            "lunch": "Traditional lunch at a family-run restaurant near Solomos Square \u2014 try sofrito (veal in white wine sauce), a Zakynthian specialty. ~\u20ac15\u201320 per person.",
+            "dinner": "Seafood dinner at a harbour taverna in Zakynthos Town \u2014 grilled octopus, sea bream, and a carafe of local wine. ~\u20ac25\u201335 per person."
+          },
+          "notes": "KTEL buses run from northern Zakynthos to Zante Town a few times daily \u2014 check the schedule in advance. Alternatively, rent a car for the day for more flexibility (~\u20ac35\u201350/day). The Byzantine Museum is closed on Mondays."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-19",
+          "morning": "Return to Navagio Beach area for a morning swim before the day-tripper crowds arrive. The water is warmest and calmest in the morning. Bring snorkeling gear to explore the underwater rocks around the shipwreck.",
+          "afternoon": "Visit the local village market in Volimes (held regularly in summer) to browse local products \u2014 honey, olive oil, nougat (mandolato), and handwoven textiles. Pick up some edible souvenirs.",
+          "evening": "Cooking experience: find a local food workshop or ask your boutique hotel to arrange a home-cooking session with a local host to learn how to make Zakynthian dishes like skordalia or revithokeftedes (chickpea fritters).",
+          "meals": {
+            "breakfast": "At the hotel \u2014 full Greek breakfast with honey, yogurt, and pastries",
+            "lunch": "Light mezze lunch at a caf\u00e9 in Volimes after the market \u2014 dakos, olives, and local cheese. \u20ac10\u201315 per person.",
+            "dinner": "Cooking class dinner \u2014 eat what you make, paired with local wine. Cost of class typically \u20ac35\u201355 per person including food and wine."
+          },
+          "notes": "If a cooking class isn't available, your boutique hotel staff can likely recommend a local family who offers informal food experiences \u2014 this is common in smaller Greek villages and very authentic."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-20",
+          "morning": "Explore the western coast beaches south of Navagio. Drive to Kampi Beach or Dafni Beach \u2014 quieter, less-visited spots with clear water and minimal crowds. Bring a book and enjoy a slow morning by the sea.",
+          "afternoon": "Visit the Marathonisi Island (Turtle Island) by kayak or small boat rental from the southern coast \u2014 a protected nesting site for Caretta caretta loggerhead sea turtles. Snorkel in the protected waters and spot turtles if you're lucky (observe from a respectful distance).",
+          "evening": "Sundowner drinks at a clifftop bar near Cape Skinari or Porto Vromi. Watch the golden hour light paint the limestone cliffs orange and pink.",
+          "meals": {
+            "breakfast": "At the hotel or a beach-side caf\u00e9 \u2014 Greek coffee and a bougatsa (custard pastry)",
+            "lunch": "Beach taverna near Kampi \u2014 fresh grilled fish of the day, village salad, and cold beer. ~\u20ac18\u201324 per person.",
+            "dinner": "Casual dinner at a local grill house (psistaria) \u2014 lamb chops, grilled vegetables, pita, and tzatziki. ~\u20ac20\u201328 per person."
+          },
+          "notes": "Marathonisi Island is a protected area \u2014 no touching or disturbing turtles. Kayak rental for the day costs approximately \u20ac20\u201335. Book in advance in peak season."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-21",
+          "morning": "Rest and recharge morning \u2014 sleep in, enjoy a long breakfast, and spend time at your boutique hotel's terrace or pool if available. Read, journal, or simply take in the views. This is your midpoint rest day.",
+          "afternoon": "Take a gentle hike along the clifftop trail above Navagio Beach. The trail offers stunning aerial views of the beach and surrounding coastline. Bring water, a hat, and sun protection. The walk is approximately 3\u20134 km round trip.",
+          "evening": "Celebrate the halfway point of your trip with a special dinner at one of the better restaurants in the Volimes or Anafonitria area \u2014 opt for a multi-course meal with local wine.",
+          "meals": {
+            "breakfast": "Indulgent hotel breakfast \u2014 fresh fruit platter, eggs your way, Greek pastries, and proper Greek mountain tea",
+            "lunch": "Light snack during the hike \u2014 pack leftovers or grab a spanakopita from a local bakery (\u20ac3\u20135)",
+            "dinner": "Splurge dinner at a well-regarded local restaurant \u2014 3 courses including Zakynthian pasta, fresh fish, and loukoumades (honey doughnuts) for dessert. ~\u20ac35\u201345 per person."
+          },
+          "notes": "June 21 is the summer solstice \u2014 the longest day of the year. Sunset will be very late (around 8:45 PM local time), making it a magical evening to dine outdoors."
+        },
+        {
+          "day": 8,
+          "date": "2027-06-22",
+          "morning": "Take a full-day boat excursion around Zakynthos Island. Most tours depart from Zakynthos Town or Agios Nikolaos port and include stops at Navagio, the Blue Caves, and a swim stop at a secluded bay. Book in advance for a smaller group tour.",
+          "afternoon": "Continuation of the boat tour \u2014 afternoon swim stop at a secluded bay on the southern or eastern coast. Enjoy the on-board lunch provided by most full-day tours, or bring your own picnic.",
+          "evening": "Return to port by late afternoon. Head back to the hotel, shower, and enjoy a relaxed evening in the village.",
+          "meals": {
+            "breakfast": "Early breakfast at the hotel before departure",
+            "lunch": "On-board lunch included in most full-day boat tours, or a packed lunch from a local bakery",
+            "dinner": "Simple, fresh dinner at a family taverna \u2014 moussaka, Greek salad, and local retsina wine. ~\u20ac18\u201324 per person."
+          },
+          "notes": "Full-day boat tours cost approximately \u20ac40\u201370 per person depending on group size and inclusions. Bring seasickness tablets if needed, sunscreen, a hat, and a light cover-up. Smaller catamaran tours are more comfortable than large party boats."
+        },
+        {
+          "day": 9,
+          "date": "2027-06-23",
+          "morning": "Morning visit to the Monastery of Saint George of the Kremnon, perched dramatically near the cliffs of northern Zakynthos. The monastery has beautiful frescoes and offers sweeping views. Dress modestly (shoulders and knees covered).",
+          "afternoon": "Drive to Porto Vromi Cove for an afternoon of swimming and snorkeling in the sheltered, crystal-clear inlet. Rent a paddleboard or kayak from the beach operators and explore the rocky coves.",
+          "evening": "Sunset dinner at a restaurant with a terrace view \u2014 book a table with a view of the western horizon for the best sunset experience of the trip.",
+          "meals": {
+            "breakfast": "At the hotel \u2014 yogurt parfait with local honey and walnuts, and Greek coffee",
+            "lunch": "Light lunch at the small caf\u00e9 at Porto Vromi \u2014 toasted sandwiches, fresh juice, and salads. \u20ac10\u201315 per person.",
+            "dinner": "Sunset dinner at a clifftop taverna \u2014 grilled octopus, stuffed peppers (gemista), and a bottle of Assyrtiko white wine. ~\u20ac28\u201338 per person."
+          },
+          "notes": "Porto Vromi is the main departure point for Navagio boat trips \u2014 mornings can be busy with departing boats, but afternoons are calmer and ideal for swimming."
+        },
+        {
+          "day": 10,
+          "date": "2027-06-24",
+          "morning": "Day trip to the southern part of Zakynthos: drive to Laganas area and visit Gerakas Beach, one of the most important loggerhead sea turtle nesting beaches in the Mediterranean. The beach itself is stunning \u2014 wide, sandy, and backed by dramatic cliffs.",
+          "afternoon": "Continue to Keri Beach and the Keri Caves \u2014 rent a small motorboat or join a short boat excursion to explore the sea caves and rock arches at the southwestern tip of the island. The water here is exceptionally clear.",
+          "evening": "Drive back north via the scenic mountain road through the Zakynthian interior \u2014 stop at a village kafeneion (traditional coffee house) for a Greek coffee and a chat with locals.",
+          "meals": {
+            "breakfast": "Pack an early breakfast from the hotel or stop at a roadside bakery en route",
+            "lunch": "Lunch at a beach taverna in Keri \u2014 fresh catch of the day, grilled vegetables, and local bread. ~\u20ac20\u201326 per person.",
+            "dinner": "Back in the north \u2014 dinner at your favourite taverna discovered earlier in the trip. ~\u20ac20\u201328 per person."
+          },
+          "notes": "Gerakas Beach has strict rules during nesting season (May\u2013October): no sunbeds or umbrellas in marked zones, no flash photography at night, and no beach access after dusk. Respect the rules \u2014 this is a critical conservation area."
+        },
+        {
+          "day": 11,
+          "date": "2027-06-25",
+          "morning": "Slow morning at the hotel. Pack a beach bag and walk or take a short taxi to a nearby quiet cove for a final long swim session. Bring snorkeling gear for one last underwater exploration of the Ionian Sea.",
+          "afternoon": "Visit a local olive oil producer or honey farm near Volimes for a tasting and tour. Zakynthos produces excellent extra-virgin olive oil and thyme honey \u2014 great items to bring home. Many producers welcome visitors informally.",
+          "evening": "Explore Anafonitria village on foot in the cooler evening air. Pop into a local bakery for fresh koulouri (sesame bread rings) and pick up last-minute local food souvenirs.",
+          "meals": {
+            "breakfast": "Leisurely hotel breakfast \u2014 take your time and enjoy every bite",
+            "lunch": "Tasting lunch at the olive oil or honey farm \u2014 local products paired with bread, cheese, and wine. Often included in tour or costs \u20ac10\u201315.",
+            "dinner": "Farewell-style dinner at your favourite restaurant of the trip \u2014 order generously and try anything you haven't yet tasted. ~\u20ac25\u201335 per person."
+          },
+          "notes": "Start thinking about packing and any last-minute shopping. Check your hotel's checkout time and arrange any airport transfers needed for your departure day."
+        },
+        {
+          "day": 12,
+          "date": "2027-06-26",
+          "morning": "Final morning swim at Navagio or Porto Vromi \u2014 say goodbye to the turquoise Ionian waters. Take your time and soak up the last views of the limestone cliffs and the iconic shipwreck.",
+          "afternoon": "Check out of the boutique hotel and transfer to Zakynthos Town if you have an afternoon or evening flight, or spend a few hours exploring any last spots you missed. Visit the Church of Saint Dionysios, the patron saint of Zakynthos, in the town centre.",
+          "evening": "If your schedule allows, enjoy a final Greek coffee and pastry on the waterfront of Zakynthos Town before heading to the airport.",
+          "meals": {
+            "breakfast": "Final hotel breakfast \u2014 savour it slowly",
+            "lunch": "Quick and satisfying lunch in Zakynthos Town \u2014 souvlaki pita with tzatziki and a cold Mythos beer. \u20ac8\u201312 per person.",
+            "dinner": "Airport caf\u00e9 snack or a light meal at a restaurant near the airport if time allows. ~\u20ac10\u201318 per person."
+          },
+          "notes": "Zakynthos Airport (ZTH) is about 5 km from Zakynthos Town. Allow at least 2 hours before departure for check-in and security. Pack any liquid food items (olive oil, honey) in checked luggage."
+        },
+        {
+          "day": 13,
+          "date": "2027-06-27",
+          "morning": "Departure day \u2014 if your flight is later in the day, enjoy a final Greek breakfast at a caf\u00e9 near your accommodation or the airport. Reflect on 13 wonderful days in Zakynthos.",
+          "afternoon": "Fly home from Zakynthos International Airport (ZTH). Carry memories of turquoise waters, clifftop sunsets, fresh seafood, and the unforgettable sight of the Navagio shipwreck.",
+          "evening": "In transit or arrived home \u2014 unpack your Greek olive oil, honey, and photos.",
+          "meals": {
+            "breakfast": "Final Greek breakfast \u2014 freddo cappuccino and a cheese or spinach pie at an airport caf\u00e9 or nearby bakery (\u20ac5\u20138)",
+            "lunch": "Airport or in-flight meal",
+            "dinner": "Home or in transit"
+          },
+          "notes": "Greece tip: always tip 5\u201310% at restaurants if service was good \u2014 it's appreciated but not mandatory. Consider leaving a review for your boutique hotel to support small local businesses. Kalo taxidi \u2014 safe travels!"
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City (NYC)+to+Greece+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Greece&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "$745 over budget",
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Greece Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 3005.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-06-15T06:00:00",
+        "arrival": "2027-06-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Navagio Beach, Zakynthos Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 1235,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Navagio Beach, Zakynthos"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "Greece",
+        "style": "premium",
+        "total_cost": 3005.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 1235.0,
+          "experiences": 0,
+          "food": 780,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15",
+          "morning": "No activities scheduled \u2014 flight arrives at 13:00",
+          "afternoon": "Arrive at Zakynthos International Airport at 13:00. Private transfer arranged to Navagio Beach Boutique Stay. Check in, refresh, and settle into your luxury suite. Take a leisurely first look at the iconic Navagio (Shipwreck) Beach from the clifftop viewpoint \u2014 one of the most photographed beaches in the world, with turquoise water and the rusting wreck of the MV Panagiotis.",
+          "evening": "Sunset cocktails on your boutique hotel's private terrace overlooking the Ionian Sea. Enjoy the golden hour light over the cliffs before heading to dinner.",
+          "meals": {
+            "breakfast": "Not applicable \u2014 in transit",
+            "lunch": "Light mezze and fresh seafood at a clifftop taverna near Navagio, such as grilled octopus, tzatziki, and local Zakynthian bread upon arrival",
+            "dinner": "Dinner at a premium restaurant in the Navagio/Anafonitria area \u2014 try slow-roasted lamb kleftiko, fresh catch of the day with lemon and capers, and a bottle of local Verdea white wine from Zakynthos"
+          },
+          "notes": "Arrange private airport transfer in advance. Ask the hotel to pre-chill a bottle of local wine in your room as a welcome amenity. Keep the first evening relaxed after travel."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16",
+          "morning": "Private boat excursion departing from the hotel's arranged dock transfer to Navagio Beach (Shipwreck Beach) itself \u2014 accessible only by sea. Swim in the electric-blue water, explore the famous shipwreck up close, and enjoy the dramatic limestone cliffs from the water level. Arrive early (before 9:00) to experience it before day-tripper crowds arrive.",
+          "afternoon": "Continue the private boat tour along the northern Zakynthos coastline, visiting the spectacular Blue Caves (Kianoun Spileon) near Cape Skinari. Snorkel in the vivid blue grottos where sunlight refracts through the water to create an otherworldly azure glow. Stop at a secluded cove for a private swim and champagne on board.",
+          "evening": "Return to the hotel by late afternoon. Shower and change before heading to a fine-dining restaurant near Porto Vromi for a premium seafood dinner with views over the western coast.",
+          "meals": {
+            "breakfast": "Gourmet hotel breakfast \u2014 fresh Greek yogurt with Zakynthian honey and walnuts, smoked salmon, eggs your way, pastries, fresh-squeezed orange juice, and Greek coffee",
+            "lunch": "Gourmet picnic basket prepared by the hotel and enjoyed on the private boat \u2014 prosciutto, local cheeses, olives, fresh figs, artisan bread, and chilled ros\u00e9",
+            "dinner": "Premium seafood dinner at a top waterfront restaurant \u2014 whole grilled sea bream with capers and dill, lobster pasta, and a crisp local Assyrtiko white wine"
+          },
+          "notes": "Book the private boat charter at least 2 days in advance. Bring reef-safe sunscreen, a hat, and polarized sunglasses for the caves. The Blue Caves are best visited in morning light for maximum color effect."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17",
+          "morning": "Private guided jeep tour of the rugged northern peninsula of Zakynthos, visiting the medieval Venetian village of Anafonitria and its 15th-century monastery \u2014 one of the island's most important religious landmarks. Explore narrow stone lanes, olive groves, and dramatic clifftop scenery inaccessible by regular vehicle.",
+          "afternoon": "Visit the secluded Xigia Beach, a small natural spa beach where underwater sulfur springs bubble up through the sand, said to have therapeutic properties. Swim in the warm, mineral-rich water along the dramatic northern coastline. Stop at a local olive press farm for a private tasting of Zakynthos extra-virgin olive oil paired with local cheeses.",
+          "evening": "Return to the hotel. Enjoy a private in-room or terrace dinner arranged by the boutique hotel \u2014 a curated tasting menu of traditional Zakynthian cuisine prepared by a private chef.",
+          "meals": {
+            "breakfast": "Hotel breakfast \u2014 Greek honey cake (melomakarona-style pastries), fresh fruit platter, Greek yogurt, village eggs with local herbs, and fresh-pressed juices",
+            "lunch": "Taverna lunch in Anafonitria village \u2014 slow-cooked stifado (rabbit or beef stew), local horta (wild greens), village salad with Zakynthian feta, and house carafe wine",
+            "dinner": "Private chef tasting menu at the hotel \u2014 five-course Zakynthian menu featuring local specialties: garlic-marinated anchovies, stuffed courgette flowers, pastitsada, and mandolato nougat dessert with Muscat wine"
+          },
+          "notes": "Wear comfortable closed-toe shoes for the monastery visit and jeep tour. The private chef dinner should be arranged 24 hours in advance with the hotel concierge. Ask about local organic olive oil to purchase as a souvenir."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18",
+          "morning": "Leisure morning at the hotel. Sleep in, enjoy a long breakfast, and spend time at the hotel's infinity pool or private terrace. Optional: yoga or stretching session arranged by the hotel with views over the Ionian Sea.",
+          "afternoon": "Take a private speedboat transfer south to the famous Porto Limnionas \u2014 a stunning rocky inlet on the west coast with crystal-clear turquoise water. Swim, snorkel, and explore the natural rock formations. The boat allows access to otherwise unreachable coves along the coastline.",
+          "evening": "Sunset drinks at a clifftop bar near Keri Lighthouse on the southern tip of the island, offering panoramic views of the Ionian Sea. Then dinner at a premium restaurant in the Keri area.",
+          "meals": {
+            "breakfast": "Extended luxury hotel breakfast enjoyed at leisure \u2014 full spread including smoked fish, Zakynthian pastries, fresh honeycomb, and barista coffee",
+            "lunch": "Fresh grilled fish and salad at a small local family-run taverna near Porto Limnionas \u2014 grilled sardines, Greek salad, and ice-cold local lager",
+            "dinner": "Fine dining at a premium Keri restaurant \u2014 grilled lobster with garlic butter, tomatokeftedes (tomato fritters), local wine pairing with Robola and Verdea varieties"
+          },
+          "notes": "Porto Limnionas is best reached by boat for the full coastal experience. The Keri Lighthouse area is one of the best sunset spots on the island \u2014 arrive 30 minutes before sunset for the best light."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-19",
+          "morning": "Private cooking class with a local Zakynthian chef, held either at the hotel or at a traditional farmhouse near Anafonitria. Learn to prepare iconic local dishes: sofrito (veal in white wine and garlic sauce), skordalia, and local pastries. Visit a small local market beforehand to select fresh ingredients.",
+          "afternoon": "Relax and enjoy the fruits of your culinary labor with a long shared lunch. Afterward, spend the afternoon at leisure \u2014 sunbathing on the hotel terrace, swimming, or reading with Ionian Sea views.",
+          "evening": "Private sunset sailing trip departing from Porto Vromi harbor. Watch the sun dip below the Ionian horizon from the deck of a luxury sailboat with chilled Champagne and canap\u00e9s. Return to the hotel for a light late dinner.",
+          "meals": {
+            "breakfast": "Light hotel breakfast \u2014 fresh fruit, yogurt, pastries, and Greek coffee before the cooking class",
+            "lunch": "The dishes you prepared in the cooking class, enjoyed family-style with local wine and fresh bread \u2014 a deeply personal and memorable meal",
+            "dinner": "Light late dinner at the hotel or a nearby taverna \u2014 mezze spread of taramosalata, dolmades, grilled halloumi, and local wine"
+          },
+          "notes": "The cooking class should be booked in advance through the hotel concierge. Ask the chef to share written recipes to take home. The sunset sailing is weather-dependent \u2014 confirm on the morning of the excursion."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-20",
+          "morning": "Day trip by private ferry or high-speed boat to the nearby island of Kefalonia (approximately 1.5 hours from northern Zakynthos). Visit the breathtaking Myrtos Beach \u2014 one of Greece's most iconic beaches with dramatic white pebbles and vivid turquoise water set against towering limestone cliffs.",
+          "afternoon": "Explore the charming Venetian-influenced town of Assos on Kefalonia's northern peninsula \u2014 a picturesque fishing village with a Venetian castle ruin on a forested headland. Wander the harbor, browse local artisan shops, and soak in the authentic island atmosphere.",
+          "evening": "Dinner in Fiskardo, Kefalonia's most upscale village \u2014 a perfectly preserved Venetian harbor town lined with elegant restaurants and luxury yachts. Return by private transfer to Zakynthos by evening ferry.",
+          "meals": {
+            "breakfast": "Early hotel breakfast before departure \u2014 yogurt, pastries, and strong Greek coffee for energy",
+            "lunch": "Lunch at a premium restaurant near Myrtos Beach \u2014 fresh grilled fish, lobster salad, and chilled white wine with a view of the iconic beach",
+            "dinner": "Upscale dinner at a harbor-front restaurant in Fiskardo \u2014 bouillabaisse-style kakavia fish soup, grilled crayfish, stuffed peppers, and a bottle of local Robola white wine"
+          },
+          "notes": "Confirm ferry schedules and book private boat transfer in advance. Kefalonia is a full-day excursion \u2014 start early. Wear comfortable walking shoes for Assos village. Fiskardo can be busy in the evening \u2014 reserve dinner ahead."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-21",
+          "morning": "Rest and recovery day. Enjoy a slow morning at the hotel \u2014 extended breakfast, spa treatment (arrange with hotel concierge for an in-room or on-site massage), and time by the pool or on the terrace with books and views.",
+          "afternoon": "Gentle exploration of the local Anafonitria area on foot or by private electric bike. Visit the small Church of Saint Dionysios of Olympos, explore stone-paved paths through olive and cypress groves, and discover hidden viewpoints above the western coast.",
+          "evening": "Romantic dinner for two at a clifftop restaurant with views over Navagio Beach as the sun sets \u2014 the most dramatic dinner setting on the island.",
+          "meals": {
+            "breakfast": "Indulgent hotel breakfast at leisure \u2014 full spread enjoyed slowly with multiple coffees and fresh juices",
+            "lunch": "Light hotel lunch or room service \u2014 charcuterie board, local cheeses, mezze, and chilled ros\u00e9 by the pool",
+            "dinner": "Premium clifftop dinner \u2014 lamb chops with rosemary and lemon, grilled vegetables, fresh bread, and a special bottle of aged Greek red wine (Xinomavro or Agiorgitiko)"
+          },
+          "notes": "The midpoint rest day is important for a 13-day trip. Use this day to recharge. Ask the hotel about arranging a couples massage or wellness treatment in advance."
+        },
+        {
+          "day": 8,
+          "date": "2027-06-22",
+          "morning": "Early morning private boat snorkeling excursion along the northern Zakynthos coast. Explore underwater caves, rocky reefs, and vibrant marine life in the crystal-clear Ionian waters. The early morning light and calm seas make this the ideal time for underwater visibility.",
+          "afternoon": "Visit the small traditional village of Volimes, the craft hub of Zakynthos, known for its handmade lace, local honey, and artisan products. Browse local workshops and purchase authentic Zakynthian souvenirs directly from the makers. Stop at a local honey producer for a private tasting.",
+          "evening": "Return to the hotel for a sunset aperitivo hour on the terrace. Dinner at a premium restaurant in the Navagio area featuring a curated wine-pairing menu.",
+          "meals": {
+            "breakfast": "Early light breakfast before the boat \u2014 fresh fruit, yogurt, and coffee",
+            "lunch": "Late lunch in Volimes village \u2014 traditional home-cooked meal at a local family taverna featuring strapatsada (scrambled eggs with tomatoes), local sausages, and village bread",
+            "dinner": "Five-course wine-pairing dinner at a premium local restaurant \u2014 amuse-bouche, seafood carpaccio, pasta with sea urchin, grilled fish, and a Greek dessert platter with Muscat wine"
+          },
+          "notes": "Purchase local Zakynthian honey and handmade lace in Volimes as premium gifts or souvenirs. The snorkeling excursion requires calm seas \u2014 have a backup plan if conditions are choppy."
+        },
+        {
+          "day": 9,
+          "date": "2027-06-23",
+          "morning": "Private guided visit to the Zakynthos Marine Park area in the southern part of the island \u2014 home to the endangered loggerhead sea turtle (Caretta caretta). Take a guided eco-boat tour with a marine biologist to spot sea turtles in their natural habitat in Laganas Bay. This is a rare and deeply memorable wildlife experience.",
+          "afternoon": "Stop at Gerakas Beach \u2014 one of the most beautiful and ecologically protected beaches in Greece, with fine golden sand and shallow, warm turquoise water. Swim and sunbathe in this pristine, crowd-controlled environment.",
+          "evening": "Dinner at a premium restaurant in the Vasilikos peninsula area \u2014 one of Zakynthos's most upscale dining destinations.",
+          "meals": {
+            "breakfast": "Hotel breakfast before departure \u2014 full spread including eggs, pastries, and fresh juice",
+            "lunch": "Gourmet picnic on the boat or beach \u2014 prepared by the hotel: smoked salmon wraps, artisan cheeses, fresh fruit, and chilled white wine",
+            "dinner": "Upscale dinner at a Vasilikos restaurant \u2014 prawn saganaki (shrimp in spiced tomato and feta sauce), grilled swordfish, and a dessert of galaktoboureko (custard pastry) with local honey"
+          },
+          "notes": "The sea turtle tour must be conducted with a licensed marine park guide. Follow all marine park rules \u2014 no touching or approaching turtles. Gerakas Beach has strict visitor limits \u2014 arrive mid-afternoon when day-trippers begin to leave."
+        },
+        {
+          "day": 10,
+          "date": "2027-06-24",
+          "morning": "Visit Zakynthos Town (Zante Town) \u2014 the island's elegant capital, rebuilt in Venetian style after the 1953 earthquake. Explore the hilltop Venetian Kastro (castle) with panoramic views over the town and Ionian Sea. Visit the Byzantine Museum housing extraordinary post-Byzantine icons and art rescued from destroyed churches.",
+          "afternoon": "Stroll along the elegant Zakynthos Town waterfront (Bochali promenade). Explore upscale boutiques, visit the Church of Saint Dionysios (patron saint of the island), and enjoy a coffee at a stylish harbor caf\u00e9. Browse a local deli for premium Zakynthian products: olive oil, wine, and mandolato nougat.",
+          "evening": "Dinner at one of Zakynthos Town's finest restaurants on the harbor front \u2014 the most upscale dining experience in the island's capital.",
+          "meals": {
+            "breakfast": "Hotel breakfast before the drive to Zakynthos Town",
+            "lunch": "Lunch at a premium restaurant in Zakynthos Town \u2014 traditional moussaka made with local lamb, Greek salad, and a carafe of house wine in a shaded courtyard setting",
+            "dinner": "Fine dining at a top Zakynthos Town harbor restaurant \u2014 tasting menu featuring local specialties: Zakynthian sofrito, fresh pasta with truffle, and a dessert of revani (semolina cake) with Muscat syrup"
+          },
+          "notes": "Zakynthos Town is approximately 35\u201340 minutes from Navagio by private car. Arrange a private driver for the day. The Byzantine Museum is closed on Mondays \u2014 check opening times in advance. The Kastro is best visited in the morning before peak heat."
+        },
+        {
+          "day": 11,
+          "date": "2027-06-25",
+          "morning": "Full leisure morning at the hotel. Swim, sunbathe, and enjoy the hotel's facilities. Optional: arrange a private paddleboard or kayak session along the clifftop coastline near Navagio with a guide.",
+          "afternoon": "Private wine and food pairing experience at a local Zakynthian winery \u2014 tour the vineyard, learn about indigenous Greek grape varieties (Verdea, Robola, Muscato), and enjoy a guided tasting of premium local wines paired with artisan cheeses, cured meats, and local preserves.",
+          "evening": "Final Navagio sunset ritual \u2014 watch the famous golden sunset from the clifftop viewpoint above Shipwreck Beach, arguably one of the most spectacular sunset views in all of Greece. Follow with a celebratory dinner at the hotel.",
+          "meals": {
+            "breakfast": "Lazy extended hotel breakfast \u2014 full luxury spread enjoyed slowly by the pool",
+            "lunch": "Light lunch at the winery \u2014 wine-paired mezze of local cheeses, olives, cured meats, and artisan crackers",
+            "dinner": "Celebratory dinner at the hotel or a clifftop restaurant \u2014 whole roasted fish, premium Greek wines, and a shared dessert platter of local sweets to mark the penultimate full day"
+          },
+          "notes": "Book the winery tour in advance through the hotel concierge. Ask about purchasing bottles to take home \u2014 Zakynthian Verdea is a rare indigenous wine not easily found outside the island. The Navagio sunset viewpoint can be busy \u2014 arrive 45 minutes early for a prime spot."
+        },
+        {
+          "day": 12,
+          "date": "2027-06-26",
+          "morning": "One final private boat excursion \u2014 a leisurely morning cruise along the full western coastline of Zakynthos, revisiting favorite spots: the Blue Caves, Navagio from the sea, and hidden coves. Swim, snorkel, and soak in the Ionian Sea one last time. Champagne breakfast on board.",
+          "afternoon": "Return to the hotel by early afternoon. Begin packing and preparing for departure. Enjoy a final pool session and afternoon tea on the hotel terrace. Request a late checkout if available to maximize your final hours.",
+          "evening": "Final dinner \u2014 a special, memorable meal at the best restaurant of your trip. Reflect on 12 days of extraordinary Greek experiences over an indulgent multi-course dinner with premium wine.",
+          "meals": {
+            "breakfast": "Champagne breakfast on the private boat \u2014 smoked salmon, fresh pastries, fruit, Greek yogurt, and chilled Prosecco or Champagne on the Ionian Sea",
+            "lunch": "Light final lunch at the hotel \u2014 fresh salad, grilled fish, and a glass of chilled local white wine",
+            "dinner": "Grand farewell dinner at a premium clifftop restaurant \u2014 the finest meal of the trip, featuring a chef's tasting menu, premium wine pairing, and a dessert with a view of the moonlit Ionian Sea"
+          },
+          "notes": "Request late checkout (2:00 PM or later) from the hotel to avoid rushing. Confirm departure logistics and private airport transfer for the following day. Purchase any remaining local products \u2014 olive oil, wine, honey \u2014 as final gifts."
+        },
+        {
+          "day": 13,
+          "date": "2027-06-27",
+          "morning": "Final leisurely breakfast at the hotel \u2014 savor every last bite of Greek yogurt, honey, and pastries. Settle the hotel bill and prepare for departure. Take a final walk to the Navagio clifftop viewpoint for one last look at the iconic Shipwreck Beach and the brilliant blue Ionian Sea.",
+          "afternoon": "Private transfer to Zakynthos International Airport for departure. Reflect on an extraordinary 13-day premium Greek island experience \u2014 world-class beaches, exceptional food, rare wildlife encounters, and the timeless beauty of the Ionian Islands.",
+          "evening": "Departure from Zakynthos. Carry home the flavors, memories, and golden light of one of Greece's most spectacular islands.",
+          "meals": {
+            "breakfast": "Final full hotel breakfast \u2014 the complete luxury spread one last time, enjoyed slowly before checkout",
+            "lunch": "Light airport or departure lunch \u2014 Greek salad, a sandwich, and a final Greek coffee",
+            "dinner": "In-flight or at destination"
+          },
+          "notes": "Allow at least 2 hours before departure for the airport transfer and check-in. Zakynthos Airport is small but can be busy in summer \u2014 arrive with comfortable time to spare. Ensure all purchased local products (wine, olive oil) are properly packed in checked luggage."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City (NYC)+to+Greece+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Greece&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$705 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Greece under $2000, beaches and local food, summer 2026, flying from NYC",
+  "session_tags": {
+    "query_id": "SYN-01",
+    "condition": "targeted",
+    "run_index": 1
+  }
+}

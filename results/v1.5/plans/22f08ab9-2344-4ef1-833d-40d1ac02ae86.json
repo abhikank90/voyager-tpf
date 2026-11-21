@@ -1,0 +1,558 @@
+{
+  "session_id": "22f08ab9-2344-4ef1-833d-40d1ac02ae86",
+  "intent": {
+    "destination": "Barcelona",
+    "origin": "New York City",
+    "budget_usd": 2000.0,
+    "duration_days": 5,
+    "travel_month": "August",
+    "travel_year": 2026,
+    "interests": [
+      "architecture",
+      "nightlife"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Barcelona architecture and nightlife, $2000, 5 days, August 2026 from NYC"
+  },
+  "selected_flight": {
+    "price_usd": 890,
+    "airline": "LH",
+    "departure": "2027-08-15T06:00:00",
+    "arrival": "2027-08-15T13:00:00",
+    "stops": 1,
+    "duration": "PT7H00M"
+  },
+  "selected_hotel": {
+    "name": "Eixample district, Barcelona Boutique Stay",
+    "price_per_night_usd": 95,
+    "total_usd": 475,
+    "rating": 4.4,
+    "amenities": [
+      "wifi",
+      "breakfast included",
+      "rooftop terrace"
+    ],
+    "location": "Eixample district, Barcelona"
+  },
+  "experiences": [
+    {
+      "name": "Sagrada Fam\u00edlia Guided Tour",
+      "description": "Explore Gaud\u00ed's iconic basilica with a guided tour that reveals the intricate architectural details, symbolism, and history of this UNESCO World Heritage Site. Book a tower access ticket for panoramic views of the city.",
+      "cost_usd": 35,
+      "category": "architecture",
+      "best_time_of_day": "morning",
+      "location": "Eixample district, Barcelona"
+    },
+    {
+      "name": "Barceloneta Beach & Chiringuito Hopping",
+      "description": "Spend an afternoon at Barceloneta Beach, Barcelona's most famous urban beach. Stroll along the boardwalk, swim in the Mediterranean, and enjoy drinks and tapas at the iconic beachfront chiringuito bars.",
+      "cost_usd": 30,
+      "category": "beaches",
+      "best_time_of_day": "afternoon",
+      "location": "Barceloneta Beach, Barcelona"
+    },
+    {
+      "name": "El Born Tapas & Food Market Tour",
+      "description": "Wander through the trendy El Born neighborhood, sampling traditional Catalan tapas, fresh seafood, and local wines. Visit the historic Mercat de Santa Caterina for fresh produce and regional specialties.",
+      "cost_usd": 45,
+      "category": "food",
+      "best_time_of_day": "evening",
+      "location": "El Born, Barcelona"
+    },
+    {
+      "name": "Parc de la Ciutadella & Arc de Triomf Walk",
+      "description": "Explore the beautiful Parc de la Ciutadella, home to stunning architecture including the monumental cascade fountain designed by a young Gaud\u00ed. Stroll to the nearby Arc de Triomf and soak in the cultural heritage of this beachfront-adjacent green space.",
+      "cost_usd": 0,
+      "category": "culture",
+      "best_time_of_day": "morning",
+      "location": "Ciutadella Park, Sant Mart\u00ed, Barcelona"
+    },
+    {
+      "name": "Beachfront Club Nightlife Experience",
+      "description": "Experience Barcelona's legendary nightlife at one of the iconic open-air beach clubs near Barceloneta, such as Pacha or Opium Mar. Dance to world-class DJs with the Mediterranean Sea as your backdrop, a quintessential Barcelona night out.",
+      "cost_usd": 50,
+      "category": "nightlife",
+      "best_time_of_day": "night",
+      "location": "Passeig Mar\u00edtim, Barceloneta, Barcelona"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-08-15",
+    "return": "2027-08-20",
+    "nights": 5,
+    "month": "august",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Barcelona",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1590.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-08-15T06:00:00",
+        "arrival": "2027-08-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Eixample district, Barcelona Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 475,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Eixample district, Barcelona"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Barcelona",
+        "style": "budget",
+        "total_cost": 1590.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 475.0,
+          "experiences": 0,
+          "food": 125,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Arrival Day)",
+          "morning": "No activities scheduled \u2014 flight arrives at 13:00.",
+          "afternoon": "Arrive at Barcelona Airport at 13:00. Take the Aerobus (\u20ac6.75 one-way) or Metro L9 Sud (\u20ac5.15) to the city center. Check in to Barcelona Boutique Stay in Eixample. Once settled, take a leisurely orientation walk along Passeig de Gr\u00e0cia \u2014 the grand boulevard lined with Modernista masterpieces. Admire the exteriors of Casa Batll\u00f3 and Casa Mil\u00e0 (La Pedrera) for free from the street to get your first taste of Gaud\u00ed's genius.",
+          "evening": "Explore the lively Eixample neighborhood on foot. Head to the Rambla de Catalunya for an early evening stroll. Grab a seat at a terrace bar for a cold Estrella Damm beer (\u20ac2\u20133). As night falls, wander into the Gaixample area (the LGBTQ+ hub within Eixample) for vibrant street energy and affordable cocktail bars.",
+          "meals": {
+            "breakfast": "Grab a coffee and croissant at a local bakery near the hotel (\u20ac2\u20134) \u2014 or eat on the plane.",
+            "lunch": "Pick up a bocadillo (baguette sandwich) from a Mercadona supermarket near Passeig de Gr\u00e0cia for a quick, cheap meal (\u20ac2\u20133).",
+            "dinner": "Bar Calders (Carrer del Parlament, Eixample) \u2014 a beloved local bar with excellent pintxos and tapas from \u20ac1.50 each. Budget \u20ac10\u201314 for a full spread with a drink."
+          },
+          "notes": "Buy a T-Casual 10-trip metro card (\u20ac12.15) on arrival \u2014 it covers all metro and bus trips and will save money throughout the trip. August is hot (30\u00b0C+), so carry water and wear sunscreen."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16",
+          "morning": "Start the day early (before the heat peaks) with a visit to the Sagrada Fam\u00edlia. Book tickets online in advance (\u20ac26 basic entry, or \u20ac36 with tower access \u2014 worth it for architecture lovers). Spend 2\u20133 hours exploring Gaud\u00ed's unfinished masterpiece, the most iconic building in Barcelona and one of the world's greatest architectural achievements.",
+          "afternoon": "Walk or take the metro to the Gothic Quarter (Barri G\u00f2tic). Wander its narrow medieval streets for free \u2014 highlights include the Barcelona Cathedral (free entry before 12:30 and after 17:15), Pla\u00e7a Reial, Pont del Bisbe, and the Roman ruins visible through street-level windows. Stop into the Mercat de Santa Caterina (a lesser-known alternative to La Boqueria) to browse colorful produce and grab a cheap snack.",
+          "evening": "Stay in the Gothic Quarter as it transforms at night. Explore El Born neighborhood just next door \u2014 a trendy, artsy district with affordable cocktail bars and great street life. Check out Bar del Convent (free entry, beautiful courtyard) or El Xampanyet for a glass of house cava (\u20ac2.50). The streets are buzzing with nightlife energy by 22:00.",
+          "meals": {
+            "breakfast": "Granja Viader (Carrer d'en Xucl\u00e0, Gothic Quarter) \u2014 a historic Barcelona caf\u00e9 famous for its orxata and thick hot chocolate with churros (\u20ac5\u20137).",
+            "lunch": "Mercat de Santa Caterina food stalls \u2014 fresh fruit, a slice of tortilla espa\u00f1ola, and a drink for under \u20ac8.",
+            "dinner": "El Xampanyet (El Born) \u2014 classic tapas bar with house cava and anchovy plates. Budget \u20ac12\u201316 including drinks."
+          },
+          "notes": "Book Sagrada Fam\u00edlia tickets at least a few days ahead online to avoid sellouts and long queues. Wear comfortable walking shoes for the Gothic Quarter's cobblestones."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17",
+          "morning": "Take the metro to Lesseps or Vallcarca station and hike up to Parc G\u00fcell. Entry to the Monumental Zone costs \u20ac10 (book online to save time). Gaud\u00ed's surreal mosaic terraces and gingerbread gatehouses offer stunning views over Barcelona. Arrive early (opening time ~08:00) to beat the crowds and the heat. The surrounding park areas outside the paid zone are completely free.",
+          "afternoon": "Head back down to Eixample and visit the exterior and ground floor of Casa Mil\u00e0 (La Pedrera) \u2014 the rooftop terrace is the highlight but costs \u20ac25; instead, admire the extraordinary undulating stone facade for free from outside. Walk to nearby Casa Batll\u00f3 and Casa Amatller on the 'Block of Discord' (Manzana de la Disc\u00f2rdia) \u2014 all free to view from outside. Pop into the free Fundaci\u00f3 Antoni T\u00e0pies (check for free hours) for contemporary Catalan art.",
+          "evening": "Experience Barcelona's famous nightlife. Eixample has excellent pre-party bars \u2014 start at a rooftop terrace bar like La Isabela or a local cocktail bar around Carrer del Consell de Cent. Head to a club in the Port Ol\u00edmpic area or Poble Sec later (clubs open around midnight; many are free before 01:00 or have free entry with a drink voucher). Sala Apolo and Moog are legendary, affordable venues (\u20ac8\u201315 entry).",
+          "meals": {
+            "breakfast": "Federal Caf\u00e9 (Carrer del Parlament, Eixample) \u2014 popular brunch spot with avocado toast or eggs for \u20ac7\u201310.",
+            "lunch": "Men\u00fa del d\u00eda (set lunch menu) at a local restaurant near Parc G\u00fcell \u2014 typically 3 courses with bread and a drink for \u20ac10\u201313. Look for handwritten chalkboard signs.",
+            "dinner": "Bodega Sep\u00falveda (Eixample) \u2014 traditional wine bar with cheap tapas and house wine from \u20ac2/glass. Budget \u20ac10\u201314."
+          },
+          "notes": "The men\u00fa del d\u00eda is the best budget hack in Barcelona \u2014 a full 3-course meal for \u20ac10\u201313 is standard at most local restaurants Monday\u2013Friday. Take advantage of it for lunch every day."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18",
+          "morning": "Take the metro or a short bus ride to Barceloneta beach for a morning swim. The beach is free and beautiful. Walk the length of the Barceloneta boardwalk (Passeig Mar\u00edtim) to enjoy the sea breeze before the afternoon heat. Stop to look at Frank Gehry's golden 'Fish' sculpture near the Hotel Arts \u2014 a striking piece of architectural art on the waterfront.",
+          "afternoon": "Explore Poble Sec and Montju\u00efc. Take the free escalators up through Poble Sec or the cable car (\u20ac11.50 return) to Montju\u00efc hill. Visit the free Jardins de Laribal and the Fundaci\u00f3 Joan Mir\u00f3 (\u20ac14, or free on Saturday afternoons after 15:00 \u2014 check current schedule). The Castell de Montju\u00efc offers panoramic views over the city and port (\u20ac5 entry). The Pavell\u00f3 Mies van der Rohe \u2014 the legendary 1929 German Pavilion \u2014 is a must for architecture lovers (\u20ac10).",
+          "evening": "Poble Sec is one of Barcelona's best neighborhoods for affordable, quality dining and nightlife. Bar Calders, Bodega Sep\u00falveda, and the many bars along Carrer de Blai (the 'pintxos street') are perfect for a cheap, festive evening. Grab pintxos from multiple bars at \u20ac1\u20132 each. Later, check out a live music venue like Sala Apolo (world music, flamenco, and electronic nights).",
+          "meals": {
+            "breakfast": "Fresh fruit and a pastry from a street vendor or supermarket at Barceloneta (\u20ac3\u20135).",
+            "lunch": "Men\u00fa del d\u00eda at a local restaurant in Poble Sec \u2014 3 courses with wine for \u20ac11\u201313.",
+            "dinner": "Carrer de Blai pintxos crawl \u2014 visit 3\u20134 bars and eat pintxos at \u20ac1.50\u20132.50 each. Budget \u20ac10\u201314 including drinks."
+          },
+          "notes": "Montju\u00efc hosts the Magic Fountain (Font M\u00e0gica) light show on Thursday\u2013Sunday evenings (free!) \u2014 check the 2027 schedule and time your return from the hill to catch it at dusk. A spectacular free spectacle."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19 (Departure Day)",
+          "morning": "Enjoy a slow final morning in Eixample. Visit the Mercat de l'Abaceria or Mercat de Sant Antoni (a beautifully restored 19th-century iron market) for breakfast among locals \u2014 fresh juice, a pastry, and coffee for \u20ac4\u20136. Browse the Sunday book and coin market outside (if it's Sunday). Take a final stroll down Passeig de Gr\u00e0cia to soak in the Modernista architecture one last time.",
+          "afternoon": "Depending on your departure flight time, spend remaining time doing any last-minute souvenir shopping at affordable spots \u2014 avoid tourist traps on Las Ramblas; instead, try the shops around El Born or Mercat de Sant Antoni for local design and food products. Head to the airport via Aerobus or Metro L9 Sud with plenty of time to spare.",
+          "evening": "Departure \u2014 safe travels!",
+          "meals": {
+            "breakfast": "Mercat de Sant Antoni \u2014 fresh orange juice (\u20ac2), croissant or coca de recapte (Catalan flatbread, \u20ac2\u20133), and a caf\u00e9 amb llet (coffee with milk, \u20ac1.50).",
+            "lunch": "Final men\u00fa del d\u00eda at a local Eixample restaurant before heading to the airport \u2014 a proper Catalan send-off for \u20ac11\u201313.",
+            "dinner": "Airport or in-flight \u2014 grab a sandwich from a supermarket before departing to avoid overpriced airport food."
+          },
+          "notes": "Budget summary estimate for 5 days: Accommodation (pre-booked), Transport ~\u20ac25 (T-Casual card + Aerobus x2), Attractions ~\u20ac65\u201380 (Sagrada Fam\u00edlia, Parc G\u00fcell, Pavell\u00f3 Mies van der Rohe, Montju\u00efc), Food ~\u20ac70\u201390, Nightlife ~\u20ac30\u201350. Total estimated spend (excluding flights and hotel): ~\u20ac190\u2013245. Barcelona is very walkable \u2014 use your feet as much as possible to save on transport."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City+to+Barcelona+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Barcelona&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "Save $-90 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Barcelona Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 1825.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-08-15T06:00:00",
+        "arrival": "2027-08-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Eixample district, Barcelona Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 475,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Eixample district, Barcelona"
+      },
+      "experiences": [
+        {
+          "name": "Sagrada Fam\u00edlia Guided Tour",
+          "description": "Explore Gaud\u00ed's iconic basilica with a guided tour that reveals the intricate architectural details, symbolism, and history of this UNESCO World Heritage Site. Book a tower access ticket for panoramic views of the city.",
+          "cost_usd": 35,
+          "category": "architecture",
+          "best_time_of_day": "morning",
+          "location": "Eixample district, Barcelona"
+        },
+        {
+          "name": "Barceloneta Beach & Chiringuito Hopping",
+          "description": "Spend an afternoon at Barceloneta Beach, Barcelona's most famous urban beach. Stroll along the boardwalk, swim in the Mediterranean, and enjoy drinks and tapas at the iconic beachfront chiringuito bars.",
+          "cost_usd": 30,
+          "category": "beaches",
+          "best_time_of_day": "afternoon",
+          "location": "Barceloneta Beach, Barcelona"
+        },
+        {
+          "name": "El Born Tapas & Food Market Tour",
+          "description": "Wander through the trendy El Born neighborhood, sampling traditional Catalan tapas, fresh seafood, and local wines. Visit the historic Mercat de Santa Caterina for fresh produce and regional specialties.",
+          "cost_usd": 45,
+          "category": "food",
+          "best_time_of_day": "evening",
+          "location": "El Born, Barcelona"
+        },
+        {
+          "name": "Parc de la Ciutadella & Arc de Triomf Walk",
+          "description": "Explore the beautiful Parc de la Ciutadella, home to stunning architecture including the monumental cascade fountain designed by a young Gaud\u00ed. Stroll to the nearby Arc de Triomf and soak in the cultural heritage of this beachfront-adjacent green space.",
+          "cost_usd": 0,
+          "category": "culture",
+          "best_time_of_day": "morning",
+          "location": "Ciutadella Park, Sant Mart\u00ed, Barcelona"
+        },
+        {
+          "name": "Beachfront Club Nightlife Experience",
+          "description": "Experience Barcelona's legendary nightlife at one of the iconic open-air beach clubs near Barceloneta, such as Pacha or Opium Mar. Dance to world-class DJs with the Mediterranean Sea as your backdrop, a quintessential Barcelona night out.",
+          "cost_usd": 50,
+          "category": "nightlife",
+          "best_time_of_day": "night",
+          "location": "Passeig Mar\u00edtim, Barceloneta, Barcelona"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Barcelona",
+        "style": "balanced",
+        "total_cost": 1825.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 475.0,
+          "experiences": 160.0,
+          "food": 200,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Sunday)",
+          "morning": "Arrival at Barcelona Airport at 13:00 \u2014 no morning activities scheduled. Transfer to Barcelona Boutique Stay in Eixample by taxi or Aerobus (~35 min). Check in, freshen up, and get oriented in the neighborhood.",
+          "afternoon": "Stroll the iconic Passeig de Gr\u00e0cia from your Eixample base to admire the famous 'Block of Discord' \u2014 spot Casa Batll\u00f3 and Casa Amatller facades from the outside. A perfect low-key introduction to Barcelona's architectural gems without booking in advance.",
+          "evening": "Head to the lively Eixample dining scene for dinner, then explore the Eixample Esquerra (left Eixample) neighborhood known locally as 'Gayxample' for its vibrant bar scene. Enjoy cocktails at a rooftop bar to kick off the trip.",
+          "meals": {
+            "breakfast": "Skip or grab a coffee and croissant at the airport or hotel upon arrival.",
+            "lunch": "Cervecer\u00eda Catalana on Carrer de Mallorca \u2014 a beloved mid-range tapas bar steps from Passeig de Gr\u00e0cia. Try the montaditos and patatas bravas (\u20ac15\u201320 per person).",
+            "dinner": "Bodega Sep\u00falveda \u2014 a cozy, authentic Catalan wine bar and restaurant in Eixample with excellent value set menus (\u20ac25\u201335 per person)."
+          },
+          "notes": "Day 1 is intentionally light given the 13:00 arrival. Prioritize rest and acclimatization. August in Barcelona is very hot (30\u201335\u00b0C typically), so stay hydrated and carry water. Book the Sagrada Fam\u00edlia guided tour online tonight for Day 2 if not already reserved."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16 (Monday)",
+          "morning": "Sagrada Fam\u00edlia Guided Tour \u2014 Begin the day at Gaud\u00ed's iconic basilica, just a short metro or walk from Eixample. The guided tour reveals intricate architectural symbolism across the Nativity and Passion facades and the breathtaking interior nave. Arrive early (9:00\u20139:30) to beat the midday crowds and heat.",
+          "afternoon": "Parc de la Ciutadella & Arc de Triomf Walk \u2014 Take the metro to Arc de Triomf and walk through the majestic triumphal arch before entering the lush Parc de la Ciutadella. Explore the monumental cascade fountain, the lake, and the peaceful gardens. A great way to decompress after the morning's grandeur.",
+          "evening": "Wander into the adjacent El Born neighborhood for a tapas crawl and evening exploration of its medieval streets and boutique shops before dinner.",
+          "meals": {
+            "breakfast": "Forn de Sant Jaume bakery near Eixample \u2014 freshly baked pastries, pa amb tom\u00e0quet (bread with tomato), and coffee (\u20ac6\u20138).",
+            "lunch": "Bar del Convent inside the El Born Cultural Centre courtyard \u2014 affordable Mediterranean plates in a stunning historic setting (\u20ac12\u201318 per person).",
+            "dinner": "El Xampanyet in El Born \u2014 a legendary cava bar and tapas spot. Order the house cava and anchovies. Lively and authentic (\u20ac20\u201328 per person)."
+          },
+          "notes": "Pre-book Sagrada Fam\u00edlia tickets well in advance \u2014 they sell out weeks ahead, especially in August. Opt for the tower access add-on for panoramic views. Wear comfortable walking shoes; this is a high-step day."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17 (Tuesday)",
+          "morning": "El Born Tapas & Food Market Tour \u2014 Join a guided food tour through the El Born neighborhood, exploring the historic Mercat de Santa Caterina (a colorful architectural gem itself), tasting Catalan cheeses, jam\u00f3n, fresh seafood, and local wines. An immersive morning blending food culture with architectural discovery.",
+          "afternoon": "Barceloneta Beach & Chiringuito Hopping \u2014 Head down to Barceloneta after the tour. Spend the hottest part of the day on the beach, then hop between the casual beach bar chiringuitos for cold drinks, fresh seafood, and people-watching along the boardwalk.",
+          "evening": "Beachfront Club Nightlife Experience \u2014 As the sun sets, transition into Barcelona's legendary beach club nightlife. Experience one of the iconic open-air clubs near Barceloneta (such as Pacha Barcelona or Opium) where the party starts around 23:00 and goes until dawn.",
+          "meals": {
+            "breakfast": "Included or partially included in the El Born Food Tour (confirm with operator). Otherwise, grab a caf\u00e9 amb llet and toast at a local bar (\u20ac4\u20136).",
+            "lunch": "La Cova Fumada in Barceloneta \u2014 a no-frills, cash-only local institution credited with inventing the bombas (potato croquettes). Queue early, it closes by early afternoon (\u20ac15\u201320 per person).",
+            "dinner": "Chiringuito Escrib\u00e0 on Barceloneta beachfront \u2014 quality seafood and paella with ocean views before the nightlife begins (\u20ac30\u201340 per person). Pre-book for sunset seating."
+          },
+          "notes": "The beach club scene starts very late by Northern European standards \u2014 dinner at 21:00, pre-drinks at 23:00, clubs from midnight onward is typical. Dress smartly for beach clubs. Keep valuables secure at the beach; Barceloneta can be busy with pickpockets in August."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18 (Wednesday)",
+          "morning": "Rest morning after the late night \u2014 sleep in and enjoy a leisurely breakfast. Mid-morning, visit the Palau de la M\u00fasica Catalana (a UNESCO World Heritage modernista concert hall by Dom\u00e8nech i Montaner) for a guided architectural tour \u2014 a stunning contrast to Gaud\u00ed's organic style.",
+          "afternoon": "Explore the Gothic Quarter (Barri G\u00f2tic) on a self-guided walk \u2014 discover the Barcelona Cathedral, Pla\u00e7a Reial, Roman ruins, and hidden medieval alleyways. Browse independent shops and galleries. Consider visiting the MUHBA (Barcelona History Museum) for underground Roman ruins beneath the city.",
+          "evening": "Return to Eixample for a relaxed evening. Visit a rooftop bar such as La Isabela at Hotel 1898 or the terrace at Mandarin Oriental for sundowner cocktails with skyline views. End with a quiet dinner in the neighborhood.",
+          "meals": {
+            "breakfast": "Hotel breakfast or a nearby caf\u00e9 \u2014 try Alsur Caf\u00e9 in Eixample for avocado toast and specialty coffee (\u20ac10\u201314).",
+            "lunch": "Bar Ca\u00f1ete near the Ramblas \u2014 a stylish but accessible tapas bar with excellent Catalan dishes and a lively counter dining experience (\u20ac20\u201330 per person).",
+            "dinner": "Parking Pizza in Eixample \u2014 beloved local spot with creative Neapolitan-style pizzas and natural wines, great for a casual, affordable evening (\u20ac18\u201325 per person)."
+          },
+          "notes": "Book the Palau de la M\u00fasica Catalana tour in advance online. Tours run throughout the morning. This is a great recovery day after the nightlife experience \u2014 keep the pace comfortable and flexible."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19 (Thursday)",
+          "morning": "Take the Funicular de Vallvidrera or the metro up to Park G\u00fcell for a morning visit to Gaud\u00ed's fantastical hilltop park. Explore the monumental zone (ticketed) with its famous mosaic terrace, dragon staircase, and Hypostyle Room, plus the free forested paths with sweeping views over Barcelona.",
+          "afternoon": "Return to Eixample for a final afternoon of leisure shopping along Passeig de Gr\u00e0cia and Rambla de Catalunya. Browse Spanish fashion brands, design boutiques, and pick up souvenirs. Optionally visit the interior of Casa Batll\u00f3 or Casa Mil\u00e0 (La Pedrera) \u2014 both are unmissable Gaud\u00ed masterpieces.",
+          "evening": "Final night celebration \u2014 enjoy a farewell dinner at a special restaurant, then head out for one last taste of Barcelona's nightlife in the Eixample bar scene or revisit a favourite El Born spot for cocktails and live music.",
+          "meals": {
+            "breakfast": "Granja Viader near the Ramblas \u2014 a historic Barcelona institution open since 1870, famous for its homemade cacaolat (chocolate milk) and pastries (\u20ac8\u201312).",
+            "lunch": "Cervecer\u00eda Catalana (revisit) or try Taktika Berri on Carrer de Valencia for outstanding Basque pintxos \u2014 a lively lunch counter experience (\u20ac15\u201322 per person).",
+            "dinner": "Moments or a special splurge dinner at Disfrutar (book months ahead) \u2014 alternatively, Honest Greens in Eixample for a fresh, feel-good final meal at a mid-range price (\u20ac20\u201330 per person)."
+          },
+          "notes": "Park G\u00fcell's monumental zone requires timed-entry tickets \u2014 book online well in advance as August slots sell out fast. Go early (8:00 opening) to enjoy cooler temperatures and fewer crowds. Casa Mil\u00e0 rooftop is especially magical at sunset if you can time an evening visit. Check departure logistics for the following day."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City+to+Barcelona+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Barcelona&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Barcelona",
+        "https://www.getyourguide.com/s/?q=Barcelona",
+        "https://www.getyourguide.com/s/?q=Barcelona",
+        "https://www.getyourguide.com/s/?q=Barcelona",
+        "https://www.getyourguide.com/s/?q=Barcelona"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Barcelona Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 1925.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-08-15T06:00:00",
+        "arrival": "2027-08-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Eixample district, Barcelona Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 475,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Eixample district, Barcelona"
+      },
+      "experiences": [
+        {
+          "name": "Sagrada Fam\u00edlia Guided Tour",
+          "description": "Explore Gaud\u00ed's iconic basilica with a guided tour that reveals the intricate architectural details, symbolism, and history of this UNESCO World Heritage Site. Book a tower access ticket for panoramic views of the city.",
+          "cost_usd": 35,
+          "category": "architecture",
+          "best_time_of_day": "morning",
+          "location": "Eixample district, Barcelona"
+        },
+        {
+          "name": "Barceloneta Beach & Chiringuito Hopping",
+          "description": "Spend an afternoon at Barceloneta Beach, Barcelona's most famous urban beach. Stroll along the boardwalk, swim in the Mediterranean, and enjoy drinks and tapas at the iconic beachfront chiringuito bars.",
+          "cost_usd": 30,
+          "category": "beaches",
+          "best_time_of_day": "afternoon",
+          "location": "Barceloneta Beach, Barcelona"
+        },
+        {
+          "name": "El Born Tapas & Food Market Tour",
+          "description": "Wander through the trendy El Born neighborhood, sampling traditional Catalan tapas, fresh seafood, and local wines. Visit the historic Mercat de Santa Caterina for fresh produce and regional specialties.",
+          "cost_usd": 45,
+          "category": "food",
+          "best_time_of_day": "evening",
+          "location": "El Born, Barcelona"
+        },
+        {
+          "name": "Parc de la Ciutadella & Arc de Triomf Walk",
+          "description": "Explore the beautiful Parc de la Ciutadella, home to stunning architecture including the monumental cascade fountain designed by a young Gaud\u00ed. Stroll to the nearby Arc de Triomf and soak in the cultural heritage of this beachfront-adjacent green space.",
+          "cost_usd": 0,
+          "category": "culture",
+          "best_time_of_day": "morning",
+          "location": "Ciutadella Park, Sant Mart\u00ed, Barcelona"
+        },
+        {
+          "name": "Beachfront Club Nightlife Experience",
+          "description": "Experience Barcelona's legendary nightlife at one of the iconic open-air beach clubs near Barceloneta, such as Pacha or Opium Mar. Dance to world-class DJs with the Mediterranean Sea as your backdrop, a quintessential Barcelona night out.",
+          "cost_usd": 50,
+          "category": "nightlife",
+          "best_time_of_day": "night",
+          "location": "Passeig Mar\u00edtim, Barceloneta, Barcelona"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Barcelona",
+        "style": "premium",
+        "total_cost": 1925.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 475.0,
+          "experiences": 160.0,
+          "food": 300,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15",
+          "morning": "Arrival & Hotel Check-In: Flight LH lands at 13:00, so the morning is reserved for travel. Take a premium private transfer from Barcelona El Prat Airport to your boutique stay in Eixample. Settle in, freshen up, and enjoy a welcome amenity at the hotel.",
+          "afternoon": "Eixample Architecture Stroll: After settling in, take a leisurely self-guided walk through the Eixample district \u2014 the heart of Modernisme. Admire the iconic octagonal city blocks, ornate facades of Casa Batll\u00f3 and Casa Mil\u00e0 (La Pedrera) from the outside. Consider booking a late-afternoon private guided entry to Casa Mil\u00e0 for an intimate architectural experience.",
+          "evening": "Rooftop Aperitivo & Dinner at a Modernista-Inspired Restaurant: Begin the evening with cocktails at a rooftop bar in Eixample offering skyline views. Then dine at Disfrutar or Lasarte \u2014 two Michelin-starred restaurants within reach \u2014 for a world-class introduction to avant-garde Catalan cuisine.",
+          "meals": {
+            "breakfast": "Breakfast on the flight or a light welcome spread at the hotel upon arrival.",
+            "lunch": "Casual but refined lunch at Federal Caf\u00e9 or Parking Pizza in Eixample \u2014 chic, relaxed, and close to the hotel for a soft landing into the city.",
+            "dinner": "Tasting menu dinner at Lasarte (3 Michelin stars) or Disfrutar (2 Michelin stars) \u2014 pre-book well in advance. Expect \u20ac150\u2013\u20ac250 per person."
+          },
+          "notes": "Pre-arrange a private airport transfer for a seamless arrival. Reserve dinner weeks in advance as Michelin-starred restaurants in Barcelona fill up quickly, especially in August."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16",
+          "morning": "Sagrada Fam\u00edlia Guided Tour: Start the day with an exclusive guided tour of Gaud\u00ed's masterpiece basilica. Opt for a premium private guide who will decode the intricate symbolism in the facades, stained glass, and forest-like interior columns. Arrive early (9:00 AM) to beat the crowds and experience the morning light flooding through the colored glass.",
+          "afternoon": "Parc de la Ciutadella & Arc de Triomf Walk: After lunch, head to the lush Parc de la Ciutadella for a refined afternoon stroll. Admire the monumental cascade fountain (partially designed by the young Gaud\u00ed), the ornate iron-and-glass greenhouse, and the grand Arc de Triomf boulevard. Rent a rowboat on the park lake for a leisurely, romantic interlude.",
+          "evening": "El Born Neighborhood Exploration & Cocktail Bar Crawl: Transition into the evening in the trendy El Born district. Explore its medieval streets, then settle into a curated cocktail bar experience \u2014 try Bar Paradiso (hidden speakeasy behind a pastrami bar) for world-class mixology.",
+          "meals": {
+            "breakfast": "Lavish hotel breakfast or visit Forn de Sant Jaume on Passeig de Gr\u00e0cia for artisan pastries and specialty coffee.",
+            "lunch": "Lunch at Cervecer\u00eda Catalana on Carrer Mallorca \u2014 iconic Catalan tapas with premium ingredients in a stylish setting.",
+            "dinner": "Dinner at El Xampanyet in El Born \u2014 a beloved cava bar and tapas institution \u2014 followed by a refined meal at Espai Mesclad\u00eds or Llamber, both celebrated for modern Catalan cuisine."
+          },
+          "notes": "Book Sagrada Fam\u00edlia skip-the-line private tour tickets well in advance \u2014 August is peak season and timed-entry slots sell out fast. Wear comfortable shoes for the park walk."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17",
+          "morning": "Barceloneta Beach & Chiringuito Hopping: Spend a luxurious late morning at Barceloneta Beach. Arrange a premium sunbed and parasol service through your hotel concierge. Stroll the boardwalk and hop between the best chiringuitos (beach bars) for fresh seafood snacks, cava, and the iconic Barcelona beach atmosphere.",
+          "afternoon": "Private Sailboat Charter along the Barcelona Coast: Elevate the beach day with a private catamaran or sailboat charter departing from Port Ol\u00edmpic. Cruise along the coastline with a captain and onboard catering \u2014 chilled cava, fresh fruit, and Catalan charcuterie \u2014 while taking in the city skyline from the sea.",
+          "evening": "Beachfront Club Nightlife Experience: As the sun sets, transition directly from the water to Barcelona's legendary open-air beach club scene. Head to Pacha Barcelona or Sh\u00f4ko Beach Club near Barceloneta for a VIP table experience \u2014 reserve a bottle service table in advance for premium treatment as world-class DJs take the stage.",
+          "meals": {
+            "breakfast": "Light breakfast at the hotel before heading to the beach \u2014 fresh fruit, yogurt, and espresso.",
+            "lunch": "Premium seafood lunch at La Mar Salada or Barraca on the Barceloneta seafront \u2014 fresh grilled fish, oysters, and local white wine with ocean views.",
+            "dinner": "Pre-club dinner at Nobu Barcelona in the Hotel Arts \u2014 sophisticated Japanese-Peruvian fusion with sleek oceanfront ambiance, perfectly positioned before the nightlife experience."
+          },
+          "notes": "August nights in Barcelona are warm and vibrant \u2014 the beach clubs stay open until dawn. Arrange VIP entry and bottle service in advance through your hotel concierge. Sun protection is essential during the beach morning."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18",
+          "morning": "El Born Tapas & Food Market Tour: Join a premium private food tour through the El Born neighborhood and the iconic Mercat de Santa Caterina (a stunning Modernista market with a mosaic roof). Sample artisan cheeses, Iberian ham, fresh anchovies, craft vermouth, and traditional Catalan pastries with an expert local food guide.",
+          "afternoon": "Palau de la M\u00fasica Catalana & Gothic Quarter Architecture Walk: After lunch, visit the UNESCO-listed Palau de la M\u00fasica Catalana \u2014 a breathtaking Modernista concert hall by Llu\u00eds Dom\u00e8nech i Montaner. Book a private guided tour to appreciate its stained-glass skylight and sculpted facade. Then wander into the adjacent Gothic Quarter to explore its Roman ruins, medieval cathedral, and hidden plazas.",
+          "evening": "Flamenco Show & Late-Night Jazz: Experience an intimate, high-quality flamenco performance at Palau Dalmases in El Born \u2014 a baroque palace setting that elevates the art form. Afterwards, continue the cultural evening at Jamboree Jazz Club on Pla\u00e7a Reial for live jazz and cocktails in a historic underground venue.",
+          "meals": {
+            "breakfast": "Breakfast at Alsur Caf\u00e9 in El Born \u2014 specialty coffee, avocado toast, and fresh-squeezed juices in a bright, design-forward space.",
+            "lunch": "Sit-down lunch at El Xampanyet or Bar del Pla in El Born \u2014 traditional Catalan cuisine with excellent natural wines in a lively neighborhood setting.",
+            "dinner": "Dinner at Bodega Sep\u00falveda \u2014 a refined wine-focused bistro in Eixample with a curated natural wine list and seasonal Catalan small plates, perfect before the evening's cultural events."
+          },
+          "notes": "Book the Palau de la M\u00fasica private tour and flamenco show at Palau Dalmases in advance. The Gothic Quarter is best explored in the late afternoon when light filters beautifully through the narrow medieval lanes."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19",
+          "morning": "Park G\u00fcell & Gr\u00e0cia Neighborhood: Begin the final morning with a private guided visit to Park G\u00fcell \u2014 Gaud\u00ed's mosaic-tiled hilltop park with panoramic views over Barcelona. Arrive early (9:00 AM) with a timed-entry ticket to enjoy the monumental zone before crowds build. Descend into the charming Gr\u00e0cia neighborhood below for a relaxed stroll through its bohemian plazas and independent boutiques.",
+          "afternoon": "Spa & Wellness at the Hotel or Mandarin Oriental Spa: Dedicate the afternoon to rest and indulgence. Book a signature treatment at the Mandarin Oriental Barcelona's luxury spa \u2014 a hammam ritual, deep-tissue massage, or personalized wellness journey \u2014 the perfect way to restore after five days of exploration.",
+          "evening": "Farewell Dinner & Rooftop Nightcap: Conclude the trip with a spectacular farewell dinner at Moments (Mandarin Oriental, 2 Michelin stars) for refined Catalan haute cuisine. End the night with a final cocktail at the rooftop bar of the Hotel Majestic or the Cotton House Hotel \u2014 sipping a glass of cava as Barcelona's luminous skyline bids you farewell.",
+          "meals": {
+            "breakfast": "Indulgent hotel breakfast \u2014 full spread with fresh pastries, cold cuts, eggs to order, freshly squeezed juices, and Catalan cheeses.",
+            "lunch": "Light, healthy lunch at Parking Pizza or Flax & Kale in Eixample \u2014 nourishing and delicious before the afternoon spa session.",
+            "dinner": "Farewell tasting menu at Moments restaurant inside the Mandarin Oriental Barcelona \u2014 a celebration of modern Catalan gastronomy with exceptional wine pairings. Budget \u20ac200\u2013\u20ac300 per person."
+          },
+          "notes": "Park G\u00fcell's monumental zone requires advance timed-entry tickets \u2014 book online as soon as possible. Confirm spa appointments 24\u201348 hours ahead. If departing the following morning, arrange a private airport transfer the night before through the hotel concierge."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City+to+Barcelona+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Barcelona&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Barcelona",
+        "https://www.getyourguide.com/s/?q=Barcelona",
+        "https://www.getyourguide.com/s/?q=Barcelona",
+        "https://www.getyourguide.com/s/?q=Barcelona",
+        "https://www.getyourguide.com/s/?q=Barcelona"
+      ],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-375 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Barcelona architecture and nightlife, $2000, 5 days, August 2026 from NYC",
+  "session_tags": {
+    "query_id": "SYN-09",
+    "condition": "two_way",
+    "run_index": 3
+  }
+}

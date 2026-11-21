@@ -1,0 +1,553 @@
+{
+  "session_id": "743d398a-2d3f-4e0c-ae59-73b54e817a75",
+  "intent": {
+    "destination": "Vancouver",
+    "origin": "Seattle",
+    "budget_usd": 1800.0,
+    "duration_days": 4,
+    "travel_month": "June",
+    "travel_year": 2027,
+    "interests": [
+      "local food",
+      "nature"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Vancouver food and nature, $1800 solo, 4 days, June 2027, from Seattle"
+  },
+  "selected_flight": {
+    "price_usd": 180,
+    "airline": "AC",
+    "departure": "2027-06-15T08:00:00",
+    "arrival": "2027-06-15T12:00:00",
+    "stops": 0,
+    "duration": "PT1H00M"
+  },
+  "selected_hotel": {
+    "name": "Vancouver Harbour Stay",
+    "price_per_night_usd": 130,
+    "total_usd": 520,
+    "rating": 4.3,
+    "amenities": [
+      "wifi",
+      "breakfast included"
+    ],
+    "location": "Vancouver"
+  },
+  "experiences": [
+    {
+      "name": "Granville Island Public Market Food Tour",
+      "description": "Explore the iconic Granville Island Public Market, sampling local artisan cheeses, fresh Pacific salmon, handmade pastries, and BC wines. Chat with local vendors and discover the vibrant food culture that defines Vancouver's culinary scene.",
+      "cost_usd": 30,
+      "category": "local food",
+      "best_time_of_day": "morning",
+      "location": "Granville Island, False Creek"
+    },
+    {
+      "name": "Lynn Canyon Suspension Bridge & Ecology Centre",
+      "description": "Hike through old-growth forest in Lynn Canyon Park, cross the free suspension bridge over a dramatic gorge, and explore natural pools and waterfalls. Visit the Ecology Centre to learn about the local rainforest ecosystem. A stunning and budget-friendly alternative to Capilano.",
+      "cost_usd": 0,
+      "category": "nature",
+      "best_time_of_day": "morning",
+      "location": "Lynn Canyon, North Vancouver"
+    },
+    {
+      "name": "Stanley Park Seawall Cycle & Nature Walk",
+      "description": "Rent a bike and ride the iconic 10km seawall around Stanley Park, passing ancient cedar forests, totem poles, scenic ocean lookouts, and diverse wildlife including herons and raccoons. Stop at Beaver Lake for a peaceful nature break.",
+      "cost_usd": 35,
+      "category": "nature",
+      "best_time_of_day": "afternoon",
+      "location": "Stanley Park, West End"
+    },
+    {
+      "name": "Richmond Night Market & Asian Food Crawl",
+      "description": "Visit the famous Richmond Night Market (seasonal) or explore the Golden Village food district for an authentic Asian culinary adventure. Sample hand-pulled noodles, Hong Kong-style egg waffles, fresh dim sum, and bubble tea from some of the best Asian eateries outside of Asia.",
+      "cost_usd": 40,
+      "category": "local food",
+      "best_time_of_day": "evening",
+      "location": "Golden Village, Richmond"
+    },
+    {
+      "name": "Garibaldi Lake Day Hike",
+      "description": "Embark on a breathtaking full-day hike to the turquoise glacial waters of Garibaldi Lake, surrounded by volcanic peaks and alpine meadows. The 18km round-trip trail rewards hikers with one of British Columbia's most stunning natural landscapes and incredible photo opportunities.",
+      "cost_usd": 20,
+      "category": "nature",
+      "best_time_of_day": "morning",
+      "location": "Garibaldi Provincial Park, Whistler Corridor"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-06-15",
+    "return": "2027-06-19",
+    "nights": 4,
+    "month": "june",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Vancouver",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1005.0,
+      "flight": {
+        "price_usd": 180,
+        "airline": "AC",
+        "departure": "2027-06-15T08:00:00",
+        "arrival": "2027-06-15T12:00:00",
+        "stops": 0,
+        "duration": "PT1H00M"
+      },
+      "hotel": {
+        "name": "Vancouver Harbour Stay",
+        "price_per_night_usd": 130,
+        "total_usd": 520,
+        "rating": 4.3,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Vancouver"
+      },
+      "experiences": [
+        {
+          "name": "Granville Island Public Market Food Tour",
+          "description": "Explore the iconic Granville Island Public Market, sampling local artisan cheeses, fresh Pacific salmon, handmade pastries, and BC wines. Chat with local vendors and discover the vibrant food culture that defines Vancouver's culinary scene.",
+          "cost_usd": 30,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Granville Island, False Creek"
+        },
+        {
+          "name": "Lynn Canyon Suspension Bridge & Ecology Centre",
+          "description": "Hike through old-growth forest in Lynn Canyon Park, cross the free suspension bridge over a dramatic gorge, and explore natural pools and waterfalls. Visit the Ecology Centre to learn about the local rainforest ecosystem. A stunning and budget-friendly alternative to Capilano.",
+          "cost_usd": 0,
+          "category": "nature",
+          "best_time_of_day": "morning",
+          "location": "Lynn Canyon, North Vancouver"
+        },
+        {
+          "name": "Stanley Park Seawall Cycle & Nature Walk",
+          "description": "Rent a bike and ride the iconic 10km seawall around Stanley Park, passing ancient cedar forests, totem poles, scenic ocean lookouts, and diverse wildlife including herons and raccoons. Stop at Beaver Lake for a peaceful nature break.",
+          "cost_usd": 35,
+          "category": "nature",
+          "best_time_of_day": "afternoon",
+          "location": "Stanley Park, West End"
+        },
+        {
+          "name": "Richmond Night Market & Asian Food Crawl",
+          "description": "Visit the famous Richmond Night Market (seasonal) or explore the Golden Village food district for an authentic Asian culinary adventure. Sample hand-pulled noodles, Hong Kong-style egg waffles, fresh dim sum, and bubble tea from some of the best Asian eateries outside of Asia.",
+          "cost_usd": 40,
+          "category": "local food",
+          "best_time_of_day": "evening",
+          "location": "Golden Village, Richmond"
+        }
+      ],
+      "itinerary": {
+        "num_days": 4,
+        "destination": "Vancouver",
+        "style": "budget",
+        "total_cost": 1005.0,
+        "breakdown": {
+          "flight": 180.0,
+          "hotel": 520.0,
+          "experiences": 105.0,
+          "food": 100,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15 (Monday)",
+          "morning": "Arrival & Hotel Check-In: Flight AC lands at 12:00 PM. Take the Canada Line SkyTrain from YVR Airport to downtown Vancouver (approx. $4\u20135 CAD with a Compass Card) \u2014 the most budget-friendly airport transfer. Head to Vancouver Harbour Stay to drop off luggage and get oriented. If the room isn't ready, store your bags at the front desk.",
+          "afternoon": "Granville Island Public Market Food Tour: Take the False Creek Ferry or bus to Granville Island (ferry ~$4 CAD one way). Explore the iconic Public Market at your own pace \u2014 sample artisan cheeses, fresh Pacific salmon, baked goods, and local produce from vendor stalls. Graze your way through lunch here rather than sitting down at a restaurant to keep costs low. Pick up a fresh pastry or a bowl of chowder from one of the market vendors.",
+          "evening": "Stroll the Granville Island waterfront and watch local buskers perform. Head back downtown via bus or ferry. Explore the Davie Street or Robson Street neighbourhoods near the hotel. Wind down with a casual dinner at a nearby spot.",
+          "meals": {
+            "breakfast": "Grab a coffee and a snack on the plane or at the airport \u2014 skip the expensive airport restaurants.",
+            "lunch": "Granville Island Public Market: Budget $10\u201315 CAD grazing on samples and small bites \u2014 try a salmon taco, a cheese sample, and a fresh-baked pastry.",
+            "dinner": "Noodle Box (Robson St location) \u2014 generous portions of Asian-inspired noodles for $12\u201316 CAD. Or try a pho restaurant along Robson Street for a warming, affordable bowl under $15 CAD."
+          },
+          "notes": "Purchase a reloadable Compass Card at the airport SkyTrain station for all public transit \u2014 saves money over single-use tickets. Granville Island Market is open daily 9 AM\u20137 PM. June 15 is mid-June so expect long daylight hours (sunset ~9:15 PM) \u2014 great for evening strolls."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16 (Tuesday)",
+          "morning": "Stanley Park Seawall Cycle & Nature Walk: Rent a bike from Spokes Bicycle Rentals near the park entrance (approx. $8\u201312 CAD/hour or $30\u201340 CAD for a half-day). Ride the iconic 10km seawall loop around Stanley Park, passing ancient cedar forests, totem poles, Siwash Rock, and stunning views of the North Shore mountains and Lions Gate Bridge. Lock up your bike mid-way and walk the forest trails for free.",
+          "afternoon": "Continue exploring Stanley Park on foot \u2014 visit the free totem poles at Brockton Point, stroll through the rose garden, and enjoy the views at Prospect Point (free entry). Return your bike by early afternoon. Head to the West End neighbourhood for lunch, then walk along English Bay Beach \u2014 one of Vancouver's most beloved free urban beaches.",
+          "evening": "Richmond Night Market & Asian Food Crawl: Take the Canada Line SkyTrain south to the Richmond\u2013Brighouse area (approx. $3\u20134 CAD). Visit the Richmond Night Market (open seasonally, typically May\u2013October, Fri\u2013Sun) or explore the Golden Village food district on No. 3 Road for an incredible Asian food crawl. Try bubble tea, BBQ skewers, Hong Kong-style egg waffles, and dumplings for a fraction of restaurant prices.",
+          "meals": {
+            "breakfast": "Pick up groceries the evening before or grab a bagel and coffee from a local caf\u00e9 near the hotel \u2014 budget $5\u20138 CAD. Tim Hortons is a cheap Canadian staple if needed.",
+            "lunch": "Grab a sandwich or wrap from a West End deli or a food truck near English Bay \u2014 budget $10\u201313 CAD.",
+            "dinner": "Richmond Night Market or Golden Village: Budget $15\u201320 CAD for a full spread of Asian street food \u2014 dumplings, skewers, noodles, and a bubble tea included."
+          },
+          "notes": "Stanley Park is completely free to enter on foot or by bike. Bike rental shops open around 8\u20139 AM. Arrive early on the seawall to avoid crowds. Richmond Night Market charges a small admission (~$2\u20133 CAD) on weekend nights \u2014 check their seasonal schedule in advance. The Canada Line SkyTrain makes Richmond very accessible from downtown."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17 (Wednesday)",
+          "morning": "Lynn Canyon Suspension Bridge & Ecology Centre: Take a free bus (TransLink Route 228 or 229 from Lonsdale Quay) to Lynn Canyon Park in North Vancouver. Cross the FREE suspension bridge over a dramatic gorge \u2014 a stunning alternative to the expensive Capilano Suspension Bridge. Hike through old-growth forest trails along Lynn Creek, with waterfalls, swimming holes, and canyon viewpoints. Visit the free Lynn Canyon Ecology Centre to learn about the local ecosystem.",
+          "afternoon": "Continue hiking the Twin Falls Trail or the Baden Powell Trail section within the park \u2014 both free and spectacular in June when the creek is running high with snowmelt. Pack a picnic lunch to eat by the creek. Head back to North Vancouver's Lonsdale Quay via bus and catch the SeaBus ferry back to downtown Vancouver (covered by your Compass Card transit fare \u2014 approx. $3\u20134 CAD) for a scenic harbour crossing.",
+          "evening": "Explore Gastown, Vancouver's historic neighbourhood \u2014 walk the cobblestone streets, see the famous Steam Clock, and browse local shops. This is a great evening for a casual dinner in the area. End the night with a stroll along the waterfront near Canada Place for views of the harbour lit up at dusk.",
+          "meals": {
+            "breakfast": "Pick up supplies from a nearby grocery store (Save-On-Foods or Safeway) \u2014 grab yogurt, fruit, and a granola bar for $5\u20137 CAD to fuel your hike.",
+            "lunch": "Pack a picnic from the grocery store: sandwiches, fruit, trail mix, and water \u2014 budget $8\u201310 CAD total. Eat at the picnic area by Lynn Creek.",
+            "dinner": "Gastown: Try Meat & Bread on Cambie St (a short walk away) for a famous porchetta sandwich at $12\u201314 CAD. Or head to Save On Meats on Hastings for a classic budget diner meal under $15 CAD."
+          },
+          "notes": "Lynn Canyon is entirely FREE \u2014 no admission charge, unlike Capilano which costs $50+ CAD. Wear sturdy shoes as the trails can be slippery near the creek. The SeaBus runs frequently and is included in your transit fare \u2014 the 12-minute crossing offers beautiful views of the downtown skyline. Bring a refillable water bottle to fill up at the park."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18 (Thursday)",
+          "morning": "Commercial Drive & East Van Food Exploration: Take the SkyTrain or bus to Commercial Drive ('The Drive') \u2014 Vancouver's eclectic, bohemian neighbourhood packed with independent caf\u00e9s, bakeries, and local character. Browse the morning farmers market (if running) or simply walk the strip and soak up the neighbourhood vibe. Stop into a local Italian caf\u00e9 for a proper espresso \u2014 this area has deep Italian roots.",
+          "afternoon": "Visit Trout Lake (John Hendry Park) \u2014 a beautiful free urban park a short walk from Commercial Drive. Rent a paddleboard or kayak at the lake (very affordable seasonal rentals, ~$15\u201320 CAD/hour) or simply relax on the grassy shore. Walk back along The Drive and browse the independent bookshops and vintage stores. Head back toward downtown via transit and check out the Vancouver Art Gallery exterior and Robson Square (free public space with fountains).",
+          "evening": "Final Night Dinner & Farewell: Head back to the Granville Island area or Kitsilano neighbourhood for a final local dinner. Visit Kits Beach at sunset for stunning views of the mountains and English Bay \u2014 one of the most scenic free spots in the city. Pack light snacks for the beach and watch the sun dip behind the mountains.",
+          "meals": {
+            "breakfast": "Commercial Drive: Grab a coffee and a fresh pastry or breakfast burrito from one of the local independent caf\u00e9s \u2014 budget $8\u201312 CAD. Try Prado Caf\u00e9 or Turks Coffee Lounge.",
+            "lunch": "Commercial Drive: Pick up a slice of pizza from Lombardo's Pizzeria or grab a falafel wrap from one of the Middle Eastern spots on The Drive \u2014 budget $10\u201313 CAD.",
+            "dinner": "Kitsilano: Nuba Restaurant for affordable Lebanese mezze plates ($12\u201318 CAD) or grab takeout fish and chips from Siegel's Bagels area. Alternatively, pick up fresh sushi from a grocery store sushi counter (T&T Supermarket) for a delicious $10\u201312 CAD meal to enjoy at Kits Beach at sunset."
+          },
+          "notes": "Commercial Drive is best explored on foot \u2014 it's a flat, walkable strip. Trout Lake is a hidden gem locals love and is completely free. If departing the next morning, pack your bags tonight and confirm your checkout time with Vancouver Harbour Stay. The Canada Line from downtown to YVR takes about 25 minutes and costs ~$4\u20135 CAD \u2014 budget-friendly right to the end. Total estimated daily spend on this trip: $50\u201375 CAD per day including transit, activities, and meals."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Seattle+to+Vancouver+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Vancouver&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver"
+      ],
+      "highlights": [
+        "Save $345 vs. target budget",
+        "1 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Vancouver Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 1085.0,
+      "flight": {
+        "price_usd": 180,
+        "airline": "AC",
+        "departure": "2027-06-15T08:00:00",
+        "arrival": "2027-06-15T12:00:00",
+        "stops": 0,
+        "duration": "PT1H00M"
+      },
+      "hotel": {
+        "name": "Vancouver Harbour Stay",
+        "price_per_night_usd": 130,
+        "total_usd": 520,
+        "rating": 4.3,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Vancouver"
+      },
+      "experiences": [
+        {
+          "name": "Granville Island Public Market Food Tour",
+          "description": "Explore the iconic Granville Island Public Market, sampling local artisan cheeses, fresh Pacific salmon, handmade pastries, and BC wines. Chat with local vendors and discover the vibrant food culture that defines Vancouver's culinary scene.",
+          "cost_usd": 30,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Granville Island, False Creek"
+        },
+        {
+          "name": "Lynn Canyon Suspension Bridge & Ecology Centre",
+          "description": "Hike through old-growth forest in Lynn Canyon Park, cross the free suspension bridge over a dramatic gorge, and explore natural pools and waterfalls. Visit the Ecology Centre to learn about the local rainforest ecosystem. A stunning and budget-friendly alternative to Capilano.",
+          "cost_usd": 0,
+          "category": "nature",
+          "best_time_of_day": "morning",
+          "location": "Lynn Canyon, North Vancouver"
+        },
+        {
+          "name": "Stanley Park Seawall Cycle & Nature Walk",
+          "description": "Rent a bike and ride the iconic 10km seawall around Stanley Park, passing ancient cedar forests, totem poles, scenic ocean lookouts, and diverse wildlife including herons and raccoons. Stop at Beaver Lake for a peaceful nature break.",
+          "cost_usd": 35,
+          "category": "nature",
+          "best_time_of_day": "afternoon",
+          "location": "Stanley Park, West End"
+        },
+        {
+          "name": "Richmond Night Market & Asian Food Crawl",
+          "description": "Visit the famous Richmond Night Market (seasonal) or explore the Golden Village food district for an authentic Asian culinary adventure. Sample hand-pulled noodles, Hong Kong-style egg waffles, fresh dim sum, and bubble tea from some of the best Asian eateries outside of Asia.",
+          "cost_usd": 40,
+          "category": "local food",
+          "best_time_of_day": "evening",
+          "location": "Golden Village, Richmond"
+        },
+        {
+          "name": "Garibaldi Lake Day Hike",
+          "description": "Embark on a breathtaking full-day hike to the turquoise glacial waters of Garibaldi Lake, surrounded by volcanic peaks and alpine meadows. The 18km round-trip trail rewards hikers with one of British Columbia's most stunning natural landscapes and incredible photo opportunities.",
+          "cost_usd": 20,
+          "category": "nature",
+          "best_time_of_day": "morning",
+          "location": "Garibaldi Provincial Park, Whistler Corridor"
+        }
+      ],
+      "itinerary": {
+        "num_days": 4,
+        "destination": "Vancouver",
+        "style": "balanced",
+        "total_cost": 1085.0,
+        "breakdown": {
+          "flight": 180.0,
+          "hotel": 520.0,
+          "experiences": 125.0,
+          "food": 160,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15 (Monday)",
+          "morning": "Arrival at Vancouver International Airport at 12:00 PM on Flight AC. Clear customs, collect luggage, and take the Canada Line SkyTrain directly from YVR to downtown Vancouver (~25 min, ~$10 CAD). Check in to Vancouver Harbour Stay and freshen up. Enjoy a relaxed first look at the waterfront near the hotel.",
+          "afternoon": "Head to Granville Island Public Market Food Tour (approximately 2:00\u20135:00 PM). Explore the iconic indoor market, sampling local artisan cheeses, freshly smoked Pacific salmon, handmade charcuterie, local honey, and baked goods. Stroll the outdoor artisan stalls and take in the False Creek waterfront atmosphere. A perfect low-key introduction to Vancouver's local food scene.",
+          "evening": "Return to the downtown waterfront area near the hotel. Walk along Canada Place and enjoy views of Burrard Inlet as the evening light hits the North Shore mountains. Wind down from travel with a relaxed dinner nearby.",
+          "meals": {
+            "breakfast": "Grab a snack or coffee at the airport before landing \u2014 no formal breakfast scheduled.",
+            "lunch": "Graze through Granville Island Public Market stalls \u2014 build your own lunch from fresh oysters, salmon jerky, artisan bread, and local cheeses (~$20\u201330 CAD per person).",
+            "dinner": "Nook Restaurant or The Flying Pig on Cordova Street near the hotel \u2014 cozy, mid-range Canadian comfort food with local ingredients (~$35\u201350 CAD per person)."
+          },
+          "notes": "Keep Day 1 light given the midday arrival and potential travel fatigue. Granville Island is about 15 minutes by taxi/rideshare (~$15 CAD) or a scenic False Creek Ferry ride (~$5 CAD) from downtown. Purchase a Compass Card at the airport SkyTrain station for convenient transit use throughout the trip."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16 (Tuesday)",
+          "morning": "Start the day with the Stanley Park Seawall Cycle & Nature Walk (8:00 AM\u201312:00 PM). Rent bikes from Spokes Bicycle Rentals at the park entrance (~$15/hr CAD). Ride the iconic 10km seawall around Stanley Park, passing ancient cedar forests, Siwash Rock, totem poles at Brockton Point, and stunning views of Lions Gate Bridge and the North Shore mountains. Stop at Prospect Point for panoramic photos.",
+          "afternoon": "After returning bikes, explore the interior of Stanley Park on foot \u2014 visit the totem poles, Rose Garden (in bloom in June), and Beaver Lake trail. Head back downtown by 2:30 PM and spend the late afternoon exploring Robson Street or Gastown's boutique shops and galleries for a taste of local culture.",
+          "evening": "Richmond Night Market & Asian Food Crawl (6:00 PM onward). Take the Canada Line SkyTrain to Richmond (~30 min). Visit the Richmond Night Market (open seasonally, typically May\u2013October \u2014 June dates confirmed) for an incredible array of Asian street food: bubble tea, takoyaki, Taiwanese popcorn chicken, mango shaved ice, and Korean corn dogs. Lively atmosphere with live entertainment.",
+          "meals": {
+            "breakfast": "Caf\u00e9 Medina on Beatty Street \u2014 famous for Belgian waffles and Levant-inspired brunch. A Vancouver institution (~$20\u201328 CAD per person). Book ahead or arrive early.",
+            "lunch": "Picnic-style at Stanley Park \u2014 pick up sandwiches and snacks from a nearby deli or the park's Prospect Point Caf\u00e9 (~$15\u201320 CAD).",
+            "dinner": "Richmond Night Market food stalls \u2014 budget ~$20\u201330 CAD for a satisfying mix of Asian street food dishes and desserts."
+          },
+          "notes": "June weather in Vancouver is typically mild (15\u201320\u00b0C) with occasional rain \u2014 bring a light jacket and layers for the seawall morning ride. The seawall is mostly flat and suitable for all fitness levels. Richmond Night Market is busiest after 7:00 PM; arrive by 6:00 PM to beat the crowds."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17 (Wednesday)",
+          "morning": "Full-day adventure: Garibaldi Lake Day Hike (depart 6:30 AM). Drive or arrange a rideshare/tour shuttle (~1.5 hrs from Vancouver) to the Rubble Creek trailhead near Whistler. The 18km round-trip hike gains ~820m elevation through old-growth forest, opening to breathtaking views of the turquoise glacial Garibaldi Lake framed by volcanic peaks and the Sphinx Glacier. Reach the lake by late morning for photos and a well-earned rest.",
+          "afternoon": "Spend time at Garibaldi Lake exploring the lakeshore, visiting Barrier viewpoint, or hiking the short spur to Lesser Garibaldi Lake. Begin the descent back to the trailhead by 2:00\u20132:30 PM, arriving at the parking area around 4:30\u20135:00 PM. Drive or shuttle back to Vancouver, arriving by 6:30\u20137:00 PM.",
+          "evening": "Low-key recovery evening near the hotel. Stroll Gastown's cobblestone streets, catch the famous Steam Clock, and browse local shops before a well-deserved sit-down dinner.",
+          "meals": {
+            "breakfast": "Early grab-and-go from Tim Hortons or a local bakery near the hotel before departure (~$8\u201312 CAD). Pack snacks the night before.",
+            "lunch": "Packed trail lunch \u2014 prepare the night before or pick up from a deli: sandwiches, trail mix, fruit, energy bars, and plenty of water. Eat at Garibaldi Lake (~$10\u201315 CAD DIY).",
+            "dinner": "Chill Winston in Gastown \u2014 relaxed mid-range atmosphere with local craft beers, flatbreads, and sharing plates. Great recovery meal (~$35\u201350 CAD per person)."
+          },
+          "notes": "Garibaldi Lake requires a valid BC Parks day-use reservation (book in advance at bcparks.ca \u2014 fees ~$10 CAD). Start early to secure parking and avoid afternoon crowds. Wear sturdy hiking boots, bring sunscreen, a rain layer, and at minimum 2L of water per person. Snow may still be present on higher sections in mid-June \u2014 check trail conditions beforehand. Consider renting a car for the day (~$60\u201380 CAD) or booking a guided shuttle tour for convenience."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18 (Thursday)",
+          "morning": "Lynn Canyon Suspension Bridge & Ecology Centre (9:00 AM\u201312:30 PM). Take transit or a rideshare to North Vancouver (~30\u201340 min). Hike through old-growth Douglas fir and cedar forest in Lynn Canyon Park, cross the free suspension bridge over the dramatic 50-metre gorge, and explore the Twin Falls and 30 Foot Pool trails. Visit the Lynn Canyon Ecology Centre to learn about the local temperate rainforest ecosystem. A quieter, free alternative to Capilano with equally stunning scenery.",
+          "afternoon": "Return to Vancouver by 1:30 PM. Spend a relaxed final afternoon revisiting a favourite neighbourhood \u2014 wander Yaletown's boutiques and public art, or return to Granville Island to pick up local food souvenirs (smoked salmon, artisan preserves, local chocolate). Pack and prepare for departure.",
+          "evening": "Final dinner celebrating the trip \u2014 enjoy a special Vancouver dining experience showcasing Pacific Northwest cuisine.",
+          "meals": {
+            "breakfast": "Caf\u00e9 at Vancouver Harbour Stay or nearby \u2014 grab a hearty breakfast before heading to Lynn Canyon (~$15\u201320 CAD).",
+            "lunch": "Honey's Doughnuts & Goodies in North Vancouver near Lynn Canyon \u2014 beloved local institution with fresh doughnuts and light lunch items (~$12\u201318 CAD).",
+            "dinner": "Miku Restaurant on the waterfront \u2014 known for aburi (flame-seared) sushi and stunning Burrard Inlet views. A memorable mid-range splurge to close the trip (~$60\u201380 CAD per person). Reserve in advance."
+          },
+          "notes": "Lynn Canyon Park is free to enter (unlike Capilano Suspension Bridge which costs ~$60 CAD). The Ecology Centre has a small suggested donation. Trails can be muddy after rain \u2014 wear trail shoes or waterproof footwear. For souvenirs, Granville Island is ideal for locally made, non-touristy gifts. Check your flight schedule and allow ample time for airport transfer on departure day \u2014 Canada Line from downtown takes ~25 minutes to YVR."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Seattle+to+Vancouver+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Vancouver&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.3\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Vancouver Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 1165.0,
+      "flight": {
+        "price_usd": 180,
+        "airline": "AC",
+        "departure": "2027-06-15T08:00:00",
+        "arrival": "2027-06-15T12:00:00",
+        "stops": 0,
+        "duration": "PT1H00M"
+      },
+      "hotel": {
+        "name": "Vancouver Harbour Stay",
+        "price_per_night_usd": 130,
+        "total_usd": 520,
+        "rating": 4.3,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Vancouver"
+      },
+      "experiences": [
+        {
+          "name": "Granville Island Public Market Food Tour",
+          "description": "Explore the iconic Granville Island Public Market, sampling local artisan cheeses, fresh Pacific salmon, handmade pastries, and BC wines. Chat with local vendors and discover the vibrant food culture that defines Vancouver's culinary scene.",
+          "cost_usd": 30,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Granville Island, False Creek"
+        },
+        {
+          "name": "Lynn Canyon Suspension Bridge & Ecology Centre",
+          "description": "Hike through old-growth forest in Lynn Canyon Park, cross the free suspension bridge over a dramatic gorge, and explore natural pools and waterfalls. Visit the Ecology Centre to learn about the local rainforest ecosystem. A stunning and budget-friendly alternative to Capilano.",
+          "cost_usd": 0,
+          "category": "nature",
+          "best_time_of_day": "morning",
+          "location": "Lynn Canyon, North Vancouver"
+        },
+        {
+          "name": "Stanley Park Seawall Cycle & Nature Walk",
+          "description": "Rent a bike and ride the iconic 10km seawall around Stanley Park, passing ancient cedar forests, totem poles, scenic ocean lookouts, and diverse wildlife including herons and raccoons. Stop at Beaver Lake for a peaceful nature break.",
+          "cost_usd": 35,
+          "category": "nature",
+          "best_time_of_day": "afternoon",
+          "location": "Stanley Park, West End"
+        },
+        {
+          "name": "Richmond Night Market & Asian Food Crawl",
+          "description": "Visit the famous Richmond Night Market (seasonal) or explore the Golden Village food district for an authentic Asian culinary adventure. Sample hand-pulled noodles, Hong Kong-style egg waffles, fresh dim sum, and bubble tea from some of the best Asian eateries outside of Asia.",
+          "cost_usd": 40,
+          "category": "local food",
+          "best_time_of_day": "evening",
+          "location": "Golden Village, Richmond"
+        },
+        {
+          "name": "Garibaldi Lake Day Hike",
+          "description": "Embark on a breathtaking full-day hike to the turquoise glacial waters of Garibaldi Lake, surrounded by volcanic peaks and alpine meadows. The 18km round-trip trail rewards hikers with one of British Columbia's most stunning natural landscapes and incredible photo opportunities.",
+          "cost_usd": 20,
+          "category": "nature",
+          "best_time_of_day": "morning",
+          "location": "Garibaldi Provincial Park, Whistler Corridor"
+        }
+      ],
+      "itinerary": {
+        "num_days": 4,
+        "destination": "Vancouver",
+        "style": "premium",
+        "total_cost": 1165.0,
+        "breakdown": {
+          "flight": 180.0,
+          "hotel": 520.0,
+          "experiences": 125.0,
+          "food": 240,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15 (Monday)",
+          "morning": "Arrival at Vancouver International Airport at 12:00 PM on Flight AC. No morning activities scheduled. Transfer by private luxury car service to Vancouver Harbour Stay hotel. Check in, freshen up, and settle into your premium accommodations with harbour views.",
+          "afternoon": "Granville Island Public Market Food Tour: After settling in, head to the iconic Granville Island Public Market for a guided premium food tour. Sample local artisan cheeses, freshly smoked Pacific salmon, handcrafted charcuterie, and artisanal breads from acclaimed vendors. Explore the waterfront stalls and take in the vibrant atmosphere of one of Canada's finest public markets.",
+          "evening": "Stroll along the False Creek waterfront as the sun sets over the harbour. Enjoy a leisurely evening exploring the Yaletown neighbourhood, known for its converted warehouse boutiques and upscale atmosphere, before heading to dinner.",
+          "meals": {
+            "breakfast": "Not applicable \u2014 in-flight or at airport upon arrival.",
+            "lunch": "Enjoy a curated tasting lunch as part of the Granville Island Food Tour, featuring local salmon, artisan cheeses, fresh pastries, and seasonal produce from market vendors.",
+            "dinner": "Dinner at Blue Water Cafe in Yaletown \u2014 one of Vancouver's most celebrated seafood restaurants. Indulge in fresh local oysters, Dungeness crab, and premium Pacific seafood paired with an award-winning wine list. Reservation strongly recommended."
+          },
+          "notes": "Arrange private airport transfer in advance through the hotel concierge. The Granville Island tour is a short 15-minute taxi or water taxi ride from the hotel \u2014 the water taxi is a scenic and uniquely Vancouver experience. Confirm food tour booking prior to departure."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16 (Tuesday)",
+          "morning": "Stanley Park Seawall Cycle & Nature Walk: Begin the day with a premium guided bike rental or private cycling experience along the iconic 10km Stanley Park Seawall. Pedal past ancient towering cedar forests, dramatic ocean vistas, the famous totem poles at Brockton Point, and pristine beaches. Option to transition to a guided nature walk through old-growth forest trails inside the park for a more immersive experience.",
+          "afternoon": "Continue exploring Stanley Park at a relaxed pace. Visit the Vancouver Aquarium within the park for a premium behind-the-scenes experience, or relax at Second Beach. Return to the hotel to refresh before the evening. Alternatively, visit the upscale Robson Street shopping district for luxury retail therapy.",
+          "evening": "Experience a sunset cocktail hour at the hotel bar or rooftop lounge overlooking Vancouver Harbour, watching floatplanes and sailboats drift across the water. Then head to dinner in Coal Harbour, steps from the hotel.",
+          "meals": {
+            "breakfast": "Gourmet in-hotel breakfast at Vancouver Harbour Stay \u2014 enjoy eggs Benedict with smoked wild salmon, fresh fruit, and locally roasted coffee with panoramic harbour views.",
+            "lunch": "Picnic-style premium lunch at Stanley Park \u2014 arrange a luxury picnic basket through the hotel concierge featuring charcuterie, artisan sandwiches, local cheeses, and sparkling water, enjoyed on the oceanside seawall.",
+            "dinner": "Dinner at Lift Bar Grill View in Coal Harbour \u2014 stunning floor-to-ceiling views of the harbour and North Shore mountains. Savour prime Alberta beef, fresh Pacific halibut, and an extensive cocktail and wine selection in an elegant setting."
+          },
+          "notes": "Stanley Park is a short 10-minute walk or 5-minute taxi from Vancouver Harbour Stay. Rent premium e-bikes or traditional bikes from vendors near the park entrance. Morning is the best time to cycle before afternoon crowds arrive. Pack sunscreen as June days can be long and sunny."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17 (Wednesday)",
+          "morning": "Garibaldi Lake Day Hike: Depart early by private luxury vehicle or chartered transport for the approximately 1.5-hour drive to Garibaldi Provincial Park in Whistler corridor. Begin the breathtaking full-day hike to Garibaldi Lake \u2014 a stunning turquoise glacial lake surrounded by snow-capped volcanic peaks. The 18km round-trip trail winds through lush alpine meadows and old-growth forest, rewarding hikers with one of British Columbia's most spectacular natural landscapes.",
+          "afternoon": "Arrive at Garibaldi Lake for a well-earned rest, picnic lunch, and time to soak in the surreal turquoise waters and panoramic mountain scenery. Explore the shoreline and take in views of the Sphinx Glacier and surrounding peaks. Begin the return descent through the forest in the mid-afternoon.",
+          "evening": "Return to Vancouver by private transfer. Arrive back at the hotel by early evening. Enjoy a relaxing soak or spa treatment at the hotel wellness facilities to recover from the hike before a refined dinner.",
+          "meals": {
+            "breakfast": "Early hearty breakfast at the hotel before departure \u2014 smoked salmon bagel, avocado toast, fresh-pressed juices, and locally roasted espresso to fuel the hike.",
+            "lunch": "Premium packed trail lunch prepared by the hotel or a local gourmet deli \u2014 think wild salmon wraps, energy-rich trail mix, fresh fruit, artisan energy bars, and a thermos of premium tea or coffee, enjoyed lakeside at Garibaldi.",
+            "dinner": "Dinner at Hawksworth Restaurant in downtown Vancouver \u2014 one of Canada's most acclaimed fine dining establishments. Enjoy contemporary Canadian cuisine featuring locally sourced ingredients, an exceptional tasting menu, and an award-winning wine cellar in a sophisticated setting."
+          },
+          "notes": "This is a strenuous full-day hike \u2014 wear proper hiking boots and dress in layers as alpine temperatures can be significantly cooler than Vancouver. Arrange private transport through the hotel concierge for the most comfortable experience. Check BC Parks trail conditions and any permit requirements in advance. Bring trekking poles if available."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18 (Thursday)",
+          "morning": "Lynn Canyon Suspension Bridge & Ecology Centre: Start the final morning with a scenic drive or private transfer (approximately 25 minutes) to Lynn Canyon Park in North Vancouver. Cross the dramatic free suspension bridge high above the rushing canyon waters, then explore old-growth Douglas fir and cedar forest trails. Visit the Lynn Canyon Ecology Centre to learn about the coastal temperate rainforest ecosystem. A quieter, more intimate alternative to the busy Capilano Suspension Bridge.",
+          "afternoon": "Return to Vancouver and explore the Richmond Golden Village food district for a premium Asian culinary experience. Wander through authentic dim sum restaurants, specialty tea houses, and acclaimed Asian bakeries in one of North America's finest Asian food destinations. Browse the upscale shops and immerse yourself in the vibrant multicultural atmosphere.",
+          "evening": "Richmond Night Market & Asian Food Crawl: As the evening begins, visit the famous Richmond Night Market (seasonal \u2014 open June through October) for a lively, festive finale to the trip. Sample an extraordinary array of Asian street foods including Taiwanese bubble tea, Japanese takoyaki, Korean BBQ skewers, and Hong Kong-style egg waffles, all in a buzzing open-air night market atmosphere. Return to the hotel for a final night in Vancouver.",
+          "meals": {
+            "breakfast": "Leisurely last-morning breakfast at the hotel \u2014 full gourmet spread including BC-sourced eggs, smoked wild salmon, fresh pastries, seasonal fruit, and premium coffee to start the day.",
+            "lunch": "Premium dim sum lunch at Kirin Seafood Restaurant in Richmond \u2014 one of Vancouver's most celebrated Cantonese fine dining institutions. Enjoy exquisite har gow, siu mai, barbecue pork buns, and whole steamed fish in an elegant, refined setting.",
+            "dinner": "Dinner at the Richmond Night Market \u2014 embrace the vibrant street food culture with a curated crawl through the market's best stalls. Complement the experience with premium sake or craft cocktails from market vendors, followed by a final nightcap at the hotel bar overlooking the illuminated harbour."
+          },
+          "notes": "Lynn Canyon Park is free to enter and less crowded than Capilano \u2014 an authentic and rewarding nature experience. Confirm Richmond Night Market opening dates and hours as they are weather and season dependent (typically weekends and select weekdays in June). Arrange a private transfer for the evening return from Richmond to the hotel for comfort and convenience. Consider booking a late checkout or departure-day transfer in advance if flying out on Day 5."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Seattle+to+Vancouver+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Vancouver&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver",
+        "https://www.getyourguide.com/s/?q=Vancouver"
+      ],
+      "highlights": [
+        "4.3\u2605 luxury hotel",
+        "Direct flight (no layovers)",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-905 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Vancouver food and nature, $1800 solo, 4 days, June 2027, from Seattle",
+  "session_tags": {
+    "query_id": "CTL-03",
+    "condition": "targeted",
+    "run_index": 3
+  }
+}

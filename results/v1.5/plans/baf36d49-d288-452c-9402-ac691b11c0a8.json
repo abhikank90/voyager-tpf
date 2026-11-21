@@ -1,0 +1,669 @@
+{
+  "session_id": "baf36d49-d288-452c-9402-ac691b11c0a8",
+  "intent": {
+    "destination": "Rome",
+    "origin": "Chicago",
+    "budget_usd": 2500.0,
+    "duration_days": 7,
+    "travel_month": "June",
+    "travel_year": 2027,
+    "interests": [
+      "art",
+      "food"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Rome art and food trip, $2500, 7 days, June 2026 from Chicago"
+  },
+  "selected_flight": {
+    "price_usd": 680,
+    "airline": "UA",
+    "departure": "2027-06-15T08:00:00",
+    "arrival": "2027-06-15T22:30:00",
+    "stops": 1,
+    "duration": "PT14H30M"
+  },
+  "selected_hotel": {
+    "name": "Aegean Bliss Resort, Rome",
+    "price_per_night_usd": 85,
+    "total_usd": 595,
+    "rating": 4.3,
+    "amenities": [
+      "beach access",
+      "breakfast included",
+      "wifi",
+      "pool"
+    ],
+    "location": "Beachfront"
+  },
+  "experiences": [
+    {
+      "name": "Vatican Museums & Sistine Chapel",
+      "description": "Explore one of the world's greatest art collections, culminating in Michelangelo's breathtaking Sistine Chapel ceiling. Book skip-the-line tickets in advance to maximize your time among thousands of masterpieces spanning centuries of art history.",
+      "cost_usd": 35,
+      "category": "art",
+      "best_time_of_day": "morning",
+      "location": "Vatican City, Borgo district"
+    },
+    {
+      "name": "Trastevere Food & Wine Evening Walk",
+      "description": "Wander through the cobblestone streets of Trastevere sampling local Roman street food including suppl\u00ec (fried rice balls), artichokes alla giudia, and pecorino romano paired with local wines at family-run trattorias and wine bars.",
+      "cost_usd": 60,
+      "category": "food",
+      "best_time_of_day": "evening",
+      "location": "Trastevere neighborhood"
+    },
+    {
+      "name": "Borghese Gallery Art Tour",
+      "description": "Visit one of Rome's most intimate and stunning art galleries housing Bernini's extraordinary sculptures and Caravaggio's dramatic paintings. Reservations are mandatory and limited to 2-hour slots, making it an exclusive and immersive experience.",
+      "cost_usd": 25,
+      "category": "art",
+      "best_time_of_day": "morning",
+      "location": "Villa Borghese, Parioli district"
+    },
+    {
+      "name": "Testaccio Market & Cooking Class",
+      "description": "Start at Rome's most authentic local food market, Mercato Testaccio, to source fresh seasonal ingredients with a local chef, then head to a nearby kitchen to learn how to make handmade pasta, cacio e pepe, and tiramisu from scratch.",
+      "cost_usd": 95,
+      "category": "food",
+      "best_time_of_day": "morning",
+      "location": "Testaccio neighborhood"
+    },
+    {
+      "name": "Palatine Hill & Roman Forum Archaeological Walk",
+      "description": "Stroll through the ancient heart of Rome across the Roman Forum and up to Palatine Hill, where emperors once lived. The panoramic views over the ruins are spectacular and the site is rich with frescoes, mosaics, and ancient sculptures in situ.",
+      "cost_usd": 18,
+      "category": "culture",
+      "best_time_of_day": "afternoon",
+      "location": "Ancient Rome, Capitoline Hill area"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-06-15",
+    "return": "2027-06-22",
+    "nights": 7,
+    "month": "june",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Rome",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1628.0,
+      "flight": {
+        "price_usd": 680,
+        "airline": "UA",
+        "departure": "2027-06-15T08:00:00",
+        "arrival": "2027-06-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Rome",
+        "price_per_night_usd": 85,
+        "total_usd": 595,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [
+        {
+          "name": "Vatican Museums & Sistine Chapel",
+          "description": "Explore one of the world's greatest art collections, culminating in Michelangelo's breathtaking Sistine Chapel ceiling. Book skip-the-line tickets in advance to maximize your time among thousands of masterpieces spanning centuries of art history.",
+          "cost_usd": 35,
+          "category": "art",
+          "best_time_of_day": "morning",
+          "location": "Vatican City, Borgo district"
+        },
+        {
+          "name": "Borghese Gallery Art Tour",
+          "description": "Visit one of Rome's most intimate and stunning art galleries housing Bernini's extraordinary sculptures and Caravaggio's dramatic paintings. Reservations are mandatory and limited to 2-hour slots, making it an exclusive and immersive experience.",
+          "cost_usd": 25,
+          "category": "art",
+          "best_time_of_day": "morning",
+          "location": "Villa Borghese, Parioli district"
+        },
+        {
+          "name": "Palatine Hill & Roman Forum Archaeological Walk",
+          "description": "Stroll through the ancient heart of Rome across the Roman Forum and up to Palatine Hill, where emperors once lived. The panoramic views over the ruins are spectacular and the site is rich with frescoes, mosaics, and ancient sculptures in situ.",
+          "cost_usd": 18,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Ancient Rome, Capitoline Hill area"
+        }
+      ],
+      "itinerary": {
+        "num_days": 7,
+        "destination": "Rome",
+        "style": "budget",
+        "total_cost": 1628.0,
+        "breakdown": {
+          "flight": 680.0,
+          "hotel": 595.0,
+          "experiences": 78.0,
+          "food": 175,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15 (Monday)",
+          "morning": "No activities scheduled \u2014 late-night arrival. Flight UA lands at 22:30. Take the Leonardo Express train from Fiumicino Airport to Roma Termini (\u20ac14, ~32 min), then connect to your accommodation at Aegean Bliss Resort.",
+          "afternoon": "No activities scheduled \u2014 in transit.",
+          "evening": "Arrive at hotel, check in, and settle in. Take a short stroll near the hotel to orient yourself and grab a late-night snack from a nearby convenience store or open pizzeria al taglio.",
+          "meals": {
+            "breakfast": "N/A \u2014 in-flight or skip",
+            "lunch": "N/A \u2014 in-flight",
+            "dinner": "Late-night slice at a local pizzeria al taglio near the hotel (\u20ac3\u20135). Look for '24h' signs near Roma Termini area."
+          },
+          "notes": "Keep energy for Day 2. Buy a 48-hour or 72-hour public transport pass at Termini (\u20ac7/48h) to save money on buses and metro. Confirm hotel check-in accepts late arrivals."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16 (Tuesday)",
+          "morning": "Start with a classic Roman breakfast at a local bar \u2014 espresso and cornetto (\u20ac2\u20133). Then head to the Vatican Museums & Sistine Chapel (pre-book online to skip lines, ~\u20ac20 entry). Arrive early (opening is 9:00 AM) to beat crowds. Explore the Raphael Rooms, Gallery of Maps, and end with Michelangelo's awe-inspiring Sistine Chapel ceiling.",
+          "afternoon": "After the Vatican, walk across the Tiber to the charming Trastevere neighborhood. Explore its cobblestone streets, visit the Basilica di Santa Maria in Trastevere (free entry), and soak in the bohemian atmosphere. Rest your feet in Piazza di Santa Maria.",
+          "evening": "Stroll along the Tiber riverbanks at sunset. Head to Campo de' Fiori for the lively evening atmosphere. Browse the square and enjoy a budget aperitivo at one of the surrounding bars.",
+          "meals": {
+            "breakfast": "Espresso + cornetto at a local bar near the hotel (\u20ac2\u20133)",
+            "lunch": "Suppli (fried rice balls) and pizza al taglio near the Vatican or in Trastevere (\u20ac5\u20138). Try 'Suppl\u00ec Roma' on Via San Francesco a Ripa.",
+            "dinner": "Trattoria in Trastevere \u2014 look for fixed-price 'men\u00f9 turistico' options or trattorias with handwritten chalkboard menus. Budget \u20ac12\u201316 for pasta + water + bread."
+          },
+          "notes": "Book Vatican Museums tickets in advance at museivaticani.va to avoid 2\u20133 hour queues. Wear comfortable shoes \u2014 Vatican complex involves a LOT of walking. Modest dress required (shoulders and knees covered)."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17 (Wednesday)",
+          "morning": "Explore the ancient heart of Rome with the Palatine Hill & Roman Forum Archaeological Walk (combined ticket ~\u20ac16, includes Colosseum entry valid same day or next). Start at the Roman Forum, walk the ancient Via Sacra, and climb Palatine Hill for panoramic views over the city. Allow 2\u20133 hours.",
+          "afternoon": "Use your combo ticket to visit the Colosseum (included). Book a timed entry slot online. Afterward, walk to the nearby Circus Maximus (free, outdoor) and the Mouth of Truth (La Bocca della Verit\u00e0) at Santa Maria in Cosmedin church (\u20ac2 donation).",
+          "evening": "Wander through the Jewish Ghetto neighborhood, one of Rome's most atmospheric and historic quarters. Visit Largo di Torre Argentina (free outdoor ruins where Julius Caesar was assassinated). End the evening with a gelato near the Pantheon.",
+          "meals": {
+            "breakfast": "Bar near hotel \u2014 espresso + pastry (\u20ac2\u20133)",
+            "lunch": "Packed lunch or street food near the Forum \u2014 grab a panino from a nearby alimentari (deli) for \u20ac4\u20136. Avoid tourist traps right next to the Colosseum.",
+            "dinner": "Trattoria in the Jewish Ghetto or near Largo Argentina. Try cacio e pepe or carciofi alla giudia (Jewish-style artichokes). Budget \u20ac13\u201317."
+          },
+          "notes": "Pre-book Colosseum + Forum + Palatine Hill combo tickets at coopculture.it \u2014 they sell out fast in June. Bring water (refill at free 'nasoni' public fountains throughout Rome). Sun protection essential for outdoor ruins."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18 (Thursday)",
+          "morning": "Visit the Borghese Gallery Art Tour (pre-booking mandatory, entry \u20ac15 + \u20ac2 booking fee). This intimate gallery limits visitors to 2-hour timed slots. Marvel at Bernini's breathtaking sculptures (Apollo and Daphne, The Rape of Proserpina) and Caravaggio paintings. Arrive 15 minutes early.",
+          "afternoon": "After the gallery, enjoy a leisurely walk through Villa Borghese park (free) \u2014 Rome's most beloved public green space. Rent a rowboat on the lake (\u20ac3\u20135) or simply relax on the grass. Walk down the Spanish Steps (Piazza di Spagna) and window-shop along Via Condotti without spending a cent.",
+          "evening": "Toss a coin at the Trevi Fountain (free to visit, best experienced at dusk when lit up). Walk to the Pantheon (free exterior, \u20ac5 interior entry) for a night view. End at Piazza Navona to admire Bernini's Fountain of the Four Rivers.",
+          "meals": {
+            "breakfast": "Bar near hotel \u2014 cappuccino + cornetto (\u20ac2\u20133)",
+            "lunch": "Picnic in Villa Borghese! Grab supplies from a nearby alimentari or Mercato Trionfale \u2014 bread, cheese, prosciutto, fruit (\u20ac6\u20139 total).",
+            "dinner": "Casual trattoria near Piazza Navona or the Pantheon. Amatriciana or carbonara pasta + house wine. Budget \u20ac14\u201318. Avoid restaurants with outdoor 'hosts' aggressively pulling you in \u2014 they're tourist traps."
+          },
+          "notes": "Borghese Gallery is one of Rome's most unmissable experiences but MUST be pre-booked at galleriaborghese.it \u2014 no walk-ins allowed. June is hot; the park stroll is best in late afternoon when temperatures drop slightly."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-19 (Friday)",
+          "morning": "Explore the Aventine Hill \u2014 a quiet, residential hilltop with stunning views and hidden gems. Visit the Knights of Malta Keyhole (free) for a perfectly framed view of St. Peter's dome. Walk through the Orange Garden (Giardino degli Aranci) for sweeping views over Rome. Visit the beautiful Basilica of Sant'Anselmo (free).",
+          "afternoon": "Head to Testaccio neighborhood \u2014 Rome's authentic food district. Visit the Testaccio Market (Mercato di Testaccio) for fresh produce, local cheeses, and street food stalls. Browse the Non-Catholic Cemetery (\u20ac3 suggested donation) where Keats and Shelley are buried. Explore the Monte Testaccio hill (ancient Roman pottery dump).",
+          "evening": "Join the Roman passeggiata (evening stroll) along Via del Corso or around Piazza del Popolo. Visit the twin churches of Santa Maria dei Miracoli and Santa Maria in Montesanto (free). Enjoy aperitivo hour (6\u20138 PM) at a local bar \u2014 many offer free snacks with a drink (\u20ac5\u20137 spritz).",
+          "meals": {
+            "breakfast": "Try a local bar in Testaccio for an authentic Roman breakfast (\u20ac2\u20133)",
+            "lunch": "Testaccio Market food stalls \u2014 try suppli, trapizzino (pizza pocket sandwich), or fresh pasta. Budget \u20ac6\u201310 for a full satisfying lunch.",
+            "dinner": "Osteria in Testaccio \u2014 this is Rome's best neighborhood for authentic, affordable Roman cuisine. Try offal dishes if adventurous, or classic rigatoni con pajata. Budget \u20ac12\u201316."
+          },
+          "notes": "Testaccio Market is open Mon\u2013Sat until around 2 PM \u2014 perfect for Friday. This neighborhood is where Romans actually eat, not tourists, so quality is high and prices are fair. Great day for food lovers on a budget."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-20 (Saturday)",
+          "morning": "Day trip option: Take the Metro B to Ostia Antica (\u20ac3 round-trip metro + \u20ac1.50 local train, or use transit pass). Explore the remarkably preserved ancient Roman port city \u2014 often called 'the poor man's Pompeii' (entry ~\u20ac12). Wander through ancient apartments, a theatre, mosaics, and baths with far fewer crowds than Rome's main sites. Allow 3\u20134 hours.",
+          "afternoon": "Return to Rome and explore the Prati neighborhood near the Vatican \u2014 a residential area with excellent bakeries and local shops. Visit Castel Sant'Angelo (exterior free, interior \u20ac15 \u2014 optional) for great Tiber views. Walk across the beautiful Ponte Sant'Angelo bridge with its Bernini angels.",
+          "evening": "Explore the lively Pigneto or Prati neighborhood for Saturday night atmosphere. Visit a local enoteca (wine bar) for a glass of house wine (\u20ac3\u20135) and bruschetta. Enjoy the vibrant Roman Saturday night energy.",
+          "meals": {
+            "breakfast": "Grab a pastry and coffee at a bar near the Metro station before departing (\u20ac2\u20133)",
+            "lunch": "Picnic at Ostia Antica \u2014 bring supplies from a nearby supermarket (Conad or Carrefour near Termini) the night before. Or use the small caf\u00e9 on site. Budget \u20ac5\u20138.",
+            "dinner": "Saturday splurge night \u2014 find a well-reviewed trattoria in Prati or Trastevere. Treat yourself to a 3-course meal: antipasto, primo, secondo. Budget \u20ac18\u201322 with house wine."
+          },
+          "notes": "Ostia Antica is a fantastic budget alternative to Pompeii and far less visited. Check opening hours at ostiaantica.beniculturali.it. Bring sunscreen and water \u2014 it's very exposed. Wear sturdy shoes for uneven ancient paving stones."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-21 (Sunday)",
+          "morning": "Final morning \u2014 visit the Piazza Campo de' Fiori Sunday morning market (open until ~2 PM) for fresh flowers, local produce, and artisan goods. Browse without pressure to buy. Walk to the nearby Piazza Farnese to admire the Renaissance palazzo (exterior only, free). Revisit any favorites or snap final photos.",
+          "afternoon": "Last-minute souvenir shopping on budget \u2014 skip the tourist shops near major sights. Instead, visit the Porta Portese flea market in Trastevere (Sunday only, 7 AM\u20132 PM) for vintage finds, art prints, and unique gifts at negotiable prices. Head back to hotel to collect luggage.",
+          "evening": "Depart for airport or continue to next destination. Allow plenty of time \u2014 take Leonardo Express from Termini (~\u20ac14, 32 min) or the slower but cheaper FL1 train (\u20ac8, ~45 min) to Fiumicino. Arrive at airport 2\u20133 hours before international departure.",
+          "meals": {
+            "breakfast": "Final Roman breakfast ritual \u2014 sit-down espresso and cornetto at your favorite neighborhood bar. Savor it! (\u20ac2\u20133)",
+            "lunch": "Light farewell lunch at Campo de' Fiori or Trastevere \u2014 pizza al taglio or a panino (\u20ac5\u20138). Eat before heading to the airport.",
+            "dinner": "Airport dining if departing late, or a final gelato (\u20ac2.50\u20134) as your last Roman treat before heading to Termini."
+          },
+          "notes": "Sunday in Rome: many churches hold morning Mass \u2014 feel free to observe respectfully (free, culturally rich). Porta Portese market is cash-only and very crowded \u2014 keep valuables secure. Leave a coin in the Trevi Fountain for a guaranteed return to Rome!"
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Chicago+to+Rome+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Rome&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome"
+      ],
+      "highlights": [
+        "Save $247 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Rome Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 1888.0,
+      "flight": {
+        "price_usd": 680,
+        "airline": "UA",
+        "departure": "2027-06-15T08:00:00",
+        "arrival": "2027-06-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Rome",
+        "price_per_night_usd": 85,
+        "total_usd": 595,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [
+        {
+          "name": "Vatican Museums & Sistine Chapel",
+          "description": "Explore one of the world's greatest art collections, culminating in Michelangelo's breathtaking Sistine Chapel ceiling. Book skip-the-line tickets in advance to maximize your time among thousands of masterpieces spanning centuries of art history.",
+          "cost_usd": 35,
+          "category": "art",
+          "best_time_of_day": "morning",
+          "location": "Vatican City, Borgo district"
+        },
+        {
+          "name": "Trastevere Food & Wine Evening Walk",
+          "description": "Wander through the cobblestone streets of Trastevere sampling local Roman street food including suppl\u00ec (fried rice balls), artichokes alla giudia, and pecorino romano paired with local wines at family-run trattorias and wine bars.",
+          "cost_usd": 60,
+          "category": "food",
+          "best_time_of_day": "evening",
+          "location": "Trastevere neighborhood"
+        },
+        {
+          "name": "Borghese Gallery Art Tour",
+          "description": "Visit one of Rome's most intimate and stunning art galleries housing Bernini's extraordinary sculptures and Caravaggio's dramatic paintings. Reservations are mandatory and limited to 2-hour slots, making it an exclusive and immersive experience.",
+          "cost_usd": 25,
+          "category": "art",
+          "best_time_of_day": "morning",
+          "location": "Villa Borghese, Parioli district"
+        },
+        {
+          "name": "Testaccio Market & Cooking Class",
+          "description": "Start at Rome's most authentic local food market, Mercato Testaccio, to source fresh seasonal ingredients with a local chef, then head to a nearby kitchen to learn how to make handmade pasta, cacio e pepe, and tiramisu from scratch.",
+          "cost_usd": 95,
+          "category": "food",
+          "best_time_of_day": "morning",
+          "location": "Testaccio neighborhood"
+        },
+        {
+          "name": "Palatine Hill & Roman Forum Archaeological Walk",
+          "description": "Stroll through the ancient heart of Rome across the Roman Forum and up to Palatine Hill, where emperors once lived. The panoramic views over the ruins are spectacular and the site is rich with frescoes, mosaics, and ancient sculptures in situ.",
+          "cost_usd": 18,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Ancient Rome, Capitoline Hill area"
+        }
+      ],
+      "itinerary": {
+        "num_days": 7,
+        "destination": "Rome",
+        "style": "balanced",
+        "total_cost": 1888.0,
+        "breakdown": {
+          "flight": 680.0,
+          "hotel": 595.0,
+          "experiences": 233.0,
+          "food": 280,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15 (Arrival Day)",
+          "morning": "No activities \u2014 flight arrives at 22:30",
+          "afternoon": "No activities \u2014 in transit",
+          "evening": "Arrive at Fiumicino Airport at 22:30. Take the Leonardo Express train to Roma Termini (30 min, ~\u20ac14), then taxi or rideshare to Aegean Bliss Resort. Check in, freshen up, and settle into your room.",
+          "meals": {
+            "breakfast": "On the plane or at the airport",
+            "lunch": "On the plane or at the airport",
+            "dinner": "Grab a light late-night bite near the hotel \u2014 look for a nearby pizzeria al taglio (pizza by the slice) or a 24-hour bar for a panino and a glass of wine to wind down"
+          },
+          "notes": "Keep Day 1 light \u2014 you've had a long travel day. Lay out your map, charge your devices, and get a good night's sleep. Rome rewards the well-rested traveler."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16",
+          "morning": "Ease into your first full Roman morning. Enjoy a classic Italian breakfast at a neighborhood caf\u00e9 near the hotel \u2014 espresso and a cornetto (Italian croissant). Then take a leisurely stroll to the Trevi Fountain and the Spanish Steps to soak in the atmosphere before the midday crowds arrive.",
+          "afternoon": "Head to the Borghese Gallery Art Tour (pre-booked ticket essential \u2014 entry is timed and limited). Spend 2 hours marveling at Bernini's breathtaking sculptures including Apollo and Daphne, and Caravaggio's dramatic paintings. Afterward, stroll through the beautiful Villa Borghese gardens.",
+          "evening": "Explore the elegant Prati neighborhood near Castel Sant'Angelo for dinner. Enjoy an aperitivo hour with Aperol Spritz and free nibbles at a local bar, followed by dinner at a mid-range trattoria.",
+          "meals": {
+            "breakfast": "Caf\u00e9 bar near hotel \u2014 espresso + cornetto (~\u20ac3\u20135)",
+            "lunch": "Picnic in Villa Borghese gardens \u2014 pick up fresh bread, cheese, prosciutto, and fruit from a nearby alimentari (deli) for ~\u20ac12\u201315",
+            "dinner": "Trattoria in Prati neighborhood \u2014 try cacio e pepe or rigatoni all'amatriciana with house wine (~\u20ac25\u201335 per person)"
+          },
+          "notes": "Borghese Gallery MUST be booked in advance online \u2014 tickets sell out weeks ahead. Arrive 15 minutes early. The gallery limits visitors to 2 hours per session."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17",
+          "morning": "Early start for the Vatican Museums & Sistine Chapel. Book a skip-the-line or early-entry ticket (opens at 9:00 AM). Spend the morning navigating the vast collections \u2014 the Gallery of Maps, Raphael Rooms, and finally the awe-inspiring Sistine Chapel ceiling by Michelangelo.",
+          "afternoon": "Exit through St. Peter's Basilica (free entry, separate from the Museums). Climb to the top of St. Peter's Dome for panoramic views over Rome (~\u20ac8). Afterward, cross the Tiber and wander through the charming Trastevere neighborhood to get your bearings for tonight.",
+          "evening": "Join the Trastevere Food & Wine Evening Walk. Wander cobblestone streets sampling local Roman street food including suppl\u00ec (fried rice balls), artichokes alla giudia, porchetta, and local wines \u2014 a perfect introduction to authentic Roman flavors.",
+          "meals": {
+            "breakfast": "Hotel breakfast or a caf\u00e9 near the Vatican \u2014 fuel up before a big museum morning (~\u20ac5\u20138)",
+            "lunch": "Quick lunch near the Vatican \u2014 sandwich or slice of pizza from a nearby bakery to save time (~\u20ac8\u201312)",
+            "dinner": "Covered as part of the Trastevere Food & Wine Evening Walk experience \u2014 budget ~\u20ac45\u201365 per person for the tour including tastings"
+          },
+          "notes": "Vatican Museums can be overwhelming \u2014 consider a guided tour to maximize the experience. Dress code enforced: covered shoulders and knees required for the Sistine Chapel and St. Peter's Basilica. The evening food walk typically runs 3 hours starting around 6:30\u20137:00 PM."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18",
+          "morning": "Visit the Testaccio Market & Cooking Class. Start at Mercato Testaccio \u2014 Rome's most authentic local food market \u2014 to source fresh seasonal ingredients with your guide. Learn about Roman culinary traditions, then head to a kitchen for a hands-on cooking class making classic Roman dishes such as pasta, antipasti, and a dessert.",
+          "afternoon": "After your cooking class lunch, walk off the meal exploring the Testaccio neighborhood \u2014 one of Rome's most authentic and least touristy districts. Visit the Non-Catholic Cemetery (Cimitero Acattolico), a surprisingly beautiful and peaceful spot where Keats and Shelley are buried. Nearby, see the Pyramid of Cestius.",
+          "evening": "Cross the river to the Jewish Ghetto neighborhood for a relaxed evening stroll. Browse the area around Largo di Torre Argentina (ancient Roman temples and cat sanctuary \u2014 free). Enjoy aperitivo at a wine bar (enoteca) in the area.",
+          "meals": {
+            "breakfast": "Caf\u00e9 near hotel \u2014 espresso and pastry (~\u20ac4\u20136)",
+            "lunch": "Included as part of the Testaccio Cooking Class experience (~\u20ac70\u201390 per person for market tour + class + meal)",
+            "dinner": "Enoteca or osteria in the Jewish Ghetto \u2014 try carciofi alla giudia (Jewish-style fried artichokes) and baccal\u00e0 (salt cod) with a glass of local Frascati wine (~\u20ac20\u201330 per person)"
+          },
+          "notes": "Book the Testaccio Cooking Class well in advance \u2014 popular classes fill up fast. The class typically runs 4\u20135 hours including the market visit and meal. Wear comfortable shoes for the market cobblestones."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-19",
+          "morning": "Embark on the Palatine Hill & Roman Forum Archaeological Walk. Explore the ancient heart of Rome \u2014 walk through the Roman Forum past temples and triumphal arches, then climb Palatine Hill where emperors once lived, enjoying sweeping views over the city. The Colosseum combo ticket includes all three sites.",
+          "afternoon": "After the archaeological walk, visit the Colosseum (included in combo ticket). Take time to explore the interior tiers and imagine gladiatorial spectacles. Afterward, recover with a gelato near the Circus Maximus and stroll along the Aventine Hill \u2014 visit the Knights of Malta keyhole for a famous framed view of St. Peter's Dome.",
+          "evening": "Return to Trastevere for a relaxed dinner at a classic Roman trattoria \u2014 one of the neighborhood's many family-run restaurants with outdoor seating. Enjoy the lively evening atmosphere with locals and fellow travelers.",
+          "meals": {
+            "breakfast": "Caf\u00e9 near hotel \u2014 cappuccino and cornetto (~\u20ac4\u20136)",
+            "lunch": "Casual lunch near the Colosseum \u2014 avoid tourist traps on the main drag; instead find a side-street bar or rosticceria for suppli, arancini, or a simple pasta (~\u20ac10\u201315)",
+            "dinner": "Trattoria in Trastevere \u2014 try tonnarelli cacio e pepe or abbacchio alla romana (Roman lamb) with local wine (~\u20ac25\u201335 per person)"
+          },
+          "notes": "Book Colosseum + Forum + Palatine Hill combo tickets online in advance \u2014 lines without a ticket can be 2+ hours. Consider a guided archaeological walk for deeper historical context. Bring water and sun protection \u2014 the Forum and Palatine Hill are very exposed to the sun."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-20",
+          "morning": "Dedicated art morning: Visit the Capitoline Museums \u2014 the world's oldest public museums, housing iconic works including the original Marcus Aurelius equestrian statue, Caravaggio paintings, and stunning views over the Roman Forum from the terrace. A quieter, less-crowded alternative to the Vatican.",
+          "afternoon": "Explore the historic center at your own pace. Visit the Pantheon (free or small entry fee), marvel at its perfect dome and oculus. Stroll to Piazza Navona with its Baroque fountains by Bernini. Browse independent boutiques and artisan shops in the narrow streets between the two piazzas.",
+          "evening": "Splurge slightly on a nicer dinner to celebrate your penultimate evening in Rome. Head to a well-regarded mid-range restaurant in the historic center for a full Roman tasting experience \u2014 antipasto, primo, secondo, and dessert with a bottle of local wine.",
+          "meals": {
+            "breakfast": "Hotel breakfast or caf\u00e9 \u2014 treat yourself to a proper sit-down breakfast with fresh-squeezed orange juice (~\u20ac8\u201312)",
+            "lunch": "Light lunch near Piazza Navona \u2014 a fresh salad, bruschetta, or a classic Roman sandwich at an outdoor caf\u00e9 (~\u20ac12\u201318)",
+            "dinner": "Mid-range restaurant in the historic center \u2014 full Roman menu with wine (~\u20ac40\u201355 per person). Look for restaurants with handwritten daily menus (a good sign of freshness)"
+          },
+          "notes": "The Pantheon now charges a small entry fee (\u20ac5). It's best visited in the morning before crowds build. Piazza Navona is free to visit anytime \u2014 most atmospheric in the early evening with street artists and the golden light on the fountains."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-21 (Departure Day)",
+          "morning": "Final Roman morning \u2014 wake up early for one last espresso ritual at your favorite neighborhood caf\u00e9. Take a slow farewell walk through a favorite neighborhood or revisit a spot that moved you. Pick up edible souvenirs: pasta, olive oil, canned San Marzano tomatoes, or artisan chocolates from a local deli or specialty food shop (Eataly near Ostiense is excellent).",
+          "afternoon": "Depending on departure flight time: check out of the hotel, store luggage if needed, and enjoy a final leisurely lunch. Head to the airport with ample time \u2014 allow 90 minutes to Fiumicino via Leonardo Express from Roma Termini.",
+          "evening": "Departure \u2014 carry the flavors, art, and memories of Rome home with you.",
+          "meals": {
+            "breakfast": "Final espresso and cornetto at a neighborhood caf\u00e9 \u2014 savor it slowly (~\u20ac3\u20135)",
+            "lunch": "Last Roman lunch \u2014 keep it classic: a bowl of pasta at a simple trattoria or a suppl\u00ec and pizza al taglio to go (~\u20ac10\u201320)",
+            "dinner": "Airport or in-flight depending on departure time"
+          },
+          "notes": "Check hotel checkout time and arrange luggage storage if your flight is in the evening. The Leonardo Express to Fiumicino Airport runs every 30 minutes from Roma Termini and takes approximately 32 minutes (\u20ac14). Allow at least 2.5\u20133 hours before departure for check-in and security."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Chicago+to+Rome+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Rome&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.3\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Rome Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 2028.0,
+      "flight": {
+        "price_usd": 680,
+        "airline": "UA",
+        "departure": "2027-06-15T08:00:00",
+        "arrival": "2027-06-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Rome",
+        "price_per_night_usd": 85,
+        "total_usd": 595,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [
+        {
+          "name": "Vatican Museums & Sistine Chapel",
+          "description": "Explore one of the world's greatest art collections, culminating in Michelangelo's breathtaking Sistine Chapel ceiling. Book skip-the-line tickets in advance to maximize your time among thousands of masterpieces spanning centuries of art history.",
+          "cost_usd": 35,
+          "category": "art",
+          "best_time_of_day": "morning",
+          "location": "Vatican City, Borgo district"
+        },
+        {
+          "name": "Trastevere Food & Wine Evening Walk",
+          "description": "Wander through the cobblestone streets of Trastevere sampling local Roman street food including suppl\u00ec (fried rice balls), artichokes alla giudia, and pecorino romano paired with local wines at family-run trattorias and wine bars.",
+          "cost_usd": 60,
+          "category": "food",
+          "best_time_of_day": "evening",
+          "location": "Trastevere neighborhood"
+        },
+        {
+          "name": "Borghese Gallery Art Tour",
+          "description": "Visit one of Rome's most intimate and stunning art galleries housing Bernini's extraordinary sculptures and Caravaggio's dramatic paintings. Reservations are mandatory and limited to 2-hour slots, making it an exclusive and immersive experience.",
+          "cost_usd": 25,
+          "category": "art",
+          "best_time_of_day": "morning",
+          "location": "Villa Borghese, Parioli district"
+        },
+        {
+          "name": "Testaccio Market & Cooking Class",
+          "description": "Start at Rome's most authentic local food market, Mercato Testaccio, to source fresh seasonal ingredients with a local chef, then head to a nearby kitchen to learn how to make handmade pasta, cacio e pepe, and tiramisu from scratch.",
+          "cost_usd": 95,
+          "category": "food",
+          "best_time_of_day": "morning",
+          "location": "Testaccio neighborhood"
+        },
+        {
+          "name": "Palatine Hill & Roman Forum Archaeological Walk",
+          "description": "Stroll through the ancient heart of Rome across the Roman Forum and up to Palatine Hill, where emperors once lived. The panoramic views over the ruins are spectacular and the site is rich with frescoes, mosaics, and ancient sculptures in situ.",
+          "cost_usd": 18,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Ancient Rome, Capitoline Hill area"
+        }
+      ],
+      "itinerary": {
+        "num_days": 7,
+        "destination": "Rome",
+        "style": "premium",
+        "total_cost": 2028.0,
+        "breakdown": {
+          "flight": 680.0,
+          "hotel": 595.0,
+          "experiences": 233.0,
+          "food": 420,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-15 (Monday)",
+          "morning": "Arrival day \u2014 no morning activities scheduled. Flight UA arrives at 22:30.",
+          "afternoon": "Arrival day \u2014 no afternoon activities scheduled.",
+          "evening": "Private airport transfer via luxury car service to Aegean Bliss Resort. Upon arrival, enjoy a late-night welcome amenity prepared by the hotel \u2014 chilled Prosecco, artisanal Roman charcuterie board, and fresh bruschetta served in your suite. Take time to settle in, review the week's itinerary with your dedicated concierge, and rest.",
+          "meals": {
+            "breakfast": "N/A \u2014 in transit",
+            "lunch": "N/A \u2014 in transit",
+            "dinner": "In-suite welcome spread arranged by the hotel: cured meats, aged pecorino, marinated olives, bruschetta al pomodoro, and a bottle of chilled Frascati DOC white wine."
+          },
+          "notes": "Pre-arrange your private airport transfer before departure. Confirm with the hotel concierge that a late-night welcome amenity is prepared. Keep Day 1 light \u2014 jet lag recovery is essential for enjoying the week ahead. Luggage handling and express check-in should be pre-coordinated with the resort."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-16 (Tuesday)",
+          "morning": "Leisurely late start with a lavish breakfast at the hotel. Afterward, take a private guided tour of the Borghese Gallery \u2014 one of Rome's most intimate and stunning art galleries housing Bernini's extraordinary sculptures and masterworks by Caravaggio, Raphael, and Titian. Entry is strictly timed and limited; your concierge will have secured priority reservations. The gallery sits within the lush Villa Borghese gardens, offering a serene, uncrowded luxury art experience.",
+          "afternoon": "Stroll through the Villa Borghese gardens at a leisurely pace, then head to the nearby Pincian Hill terrace for sweeping panoramic views over Rome's rooftops and St. Peter's dome. Arrange a private chauffeured transfer to the upscale Prati neighborhood for an afternoon of exploration and a long, indulgent lunch.",
+          "evening": "Return to the hotel for a sunset aperitivo on the terrace. Dress for dinner and enjoy a reservation at a top-tier Roman fine dining restaurant \u2014 Il Pagliaccio (two Michelin stars) is highly recommended for its creative Italian tasting menu with exceptional wine pairings.",
+          "meals": {
+            "breakfast": "Full gourmet breakfast at Aegean Bliss Resort \u2014 freshly baked cornetti, eggs Benedict with truffle, seasonal fruit, freshly squeezed blood orange juice, and specialty espresso.",
+            "lunch": "Ristorante Il Sorpasso in Prati \u2014 a stylish, upscale Roman trattoria known for refined takes on classic Roman dishes: cacio e pepe, artichoke alla giudia, and excellent natural wines.",
+            "dinner": "Il Pagliaccio (2 Michelin stars) \u2014 a landmark of Roman haute cuisine. Book the chef's tasting menu with wine pairing for a full sensory experience. Reservation essential; book weeks in advance."
+          },
+          "notes": "Borghese Gallery requires advance timed-entry reservations \u2014 maximum 360 visitors per two-hour slot. Your hotel concierge should book this as early as possible. Dress code at Il Pagliaccio is smart elegant. Private car transfers recommended throughout the day for comfort and efficiency."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-17 (Wednesday)",
+          "morning": "Early private guided visit to the Vatican Museums and Sistine Chapel \u2014 one of the world's greatest art collections, culminating in Michelangelo's breathtaking ceiling and The Last Judgment. Opt for a pre-opening exclusive access tour (available from 7:00\u20139:00 AM) to experience the Sistine Chapel in near-total silence before the general public enters. Your expert private guide will contextualize the art historically and artistically throughout the journey.",
+          "afternoon": "After the Vatican, walk across the iconic Castel Sant'Angelo bridge for a private tour of Castel Sant'Angelo \u2014 the imposing mausoleum-turned-fortress with spectacular views of Rome from its terrace. Follow with a slow, indulgent lunch in the charming Borgo neighborhood nearby.",
+          "evening": "Trastevere Food & Wine Evening Walk \u2014 wander through the cobblestone streets of Trastevere sampling local Roman street food including suppl\u00ec, porchetta, artisan cheeses, and regional wines. This premium guided experience includes curated stops at the neighborhood's best producers and hidden gems, paired with storytelling about Roman culinary history.",
+          "meals": {
+            "breakfast": "Light breakfast at the hotel before the early Vatican departure \u2014 espresso, cornetto al pistacchio, and fresh fruit.",
+            "lunch": "Osteria dell'Angelo in the Borgo/Prati area \u2014 an authentic, beloved Roman osteria serving exceptional rigatoni all'amatriciana, abbacchio al forno, and house wine in a convivial atmosphere.",
+            "dinner": "Progressive dinner during the Trastevere Food & Wine Evening Walk \u2014 multiple tastings across 4\u20135 stops including Roman street food, wine, craft beer, and a sit-down dessert course with tiramisu and local pastries."
+          },
+          "notes": "The Vatican pre-opening exclusive access tour must be booked through a licensed Vatican tour operator well in advance \u2014 this is a premium add-on worth every euro. Wear comfortable walking shoes for both the Vatican and Trastevere evening. The Trastevere walk typically lasts 3 hours; confirm meeting point with your tour provider."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-18 (Thursday)",
+          "morning": "Testaccio Market & Cooking Class \u2014 begin at Rome's most authentic local food market, Mercato Testaccio, to source fresh seasonal ingredients with your private chef guide. Explore stalls of heritage tomatoes, fresh pasta, aged cheeses, cured meats, and seasonal produce. Then transfer to a premium culinary studio for a hands-on cooking class crafting a full Roman menu: cacio e pepe, carciofi alla romana, and tiramisu. This is a deeply immersive, luxury culinary experience.",
+          "afternoon": "After enjoying the lunch you prepared in class, take a private guided walk through the Testaccio neighborhood \u2014 Rome's most authentic working-class quarter, now a hub of contemporary food culture. Visit the Non-Catholic Cemetery (Cimitero Acattolico), a hauntingly beautiful garden cemetery where Keats and Shelley are buried, and the striking Pyramid of Cestius nearby.",
+          "evening": "Sunset aperitivo at a rooftop bar with views over Rome \u2014 Il Sorpasso Rooftop or the Terrazza Borromini near Piazza Navona are excellent choices. Follow with an intimate dinner reservation at a celebrated restaurant.",
+          "meals": {
+            "breakfast": "Hotel breakfast \u2014 full gourmet spread. Eat lightly as the cooking class includes a full lunch.",
+            "lunch": "The meal you prepare during the Testaccio cooking class \u2014 a full Roman three-course lunch with wine pairings selected by your chef instructor.",
+            "dinner": "Ristorante Settimio all'Arancio near the Pantheon \u2014 an elegant, historic Roman restaurant beloved for its refined traditional cuisine, excellent cellar, and intimate atmosphere. Try the spaghetti alle vongole and the seasonal whole fish."
+          },
+          "notes": "The Testaccio cooking class typically runs 9:00 AM\u20131:30 PM. Book a private class for an exclusive experience. Testaccio Market is best experienced early morning when produce is freshest. The Non-Catholic Cemetery closes at 5:00 PM \u2014 plan the afternoon accordingly."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-19 (Friday)",
+          "morning": "Private guided Palatine Hill & Roman Forum Archaeological Walk \u2014 stroll through the ancient heart of Rome across the Roman Forum and up to Palatine Hill, where emperors built their palaces overlooking the eternal city. Your expert archaeologist guide will bring the ruins to life, explaining the political, social, and artistic significance of each monument. The Colosseum is adjacent and can be added as an optional extension with arena floor access.",
+          "afternoon": "After the archaeological walk, visit the nearby Capitoline Museums \u2014 the world's oldest public museums, housing an extraordinary collection of ancient Roman sculpture, Renaissance paintings, and the iconic bronze equestrian statue of Marcus Aurelius. Enjoy the terrace caf\u00e9 overlooking the Forum for a refined afternoon break.",
+          "evening": "Exclusive private dinner experience \u2014 book a chef's table dinner at Aroma Restaurant, perched on the rooftop of the Palazzo Manfredi hotel with an unobstructed, breathtaking view of the Colosseum illuminated at night. One of Rome's most spectacular dining settings, with a creative Italian tasting menu and exceptional sommelier service.",
+          "meals": {
+            "breakfast": "Hotel breakfast \u2014 full gourmet spread. Fuel up for a morning of walking.",
+            "lunch": "Terrace caf\u00e9 at the Capitoline Museums \u2014 light, refined lunch with antipasti, seasonal salads, and a glass of local Lazio white wine while overlooking the ancient Forum below.",
+            "dinner": "Aroma Restaurant at Palazzo Manfredi \u2014 rooftop fine dining with Colosseum views. Book the full tasting menu with wine pairing. One of Rome's most iconic dining experiences; reserve 4\u20136 weeks in advance."
+          },
+          "notes": "The Roman Forum and Palatine Hill require timed-entry tickets \u2014 book in advance online or through your concierge. A private archaeologist guide dramatically elevates this experience. Colosseum arena floor access is a premium add-on requiring separate booking. Smart elegant dress code at Aroma Restaurant."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-20 (Saturday)",
+          "morning": "Free morning for personal leisure \u2014 sleep in, enjoy a long breakfast at the hotel, or take a gentle walk along the nearby waterfront or through a local neighborhood. Alternatively, arrange a private spa treatment at the hotel or a nearby luxury spa (Acqua di Parma Colonia Barberia for a traditional Italian wet shave and grooming experience is a memorable option for gentlemen).",
+          "afternoon": "Private art-focused walking tour of Rome's historic center \u2014 visit the Pantheon (free entry, book timed ticket), Piazza Navona with Bernini's Fountain of the Four Rivers, Campo de' Fiori, and the hidden Palazzo Doria Pamphilj art gallery, which houses Vel\u00e1zquez's portrait of Pope Innocent X and works by Caravaggio in a stunning private palace setting still owned by the Doria Pamphilj family.",
+          "evening": "Farewell aperitivo at a historic Roman bar \u2014 Caff\u00e8 Sant'Eustachio near the Pantheon for Rome's finest espresso and a classic Aperol Spritz. Then a celebratory final dinner at La Pergola \u2014 Rome's only three-Michelin-star restaurant, atop the Rome Cavalieri hotel, with panoramic city views and Chef Heinz Beck's legendary Mediterranean haute cuisine. The ultimate luxury dining experience in Rome.",
+          "meals": {
+            "breakfast": "Leisurely full gourmet hotel breakfast \u2014 take your time and enjoy every course.",
+            "lunch": "Lunch at Ristorante Nino near the Spanish Steps \u2014 a classic, elegant Roman trattoria frequented by artists and intellectuals since 1934. Try the ribollita, bistecca fiorentina, and cannoli siciliani.",
+            "dinner": "La Pergola at Rome Cavalieri (3 Michelin stars) \u2014 Chef Heinz Beck's masterpiece. Book the grand tasting menu with wine pairing from their legendary 60,000-bottle cellar. Formal dress code strictly enforced. Reserve months in advance."
+          },
+          "notes": "La Pergola is the crown jewel of Roman fine dining \u2014 reservations must be made as far in advance as possible, ideally 2\u20133 months ahead. Formal attire required (jacket and tie for gentlemen). Palazzo Doria Pamphilj audio guide narrated by a current family member is a charming, intimate touch. The Pantheon now charges a timed-entry fee; book online."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-21 (Sunday)",
+          "morning": "Final morning in Rome \u2014 enjoy a slow, luxurious breakfast at the hotel. Take a last stroll through the neighborhood, stop at a local bar for one final perfect Roman espresso standing at the counter like a local. Visit a nearby artisan shop or luxury boutique for last-minute gifts \u2014 consider Eataly Roma for premium Italian pantry goods, or Via Condotti for luxury fashion and leather goods.",
+          "afternoon": "Depending on departure time, arrange a private farewell lunch at a beloved Roman restaurant. Then private luxury car transfer to the airport with ample time for departure. Your hotel concierge should coordinate luggage handling, check-out, and transfer timing seamlessly.",
+          "evening": "Departure from Rome. Carry the memories of seven extraordinary days of art, food, history, and la dolce vita.",
+          "meals": {
+            "breakfast": "Final gourmet hotel breakfast \u2014 savor every bite. Order the full spread: fresh pastries, eggs, fruit, cheese, and the best espresso of your life.",
+            "lunch": "Farewell lunch at Osteria Barberini near the Trevi Fountain \u2014 an upscale, convivial Roman osteria with exceptional pasta al forno, saltimbocca alla romana, and a curated wine list. A perfect final Roman meal.",
+            "dinner": "In-flight or at the airport \u2014 stock up on Italian provisions from the hotel or a local deli: prosciutto, aged parmigiano, taralli, and a bottle of Barolo for the journey home."
+          },
+          "notes": "Confirm departure transfer timing with the concierge the evening before. Rome's Sunday morning atmosphere is magical \u2014 quieter streets, church bells, and a slower pace make for a beautiful final memory. Allow at least 3 hours before an international flight departure for airport procedures. Ensure any food items purchased comply with customs regulations for your destination country."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Chicago+to+Rome+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Rome&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome"
+      ],
+      "highlights": [
+        "4.3\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-847 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Rome art and food trip, $2500, 7 days, June 2026 from Chicago",
+  "session_tags": {
+    "query_id": "SYN-07",
+    "condition": "broadcast",
+    "run_index": 1
+  }
+}

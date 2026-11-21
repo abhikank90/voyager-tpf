@@ -9,6 +9,8 @@ from metrics.token_tracker import TokenTrackingCallback
 
 from . import inventory
 from .base_agent import BaseAgent
+from .mock_control import mock_control_hotels
+from .trip_window import RULE_MONTH
 
 # LiteAPI sandbox limits ~5 req/s. A single query fires up to 7 requests
 # (1 places + 1 rates + up to 5 details); bursty benchmark runs trip the 429
@@ -97,13 +99,14 @@ class HotelAgent(BaseAgent):
 
     def _setup(self):
         try:
-            from config import effective_temperature, get_api_config
+            from config import effective_temperature, get_api_config, get_settings
             model = get_api_config().llm.hotel_agent_model
         except Exception:
             model = "claude-haiku-4-5-20251001"
         self.llm = ChatAnthropic(
             model=model,
             temperature=effective_temperature(0),
+            max_retries=get_settings().llm_max_retries,
             callbacks=[TokenTrackingCallback(model=model)],
         )
 
@@ -114,12 +117,16 @@ class HotelAgent(BaseAgent):
 
         destination = intent.get("destination", "")
         budget = intent.get("budget_usd", 2000)
-        travel_year = intent.get("travel_year", 2026)
         group_size = intent.get("group_size", 1)
         duration = intent.get("duration_days") or 14
         intent.get("accommodation_preference", "hotel")
 
-        check_in, check_out = self._effective_dates(travel_year, duration)
+        window = self._trip_window(intent, legacy_duration_days=duration)
+        check_in, check_out = window.departure_iso, window.return_iso
+        if window.rule == RULE_MONTH:
+            # Price the stay the window books (13 nights by default), not the
+            # legacy 14-night default. Legacy replay keeps v1.4 behaviour.
+            duration = window.nights
         hotel_budget = budget * 0.45
 
         # Extract location constraint from collaboration messages, if any.
@@ -141,8 +148,38 @@ class HotelAgent(BaseAgent):
                 if location_hint or centroid:
                     break
 
+        # broadcast mode: no typed constraint, so read the prose critique.
+        if location_hint is None and centroid is None:
+            activity_locations = [
+                (e.get("location") or "").strip()
+                for e in (state.get("experiences") or [])[:3]
+                if (e.get("location") or "").strip()
+            ]
+            interpretation = await self._interpret_critique(
+                state,
+                task=(
+                    "If the feedback asks for the hotel to be somewhere else, return "
+                    '{"target_area": "<the area the hotel should be in>"}, using an area '
+                    "named in the current plan where possible. Otherwise return "
+                    '{"target_area": null}.'
+                ),
+                plan={
+                    "destination": destination,
+                    "selected_hotel_location": (state.get("selected_hotel") or {}).get("location"),
+                    "top_activity_locations": activity_locations,
+                },
+            )
+            area = interpretation.get("target_area")
+            if isinstance(area, str) and area.strip():
+                location_hint = area.strip()
+
         api_key = os.getenv("NUITEE_API_KEY", "")
         mode = self._inventory_mode()
+        profile = state.get("inventory_profile", "default")
+        if profile == "control" and mode != "mock":
+            raise ValueError(
+                "inventory_profile 'control' is only valid in mock inventory mode"
+            )
         # Dates derived per-mode (see flight_agent): replay anchors on the
         # fixtures' capture date so the query id reproduced matches capture.
         query_id = inventory.inventory_query_id(
@@ -161,7 +198,12 @@ class HotelAgent(BaseAgent):
         elif mode == "mock":
             # Mock mode is fully offline even when API keys are set: the
             # deterministic fixture is the whole point (CI, unit tests, demos).
-            result = _mock_hotel_data(destination, check_in, check_out, group_size, duration, location_hint)
+            if profile == "control":
+                result = mock_control_hotels(
+                    destination, check_in, check_out, group_size, duration, location_hint
+                )
+            else:
+                result = _mock_hotel_data(destination, check_in, check_out, group_size, duration, location_hint)
         elif api_key:
             result = await self._fetch_real(destination, check_in, check_out, group_size, hotel_budget)
         else:

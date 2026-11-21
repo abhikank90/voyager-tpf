@@ -1,0 +1,47 @@
+{
+  "seed": 20261117,
+  "n": 30,
+  "n_double": 10,
+  "eligible": 333,
+  "packet_style": "balanced",
+  "eligible_by_stratum": {
+    "mockxbroadcast": 64,
+    "mockxfull_rerun": 94,
+    "mockxtargeted": 120,
+    "mockxtwo_way": 55
+  },
+  "exclusions_by_reason": {
+    "baseline": {
+      "synthetic": 125,
+      "control": 30,
+      "real": 75
+    },
+    "no_round1_conflict": {
+      "control": 119,
+      "real": 60
+    },
+    "unresolved_final": {
+      "synthetic": 168,
+      "real": 231
+    },
+    "no_plan_file": {},
+    "no_balanced_option": {
+      "real": 9
+    },
+    "calibration_excluded": {}
+  },
+  "input_files": [
+    {
+      "path": "results/v1.5/runs/control/sessions.jsonl",
+      "sha256": "da868ba0b1c82f5396392713518c1e860167614cdb75a8c4d32b24c58193f21a"
+    },
+    {
+      "path": "results/v1.5/runs/real/sessions.jsonl",
+      "sha256": "50e494c7b1e90a041b5187556b943486a8a79f32082af51a4b5c3e6bc6f724a7"
+    },
+    {
+      "path": "results/v1.5/runs/synthetic/sessions.jsonl",
+      "sha256": "6b52028696fab0db9140ee8f926312070d780bac2a8c7d71f969f9d15443ff05"
+    }
+  ]
+}

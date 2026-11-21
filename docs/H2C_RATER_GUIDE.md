@@ -110,6 +110,12 @@ before either of you starts. Agreement is reported as percent agreement and Cohe
 dimension and overall. Your scores appear in the paper only as aggregate agreement figures.
 You may be acknowledged by name if you wish.
 
+## Clarification (2026-11-20, after the first double-scoring round)
+
+**D1 — also F if** an activity is placed on a date when it cannot take place, judged from the packet or from widely known facts about the venue or event (e.g. a museum's weekly closing day, a Sunday-only service), including when the itinerary's weekday labels don't match the calendar dates and that mismatch puts an activity on such a day. A weekday mislabel with no such consequence is written in `notes`, not failed.
+
+**D4 judges the scheduled days only:** getting between the hotel and the places actually scheduled each day. Activities that are listed or booked but never scheduled go in `notes` and are not a D4 failure.
+
 ---
 
 ## Notes for the author (not part of the rater packet)

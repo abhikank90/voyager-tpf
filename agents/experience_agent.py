@@ -9,6 +9,8 @@ from metrics.token_tracker import TokenTrackingCallback
 
 from . import inventory
 from .base_agent import BaseAgent
+from .http_retry import request_with_retries
+from .trip_window import RULE_MONTH
 
 DESTINATIONS_DB = Path(__file__).parent.parent / "data" / "knowledge_base" / "destinations.json"
 
@@ -40,13 +42,14 @@ class ExperienceAgent(BaseAgent):
 
     def _setup(self):
         try:
-            from config import effective_temperature, get_api_config
+            from config import effective_temperature, get_api_config, get_settings
             model = get_api_config().llm.experience_agent_model
         except Exception:
             model = "claude-sonnet-4-6"
         self.llm = ChatAnthropic(
             model=model,
             temperature=effective_temperature(0.3),
+            max_retries=get_settings().llm_max_retries,
             callbacks=[TokenTrackingCallback(model=model)],
         )
         self.prompt = ChatPromptTemplate.from_messages([
@@ -79,6 +82,11 @@ class ExperienceAgent(BaseAgent):
         interests = intent.get("interests", [])
         budget = intent.get("budget_usd", 2000)
         duration = intent.get("duration_days", 14)
+        window = self._trip_window(intent)
+        if window.rule == RULE_MONTH:
+            # Plan activities for the stay the window books. Legacy replay keeps
+            # the v1.4 value, which is part of the recorded experience key.
+            duration = window.nights
         activity_budget = budget * 0.10
 
         context = self._get_destination_context(destination)
@@ -88,6 +96,8 @@ class ExperienceAgent(BaseAgent):
 
         # Build location/weather guidance from collaboration messages, if any.
         location_focus_parts: list[str] = []
+        from agents.refinement_modes import CRITIQUE_MESSAGE_TYPE
+
         for msg in self._messages_for_me(state):
             data = msg.get("data", {})
             # Weather constraint: schedule around heat or rain
@@ -96,6 +106,17 @@ class ExperienceAgent(BaseAgent):
                 location_focus_parts.append(
                     f"Weather advisory: prefer {' or '.join(times)} activities; "
                     "include indoor alternatives to avoid midday heat or rain."
+                )
+            # two_way ablation: move activities toward the hotel (protocol §3)
+            elif msg.get("message_type") == "constraint" and data.get("near_location"):
+                location_focus_parts.append(
+                    f"Prefer activities located in or near {data['near_location']}."
+                )
+            # broadcast: prose critique addressed to the whole team (protocol §3)
+            elif msg.get("message_type") == CRITIQUE_MESSAGE_TYPE and msg.get("content"):
+                location_focus_parts.append(
+                    "Coordinator feedback on the whole plan: "
+                    f"{msg['content']} Adjust your recommendations where it concerns activities."
                 )
         location_focus = " ".join(location_focus_parts)
 
@@ -137,14 +158,17 @@ class ExperienceAgent(BaseAgent):
             # detectors (location_mismatch, weather_activity_mismatch). Record it
             # with the API fixtures so a replay reuses it instead of regenerating
             # it; regenerating it was the source of run-to-run conflict variance.
-            query_id = inventory.inventory_query_id(
-                "experiences",
-                destination=destination,
-                interests=sorted(interests),
-                duration_days=duration,
-                activity_budget=round(activity_budget),
-                location_focus=location_focus,
-            )
+            key_params = {
+                "destination": destination,
+                "interests": sorted(interests),
+                "duration_days": duration,
+                "activity_budget": round(activity_budget),
+                "location_focus": location_focus,
+            }
+            inbox = self._inbox_digest(state)
+            if inbox:
+                key_params["inbox"] = inbox
+            query_id = inventory.inventory_query_id("experiences", **key_params)
             recorded = await inventory.replay_or_record(
                 "experiences", query_id, _generate, run_label="experience-capture",
             )
@@ -189,8 +213,8 @@ class ExperienceAgent(BaseAgent):
                 if not query:
                     continue
                 try:
-                    resp = await client.get(
-                        GEOCODE_URL,
+                    resp = await request_with_retries(
+                        client, "GET", GEOCODE_URL,
                         params={"q": query, "limit": 1, "appid": api_key},
                     )
                     geo = resp.json()

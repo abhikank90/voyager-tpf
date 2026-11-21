@@ -1,0 +1,574 @@
+{
+  "session_id": "e574cd8c-6c18-4f96-b2f7-949077650e13",
+  "intent": {
+    "destination": "Lisbon, Portugal",
+    "origin": "Boston",
+    "budget_usd": 2500.0,
+    "duration_days": 5,
+    "travel_month": "May",
+    "travel_year": 2027,
+    "interests": [
+      "local food",
+      "history"
+    ],
+    "group_size": 2,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Lisbon city break, $2500 couple, food and history, 5 days, May 2027, from Boston"
+  },
+  "selected_flight": {
+    "price_usd": 840,
+    "airline": "TP",
+    "departure": "2027-05-15T08:00:00",
+    "arrival": "2027-05-15T13:00:00",
+    "stops": 1,
+    "duration": "PT7H00M"
+  },
+  "selected_hotel": {
+    "name": "Lisbon City Stay",
+    "price_per_night_usd": 110,
+    "total_usd": 550,
+    "rating": 4.4,
+    "amenities": [
+      "wifi",
+      "breakfast included"
+    ],
+    "location": "Lisbon"
+  },
+  "experiences": [
+    {
+      "name": "Alfama District Walking Tour & Fado Show",
+      "description": "Explore the oldest neighborhood in Lisbon on a guided walking tour through narrow cobblestone streets, visiting S\u00e3o Jorge Castle and ancient Moorish architecture. End the evening at a traditional Fado house for an authentic Portuguese music and dinner experience.",
+      "cost_usd": 55,
+      "category": "culture",
+      "best_time_of_day": "evening",
+      "location": "Alfama, Lisbon"
+    },
+    {
+      "name": "Time Out Market Lisbon Food Tour",
+      "description": "Spend a few hours at Lisbon's iconic food hall sampling the best of Portuguese cuisine, including past\u00e9is de bacalhau (codfish cakes), bifanas (pork sandwiches), local cheeses, and petiscos (Portuguese tapas) from award-winning chefs and local vendors.",
+      "cost_usd": 40,
+      "category": "local food",
+      "best_time_of_day": "afternoon",
+      "location": "Cais do Sodr\u00e9, Lisbon"
+    },
+    {
+      "name": "Bel\u00e9m Historical Monuments & Past\u00e9is de Bel\u00e9m",
+      "description": "Visit the UNESCO-listed Jer\u00f3nimos Monastery and the iconic Tower of Bel\u00e9m, both masterpieces of Manueline architecture dating to the Age of Discovery. Finish with a visit to the original Past\u00e9is de Bel\u00e9m bakery, open since 1837, for the world-famous custard tarts.",
+      "cost_usd": 30,
+      "category": "history",
+      "best_time_of_day": "morning",
+      "location": "Bel\u00e9m, Lisbon"
+    },
+    {
+      "name": "Mouraria & Intendente Neighborhood Food & History Walk",
+      "description": "Discover Lisbon's multicultural heart in the historic Mouraria quarter, the birthplace of Fado. Join a local food tour sampling traditional petiscos, ginjinha (sour cherry liqueur), and street food while learning about the neighborhood's Moorish heritage and vibrant immigrant culture.",
+      "cost_usd": 45,
+      "category": "local food",
+      "best_time_of_day": "morning",
+      "location": "Mouraria, Lisbon"
+    },
+    {
+      "name": "National Museum of Ancient Art & Chiado Exploration",
+      "description": "Visit Portugal's most important art museum, housing masterpieces from the 12th to 19th centuries including Hieronymus Bosch's 'The Temptations of St. Anthony.' Afterward, stroll through the elegant Chiado neighborhood, browsing historic bookshops and stopping at a traditional caf\u00e9 for a bica (espresso) and pastel de nata.",
+      "cost_usd": 20,
+      "category": "history",
+      "best_time_of_day": "afternoon",
+      "location": "Chiado & Santos, Lisbon"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-05-15",
+    "return": "2027-05-20",
+    "nights": 5,
+    "month": "may",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Lisbon, Portugal",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1685.0,
+      "flight": {
+        "price_usd": 840,
+        "airline": "TP",
+        "departure": "2027-05-15T08:00:00",
+        "arrival": "2027-05-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Lisbon City Stay",
+        "price_per_night_usd": 110,
+        "total_usd": 550,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Lisbon"
+      },
+      "experiences": [
+        {
+          "name": "Time Out Market Lisbon Food Tour",
+          "description": "Spend a few hours at Lisbon's iconic food hall sampling the best of Portuguese cuisine, including past\u00e9is de bacalhau (codfish cakes), bifanas (pork sandwiches), local cheeses, and petiscos (Portuguese tapas) from award-winning chefs and local vendors.",
+          "cost_usd": 40,
+          "category": "local food",
+          "best_time_of_day": "afternoon",
+          "location": "Cais do Sodr\u00e9, Lisbon"
+        },
+        {
+          "name": "Bel\u00e9m Historical Monuments & Past\u00e9is de Bel\u00e9m",
+          "description": "Visit the UNESCO-listed Jer\u00f3nimos Monastery and the iconic Tower of Bel\u00e9m, both masterpieces of Manueline architecture dating to the Age of Discovery. Finish with a visit to the original Past\u00e9is de Bel\u00e9m bakery, open since 1837, for the world-famous custard tarts.",
+          "cost_usd": 30,
+          "category": "history",
+          "best_time_of_day": "morning",
+          "location": "Bel\u00e9m, Lisbon"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Lisbon, Portugal",
+        "style": "budget",
+        "total_cost": 1685.0,
+        "breakdown": {
+          "flight": 840.0,
+          "hotel": 550.0,
+          "experiences": 70.0,
+          "food": 125,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-05-15 (Friday)",
+          "morning": "Arrival at Lisbon Airport at 13:00 \u2014 no morning activities scheduled. Clear customs, collect luggage, and take the Metro (Linha Vermelha/Red Line) from Aeroporto station to your accommodation at Lisbon City Stay. The metro is the most budget-friendly airport transfer (~\u20ac1.65 with a reloadable Viva Viagem card). Check in, freshen up, and get oriented.",
+          "afternoon": "Explore the historic Alfama neighbourhood on foot \u2014 Lisbon's oldest district, full of narrow cobblestone streets, colourful tiles, and Moorish heritage. Stroll up to the Miradouro da Gra\u00e7a viewpoint for sweeping panoramic views of the city and the Tagus River, completely free of charge. Wander through the streets and soak in the atmosphere before heading back down.",
+          "evening": "Head to the lively Mouraria quarter, the birthplace of Fado music, for an early evening walk. Find a traditional tasca (local tavern) for a budget dinner \u2014 look for the 'prato do dia' (dish of the day), which typically costs \u20ac7\u201310 and includes a main, bread, and sometimes a drink. Try a bifana (pork sandwich) or caldo verde soup if you want something lighter and cheaper.",
+          "meals": {
+            "breakfast": "Grab something light at the airport or skip \u2014 you arrive at 13:00.",
+            "lunch": "Pick up a fresh pastel de nata (custard tart, ~\u20ac1.20) and a gal\u00e3o (milky coffee, ~\u20ac1.50) at a local padaria (bakery) near the hotel after check-in.",
+            "dinner": "Tasca do Chico or a local tasca in Mouraria \u2014 prato do dia for \u20ac7\u201310. Look for handwritten menus on chalkboards, a sure sign of authentic, affordable local food."
+          },
+          "notes": "Buy a Viva Viagem card at the airport metro station (\u20ac0.50 for the card + top up with \u20ac5\u201310). This card covers metro, buses, and trams throughout your stay. Keep receipts for any entry fees. Alfama and Mouraria are hilly \u2014 wear comfortable shoes."
+        },
+        {
+          "day": 2,
+          "date": "2027-05-16 (Saturday)",
+          "morning": "Visit the S\u00e3o Jorge Castle (Castelo de S\u00e3o Jorge) first thing in the morning when crowds are lighter. Entry costs \u20ac15 for adults, but the walk up through Alfama is free and rewarding. Alternatively, to save money, simply walk the castle's exterior walls and enjoy the free viewpoints nearby, such as Miradouro das Portas do Sol and Miradouro de Santa Luzia, which offer equally stunning views at no cost.",
+          "afternoon": "Experience the Time Out Market Lisbon Food Tour \u2014 spend a few hours at Lisbon's iconic food hall in Cais do Sodr\u00e9. Sample the best of Portuguese cuisine including fresh seafood, petiscos (Portuguese tapas), and local cheeses. Budget \u20ac10\u201315 for a satisfying mix of small plates. This is a great way to taste a wide variety of local food without committing to a sit-down restaurant. Afterwards, walk along the Ribeira waterfront promenade by the Tagus River.",
+          "evening": "Explore the Bairro Alto neighbourhood, which comes alive in the evening. Browse the bohemian streets and look for a local restaurant offering a 'menu tur\u00edstico' (tourist set menu) for \u20ac10\u201312, which usually includes starter, main, dessert, and a drink. This area also has free live Fado music drifting from open tavern doors \u2014 enjoy it from the street for free.",
+          "meals": {
+            "breakfast": "A Portuguesa bakery style breakfast near the hotel \u2014 coffee and a pastel de nata or tosta mista (toasted ham and cheese sandwich) for under \u20ac3.",
+            "lunch": "Time Out Market Lisbon \u2014 budget \u20ac10\u201315 for a selection of Portuguese small plates and a local beer or fresh juice.",
+            "dinner": "Bairro Alto tasca \u2014 menu tur\u00edstico for \u20ac10\u201312. Try bacalhau \u00e0 br\u00e1s (salted cod with eggs and potatoes), a classic Portuguese staple."
+          },
+          "notes": "Cais do Sodr\u00e9 (Time Out Market) is easily reachable by tram or a pleasant 20-minute walk along the waterfront from Alfama. Saturday markets may also be happening in nearby Chiado \u2014 worth a browse. Avoid the famous Tram 28 as a tourist attraction; it is often overcrowded and a pickpocket hotspot. Walk instead."
+        },
+        {
+          "day": 3,
+          "date": "2027-05-17 (Sunday)",
+          "morning": "Take the train from Cais do Sodr\u00e9 station to Bel\u00e9m (about 15 minutes, covered by your Viva Viagem card, ~\u20ac1.65). Visit the UNESCO-listed Jer\u00f3nimos Monastery, a breathtaking example of Manueline architecture. Entry to the church is free; the cloisters cost \u20ac10 (or \u20ac16 combined with the Tower of Bel\u00e9m \u2014 worth it for the savings). Spend at least an hour exploring the ornate stonework and peaceful courtyards.",
+          "afternoon": "Walk 10 minutes along the riverside to the iconic Tower of Bel\u00e9m (Torre de Bel\u00e9m), another UNESCO World Heritage Site and symbol of Portugal's Age of Discovery. Entry is \u20ac6 standalone or included in the combined ticket. Afterwards, visit the nearby Monument to the Discoveries (Padr\u00e3o dos Descobrimentos) \u2014 the exterior is free to admire; entry to the top is \u20ac6 but optional. Stroll along the Bel\u00e9m waterfront and enjoy the river breeze.",
+          "evening": "Return to central Lisbon by train and head to the Intendente neighbourhood for dinner \u2014 a up-and-coming, authentic local area with affordable restaurants popular with residents rather than tourists. Try a local cervejaria (beer hall) for fresh grilled fish or piri-piri chicken at very reasonable prices.",
+          "meals": {
+            "breakfast": "Stop at the legendary Past\u00e9is de Bel\u00e9m bakery (open since 1837) right next to the Jer\u00f3nimos Monastery \u2014 the original custard tarts here cost around \u20ac1.30 each and are unmissable. Have 2\u20133 with a coffee for a perfect local breakfast under \u20ac6.",
+            "lunch": "Pack a simple picnic from a local supermercado (supermarket like Pingo Doce or Lidl) \u2014 grab bread, local cheese, cured meats, and fruit for around \u20ac4\u20135. Eat by the Tagus riverfront in Bel\u00e9m.",
+            "dinner": "Cervejaria or tasca in Intendente \u2014 grilled fish (peixe grelhado) or frango piri-piri with rice and salad for \u20ac8\u201311."
+          },
+          "notes": "Bel\u00e9m is about 6km west of central Lisbon. The Cais do Sodr\u00e9 to Bel\u00e9m train runs frequently and is the easiest and cheapest way to get there. Sunday mornings can be quieter at the monuments \u2014 arrive early to beat any queues. The Past\u00e9is de Bel\u00e9m bakery can have a queue but it moves fast and is absolutely worth it."
+        },
+        {
+          "day": 4,
+          "date": "2027-05-18 (Monday)",
+          "morning": "Explore the elegant Chiado and Baixa districts on foot. Visit the Pra\u00e7a do Com\u00e9rcio (Commerce Square) on the riverfront \u2014 free and impressive. Walk up through the Baixa grid streets to the Pra\u00e7a do Rossio, Lisbon's main square. Browse the historic bookshop Livraria Bertrand (the world's oldest operating bookshop, open since 1732) in Chiado \u2014 free to enter and browse. Climb the free Elevador de Santa Justa viewing platform area (the lift itself costs \u20ac5.30 but you can access the top walkway from the Largo do Carmo for free).",
+          "afternoon": "Visit the Carmo Convent (Convento do Carmo) and its fascinating Archaeological Museum, housed in a roofless Gothic church destroyed in the 1755 earthquake. Entry is just \u20ac5 and it is one of Lisbon's most atmospheric and underrated sites. Spend the rest of the afternoon wandering the Pr\u00edncipe Real neighbourhood, known for its antique shops, garden square, and local character \u2014 all free to explore.",
+          "evening": "Attend a free or low-cost Fado experience. The Museu do Fado in Alfama occasionally hosts affordable performances, or simply find a tasca in Alfama that hosts impromptu Fado nights (some are free with dinner). Enjoy a relaxed final evening soaking in Portugal's most iconic musical tradition.",
+          "meals": {
+            "breakfast": "Confeitaria Nacional on Pra\u00e7a do Rossio \u2014 a historic Lisbon bakery open since 1829. Coffee and pastry for under \u20ac3.",
+            "lunch": "Mercado de Campo de Ourique (a local food market, less touristy than Time Out) \u2014 fresh, affordable Portuguese food stalls. Budget \u20ac8\u201310 for a full meal. Take the tram or a 20-minute walk from Chiado.",
+            "dinner": "Alfama tasca with Fado atmosphere \u2014 a simple dinner of petiscos (Portuguese tapas-style small plates) such as pataniscas de bacalhau (cod fritters), p\u00e3o com manteiga (bread and butter), and olives for \u20ac10\u201313 total."
+          },
+          "notes": "Monday can mean some museums are closed \u2014 always check opening hours in advance. The Carmo Convent is open Mondays. Pr\u00edncipe Real has a weekend organic market but the neighbourhood itself is worth visiting any day. Keep small change handy for public toilets in some areas."
+        },
+        {
+          "day": 5,
+          "date": "2027-05-19 (Tuesday)",
+          "morning": "Visit the National Tile Museum (Museu Nacional do Azulejo) \u2014 one of Lisbon's most unique and celebrated museums, dedicated to the iconic Portuguese azulejo (decorative tile) tradition spanning 500 years of history. Entry is \u20ac5 and it is genuinely unmissable for history lovers. The museum is housed in a stunning 16th-century convent with beautiful cloisters. Spend 1.5\u20132 hours here.",
+          "afternoon": "Head to the Mouraria and Intendente area for a final afternoon of exploration. Visit the free Museu de Lisboa \u2013 Santo Ant\u00f3nio (small museum dedicated to Lisbon's patron saint, free entry). Walk through the Mouraria market streets and pick up affordable souvenirs \u2014 local products like ginjinha (cherry liqueur, \u20ac1\u20132 per shot at A Ginjinha bar in Rossio), local honey, or tins of sardines make great budget-friendly gifts. Do any last-minute shopping at local shops rather than tourist traps.",
+          "evening": "Final dinner in Lisbon \u2014 treat yourself to a slightly more generous budget meal at a traditional Portuguese restaurant in Alfama or Mouraria. Order a full bacalhau dish (salted cod \u2014 Portugal's national dish, with supposedly 365 recipes) or fresh grilled sardines if in season. Toast with a glass of local vinho verde (green wine) or a Sagres beer. Pack your bags for departure.",
+          "meals": {
+            "breakfast": "Final local caf\u00e9 breakfast near the hotel \u2014 gal\u00e3o coffee and a croissant or pastel de nata for \u20ac2.50\u20133.50.",
+            "lunch": "Quick and authentic \u2014 a bifana (spiced pork sandwich, \u20ac2\u20133) from a local snack bar, plus a Super Bock beer or fresh orange juice. Eat standing at the counter like a local.",
+            "dinner": "Traditional Alfama restaurant \u2014 splurge slightly on your last night. A full bacalhau or grilled sardines meal with wine for \u20ac14\u201318 per person. Look for restaurants with menus posted outside and locals dining inside."
+          },
+          "notes": "The National Tile Museum is a short bus or Uber ride from the city centre (Bus 794 from Martim Moniz). If your departure flight is the next day, confirm your airport transfer plan \u2014 the metro remains the cheapest option at ~\u20ac1.65. Ginjinha at A Ginjinha on Largo de S\u00e3o Domingos is a Lisbon institution \u2014 \u20ac1.40 per shot, served in a chocolate cup. A perfect final Lisbon memory."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Boston+to+Lisbon, Portugal+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Lisbon, Portugal&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal",
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal"
+      ],
+      "highlights": [
+        "Save $190 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Lisbon, Portugal Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 1880.0,
+      "flight": {
+        "price_usd": 840,
+        "airline": "TP",
+        "departure": "2027-05-15T08:00:00",
+        "arrival": "2027-05-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Lisbon City Stay",
+        "price_per_night_usd": 110,
+        "total_usd": 550,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Lisbon"
+      },
+      "experiences": [
+        {
+          "name": "Alfama District Walking Tour & Fado Show",
+          "description": "Explore the oldest neighborhood in Lisbon on a guided walking tour through narrow cobblestone streets, visiting S\u00e3o Jorge Castle and ancient Moorish architecture. End the evening at a traditional Fado house for an authentic Portuguese music and dinner experience.",
+          "cost_usd": 55,
+          "category": "culture",
+          "best_time_of_day": "evening",
+          "location": "Alfama, Lisbon"
+        },
+        {
+          "name": "Time Out Market Lisbon Food Tour",
+          "description": "Spend a few hours at Lisbon's iconic food hall sampling the best of Portuguese cuisine, including past\u00e9is de bacalhau (codfish cakes), bifanas (pork sandwiches), local cheeses, and petiscos (Portuguese tapas) from award-winning chefs and local vendors.",
+          "cost_usd": 40,
+          "category": "local food",
+          "best_time_of_day": "afternoon",
+          "location": "Cais do Sodr\u00e9, Lisbon"
+        },
+        {
+          "name": "Bel\u00e9m Historical Monuments & Past\u00e9is de Bel\u00e9m",
+          "description": "Visit the UNESCO-listed Jer\u00f3nimos Monastery and the iconic Tower of Bel\u00e9m, both masterpieces of Manueline architecture dating to the Age of Discovery. Finish with a visit to the original Past\u00e9is de Bel\u00e9m bakery, open since 1837, for the world-famous custard tarts.",
+          "cost_usd": 30,
+          "category": "history",
+          "best_time_of_day": "morning",
+          "location": "Bel\u00e9m, Lisbon"
+        },
+        {
+          "name": "Mouraria & Intendente Neighborhood Food & History Walk",
+          "description": "Discover Lisbon's multicultural heart in the historic Mouraria quarter, the birthplace of Fado. Join a local food tour sampling traditional petiscos, ginjinha (sour cherry liqueur), and street food while learning about the neighborhood's Moorish heritage and vibrant immigrant culture.",
+          "cost_usd": 45,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Mouraria, Lisbon"
+        },
+        {
+          "name": "National Museum of Ancient Art & Chiado Exploration",
+          "description": "Visit Portugal's most important art museum, housing masterpieces from the 12th to 19th centuries including Hieronymus Bosch's 'The Temptations of St. Anthony.' Afterward, stroll through the elegant Chiado neighborhood, browsing historic bookshops and stopping at a traditional caf\u00e9 for a bica (espresso) and pastel de nata.",
+          "cost_usd": 20,
+          "category": "history",
+          "best_time_of_day": "afternoon",
+          "location": "Chiado & Santos, Lisbon"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Lisbon, Portugal",
+        "style": "balanced",
+        "total_cost": 1880.0,
+        "breakdown": {
+          "flight": 840.0,
+          "hotel": 550.0,
+          "experiences": 190.0,
+          "food": 200,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-05-15 (Saturday)",
+          "morning": "Arrival at Lisbon Airport at 13:00 \u2014 no morning activities scheduled. Clear customs, collect luggage, and take the Aerobus or Metro (Red Line to Green Line) to reach Lisbon City Stay. Check in, freshen up, and get oriented with a neighborhood walk around your accommodation.",
+          "afternoon": "Head to the Time Out Market Lisbon (Mercado da Ribeira) for a self-guided food tour. Sample Portuguese classics like bacalhau croquettes, bifanas, fresh seafood, and local wines. This iconic food hall is perfect for a first taste of Lisbon's culinary scene without committing to a full sit-down meal \u2014 ideal after a long travel morning.",
+          "evening": "Stroll along the Ribeira waterfront promenade at sunset, then explore the Cais do Sodr\u00e9 neighborhood. Enjoy a relaxed dinner at a nearby tasca (traditional tavern) in the area.",
+          "meals": {
+            "breakfast": "Grab a coffee and pastel de nata at the airport or skip \u2014 arrival is at 13:00.",
+            "lunch": "Time Out Market Lisbon \u2014 budget \u20ac15\u201325 per person sampling multiple stalls (petiscos style).",
+            "dinner": "Taberna da Rua das Flores or a similar mid-range tasca near Cais do Sodr\u00e9 \u2014 expect \u20ac20\u201330 per person for a full meal with wine."
+          },
+          "notes": "Keep Day 1 light and flexible to recover from travel. The Time Out Market is a 10-minute walk or short Uber from most central Lisbon hotels. Pick up a Lisboa Card at the airport or hotel for unlimited metro/tram access over the coming days."
+        },
+        {
+          "day": 2,
+          "date": "2027-05-16 (Sunday)",
+          "morning": "Start the day with a traditional Portuguese breakfast at a local caf\u00e9 near the hotel \u2014 coffee (uma bica) and a fresh pastel de nata. Then join the Alfama District Walking Tour, exploring Lisbon's oldest and most atmospheric neighborhood. Wind through narrow cobblestone streets, visit the Miradouro de Santa Luzia viewpoint, and learn about the city's Moorish and medieval heritage. The tour typically runs 2\u20133 hours.",
+          "afternoon": "After the tour, visit the S\u00e3o Jorge Castle (Castelo de S\u00e3o Jorge) perched above Alfama for panoramic views over Lisbon and the Tagus River. Explore the ramparts, towers, and the small archaeological site within. Spend 1.5\u20132 hours here before descending back into Alfama for a rest.",
+          "evening": "Return to Alfama for the Fado Show component of the experience. Many Alfama restaurants offer Fado dinner shows starting around 20:00. Book a table at a mid-range Fado house such as Tasca do Chico or Sr. Fado for an authentic performance with dinner included.",
+          "meals": {
+            "breakfast": "Local caf\u00e9 near hotel \u2014 coffee + pastel de nata, approximately \u20ac3\u20135.",
+            "lunch": "A petiscos lunch at a casual Alfama restaurant mid-tour \u2014 try grilled sardines or caldo verde soup, approximately \u20ac12\u201318 per person.",
+            "dinner": "Fado house dinner in Alfama \u2014 typically \u20ac35\u201350 per person including the show, a set meal, and a carafe of wine. Book in advance, especially for a Sunday."
+          },
+          "notes": "Wear comfortable walking shoes \u2014 Alfama's cobblestone streets are steep and uneven. Tram 28 passes through Alfama and is a scenic (if crowded) way to get there, or take a short Uber. Book the Fado dinner show at least 1\u20132 days ahead."
+        },
+        {
+          "day": 3,
+          "date": "2027-05-17 (Monday)",
+          "morning": "Take the train from Cais do Sodr\u00e9 station to Bel\u00e9m (approximately 15 minutes, included with Lisboa Card). Begin with a visit to the UNESCO-listed Jer\u00f3nimos Monastery, a stunning example of Manueline Gothic architecture built in the 16th century. Allow 1.5 hours to explore the church, cloisters, and royal tombs of Vasco da Gama and Lu\u00eds de Cam\u00f5es.",
+          "afternoon": "Walk along the waterfront to the iconic Tower of Bel\u00e9m (Torre de Bel\u00e9m), another Manueline masterpiece and symbol of Portugal's Age of Discovery. Afterwards, visit the nearby Monument to the Discoveries (Padr\u00e3o dos Descobrimentos) for additional historical context. End the afternoon with a visit to the Museu de Arte Popular or simply relax by the Tagus.",
+          "evening": "Stop at the original Past\u00e9is de Bel\u00e9m bakery (open since 1837) for the world-famous custard tarts fresh from the oven \u2014 a non-negotiable Lisbon experience. Return to central Lisbon for dinner in the Pr\u00edncipe Real or Bairro Alto neighborhood.",
+          "meals": {
+            "breakfast": "Grab a quick coffee and croissant at Cais do Sodr\u00e9 before boarding the train.",
+            "lunch": "Caf\u00e9 in Bel\u00e9m near the monastery \u2014 try a simple set lunch (prato do dia) for \u20ac10\u201315 per person.",
+            "dinner": "Mid-range restaurant in Pr\u00edncipe Real or Bairro Alto \u2014 try Taberna da Rua das Flores or Cervejaria Ramiro (seafood) \u2014 \u20ac25\u201340 per person."
+          },
+          "notes": "Bel\u00e9m is very popular; arrive at the Jer\u00f3nimos Monastery right when it opens (10:00) to beat the crowds. Pre-book tickets online. The Past\u00e9is de Bel\u00e9m bakery can have a queue \u2014 it moves quickly and is absolutely worth the wait. Bel\u00e9m is a 15-min train ride, making it an easy full-day excursion."
+        },
+        {
+          "day": 4,
+          "date": "2027-05-18 (Tuesday)",
+          "morning": "Join the Mouraria & Intendente Neighborhood Food & History Walk. Discover Lisbon's multicultural heart in the historic Mouraria quarter \u2014 the birthplace of Fado \u2014 with its mix of Portuguese, African, and Asian influences. The guided walk covers the history of the Moorish quarter, the Intendente square, local market stalls, and food tastings along the way.",
+          "afternoon": "Visit the National Museum of Ancient Art (Museu Nacional de Arte Antiga) in the Lapa neighborhood. Explore Portugal's most important art collection, featuring masterpieces from the 12th to 19th centuries including the famous Panels of S\u00e3o Vicente de Fora and works by Hieronymus Bosch. Allow 2\u20132.5 hours. Afterwards, take a short walk through the elegant Chiado neighborhood, browsing its bookshops, boutiques, and caf\u00e9s.",
+          "evening": "Enjoy the Chiado area at dusk \u2014 visit the iconic A Brasileira caf\u00e9 (a literary institution since 1905) for a coffee, then head to a rooftop bar such as Park Bar (above a parking garage in Bairro Alto) for sundowner drinks with city views before dinner.",
+          "meals": {
+            "breakfast": "Padaria portuguesa (local bakery chain) near hotel \u2014 fresh bread, cheese toast, and coffee for \u20ac4\u20137.",
+            "lunch": "Food tastings during the Mouraria walk will cover light bites; supplement with a prego (steak sandwich) or soup at a local caf\u00e9 for \u20ac8\u201312.",
+            "dinner": "Bairro Alto or Chiado \u2014 try Z\u00e9 da Mouraria for traditional Portuguese food or Taberna Sal Grosso \u2014 \u20ac20\u201330 per person."
+          },
+          "notes": "The Mouraria walk is best done in the morning when the neighborhood's market and local life are most active. The National Museum of Ancient Art is closed on Mondays, so Tuesday is ideal. Chiado is walkable from the museum via tram or Uber (10\u201315 min)."
+        },
+        {
+          "day": 5,
+          "date": "2027-05-19 (Wednesday)",
+          "morning": "Spend a leisurely final morning exploring the LX Factory, a creative hub in a repurposed 19th-century industrial complex in Alc\u00e2ntara. Browse independent shops, design studios, vintage markets (especially lively on weekends, but open on weekdays too), and enjoy a specialty coffee at one of its hip caf\u00e9s. It's a great spot to pick up unique souvenirs.",
+          "afternoon": "Return to central Lisbon for a final exploration of the Baixa-Chiado area. Visit the Santa Justa Lift (Elevador de Santa Justa) for rooftop views, then wander Rua Augusta and the Pra\u00e7a do Com\u00e9rcio by the waterfront. If time allows, pop into the Lisbon Story Centre for a multimedia overview of the city's history \u2014 a nice wrap-up to the historical theme of the trip.",
+          "evening": "Farewell dinner at a special mid-range restaurant \u2014 consider Cervejaria Ramiro for a classic Lisbon seafood feast, or book a table at a wine bar in Pr\u00edncipe Real for a final taste of Portuguese wines paired with petiscos. End the night with a walk along the Tagus waterfront.",
+          "meals": {
+            "breakfast": "Specialty coffee and avocado toast or pastries at LX Factory's caf\u00e9 \u2014 \u20ac6\u201310.",
+            "lunch": "Casual lunch in Baixa \u2014 try a traditional bifana (pork sandwich) at Caf\u00e9 Martinho da Arcada or a simple set menu at a local restaurant for \u20ac12\u201318.",
+            "dinner": "Farewell dinner at a quality mid-range restaurant \u2014 Cervejaria Ramiro or similar \u2014 \u20ac35\u201350 per person for a memorable final meal with wine."
+          },
+          "notes": "LX Factory's Sunday market is the most vibrant, but weekday visits are quieter and more relaxed. If your departure flight is on May 20 or later, consider a half-day trip to Sintra or Cascais by train from Rossio station as an optional Day 5 alternative. Keep the evening flexible if you have an early departure the following day."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Boston+to+Lisbon, Portugal+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Lisbon, Portugal&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal",
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal",
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal",
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal",
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Lisbon, Portugal Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 1980.0,
+      "flight": {
+        "price_usd": 840,
+        "airline": "TP",
+        "departure": "2027-05-15T08:00:00",
+        "arrival": "2027-05-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Lisbon City Stay",
+        "price_per_night_usd": 110,
+        "total_usd": 550,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Lisbon"
+      },
+      "experiences": [
+        {
+          "name": "Alfama District Walking Tour & Fado Show",
+          "description": "Explore the oldest neighborhood in Lisbon on a guided walking tour through narrow cobblestone streets, visiting S\u00e3o Jorge Castle and ancient Moorish architecture. End the evening at a traditional Fado house for an authentic Portuguese music and dinner experience.",
+          "cost_usd": 55,
+          "category": "culture",
+          "best_time_of_day": "evening",
+          "location": "Alfama, Lisbon"
+        },
+        {
+          "name": "Time Out Market Lisbon Food Tour",
+          "description": "Spend a few hours at Lisbon's iconic food hall sampling the best of Portuguese cuisine, including past\u00e9is de bacalhau (codfish cakes), bifanas (pork sandwiches), local cheeses, and petiscos (Portuguese tapas) from award-winning chefs and local vendors.",
+          "cost_usd": 40,
+          "category": "local food",
+          "best_time_of_day": "afternoon",
+          "location": "Cais do Sodr\u00e9, Lisbon"
+        },
+        {
+          "name": "Bel\u00e9m Historical Monuments & Past\u00e9is de Bel\u00e9m",
+          "description": "Visit the UNESCO-listed Jer\u00f3nimos Monastery and the iconic Tower of Bel\u00e9m, both masterpieces of Manueline architecture dating to the Age of Discovery. Finish with a visit to the original Past\u00e9is de Bel\u00e9m bakery, open since 1837, for the world-famous custard tarts.",
+          "cost_usd": 30,
+          "category": "history",
+          "best_time_of_day": "morning",
+          "location": "Bel\u00e9m, Lisbon"
+        },
+        {
+          "name": "Mouraria & Intendente Neighborhood Food & History Walk",
+          "description": "Discover Lisbon's multicultural heart in the historic Mouraria quarter, the birthplace of Fado. Join a local food tour sampling traditional petiscos, ginjinha (sour cherry liqueur), and street food while learning about the neighborhood's Moorish heritage and vibrant immigrant culture.",
+          "cost_usd": 45,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Mouraria, Lisbon"
+        },
+        {
+          "name": "National Museum of Ancient Art & Chiado Exploration",
+          "description": "Visit Portugal's most important art museum, housing masterpieces from the 12th to 19th centuries including Hieronymus Bosch's 'The Temptations of St. Anthony.' Afterward, stroll through the elegant Chiado neighborhood, browsing historic bookshops and stopping at a traditional caf\u00e9 for a bica (espresso) and pastel de nata.",
+          "cost_usd": 20,
+          "category": "history",
+          "best_time_of_day": "afternoon",
+          "location": "Chiado & Santos, Lisbon"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Lisbon, Portugal",
+        "style": "premium",
+        "total_cost": 1980.0,
+        "breakdown": {
+          "flight": 840.0,
+          "hotel": 550.0,
+          "experiences": 190.0,
+          "food": 300,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-05-15 (Friday)",
+          "morning": "Arrival at Lisbon Airport at 13:00 \u2014 no morning activities scheduled. Transfer via private luxury car service to Lisbon City Stay. Check in, freshen up, and settle into your accommodations.",
+          "afternoon": "After settling in, take a leisurely stroll through the nearby Chiado and Baixa districts to get oriented with the city. Browse elegant boutiques, admire the iconic yellow trams, and visit the Pra\u00e7a do Com\u00e9rcio waterfront square for stunning views of the Tagus River.",
+          "evening": "Alfama District Walking Tour & Fado Show \u2014 Explore Lisbon's oldest and most atmospheric neighborhood on a guided walking tour through narrow cobblestone streets, whitewashed houses, and ancient Moorish walls. End the evening with an authentic Fado performance at a traditional casa de fado, accompanied by Portuguese wine and petiscos.",
+          "meals": {
+            "breakfast": "N/A \u2014 in-flight or at airport upon arrival",
+            "lunch": "Light welcome lunch at the hotel or a nearby upscale caf\u00e9 such as Caf\u00e9 A Brasileira in Chiado \u2014 try a pastel de nata and a bica coffee to begin your Lisbon experience.",
+            "dinner": "Dinner included as part of the Fado Show experience, or opt for a pre-show dinner at Z\u00e9 da Mouraria, a beloved local spot near Alfama known for traditional petiscos and regional wines."
+          },
+          "notes": "Arrange private airport transfer in advance. Confirm Fado Show booking ahead of time as top venues such as Sr. Fado or Clube de Fado fill up quickly. Wear comfortable walking shoes for the cobblestone streets of Alfama."
+        },
+        {
+          "day": 2,
+          "date": "2027-05-16 (Saturday)",
+          "morning": "Bel\u00e9m Historical Monuments & Past\u00e9is de Bel\u00e9m \u2014 Head west along the Tagus River to the historic district of Bel\u00e9m. Begin with a guided visit to the UNESCO-listed Jer\u00f3nimos Monastery, a breathtaking masterpiece of Manueline architecture dating to the 16th century. Follow with a visit to the iconic Tower of Bel\u00e9m, one of Portugal's most recognized landmarks.",
+          "afternoon": "After the monuments, walk to the legendary Past\u00e9is de Bel\u00e9m bakery \u2014 the original home of the Portuguese custard tart since 1837 \u2014 for a mid-morning treat. Then explore the Monument to the Discoveries (Padr\u00e3o dos Descobrimentos) and the Bel\u00e9m Cultural Centre. Return to the city center and spend the remainder of the afternoon at leisure or visiting the Museu Nacional dos Coches (National Coach Museum), one of the finest carriage museums in the world.",
+          "evening": "Return to the hotel to refresh before a premium dinner in the Chiado or Pr\u00edncipe Real neighborhood, followed by an after-dinner walk along the illuminated Ribeira waterfront.",
+          "meals": {
+            "breakfast": "Elegant breakfast at the hotel \u2014 expect fresh pastries, local cheeses, charcuterie, fresh fruit, and specialty coffee.",
+            "lunch": "Lunch at Solar dos Presuntos or Taberna da Rua das Flores in Chiado \u2014 both celebrated for traditional Portuguese cuisine elevated to a fine-dining standard. Try bacalhau \u00e0 br\u00e1s or caldo verde.",
+            "dinner": "Dinner at Alma, a Michelin-starred restaurant in Chiado helmed by Chef Henrique S\u00e1 Pessoa, offering a refined take on Portuguese haute cuisine with an exceptional wine list."
+          },
+          "notes": "Book Jer\u00f3nimos Monastery tickets in advance to avoid queues. The Bel\u00e9m district is approximately 6\u20137 km from the city center; arrange a private driver or take the scenic tram 15E. Mornings are best for Bel\u00e9m before crowds arrive."
+        },
+        {
+          "day": 3,
+          "date": "2027-05-17 (Sunday)",
+          "morning": "National Museum of Ancient Art & Chiado Exploration \u2014 Begin the morning at Portugal's most important art museum, the Museu Nacional de Arte Antiga, housing masterpieces spanning the 12th to 19th centuries including works by Hieronymus Bosch, D\u00fcrer, and Portuguese masters. The museum's garden terrace offers stunning views over the Tagus River.",
+          "afternoon": "Head to the Time Out Market Lisbon Food Tour \u2014 spend a few indulgent hours at Lisbon's iconic food hall, sampling the very best of Portuguese cuisine. Taste everything from grilled octopus and fresh seafood to artisan cheeses, charcuterie, regional pastries, and premium local wines. This is a curated, immersive way to understand the breadth of Portuguese gastronomy in one vibrant space.",
+          "evening": "Explore the elegant Pr\u00edncipe Real neighborhood \u2014 Lisbon's most refined quarter \u2014 browsing antique shops, independent design boutiques, and the weekend garden market. Enjoy sunset views from the Miradouro de S\u00e3o Pedro de Alc\u00e2ntara viewpoint, one of the city's most scenic belvederes.",
+          "meals": {
+            "breakfast": "Breakfast at the hotel followed by a specialty coffee at F\u00e1brica Coffee Roasters in Chiado, one of Lisbon's top specialty coffee destinations.",
+            "lunch": "Tasting lunch at the Time Out Market as part of the food tour \u2014 graze across multiple premium stalls including chef-curated counters by Michelin-recognized names.",
+            "dinner": "Dinner at Bairro do Avillez, a multi-concept restaurant by Michelin-starred Chef Jos\u00e9 Avillez in Chiado. Choose between the Taberna for rustic Portuguese sharing plates or the more formal Bairro dining room for a refined experience."
+          },
+          "notes": "The National Museum of Ancient Art is closed on Mondays \u2014 Sunday is ideal. Time Out Market is busiest midday; arrive by noon for the best experience. Pr\u00edncipe Real's garden market operates on Saturdays and Sundays."
+        },
+        {
+          "day": 4,
+          "date": "2027-05-18 (Monday)",
+          "morning": "Mouraria & Intendente Neighborhood Food & History Walk \u2014 Discover Lisbon's multicultural and historic heart on a guided walk through the Mouraria quarter, the birthplace of Fado and one of the city's oldest and most storied neighborhoods. Explore hidden alleyways, historic mosques and churches, street art, and local markets. Learn about the Moorish history of Lisbon and how this community shaped the city's identity.",
+          "afternoon": "Visit the S\u00e3o Jorge Castle (Castelo de S\u00e3o Jorge), which crowns the hilltop above Mouraria and offers panoramic views across Lisbon's terracotta rooftops and the Tagus River. Explore the archaeological site within the castle grounds revealing layers of Lisbon's history from Moorish, Roman, and Iron Age periods.",
+          "evening": "Enjoy a sunset aperitivo at one of Lisbon's rooftop bars \u2014 the TOPO Chiado or Sky Bar at Tivoli Avenida Liberdade offer spectacular elevated views of the city at golden hour. Follow with a leisurely premium dinner.",
+          "meals": {
+            "breakfast": "Breakfast at the hotel. Optionally visit Padaria Portuguesa, a beloved local bakery chain, for fresh bread and traditional pastries en route.",
+            "lunch": "Lunch at Z\u00e9 da Mouraria or Tasca do Chico in the Mouraria area \u2014 intimate, authentic tascas serving daily specials based on market-fresh ingredients and beloved by locals.",
+            "dinner": "Dinner at P\u00e1teo, the fine-dining restaurant within the Bairro Alto Hotel \u2014 one of Lisbon's most prestigious addresses, offering contemporary Portuguese cuisine in an elegant courtyard setting."
+          },
+          "notes": "The Mouraria food and history walk is best experienced with a knowledgeable local guide \u2014 book in advance. S\u00e3o Jorge Castle can be combined on the same day as it is within walking distance of Mouraria. Wear layered clothing as castle hilltops can be breezy in May evenings."
+        },
+        {
+          "day": 5,
+          "date": "2027-05-19 (Tuesday)",
+          "morning": "Spend a relaxed final morning revisiting your favorite neighborhood or exploring any missed highlights \u2014 consider a visit to the Museu do Azulejo (National Tile Museum) to discover Portugal's iconic hand-painted azulejo tile tradition, housed in a stunning former convent in the Xabregas district.",
+          "afternoon": "Return to the hotel for a leisurely lunch and begin packing. Indulge in a final coffee and pastel de nata at a neighborhood caf\u00e9. If time permits, visit the Avenida da Liberdade \u2014 Lisbon's grand Champs-\u00c9lys\u00e9es-style boulevard \u2014 for last-minute luxury shopping at international and Portuguese designer boutiques.",
+          "evening": "Farewell dinner at one of Lisbon's finest restaurants before departing or resting ahead of any onward journey. Consider a private chef's table experience or a wine pairing dinner to close the trip on a memorable high note.",
+          "meals": {
+            "breakfast": "Final hotel breakfast \u2014 savor the moment with a full Portuguese spread including local honeys, regional cheeses, smoked meats, and fresh-squeezed orange juice.",
+            "lunch": "Lunch at Taberna da Rua das Flores or Cantinho do Avillez \u2014 both offer outstanding Portuguese cuisine in a relaxed yet refined setting, perfect for a final midday meal.",
+            "dinner": "Farewell dinner at Belcanto, Chef Jos\u00e9 Avillez's two-Michelin-starred flagship restaurant in Chiado \u2014 one of Portugal's most celebrated dining experiences, offering a tasting menu that reimagines Portuguese culinary heritage with extraordinary creativity and technique. Reserve well in advance."
+          },
+          "notes": "The Museu do Azulejo requires a short taxi or Uber ride from the city center but is well worth the detour for history and art lovers. Belcanto requires advance reservations \u2014 book as early as possible, ideally weeks before the trip. Arrange private luxury transfer to the airport in advance for a seamless departure."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Boston+to+Lisbon, Portugal+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Lisbon, Portugal&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal",
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal",
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal",
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal",
+        "https://www.getyourguide.com/s/?q=Lisbon, Portugal"
+      ],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-895 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Lisbon city break, $2500 couple, food and history, 5 days, May 2027, from Boston",
+  "session_tags": {
+    "query_id": "CTL-01",
+    "condition": "targeted",
+    "run_index": 1
+  }
+}

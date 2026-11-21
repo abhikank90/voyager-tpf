@@ -1,0 +1,673 @@
+{
+  "session_id": "cf065cc6-ba2e-4721-b5bc-6635a1189458",
+  "intent": {
+    "destination": "Rome",
+    "origin": "Chicago",
+    "budget_usd": 2500.0,
+    "duration_days": 7,
+    "travel_month": "June",
+    "travel_year": 2027,
+    "interests": [
+      "art",
+      "food"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Rome art and food trip, $2500, 7 days, June from Chicago"
+  },
+  "selected_flight": {
+    "price_usd": 910.0,
+    "airline": "Condor",
+    "departure": "2027-06-15 20:20",
+    "arrival": "2027-06-16 16:00",
+    "stops": 1,
+    "duration": 760,
+    "duration_minutes": 760
+  },
+  "selected_hotel": {
+    "hotel_id": "lp42db6",
+    "name": "La Quinta by Wyndham Rome",
+    "price_per_night_usd": 74.97,
+    "total_usd": 524.79,
+    "rating": 7.3,
+    "amenities": [],
+    "location": "15 Chateau Drive, Rome, US (34.2212,-85.1513)",
+    "latitude": 34.221197,
+    "longitude": -85.151269
+  },
+  "experiences": [
+    {
+      "name": "Rome, GA Historic Downtown Art Walk",
+      "description": "Explore the vibrant murals, local galleries, and public art installations scattered throughout downtown Rome, GA. Visit the Chieftains Museum and local studios showcasing regional artists along Broad Street.",
+      "cost_usd": 0,
+      "category": "art",
+      "best_time_of_day": "morning",
+      "location": "Downtown Broad Street, Rome, GA"
+    },
+    {
+      "name": "Farm-to-Table Dining at Local Rome Restaurants",
+      "description": "Indulge in the local food scene along Broad Street and the surrounding area, sampling Southern cuisine, farm-fresh ingredients, and regional specialties at highly rated local eateries and bistros in downtown Rome.",
+      "cost_usd": 60,
+      "category": "food",
+      "best_time_of_day": "evening",
+      "location": "Downtown Rome, GA"
+    },
+    {
+      "name": "Chieftains Museum & Major Ridge Home Tour",
+      "description": "Visit this National Historic Landmark just minutes from Chateau Drive, exploring Cherokee history and culture through guided tours of the 1794 plantation home and its rich collection of Native American artifacts and art.",
+      "cost_usd": 15,
+      "category": "culture",
+      "best_time_of_day": "morning",
+      "location": "Chieftains Museum, Rome, GA"
+    },
+    {
+      "name": "Coosa Valley Farmers Market & Food Tour",
+      "description": "Spend a morning at the local farmers market sampling artisan foods, homemade preserves, fresh produce, and baked goods from regional vendors. Pair with a self-guided food tour of nearby cafes and specialty food shops.",
+      "cost_usd": 40,
+      "category": "food",
+      "best_time_of_day": "morning",
+      "location": "Coosa Valley area, Rome, GA"
+    },
+    {
+      "name": "Berry College Campus Art & Nature Walk",
+      "description": "Explore the stunning Gothic architecture, on-campus art collections, and scenic natural landscapes of Berry College, one of the most beautiful campuses in the US, located just a short drive from Chateau Drive.",
+      "cost_usd": 0,
+      "category": "art",
+      "best_time_of_day": "afternoon",
+      "location": "Berry College, Mount Berry, Rome GA area"
+    }
+  ],
+  "weather": {
+    "avg_temp_c": 29.8,
+    "avg_temp_f": 85.6,
+    "precipitation_mm": 33.1,
+    "summary": "",
+    "source": "open_meteo_era5_2016_2025",
+    "years": 10,
+    "month": "june",
+    "latitude": 41.8933203,
+    "longitude": 12.4829321
+  },
+  "trip_window": {
+    "departure": "2027-06-15",
+    "return": "2027-06-22",
+    "nights": 7,
+    "month": "june",
+    "rule": "month-v1.5",
+    "anchor": "2026-11-18",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Rome",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1724.79,
+      "flight": {
+        "price_usd": 910.0,
+        "airline": "Condor",
+        "departure": "2027-06-15 20:20",
+        "arrival": "2027-06-16 16:00",
+        "stops": 1,
+        "duration": 760,
+        "duration_minutes": 760
+      },
+      "hotel": {
+        "hotel_id": "lp42db6",
+        "name": "La Quinta by Wyndham Rome",
+        "price_per_night_usd": 74.97,
+        "total_usd": 524.79,
+        "rating": 7.3,
+        "amenities": [],
+        "location": "15 Chateau Drive, Rome, US (34.2212,-85.1513)",
+        "latitude": 34.221197,
+        "longitude": -85.151269
+      },
+      "experiences": [
+        {
+          "name": "Rome, GA Historic Downtown Art Walk",
+          "description": "Explore the vibrant murals, local galleries, and public art installations scattered throughout downtown Rome, GA. Visit the Chieftains Museum and local studios showcasing regional artists along Broad Street.",
+          "cost_usd": 0,
+          "category": "art",
+          "best_time_of_day": "morning",
+          "location": "Downtown Broad Street, Rome, GA"
+        },
+        {
+          "name": "Chieftains Museum & Major Ridge Home Tour",
+          "description": "Visit this National Historic Landmark just minutes from Chateau Drive, exploring Cherokee history and culture through guided tours of the 1794 plantation home and its rich collection of Native American artifacts and art.",
+          "cost_usd": 15,
+          "category": "culture",
+          "best_time_of_day": "morning",
+          "location": "Chieftains Museum, Rome, GA"
+        },
+        {
+          "name": "Berry College Campus Art & Nature Walk",
+          "description": "Explore the stunning Gothic architecture, on-campus art collections, and scenic natural landscapes of Berry College, one of the most beautiful campuses in the US, located just a short drive from Chateau Drive.",
+          "cost_usd": 0,
+          "category": "art",
+          "best_time_of_day": "afternoon",
+          "location": "Berry College, Mount Berry, Rome GA area"
+        }
+      ],
+      "itinerary": {
+        "num_days": 7,
+        "destination": "Rome",
+        "style": "budget",
+        "total_cost": 1724.79,
+        "breakdown": {
+          "flight": 910.0,
+          "hotel": 524.79,
+          "experiences": 15.0,
+          "food": 175,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-16 (Wednesday)",
+          "morning": "N/A - Flight arrives at 4:00 PM. No morning activities scheduled.",
+          "afternoon": "Arrive at Rome, GA via Condor flight at 16:00. Check in to La Quinta by Wyndham Rome on Chateau Drive. Freshen up, unpack, and get oriented. Take a short walk around the immediate hotel neighborhood to stretch your legs after the flight.",
+          "evening": "Head to Rome's Historic Downtown for a relaxed first-evening stroll. Explore Broad Street, admire the Clocktower, and get a feel for the city layout. Browse any open local shops and enjoy the warm June evening (around 29\u00b0C). Keep it light since you just arrived.",
+          "meals": {
+            "breakfast": "N/A - In transit",
+            "lunch": "N/A - In transit / airport food",
+            "dinner": "Zaxby's or Chick-fil-A near Chateau Drive for a quick, affordable first-night meal (~$8-12). Alternatively, grab groceries at a nearby Walmart or Kroger to stock up on breakfast items for the week."
+          },
+          "notes": "Priority on Day 1 is rest and settling in. Pick up a city map or download the Rome, GA visitor app. Buy a reusable water bottle \u2014 June heat averages 29.8\u00b0C and hydration is essential. Budget tip: stock your room with snacks and breakfast items from a grocery store to save money throughout the week."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-17 (Thursday)",
+          "morning": "Rome, GA Historic Downtown Art Walk \u2014 Start early (9:00 AM) before the heat peaks. Explore the vibrant murals, local galleries, and public art installations scattered throughout Downtown Rome. Begin at Broad Street and work your way through the arts district. Many murals and public installations are free to view. Pick up a self-guided art walk map from the Rome Area Council for the Arts if available.",
+          "afternoon": "Continue the Downtown Art Walk into the afternoon, visiting any open local galleries (many are free or low-cost entry). Stop by the Rome Area History Museum (~$5 entry) for cultural context. Rest in one of the shaded downtown parks during the hottest part of the day (2:00\u20133:30 PM). Explore the shops along Broad Street.",
+          "evening": "Enjoy the cooler evening air back in Downtown Rome. Walk along the Oostanaula or Etowah River banks near the confluence (The Confluence area is a scenic free attraction). Watch the sunset over the rivers.",
+          "meals": {
+            "breakfast": "In-room breakfast with groceries purchased the night before (yogurt, fruit, granola bars) \u2014 ~$2-3",
+            "lunch": "Harvest Moon Caf\u00e9 or a local deli in Downtown Rome \u2014 budget sandwich or salad ~$10-13",
+            "dinner": "El Sombrero or another local Mexican restaurant in Rome for affordable, filling tacos or burritos ~$10-14"
+          },
+          "notes": "Wear light, breathable clothing and sunscreen. Carry water at all times. The art walk is entirely self-paced and mostly free \u2014 perfect for budget travelers. Check the Rome Area Council for the Arts website for any free gallery opening events happening this week."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-18 (Friday)",
+          "morning": "Chieftains Museum & Major Ridge Home Tour \u2014 Head out by 9:30 AM to this National Historic Landmark just minutes from Chateau Drive. Explore the fascinating Cherokee history and the beautifully preserved Major Ridge Home. Admission is typically low-cost (~$5-8 per person). Spend 2\u20133 hours absorbing the rich Native American and early American history.",
+          "afternoon": "After the museum, visit the nearby Myrtle Hill Cemetery, a free historic site with panoramic views of Rome and the rivers below \u2014 a hidden gem. Then return to the hotel for a midday rest during peak heat hours (2:00\u20134:00 PM). Alternatively, visit the Rome-Floyd County Library for free air-conditioned relaxation and local travel resources.",
+          "evening": "Explore the Lock & Dam Park along the Coosa River for a free, scenic evening walk. The park offers beautiful river views and is a great spot for photography. Enjoy the cooler evening temperatures.",
+          "meals": {
+            "breakfast": "In-room breakfast \u2014 ~$2-3",
+            "lunch": "Pack a picnic lunch from grocery store items (sandwiches, fruit, chips) and eat at the Chieftains Museum grounds or a nearby park \u2014 ~$5-7",
+            "dinner": "Schroeder's New Deli or a local pizza spot in Rome for an affordable dinner ~$10-13"
+          },
+          "notes": "The Chieftains Museum is a must-see and very close to your hotel \u2014 one of the most historically significant sites in Northwest Georgia. Call ahead to confirm opening hours and tour times. Myrtle Hill Cemetery is free and offers some of the best views in Rome \u2014 don't skip it."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-19 (Saturday)",
+          "morning": "Berry College Campus Art & Nature Walk \u2014 Drive or rideshare to Berry College (very close to Rome). Start early at 8:30\u20139:00 AM to enjoy the cooler morning temperatures. Explore the stunning Gothic architecture of the Ford Buildings, the on-campus art collections, and the scenic natural landscapes. Berry College has one of the largest college campuses in the world \u2014 the grounds are breathtaking and free to walk.",
+          "afternoon": "Continue exploring Berry College's nature trails and the historic mill area. The campus deer are a beloved attraction and often visible in the afternoon. Visit the Berry College Art Gallery if open (free). Return to the hotel by 3:00 PM for a rest during peak heat.",
+          "evening": "Saturday evening in Downtown Rome \u2014 check local event listings for any free outdoor concerts, farmers markets, or community events (Rome often hosts weekend events in summer). Walk Broad Street and enjoy the lively Saturday evening atmosphere.",
+          "meals": {
+            "breakfast": "In-room breakfast \u2014 ~$2-3",
+            "lunch": "Berry College area \u2014 bring a packed lunch or find an affordable caf\u00e9 near campus ~$8-10",
+            "dinner": "Saturday treat: Harvest Moon Caf\u00e9 or Broad Street Brewing Company (food menu) in Downtown Rome for a slightly elevated but still budget-friendly dinner ~$14-18"
+          },
+          "notes": "Berry College is free to visit and absolutely stunning \u2014 the Gothic architecture rivals anything in Europe. Wear comfortable walking shoes as the campus is vast. Check Berry College's website for any public art events or exhibitions happening on campus during your visit. Saturday may have a local farmers market in Downtown Rome \u2014 great for cheap, fresh local food."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-20 (Sunday)",
+          "morning": "Revisit your favorite Downtown Rome spots at a leisurely Sunday morning pace. Visit the Rome Farmers Market if running (typically Sunday mornings in season) for fresh local produce, artisan goods, and affordable snacks. Browse local art vendors and crafts \u2014 great for budget souvenirs.",
+          "afternoon": "Explore the Coosa Valley Art Museum or any local gallery you may have missed earlier in the week. Many smaller galleries in Rome are free or donation-based. Spend time in air-conditioned comfort during the hottest afternoon hours. Alternatively, visit the Rome Tennis Center area and surrounding parklands for a free outdoor experience.",
+          "evening": "Sunset walk at the Oostanaula River Greenway Trail \u2014 a free, scenic riverside trail perfect for an evening stroll. Enjoy the golden hour light over the water. This is a great photography opportunity.",
+          "meals": {
+            "breakfast": "Farmers Market breakfast \u2014 fresh pastry or local food stall item ~$4-6",
+            "lunch": "In-room or picnic lunch from farmers market purchases ~$5-8",
+            "dinner": "Taqueria El Nopal or another affordable local spot for a budget Sunday dinner ~$9-12"
+          },
+          "notes": "Sunday is a great day to slow down and revisit highlights. Some attractions may have reduced Sunday hours \u2014 check ahead. The Greenway Trail is free and beautiful in the evening. Use this day to do laundry at the hotel if needed and plan your final days."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-21 (Monday)",
+          "morning": "Deep dive into Rome's street art scene \u2014 revisit the Historic Downtown Art Walk with fresh eyes and explore any murals or installations you may have missed on Day 2. Take your time photographing the artwork. Visit any local studios or artist workshops that may be open to the public (check local listings).",
+          "afternoon": "Day trip option: Drive to nearby Cave Spring, GA (~20 minutes from Rome) \u2014 a charming small town with a natural cave, a spring-fed swimming pool (very affordable entry ~$3-5), and historic architecture. Perfect for a hot June afternoon. The cave tour is budget-friendly and unique.",
+          "evening": "Return to Rome for a final evening exploration. Walk the Historic Downtown one more time and pick up any last-minute souvenirs from local shops. Enjoy the warm June evening along the river.",
+          "meals": {
+            "breakfast": "In-room breakfast \u2014 ~$2-3",
+            "lunch": "Cave Spring local diner or pack a lunch for the trip ~$7-10",
+            "dinner": "Broad Street area restaurant \u2014 try somewhere you haven't visited yet. Look for daily specials ~$11-15"
+          },
+          "notes": "Cave Spring is a wonderful hidden gem near Rome and very budget-friendly. The natural cave and swimming pool are refreshing on a hot June day. If you have a car, this is highly recommended. If not, focus on more Downtown Rome exploration and visit the Rome Area History Museum if you haven't yet."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-22 (Tuesday)",
+          "morning": "Final morning in Rome \u2014 take a peaceful early walk along the Etowah River or the Greenway Trail one last time. Visit any remaining items on your Rome bucket list. Stop by a local coffee shop in Downtown Rome for a farewell breakfast treat.",
+          "afternoon": "Check out of La Quinta by Wyndham Rome. Depending on departure time, do a final sweep of Downtown Rome for any last souvenirs or gallery visits. Head to the airport or onward destination.",
+          "evening": "Departure / travel day.",
+          "meals": {
+            "breakfast": "Local Downtown Rome coffee shop or caf\u00e9 for a farewell breakfast ~$6-9",
+            "lunch": "Light and affordable \u2014 grab a sandwich or fast food near the hotel before checkout ~$7-10",
+            "dinner": "Airport or travel food depending on departure schedule"
+          },
+          "notes": "Check out time is typically 11:00 AM \u2014 confirm with the hotel. Use any remaining grocery store items for a quick in-room breakfast before checkout. Leave a review for the hotel and any local businesses you loved. Total estimated daily food budget: $20-30/day. Total estimated activity budget for the week: $30-50 (most attractions are free or very low cost). Rome, GA is an excellent budget destination with rich art, history, and natural beauty."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Chicago+to+Rome+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Rome&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome"
+      ],
+      "highlights": [
+        "Save $150 vs. target budget",
+        "2 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Rome Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 1929.79,
+      "flight": {
+        "price_usd": 910.0,
+        "airline": "Condor",
+        "departure": "2027-06-15 20:20",
+        "arrival": "2027-06-16 16:00",
+        "stops": 1,
+        "duration": 760,
+        "duration_minutes": 760
+      },
+      "hotel": {
+        "hotel_id": "lp42db6",
+        "name": "La Quinta by Wyndham Rome",
+        "price_per_night_usd": 74.97,
+        "total_usd": 524.79,
+        "rating": 7.3,
+        "amenities": [],
+        "location": "15 Chateau Drive, Rome, US (34.2212,-85.1513)",
+        "latitude": 34.221197,
+        "longitude": -85.151269
+      },
+      "experiences": [
+        {
+          "name": "Rome, GA Historic Downtown Art Walk",
+          "description": "Explore the vibrant murals, local galleries, and public art installations scattered throughout downtown Rome, GA. Visit the Chieftains Museum and local studios showcasing regional artists along Broad Street.",
+          "cost_usd": 0,
+          "category": "art",
+          "best_time_of_day": "morning",
+          "location": "Downtown Broad Street, Rome, GA"
+        },
+        {
+          "name": "Farm-to-Table Dining at Local Rome Restaurants",
+          "description": "Indulge in the local food scene along Broad Street and the surrounding area, sampling Southern cuisine, farm-fresh ingredients, and regional specialties at highly rated local eateries and bistros in downtown Rome.",
+          "cost_usd": 60,
+          "category": "food",
+          "best_time_of_day": "evening",
+          "location": "Downtown Rome, GA"
+        },
+        {
+          "name": "Chieftains Museum & Major Ridge Home Tour",
+          "description": "Visit this National Historic Landmark just minutes from Chateau Drive, exploring Cherokee history and culture through guided tours of the 1794 plantation home and its rich collection of Native American artifacts and art.",
+          "cost_usd": 15,
+          "category": "culture",
+          "best_time_of_day": "morning",
+          "location": "Chieftains Museum, Rome, GA"
+        },
+        {
+          "name": "Coosa Valley Farmers Market & Food Tour",
+          "description": "Spend a morning at the local farmers market sampling artisan foods, homemade preserves, fresh produce, and baked goods from regional vendors. Pair with a self-guided food tour of nearby cafes and specialty food shops.",
+          "cost_usd": 40,
+          "category": "food",
+          "best_time_of_day": "morning",
+          "location": "Coosa Valley area, Rome, GA"
+        },
+        {
+          "name": "Berry College Campus Art & Nature Walk",
+          "description": "Explore the stunning Gothic architecture, on-campus art collections, and scenic natural landscapes of Berry College, one of the most beautiful campuses in the US, located just a short drive from Chateau Drive.",
+          "cost_usd": 0,
+          "category": "art",
+          "best_time_of_day": "afternoon",
+          "location": "Berry College, Mount Berry, Rome GA area"
+        }
+      ],
+      "itinerary": {
+        "num_days": 7,
+        "destination": "Rome",
+        "style": "balanced",
+        "total_cost": 1929.79,
+        "breakdown": {
+          "flight": 910.0,
+          "hotel": 524.79,
+          "experiences": 115.0,
+          "food": 280,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-16 (Wednesday)",
+          "morning": "N/A \u2013 Flight arrives at 4:00 PM",
+          "afternoon": "Arrive at Rome Regional Airport / transfer to La Quinta by Wyndham Rome on Chateau Drive. Check in, freshen up, and get oriented. Take a short stroll around the immediate Chateau Drive area to stretch your legs after the flight.",
+          "evening": "Head to Historic Downtown Rome for a relaxed first-night dinner along Broad Street. After dinner, enjoy a casual self-guided walk along the Riverwalk near the Oostanaula River to catch the early summer evening light.",
+          "meals": {
+            "breakfast": "N/A \u2013 in transit",
+            "lunch": "N/A \u2013 in transit / airport snack",
+            "dinner": "Broad Street Brasserie or a local Broad Street bistro \u2013 mid-range Southern comfort food to welcome you to Rome, GA. Budget ~$20\u2013$30 per person."
+          },
+          "notes": "Keep Day 1 light. The June heat (highs near 30\u00b0C) means the evening stroll after 7 PM will be far more comfortable. Pack a light rain layer given the monthly rainfall average."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-17 (Thursday)",
+          "morning": "Rome, GA Historic Downtown Art Walk \u2013 Start early (9:00 AM) before the heat peaks. Explore the vibrant murals, local galleries, and public art installations scattered throughout Downtown Rome. Pick up a self-guided map from the visitor center on Broad Street and spend 2\u20133 hours discovering the creative side of the city.",
+          "afternoon": "Visit the Chieftains Museum & Major Ridge Home Tour (just minutes from Chateau Drive). Explore this National Historic Landmark, learning about Cherokee history and the story of Major Ridge. The shaded interior is a welcome relief from the afternoon heat. Allow 1.5\u20132 hours.",
+          "evening": "Farm-to-Table Dining experience along Broad Street. Choose one of Rome's celebrated local restaurants emphasizing Southern and regional ingredients for a relaxed, flavorful dinner.",
+          "meals": {
+            "breakfast": "Hotel continental breakfast at La Quinta or a nearby caf\u00e9 \u2013 budget ~$8\u2013$12",
+            "lunch": "Grab a sandwich or light bite at a downtown caf\u00e9 near the Art Walk, such as a local deli on Broad Street \u2013 budget ~$12\u2013$16",
+            "dinner": "Farm-to-table Southern cuisine on Broad Street (e.g., Harvest Moon Caf\u00e9 style) \u2013 budget ~$25\u2013$35 per person"
+          },
+          "notes": "Start the Art Walk by 9 AM to avoid peak heat. Wear comfortable walking shoes and bring water. The Chieftains Museum is air-conditioned \u2013 perfect for the hottest part of the day."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-18 (Friday)",
+          "morning": "Coosa Valley Farmers Market & Food Tour \u2013 Arrive at the farmers market when it opens (typically 8:00\u20139:00 AM on select days; confirm schedule locally). Sample artisan foods, homemade preserves, fresh produce, and local honey. Chat with vendors and pick up snacks for the day. Allow 2 hours.",
+          "afternoon": "Return to the Historic Downtown Art Walk area to visit any indoor galleries you may have missed on Day 2, or browse local artisan shops along Broad Street. Consider visiting the Rome Area History Museum for cultural context. Rest at the hotel during the hottest hour (2\u20133 PM).",
+          "evening": "Enjoy a leisurely dinner at a mid-range restaurant in Downtown Rome, then take an evening walk across the Oostanaula or Etowah River bridges to enjoy the sunset views.",
+          "meals": {
+            "breakfast": "Snack and sample at the Coosa Valley Farmers Market \u2013 budget ~$10\u2013$15 on tastings",
+            "lunch": "Picnic-style lunch using farmers market finds (local bread, cheese, fruit) at a nearby park \u2013 budget ~$10",
+            "dinner": "Downtown Rome restaurant with Southern or American cuisine \u2013 budget ~$22\u2013$32 per person"
+          },
+          "notes": "Check the Coosa Valley Farmers Market's current schedule before the trip as market days can vary by season. Friday markets are common in summer."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-19 (Saturday)",
+          "morning": "Berry College Campus Art & Nature Walk \u2013 Drive to Berry College (about 10\u201315 minutes from the hotel) and spend the morning exploring the stunning Gothic architecture, on-campus art collections, and scenic natural landscapes. The campus is one of the largest in the world by acreage and is beautiful in early summer. Start by 8:30\u20139:00 AM for cooler temperatures.",
+          "afternoon": "Continue exploring Berry College's outdoor trails and the House O' Dreams or Ford Buildings area. Alternatively, return to Rome and visit a local art gallery for an air-conditioned afternoon activity. Rest at the hotel from 2\u20134 PM during peak heat.",
+          "evening": "Treat yourself to the best farm-to-table dinner of the trip \u2013 reserve a table at one of Rome's top-rated local restaurants on Broad Street for a Saturday night out.",
+          "meals": {
+            "breakfast": "Early breakfast at the hotel or a local caf\u00e9 near Chateau Drive before heading to Berry College \u2013 budget ~$10\u2013$14",
+            "lunch": "Pack a light lunch or stop at a caf\u00e9 near Berry College / Mount Berry area \u2013 budget ~$12\u2013$18",
+            "dinner": "Upscale-casual farm-to-table dinner on Broad Street \u2013 budget ~$30\u2013$45 per person for a Saturday splurge"
+          },
+          "notes": "Berry College is free to visit and open to the public. Bring plenty of water and sunscreen. The campus deer are a beloved sight \u2013 keep an eye out! Rain showers are possible in the afternoon; carry a compact umbrella."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-20 (Sunday)",
+          "morning": "Relaxed morning \u2013 sleep in or enjoy a slow breakfast. Visit a local Rome bakery or brunch spot on Broad Street. Afterward, revisit any favorite art spots from earlier in the week or browse local artisan and antique shops in Downtown Rome.",
+          "afternoon": "Chieftains Museum revisit or explore the nearby Myrtle Hill Cemetery, a historic hilltop cemetery with panoramic views of Rome and the rivers below \u2013 a surprisingly beautiful and peaceful spot. Then cool off at the hotel pool or relax before the evening.",
+          "evening": "Sunday Supper \u2013 find a local Rome restaurant known for traditional Southern Sunday cooking (fried chicken, collard greens, cornbread). End the evening with a scoop of local ice cream or a dessert from a Broad Street sweet shop.",
+          "meals": {
+            "breakfast": "Brunch at a local caf\u00e9 or bakery in Downtown Rome \u2013 budget ~$14\u2013$20",
+            "lunch": "Light lunch at a casual eatery or leftovers from the farmers market \u2013 budget ~$10\u2013$15",
+            "dinner": "Traditional Southern Sunday supper at a local family restaurant \u2013 budget ~$18\u2013$28 per person"
+          },
+          "notes": "Sunday hours for some attractions and shops may be limited \u2013 check ahead. Myrtle Hill Cemetery is free and open to the public; the hilltop view is especially lovely in the golden evening light."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-21 (Monday)",
+          "morning": "Return to the Historic Downtown Art Walk for any galleries or installations not yet visited. Monday mornings are quieter, making it ideal for a more intimate gallery experience. Spend time at a local studio or pop-up art space if available.",
+          "afternoon": "Take a scenic drive along the Coosa River area or visit Cave Spring (about 20 minutes from Rome) \u2013 a charming small town with a natural spring, cave, and local artisan shops. A great half-day side trip with art and food interest.",
+          "evening": "Final special dinner in Rome \u2013 choose your favorite restaurant from the week for a return visit, or try somewhere new on Broad Street. Celebrate the trip with a local craft beer or Georgia wine.",
+          "meals": {
+            "breakfast": "Hotel breakfast or a familiar downtown caf\u00e9 \u2013 budget ~$10\u2013$14",
+            "lunch": "Lunch in Cave Spring at a local diner or caf\u00e9 \u2013 budget ~$12\u2013$18",
+            "dinner": "Celebratory dinner at your favorite Rome restaurant \u2013 budget ~$28\u2013$40 per person"
+          },
+          "notes": "Cave Spring is a hidden gem worth the short drive. The natural spring water is refreshing on a hot June day. Confirm Cave Spring shop hours before visiting as Monday hours can be limited."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-22 (Tuesday)",
+          "morning": "Final morning in Rome \u2013 enjoy a leisurely breakfast and last walk through Downtown Rome. Pick up any souvenirs, local art prints, or artisan food products (jams, honey, local spices) from Broad Street shops as gifts or mementos.",
+          "afternoon": "Check out of La Quinta by Wyndham Rome. Depending on departure time, squeeze in one last stop \u2013 a quick visit to the Coosa Valley Farmers Market if it's running, or a final coffee and pastry at a Broad Street caf\u00e9 before heading to the airport or onward destination.",
+          "evening": "Depart Rome, GA. Safe travels!",
+          "meals": {
+            "breakfast": "Sit-down farewell breakfast at a beloved local caf\u00e9 on Broad Street \u2013 budget ~$12\u2013$18",
+            "lunch": "Light grab-and-go lunch near the hotel or airport \u2013 budget ~$10\u2013$15",
+            "dinner": "In transit / at destination"
+          },
+          "notes": "Check out time at La Quinta is typically 11:00 AM \u2013 confirm with the hotel. Allow extra time for any last-minute shopping. Keep receipts for any artisan food items if flying, and check TSA guidelines for liquids (jams, honey) in carry-on luggage."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Chicago+to+Rome+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Rome&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome"
+      ],
+      "highlights": [
+        "Best value for money",
+        "7.3\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Rome Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 2069.79,
+      "flight": {
+        "price_usd": 910.0,
+        "airline": "Condor",
+        "departure": "2027-06-15 20:20",
+        "arrival": "2027-06-16 16:00",
+        "stops": 1,
+        "duration": 760,
+        "duration_minutes": 760
+      },
+      "hotel": {
+        "hotel_id": "lp42db6",
+        "name": "La Quinta by Wyndham Rome",
+        "price_per_night_usd": 74.97,
+        "total_usd": 524.79,
+        "rating": 7.3,
+        "amenities": [],
+        "location": "15 Chateau Drive, Rome, US (34.2212,-85.1513)",
+        "latitude": 34.221197,
+        "longitude": -85.151269
+      },
+      "experiences": [
+        {
+          "name": "Rome, GA Historic Downtown Art Walk",
+          "description": "Explore the vibrant murals, local galleries, and public art installations scattered throughout downtown Rome, GA. Visit the Chieftains Museum and local studios showcasing regional artists along Broad Street.",
+          "cost_usd": 0,
+          "category": "art",
+          "best_time_of_day": "morning",
+          "location": "Downtown Broad Street, Rome, GA"
+        },
+        {
+          "name": "Farm-to-Table Dining at Local Rome Restaurants",
+          "description": "Indulge in the local food scene along Broad Street and the surrounding area, sampling Southern cuisine, farm-fresh ingredients, and regional specialties at highly rated local eateries and bistros in downtown Rome.",
+          "cost_usd": 60,
+          "category": "food",
+          "best_time_of_day": "evening",
+          "location": "Downtown Rome, GA"
+        },
+        {
+          "name": "Chieftains Museum & Major Ridge Home Tour",
+          "description": "Visit this National Historic Landmark just minutes from Chateau Drive, exploring Cherokee history and culture through guided tours of the 1794 plantation home and its rich collection of Native American artifacts and art.",
+          "cost_usd": 15,
+          "category": "culture",
+          "best_time_of_day": "morning",
+          "location": "Chieftains Museum, Rome, GA"
+        },
+        {
+          "name": "Coosa Valley Farmers Market & Food Tour",
+          "description": "Spend a morning at the local farmers market sampling artisan foods, homemade preserves, fresh produce, and baked goods from regional vendors. Pair with a self-guided food tour of nearby cafes and specialty food shops.",
+          "cost_usd": 40,
+          "category": "food",
+          "best_time_of_day": "morning",
+          "location": "Coosa Valley area, Rome, GA"
+        },
+        {
+          "name": "Berry College Campus Art & Nature Walk",
+          "description": "Explore the stunning Gothic architecture, on-campus art collections, and scenic natural landscapes of Berry College, one of the most beautiful campuses in the US, located just a short drive from Chateau Drive.",
+          "cost_usd": 0,
+          "category": "art",
+          "best_time_of_day": "afternoon",
+          "location": "Berry College, Mount Berry, Rome GA area"
+        }
+      ],
+      "itinerary": {
+        "num_days": 7,
+        "destination": "Rome",
+        "style": "premium",
+        "total_cost": 2069.79,
+        "breakdown": {
+          "flight": 910.0,
+          "hotel": 524.79,
+          "experiences": 115.0,
+          "food": 420,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-06-16 (Wednesday)",
+          "morning": "N/A \u2013 Flight arrives at 4:00 PM",
+          "afternoon": "Arrive at Rome, GA via Condor flight at 16:00. Transfer to La Quinta by Wyndham Rome on Chateau Drive. Check in, freshen up, and settle into your accommodations. Take a leisurely stroll around the immediate Chateau Drive area to get oriented with the surroundings.",
+          "evening": "Head to Broad Street for a premium Farm-to-Table dining experience. Explore the vibrant restaurant scene Rome's main corridor is known for, enjoying a relaxed first-night dinner featuring locally sourced Southern cuisine with craft cocktails.",
+          "meals": {
+            "breakfast": "N/A \u2013 In transit",
+            "lunch": "N/A \u2013 In transit / airport dining",
+            "dinner": "Farm-to-Table dinner at a top-rated Broad Street restaurant such as Harvest Moon Caf\u00e9 or a comparable upscale Southern dining establishment. Expect dishes featuring local produce, artisan cheeses, and regional proteins with a curated wine list."
+          },
+          "notes": "Keep Day 1 light given the late arrival. Pre-arrange a private airport transfer for a seamless luxury experience. Confirm dinner reservations in advance as top Rome, GA restaurants can fill up on weekday evenings."
+        },
+        {
+          "day": 2,
+          "date": "2027-06-17 (Thursday)",
+          "morning": "Start the day with a gourmet breakfast at the hotel or a nearby upscale caf\u00e9. Then embark on the Rome, GA Historic Downtown Art Walk \u2014 explore vibrant murals, local galleries, and public art installations scattered throughout the historic downtown district. Hire a local art guide for a private, curated tour experience.",
+          "afternoon": "Visit the Chieftains Museum & Major Ridge Home, a National Historic Landmark just minutes from Chateau Drive. Enjoy a private or small-group guided tour exploring Cherokee history, antebellum architecture, and the rich cultural heritage of the region. The lush grounds are beautiful in June.",
+          "evening": "Return to Broad Street for a premium dining experience. Enjoy a multi-course Southern fine dining dinner with a focus on seasonal ingredients. After dinner, take a relaxed evening walk along the Oostanaula River waterfront if weather permits (average high ~30\u00b0C, so evenings are pleasant).",
+          "meals": {
+            "breakfast": "Upscale hotel breakfast or visit a local artisan caf\u00e9 for fresh pastries, specialty coffee, and seasonal fruit.",
+            "lunch": "Light gourmet lunch at a downtown Rome caf\u00e9 or bistro near the art walk \u2014 charcuterie boards, artisan sandwiches, and local craft beverages.",
+            "dinner": "Upscale Farm-to-Table dinner on Broad Street featuring Southern-inspired cuisine \u2014 think pan-seared Georgia trout, heirloom tomato salads, and bourbon-glazed pork with a premium wine pairing."
+          },
+          "notes": "Book a private guide for the Art Walk and Chieftains Museum in advance for a truly premium experience. Wear light, breathable clothing as June temperatures can reach nearly 30\u00b0C. Carry water throughout the day."
+        },
+        {
+          "day": 3,
+          "date": "2027-06-18 (Friday)",
+          "morning": "Visit the Coosa Valley Farmers Market for an immersive food tour experience. Arrive early to sample artisan foods, homemade preserves, fresh produce, local honey, and handcrafted goods. Engage with local vendors and consider purchasing gourmet items to enjoy throughout the trip.",
+          "afternoon": "Spend the afternoon exploring Berry College Campus \u2014 a stunning property featuring Gothic Revival architecture, an on-campus art collection, and scenic natural landscapes. Walk or arrange a private golf cart tour of the expansive campus, visiting the art galleries and enjoying the serene natural beauty.",
+          "evening": "Enjoy a premium dinner at one of Rome's finest restaurants. Consider a reservation at an establishment known for its chef-driven menu and extensive wine cellar. End the evening with a craft cocktail at a sophisticated downtown Rome bar or lounge.",
+          "meals": {
+            "breakfast": "Light breakfast before the farmers market, or graze on fresh market offerings \u2014 artisan breads, local jams, farm-fresh eggs, and specialty coffee from market vendors.",
+            "lunch": "Picnic-style gourmet lunch assembled from the finest farmers market finds, enjoyed on the Berry College campus grounds or a scenic riverside spot.",
+            "dinner": "Chef's tasting menu or \u00e0 la carte fine dining at Rome's premier restaurant. Focus on locally sourced ingredients with Southern and contemporary American influences. Pair with a sommelier-selected wine flight."
+          },
+          "notes": "The Coosa Valley Farmers Market typically operates on weekend mornings \u2014 confirm the Friday schedule in advance. Berry College is one of the largest college campuses in the world by acreage, so comfortable walking shoes are recommended despite the premium trip style."
+        },
+        {
+          "day": 4,
+          "date": "2027-06-19 (Saturday)",
+          "morning": "Return to the Rome Historic Downtown for a deeper dive into the local gallery scene. Visit independent art galleries and studios not covered on Day 2, and consider purchasing original artwork from local artists as a premium souvenir. Many galleries offer private viewings by appointment.",
+          "afternoon": "Indulge in a luxurious afternoon experience \u2014 book a private cooking class with a local chef focusing on Southern cuisine techniques, or arrange a curated wine and cheese tasting at a local venue. Alternatively, enjoy a spa afternoon at a nearby wellness center for rest and rejuvenation mid-trip.",
+          "evening": "Dress up for a premium Saturday evening dinner \u2014 Rome's restaurant scene is most vibrant on weekends. Opt for a reservation at the most acclaimed dining establishment in the area, enjoying a leisurely multi-course meal with exceptional service.",
+          "meals": {
+            "breakfast": "Leisurely hotel breakfast or brunch at an upscale downtown Rome caf\u00e9 \u2014 eggs Benedict, smoked salmon, fresh-squeezed juices, and specialty lattes.",
+            "lunch": "Gourmet lunch at a Broad Street restaurant or as part of the cooking class/tasting experience. Focus on seasonal Southern flavors.",
+            "dinner": "Premium Saturday dinner at Rome's finest dining venue. Consider a reservation well in advance. Enjoy dishes such as dry-aged beef, Georgia shrimp and grits, or locally foraged mushroom risotto with a curated wine pairing."
+          },
+          "notes": "Saturday is the busiest day in downtown Rome \u2014 book all reservations and experiences well in advance. The farmers market may also be running again this morning if you wish to revisit. Evening temperatures around 22\u201325\u00b0C make outdoor dining very pleasant."
+        },
+        {
+          "day": 5,
+          "date": "2027-06-20 (Sunday)",
+          "morning": "Enjoy a slow, luxurious Sunday morning. Sleep in and enjoy a premium in-room or hotel breakfast. Then take a private guided kayak or canoe tour on the Coosa or Oostanaula River \u2014 a serene way to experience Rome's natural beauty from the water, with stunning views of the surrounding landscape.",
+          "afternoon": "Return to Berry College for a more in-depth exploration of the campus art collections and the historic Old Mill area. The campus is exceptionally peaceful on Sundays. Alternatively, visit a local antique market or art fair if one is running this weekend in the Rome area.",
+          "evening": "Enjoy a relaxed Sunday evening with a farm-to-table dinner emphasizing comfort and quality. Consider a restaurant with a patio or outdoor seating to enjoy the warm June evening. End the night with a walk along the river or through the historic district.",
+          "meals": {
+            "breakfast": "Indulgent hotel breakfast \u2014 full Southern spread with biscuits and gravy, fresh fruit, specialty coffee, and fresh-squeezed orange juice.",
+            "lunch": "Casual but upscale Sunday lunch at a Broad Street bistro \u2014 gourmet burgers, lobster rolls, or a premium salad with local ingredients and craft beer or wine.",
+            "dinner": "Relaxed farm-to-table Sunday dinner. Focus on comfort-forward Southern dishes elevated with premium ingredients \u2014 braised short rib, cast-iron cornbread, seasonal vegetable sides, and a classic Southern dessert like peach cobbler with vanilla bean ice cream."
+          },
+          "notes": "Some attractions and restaurants may have reduced Sunday hours \u2014 confirm schedules in advance. The river tour is best booked through a local outfitter and should be arranged at least a day ahead. Sunscreen and hats are essential given the June heat."
+        },
+        {
+          "day": 6,
+          "date": "2027-06-21 (Monday)",
+          "morning": "Dedicate the morning to a private, in-depth food tour of Rome's culinary landscape. Work with a local food guide to visit specialty food producers, artisan bakeries, and gourmet shops in and around the Broad Street corridor. Sample the best of what Rome's food artisans have to offer.",
+          "afternoon": "Return to the Historic Downtown Art Walk for any galleries or installations missed earlier in the trip. Consider commissioning a local artist for a custom piece or attending an afternoon gallery opening if one is scheduled. Spend time in the studios of working artists for an authentic creative experience.",
+          "evening": "Enjoy a premium farewell-style dinner (with one more night remaining) at a top Rome restaurant. Opt for a private dining room if available, and request a special tasting menu to celebrate the penultimate evening of the trip.",
+          "meals": {
+            "breakfast": "Light breakfast at the hotel before the food tour begins.",
+            "lunch": "The food tour itself serves as a progressive lunch \u2014 sampling dishes, snacks, and beverages at multiple stops throughout the morning and early afternoon.",
+            "dinner": "Upscale dinner at a premier Rome restaurant with a private dining option. Enjoy a chef's tasting menu with wine pairings, focusing on the finest local and regional ingredients available."
+          },
+          "notes": "Arrange the private food tour through a local culinary tourism company or concierge service. Monday can be quieter in the restaurant scene, which actually makes it ideal for a more intimate, personalized dining experience. Confirm gallery hours as some may be closed Mondays."
+        },
+        {
+          "day": 7,
+          "date": "2027-06-22 (Tuesday)",
+          "morning": "Final morning in Rome, GA. Enjoy a leisurely premium breakfast at the hotel. Take one last stroll through the Historic Downtown to pick up any final souvenirs, artisan goods, or artwork. Visit any remaining spots on your list \u2014 a final coffee at a beloved local caf\u00e9, a last look at a favorite mural.",
+          "afternoon": "Check out of La Quinta by Wyndham Rome. Depending on departure time, enjoy a final lunch at a Broad Street restaurant before heading to the airport or onward destination. Reflect on the week's art discoveries, culinary adventures, and cultural experiences.",
+          "evening": "Departure or onward travel. If the schedule allows for an evening departure, enjoy one final dinner in Rome before leaving \u2014 a relaxed, celebratory meal to close out a memorable premium trip.",
+          "meals": {
+            "breakfast": "Indulgent final hotel breakfast \u2014 the full spread, savoring every bite before checkout.",
+            "lunch": "Final farewell lunch at a favorite Broad Street restaurant discovered during the week, or try somewhere new that came recommended. Enjoy a glass of wine or a craft cocktail to toast the trip.",
+            "dinner": "If schedule permits: a final dinner at a top Rome restaurant. If departing early evening, opt for a gourmet takeaway from a local deli or artisan food shop to enjoy en route."
+          },
+          "notes": "Arrange checkout and luggage storage with the hotel if your departure is later in the day. Pre-book your departure transfer in advance. Consider shipping any artwork or larger purchases home rather than carrying them \u2014 many local galleries offer shipping services. Keep receipts for any high-value art purchases."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Chicago+to+Rome+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Rome&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome",
+        "https://www.getyourguide.com/s/?q=Rome"
+      ],
+      "highlights": [
+        "7.3\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-805 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Rome art and food trip, $2500, 7 days, June from Chicago",
+  "session_tags": {
+    "query_id": "REAL-07",
+    "condition": "two_way",
+    "run_index": 2
+  }
+}

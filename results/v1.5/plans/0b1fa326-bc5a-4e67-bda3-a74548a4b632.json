@@ -1,0 +1,469 @@
+{
+  "session_id": "0b1fa326-bc5a-4e67-bda3-a74548a4b632",
+  "intent": {
+    "destination": "Mexico City",
+    "origin": null,
+    "budget_usd": 900.0,
+    "duration_days": 5,
+    "travel_month": null,
+    "travel_year": 2026,
+    "interests": [
+      "local food",
+      "culture"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "high",
+    "raw_query": "Mexico City food and culture, $900 solo, 5 days, any month 2026"
+  },
+  "selected_flight": {
+    "price_usd": 680,
+    "airline": "UA",
+    "departure": "2027-03-01T08:00:00",
+    "arrival": "2027-03-01T22:30:00",
+    "stops": 1,
+    "duration": "PT14H30M"
+  },
+  "selected_hotel": {
+    "name": "Aegean Bliss Resort, Mexico City",
+    "price_per_night_usd": 85,
+    "total_usd": 425,
+    "rating": 4.3,
+    "amenities": [
+      "beach access",
+      "breakfast included",
+      "wifi",
+      "pool"
+    ],
+    "location": "Beachfront"
+  },
+  "experiences": [
+    {
+      "name": "Mercado de San Juan Food Tour",
+      "description": "Explore one of Mexico City's most beloved gourmet markets, sampling exotic cheeses, fresh ceviche, traditional tacos, and international delicacies. Chat with local vendors and discover ingredients central to Mexican cuisine.",
+      "cost_usd": 15,
+      "category": "local food",
+      "best_time_of_day": "morning",
+      "location": "Centro Hist\u00f3rico, Mexico City"
+    },
+    {
+      "name": "Teotihuacan Pyramids & Street Food",
+      "description": "Visit the ancient pre-Aztec pyramids of the Sun and Moon, one of the most iconic archaeological sites in the world. On the way back, stop at a roadside tlayuda or barbacoa stall for an authentic local meal.",
+      "cost_usd": 25,
+      "category": "culture",
+      "best_time_of_day": "morning",
+      "location": "Teotihuacan, State of Mexico (day trip from CDMX)"
+    },
+    {
+      "name": "Coyoac\u00e1n Neighborhood Walk & Frida Kahlo Museum",
+      "description": "Stroll through the bohemian cobblestone streets of Coyoac\u00e1n, visit the iconic Casa Azul (Frida Kahlo Museum), browse artisan markets, and enjoy a traditional Mexican hot chocolate with churros at a local caf\u00e9.",
+      "cost_usd": 20,
+      "category": "culture",
+      "best_time_of_day": "afternoon",
+      "location": "Coyoac\u00e1n, Mexico City"
+    },
+    {
+      "name": "Tacos al Pastor Crawl in Roma & Condesa",
+      "description": "Embark on a self-guided taco crawl through the trendy Roma and Condesa neighborhoods, tasting tacos al pastor, suadero, and carnitas from legendary taquer\u00edas like El Huequito and Los Cocuyos. Pair with fresh agua fresca.",
+      "cost_usd": 12,
+      "category": "local food",
+      "best_time_of_day": "evening",
+      "location": "Roma Norte & Condesa, Mexico City"
+    },
+    {
+      "name": "Palacio de Bellas Artes & Muralist Art Tour",
+      "description": "Visit the stunning Art Nouveau Palacio de Bellas Artes to admire world-famous murals by Diego Rivera, Jos\u00e9 Clemente Orozco, and David Alfaro Siqueiros. Explore the surrounding Alameda Central park and nearby murals for a deep dive into Mexican cultural identity.",
+      "cost_usd": 5,
+      "category": "culture",
+      "best_time_of_day": "morning",
+      "location": "Centro Hist\u00f3rico, Mexico City"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-03-01",
+    "return": "2027-03-06",
+    "nights": 5,
+    "month": "march",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "any_month_fallback"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Mexico City",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1330.0,
+      "flight": {
+        "price_usd": 680,
+        "airline": "UA",
+        "departure": "2027-03-01T08:00:00",
+        "arrival": "2027-03-01T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Mexico City",
+        "price_per_night_usd": 85,
+        "total_usd": 425,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Mexico City",
+        "style": "budget",
+        "total_cost": 1330.0,
+        "breakdown": {
+          "flight": 680.0,
+          "hotel": 425.0,
+          "experiences": 0,
+          "food": 125,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-03-01",
+          "morning": "No morning activities \u2014 flight UA arrives at 22:30. Rest and settle into Aegean Bliss Resort.",
+          "afternoon": "No afternoon activities \u2014 arrival is late evening. Prepare for the trip ahead.",
+          "evening": "Arrive at Mexico City airport at 22:30. Take the Metro Line 5 from Terminal A\u00e9rea station (very budget-friendly at ~$0.25 USD) or a pre-booked authorized airport taxi to the hotel. Check in, freshen up, and take a short walk around the immediate neighborhood to get oriented.",
+          "meals": {
+            "breakfast": "N/A \u2014 in transit",
+            "lunch": "N/A \u2014 in transit",
+            "dinner": "Grab a late-night taco from a street taco stand near the hotel (tacos al pastor or de canasta, ~$0.50\u2013$1 USD each). Many street vendors operate past midnight in Mexico City."
+          },
+          "notes": "Keep pesos handy for the Metro and street food. Authorized airport taxis cost ~$15\u2013$25 USD and are safer than hailing a cab outside. Download the CDMX Metro app for navigation. Exchange some currency at the airport or use a no-fee ATM."
+        },
+        {
+          "day": 2,
+          "date": "2027-03-02",
+          "morning": "Start the day at the iconic Z\u00f3calo (Plaza de la Constituci\u00f3n), one of the largest public squares in the world. Explore the Metropolitan Cathedral (free entry) and admire the exterior of the National Palace. Walk through the surrounding historic streets of Centro Hist\u00f3rico.",
+          "afternoon": "Visit the Templo Mayor archaeological site and museum (~$4 USD entry). This ancient Aztec temple is one of the most significant historical sites in Mexico City. Afterward, stroll through the nearby Mercado de Artesan\u00edas for local crafts and souvenirs at bargain prices.",
+          "evening": "Explore the lively streets of Centro Hist\u00f3rico at dusk when the buildings are beautifully lit. Head to Calle Regina, a pedestrian street filled with affordable restaurants, street performers, and a vibrant local atmosphere.",
+          "meals": {
+            "breakfast": "Eat at a local mercado breakfast spot near the hotel \u2014 try chilaquiles or tamales with atole (~$2\u2013$4 USD). Look for 'desayunos' signs.",
+            "lunch": "Lunch at Mercado de San Juan or a nearby fondas (small family-run eateries) inside a market \u2014 a full comida corrida (set lunch with soup, main, and drink) costs ~$3\u2013$5 USD.",
+            "dinner": "Street tacos and quesadillas on Calle Regina or nearby \u2014 budget ~$3\u2013$6 USD for a filling meal with agua fresca."
+          },
+          "notes": "Wear comfortable walking shoes \u2014 Centro Hist\u00f3rico is best explored on foot. Keep bags secure in crowded areas. Most museums are free on Sundays for Mexican citizens but still affordable for tourists on weekdays."
+        },
+        {
+          "day": 3,
+          "date": "2027-03-03",
+          "morning": "Take the Metro to Coyoac\u00e1n (Line 3 to Viveros station, ~$0.25 USD). Explore this charming bohemian neighborhood on foot. Visit the colorful Jard\u00edn Centenario and Plaza Hidalgo, the heart of Coyoac\u00e1n. Browse the weekend artisan market stalls.",
+          "afternoon": "Visit the Frida Kahlo Museum (Casa Azul) \u2014 book tickets online in advance (~$10 USD, one of the most visited museums in Mexico). Afterward, walk to the nearby Le\u00f3n Trotsky Museum (~$3 USD) for a fascinating historical perspective. Explore the cobblestone streets and murals of the neighborhood.",
+          "evening": "Return to the city center via Metro. Head to the Roma or Condesa neighborhood for an evening stroll through tree-lined streets, art deco architecture, and lively parks. These trendy neighborhoods offer great budget eats alongside upscale options.",
+          "meals": {
+            "breakfast": "Try tostadas de tinga or enfrijoladas at Mercado de Coyoac\u00e1n \u2014 a local favorite for breakfast (~$2\u2013$4 USD).",
+            "lunch": "Eat at Mercado de Coyoac\u00e1n food stalls \u2014 try tostadas, pozole, or fresh ceviche (~$3\u2013$5 USD). This market is famous for its affordable and delicious food.",
+            "dinner": "Grab tacos or tortas at a local taquer\u00eda in Roma Norte \u2014 look for busy spots with lines of locals, a sure sign of quality and value (~$4\u2013$7 USD)."
+          },
+          "notes": "Frida Kahlo Museum tickets sell out fast \u2014 book at least a few days in advance online at museofridakahlo.org.mx. Coyoac\u00e1n is very walkable and safe for tourists. The Metro is the most budget-friendly way to get around the city."
+        },
+        {
+          "day": 4,
+          "date": "2027-03-04",
+          "morning": "Take a day trip to Teotihuac\u00e1n, the ancient pre-Aztec city with massive pyramids (~35 miles from the city). Catch an early bus from Terminal Central del Norte (Metro Line 5 to Autobuses del Norte, then a direct bus for ~$3 USD round trip). Arrive early to beat the crowds and heat.",
+          "afternoon": "Climb the Pyramid of the Sun and Pyramid of the Moon, walk the Avenue of the Dead, and explore the Palace of Quetzalpapalotl. The site entry is ~$5 USD. Spend 3\u20134 hours exploring this UNESCO World Heritage Site at your own pace.",
+          "evening": "Return to Mexico City by late afternoon. Head to Garibaldi Plaza in the evening to experience the famous Mariachi Square \u2014 free to enter and watch performances, though tipping musicians is appreciated. Soak in the festive atmosphere.",
+          "meals": {
+            "breakfast": "Quick breakfast before departure \u2014 grab pan dulce (sweet bread) and caf\u00e9 de olla from a street vendor or bakery near the Metro (~$1\u2013$2 USD).",
+            "lunch": "Eat at one of the food stalls just outside the Teotihuac\u00e1n archaeological zone \u2014 try barbacoa tacos, tlayudas, or grilled corn (elote) (~$3\u2013$5 USD). Bring water as it can be hot.",
+            "dinner": "Dinner near Garibaldi \u2014 try pozole or birria at a local restaurant in the area (~$4\u2013$7 USD). Many affordable traditional restaurants surround the plaza."
+          },
+          "notes": "Start early for Teotihuac\u00e1n \u2014 aim to be at the site by 9:00 AM to avoid midday heat and crowds. Wear sunscreen, a hat, and bring water. Buses from Terminal del Norte run frequently (every 30 min) and are clearly marked 'Teotihuac\u00e1n.' Avoid overpaying for souvenirs at the site \u2014 bargain confidently."
+        },
+        {
+          "day": 5,
+          "date": "2027-03-05",
+          "morning": "Visit Chapultepec Park, one of the largest urban parks in the world (free entry). Explore the park's lakes, monuments, and gardens. Visit the Castillo de Chapultepec (National History Museum, ~$3 USD) for panoramic views of the city and fascinating exhibits on Mexican history.",
+          "afternoon": "Walk to the adjacent Museo Nacional de Antropolog\u00eda (National Museum of Anthropology, ~$4 USD) \u2014 one of the best museums in Latin America, housing the famous Aztec Sun Stone and extensive pre-Columbian collections. Spend 2\u20133 hours here. Afterward, browse the Paseo de la Reforma boulevard.",
+          "evening": "Final evening in Mexico City \u2014 return to a favorite neighborhood for last-minute souvenir shopping and a farewell dinner. Consider revisiting a beloved taco spot or trying something new like mole enchiladas or chiles en nogada at a local restaurant.",
+          "meals": {
+            "breakfast": "Breakfast at a caf\u00e9 in Condesa or Roma \u2014 try huevos rancheros or molletes at a local comedor (~$3\u2013$5 USD).",
+            "lunch": "Picnic-style lunch in Chapultepec Park \u2014 pick up fresh fruit, elotes (grilled corn), and snacks from park vendors (~$2\u2013$4 USD) or eat at the park's affordable food stalls.",
+            "dinner": "Farewell dinner at a traditional Mexican restaurant \u2014 splurge slightly on a sit-down meal with mole, enchiladas, and a horchata or Jamaica agua fresca (~$6\u2013$10 USD). Mercado de Medell\u00edn in Roma is a great local option."
+          },
+          "notes": "The National Museum of Anthropology is free on Sundays for all visitors \u2014 if Day 5 falls on a Sunday, take advantage of this. Chapultepec Park is best on weekdays to avoid weekend crowds. Keep receipts and pack carefully in the evening if departing the next day. Mexico City's tap water is not safe to drink \u2014 stick to bottled or filtered water throughout the trip."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=None+to+Mexico City+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Mexico City&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "Save $-655 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Mexico City Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 1405.0,
+      "flight": {
+        "price_usd": 680,
+        "airline": "UA",
+        "departure": "2027-03-01T08:00:00",
+        "arrival": "2027-03-01T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Mexico City",
+        "price_per_night_usd": 85,
+        "total_usd": 425,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Mexico City",
+        "style": "balanced",
+        "total_cost": 1405.0,
+        "breakdown": {
+          "flight": 680.0,
+          "hotel": 425.0,
+          "experiences": 0,
+          "food": 200,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-03-01",
+          "morning": "No morning activities \u2014 late night arrival. Check in to Aegean Bliss Resort and rest.",
+          "afternoon": "No afternoon activities \u2014 arrival is at 22:30. Settle into your room and freshen up.",
+          "evening": "Arrive at Mexico City airport at 22:30 on Flight UA. Clear customs, collect luggage, and take an authorized airport taxi or pre-booked transfer to Aegean Bliss Resort. Check in and get a good night's rest to prepare for the days ahead.",
+          "meals": {
+            "breakfast": "Not applicable \u2014 in-flight or pre-arrival",
+            "lunch": "Not applicable \u2014 in-flight or pre-arrival",
+            "dinner": "Grab a light late-night snack at the hotel bar or a nearby 24-hour taqueria such as El Farolito if you arrive hungry. Budget around $5\u2013$10 USD."
+          },
+          "notes": "Flight arrives late at night. Do not schedule any sightseeing on Day 1. Confirm your hotel transfer in advance. Keep some Mexican pesos handy for tips and small purchases upon arrival."
+        },
+        {
+          "day": 2,
+          "date": "2027-03-02",
+          "morning": "Start your first full day with a leisurely hotel breakfast, then head to the historic Centro Hist\u00f3rico. Visit the iconic Z\u00f3calo (Plaza de la Constituci\u00f3n), one of the largest public squares in the world. Explore the stunning Metropolitan Cathedral and walk around the exterior of the Templo Mayor archaeological site.",
+          "afternoon": "Enter the Templo Mayor Museum (approx. $5 USD entry) to explore ancient Aztec ruins and artifacts. Afterward, stroll through the nearby Palacio de Bellas Artes to admire its stunning Art Nouveau and Art Deco architecture. Browse the artisan market at Mercado de Artesan\u00edas La Ciudadela for local crafts and souvenirs.",
+          "evening": "Take a leisurely evening walk through the illuminated Centro Hist\u00f3rico. Enjoy the vibrant street atmosphere around Avenida Madero, a pedestrian-friendly street lined with historic buildings, street performers, and vendors.",
+          "meals": {
+            "breakfast": "Hotel breakfast at Aegean Bliss Resort or a nearby caf\u00e9. Budget $8\u2013$12 USD.",
+            "lunch": "Try Caf\u00e9 de Tacuba, a historic restaurant in Centro Hist\u00f3rico serving traditional Mexican dishes like enchiladas and tamales. Budget $12\u2013$18 USD.",
+            "dinner": "Dine at El Cardenal, a beloved mid-range restaurant known for authentic Mexican cuisine including chiles en nogada and traditional soups. Budget $18\u2013$25 USD."
+          },
+          "notes": "Wear comfortable walking shoes \u2014 Centro Hist\u00f3rico involves a lot of walking on cobblestones. The area is very safe during the day and early evening but stay aware of your surroundings. Metro Line 2 (Z\u00f3calo station) is a cheap and easy way to get there from most areas."
+        },
+        {
+          "day": 3,
+          "date": "2027-03-03",
+          "morning": "Visit the world-renowned Museo Nacional de Antropolog\u00eda (National Museum of Anthropology) in Chapultepec Park. This is a must-see for culture lovers, housing the famous Aztec Sun Stone and vast collections of pre-Columbian artifacts. Plan at least 2\u20133 hours here. Entry is approximately $4\u2013$5 USD.",
+          "afternoon": "After the museum, explore Bosque de Chapultepec, one of the largest urban parks in the Western Hemisphere. Walk through the park, visit Chapultepec Castle (Castillo de Chapultepec) for panoramic views of the city and exhibits on Mexican history. Entry to the castle is approximately $3\u2013$4 USD.",
+          "evening": "Head to the trendy Polanco neighborhood adjacent to Chapultepec. Browse upscale boutiques along Presidente Masaryk Avenue and soak in the cosmopolitan atmosphere. This is an ideal area for a relaxed evening stroll.",
+          "meals": {
+            "breakfast": "Stop at a local panader\u00eda (bakery) or caf\u00e9 near the hotel for fresh pan dulce and coffee. Budget $4\u2013$7 USD.",
+            "lunch": "Enjoy lunch at a casual restaurant or food stall inside or near Chapultepec Park. Try tacos de canasta or tortas from a local vendor. Budget $6\u2013$10 USD.",
+            "dinner": "Dine in Polanco at Pujol's more accessible neighbor, Lalo!, or try Quintonil's bar menu for modern Mexican cuisine at mid-range prices. Alternatively, visit Contramar for fresh seafood in a lively setting. Budget $20\u2013$30 USD."
+          },
+          "notes": "Chapultepec Park and the Anthropology Museum are closed on Mondays. Plan accordingly. The park can be crowded on weekends \u2014 arrive early for the best experience. Uber is reliable and affordable in Mexico City for getting between neighborhoods."
+        },
+        {
+          "day": 4,
+          "date": "2027-03-04",
+          "morning": "Take a morning trip to the colorful neighborhood of Coyoac\u00e1n, about 30\u201340 minutes from the city center by Uber or Metro. Visit the Frida Kahlo Museum (Casa Azul / Blue House) \u2014 book tickets in advance online as they sell out quickly. Entry is approximately $10\u2013$12 USD. Explore the vibrant cobblestone streets and colonial architecture.",
+          "afternoon": "After Coyoac\u00e1n, head to the nearby neighborhood of Xochimilco for a traditional trajinera (colorful flat-bottomed boat) ride through the ancient canals \u2014 a UNESCO World Heritage Site. Hire a boat for 1\u20132 hours and enjoy the festive atmosphere with local mariachi musicians and food vendors on the water. Cost is approximately $15\u2013$25 USD per boat per hour.",
+          "evening": "Return to the city center and explore the Roma Norte neighborhood, known for its Art Nouveau architecture, independent bookstores, galleries, and vibrant caf\u00e9 culture. Walk along \u00c1lvaro Obreg\u00f3n Avenue and enjoy the laid-back, bohemian atmosphere.",
+          "meals": {
+            "breakfast": "Breakfast at the hotel or grab fresh fruit and a torta from a street vendor near Coyoac\u00e1n market. Budget $4\u2013$8 USD.",
+            "lunch": "Eat at Mercado de Coyoac\u00e1n \u2014 try the famous tostadas de tinga or enfrijoladas from the market stalls. An authentic, affordable local experience. Budget $6\u2013$10 USD.",
+            "dinner": "Have dinner in Roma Norte at Maximo Bistrot or Fonda Fina, both known for creative takes on Mexican classics in a relaxed, mid-range setting. Budget $18\u2013$28 USD."
+          },
+          "notes": "Book Frida Kahlo Museum tickets at least 2\u20133 weeks in advance at museofridakahlo.org.mx \u2014 walk-in tickets are rarely available. Xochimilco is best visited on weekdays to avoid large crowds. Bring sunscreen and a hat as the canal ride is mostly in the open sun."
+        },
+        {
+          "day": 5,
+          "date": "2027-03-05",
+          "morning": "Take a half-day trip to the ancient pyramids of Teotihuac\u00e1n, located about 50 km northeast of Mexico City (roughly 1 hour by car or organized tour). Climb the Pyramid of the Sun and the Pyramid of the Moon, and walk the Avenue of the Dead. This is one of the most impressive archaeological sites in the Americas. Entry is approximately $5 USD. Depart early (8:00\u20138:30 AM) to beat the crowds and heat.",
+          "afternoon": "Return to Mexico City by early afternoon. Visit the Mercado de la Merced or Mercado Jamaica for a vibrant, authentic local market experience \u2014 perfect for picking up spices, local snacks, and last-minute souvenirs. Alternatively, spend a relaxed afternoon at the hotel or exploring the neighborhood around your accommodation.",
+          "evening": "Spend your final evening in the lively Condesa neighborhood. Enjoy a farewell dinner and take a nighttime stroll through Parque M\u00e9xico, surrounded by Art Deco buildings and lush greenery. Reflect on your Mexico City experience.",
+          "meals": {
+            "breakfast": "Early breakfast at the hotel before departing for Teotihuac\u00e1n. Budget $8\u2013$12 USD.",
+            "lunch": "Have lunch near the Teotihuac\u00e1n site at La Gruta, a unique restaurant set inside a natural cave/grotto near the pyramids. A memorable mid-range dining experience. Budget $15\u2013$22 USD.",
+            "dinner": "Farewell dinner in Condesa at El Pescadito for fresh tacos de pescado (fish tacos) or Never\u00eda Roxy for a casual, beloved local experience. For a slightly more upscale option, try Amaya for modern Mexican cuisine. Budget $15\u2013$25 USD."
+          },
+          "notes": "For Teotihuac\u00e1n, take an organized tour from your hotel or book a direct shuttle from Central de Autobuses del Norte (Norte Bus Terminal) \u2014 buses depart frequently and cost around $3\u2013$5 USD each way. Wear very comfortable shoes and bring water as the pyramid site is large and exposed. Start early to avoid midday heat and tour groups."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=None+to+Mexico City+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Mexico City&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "Best value for money",
+        "4.3\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "$505 over budget",
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Mexico City Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 1505.0,
+      "flight": {
+        "price_usd": 680,
+        "airline": "UA",
+        "departure": "2027-03-01T08:00:00",
+        "arrival": "2027-03-01T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Mexico City",
+        "price_per_night_usd": 85,
+        "total_usd": 425,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Mexico City",
+        "style": "premium",
+        "total_cost": 1505.0,
+        "breakdown": {
+          "flight": 680.0,
+          "hotel": 425.0,
+          "experiences": 0,
+          "food": 300,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-03-01",
+          "morning": "No morning activities \u2014 late night arrival. Rest and settle into the Aegean Bliss Resort after landing at 22:30.",
+          "afternoon": "No afternoon activities \u2014 travel day.",
+          "evening": "Upon arrival, enjoy a welcome nightcap at the hotel's rooftop bar or lounge. Request a late-night in-room dining experience featuring light Mexican fare such as guacamole, quesadillas, and a selection of premium mezcals to begin acclimating to local flavors.",
+          "meals": {
+            "breakfast": "N/A \u2014 in-flight or pre-arrival",
+            "lunch": "N/A \u2014 in-flight or pre-arrival",
+            "dinner": "Late-night in-room dining at Aegean Bliss Resort \u2014 curated Mexican comfort bites and premium mezcal tasting"
+          },
+          "notes": "Flight UA arrives at 22:30. Allow 60\u201390 minutes for immigration, baggage claim, and private transfer to the hotel. Pre-arrange a luxury airport transfer (black car or private SUV) through the concierge. No activities scheduled before arrival."
+        },
+        {
+          "day": 2,
+          "date": "2027-03-02",
+          "morning": "Leisurely breakfast at the hotel, then embark on a private guided tour of the Historic Centro. Visit the magnificent Z\u00f3calo (Plaza de la Constituci\u00f3n), explore the stunning Metropolitan Cathedral, and walk through the ancient Aztec ruins of Templo Mayor with a dedicated archaeologist guide who provides exclusive insight into pre-Hispanic civilization.",
+          "afternoon": "Head to the Palacio de Bellas Artes for a curated private art tour of its iconic murals by Diego Rivera and other Mexican masters. Afterward, stroll through the Alameda Central park and visit the Museo Franz Mayer for an immersive look at colonial decorative arts. Arrange a private docent for a truly personalized cultural experience.",
+          "evening": "Dine at Pujol, one of Latin America's most celebrated restaurants helmed by Chef Enrique Olvera. Experience the legendary Mole Madre tasting menu paired with an expertly curated wine and mezcal selection. Reserve well in advance through the hotel concierge.",
+          "meals": {
+            "breakfast": "Gourmet breakfast buffet or \u00e0 la carte at Aegean Bliss Resort's signature restaurant \u2014 fresh tropical fruits, chilaquiles, and artisan coffee",
+            "lunch": "El Cardenal \u2014 a historic and beloved fine-dining institution in Centro Hist\u00f3rico renowned for traditional Mexican cuisine; try the mole negro and freshly made tortillas",
+            "dinner": "Pujol \u2014 world-renowned tasting menu featuring modern Mexican haute cuisine; budget approximately $150\u2013$200 USD per person"
+          },
+          "notes": "Wear comfortable walking shoes for the Centro tour. Book Pujol reservations at least 4\u20136 weeks in advance. Private guided tours can be arranged through the hotel concierge for a premium, crowd-free experience."
+        },
+        {
+          "day": 3,
+          "date": "2027-03-03",
+          "morning": "Private transfer to Xochimilco for an exclusive trajinera (flower boat) experience on the ancient canals \u2014 a UNESCO World Heritage Site. Arrange a luxury private boat decorated with flowers, accompanied by a personal guide, live marimba musicians, and a floating breakfast spread of traditional Mexican delicacies.",
+          "afternoon": "Visit the nearby Frida Kahlo Museum (La Casa Azul) in Coyoac\u00e1n with a private guided tour that bypasses public queues. Explore the cobblestone streets of Coyoac\u00e1n, one of Mexico City's most charming neighborhoods. Browse artisan markets and visit the Le\u00f3n Trotsky Museum for a deeper dive into Mexico's fascinating political history.",
+          "evening": "Return to the Polanco district \u2014 Mexico City's most upscale neighborhood. Enjoy cocktails at a chic rooftop bar such as Terraza Cha Cha Ch\u00e1, then dine at Quintonil, another globally acclaimed restaurant by Chef Jorge Vallejo, known for its innovative take on Mexican ingredients and biodiversity.",
+          "meals": {
+            "breakfast": "Floating breakfast on the trajinera in Xochimilco \u2014 fresh fruit, tamales, pan dulce, caf\u00e9 de olla, and fresh-squeezed juices",
+            "lunch": "La Bipolar or Merendero Las Lupitas in Coyoac\u00e1n \u2014 authentic local eateries with exceptional traditional Mexican dishes in a charming neighborhood setting",
+            "dinner": "Quintonil \u2014 chef's tasting menu celebrating Mexican biodiversity and seasonal ingredients; budget approximately $120\u2013$180 USD per person"
+          },
+          "notes": "Book Frida Kahlo Museum tickets well in advance as they sell out quickly. The private trajinera experience should be arranged through a luxury tour operator or the hotel concierge to ensure exclusivity and quality. Coyoac\u00e1n is best explored on foot."
+        },
+        {
+          "day": 4,
+          "date": "2027-03-04",
+          "morning": "Early private transfer to Teotihuac\u00e1n, the ancient Mesoamerican city of pyramids, approximately 50 km from Mexico City. Enjoy an exclusive sunrise tour of the Pyramid of the Sun and Pyramid of the Moon with a private archaeologist guide \u2014 arriving before the public crowds for a truly magical experience. Optional hot air balloon ride over the pyramids at dawn for breathtaking aerial views.",
+          "afternoon": "Return to Mexico City and spend the afternoon exploring the upscale Polanco and Lomas de Chapultepec neighborhoods. Visit the world-class Museo Nacional de Antropolog\u00eda (National Museum of Anthropology) in Chapultepec Park \u2014 one of the greatest archaeology museums in the world \u2014 with a private guided tour. Stroll through the vast Bosque de Chapultepec (Chapultepec Forest).",
+          "evening": "Indulge in a premium mezcal and tequila tasting experience at a curated mezcaler\u00eda such as La Botica or B\u00f3sforo, guided by a certified spirits sommelier. Follow with dinner at Dulce Patria, Chef Martha Ortiz's vibrant restaurant celebrating Mexican femininity, culture, and cuisine with theatrical flair.",
+          "meals": {
+            "breakfast": "Early light breakfast box prepared by the hotel \u2014 artisan pastries, fruit, and thermos coffee for the Teotihuac\u00e1n sunrise tour",
+            "lunch": "La Gruta \u2014 a remarkable restaurant set inside a natural cave near Teotihuac\u00e1n, serving traditional Mexican cuisine in an extraordinary underground setting",
+            "dinner": "Dulce Patria in Polanco \u2014 innovative Mexican cuisine with artistic presentation; budget approximately $100\u2013$150 USD per person"
+          },
+          "notes": "The hot air balloon over Teotihuac\u00e1n (operated by Globos Aeroestaci\u00f3n) should be booked in advance and is weather-dependent. Depart by 5:00\u20135:30 AM for the sunrise experience. Wear layered clothing as early morning temperatures at the pyramids can be cool."
+        },
+        {
+          "day": 5,
+          "date": "2027-03-05",
+          "morning": "Begin the final morning with a private Mexican cooking class led by a celebrated local chef. Learn to prepare traditional dishes such as mole, tamales, and salsas using fresh market ingredients. Start with a guided tour of a local mercado (such as Mercado de Medell\u00edn) to source ingredients and experience authentic neighborhood life.",
+          "afternoon": "Visit the Museo Soumaya in Polanco \u2014 a stunning privately owned museum housing one of Latin America's largest art collections, including works by Rodin, Dal\u00ed, and Picasso. Explore the adjacent Museo Jumex for cutting-edge contemporary art. Spend remaining afternoon hours shopping along Presidente Masaryk Avenue \u2014 Mexico City's equivalent of the Champs-\u00c9lys\u00e9es \u2014 featuring luxury boutiques and designer stores.",
+          "evening": "Farewell dinner at Contramar, an iconic Mexico City seafood institution beloved by locals and food critics alike. Savor the legendary tuna tostadas and signature red-and-green grilled fish. End the evening with after-dinner drinks and live jazz at a sophisticated bar such as Maison Artemisia or Patrick Miller for a memorable final night in the city.",
+          "meals": {
+            "breakfast": "Breakfast at the cooking class's market tour \u2014 fresh-squeezed juices, tamales, and local street food tastings at Mercado de Medell\u00edn",
+            "lunch": "Dishes prepared during the private cooking class \u2014 enjoy the fruits of your culinary labor with wine pairings",
+            "dinner": "Contramar \u2014 legendary Mexico City seafood restaurant; iconic, vibrant, and beloved; budget approximately $80\u2013$120 USD per person"
+          },
+          "notes": "Confirm departure details with the hotel concierge and arrange a private luxury transfer to the airport if departing the following day. The cooking class should be booked through a premium culinary experience provider such as Eat Mexico or a hotel-recommended chef. Museo Soumaya is free to enter \u2014 a rare luxury in itself."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=None+to+Mexico City+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Mexico City&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "4.3\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$470 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Mexico City food and culture, $900 solo, 5 days, any month 2026",
+  "session_tags": {
+    "query_id": "SYN-19",
+    "condition": "broadcast",
+    "run_index": 5
+  }
+}

@@ -1,0 +1,857 @@
+{
+  "session_id": "165e3616-ddfd-4806-8afa-24a5f6286e57",
+  "intent": {
+    "destination": "Tokyo",
+    "origin": "SFO",
+    "budget_usd": 3000.0,
+    "duration_days": null,
+    "travel_month": "April",
+    "travel_year": 2026,
+    "interests": [
+      "local food",
+      "tech culture"
+    ],
+    "group_size": 2,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Tokyo city break, $3000 for couple, food and tech culture, April 2026 from SFO"
+  },
+  "selected_flight": {
+    "price_usd": 1360,
+    "airline": "UA",
+    "departure": "2027-04-15T08:00:00",
+    "arrival": "2027-04-15T22:30:00",
+    "stops": 1,
+    "duration": "PT14H30M"
+  },
+  "selected_hotel": {
+    "name": "Aegean Bliss Resort, Tokyo",
+    "price_per_night_usd": 85,
+    "total_usd": 1105,
+    "rating": 4.3,
+    "amenities": [
+      "beach access",
+      "breakfast included",
+      "wifi",
+      "pool"
+    ],
+    "location": "Beachfront"
+  },
+  "experiences": [
+    {
+      "name": "Tsukiji Outer Market Food Tour",
+      "description": "Explore the bustling Tsukiji Outer Market, sampling fresh sushi, tamagoyaki, grilled seafood skewers, and matcha treats from legendary local vendors. Engage with vendors who have operated stalls for generations and discover the true heart of Tokyo's food culture.",
+      "cost_usd": 30,
+      "category": "local food",
+      "best_time_of_day": "morning",
+      "location": "Tsukiji, Chuo City"
+    },
+    {
+      "name": "Akihabara Electric Town Tech Immersion",
+      "description": "Dive deep into Tokyo's iconic tech and otaku district, exploring multi-floor electronics shops, retro game arcades, robot cafes, and cutting-edge gadget stores. Visit Yodobashi Camera and smaller indie shops to experience Japan's unparalleled consumer electronics culture firsthand.",
+      "cost_usd": 60,
+      "category": "tech culture",
+      "best_time_of_day": "afternoon",
+      "location": "Akihabara, Chiyoda City"
+    },
+    {
+      "name": "TeamLab Borderless Digital Art Museum",
+      "description": "Experience one of the world's most celebrated immersive digital art installations where technology and creativity merge. Walk through infinite light forests, interactive water worlds, and AI-driven art environments that respond to your presence, representing the pinnacle of Japan's tech-art fusion.",
+      "cost_usd": 32,
+      "category": "tech culture",
+      "best_time_of_day": "evening",
+      "location": "Azabudai Hills, Minato City"
+    },
+    {
+      "name": "Ramen Alley Crawl in Shinjuku",
+      "description": "Navigate the narrow, atmospheric lanes of Shinjuku's Omoide Yokocho and nearby ramen shops to taste regional ramen styles including tonkotsu, shoyu, and miso broths. Chat with local chefs, slurp noodles at tiny counter seats, and experience the authentic izakaya dining culture Tokyo is famous for.",
+      "cost_usd": 40,
+      "category": "local food",
+      "best_time_of_day": "night",
+      "location": "Omoide Yokocho, Shinjuku"
+    },
+    {
+      "name": "Odaiba Futuristic Waterfront & Toyota Mega Web",
+      "description": "Spend a day on Tokyo's artificial island exploring the futuristic architecture, the National Museum of Emerging Science and Innovation (Miraikan), and the Toyota Mega Web showroom featuring concept cars and driving simulators. The waterfront offers stunning views of the Rainbow Bridge and Tokyo skyline.",
+      "cost_usd": 20,
+      "category": "tech culture",
+      "best_time_of_day": "afternoon",
+      "location": "Odaiba, Minato City"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-04-15",
+    "return": "2027-04-28",
+    "nights": 13,
+    "month": "april",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Tokyo",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 2890.0,
+      "flight": {
+        "price_usd": 1360,
+        "airline": "UA",
+        "departure": "2027-04-15T08:00:00",
+        "arrival": "2027-04-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Tokyo",
+        "price_per_night_usd": 85,
+        "total_usd": 1105,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "Tokyo",
+        "style": "budget",
+        "total_cost": 2890.0,
+        "breakdown": {
+          "flight": 1360.0,
+          "hotel": 1105.0,
+          "experiences": 0,
+          "food": 325,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-04-15",
+          "morning": "No morning activities \u2014 flight arrives at 22:30",
+          "afternoon": "No afternoon activities \u2014 flight arrives at 22:30",
+          "evening": "Arrive at Haneda or Narita Airport at 22:30. Clear customs and immigration, pick up a prepaid IC card (Suica or Pasmo) at the airport for cheap train travel. Take the airport express train to your hotel area. Check in to Aegean Bliss Resort. Do a quick convenience store run at a nearby 7-Eleven or FamilyMart for late-night snacks and essentials.",
+          "meals": {
+            "breakfast": "N/A \u2014 in transit",
+            "lunch": "N/A \u2014 in transit",
+            "dinner": "Late-night convenience store meal (onigiri, instant ramen, sandwiches) \u2014 budget approx \u00a5500\u2013\u00a5800"
+          },
+          "notes": "Grab a free city map at the airport tourist info desk. Download Google Maps offline for Tokyo. Exchange a small amount of cash as many budget spots are cash-only. Rest well \u2014 big days ahead!"
+        },
+        {
+          "day": 2,
+          "date": "2027-04-16",
+          "morning": "Recover from jet lag with a slow morning. Walk around your hotel neighborhood to get oriented. Find a local kissaten (old-school Japanese coffee shop) for a classic morning set \u2014 coffee plus toast and egg for under \u00a5600. Head to nearby Odaiba waterfront (if hotel is beachfront-adjacent) for a free morning walk with views of Rainbow Bridge and Tokyo Bay.",
+          "afternoon": "Take the Yurikamome line or bus to Akihabara \u2014 Tokyo's legendary tech and electronics district. Browse multi-floor electronics stores like Yodobashi Camera and Akihabara Radio Kaikan for the latest gadgets, retro tech, and components. Window-shop and explore the dense side streets filled with anime, manga, and tech culture. Entry to most shops is free.",
+          "evening": "Stay in Akihabara for dinner. Try a budget ramen shop or a standing sushi bar (kaitenzushi conveyor belt sushi) for an affordable and authentic meal. Explore the glowing neon streets of Akihabara at night \u2014 a quintessential Tokyo tech-culture experience.",
+          "meals": {
+            "breakfast": "Kissaten morning set (coffee + toast + egg) \u2014 \u00a5500\u2013\u00a5700",
+            "lunch": "Convenience store bento or cheap teishoku set meal near Akihabara \u2014 \u00a5600\u2013\u00a5900",
+            "dinner": "Kaitenzushi (conveyor belt sushi) in Akihabara \u2014 \u00a51,000\u2013\u00a51,500"
+          },
+          "notes": "Akihabara is best explored on foot. Many shops open around 10\u201311am. Look for multi-floor maid cafes and retro game shops for free browsing. Keep receipts \u2014 some electronics stores offer tax-free shopping for tourists."
+        },
+        {
+          "day": 3,
+          "date": "2027-04-17",
+          "morning": "Head to Tsukiji Outer Market (free entry) \u2014 the world-famous fish market area. Arrive by 8\u20139am for the freshest experience. Browse stalls selling fresh seafood, tamagoyaki (sweet egg omelette), and street snacks. This is a must for local food lovers. Try a fresh tuna sashimi breakfast bowl (kaisendon) from one of the market stalls.",
+          "afternoon": "Walk or take a short bus to Hamarikyu Gardens (\u00a5300 entry) \u2014 a stunning traditional Japanese garden with a tidal pond right in the middle of the city. Afterward, cross over to Shiodome and browse the free Panasonic Shiodome Museum or simply walk the futuristic Shiodome media district to soak in Tokyo's tech-meets-architecture vibe.",
+          "evening": "Head to Shimbashi for dinner \u2014 a neighborhood packed with izakayas (Japanese gastropubs) popular with Tokyo salarymen. Order yakitori skewers, edamame, and draft beer at a standing izakaya for a very local, very affordable experience. The smoky alleyways here are iconic Tokyo.",
+          "meals": {
+            "breakfast": "Fresh seafood bowl or tamagoyaki at Tsukiji Outer Market \u2014 \u00a5800\u2013\u00a51,200",
+            "lunch": "Soba noodles at a local Shiodome noodle shop \u2014 \u00a5700\u2013\u00a5900",
+            "dinner": "Standing izakaya in Shimbashi \u2014 \u00a51,200\u2013\u00a51,800 including drinks"
+          },
+          "notes": "Tsukiji Outer Market is busiest and most vibrant in the early morning. Hamarikyu is especially beautiful in spring with cherry blossoms or spring flowers. Bring cash for market stalls."
+        },
+        {
+          "day": 4,
+          "date": "2027-04-18",
+          "morning": "Take the train to Asakusa \u2014 Tokyo's most traditional neighborhood. Visit Senso-ji Temple (free entry) early morning before crowds arrive. Walk the Nakamise-dori shopping street for traditional snacks like ningyo-yaki (small cakes) and ningyoyaki. Explore the back streets of Asakusa for artisan craft shops and old Tokyo atmosphere.",
+          "afternoon": "Walk along the Sumida River toward the Tokyo Skytree area. Skip the expensive observatory (\u00a52,100+) and instead enjoy free views from the base plaza and surrounding shopping complex Solamachi. Browse the tech and lifestyle shops inside Solamachi for free. Cross the river and explore the free Edo-Tokyo Museum exterior or nearby Ryogoku area (sumo district).",
+          "evening": "Return to Asakusa for dinner. Try a tempura teishoku set at a local tempura restaurant or grab a budget yakitori dinner at a small local grill. Walk the illuminated Nakamise street and Senso-ji at night \u2014 magical and free.",
+          "meals": {
+            "breakfast": "Traditional Japanese breakfast at a local Asakusa cafe or onigiri from convenience store \u2014 \u00a5400\u2013\u00a5700",
+            "lunch": "Ramen at a local Asakusa ramen shop \u2014 \u00a5800\u2013\u00a51,000",
+            "dinner": "Tempura teishoku set meal in Asakusa \u2014 \u00a5900\u2013\u00a51,300"
+          },
+          "notes": "Senso-ji is most atmospheric at dawn or dusk with far fewer tourists. The Nakamise street snacks make excellent cheap souvenirs. Asakusa is very walkable \u2014 wear comfortable shoes."
+        },
+        {
+          "day": 5,
+          "date": "2027-04-19",
+          "morning": "Take the train to Shibuya. Start with the famous Shibuya Scramble Crossing \u2014 watch the organized chaos from street level (free). Visit the Hachiko statue for a photo. Head up to the free Shibuya Sky observation deck alternative \u2014 the rooftop of Mag's Park (Shibuya 109-2 area) or simply enjoy free views from the Starbucks overlooking the crossing (buy a \u00a5500 drink for a window seat).",
+          "afternoon": "Explore Shibuya's tech and youth culture: browse Loft (lifestyle and stationery store), Tower Records (free browsing), and the many electronics and gadget shops along Shibuya's back streets. Head to nearby Daikanyama for a relaxed walk through one of Tokyo's trendiest low-key neighborhoods \u2014 the T-Site Tsutaya bookstore complex is free to browse and stunning.",
+          "evening": "Walk from Daikanyama to Nakameguro along the Meguro River. This canal-lined neighborhood is perfect for an evening stroll. Grab a cheap bowl of gyudon (beef bowl) at Yoshinoya or Sukiya (\u00a5400\u2013\u00a5500) before heading back, or try a local ramen shop in Nakameguro.",
+          "meals": {
+            "breakfast": "Coffee and pastry at a local Shibuya bakery \u2014 \u00a5500\u2013\u00a5700",
+            "lunch": "Yoshinoya gyudon beef bowl in Shibuya \u2014 \u00a5400\u2013\u00a5600",
+            "dinner": "Ramen or tsukemen dipping noodles in Nakameguro \u2014 \u00a5900\u2013\u00a51,100"
+          },
+          "notes": "Shibuya Scramble is most impressive during rush hour (8\u20139am or 5\u20137pm). Daikanyama is a short 10-minute walk from Shibuya. Nakameguro is especially beautiful in spring with cherry blossoms over the canal."
+        },
+        {
+          "day": 6,
+          "date": "2027-04-20",
+          "morning": "Take the train to Harajuku. Walk through Takeshita Street (free) \u2014 Tokyo's wild youth fashion street packed with crepe shops, quirky clothing stores, and street food. Grab a famous Harajuku crepe for breakfast. Afterward, cross into the peaceful Meiji Jingu Shrine (free entry) \u2014 a forested Shinto shrine offering a complete contrast to the surrounding chaos.",
+          "afternoon": "Walk from Harajuku along Omotesando Boulevard \u2014 Tokyo's tree-lined luxury shopping avenue. Window-shop the flagship stores of major tech and design brands (Apple Store, etc.) for free. Cut into the backstreets of Ura-Harajuku (Cat Street) for independent boutiques and street food. Take the train to Shinjuku and explore the massive Yodobashi Camera electronics megastore (free browsing, 9 floors of tech).",
+          "evening": "Stay in Shinjuku for dinner. Head to Omoide Yokocho (Memory Lane) \u2014 a narrow alley packed with tiny yakitori stalls serving skewered chicken, offal, and cold beer. Extremely atmospheric and budget-friendly. Afterward, walk through the neon-lit streets of Kabukicho entertainment district for free night sightseeing.",
+          "meals": {
+            "breakfast": "Harajuku crepe (strawberry, Nutella, or matcha) \u2014 \u00a5500\u2013\u00a5700",
+            "lunch": "Cheap teishoku lunch set in Omotesando side street \u2014 \u00a5800\u2013\u00a51,000",
+            "dinner": "Yakitori skewers and beer at Omoide Yokocho, Shinjuku \u2014 \u00a51,200\u2013\u00a51,800"
+          },
+          "notes": "Meiji Jingu is free but a \u00a51,000 inner garden fee applies \u2014 skip it on a budget. Omoide Yokocho is cash-only. Shinjuku at night is one of Tokyo's most spectacular free experiences."
+        },
+        {
+          "day": 7,
+          "date": "2027-04-21",
+          "morning": "Day trip to Odaiba \u2014 Tokyo's futuristic man-made island. Take the scenic Yurikamome automated driverless train (great views, use IC card). Visit the free teamLab Digital Art Museum exterior and the free Odaiba beach area. Walk the futuristic promenade with views of Rainbow Bridge and the miniature Statue of Liberty replica.",
+          "afternoon": "Explore DiverCity Tokyo Plaza (free entry) \u2014 home to a massive life-size Unicorn Gundam statue (free, iconic tech-culture landmark). Browse the free floors of Aqua City Odaiba mall and the free Toyota Mega Web (Toyota's interactive car showroom and driving experience \u2014 free entry). Enjoy the futuristic architecture and bay views.",
+          "evening": "Head back toward central Tokyo. Stop in Ginza for a free evening walk through Japan's most upscale shopping district \u2014 window-shop the Apple Store, Sony Park (free interactive space), and the illuminated boulevards. Find a budget sushi conveyor belt restaurant (kaitenzushi) in the area for dinner.",
+          "meals": {
+            "breakfast": "Convenience store breakfast eaten on the Yurikamome train \u2014 \u00a5400\u2013\u00a5600",
+            "lunch": "Food court meal at DiverCity Tokyo or Aqua City \u2014 \u00a5700\u2013\u00a51,000",
+            "dinner": "Kaitenzushi conveyor belt sushi in Ginza \u2014 \u00a51,000\u2013\u00a51,500"
+          },
+          "notes": "The full teamLab Borderless or Planets museums cost \u00a53,200+ \u2014 skip on a budget. Toyota Mega Web is free and surprisingly fun for tech lovers. Sony Park in Ginza has free rotating tech and art installations."
+        },
+        {
+          "day": 8,
+          "date": "2027-04-22",
+          "morning": "Take the train to Ueno. Start with Ueno Park (free entry) \u2014 a massive public park home to multiple museums and shrines. Visit the free Toshogu Shrine within the park. Browse the outdoor flea market stalls often found along the park paths on weekends. Head to Ameyoko Market \u2014 a lively open-air market street packed with cheap food stalls, fresh produce, and bargain goods.",
+          "afternoon": "Visit the National Museum of Nature and Science in Ueno Park (\u00a5630 entry \u2014 one of Tokyo's best budget museum deals with incredible tech and science exhibits). Alternatively, visit the Tokyo National Museum (\u00a51,000) for Japanese cultural artifacts. After museums, head to nearby Yanaka \u2014 one of Tokyo's best-preserved old shitamachi (downtown) neighborhoods. Walk the Yanaka Ginza shotengai (shopping street) for cheap local snacks.",
+          "evening": "Explore Yanaka Cemetery at dusk (free, atmospheric, not spooky) and the surrounding temple streets. Head back toward Ueno or Nippori for a cheap donburi (rice bowl) dinner at a local family restaurant.",
+          "meals": {
+            "breakfast": "Fresh fruit and snacks from Ameyoko Market stalls \u2014 \u00a5400\u2013\u00a5600",
+            "lunch": "Cheap street food lunch in Ameyoko (takoyaki, yakitori, fresh seafood) \u2014 \u00a5600\u2013\u00a5900",
+            "dinner": "Donburi rice bowl at a local Ueno family restaurant \u2014 \u00a5700\u2013\u00a51,000"
+          },
+          "notes": "Ameyoko is busiest and most fun on weekends. Yanaka is one of the few Tokyo neighborhoods that survived WWII bombing and retains Edo-period street layouts. Great for photography."
+        },
+        {
+          "day": 9,
+          "date": "2027-04-23",
+          "morning": "Take the train to Akihabara for a second, deeper visit. This time focus on the retro tech and gaming culture: visit Super Potato (vintage video game store across multiple floors), explore the component electronics shops in the Radio Kaikan building, and browse the free floors of the Akihabara UDX tech convention center. Look for the free tech demo events often held here.",
+          "afternoon": "Head to nearby Kanda and Jimbocho \u2014 Tokyo's legendary used bookstore district. Browse hundreds of second-hand bookshops, vintage map stores, and print shops (many have English sections). This is a fascinating, free, and very local cultural experience. Walk to the nearby Kanda Myojin Shrine (free) \u2014 famously associated with IT and tech industries, many tech companies come here for blessings.",
+          "evening": "Head to Akihabara or Kanda for dinner. Try a cheap curry rice (kare raisu) at a local CoCo Ichibanya curry chain or a nearby katsu curry shop. Explore the glowing Akihabara streets one more time at night.",
+          "meals": {
+            "breakfast": "Convenience store breakfast \u2014 \u00a5400\u2013\u00a5600",
+            "lunch": "Standing soba or udon noodles near Akihabara \u2014 \u00a5500\u2013\u00a5700",
+            "dinner": "Katsu curry at a local curry shop \u2014 \u00a5800\u2013\u00a51,100"
+          },
+          "notes": "Kanda Myojin Shrine sells unique IT-themed omamori (charms) \u2014 a quirky and affordable souvenir for tech lovers (\u00a5500\u2013\u00a51,000). Jimbocho is best explored slowly \u2014 budget extra time if you love books."
+        },
+        {
+          "day": 10,
+          "date": "2027-04-24",
+          "morning": "Take the train to Shinjuku. Visit the free Tokyo Metropolitan Government Building observation deck (free, opens 9:30am) \u2014 one of the best FREE panoramic views of Tokyo including Mt. Fuji on clear days. Arrive early to avoid queues. Spend the morning enjoying the view and the free lobby exhibits about Tokyo's urban planning and tech infrastructure.",
+          "afternoon": "Explore Shinjuku Gyoen National Garden (\u00a5500 entry) \u2014 a beautiful blend of Japanese, French, and English garden styles. Perfect for a relaxed afternoon picnic. Grab cheap bento from a nearby convenience store to eat in the garden. Afterward, explore the Shinjuku underground shopping malls (free browsing) and the massive Takashimaya Times Square department store.",
+          "evening": "Head to Shimokitazawa \u2014 Tokyo's bohemian neighborhood known for vintage shops, live music venues, and indie food culture. Browse the free vintage clothing stores and record shops. Find a small local izakaya or standing bar for a cheap dinner and drinks in this very non-touristy, local atmosphere.",
+          "meals": {
+            "breakfast": "Bakery breakfast near Shinjuku station \u2014 \u00a5500\u2013\u00a5700",
+            "lunch": "Convenience store bento picnic in Shinjuku Gyoen \u2014 \u00a5500\u2013\u00a5800",
+            "dinner": "Izakaya dinner in Shimokitazawa \u2014 \u00a51,000\u2013\u00a51,500"
+          },
+          "notes": "The Metropolitan Government Building has two towers \u2014 both offer free observation. Check opening hours as one may close on certain days. Shimokitazawa is a 15-minute train ride from Shinjuku on the Odakyu or Keio Inokashira line."
+        },
+        {
+          "day": 11,
+          "date": "2027-04-25",
+          "morning": "Day trip to Kawagoe (Little Edo) \u2014 only 30\u201340 minutes from Shinjuku by train (\u00a5470 one way). Walk the beautifully preserved Kurazukuri Street with its Edo-period warehouse-style buildings (free to walk). Visit the free bell tower and explore the narrow Candy Alley (Kashiya Yokocho) for traditional Japanese sweets and snacks.",
+          "afternoon": "Continue exploring Kawagoe. Visit Kitain Temple (\u00a5400 entry) \u2014 featuring 540 unique stone statues of Buddha's disciples. Explore the Kawagoe Hikawa Shrine (free) \u2014 famous for its wind chime tunnel and relationship charms. Browse the local sweet potato (imo) products that Kawagoe is famous for \u2014 try imo soft serve ice cream (\u00a5300\u2013\u00a5400).",
+          "evening": "Return to Tokyo by train. Head to a local neighborhood near your hotel for a relaxed dinner. Try a local tonkatsu (breaded pork cutlet) restaurant or a budget teishoku set meal. Rest up for the remaining days.",
+          "meals": {
+            "breakfast": "Convenience store breakfast before departing \u2014 \u00a5400\u2013\u00a5600",
+            "lunch": "Local Kawagoe eel (unaju) or sweet potato dishes at a casual restaurant \u2014 \u00a5900\u2013\u00a51,300",
+            "dinner": "Tonkatsu teishoku set near hotel \u2014 \u00a5900\u2013\u00a51,200"
+          },
+          "notes": "Kawagoe is best reached via the Tobu Tojo Line from Ikebukuro or Seibu Shinjuku Line. A day pass may be cost-effective if available. Kawagoe is a refreshing break from central Tokyo's intensity."
+        },
+        {
+          "day": 12,
+          "date": "2027-04-26",
+          "morning": "Head to Ikebukuro \u2014 Tokyo's underrated tech and otaku district (often overshadowed by Akihabara). Visit Sunshine City complex \u2014 a massive mall with free floors, an aquarium (skip on budget), and the free Sunshine City observatory exterior. Browse Animate (massive anime merchandise store \u2014 free to browse) and the dense electronics and manga shops of the area.",
+          "afternoon": "Explore the free Ikebukuro underground shopping arcades and the Tokyu Hands lifestyle and gadget store (free browsing). Head to nearby Sugamo \u2014 known as 'Grandma's Harajuku' \u2014 a traditional old-fashioned shopping street with cheap local food stalls, herbal medicine shops, and a very local, non-touristy vibe. Visit Koganji Temple (free) along the street.",
+          "evening": "Return to Ikebukuro for a final tech-culture dinner experience. Try one of Ikebukuro's famous ramen shops \u2014 the area is known for its diverse ramen scene including rich tonkotsu and spicy miso varieties. Do a final souvenir shopping run at the 100-yen shop (Daiso or Seria) for budget gifts.",
+          "meals": {
+            "breakfast": "Cheap bakery or convenience store near hotel \u2014 \u00a5400\u2013\u00a5600",
+            "lunch": "Street food snacks along Sugamo Jizo-dori shopping street \u2014 \u00a5500\u2013\u00a5800",
+            "dinner": "Ikebukuro specialty ramen \u2014 \u00a5900\u2013\u00a51,200"
+          },
+          "notes": "Ikebukuro's Sunshine City is free to enter and worth exploring even without paid attractions. Sugamo is one of Tokyo's most authentic local neighborhood experiences \u2014 very few tourists. 100-yen shops are excellent for cheap, quality souvenirs."
+        },
+        {
+          "day": 13,
+          "date": "2027-04-27",
+          "morning": "Final morning in Tokyo. Wake up early for a last walk around your hotel's beachfront neighborhood. Grab a final Japanese breakfast at a local kissaten or convenience store. Do any last-minute packing and souvenir buying. If time allows, visit a nearby neighborhood shrine for a quiet farewell to the city.",
+          "afternoon": "Check out of Aegean Bliss Resort. Store luggage at the hotel or at a station coin locker (\u00a5300\u2013\u00a5700). Take a final stroll through a nearby neighborhood. Head to the airport via train (Narita Express or Limousine Bus \u2014 \u00a51,000\u2013\u00a53,000 depending on airport). Allow at least 2\u20133 hours before your flight for check-in and security.",
+          "evening": "Departure. Grab a final bento or ekiben (train station bento box) from the airport or station to enjoy on your journey \u2014 a delicious, affordable last taste of Japanese food culture.",
+          "meals": {
+            "breakfast": "Final kissaten morning set or convenience store breakfast \u2014 \u00a5500\u2013\u00a5700",
+            "lunch": "Airport or station ekiben bento box \u2014 \u00a5800\u2013\u00a51,200",
+            "dinner": "In-flight or airport meal"
+          },
+          "notes": "Return your IC card (Suica/Pasmo) at the airport for a refund of remaining balance minus \u00a5220 handling fee \u2014 or keep it for a future Japan trip. Duty-free shops at Narita and Haneda are good for last-minute snack souvenirs (Kit Kat flavors, etc.). Confirm flight details the night before."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=SFO+to+Tokyo+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Tokyo&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [],
+      "highlights": [
+        "Save $-640 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Tokyo Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 3207.0,
+      "flight": {
+        "price_usd": 1360,
+        "airline": "UA",
+        "departure": "2027-04-15T08:00:00",
+        "arrival": "2027-04-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Tokyo",
+        "price_per_night_usd": 85,
+        "total_usd": 1105,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [
+        {
+          "name": "Tsukiji Outer Market Food Tour",
+          "description": "Explore the bustling Tsukiji Outer Market, sampling fresh sushi, tamagoyaki, grilled seafood skewers, and matcha treats from legendary local vendors. Engage with vendors who have operated stalls for generations and discover the true heart of Tokyo's food culture.",
+          "cost_usd": 30,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Tsukiji, Chuo City"
+        },
+        {
+          "name": "Akihabara Electric Town Tech Immersion",
+          "description": "Dive deep into Tokyo's iconic tech and otaku district, exploring multi-floor electronics shops, retro game arcades, robot cafes, and cutting-edge gadget stores. Visit Yodobashi Camera and smaller indie shops to experience Japan's unparalleled consumer electronics culture firsthand.",
+          "cost_usd": 60,
+          "category": "tech culture",
+          "best_time_of_day": "afternoon",
+          "location": "Akihabara, Chiyoda City"
+        },
+        {
+          "name": "TeamLab Borderless Digital Art Museum",
+          "description": "Experience one of the world's most celebrated immersive digital art installations where technology and creativity merge. Walk through infinite light forests, interactive water worlds, and AI-driven art environments that respond to your presence, representing the pinnacle of Japan's tech-art fusion.",
+          "cost_usd": 32,
+          "category": "tech culture",
+          "best_time_of_day": "evening",
+          "location": "Azabudai Hills, Minato City"
+        }
+      ],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "Tokyo",
+        "style": "balanced",
+        "total_cost": 3207.0,
+        "breakdown": {
+          "flight": 1360.0,
+          "hotel": 1105.0,
+          "experiences": 122.0,
+          "food": 520,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-04-15 (Thursday)",
+          "morning": "N/A - In transit (Flight UA arriving 22:30)",
+          "afternoon": "N/A - In transit",
+          "evening": "Arrive at Narita/Haneda Airport at 22:30. Clear customs and immigration, collect luggage, and take the airport limousine bus or Narita Express to central Tokyo. Check in to Aegean Bliss Resort. Grab a light convenience store snack from nearby 7-Eleven or FamilyMart to unwind.",
+          "meals": {
+            "breakfast": "On the plane",
+            "lunch": "On the plane",
+            "dinner": "Late-night convenience store (konbini) snacks \u2014 onigiri, sandwiches, and hot drinks from 7-Eleven or Lawson near the hotel (budget-friendly, ~\u00a5500\u2013\u00a5800)"
+          },
+          "notes": "Day 1 is arrival only. Keep the evening completely free for transit and check-in. Confirm hotel check-in time in advance as arrival is late at 22:30. Purchase a Suica or Pasmo IC card at the airport for seamless train and bus travel throughout the trip."
+        },
+        {
+          "day": 2,
+          "date": "2027-04-16 (Friday)",
+          "morning": "Gentle recovery morning \u2014 sleep in and enjoy a slow start. Head to a local kissaten (traditional Japanese coffee shop) near the hotel for a morning set (coffee + toast + egg). Explore the immediate neighborhood on foot to get your bearings.",
+          "afternoon": "Visit Ueno Park for a leisurely stroll. In mid-April, late cherry blossoms may still be visible. Explore Ueno's Ameyoko Market street for local snacks and souvenirs. Browse stalls selling dried goods, street food, and budget fashion.",
+          "evening": "Head to Asakusa for your first proper Tokyo evening. Visit Senso-ji Temple illuminated at night, stroll Nakamise Shopping Street, and enjoy the atmospheric old-town vibe of Tokyo's most historic district.",
+          "meals": {
+            "breakfast": "Kissaten morning set near hotel \u2014 coffee, buttered toast, and boiled egg (~\u00a5600\u2013\u00a5900)",
+            "lunch": "Ameyoko Market street food \u2014 yakitori skewers, takoyaki, and fresh fruit (~\u00a5800\u2013\u00a51,200)",
+            "dinner": "Asakusa ramen or tempura restaurant \u2014 try Asakusa Mugimaru for hearty ramen or Daikokuya for traditional tempura donburi (~\u00a51,200\u2013\u00a51,800)"
+          },
+          "notes": "Keep this day relaxed to recover from jet lag. Avoid overloading the schedule. Asakusa is very walkable and close to Ueno, making it ideal for a low-effort but rewarding first full day."
+        },
+        {
+          "day": 3,
+          "date": "2027-04-17 (Saturday)",
+          "morning": "Tsukiji Outer Market Food Tour \u2014 Arrive at Tsukiji Outer Market by 8:00 AM to beat the crowds. Sample fresh sushi at a standing sushi bar, tamagoyaki (sweet rolled egg omelet) from Tsukuji Yamagishi, grilled seafood skewers, and fresh oysters. This is one of Tokyo's premier food experiences.",
+          "afternoon": "Walk or take a short taxi to Ginza for window shopping and people-watching along one of Asia's most glamorous boulevards. Visit the Itoya stationery flagship store (9 floors of beautiful Japanese stationery and design goods). Explore the Sony Park or Uniqlo flagship for a taste of Japanese retail culture.",
+          "evening": "Return to Tsukiji area or head to nearby Shimbashi for an izakaya dinner experience \u2014 a quintessential Japanese pub-style dining with small plates, grilled skewers, and cold beer.",
+          "meals": {
+            "breakfast": "Tsukiji Outer Market food tour \u2014 fresh sushi, tamagoyaki, grilled scallops, and tamago onigiri (~\u00a51,500\u2013\u00a52,500 total grazing)",
+            "lunch": "Ginza lunch set at a mid-range Japanese restaurant \u2014 many offer affordable teishoku (set meals) at lunch (~\u00a51,000\u2013\u00a51,500)",
+            "dinner": "Shimbashi izakaya \u2014 order yakitori, edamame, karaage, and cold Sapporo draft beer (~\u00a52,000\u2013\u00a53,000 per person)"
+          },
+          "notes": "Tsukiji Outer Market is busiest on weekends \u2014 arrive early (7:30\u20138:00 AM) to get the freshest items and avoid long queues. The inner wholesale market has moved to Toyosu, but the outer market remains a world-class food destination. Wear comfortable walking shoes."
+        },
+        {
+          "day": 4,
+          "date": "2027-04-18 (Sunday)",
+          "morning": "Akihabara Electric Town Tech Immersion \u2014 Spend the morning exploring Tokyo's legendary electronics and otaku district. Start with Yodobashi Camera's massive multi-floor electronics superstore, then dive into retro game shops, anime figure stores, and maid caf\u00e9s. Visit Radio Kaikan for niche tech components and collectibles.",
+          "afternoon": "Continue Akihabara exploration \u2014 visit Super Potato for retro video games, browse Kotobukiya for high-end collectible figures, and check out the latest gadgets at Sofmap. Optionally visit the Akihabara UDX building's tech showcases or a maid caf\u00e9 for a uniquely Tokyo cultural experience.",
+          "evening": "Head to nearby Kanda or Ochanomizu for dinner. Explore the bookshop district of Jimbocho on foot before settling into a local restaurant for the evening.",
+          "meals": {
+            "breakfast": "Hotel breakfast or nearby caf\u00e9 \u2014 coffee and a morning pastry (~\u00a5500\u2013\u00a5800)",
+            "lunch": "Akihabara lunch \u2014 try a curry rice restaurant or ramen shop in the district, many offer excellent value lunch sets (~\u00a5900\u2013\u00a51,300)",
+            "dinner": "Kanda or Ochanomizu izakaya or Japanese curry house \u2014 try CoCo Ichibanya for customizable Japanese curry (~\u00a51,200\u2013\u00a51,800)"
+          },
+          "notes": "Akihabara is at its most vibrant on weekends with street performers and cosplayers near the main crossing. Budget extra time if you plan to shop \u2014 it is easy to spend 4\u20135 hours here. Many shops open around 10:00\u201311:00 AM on Sundays."
+        },
+        {
+          "day": 5,
+          "date": "2027-04-19 (Monday)",
+          "morning": "Visit TeamLab Borderless Digital Art Museum \u2014 Book tickets in advance online (essential, as it sells out weeks ahead). Arrive at opening time for the best experience. Spend 2\u20133 hours immersed in the boundary-dissolving digital art installations where technology and nature merge into stunning interactive environments.",
+          "afternoon": "After TeamLab, explore the Odaiba waterfront area. Visit DiverCity Tokyo Plaza and see the life-size Gundam statue outside. Browse the futuristic mall and enjoy views of Rainbow Bridge and the Tokyo skyline across the bay.",
+          "evening": "Stay in Odaiba for a sunset dinner with bay views. The waterfront area has numerous restaurants ranging from ramen to teppanyaki. Watch the Rainbow Bridge light up at dusk from the waterfront promenade.",
+          "meals": {
+            "breakfast": "Convenience store or hotel \u2014 onigiri, yogurt, and coffee (~\u00a5400\u2013\u00a5700)",
+            "lunch": "Odaiba food court or Aqua City mall restaurants \u2014 varied options including sushi conveyor belt (kaiten-zushi) at Sushi no Musashi (~\u00a51,200\u2013\u00a52,000)",
+            "dinner": "Odaiba waterfront restaurant \u2014 try Tableaux or a mid-range teppanyaki restaurant with bay views (~\u00a52,500\u2013\u00a54,000)"
+          },
+          "notes": "TeamLab Borderless tickets must be booked online well in advance \u2014 check the official teamLab website. The experience is best enjoyed without rush. Wear comfortable, preferably dark-colored clothing as the installations are more immersive. Allow at least 2.5\u20133 hours inside."
+        },
+        {
+          "day": 6,
+          "date": "2027-04-20 (Tuesday)",
+          "morning": "Explore Harajuku \u2014 Start at Meiji Jingu Shrine for a peaceful morning in the forested grounds. Experience the contrast between the serene shrine and the vibrant youth culture just outside. Walk through Yoyogi Park if cherry blossoms are still lingering.",
+          "afternoon": "Stroll down Takeshita Street for quirky Harajuku fashion and crepes, then transition to the more upscale Omotesando Avenue. Browse concept stores, Japanese designer boutiques, and the architecturally stunning Prada and Dior buildings. Visit Omotesando Hills mall.",
+          "evening": "Head to Shibuya for the iconic Shibuya Scramble Crossing experience. Visit the Shibuya Sky observation deck for panoramic night views of Tokyo. Explore the vibrant nightlife streets of Shibuya for dinner.",
+          "meals": {
+            "breakfast": "Harajuku caf\u00e9 \u2014 try a Japanese fruit sandwich (fruit sando) from a local bakery near the station (~\u00a5600\u2013\u00a5900)",
+            "lunch": "Omotesando \u2014 mid-range lunch at a Japanese caf\u00e9 or try Afuri ramen for yuzu-flavored light ramen (~\u00a51,200\u2013\u00a51,800)",
+            "dinner": "Shibuya \u2014 visit Ichiran Ramen for the famous solo-booth tonkotsu ramen experience, or explore the restaurant floors of Shibuya Hikarie (~\u00a51,500\u2013\u00a52,500)"
+          },
+          "notes": "Shibuya Sky tickets can be booked online in advance for a small discount. The scramble crossing is most spectacular at night with neon lights. Meiji Shrine is free to enter \u2014 the inner garden (Gyoen) has a small fee. Takeshita Street gets very crowded on weekday afternoons."
+        },
+        {
+          "day": 7,
+          "date": "2027-04-21 (Wednesday)",
+          "morning": "Day trip to Nikko \u2014 Take the Tobu Nikko Line from Asakusa for a scenic 2-hour journey to Nikko. Explore the UNESCO World Heritage Toshogu Shrine complex, a breathtaking collection of ornately decorated shrines and mausoleums set in cedar forest.",
+          "afternoon": "Continue exploring Nikko \u2014 visit Rinnoji Temple, Futarasan Shrine, and walk the atmospheric cedar-lined paths. If time allows, take a short bus ride to Kegon Falls, one of Japan's most spectacular waterfalls.",
+          "evening": "Return to Tokyo by late afternoon/early evening (approximately 2-hour return journey). Have a relaxed dinner near the hotel or in Asakusa.",
+          "meals": {
+            "breakfast": "Early convenience store breakfast before departing (~\u00a5400\u2013\u00a5700)",
+            "lunch": "Nikko local restaurant \u2014 try yuba (tofu skin) cuisine, a Nikko specialty, at a restaurant near the shrine complex (~\u00a51,500\u2013\u00a52,500)",
+            "dinner": "Asakusa neighborhood restaurant \u2014 try monjayaki (Tokyo-style savory pancake) at a local restaurant (~\u00a51,500\u2013\u00a52,000)"
+          },
+          "notes": "Purchase a Tobu Nikko All Area Pass for cost-effective travel to and around Nikko. Start early (depart by 7:30\u20138:00 AM) to maximize time at the sites. Nikko involves significant walking and stair climbing \u2014 wear sturdy shoes. The Toshogu Shrine entry fee is approximately \u00a51,300."
+        },
+        {
+          "day": 8,
+          "date": "2027-04-22 (Thursday)",
+          "morning": "Explore Shinjuku \u2014 Start with a morning visit to Shinjuku Gyoen National Garden, one of Tokyo's most beautiful parks and a top cherry blossom spot (late blooms possible in mid-April). Enjoy a peaceful stroll through the Japanese, French, and English garden sections.",
+          "afternoon": "Explore East Shinjuku \u2014 visit Kabukicho entertainment district during the day to see the famous Robot Restaurant area and Godzilla head atop Shinjuku Toho Cinema. Browse Isetan department store's basement food hall (depachika) for an incredible array of Japanese delicacies and sweets.",
+          "evening": "Experience Omoide Yokocho (Memory Lane) \u2014 a narrow alley of tiny yakitori stalls near Shinjuku Station West Exit. Squeeze into a tiny stall for grilled chicken skewers, smoky atmosphere, and cold beer in one of Tokyo's most atmospheric dining spots.",
+          "meals": {
+            "breakfast": "Shinjuku caf\u00e9 or bakery near the garden \u2014 coffee and a croissant or Japanese pastry (~\u00a5700\u2013\u00a51,000)",
+            "lunch": "Isetan depachika basement \u2014 assemble a beautiful bento box or buy premium onigiri and Japanese sweets (~\u00a51,200\u2013\u00a52,000)",
+            "dinner": "Omoide Yokocho (Memory Lane) \u2014 yakitori skewers, offal, and cold beer at a tiny atmospheric stall (~\u00a52,000\u2013\u00a53,000)"
+          },
+          "notes": "Shinjuku Gyoen has a small entry fee (\u00a5500). Alcohol is not permitted in the garden. Omoide Yokocho stalls are small and cash-only \u2014 bring yen. The alley is most atmospheric after dark from around 7:00 PM. Shinjuku is one of Tokyo's busiest areas \u2014 keep belongings secure."
+        },
+        {
+          "day": 9,
+          "date": "2027-04-23 (Friday)",
+          "morning": "Visit the teamLab Planets (Toyosu) \u2014 a different and equally stunning teamLab installation focused on bodily immersion (you walk through water and light). Book tickets online in advance. The experience takes approximately 1.5\u20132 hours.",
+          "afternoon": "Explore Toyosu Market \u2014 the modern replacement for the Tsukiji wholesale market. Book a viewing spot in advance to watch the famous tuna auction (requires early morning reservation, but afternoon tours of the facility are available). Browse the market building's restaurants for fresh seafood.",
+          "evening": "Head to Roppongi for the evening \u2014 visit Mori Art Museum (open late on Fridays) for contemporary art with stunning Tokyo Tower views from the 52nd floor observation deck. Explore Roppongi Hills complex.",
+          "meals": {
+            "breakfast": "Hotel or nearby caf\u00e9 (~\u00a5600\u2013\u00a5900)",
+            "lunch": "Toyosu Market restaurant floor \u2014 fresh sashimi don (rice bowl with raw fish) at one of the market's acclaimed seafood restaurants (~\u00a52,000\u2013\u00a53,500)",
+            "dinner": "Roppongi mid-range restaurant \u2014 try a Japanese-French fusion bistro or a reliable izakaya in the Roppongi Hills complex (~\u00a52,500\u2013\u00a54,000)"
+          },
+          "notes": "teamLab Planets is a different experience from Borderless \u2014 both are worth visiting. Bring a change of clothes or be prepared to roll up trousers as you walk through shallow water installations. Lockers and towels are provided. Mori Art Museum is open until 22:00 on Fridays."
+        },
+        {
+          "day": 10,
+          "date": "2027-04-24 (Saturday)",
+          "morning": "Explore Yanaka \u2014 one of Tokyo's best-preserved historic neighborhoods that survived WWII bombing. Stroll through Yanaka Cemetery (beautiful and peaceful, especially with late cherry blossoms), browse the old-fashioned shotengai (shopping street) of Yanaka Ginza, and visit artisan workshops and local galleries.",
+          "afternoon": "Continue to Nezu Shrine \u2014 a lesser-known gem with hundreds of torii gates (similar to Kyoto's Fushimi Inari but far less crowded). The shrine is particularly beautiful in spring. Then walk through Nezu and Bunkyo neighborhoods to explore Tokyo's intellectual and literary heritage.",
+          "evening": "Head to Koenji or Shimokitazawa for a bohemian evening \u2014 these neighborhoods are beloved by locals for their vintage shops, live music venues, and independent restaurants. Experience a more authentic, non-touristy side of Tokyo.",
+          "meals": {
+            "breakfast": "Yanaka bakery or caf\u00e9 \u2014 try a local specialty melon pan or coffee at a charming old-style caf\u00e9 (~\u00a5600\u2013\u00a5900)",
+            "lunch": "Yanaka Ginza street food \u2014 menchi katsu (breaded minced meat cutlet), croquettes, and local snacks from market stalls (~\u00a5800\u2013\u00a51,200)",
+            "dinner": "Shimokitazawa local restaurant \u2014 excellent value at independent restaurants; try a Thai or Indian restaurant (Shimokitazawa has great ethnic food) or a local izakaya (~\u00a51,500\u2013\u00a52,500)"
+          },
+          "notes": "Yanaka and Nezu are best explored on foot \u2014 wear comfortable shoes. The neighborhood has excellent photo opportunities and a rare glimpse into pre-modern Tokyo architecture. Shimokitazawa is about 30 minutes from Yanaka by train \u2014 take the Chiyoda Line to Yoyogi-Uehara, then transfer."
+        },
+        {
+          "day": 11,
+          "date": "2027-04-25 (Sunday)",
+          "morning": "Day trip to Kamakura \u2014 Take the JR Yokosuka Line from Shimbashi (approximately 1 hour). Visit the Great Buddha (Kotoku-in Daibutsu), a 13-meter bronze Buddha statue dating from 1252. Explore Hase-dera Temple with its beautiful hillside gardens and sea views.",
+          "afternoon": "Continue exploring Kamakura \u2014 hike the Daibutsu Hiking Trail through bamboo groves and past smaller shrines, or visit Tsurugaoka Hachimangu Shrine, Kamakura's most important shrine. Browse the charming Komachi-dori shopping street for local crafts and snacks.",
+          "evening": "Return to Tokyo by early evening. Have a relaxed dinner near the hotel \u2014 perhaps try a neighborhood soba restaurant for a traditional and comforting meal.",
+          "meals": {
+            "breakfast": "Early convenience store or onigiri before departing Tokyo (~\u00a5400\u2013\u00a5700)",
+            "lunch": "Kamakura \u2014 try shirasu (whitebait) rice bowl, a local specialty, at a restaurant near Hase Station (~\u00a51,200\u2013\u00a52,000)",
+            "dinner": "Local soba restaurant near hotel \u2014 cold or hot soba with tempura set meal (~\u00a51,200\u2013\u00a51,800)"
+          },
+          "notes": "The JR Pass covers travel to Kamakura. Depart Tokyo by 8:00\u20138:30 AM to have a full day. Kamakura is hilly \u2014 wear comfortable walking shoes. The Daibutsu Hiking Trail takes approximately 1.5 hours and offers stunning views but can be muddy after rain. Kamakura is very popular on weekends \u2014 arrive early."
+        },
+        {
+          "day": 12,
+          "date": "2027-04-26 (Monday)",
+          "morning": "Explore Kagurazaka \u2014 Tokyo's former geisha district with a strong French influence. Stroll the charming stone-paved Hyogo Yokocho alley, browse boutique shops, and visit local temples. The neighborhood has a wonderful blend of Japanese tradition and European caf\u00e9 culture.",
+          "afternoon": "Visit the National Museum of Emerging Science and Innovation (Miraikan) on Odaiba \u2014 a world-class science and technology museum showcasing robotics, space exploration, AI, and future technologies. Perfect for tech culture enthusiasts. Allow 2\u20133 hours.",
+          "evening": "Final evening splurge \u2014 visit the Tokyo Skytree observation deck (634 meters, the world's tallest tower) for spectacular night views of the entire Tokyo metropolitan area. Book tickets online in advance. Enjoy a farewell dinner in the Skytree Town complex.",
+          "meals": {
+            "breakfast": "Kagurazaka French bakery \u2014 Tokyo has some of Japan's best French bakeries; enjoy a croissant and caf\u00e9 au lait (~\u00a5800\u2013\u00a51,200)",
+            "lunch": "Kagurazaka restaurant \u2014 try a French-Japanese fusion lunch set or a traditional kaiseki-style bento at a local restaurant (~\u00a51,500\u2013\u00a52,500)",
+            "dinner": "Tokyo Skytree Town \u2014 mid-range Japanese restaurant in the Solamachi complex below the tower; try a sushi or tempura restaurant (~\u00a52,500\u2013\u00a54,000)"
+          },
+          "notes": "Miraikan features ASIMO robot demonstrations at scheduled times \u2014 check the daily schedule on arrival. Tokyo Skytree tickets should be booked online to avoid queues. The Tembo Deck (350m) is included in the standard ticket; the Tembo Galleria (450m) requires an additional fee. Skytree is best at night."
+        },
+        {
+          "day": 13,
+          "date": "2027-04-27 (Tuesday)",
+          "morning": "Final morning in Tokyo \u2014 Revisit a favorite neighborhood or explore any missed spots. Visit a local shotengai (covered shopping street) for last-minute souvenir shopping. Pick up Japanese food souvenirs (omiyage) such as wagashi sweets, matcha products, and regional snacks from a department store basement.",
+          "afternoon": "Return to the hotel for checkout and luggage collection. Head to the airport via Narita Express or limousine bus (allow 90\u2013120 minutes travel time depending on your flight). Do final duty-free shopping at the airport.",
+          "evening": "Departure from Tokyo. Reflect on 13 incredible days exploring the city's food culture, tech innovations, historic neighborhoods, and natural beauty.",
+          "meals": {
+            "breakfast": "Final Tokyo breakfast \u2014 splurge on a beautiful Japanese breakfast set (gohan, miso soup, grilled fish, pickles, and tamagoyaki) at a local restaurant (~\u00a51,200\u2013\u00a52,000)",
+            "lunch": "Airport lunch \u2014 Narita or Haneda airport has excellent ramen, sushi, and bento options at mid-range prices (~\u00a51,200\u2013\u00a52,000)",
+            "dinner": "On the plane"
+          },
+          "notes": "Check flight departure time carefully and plan airport transfer accordingly \u2014 allow at least 3 hours before international departure. Narita Airport is 60\u201390 minutes from central Tokyo; Haneda is 30\u201345 minutes. Confirm hotel checkout time and arrange luggage storage if needed for a final morning of exploration. Tax-free refunds can be processed at the airport."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=SFO+to+Tokyo+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Tokyo&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Tokyo",
+        "https://www.getyourguide.com/s/?q=Tokyo",
+        "https://www.getyourguide.com/s/?q=Tokyo"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.3\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "$207 over budget",
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Tokyo Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 3527.0,
+      "flight": {
+        "price_usd": 1360,
+        "airline": "UA",
+        "departure": "2027-04-15T08:00:00",
+        "arrival": "2027-04-15T22:30:00",
+        "stops": 1,
+        "duration": "PT14H30M"
+      },
+      "hotel": {
+        "name": "Aegean Bliss Resort, Tokyo",
+        "price_per_night_usd": 85,
+        "total_usd": 1105,
+        "rating": 4.3,
+        "amenities": [
+          "beach access",
+          "breakfast included",
+          "wifi",
+          "pool"
+        ],
+        "location": "Beachfront"
+      },
+      "experiences": [
+        {
+          "name": "Tsukiji Outer Market Food Tour",
+          "description": "Explore the bustling Tsukiji Outer Market, sampling fresh sushi, tamagoyaki, grilled seafood skewers, and matcha treats from legendary local vendors. Engage with vendors who have operated stalls for generations and discover the true heart of Tokyo's food culture.",
+          "cost_usd": 30,
+          "category": "local food",
+          "best_time_of_day": "morning",
+          "location": "Tsukiji, Chuo City"
+        },
+        {
+          "name": "Akihabara Electric Town Tech Immersion",
+          "description": "Dive deep into Tokyo's iconic tech and otaku district, exploring multi-floor electronics shops, retro game arcades, robot cafes, and cutting-edge gadget stores. Visit Yodobashi Camera and smaller indie shops to experience Japan's unparalleled consumer electronics culture firsthand.",
+          "cost_usd": 60,
+          "category": "tech culture",
+          "best_time_of_day": "afternoon",
+          "location": "Akihabara, Chiyoda City"
+        },
+        {
+          "name": "TeamLab Borderless Digital Art Museum",
+          "description": "Experience one of the world's most celebrated immersive digital art installations where technology and creativity merge. Walk through infinite light forests, interactive water worlds, and AI-driven art environments that respond to your presence, representing the pinnacle of Japan's tech-art fusion.",
+          "cost_usd": 32,
+          "category": "tech culture",
+          "best_time_of_day": "evening",
+          "location": "Azabudai Hills, Minato City"
+        },
+        {
+          "name": "Ramen Alley Crawl in Shinjuku",
+          "description": "Navigate the narrow, atmospheric lanes of Shinjuku's Omoide Yokocho and nearby ramen shops to taste regional ramen styles including tonkotsu, shoyu, and miso broths. Chat with local chefs, slurp noodles at tiny counter seats, and experience the authentic izakaya dining culture Tokyo is famous for.",
+          "cost_usd": 40,
+          "category": "local food",
+          "best_time_of_day": "night",
+          "location": "Omoide Yokocho, Shinjuku"
+        },
+        {
+          "name": "Odaiba Futuristic Waterfront & Toyota Mega Web",
+          "description": "Spend a day on Tokyo's artificial island exploring the futuristic architecture, the National Museum of Emerging Science and Innovation (Miraikan), and the Toyota Mega Web showroom featuring concept cars and driving simulators. The waterfront offers stunning views of the Rainbow Bridge and Tokyo skyline.",
+          "cost_usd": 20,
+          "category": "tech culture",
+          "best_time_of_day": "afternoon",
+          "location": "Odaiba, Minato City"
+        }
+      ],
+      "itinerary": {
+        "num_days": 13,
+        "destination": "Tokyo",
+        "style": "premium",
+        "total_cost": 3527.0,
+        "breakdown": {
+          "flight": 1360.0,
+          "hotel": 1105.0,
+          "experiences": 182.0,
+          "food": 780,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-04-15 (Wednesday)",
+          "morning": "N/A \u2013 In transit (Flight UA arriving at 22:30)",
+          "afternoon": "N/A \u2013 In transit",
+          "evening": "Arrive at Haneda/Narita Airport at 22:30. Clear customs and immigration, collect luggage, and arrange private luxury transfer (pre-booked limousine or black car service) to Aegean Bliss Resort, Tokyo. Check in, freshen up, and unwind in your premium suite.",
+          "meals": {
+            "breakfast": "On board flight",
+            "lunch": "On board flight",
+            "dinner": "Light late-night room service at Aegean Bliss Resort \u2013 request a curated Japanese welcome platter with sake, onigiri, and seasonal pickles to ease into Tokyo cuisine"
+          },
+          "notes": "Pre-arrange airport meet-and-greet service for seamless customs assistance. Confirm concierge has your itinerary ready for Day 2. Store valuables in the in-room safe. Jet lag tip: stay hydrated and aim for at least 6 hours of sleep before the full Day 2 schedule."
+        },
+        {
+          "day": 2,
+          "date": "2027-04-16 (Thursday)",
+          "morning": "Gentle orientation morning \u2013 enjoy a premium Japanese breakfast at the hotel, then take a leisurely stroll along the waterfront near the resort to acclimate to Tokyo's atmosphere. Visit a nearby konbini (convenience store) like Lawson or 7-Eleven for a curated snack tasting \u2013 a quintessential Tokyo tech-meets-food experience.",
+          "afternoon": "Head to Odaiba Futuristic Waterfront & Toyota Mega Web. Explore the iconic Rainbow Bridge views, the National Museum of Emerging Science and Innovation (Miraikan), and the Toyota Mega Web showcasing cutting-edge automotive technology and future mobility concepts. Ideal introduction to Tokyo's tech culture.",
+          "evening": "Dinner with a panoramic Tokyo Bay view at a high-end Odaiba restaurant. Return to the resort for a relaxing evening at the spa.",
+          "meals": {
+            "breakfast": "Full Japanese breakfast at Aegean Bliss Resort \u2013 grilled fish, miso soup, tamagoyaki, rice, and seasonal tsukemono",
+            "lunch": "Odaiba's Aqua City or DiverCity mall \u2013 visit Tableaux or a premium ramen counter for a sit-down gourmet lunch",
+            "dinner": "Tempura Kondo (reserve in advance) or Odaiba's high-end seafood restaurant with Tokyo Bay views \u2013 omakase-style tempura or premium kaiseki"
+          },
+          "notes": "Odaiba is easily accessible from the waterfront area via the Yurikamome monorail or water bus \u2013 the water bus from Hinode Pier offers a scenic premium experience. Purchase a Suica or Pasmo IC card at the hotel concierge for seamless transport throughout the trip."
+        },
+        {
+          "day": 3,
+          "date": "2027-04-17 (Friday)",
+          "morning": "Tsukiji Outer Market Food Tour \u2013 Begin early (around 8:00 AM) to experience the market at its freshest and most vibrant. Sample premium fresh sushi, hand-rolled tamagoyaki, grilled seafood skewers, uni (sea urchin), and wagyu beef nigiri. Engage with vendors and learn about Tokyo's culinary heritage with a private guide.",
+          "afternoon": "From Tsukiji, head to Ginza for a curated exploration of Tokyo's most luxurious shopping district. Visit Dover Street Market, flagship tech stores, and the iconic Itoya stationery tower. Explore the Ginza Six rooftop garden for city views.",
+          "evening": "Exclusive omakase sushi dinner in Ginza \u2013 one of the world's finest sushi experiences.",
+          "meals": {
+            "breakfast": "Tsukiji Outer Market itself \u2013 fresh uni, otoro sushi, tamagoyaki, and matcha from market stalls (this IS the morning activity and meal combined)",
+            "lunch": "Sushi Saito (if reservation secured) or Sushi Yoshitake in Ginza \u2013 world-class nigiri omakase lunch course",
+            "dinner": "Sukiyabashi Jiro Honten or Sushi Sho \u2013 legendary omakase sushi dinner (reservations essential, book 2\u20133 months in advance via hotel concierge)"
+          },
+          "notes": "The Tsukiji Outer Market tour should be booked with a private luxury food guide for the premium experience. Wear comfortable shoes \u2013 the market involves significant walking on uneven surfaces. Ginza is a 10-minute taxi ride from Tsukiji."
+        },
+        {
+          "day": 4,
+          "date": "2027-04-18 (Saturday)",
+          "morning": "Akihabara Electric Town Tech Immersion \u2013 Dive into Tokyo's legendary electronics and otaku district. Explore multi-floor electronics megastores like Yodobashi Camera and Bic Camera. Visit retro gaming floors, anime merchandise shops, and cutting-edge gadget stores. Consider a private tech guide to unlock hidden floors and insider spots.",
+          "afternoon": "Continue in Akihabara \u2013 visit the Akihabara Radio Kaikan for rare tech collectibles, then head to the @cosme flagship store for beauty tech. Transition to nearby Ueno for a visit to the Tokyo National Museum to balance tech with cultural depth.",
+          "evening": "Head to Shinjuku for the Ramen Alley Crawl \u2013 navigate the atmospheric Omoide Yokocho (Memory Lane) and nearby premium ramen shops, tasting multiple styles including tonkotsu, shoyu, and shio ramen in the neon-lit alleyways.",
+          "meals": {
+            "breakfast": "Hotel breakfast or a premium kissaten (Japanese coffee shop) near Akihabara \u2013 Chatei Hatou or a specialty third-wave coffee spot with artisan toast and eggs",
+            "lunch": "Akihabara maid caf\u00e9 experience (premium tier) or a high-end Japanese curry house like Go!Go!Curry for an authentic local experience",
+            "dinner": "Ramen Alley Crawl in Shinjuku \u2013 Ichiran Ramen (private booth experience) followed by craft sake at a Shinjuku standing bar, then dessert at a premium wagashi (Japanese confectionery) shop"
+          },
+          "notes": "Akihabara is busiest on weekends \u2013 arrive by 10:00 AM to beat crowds. The Ramen Alley Crawl is best experienced after 19:00 when the neon lights fully illuminate the lanes. Book a private ramen guide for insider access to off-menu items and hidden shops."
+        },
+        {
+          "day": 5,
+          "date": "2027-04-19 (Sunday)",
+          "morning": "TeamLab Borderless Digital Art Museum \u2013 Experience the world-renowned immersive digital art installation where technology and art dissolve boundaries. Arrive at opening time (10:00 AM) for the most serene experience. Wander through infinite mirror rooms, living flower installations, and interactive light forests. This is a pinnacle of Tokyo's tech-art fusion culture.",
+          "afternoon": "After TeamLab, explore the surrounding Azabudai Hills or Minato area \u2013 visit the newly developed Azabudai Hills complex, one of Tokyo's most futuristic urban developments, featuring luxury retail, art galleries, and innovative architecture by Heatherwick Studio.",
+          "evening": "Sunset cocktails at a rooftop bar in Roppongi Hills (Tokyo City View observation deck or the Mori Art Museum rooftop), followed by a refined dinner in Roppongi.",
+          "meals": {
+            "breakfast": "Hotel breakfast \u2013 request a bento-style premium Japanese breakfast for an authentic touch",
+            "lunch": "TeamLab's in-house caf\u00e9 or a nearby premium caf\u00e9 in the Azabudai Hills complex \u2013 artisan sandwiches, seasonal salads, and specialty coffee",
+            "dinner": "Ryugin (3 Michelin stars) in Roppongi \u2013 a transcendent kaiseki experience blending traditional Japanese cuisine with avant-garde techniques, perfectly echoing the day's tech-art theme"
+          },
+          "notes": "TeamLab Borderless tickets must be pre-booked online weeks in advance \u2013 the hotel concierge should secure these before the trip. Wear comfortable, dark-colored clothing for the best visual experience inside TeamLab. The Mori Art Museum rooftop offers one of Tokyo's finest panoramic views."
+        },
+        {
+          "day": 6,
+          "date": "2027-04-20 (Monday)",
+          "morning": "Harajuku and Omotesando exploration \u2013 Begin with a peaceful morning walk through Yoyogi Park (cherry blossoms may still be visible in mid-April). Visit Meiji Shrine for a serene cultural experience. Then stroll down Omotesando, Tokyo's most architecturally distinguished boulevard, admiring flagship stores by Tadao Ando, Herzog & de Meuron, and other world-class architects.",
+          "afternoon": "Deep dive into Omotesando luxury retail \u2013 visit the Prada Aoyama building, Louis Vuitton Omotesando, and the Nezu Museum with its exquisite Japanese art collection and bamboo garden. Explore the hidden Omotesando Hills complex for premium Japanese design brands.",
+          "evening": "Shibuya crossing experience at night \u2013 witness the world's busiest pedestrian scramble from the premium Shibuya Sky observation deck, then transition to a private sake tasting experience.",
+          "meals": {
+            "breakfast": "Breakfast at Caf\u00e9 Kitsun\u00e9 in Omotesando \u2013 elegant pastries, specialty coffee, and a chic Parisian-Japanese ambiance",
+            "lunch": "Floril\u00e8ge (2 Michelin stars) in Aoyama \u2013 innovative French-Japanese cuisine in an open-kitchen setting, one of Tokyo's most exciting culinary experiences",
+            "dinner": "Narisawa (2 Michelin stars) \u2013 'Innovative Satoyama Cuisine' blending Japanese nature philosophy with cutting-edge culinary techniques; a globally celebrated dining experience"
+          },
+          "notes": "Meiji Shrine is best visited early morning (before 9:00 AM) for a tranquil atmosphere. The Nezu Museum garden is particularly beautiful in April with seasonal blooms. Book Shibuya Sky observation deck tickets in advance for the sunset time slot (around 18:00\u201318:30)."
+        },
+        {
+          "day": 7,
+          "date": "2027-04-21 (Tuesday)",
+          "morning": "Day trip to Nikko or Hakone \u2013 choose based on preference. Recommended: Hakone for a luxury ryokan day experience. Depart early via the Romancecar (Odakyu luxury train) from Shinjuku. Arrive in Hakone, visit the Hakone Open Air Museum featuring outdoor sculptures and tech-art installations.",
+          "afternoon": "Hakone exploration continues \u2013 take the ropeway over volcanic Owakudani for dramatic views of Mt. Fuji (weather permitting in April). Visit Lake Ashi for a scenic cruise. Enjoy the hot spring (onsen) culture at a premium day-use facility.",
+          "evening": "Return to Tokyo via the Romancecar, enjoying dinner on board or at a premium restaurant near Shinjuku upon return.",
+          "meals": {
+            "breakfast": "Early hotel breakfast before departure \u2013 light and energizing",
+            "lunch": "Premium kaiseki bento or soba lunch at a Hakone ryokan restaurant \u2013 seasonal mountain vegetables, fresh tofu, and regional specialties",
+            "dinner": "Shinjuku Kappo Nakamura or a premium izakaya in Shinjuku upon return \u2013 wagyu beef, premium sake, and seasonal small plates"
+          },
+          "notes": "The Romancecar observation car seats offer the best Mt. Fuji views \u2013 book in advance through the hotel concierge. April weather in Hakone can be misty, but this adds to the mystical atmosphere. Bring a small daypack with essentials as you'll be away from the hotel all day."
+        },
+        {
+          "day": 8,
+          "date": "2027-04-22 (Wednesday)",
+          "morning": "Yanaka and Nezu neighborhood exploration \u2013 Tokyo's most beautifully preserved historic shitamachi (old town) district. Wander through the Yanaka Cemetery (famous for cherry trees), browse artisan craft shops, and visit the Yanaka Ginza shotengai (traditional shopping street) for a glimpse of old Edo culture.",
+          "afternoon": "Visit the Kagurazaka district \u2013 Tokyo's former geisha quarter with French-Japanese cultural fusion. Explore the hidden alleys (yokocho), visit the Bishamonten Zenkokuji Temple, and browse independent boutiques and galleries. This neighborhood perfectly blends tradition with modern Tokyo sophistication.",
+          "evening": "Premium whisky bar experience at Bar High Five in Ginza or the Star Bar Ginza \u2013 world-class Japanese whisky and cocktail craftsmanship by master bartenders.",
+          "meals": {
+            "breakfast": "In-room premium breakfast at the resort \u2013 fresh fruit, artisan bread, Japanese-style eggs, and specialty coffee",
+            "lunch": "Kagurazaka's French-Japanese bistro \u2013 Brasserie Viron or a neighborhood kappo restaurant with seasonal kaiseki lunch set",
+            "dinner": "Kagurazaka Ishikawa (3 Michelin stars) \u2013 one of Tokyo's most revered kaiseki restaurants, celebrated for its exquisite seasonal ingredients and refined atmosphere"
+          },
+          "notes": "Yanaka is best explored on foot \u2013 wear comfortable walking shoes. The neighborhood has a relaxed, unhurried pace that provides a welcome contrast to Tokyo's busier districts. The whisky bar reservations should be made in advance as seating is extremely limited."
+        },
+        {
+          "day": 9,
+          "date": "2027-04-23 (Thursday)",
+          "morning": "Shibuya and Daikanyama tech-meets-lifestyle exploration \u2013 Begin at Shibuya's Scramble Square for panoramic city views, then explore the Shibuya Stream and Shibuya Cast complexes showcasing Tokyo's urban innovation. Visit the Google Japan office area (exterior) and the innovative Shibuya QS building.",
+          "afternoon": "Daikanyama T-Site (Tsutaya Books) \u2013 one of the world's most beautifully designed bookstores and cultural hubs, beloved by Tokyo's creative elite. Browse curated books, vinyl records, premium stationery, and artisan goods. Continue to neighboring Nakameguro for a canal-side stroll.",
+          "evening": "Nakameguro canal evening walk \u2013 one of Tokyo's most romantic and photogenic spots, lined with boutique restaurants and bars. Enjoy a premium dinner along the canal.",
+          "meals": {
+            "breakfast": "Saturdays NYC Caf\u00e9 in Daikanyama or Log Road Daikanyama \u2013 specialty coffee and premium avocado toast or Japanese-inspired brunch",
+            "lunch": "Ivy Place in Daikanyama (within the T-Site complex) \u2013 elegant all-day dining with a seasonal menu in a lush garden setting",
+            "dinner": "Nakameguro canal-side restaurant \u2013 Onigiri Bongo (premium version) or Sushi Saito annex, or a reservation at a Nakameguro French-Japanese fusion restaurant with canal views"
+          },
+          "notes": "Daikanyama T-Site is open until 26:00 (2:00 AM) \u2013 a unique Tokyo experience worth noting for night owls. The Nakameguro canal is particularly atmospheric in the evening with illuminated restaurants reflecting on the water. April may still have some late cherry blossom petals along the canal."
+        },
+        {
+          "day": 10,
+          "date": "2027-04-24 (Friday)",
+          "morning": "Shinjuku deep dive \u2013 Morning visit to the Tokyo Metropolitan Government Building's free observation deck for panoramic city views. Explore the Shinjuku Gyoen National Garden, one of Japan's finest \u2013 particularly beautiful in mid-to-late April with late-blooming cherry varieties and tulip gardens.",
+          "afternoon": "Explore East Shinjuku's Kabukicho entertainment district (by day it's fascinating architecture and street culture). Visit the new Toho Cinemas Shinjuku building with its iconic Godzilla head. Then explore the Golden Gai district \u2013 over 200 tiny bars in six narrow alleys, a unique Tokyo institution.",
+          "evening": "Premium experience: Book a private table at a Golden Gai bar for an intimate evening, or head to the Park Hyatt Tokyo's New York Bar (made famous by Lost in Translation) for jazz, cocktails, and Tokyo skyline views.",
+          "meals": {
+            "breakfast": "Shinjuku high-rise hotel breakfast or Isetan department store's basement food hall (depachika) \u2013 premium pastries, fruit, and coffee",
+            "lunch": "Shinjuku Takashimaya Times Square's premium restaurant floor \u2013 soba at a renowned buckwheat specialist or a wagyu beef lunch",
+            "dinner": "Kozue at the Park Hyatt Tokyo (40th floor) \u2013 refined Japanese cuisine with sweeping city views, one of Shinjuku's most celebrated dining experiences"
+          },
+          "notes": "Shinjuku Gyoen requires a small entrance fee and has rules about alcohol and drones. The Golden Gai bars are tiny (some seat only 5\u20136 people) \u2013 arrive early or have the concierge make reservations at one of the more upscale Golden Gai establishments. The Park Hyatt New York Bar has a cover charge after 20:00."
+        },
+        {
+          "day": 11,
+          "date": "2027-04-25 (Saturday)",
+          "morning": "Asakusa cultural immersion \u2013 Visit Senso-ji Temple at dawn (before 8:00 AM) for a serene, crowd-free experience. Watch monks perform morning rituals, explore the Nakamise shopping street for premium Japanese souvenirs (lacquerware, folding fans, tenugui textiles), and visit the Asakusa Culture Tourist Information Center's rooftop for views of the Skytree.",
+          "afternoon": "Tokyo Skytree \u2013 ascend to the Tembo Deck (350m) and Tembo Galleria (450m) for the highest views in Tokyo. The surrounding Solamachi complex offers premium shopping and Japanese craft goods. Visit the Sumida Aquarium on the lower floors for a tranquil interlude.",
+          "evening": "Sumida River dinner cruise \u2013 a premium private or small-group boat experience gliding past illuminated bridges and the Skytree, with a curated kaiseki or French-Japanese dinner served on board.",
+          "meals": {
+            "breakfast": "Asakusa's historic Kamiya Bar (Japan's oldest Western-style bar, opens at 11:00) \u2013 or a traditional Japanese breakfast at a nearby machiya caf\u00e9",
+            "lunch": "Sometaro (traditional okonomiyaki) in Asakusa or a premium unagi (eel) restaurant like Nodaiwa Honten \u2013 unaju (eel over rice) is a Tokyo specialty",
+            "dinner": "Private Sumida River dinner cruise with kaiseki catering \u2013 arrange through the hotel concierge for a bespoke experience with sake pairing"
+          },
+          "notes": "Senso-ji is free to enter and open 24 hours, but the inner hall has specific hours. Saturday mornings in Asakusa can get busy by 10:00 AM \u2013 early arrival is essential. The Skytree tickets should be pre-purchased online to skip queues. The river cruise is best booked 2\u20133 weeks in advance."
+        },
+        {
+          "day": 12,
+          "date": "2027-04-26 (Sunday)",
+          "morning": "Luxury leisure morning \u2013 Sleep in and enjoy a premium spa treatment at Aegean Bliss Resort (facial, traditional Japanese shiatsu massage, or onsen soak). This is a restorative morning before the final full day of exploration.",
+          "afternoon": "Marunouchi and Imperial Palace East Gardens \u2013 Stroll through the elegant Marunouchi business district, visiting the premium Kitte building (a converted post office with a stunning atrium and rooftop garden overlooking Tokyo Station). Walk through the Imperial Palace East Gardens for a serene nature experience in the heart of the city.",
+          "evening": "Farewell premium shopping at Ginza \u2013 visit Ginza Six's rooftop garden, Mikimoto Pearl flagship, and the Herm\u00e8s Maison Ginza building. End the evening with a celebratory dinner at one of Tokyo's finest restaurants.",
+          "meals": {
+            "breakfast": "Leisurely in-room breakfast or hotel restaurant \u2013 champagne breakfast with seasonal Japanese and Western options",
+            "lunch": "Kitte Marunouchi's restaurant floor \u2013 premium ramen at Fuunji or a refined Japanese lunch set at one of the building's curated restaurants",
+            "dinner": "Joel Robuchon Tokyo (3 Michelin stars) in Ebisu or Quintessence (3 Michelin stars) in Shirokanedai \u2013 a world-class French-Japanese farewell dinner with exceptional wine pairing"
+          },
+          "notes": "The Imperial Palace East Gardens are closed on Mondays and Fridays \u2013 Sunday timing is perfect. Book the farewell dinner restaurant 2\u20133 months in advance as these establishments have extremely limited seating. Consider purchasing premium Japanese gifts at Ginza Six's basement food hall \u2013 premium wagashi, sake, and artisan snacks make exceptional souvenirs."
+        },
+        {
+          "day": 13,
+          "date": "2027-04-27 (Monday)",
+          "morning": "Final morning in Tokyo \u2013 Enjoy a leisurely premium breakfast at the hotel. Pack and prepare for departure. Take a final waterfront walk near the resort to absorb the last moments of Tokyo's atmosphere. Visit a nearby convenience store for last-minute Japanese snacks and drinks for the journey.",
+          "afternoon": "Depending on departure time: if afternoon/evening flight, visit the nearby teamLab Planets (Toyosu) \u2013 a more intimate and equally spectacular digital art experience, perfect for a final tech-culture immersion. Alternatively, revisit a favorite neighborhood for any last-minute shopping or a final bowl of ramen.",
+          "evening": "Private luxury transfer to Haneda or Narita Airport. Utilize the airport's premium lounges (JAL Sakura Lounge or ANA Suite Lounge) for a final taste of Japanese hospitality before departure. Depart Tokyo with extraordinary memories.",
+          "meals": {
+            "breakfast": "Grand farewell Japanese breakfast at Aegean Bliss Resort \u2013 full traditional spread with miso soup, grilled fish, pickles, rice, and premium green tea",
+            "lunch": "Airport premium dining or a final ramen at a renowned Toyosu or Tsukiji-area restaurant near the airport route",
+            "dinner": "Airport premium lounge dining or on-board first/business class meal"
+          },
+          "notes": "Allow at least 3 hours before international departure for check-in, security, and immigration at Japanese airports. The hotel concierge should arrange a private luxury car transfer. Consider purchasing a tax-free refund at the airport for eligible purchases made during the trip \u2013 bring all receipts. teamLab Planets (Toyosu) requires advance ticket booking and note that visitors must remove shoes and roll up pants as some installations involve shallow water."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=SFO+to+Tokyo+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Tokyo&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Tokyo",
+        "https://www.getyourguide.com/s/?q=Tokyo",
+        "https://www.getyourguide.com/s/?q=Tokyo",
+        "https://www.getyourguide.com/s/?q=Tokyo",
+        "https://www.getyourguide.com/s/?q=Tokyo"
+      ],
+      "highlights": [
+        "4.3\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$77 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Tokyo city break, $3000 for couple, food and tech culture, April 2026 from SFO",
+  "session_tags": {
+    "query_id": "SYN-06",
+    "condition": "baseline",
+    "run_index": 1
+  }
+}

@@ -5,14 +5,16 @@ Creates budget, balanced, and premium variants with different flight/hotel/exper
 combinations, each with booking URLs and trade-off analysis.
 """
 
+import asyncio
 import json
 
 from anthropic import Anthropic
 
 from agents.base_agent import BaseAgent
-from config import effective_temperature, get_api_config
+from agents.trip_window import record_nights
+from config import effective_temperature, get_api_config, get_settings
 from graph.state import TravelState, TripOption
-from metrics.token_tracker import track_usage
+from metrics.token_tracker import record_temperature, track_usage
 
 
 # Field names the research agents actually emit. v1.4 read "price" and
@@ -36,6 +38,9 @@ def _hotel_per_night(h: dict) -> float:
 def _experience_cost(e: dict) -> float:
     return float(e.get("cost_usd", e.get("price", 0)) or 0)
 
+ITINERARY_MAX_TOKENS = 8192
+
+
 class OptionGeneratorAgent(BaseAgent):
     """Generates 3 diverse trip options from refined research."""
 
@@ -44,7 +49,10 @@ class OptionGeneratorAgent(BaseAgent):
 
     def _setup(self):
         config = get_api_config()
-        self.client = Anthropic(api_key=config.llm.api_key)
+        self.client = Anthropic(
+            api_key=config.llm.api_key,
+            max_retries=get_settings().llm_max_retries,
+        )
         self.model = config.llm.option_generator_model
         self.api_config = config
 
@@ -63,29 +71,32 @@ class OptionGeneratorAgent(BaseAgent):
         if not flights or not hotels:
             return self._error_state("Insufficient research data to generate options")
 
-        # Generate 3 options
-        option_budget = await self._generate_option(
-            state,
-            option_id=0,
-            style="budget",
-            target_spend=budget * 0.75,
-            priorities=["cost_effective", "local_experiences", "value"]
-        )
-
-        option_balanced = await self._generate_option(
-            state,
-            option_id=1,
-            style="balanced",
-            target_spend=budget,
-            priorities=["comfort", "variety", "efficiency", "good_value"]
-        )
-
-        option_premium = await self._generate_option(
-            state,
-            option_id=2,
-            style="premium",
-            target_spend=budget * 1.15,
-            priorities=["luxury", "unique_experiences", "convenience", "comfort"]
+        # Generate 3 options concurrently: each option's itinerary is one Sonnet
+        # call, and the sync client would otherwise block the event loop and run
+        # the three calls sequentially. gather preserves budget/balanced/premium
+        # order.
+        option_budget, option_balanced, option_premium = await asyncio.gather(
+            self._generate_option(
+                state,
+                option_id=0,
+                style="budget",
+                target_spend=budget * 0.75,
+                priorities=["cost_effective", "local_experiences", "value"],
+            ),
+            self._generate_option(
+                state,
+                option_id=1,
+                style="balanced",
+                target_spend=budget,
+                priorities=["comfort", "variety", "efficiency", "good_value"],
+            ),
+            self._generate_option(
+                state,
+                option_id=2,
+                style="premium",
+                target_spend=budget * 1.15,
+                priorities=["luxury", "unique_experiences", "convenience", "comfort"],
+            ),
         )
 
         return {
@@ -116,7 +127,11 @@ class OptionGeneratorAgent(BaseAgent):
         # delivered option could carry a conflict refinement had resolved.
         flight = self._select_flight(flights, style, state.get("selected_flight"))
         hotel = self._select_hotel(hotels, style, state.get("selected_hotel"))
-        num_nights = intent.get("duration_days") or 7  # Handle None value
+        # The window's nights when there is one, so option costs match the
+        # stay the hotel was priced for; otherwise the request's duration.
+        num_nights = (
+            record_nights(state.get("trip_window")) or intent.get("duration_days") or 7
+        )
         selected_experiences = self._select_experiences(
             experiences, style, target_spend, flight, hotel, num_nights
         )
@@ -134,6 +149,9 @@ class OptionGeneratorAgent(BaseAgent):
         day_by_day = await self._generate_itinerary(
             state, flight, hotel, selected_experiences, style, num_nights
         )
+
+        fallback_reasons = {d.get("fallback_reason") for d in day_by_day if isinstance(d, dict)}
+        itinerary_fallback = next(iter(fallback_reasons - {None}), None)
 
         # Generate booking URLs
         flight_url = self._generate_flight_booking_url(flight, intent)
@@ -168,6 +186,7 @@ class OptionGeneratorAgent(BaseAgent):
                 }
             },
             "day_by_day": day_by_day,
+            "itinerary_fallback": itinerary_fallback,
             "flight_booking_url": flight_url,
             "hotel_booking_url": hotel_url,
             "experience_booking_urls": experience_urls,
@@ -353,13 +372,23 @@ Return ONLY a JSON array of day objects with this structure:
 ]
 """
 
-        response = self.client.messages.create(
+        option_temperature = effective_temperature(0.7)
+        # The sync Anthropic client blocks the event loop; run it in a worker
+        # thread so the three option itineraries generate concurrently.
+        response = await asyncio.to_thread(
+            self.client.messages.create,
             model=self.model,
-            max_tokens=3000,
-            temperature=effective_temperature(0.7),
-            messages=[{"role": "user", "content": prompt}]
+            # 3000 truncated the JSON for 13-14 day trips, so every option fell
+            # back to the template below. Billing is for tokens used, not the cap.
+            max_tokens=ITINERARY_MAX_TOKENS,
+            temperature=option_temperature,
+            messages=[{"role": "user", "content": prompt}],
         )
-        track_usage(response.usage.input_tokens, response.usage.output_tokens, model=self.model)
+        track_usage(
+            response.usage.input_tokens, response.usage.output_tokens,
+            model=self.model, component="option_generator",
+        )
+        record_temperature("option_generator", option_temperature)
 
         itinerary_text = response.content[0].text
 
@@ -374,7 +403,10 @@ Return ONLY a JSON array of day objects with this structure:
             day_by_day = json.loads(itinerary_text.strip())
             return day_by_day
         except json.JSONDecodeError:
-            # Fallback to simple structure
+            # Fallback to simple structure. Marked so it is never mistaken for a
+            # generated plan (the option records it as itinerary_fallback).
+            reason = getattr(response, "stop_reason", None)
+            reason = reason if reason == "max_tokens" else "json_error"
             return [
                 {
                     "day": i + 1,
@@ -383,7 +415,8 @@ Return ONLY a JSON array of day objects with this structure:
                     "afternoon": "Activity",
                     "evening": "Dinner and relaxation",
                     "meals": {"breakfast": "Hotel", "lunch": "Local restaurant", "dinner": "Local restaurant"},
-                    "notes": ""
+                    "notes": "",
+                    "fallback_reason": reason,
                 }
                 for i in range(num_days)
             ]

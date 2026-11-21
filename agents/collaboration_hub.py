@@ -18,7 +18,7 @@ from agents.hybrid_conflict_detector import (
 )
 from config import effective_temperature, get_api_config, get_settings
 from graph.state import CollaborationMessage, TravelState
-from metrics.token_tracker import track_usage
+from metrics.token_tracker import record_temperature, track_usage
 
 
 class CollaborationHubAgent(BaseAgent):
@@ -29,7 +29,10 @@ class CollaborationHubAgent(BaseAgent):
 
     def _setup(self):
         config = get_api_config()
-        self.client = Anthropic(api_key=config.llm.api_key)
+        self.client = Anthropic(
+            api_key=config.llm.api_key,
+            max_retries=get_settings().llm_max_retries,
+        )
         self.model = config.llm.collaboration_hub_model
         self._hybrid_detector = HybridConflictDetector(self)
 
@@ -49,16 +52,21 @@ class CollaborationHubAgent(BaseAgent):
         # Extract all agent findings
         analysis_prompt = self._build_analysis_prompt(state, round=1)
 
+        narrative_temperature = effective_temperature(0.3)
         response = self.client.messages.create(
             model=self.model,
             max_tokens=2000,
-            temperature=effective_temperature(0.3),
+            temperature=narrative_temperature,
             messages=[{
                 "role": "user",
                 "content": analysis_prompt
             }]
         )
-        track_usage(response.usage.input_tokens, response.usage.output_tokens, model=self.model)
+        track_usage(
+            response.usage.input_tokens, response.usage.output_tokens,
+            model=self.model, component="collaboration_hub_narrative",
+        )
+        record_temperature("collaboration_hub_narrative", narrative_temperature)
 
         # Generates a narrative summary of cross-agent findings for display in
         # the UI (stored in shared_discoveries["hub_narrative"]). Conflict
@@ -150,16 +158,19 @@ class CollaborationHubAgent(BaseAgent):
 
         for _ in range(max(1, settings.llm_detector_repetitions)):
             try:
+                detector_temperature = effective_temperature(settings.llm_detector_temperature)
                 response = self.client.messages.create(
                     model=self.model,
                     max_tokens=1000,
-                    temperature=effective_temperature(settings.llm_detector_temperature),
+                    temperature=detector_temperature,
                     messages=[{"role": "user", "content": prompt}],
                 )
+                record_temperature("collaboration_hub_llm_detector", detector_temperature)
                 track_usage(
                     response.usage.input_tokens,
                     response.usage.output_tokens,
                     model=self.model,
+                    component="collaboration_hub_llm_detector",
                 )
                 parsed = parse_llm_candidates(response.content[0].text)
             except Exception:

@@ -4,6 +4,52 @@ import httpx
 
 from . import inventory
 from .base_agent import BaseAgent
+from .http_retry import request_with_retries
+from .trip_window import MONTHS, RULE_MONTH
+
+CLIMATOLOGY_SOURCE = "climatology"
+CLIMATOLOGY_YEARS = (2016, 2025)
+OPEN_METEO_ARCHIVE = "https://archive-api.open-meteo.com/v1/archive"
+OPENWEATHER_GEO = "http://api.openweathermap.org/geo/1.0/direct"
+
+
+def monthly_climatology(
+    times: list[str],
+    tmax: list[float | None],
+    precip: list[float | None],
+    month: str,
+) -> dict:
+    """Climate for one month from daily ERA5 rows (protocol §5.2).
+
+    ``avg_temp_c`` is the mean daily maximum over every day of that month in the
+    window, matching the mock table's daytime-high scale and the 32°C rule.
+    ``precipitation_mm`` is the mean monthly total over years with at least 25
+    days of data. ``summary`` is empty: the rain-keyword path of the weather rule
+    cannot fire on climatology, only the numeric thresholds.
+    """
+    month_num = MONTHS[month.lower()]
+    temps: list[float] = []
+    totals: dict[str, list[float]] = {}
+    for day, t, p in zip(times, tmax, precip):
+        if int(day[5:7]) != month_num:
+            continue
+        if t is not None:
+            temps.append(float(t))
+        if p is not None:
+            totals.setdefault(day[:4], []).append(float(p))
+    full_years = [sum(v) for v in totals.values() if len(v) >= 25]
+    if not temps or not full_years:
+        raise ValueError(f"no climatology rows for month {month!r}")
+    avg = sum(temps) / len(temps)
+    return {
+        "avg_temp_c": round(avg, 1),
+        "avg_temp_f": round(avg * 9 / 5 + 32, 1),
+        "precipitation_mm": round(sum(full_years) / len(full_years), 1),
+        "summary": "",
+        "source": f"open_meteo_era5_{CLIMATOLOGY_YEARS[0]}_{CLIMATOLOGY_YEARS[1]}",
+        "years": len(full_years),
+        "month": month.lower(),
+    }
 
 CLIMATE_FALLBACK: dict[str, dict[str, dict]] = {
     "greece": {
@@ -91,13 +137,33 @@ class WeatherAgent(BaseAgent):
             return self._error_state("No intent in state")
 
         destination = intent.get("destination", "")
-        travel_month = (intent.get("travel_month") or "July").lower()
+        # The month comes from the resolved trip window, so weather and the
+        # flight/hotel search describe the same dates (protocol §5.2). Under the
+        # legacy rule this is the parsed month, or July, as in v1.4.1.
+        window = self._trip_window(intent)
+        travel_month = window.month
 
         mode = self._inventory_mode()
+        api_key = os.getenv("OPENWEATHER_API_KEY", "")
+
+        if mode in ("capture", "replay") and window.rule == RULE_MONTH:
+            # v1.5: monthly climatology for the resolved month, not a forecast
+            # taken on the capture date (protocol §5.2).
+            query_id = inventory.inventory_query_id(
+                CLIMATOLOGY_SOURCE, destination=destination, month=travel_month
+            )
+            if mode == "replay":
+                weather = inventory.replay(CLIMATOLOGY_SOURCE, query_id)
+            else:
+                weather = await self._fetch_climatology(destination, travel_month, api_key)
+                inventory.capture(
+                    CLIMATOLOGY_SOURCE, weather, query_id, run_label="weather-climatology-capture"
+                )
+            return {"weather": weather, "travel_month": travel_month}
+
         query_id = inventory.inventory_query_id(
             "openweather", destination=destination, month=travel_month
         )
-        api_key = os.getenv("OPENWEATHER_API_KEY", "")
 
         if mode == "replay":
             weather = inventory.replay("openweather", query_id)
@@ -122,11 +188,59 @@ class WeatherAgent(BaseAgent):
         from config.settings import get_settings
         return get_settings().inventory_mode
 
+    async def _fetch_climatology(self, destination: str, month: str, api_key: str) -> dict:
+        """Geocode the destination, then build its climatology for ``month``.
+
+        Falls back to the static climate table (marked in ``source``) only when
+        the destination cannot be geocoded or the archive returns no usable rows.
+        An HTTP failure (timeout, transport error, 429, 5xx) is retried by
+        ``request_with_retries`` and then propagates: in capture mode it fails the
+        session (§8) rather than baking degraded data into the fixtures.
+        """
+        fallback = {
+            **self._historical_climate(destination, month),
+            "source": "historical_average_fallback",
+        }
+        if not api_key:
+            return fallback
+        async with httpx.AsyncClient(timeout=30) as client:
+            try:
+                geo_resp = await request_with_retries(
+                    client, "GET", OPENWEATHER_GEO,
+                    params={"q": destination, "limit": 1, "appid": api_key},
+                )
+                geo = geo_resp.json()
+                if not isinstance(geo, list) or not geo:
+                    return fallback
+                lat, lon = geo[0]["lat"], geo[0]["lon"]
+                data_resp = await request_with_retries(
+                    client, "GET", OPEN_METEO_ARCHIVE,
+                    params={
+                        "latitude": lat,
+                        "longitude": lon,
+                        "start_date": f"{CLIMATOLOGY_YEARS[0]}-01-01",
+                        "end_date": f"{CLIMATOLOGY_YEARS[1]}-12-31",
+                        "daily": "temperature_2m_max,precipitation_sum",
+                        "timezone": "auto",
+                    },
+                )
+                data = data_resp.json()
+                daily = data.get("daily") or {}
+                climate = monthly_climatology(
+                    daily.get("time") or [],
+                    daily.get("temperature_2m_max") or [],
+                    daily.get("precipitation_sum") or [],
+                    month,
+                )
+            except (ValueError, KeyError, TypeError):
+                return fallback
+        return {**climate, "latitude": lat, "longitude": lon}
+
     async def _fetch_forecast(self, destination: str, api_key: str) -> dict:
         async with httpx.AsyncClient() as client:
             try:
-                geo_resp = await client.get(
-                    "http://api.openweathermap.org/geo/1.0/direct",
+                geo_resp = await request_with_retries(
+                    client, "GET", OPENWEATHER_GEO,
                     params={"q": destination, "limit": 1, "appid": api_key},
                 )
                 geo = geo_resp.json()
@@ -136,8 +250,8 @@ class WeatherAgent(BaseAgent):
                     return self._historical_climate(destination, "july")
                 lat, lon = geo[0]["lat"], geo[0]["lon"]
 
-                weather_resp = await client.get(
-                    "https://api.openweathermap.org/data/3.0/onecall",
+                weather_resp = await request_with_retries(
+                    client, "GET", "https://api.openweathermap.org/data/3.0/onecall",
                     params={
                         "lat": lat,
                         "lon": lon,

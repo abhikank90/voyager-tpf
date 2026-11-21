@@ -40,6 +40,8 @@ from agents import (
     WeatherAgent,
 )
 from agents.conflicts import CONFLICT_RESOLVER, ConflictLifecycleTracker
+from agents.refinement_modes import round_3_agents, transform_messages, validate_mode
+from agents.unresolved import classify_unresolved, reason_counts
 from graph.state import TravelState
 
 _AGENTS_ALL = {"flight", "hotel", "experience", "weather", "visa_safety"}
@@ -86,25 +88,67 @@ def _merge_results(merged: dict, results: list) -> None:
         merged["errors"] = errors
 
 
+_RUNNERS = {
+    "flight": _flight,
+    "hotel": _hotel,
+    "experience": _experience,
+    "weather": _weather,
+    "visa_safety": _visa_safety,
+}
+
+
+async def _run_agents(state: TravelState, names: list[str]) -> tuple[list, dict, dict]:
+    """Run research agents in parallel; time each one and keep its feedback.
+
+    Returns (results, durations_s, feedback). Per-agent wall time lets the
+    analysis check that a round's time is set by its slowest agent (H1d), and
+    per-agent feedback keeps a flight and a hotel fallback in the same round
+    from overwriting each other (the merged ``feedback_metrics`` key is
+    last-writer-wins).
+    """
+    async def timed(name: str):
+        t0 = time.perf_counter()
+        try:
+            result = await _RUNNERS[name].run(state)
+        except Exception as exc:  # recorded by _merge_results, like gather(return_exceptions)
+            result = exc
+        return name, result, round(time.perf_counter() - t0, 2)
+
+    outcomes = await asyncio.gather(*(timed(n) for n in names)) if names else []
+    results = [r for _, r, _ in outcomes]
+    durations = {n: d for n, _, d in outcomes}
+    feedback = {
+        n: r["feedback_metrics"]
+        for n, r, _ in outcomes
+        if isinstance(r, dict) and r.get("feedback_metrics")
+    }
+    return results, durations, feedback
+
+
+def _with_feedback(existing: dict, round_num: int, feedback: dict) -> dict:
+    by_round = dict(existing.get("feedback_by_round") or {})
+    if feedback:
+        by_round[str(round_num)] = feedback
+    return by_round
+
+
 async def research_round_1(state: TravelState) -> TravelState:
     """Round 1: Initial research — all 5 agents run in parallel."""
     state["collaboration_round"] = 1
     t0 = time.perf_counter()
 
-    results = await asyncio.gather(
-        _flight.run(state),
-        _hotel.run(state),
-        _experience.run(state),
-        _weather.run(state),
-        _visa_safety.run(state),
-        return_exceptions=True,
-    )
+    results, durations, feedback = await _run_agents(state, sorted(_AGENTS_ALL))
 
     merged: TravelState = {"collaboration_round": 1}
     _merge_results(merged, results)
 
     existing = state.get("run_metrics") or {}
-    merged["run_metrics"] = {**existing, "round_1_duration_s": round(time.perf_counter() - t0, 2)}
+    merged["run_metrics"] = {
+        **existing,
+        "round_1_duration_s": round(time.perf_counter() - t0, 2),
+        "round_1_agent_durations_s": durations,
+        "feedback_by_round": _with_feedback(existing, 1, feedback),
+    }
     return merged
 
 
@@ -114,8 +158,19 @@ async def collaboration_hub_1_node(state: TravelState) -> TravelState:
 
     # Preserve the Round-1 conflicts before hub_2 may overwrite state["conflicts"]
     conflicts = result.get("conflicts") if result.get("conflicts") is not None else state.get("conflicts", [])
+    hub_messages = list(result.get("agent_messages", []) or [])
+    result["agent_messages"] = transform_messages(
+        _mode(state), hub_messages, conflicts, state, round_num=1,
+    )
     existing = {**(state.get("run_metrics") or {}), **(result.get("run_metrics") or {})}
-    result["run_metrics"] = {**existing, "round_1_conflicts": list(conflicts)}
+    # Snapshot Round 1 before later hubs replace agent_messages: the hub's typed
+    # messages (conflict evidence) and what the condition actually delivered.
+    result["run_metrics"] = {
+        **existing,
+        "round_1_conflicts": list(conflicts),
+        "round_1_hub_messages": hub_messages,
+        "round_1_messages": list(result["agent_messages"]),
+    }
 
     # ── Lifecycle audit (Round 1) ──────────────────────────────────────────
     tracker = ConflictLifecycleTracker.from_state(state.get("conflict_lifecycle_state"))
@@ -137,31 +192,15 @@ async def research_round_2(state: TravelState) -> TravelState:
             agents_to_rerun.add(target)
 
     has_all_message = any(msg.get("to_agent") == "all" for msg in messages)
-    full_rerun = has_all_message or len(agents_to_rerun) >= 3
+    # The >=3-agent escape hatch is part of the targeted pattern. The two_way
+    # ablation re-runs exactly the agents it messages, so it differs from
+    # targeted only by the second resolution direction (protocol §3, H5).
+    hatch = len(agents_to_rerun) >= 3 and _mode(state) != "two_way"
+    full_rerun = has_all_message or hatch
     rerun_names = sorted(_AGENTS_ALL) if full_rerun else sorted(agents_to_rerun)
 
-    if full_rerun:
-        results = await asyncio.gather(
-            _flight.run(state),
-            _hotel.run(state),
-            _experience.run(state),
-            _weather.run(state),
-            _visa_safety.run(state),
-            return_exceptions=True,
-        )
-    else:
-        tasks = []
-        if "flight" in agents_to_rerun:
-            tasks.append(_flight.run(state))
-        if "hotel" in agents_to_rerun:
-            tasks.append(_hotel.run(state))
-        if "experience" in agents_to_rerun:
-            tasks.append(_experience.run(state))
-        if "weather" in agents_to_rerun:
-            tasks.append(_weather.run(state))
-        if "visa_safety" in agents_to_rerun:
-            tasks.append(_visa_safety.run(state))
-        results = await asyncio.gather(*tasks, return_exceptions=True) if tasks else []
+    rerun_names = [n for n in rerun_names if n in _RUNNERS]
+    results, durations, feedback = await _run_agents(state, rerun_names)
 
     merged: TravelState = {"collaboration_round": 2}
     _merge_results(merged, results)
@@ -173,6 +212,8 @@ async def research_round_2(state: TravelState) -> TravelState:
         "round_2_agents_rerun_count": len(rerun_names),
         "round_2_full_rerun": full_rerun,
         "round_2_duration_s": round(time.perf_counter() - t0, 2),
+        "round_2_agent_durations_s": durations,
+        "feedback_by_round": _with_feedback(existing, 2, feedback),
     }
     return merged
 
@@ -181,6 +222,9 @@ async def collaboration_hub_2_node(state: TravelState) -> TravelState:
     """Round 2 hub: check if conflicts are resolved, audit lifecycle."""
     result = await _collaboration_hub.run(state)
     conflicts = result.get("conflicts") if result.get("conflicts") is not None else state.get("conflicts", [])
+    result["agent_messages"] = transform_messages(
+        _mode(state), result.get("agent_messages", []), conflicts, state, round_num=2,
+    )
 
     existing = {**(state.get("run_metrics") or {}), **(result.get("run_metrics") or {})}
     result["run_metrics"] = {**existing, "round_2_conflicts": list(conflicts)}
@@ -202,30 +246,14 @@ async def research_round_3(state: TravelState) -> TravelState:
     t0 = time.perf_counter()
 
     conflicts = state.get("conflicts", [])
-    # Each conflict type names a single responsible agent (DESIGN.md §3) — the
-    # same map the hub routes messages through — so Round 3 re-runs exactly that
-    # resolver per surviving conflict, not every participant in the conflict.
-    resolvers = {
-        CONFLICT_RESOLVER[conflict["type"]]
-        for conflict in conflicts
-        if conflict.get("type") in CONFLICT_RESOLVER
-    }
+    # targeted: each conflict type names a single responsible agent (DESIGN.md
+    # §3), the same map the hub routes messages through, so Round 3 re-runs
+    # exactly that resolver per surviving conflict. full_rerun and broadcast
+    # re-run every research agent; two_way also re-runs the experience agent
+    # for a location conflict. See agents/refinement_modes.py.
+    rerunnable = round_3_agents(_mode(state), conflicts, CONFLICT_RESOLVER)
 
-    # Only flight/hotel/experience can be re-run; weather and visa_safety are
-    # read-only data sources that don't benefit from a second pass here.
-    # Intersecting the resolver set (which never contains weather/visa_safety)
-    # keeps the rerun metric and the savings calculation honest.
-    rerunnable = resolvers & {"flight", "hotel", "experience"}
-
-    tasks = []
-    if "flight" in rerunnable:
-        tasks.append(_flight.run(state))
-    if "hotel" in rerunnable:
-        tasks.append(_hotel.run(state))
-    if "experience" in rerunnable:
-        tasks.append(_experience.run(state))
-
-    results = await asyncio.gather(*tasks, return_exceptions=True) if tasks else []
+    results, durations, feedback = await _run_agents(state, sorted(rerunnable))
 
     merged: TravelState = {"collaboration_round": 3}
     _merge_results(merged, results)
@@ -236,6 +264,8 @@ async def research_round_3(state: TravelState) -> TravelState:
         "round_3_agents_rerun": sorted(rerunnable),
         "round_3_agents_rerun_count": len(rerunnable),
         "round_3_duration_s": round(time.perf_counter() - t0, 2),
+        "round_3_agent_durations_s": durations,
+        "feedback_by_round": _with_feedback(existing, 3, feedback),
     }
     return merged
 
@@ -269,6 +299,16 @@ async def final_conflict_audit_node(state: TravelState) -> TravelState:
         "conflict_lifecycle_state": audit["conflict_lifecycle_state"],
     }
     result["run_metrics"]["convergence_summary"] = tracker.convergence_summary()
+
+    unresolved = classify_unresolved(
+        audit["conflicts_current"],
+        tracker.to_state()["records"],
+        existing,
+        CONFLICT_RESOLVER,
+        refinement_enabled=state.get("enable_refinement", True),
+    )
+    result["run_metrics"]["unresolved_conflicts"] = unresolved
+    result["run_metrics"]["unresolved_reason_counts"] = reason_counts(unresolved)
     return result
 
 
@@ -301,6 +341,11 @@ async def itinerary_builder_node(state: TravelState) -> TravelState:
     return await _itinerary_builder.run(state)
 
 
+def _mode(state: TravelState) -> str:
+    """Refinement condition for this session (protocol §3)."""
+    return validate_mode(state.get("refinement_mode") or "targeted")
+
+
 # ── Routing ──────────────────────────────────────────────────────────────────
 def route_after_hub_1(
     state: TravelState,
@@ -327,20 +372,41 @@ def route_after_hub_2(
 
 
 # ── Graph assembly ───────────────────────────────────────────────────────────
+def _timed_node(name: str, fn):
+    """Wrap a node so its wall time lands in run_metrics["node_durations_s"].
+
+    run_metrics has no reducer, so a node's update replaces the whole dict; the
+    wrapper merges the incoming and returned dicts before adding the timing.
+    """
+    async def wrapper(state: TravelState) -> TravelState:
+        t0 = time.perf_counter()
+        result = await fn(state) or {}
+        elapsed = round(time.perf_counter() - t0, 2)
+        metrics = {**(state.get("run_metrics") or {}), **(result.get("run_metrics") or {})}
+        metrics["node_durations_s"] = {**(metrics.get("node_durations_s") or {}), name: elapsed}
+        return {**result, "run_metrics": metrics}
+
+    wrapper.__name__ = getattr(fn, "__name__", name)
+    return wrapper
+
+
 def build_collaborative_graph() -> CompiledStateGraph:
     """Build the collaborative multi-agent graph."""
     g = StateGraph(TravelState)
 
-    g.add_node("personalisation", personalisation_node)
-    g.add_node("intent_parser", intent_parser_node)
-    g.add_node("research_round_1", research_round_1)
-    g.add_node("collaboration_hub_1", collaboration_hub_1_node)
-    g.add_node("research_round_2", research_round_2)
-    g.add_node("collaboration_hub_2", collaboration_hub_2_node)
-    g.add_node("research_round_3", research_round_3)
-    g.add_node("final_conflict_audit", final_conflict_audit_node)
-    g.add_node("budget_guardrail", budget_guardrail_node)
-    g.add_node("option_generator", option_generator_node)
+    for name, fn in [
+        ("personalisation", personalisation_node),
+        ("intent_parser", intent_parser_node),
+        ("research_round_1", research_round_1),
+        ("collaboration_hub_1", collaboration_hub_1_node),
+        ("research_round_2", research_round_2),
+        ("collaboration_hub_2", collaboration_hub_2_node),
+        ("research_round_3", research_round_3),
+        ("final_conflict_audit", final_conflict_audit_node),
+        ("budget_guardrail", budget_guardrail_node),
+        ("option_generator", option_generator_node),
+    ]:
+        g.add_node(name, _timed_node(name, fn))
 
     g.set_entry_point("personalisation")
     g.add_edge("personalisation", "intent_parser")
@@ -410,6 +476,35 @@ async def run_travel_query(user_query: str, user_id: str = "anonymous") -> dict:
     return await travel_graph.ainvoke(initial_state)
 
 
+_PLAN_FIELDS = (
+    "session_id", "intent", "selected_flight", "selected_hotel", "experiences",
+    "weather", "trip_window", "trip_options",
+)
+
+
+def _save_plan(final_state: dict, query: str, session_tags: dict | None) -> None:
+    """Write the delivered plan to VOYAGER_PLANS_DIR/<session_id>.json, if set.
+
+    The session log keeps metrics only; the H2c coherence audit needs the plan a
+    user would actually receive (protocol §11).
+    """
+    import json
+    import os
+    from pathlib import Path
+
+    plans_dir = os.environ.get("VOYAGER_PLANS_DIR")
+    if not plans_dir:
+        return
+    plan = {k: final_state.get(k) for k in _PLAN_FIELDS}
+    plan["query"] = query
+    plan["session_tags"] = session_tags or {}
+    path = Path(plans_dir)
+    path.mkdir(parents=True, exist_ok=True)
+    (path / f"{final_state.get('session_id', 'unknown')}.json").write_text(
+        json.dumps(plan, indent=2, default=str) + "\n"
+    )
+
+
 @traceable(name="voyager_collaborative_query")
 async def run_collaborative_travel_query(
     user_query: str,
@@ -417,6 +512,9 @@ async def run_collaborative_travel_query(
     session_id: str = None,
     enable_refinement: bool = True,
     record_metrics: bool = True,
+    refinement_mode: str | None = None,
+    session_tags: dict | None = None,
+    inventory_profile: str | None = None,
 ) -> dict:
     """Entry point: run collaborative multi-agent graph (generates 3 options).
 
@@ -426,14 +524,23 @@ async def run_collaborative_travel_query(
         record_metrics: When False, suppresses writing to metrics/sessions.jsonl.
             Set False on the API path so live user requests don't pollute the
             benchmark dataset.
+        refinement_mode: targeted | full_rerun | broadcast | two_way. Defaults to
+            settings.refinement_mode. Ignored when enable_refinement is False.
+        session_tags: extra fields written into the session record (e.g.
+            query_id, run index) so benchmark pairing never relies on query text.
+        inventory_profile: "default" | "control". Selects the control mock
+            inventory for the flight and hotel agents (protocol §5); honoured
+            only in mock mode.
     """
     import uuid
 
+    from config.settings import get_settings
     from metrics.collector import record_session
     from metrics.token_tracker import compute_session_cost, get_current, start_session
 
     if session_id is None:
         session_id = str(uuid.uuid4())
+    mode = validate_mode(refinement_mode or get_settings().refinement_mode)
 
     start_session()
 
@@ -450,16 +557,40 @@ async def run_collaborative_travel_query(
         "refinement_history": [],
         "run_metrics": {},
         "enable_refinement": enable_refinement,
+        "refinement_mode": mode,
+        "inventory_profile": inventory_profile or "default",
     }
 
     t0 = time.perf_counter()
     final_state = await collaborative_travel_graph.ainvoke(initial_state)
     duration = round(time.perf_counter() - t0, 2)
 
+    # In capture/replay, a research-agent error means the session is unusable (e.g. a
+    # fixture that could not be captured), and an option-generator error with data present
+    # means the synthesis itself failed — both raise before recording so they land in
+    # failures.csv and go through rerun-once (§8). An option-generator-only "insufficient
+    # research data" result, on the other hand, is a legitimate outcome when the real
+    # searches returned nothing: record it as a normal session. Mock is unchanged.
+    if record_metrics and (final_state.get("errors") or {}):
+        if get_settings().inventory_mode in ("capture", "replay"):
+            errors = final_state.get("errors") or {}
+            non_option = [key for key in errors if key != "option_generator"]
+            option_generator_with_inventory = (
+                "option_generator" in errors
+                and bool(final_state.get("flights"))
+                and bool(final_state.get("hotels"))
+            )
+            if non_option or option_generator_with_inventory:
+                raise RuntimeError(
+                    "session completed with agent errors: "
+                    + ", ".join(sorted(errors))
+                )
+
     usage = get_current()
     estimated_cost = compute_session_cost(usage) if usage else 0.0
 
     if record_metrics:
+        _save_plan(final_state, user_query, session_tags)
         record_session(
             final_state,
             query=user_query,
@@ -467,5 +598,7 @@ async def run_collaborative_travel_query(
             mode="full" if enable_refinement else "baseline",
             token_usage=usage,
             estimated_cost_usd=estimated_cost,
+            refinement_mode=mode if enable_refinement else "baseline",
+            session_tags=session_tags,
         )
     return final_state
