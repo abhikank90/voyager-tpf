@@ -1,0 +1,592 @@
+{
+  "session_id": "714742cd-5aef-4b77-bbae-74edf380b91f",
+  "intent": {
+    "destination": "Edinburgh",
+    "origin": "London",
+    "budget_usd": 2000.0,
+    "duration_days": 5,
+    "travel_month": "September",
+    "travel_year": 2027,
+    "interests": [
+      "history",
+      "whisky"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Edinburgh history and whisky, $2000 solo, 5 days, September 2027, from London"
+  },
+  "selected_flight": {
+    "price_usd": 120,
+    "airline": "BA",
+    "departure": "2027-09-15T08:00:00",
+    "arrival": "2027-09-15T12:00:00",
+    "stops": 0,
+    "duration": "PT1H15M"
+  },
+  "selected_hotel": {
+    "name": "Old Town Edinburgh",
+    "price_per_night_usd": 110,
+    "total_usd": 550,
+    "rating": 4.3,
+    "amenities": [
+      "wifi",
+      "breakfast included"
+    ],
+    "location": "Edinburgh"
+  },
+  "experiences": [
+    {
+      "name": "Edinburgh Castle & Scottish Crown Jewels Tour",
+      "description": "Explore the iconic fortress perched on volcanic rock, home to the Scottish Crown Jewels, the Stone of Destiny, and a rich military history spanning over 1,000 years. Guided tours provide deep historical context about Scotland's royal and military past.",
+      "cost_usd": 35,
+      "category": "culture",
+      "best_time_of_day": "morning",
+      "location": "Castlehill, Old Town, Edinburgh"
+    },
+    {
+      "name": "Scotch Whisky Experience",
+      "description": "Embark on an immersive whisky journey at this dedicated attraction next to the castle, featuring a barrel ride through the whisky-making process, tutored tastings of malts from all five Scottish whisky regions, and access to one of the world's largest Scotch whisky collections.",
+      "cost_usd": 45,
+      "category": "food",
+      "best_time_of_day": "afternoon",
+      "location": "Castlehill, Royal Mile, Old Town, Edinburgh"
+    },
+    {
+      "name": "Royal Mile Historical Walking Tour",
+      "description": "Walk the famous mile-long stretch from Edinburgh Castle to the Palace of Holyroodhouse, stopping at landmarks like St Giles' Cathedral, the Real Mary King's Close, and John Knox's House. A guided tour reveals centuries of political intrigue, plague history, and Scottish reformation stories.",
+      "cost_usd": 20,
+      "category": "history",
+      "best_time_of_day": "morning",
+      "location": "Royal Mile, Old Town, Edinburgh"
+    },
+    {
+      "name": "Whisky Tasting at The Scotch Malt Whisky Society",
+      "description": "Visit this prestigious members' club and tasting room housed in a Georgian townhouse, offering curated flights of rare single cask whiskies unavailable anywhere else. Knowledgeable staff guide you through tasting notes, distillery origins, and the art of nosing Scotch whisky.",
+      "cost_usd": 55,
+      "category": "food",
+      "best_time_of_day": "evening",
+      "location": "Queen Street, New Town, Edinburgh"
+    },
+    {
+      "name": "Palace of Holyroodhouse & Arthur's Seat Hike",
+      "description": "Tour the official Scottish residence of the British monarch, exploring Mary Queen of Scots' historic apartments and the ruined Holyrood Abbey. Afterwards, hike up the ancient volcanic peak of Arthur's Seat for panoramic views over Edinburgh and the Firth of Forth \u2014 a perfect blend of royal history and dramatic Scottish landscape.",
+      "cost_usd": 22,
+      "category": "history",
+      "best_time_of_day": "morning",
+      "location": "Holyrood, Edinburgh"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-09-15",
+    "return": "2027-09-20",
+    "nights": 5,
+    "month": "september",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Edinburgh",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1017.0,
+      "flight": {
+        "price_usd": 120,
+        "airline": "BA",
+        "departure": "2027-09-15T08:00:00",
+        "arrival": "2027-09-15T12:00:00",
+        "stops": 0,
+        "duration": "PT1H15M"
+      },
+      "hotel": {
+        "name": "Old Town Edinburgh",
+        "price_per_night_usd": 110,
+        "total_usd": 550,
+        "rating": 4.3,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Edinburgh"
+      },
+      "experiences": [
+        {
+          "name": "Edinburgh Castle & Scottish Crown Jewels Tour",
+          "description": "Explore the iconic fortress perched on volcanic rock, home to the Scottish Crown Jewels, the Stone of Destiny, and a rich military history spanning over 1,000 years. Guided tours provide deep historical context about Scotland's royal and military past.",
+          "cost_usd": 35,
+          "category": "culture",
+          "best_time_of_day": "morning",
+          "location": "Castlehill, Old Town, Edinburgh"
+        },
+        {
+          "name": "Scotch Whisky Experience",
+          "description": "Embark on an immersive whisky journey at this dedicated attraction next to the castle, featuring a barrel ride through the whisky-making process, tutored tastings of malts from all five Scottish whisky regions, and access to one of the world's largest Scotch whisky collections.",
+          "cost_usd": 45,
+          "category": "food",
+          "best_time_of_day": "afternoon",
+          "location": "Castlehill, Royal Mile, Old Town, Edinburgh"
+        },
+        {
+          "name": "Royal Mile Historical Walking Tour",
+          "description": "Walk the famous mile-long stretch from Edinburgh Castle to the Palace of Holyroodhouse, stopping at landmarks like St Giles' Cathedral, the Real Mary King's Close, and John Knox's House. A guided tour reveals centuries of political intrigue, plague history, and Scottish reformation stories.",
+          "cost_usd": 20,
+          "category": "history",
+          "best_time_of_day": "morning",
+          "location": "Royal Mile, Old Town, Edinburgh"
+        },
+        {
+          "name": "Palace of Holyroodhouse & Arthur's Seat Hike",
+          "description": "Tour the official Scottish residence of the British monarch, exploring Mary Queen of Scots' historic apartments and the ruined Holyrood Abbey. Afterwards, hike up the ancient volcanic peak of Arthur's Seat for panoramic views over Edinburgh and the Firth of Forth \u2014 a perfect blend of royal history and dramatic Scottish landscape.",
+          "cost_usd": 22,
+          "category": "history",
+          "best_time_of_day": "morning",
+          "location": "Holyrood, Edinburgh"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Edinburgh",
+        "style": "budget",
+        "total_cost": 1017.0,
+        "breakdown": {
+          "flight": 120.0,
+          "hotel": 550.0,
+          "experiences": 122.0,
+          "food": 125,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-09-15 (Tuesday)",
+          "morning": "Arrival at Edinburgh Airport at 12:00 \u2014 no morning activities scheduled. Take the Airlink 100 bus (\u00a35.50 one-way) from the airport to Princes Street, then walk or take a short bus ride to your Old Town accommodation. Check in, freshen up, and get oriented.",
+          "afternoon": "Royal Mile Historical Walking Tour \u2014 after settling in, head out for a self-guided or free walking tour of the Royal Mile. Stroll from the top of the Royal Mile near Edinburgh Castle down to the Palace of Holyroodhouse, soaking in the medieval closes, historic landmarks like St Giles' Cathedral, and the rich storytelling plaques along the way. This is entirely free and a perfect gentle introduction to the city.",
+          "evening": "Explore the Grassmarket area on foot \u2014 one of Edinburgh's most atmospheric historic squares, lined with pubs and budget eateries. Grab a pint of Scottish ale at a traditional pub like The White Hart Inn (one of Edinburgh's oldest) and enjoy the Old Town ambiance.",
+          "meals": {
+            "breakfast": "Skip or grab a snack at the airport before landing to save money.",
+            "lunch": "Pick up a filled roll or pastry from a local bakery on the Royal Mile such as Breadwinner Bakery \u2014 budget around \u00a33\u20135.",
+            "dinner": "Mums Great Comfort Food on Forrest Road \u2014 hearty Scottish comfort classics like haggis, neeps and tatties or bangers and mash for around \u00a310\u201313. Cash-friendly and beloved by locals."
+          },
+          "notes": "Buy an Airlink 100 bus ticket at the airport for the cheapest transfer into the city. Validate your accommodation check-in time in advance as you arrive midday. Keep Day 1 light since travel fatigue will be a factor. Wear comfortable walking shoes from the start \u2014 Edinburgh's Old Town is very hilly and cobblestoned."
+        },
+        {
+          "day": 2,
+          "date": "2027-09-16 (Wednesday)",
+          "morning": "Edinburgh Castle & Scottish Crown Jewels Tour \u2014 arrive at opening time (9:30am) to beat the crowds. Explore the iconic fortress perched on volcanic rock, see the Scottish Crown Jewels, the Stone of Destiny, and enjoy sweeping views over the city. Book tickets online in advance to save a small amount; adult entry is approximately \u00a319.50. Spend 2\u20133 hours exploring.",
+          "afternoon": "Scotch Whisky Experience \u2014 located directly next to the castle on the Royal Mile, this is the perfect post-castle activity. Take the barrel ride tour through the whisky-making process, learn about Scotland's five whisky regions, and enjoy a dram tasting. The Silver Tour costs approximately \u00a319 and includes a whisky tasting \u2014 excellent value for whisky enthusiasts.",
+          "evening": "Whisky pub crawl along the Royal Mile and Victoria Street \u2014 visit The Bow Bar on West Bow, one of Edinburgh's finest traditional whisky pubs with over 300 single malts and no music or fruit machines, just great whisky conversation. Try a couple of affordable drams (from \u00a34\u20137 each) and enjoy the authentic atmosphere.",
+          "meals": {
+            "breakfast": "Self-catered breakfast at accommodation or grab porridge and coffee from a nearby caf\u00e9 \u2014 budget \u00a33\u20135. Porridge is a classic Scottish start.",
+            "lunch": "Canteen-style lunch at Greyfriars Bobby's Bar near the castle \u2014 affordable pub grub like a soup and sandwich deal for around \u00a38\u201310.",
+            "dinner": "The Outsider on George IV Bridge \u2014 a beloved local favourite with creative modern Scottish dishes at reasonable prices, mains around \u00a312\u201316. Book ahead as it gets busy."
+          },
+          "notes": "Pre-book Edinburgh Castle tickets online to avoid queuing and potentially save on booking fees. The Scotch Whisky Experience and Edinburgh Castle are within walking distance of each other and your Old Town hotel, making this a very efficient day. Wear layers \u2014 the castle is exposed and September can be breezy."
+        },
+        {
+          "day": 3,
+          "date": "2027-09-17 (Thursday)",
+          "morning": "Palace of Holyroodhouse \u2014 walk down the Royal Mile to the bottom and tour the official Scottish residence of the British monarch. Explore the historic state apartments, the ruins of Holyrood Abbey, and the chambers associated with Mary Queen of Scots. Adult entry is approximately \u00a317.50. Spend 1.5\u20132 hours inside.",
+          "afternoon": "Arthur's Seat Hike \u2014 directly behind the Palace of Holyroodhouse, lace up your walking shoes and hike to the summit of Arthur's Seat (251m), an ancient volcano offering panoramic views of Edinburgh, the Firth of Forth, and beyond. The hike takes about 45\u201390 minutes return depending on your route. Completely free and one of the most rewarding experiences in Edinburgh.",
+          "evening": "Visit the Scottish Parliament building exterior (free to view) on your way back, then relax in a local pub in the Canongate area of the Royal Mile. Try Holyrood 9A on Holyrood Road for excellent craft beers and gourmet burgers at reasonable prices.",
+          "meals": {
+            "breakfast": "Self-catered or a budget caf\u00e9 near your accommodation \u2014 try a bacon roll from a local caf\u00e9 for \u00a33\u20134.",
+            "lunch": "Pack a picnic lunch from a nearby supermarket (Lidl or Tesco on South Bridge) to enjoy at the top of Arthur's Seat \u2014 sandwiches, fruit, and snacks for around \u00a35. One of the most memorable lunches you'll have.",
+            "dinner": "Holyrood 9A \u2014 craft burgers and local ales, budget around \u00a312\u201315 for a burger and a pint. Lively and welcoming atmosphere."
+          },
+          "notes": "Check the opening times for the Palace of Holyroodhouse as it occasionally closes for royal visits \u2014 verify on the Royal Collection Trust website before going. Wear sturdy shoes for Arthur's Seat as paths can be uneven and muddy after rain. September weather in Edinburgh can be unpredictable, so bring a light waterproof jacket. The hike is moderately challenging but very accessible."
+        },
+        {
+          "day": 4,
+          "date": "2027-09-18 (Friday)",
+          "morning": "Free exploration of Greyfriars Kirkyard \u2014 one of Edinburgh's most historically significant and atmospheric graveyards, final resting place of many notable Scots and the inspiration for characters in Harry Potter. Completely free. Spend an hour reading the headstones and soaking up the history. Nearby, visit the statue of Greyfriars Bobby, the loyal Skye Terrier. Then explore the National Museum of Scotland on Chambers Street \u2014 free entry, world-class collections covering Scottish history, science, and culture. A brilliant budget activity.",
+          "afternoon": "Whisky deep-dive at The Scotch Malt Whisky Society on Queen Street (New Town) \u2014 if your budget allows, this iconic members' club occasionally allows non-member visits or has a public tasting room. Alternatively, visit Royal Mile Whiskies on the High Street, a specialist shop where you can browse an extraordinary selection and ask knowledgeable staff for free guidance. Pick up a small affordable bottle as a souvenir. Explore the New Town's Georgian architecture with a walk along George Street and Princes Street \u2014 completely free.",
+          "evening": "Visit Calton Hill at sunset for free panoramic views of the city, the Firth of Forth, and the dramatic Edinburgh skyline. A perfect photography spot. Then head to a traditional Scottish ceilidh if one is running locally \u2014 check at The Pleasance or similar venues, entry is often \u00a38\u201312 and includes live traditional music and dancing.",
+          "meals": {
+            "breakfast": "Caf\u00e9 Milk on Forrest Road \u2014 excellent value breakfast options including granola, eggs, and good coffee, budget around \u00a36\u20138.",
+            "lunch": "The National Museum of Scotland has a caf\u00e9, but for better value grab lunch from Oink on Victoria Street \u2014 famous for their hog roast rolls, freshly carved, for around \u00a35\u20137. A true Edinburgh institution.",
+            "dinner": "Mosque Kitchen on Nicolson Square \u2014 legendary Edinburgh budget gem, serving generous portions of curry, rice, and naan for around \u00a36\u20138. Hugely popular with students and locals alike. Cash only, queue outside."
+          },
+          "notes": "The National Museum of Scotland is genuinely world-class and completely free \u2014 don't rush it. Mosque Kitchen is one of the best budget dining experiences in Edinburgh; arrive slightly before opening or expect a queue. Check local listings for Friday evening ceilidhs as they vary by week. Calton Hill is best visited in the hour before sunset for the most dramatic light."
+        },
+        {
+          "day": 5,
+          "date": "2027-09-19 (Saturday)",
+          "morning": "Victoria Street and the Grassmarket morning wander \u2014 explore one of Edinburgh's most charming and photogenic streets, with its curved tenements and colourful shopfronts. Browse independent shops including Demijohn (Scottish liqueurs and whiskies in beautiful bottles, great for gifts). Head to the Grassmarket market if running on a Saturday for local produce and crafts. Visit the underground vaults area \u2014 consider a free self-guided walk around the South Bridge area or book a budget-friendly underground tour (around \u00a312\u201315) for a final dose of Edinburgh history.",
+          "afternoon": "Final whisky stop \u2014 visit a local whisky shop or revisit a favourite pub for a farewell dram. Consider The Jolly Judge, a hidden gem pub tucked in a close off the Royal Mile, with low painted ceilings and a cosy atmosphere perfect for a reflective final afternoon. Pack your bags and prepare for departure.",
+          "evening": "Farewell dinner in the Old Town before heading to the airport or settling in for an early night if departing the following morning. Walk the Royal Mile one final time at dusk when the crowds thin and the gaslit atmosphere of Old Town Edinburgh is at its most magical.",
+          "meals": {
+            "breakfast": "The Elephant House on George IV Bridge \u2014 the famous 'birthplace of Harry Potter' caf\u00e9, good for a final Scottish breakfast or coffee and cake, budget around \u00a36\u20139. A nice send-off.",
+            "lunch": "Cheap and cheerful \u2014 grab a filled baguette or soup from a bakery on the Royal Mile for \u00a34\u20136, eaten while sitting on the steps of a close or in Princes Street Gardens.",
+            "dinner": "The Albanach on the Royal Mile \u2014 a Scottish pub with hearty traditional food and a great whisky selection. Mains around \u00a312\u201315. A fitting farewell dinner celebrating Scottish food and drink."
+          },
+          "notes": "If departing by Airlink 100 bus, allow at least 40\u201350 minutes travel time to the airport from the city centre, plus check-in time. Saturday is the busiest day in Edinburgh's Old Town so expect more crowds on the Royal Mile. Consider buying a small bottle of single malt as a trip memento \u2014 Royal Mile Whiskies or a supermarket both stock affordable options from \u00a320\u201330. Keep receipts if you plan to claim VAT refunds on purchases before leaving the UK."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=London+to+Edinburgh+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Edinburgh&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh"
+      ],
+      "highlights": [
+        "Save $483 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Edinburgh Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 1147.0,
+      "flight": {
+        "price_usd": 120,
+        "airline": "BA",
+        "departure": "2027-09-15T08:00:00",
+        "arrival": "2027-09-15T12:00:00",
+        "stops": 0,
+        "duration": "PT1H15M"
+      },
+      "hotel": {
+        "name": "Old Town Edinburgh",
+        "price_per_night_usd": 110,
+        "total_usd": 550,
+        "rating": 4.3,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Edinburgh"
+      },
+      "experiences": [
+        {
+          "name": "Edinburgh Castle & Scottish Crown Jewels Tour",
+          "description": "Explore the iconic fortress perched on volcanic rock, home to the Scottish Crown Jewels, the Stone of Destiny, and a rich military history spanning over 1,000 years. Guided tours provide deep historical context about Scotland's royal and military past.",
+          "cost_usd": 35,
+          "category": "culture",
+          "best_time_of_day": "morning",
+          "location": "Castlehill, Old Town, Edinburgh"
+        },
+        {
+          "name": "Scotch Whisky Experience",
+          "description": "Embark on an immersive whisky journey at this dedicated attraction next to the castle, featuring a barrel ride through the whisky-making process, tutored tastings of malts from all five Scottish whisky regions, and access to one of the world's largest Scotch whisky collections.",
+          "cost_usd": 45,
+          "category": "food",
+          "best_time_of_day": "afternoon",
+          "location": "Castlehill, Royal Mile, Old Town, Edinburgh"
+        },
+        {
+          "name": "Royal Mile Historical Walking Tour",
+          "description": "Walk the famous mile-long stretch from Edinburgh Castle to the Palace of Holyroodhouse, stopping at landmarks like St Giles' Cathedral, the Real Mary King's Close, and John Knox's House. A guided tour reveals centuries of political intrigue, plague history, and Scottish reformation stories.",
+          "cost_usd": 20,
+          "category": "history",
+          "best_time_of_day": "morning",
+          "location": "Royal Mile, Old Town, Edinburgh"
+        },
+        {
+          "name": "Whisky Tasting at The Scotch Malt Whisky Society",
+          "description": "Visit this prestigious members' club and tasting room housed in a Georgian townhouse, offering curated flights of rare single cask whiskies unavailable anywhere else. Knowledgeable staff guide you through tasting notes, distillery origins, and the art of nosing Scotch whisky.",
+          "cost_usd": 55,
+          "category": "food",
+          "best_time_of_day": "evening",
+          "location": "Queen Street, New Town, Edinburgh"
+        },
+        {
+          "name": "Palace of Holyroodhouse & Arthur's Seat Hike",
+          "description": "Tour the official Scottish residence of the British monarch, exploring Mary Queen of Scots' historic apartments and the ruined Holyrood Abbey. Afterwards, hike up the ancient volcanic peak of Arthur's Seat for panoramic views over Edinburgh and the Firth of Forth \u2014 a perfect blend of royal history and dramatic Scottish landscape.",
+          "cost_usd": 22,
+          "category": "history",
+          "best_time_of_day": "morning",
+          "location": "Holyrood, Edinburgh"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Edinburgh",
+        "style": "balanced",
+        "total_cost": 1147.0,
+        "breakdown": {
+          "flight": 120.0,
+          "hotel": 550.0,
+          "experiences": 177.0,
+          "food": 200,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-09-15 (Tuesday)",
+          "morning": "Arrival at Edinburgh Airport at 12:00 \u2014 no morning activities scheduled. Take the Airlink 100 bus or tram from the airport to the city centre (~30\u201345 min). Check in to your Old Town hotel, freshen up, and get oriented with a short stroll along the Royal Mile to soak in the atmosphere.",
+          "afternoon": "Scotch Whisky Experience (Royal Mile, right next to the castle): Kick off your Edinburgh trip with an immersive whisky journey featuring a barrel ride, tasting session, and an introduction to Scotland's five whisky regions. A perfect, manageable first activity after a morning of travel \u2014 lasts roughly 1\u20131.5 hours.",
+          "evening": "Leisurely evening walk down the Royal Mile to explore the Old Town neighbourhood, browse independent shops and closes (alleyways), and settle in to your surroundings before an early dinner and rest.",
+          "meals": {
+            "breakfast": "Grab a coffee and pastry at the airport or on arrival \u2014 nothing formal scheduled given the midday landing.",
+            "lunch": "Deacon's House Caf\u00e9 on the Royal Mile: a cosy, mid-range caf\u00e9 serving classic Scottish soups, sandwiches, and light bites \u2014 perfect after check-in.",
+            "dinner": "The Witchery by the Castle (set menu / \u00e0 la carte): atmospheric Gothic dining in a historic building steps from the castle. Mid-range set menu options available. Book ahead. Alternatively, Cannonball Restaurant for Scottish comfort food with castle views."
+          },
+          "notes": "Flight lands at 12:00 \u2014 factor in baggage reclaim (~20 min) and transfer (~40 min), so hotel arrival is realistically 13:30\u201314:00. Keep Day 1 light to recover from travel. The Scotch Whisky Experience is walkable from any Old Town hotel."
+        },
+        {
+          "day": 2,
+          "date": "2027-09-16 (Wednesday)",
+          "morning": "Edinburgh Castle & Scottish Crown Jewels Tour: Spend a full morning (2\u20133 hours) exploring the iconic fortress perched on volcanic rock. Highlights include the Scottish Crown Jewels, the Stone of Destiny, St Margaret's Chapel, and panoramic city views. Book tickets in advance to skip queues. Opens at 09:30.",
+          "afternoon": "Royal Mile Historical Walking Tour: Join a guided walking tour along the famous mile-long stretch from Edinburgh Castle down to the Palace of Holyroodhouse. Discover hidden closes, Greyfriars Kirkyard, St Giles' Cathedral, and the stories of Old Town's turbulent past. Tours typically last 1.5\u20132 hours.",
+          "evening": "Explore the Grassmarket area at the foot of the castle rock \u2014 a lively historic square packed with pubs, restaurants, and independent shops. Enjoy the vibrant evening atmosphere.",
+          "meals": {
+            "breakfast": "The Pantry or S\u00f6derberg Bakery near Old Town \u2014 excellent coffee, pastries, and full Scottish breakfast options at mid-range prices.",
+            "lunch": "Deacon's Brodie's Tavern on the Royal Mile: a classic Scottish pub named after the infamous Edinburgh figure. Hearty lunches including haggis, neeps & tatties, and traditional pies.",
+            "dinner": "Grassmarket Restaurant or The Last Drop pub in Grassmarket \u2014 relaxed mid-range dining with Scottish ales and locally sourced dishes in a historically rich setting."
+          },
+          "notes": "This is your heaviest history day \u2014 pace yourself between the castle and the walking tour. Wear comfortable shoes; the Royal Mile's cobblestones can be tiring. September weather may be cool and changeable \u2014 bring a light waterproof layer."
+        },
+        {
+          "day": 3,
+          "date": "2027-09-17 (Thursday)",
+          "morning": "Palace of Holyroodhouse Tour: Visit the official Scottish residence of the British monarch at the foot of the Royal Mile. Explore the State Apartments, Mary Queen of Scots' historic chambers, and the ruins of Holyrood Abbey. Allow 1.5\u20132 hours. Check opening times in advance as the palace occasionally closes for royal events.",
+          "afternoon": "Arthur's Seat Hike: Directly behind the Palace, hike up the ancient volcanic hill to the summit of Arthur's Seat (251m / 823ft). The round trip takes approximately 1.5\u20132 hours at a leisurely pace and rewards you with sweeping panoramic views over Edinburgh, the Firth of Forth, and the Highlands on clear days. A perfect balance of nature and history.",
+          "evening": "Return to Old Town and unwind. Visit a traditional Scottish pub in the Canongate area of the Royal Mile for a pint of local ale or a dram of single malt whisky.",
+          "meals": {
+            "breakfast": "Milk on the Royal Mile or a nearby caf\u00e9 \u2014 avocado toast, full Scottish, or lighter options. Fuel up before the hike.",
+            "lunch": "Pack a picnic from a local deli (Valvona & Crolla or Peckham's) to enjoy at the summit or the park grounds around Holyrood \u2014 a memorable mid-hike break.",
+            "dinner": "Wedgwood Restaurant on the Royal Mile: award-winning Scottish fine dining at accessible mid-range prices. Seasonal tasting menus with local produce. Reservations recommended."
+          },
+          "notes": "Wear sturdy walking shoes for Arthur's Seat \u2014 the path can be muddy and uneven in September. The hike is moderate difficulty with some steep sections near the summit. Start the palace early (09:30 opening) to give yourself plenty of afternoon time for the hike."
+        },
+        {
+          "day": 4,
+          "date": "2027-09-18 (Friday)",
+          "morning": "Whisky Tasting at The Scotch Malt Whisky Society (SMWS): Visit this prestigious tasting room housed in an elegant Georgian townhouse on Queen Street (New Town, a short walk or taxi from Old Town). Enjoy a curated guided tasting of rare, single-cask whiskies from across Scotland's regions. A truly special experience for whisky enthusiasts \u2014 book in advance as access may require a day membership.",
+          "afternoon": "Explore Edinburgh's New Town: Walk from the SMWS through the UNESCO-listed Georgian New Town. Visit the Scottish National Portrait Gallery (free entry) on Queen Street for Scottish history through art, then stroll along Princes Street and the beautiful Princes Street Gardens with views back to the castle.",
+          "evening": "Return to Old Town for a self-guided whisky bar crawl \u2014 Edinburgh's Old Town has some of the finest whisky bars in the world. Visit The Bow Bar (Victoria Street) and Whiski Bar & Restaurant (Royal Mile) to compare drams and reflect on your whisky journey.",
+          "meals": {
+            "breakfast": "Caf\u00e9 Lucano or similar Old Town caf\u00e9 for a full Scottish breakfast before heading to the SMWS.",
+            "lunch": "The SMWS Members' Room has a dining option \u2014 enjoy a light lunch there if available, or head to Contini on George Street for excellent Italian-Scottish fusion at mid-range prices.",
+            "dinner": "The Grain Store on Victoria Street: a charming split-level restaurant in a 17th-century building serving modern Scottish cuisine with a great whisky and wine list \u2014 ideal for a whisky-themed day finale."
+          },
+          "notes": "The SMWS is located in the New Town (Leith Street / Queen Street area), approximately a 15\u201320 minute walk from most Old Town hotels or a short taxi ride. Check if a day membership or guest pass is required and book well ahead. Friday evenings are lively in Edinburgh \u2014 the whisky bars will be buzzing."
+        },
+        {
+          "day": 5,
+          "date": "2027-09-19 (Saturday)",
+          "morning": "Revisit any missed highlights or explore Victoria Street (the colourful curved street said to have inspired Diagon Alley) and Greyfriars Kirkyard \u2014 Edinburgh's most atmospheric historic cemetery, home to Greyfriars Bobby's grave and connections to the Covenanters. A quieter, reflective morning to close the trip.",
+          "afternoon": "Visit a local whisky shop for final purchases and gifts \u2014 Royal Mile Whiskies or Cadenhead's Whisky Shop (both on the Royal Mile) offer expert staff and an enormous selection of Scottish single malts at all price points. Pack your finds carefully for the journey home. Begin preparing for departure.",
+          "evening": "Farewell dinner in Old Town to celebrate the trip. Reflect on five days of history, whisky, and Scottish culture.",
+          "meals": {
+            "breakfast": "Full Scottish breakfast at The Elephant House (famous caf\u00e9 on George IV Bridge, near Greyfriars) \u2014 a beloved Edinburgh institution.",
+            "lunch": "Ondine Seafood Restaurant on George IV Bridge: award-winning sustainable Scottish seafood at mid-range prices \u2014 a special farewell lunch featuring Orkney scallops, Scottish lobster, and local oysters.",
+            "dinner": "Angels with Bagpipes on the Royal Mile: sophisticated Scottish cuisine in a stylish setting, with a great whisky selection to toast the end of a memorable Edinburgh trip."
+          },
+          "notes": "If departing on Day 5, check your flight time and plan accordingly \u2014 Edinburgh Airport is 30\u201345 minutes from the city centre. Royal Mile Whiskies and Cadenhead's open from 10:00 on Saturdays. Consider booking the farewell dinner early in the trip as popular Old Town restaurants fill up on Saturday evenings."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=London+to+Edinburgh+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Edinburgh&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.3\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Edinburgh Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 1247.0,
+      "flight": {
+        "price_usd": 120,
+        "airline": "BA",
+        "departure": "2027-09-15T08:00:00",
+        "arrival": "2027-09-15T12:00:00",
+        "stops": 0,
+        "duration": "PT1H15M"
+      },
+      "hotel": {
+        "name": "Old Town Edinburgh",
+        "price_per_night_usd": 110,
+        "total_usd": 550,
+        "rating": 4.3,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Edinburgh"
+      },
+      "experiences": [
+        {
+          "name": "Edinburgh Castle & Scottish Crown Jewels Tour",
+          "description": "Explore the iconic fortress perched on volcanic rock, home to the Scottish Crown Jewels, the Stone of Destiny, and a rich military history spanning over 1,000 years. Guided tours provide deep historical context about Scotland's royal and military past.",
+          "cost_usd": 35,
+          "category": "culture",
+          "best_time_of_day": "morning",
+          "location": "Castlehill, Old Town, Edinburgh"
+        },
+        {
+          "name": "Scotch Whisky Experience",
+          "description": "Embark on an immersive whisky journey at this dedicated attraction next to the castle, featuring a barrel ride through the whisky-making process, tutored tastings of malts from all five Scottish whisky regions, and access to one of the world's largest Scotch whisky collections.",
+          "cost_usd": 45,
+          "category": "food",
+          "best_time_of_day": "afternoon",
+          "location": "Castlehill, Royal Mile, Old Town, Edinburgh"
+        },
+        {
+          "name": "Royal Mile Historical Walking Tour",
+          "description": "Walk the famous mile-long stretch from Edinburgh Castle to the Palace of Holyroodhouse, stopping at landmarks like St Giles' Cathedral, the Real Mary King's Close, and John Knox's House. A guided tour reveals centuries of political intrigue, plague history, and Scottish reformation stories.",
+          "cost_usd": 20,
+          "category": "history",
+          "best_time_of_day": "morning",
+          "location": "Royal Mile, Old Town, Edinburgh"
+        },
+        {
+          "name": "Whisky Tasting at The Scotch Malt Whisky Society",
+          "description": "Visit this prestigious members' club and tasting room housed in a Georgian townhouse, offering curated flights of rare single cask whiskies unavailable anywhere else. Knowledgeable staff guide you through tasting notes, distillery origins, and the art of nosing Scotch whisky.",
+          "cost_usd": 55,
+          "category": "food",
+          "best_time_of_day": "evening",
+          "location": "Queen Street, New Town, Edinburgh"
+        },
+        {
+          "name": "Palace of Holyroodhouse & Arthur's Seat Hike",
+          "description": "Tour the official Scottish residence of the British monarch, exploring Mary Queen of Scots' historic apartments and the ruined Holyrood Abbey. Afterwards, hike up the ancient volcanic peak of Arthur's Seat for panoramic views over Edinburgh and the Firth of Forth \u2014 a perfect blend of royal history and dramatic Scottish landscape.",
+          "cost_usd": 22,
+          "category": "history",
+          "best_time_of_day": "morning",
+          "location": "Holyrood, Edinburgh"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Edinburgh",
+        "style": "premium",
+        "total_cost": 1247.0,
+        "breakdown": {
+          "flight": 120.0,
+          "hotel": 550.0,
+          "experiences": 177.0,
+          "food": 300,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-09-15 (Tuesday)",
+          "morning": "Arrival at Edinburgh Airport at 12:00 \u2014 no morning activities scheduled. Private chauffeur transfer arranged from Edinburgh Airport to your Old Town hotel. Check-in, freshen up, and settle into your luxury accommodations.",
+          "afternoon": "Scotch Whisky Experience (14:00\u201316:00): Begin your Edinburgh journey steps from the castle with this immersive whisky attraction. Enjoy the premium 'Whisky Ambassador' tour featuring a barrel ride through Scotch whisky history, a guided nosing and tasting of four regional single malts, and access to the world's largest Scotch whisky collection. A perfect, gentle introduction after your flight.",
+          "evening": "Royal Mile Historical Walking Tour (private, 17:30\u201319:00): Book a private guided evening stroll down the Royal Mile as the day-trippers depart and the golden-hour light catches the medieval tenements. Your expert guide will reveal hidden closes, ghost stories, and the layered history of Old Town Edinburgh. Dinner to follow at a top Old Town restaurant.",
+          "meals": {
+            "breakfast": "Enjoy breakfast on the flight or grab a light bite at the airport lounge upon arrival.",
+            "lunch": "The Witchery by the Castle: A legendary Edinburgh institution draped in Gothic splendour, situated at the top of the Royal Mile. Order the Scottish lobster bisque and smoked salmon platter for a luxurious first taste of Scotland.",
+            "dinner": "Dishoom Edinburgh (or Restaurant Martin Wishart if you prefer fine dining): For a relaxed first evening, Dishoom offers premium Bombay-inspired cuisine in a beautifully designed space. Alternatively, book Martin Wishart's Old Town outpost for Michelin-starred Scottish produce-driven tasting menus with exceptional wine pairings."
+          },
+          "notes": "Arrange airport chauffeur transfer in advance (e.g., through your hotel concierge). The Scotch Whisky Experience is a 2-minute walk from most Old Town hotels \u2014 no transport needed. Keep Day 1 light given travel fatigue. Confirm Witchery lunch reservation well in advance as it books up quickly."
+        },
+        {
+          "day": 2,
+          "date": "2027-09-16 (Wednesday)",
+          "morning": "Edinburgh Castle & Scottish Crown Jewels Tour (09:00\u201312:00): Beat the crowds with an early-access private guided tour of this iconic volcanic fortress. Marvel at the Scottish Crown Jewels (Honours of Scotland), the Stone of Destiny, St Margaret's Chapel (Edinburgh's oldest building), and the Great Hall. Your private guide will bring centuries of siege, royalty, and rebellion vividly to life.",
+          "afternoon": "Palace of Holyroodhouse (13:30\u201315:30): Walk or take a short private car transfer to the foot of the Royal Mile to tour the official Scottish residence of the British monarch. Explore Mary Queen of Scots' private apartments, the ornate State Apartments, and the evocative ruins of Holyrood Abbey. Combine with a leisurely stroll through the palace gardens with views up to Arthur's Seat.",
+          "evening": "Whisky Tasting at The Scotch Malt Whisky Society (18:00\u201320:00): Head to this prestigious members' club housed in a stunning Georgian townhouse on Queen Street. Arrange a guest membership or concierge-facilitated entry for a curated tutored tasting of rare, cask-strength single malts \u2014 expressions unavailable anywhere else in the world. Relax in the elegant Members' Room with a dram before dinner.",
+          "meals": {
+            "breakfast": "In-hotel breakfast at your luxury Old Town property \u2014 opt for the full Scottish: smoked Loch Fyne kippers, Stornoway black pudding, free-range eggs, and freshly baked morning rolls.",
+            "lunch": "Caf\u00e9 St Honor\u00e9: A beloved Edinburgh bistro with a refined French-Scottish menu. Try the hand-dived scallops with cauliflower pur\u00e9e or the venison tartare, paired with a glass of Burgundy.",
+            "dinner": "The Pompadour by Galvin (Waldorf Astoria Edinburgh \u2013 The Caledonian): Enjoy a spectacular dinner in one of Edinburgh's grandest dining rooms. The Galvin brothers' French-inspired menu celebrates Scottish produce \u2014 expect Orkney beef, Highland game, and an extraordinary wine cellar. Dress code smart-elegant."
+          },
+          "notes": "Pre-book Edinburgh Castle private tour through a specialist guide company (e.g., Mercat Tours or Context Travel) \u2014 standard entry tickets sell out weeks ahead in September. The SMWS on Queen Street is a short taxi or 15-minute walk from Old Town. Ask your hotel concierge to arrange SMWS guest access as early as possible."
+        },
+        {
+          "day": 3,
+          "date": "2027-09-17 (Thursday)",
+          "morning": "Arthur's Seat Hike (08:30\u201311:00): Lace up your walking boots for an invigorating morning ascent of Arthur's Seat, the ancient volcano rising 251 metres above the city. The 360-degree panoramic views over Edinburgh, the Firth of Forth, and the Lothian countryside are extraordinary \u2014 especially in September's clear autumn light. A private guide can accompany you to explain the geological and mythological history of this remarkable landscape.",
+          "afternoon": "Dean Village & Scottish National Gallery of Modern Art (12:30\u201315:30): Take a private car to the picturesque Dean Village, a hidden gem of 19th-century mill buildings along the Water of Leith. Stroll the riverside path to the Scottish National Gallery of Modern Art for a curated afternoon exploring Scottish and international modern masterpieces, including works by Picasso, Matisse, and Scottish Colourists. Admission is free; private guided tours available.",
+          "evening": "Exclusive Whisky Blending Experience (17:00\u201319:00): Arrange a private whisky blending masterclass through a specialist Edinburgh whisky consultant or via a premium whisky shop such as Royal Mile Whiskies or Cadenhead's. Create your own personalised blended Scotch using component single malts, bottle and label it as a unique Edinburgh souvenir. Follow with a leisurely dinner.",
+          "meals": {
+            "breakfast": "Lighter pre-hike breakfast at the hotel \u2014 smoked salmon and scrambled eggs, fresh fruit, and strong coffee to fuel the climb.",
+            "lunch": "The Gardener's Cottage: A charming, intimate restaurant in a converted Victorian gardener's cottage near the Royal Botanic Garden. Seasonal, hyper-local tasting menus with produce grown steps from your table. Book well ahead.",
+            "dinner": "Timberyard: One of Edinburgh's most acclaimed restaurants, housed in a converted Victorian warehouse in the Grassmarket. The Radford family's tasting menu champions Scottish foraged and fermented ingredients with bold Nordic influences. Outstanding natural wine list and whisky selection."
+          },
+          "notes": "Wear layered clothing and sturdy footwear for Arthur's Seat \u2014 September weather in Edinburgh can be brisk and changeable even in clear conditions. The hike is moderately demanding but accessible for most fitness levels; allow 2\u20132.5 hours at a leisurely pace. Book Timberyard tasting menu well in advance \u2014 it is one of Edinburgh's hardest reservations."
+        },
+        {
+          "day": 4,
+          "date": "2027-09-18 (Friday)",
+          "morning": "Day Excursion \u2014 The Scotch Whisky Trail: Speyside or Lowlands Distillery Visit (08:30 departure): Arrange a full private chauffeured day excursion to a world-class distillery. Options include: (A) The Glenkinchie Distillery (Lowlands, 45 min from Edinburgh) \u2014 Scotland's 'Garden Distillery' offering an exclusive private tour and warehouse tasting; or (B) Auchentoshan Distillery (Lowlands, 1 hr) \u2014 triple-distilled Lowland malts with a premium private cask tasting experience. Both offer a deeply authentic distillery experience without a full day's travel.",
+          "afternoon": "Continue distillery experience with a private warehouse tasting and cask selection (13:00\u201315:30). Many premium distilleries offer the opportunity to select and purchase a personal cask of maturing whisky \u2014 a truly extraordinary luxury investment and souvenir. Return to Edinburgh by private car by 16:30.",
+          "evening": "New Town Exploration & Cocktail Hour (17:30\u201319:30): Return refreshed and explore Edinburgh's elegant Georgian New Town \u2014 a UNESCO World Heritage Site. Stroll George Street and Princes Street, browse premium Scottish brands (Johnstons of Elgin, Walker Slater tweed), then settle into the Bramble Bar or The Voodoo Rooms for expertly crafted Scottish whisky cocktails before your final dinner reservation.",
+          "meals": {
+            "breakfast": "Early full Scottish breakfast at the hotel before departure \u2014 Stornoway black pudding, tattie scones, grilled tomatoes, and proper filter coffee.",
+            "lunch": "Distillery restaurant or private picnic hamper arranged by your hotel concierge \u2014 think artisan Scottish cheeses, charcuterie, oatcakes, and a dram of new-make spirit on the distillery grounds.",
+            "dinner": "Number One at The Balmoral Hotel: Edinburgh's pinnacle fine dining experience, holding a Michelin star. Chef Brian Grigor's menu is a love letter to Scottish ingredients \u2014 hand-dived Orkney scallops, Highland venison, Perthshire raspberries \u2014 served in the opulent basement restaurant of Edinburgh's most iconic hotel. Impeccable sommelier-led wine pairing available."
+          },
+          "notes": "Book the private chauffeured distillery excursion through your hotel concierge or a specialist operator (e.g., Rabbie's Private Tours or Turas Scotland). Confirm distillery private tour availability well in advance \u2014 exclusive experiences fill up fast in September. Number One at The Balmoral requires formal attire and advance reservation."
+        },
+        {
+          "day": 5,
+          "date": "2027-09-19 (Saturday)",
+          "morning": "Scottish National Museum (09:30\u201311:30): Spend your final morning at one of the UK's finest museums, tracing Scotland's extraordinary story from prehistoric times to the modern era. Highlights include the Lewis Chessmen, Dolly the Sheep, and the spectacular Grand Gallery. Free entry; private guided tours available for a curated, in-depth experience without the crowds.",
+          "afternoon": "Greyfriars Kirkyard & Grassmarket (12:00\u201314:00): Take a final leisurely walk through one of Edinburgh's most atmospheric historic spaces \u2014 Greyfriars Kirkyard, where Covenanters were imprisoned and Greyfriars Bobby kept his famous vigil. Explore the colourful Grassmarket below the castle for last-minute premium Scottish shopping: Harris Tweed, cashmere, single malt miniatures, and artisan preserves from specialist delis.",
+          "evening": "Farewell Dram & Departure Preparation (15:30 onwards): Return to the hotel for a final private whisky tasting in your room or the hotel bar \u2014 ask the concierge to arrange a selection of five contrasting regional drams as a personal farewell flight. Pack your purchases, arrange chauffeur transfer for departure, and reflect on an extraordinary Edinburgh experience.",
+          "meals": {
+            "breakfast": "Leisurely final hotel breakfast \u2014 take your time with a full spread of Scottish smoked fish, pastries, fresh berries, and a pot of Darjeeling or Scottish Breakfast tea.",
+            "lunch": "Ondine Restaurant: Edinburgh's premier sustainable seafood restaurant on the Royal Mile. The oyster bar, whole Orkney lobster, and hand-dived scallops are outstanding. Elegant yet relaxed atmosphere \u2014 perfect for a celebratory final lunch.",
+            "dinner": "If departing late: The Witchery by the Castle for a romantic, candlelit farewell dinner in the Gothic Dining Room \u2014 aged Scottish beef, game terrine, and a bottle from their award-winning 1,000-bin wine list. If departing early evening, arrange a premium airport lounge or in-room dining for a lighter send-off."
+          },
+          "notes": "Allow at least 2.5 hours for Edinburgh Airport departure on a Saturday (September sees high tourist volumes). Arrange chauffeur transfer at least 3 hours before your flight. Use the morning and early afternoon fully \u2014 the city is at its most atmospheric on a Saturday. Consider shipping any large whisky or shopping purchases home via your hotel concierge to avoid luggage complications."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=London+to+Edinburgh+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Edinburgh&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh",
+        "https://www.getyourguide.com/s/?q=Edinburgh"
+      ],
+      "highlights": [
+        "4.3\u2605 luxury hotel",
+        "Direct flight (no layovers)",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-1053 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Edinburgh history and whisky, $2000 solo, 5 days, September 2027, from London",
+  "session_tags": {
+    "query_id": "CTL-07",
+    "condition": "baseline",
+    "run_index": 1
+  }
+}

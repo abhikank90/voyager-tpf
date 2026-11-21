@@ -9,6 +9,8 @@ from metrics.token_tracker import TokenTrackingCallback
 
 from . import inventory
 from .base_agent import BaseAgent
+from .http_retry import request_with_retries
+from .mock_control import mock_control_flights
 
 # Airport IATA codes for common origins/destinations. SerpAPI (Google Flights)
 # requires valid 3-letter IATA codes — sending a raw city name ("Tokyo") or
@@ -69,10 +71,15 @@ def _resolve_iata(location: str) -> str:
     if not location or not str(location).strip():
         return ""
     value = str(location).strip()
+    key = value.lower()
+    # Known city/region names (including 3-letter city codes like "NYC"/"LA") must
+    # map before the passthrough, otherwise "NYC" passes through as a departure_id
+    # that SerpAPI cannot resolve and the flight list comes back empty.
+    if key in IATA_MAP:
+        return IATA_MAP[key]
     if value.isupper() and len(value) == 3 and value.isalpha():
         return value
-    key = value.lower()
-    return IATA_MAP.get(key, "")
+    return ""
 
 
 @tool
@@ -112,7 +119,9 @@ async def search_flights(
         params["return_date"] = return_date
 
     async with httpx.AsyncClient(timeout=30) as client:
-        resp = await client.get("https://serpapi.com/search.json", params=params)
+        resp = await request_with_retries(
+            client, "GET", "https://serpapi.com/search.json", params=params,
+        )
         resp.raise_for_status()
         data = resp.json()
 
@@ -197,13 +206,14 @@ class FlightAgent(BaseAgent):
 
     def _setup(self):
         try:
-            from config import effective_temperature, get_api_config
+            from config import effective_temperature, get_api_config, get_settings
             model = get_api_config().llm.flight_agent_model
         except Exception:
             model = "claude-haiku-4-5-20251001"
         self.llm = ChatAnthropic(
             model=model,
             temperature=effective_temperature(0),
+            max_retries=get_settings().llm_max_retries,
             callbacks=[TokenTrackingCallback(model=model)],
         )
 
@@ -216,10 +226,10 @@ class FlightAgent(BaseAgent):
         origin = intent.get("origin") or "New York"
         budget = intent.get("budget_usd", 2000)
         intent.get("travel_month", "July")
-        travel_year = intent.get("travel_year", 2026)
         group_size = intent.get("group_size", 1)
 
-        departure_date, return_date = self._effective_dates(travel_year)
+        window = self._trip_window(intent)
+        departure_date, return_date = window.departure_iso, window.return_iso
         flight_budget = budget * 0.45
 
         # Parse preferred_arrival constraint from collaboration messages, if any.
@@ -237,9 +247,32 @@ class FlightAgent(BaseAgent):
                         pass
                     break
 
+        # broadcast mode: no typed constraint, so read the prose critique.
+        if preferred_arrival_hour is None:
+            interpretation = await self._interpret_critique(
+                state,
+                task=(
+                    "If the feedback asks for a different flight arrival time, return "
+                    '{"arrive_before_hour": <hour 0-23 the flight should land before>}. '
+                    'Otherwise return {"arrive_before_hour": null}.'
+                ),
+                plan={
+                    "destination": destination,
+                    "selected_flight_arrival": (state.get("selected_flight") or {}).get("arrival"),
+                },
+            )
+            hour = interpretation.get("arrive_before_hour")
+            if isinstance(hour, int) and not isinstance(hour, bool) and 0 <= hour <= 23:
+                preferred_arrival_hour = hour
+
         api_key = os.getenv("SERPAPI_API_KEY")
 
         mode = self._inventory_mode()
+        profile = state.get("inventory_profile", "default")
+        if profile == "control" and mode != "mock":
+            raise ValueError(
+                "inventory_profile 'control' is only valid in mock inventory mode"
+            )
         # Dates are derived per-mode: capture uses today+90, replay derives from
         # the fixtures' capture date so the query id (and thus the fixture found)
         # is identical no matter when the replay is run.
@@ -269,10 +302,16 @@ class FlightAgent(BaseAgent):
         elif mode == "mock":
             # Mock mode is fully offline even when API keys are set: the
             # deterministic fixture is the whole point (CI, unit tests, demos).
-            result = _mock_flight_data(
-                origin, destination, departure_date, return_date, group_size,
-                preferred_arrival_hour=preferred_arrival_hour,
-            )
+            if profile == "control":
+                result = mock_control_flights(
+                    origin, destination, departure_date, return_date, group_size,
+                    preferred_arrival_hour=preferred_arrival_hour,
+                )
+            else:
+                result = _mock_flight_data(
+                    origin, destination, departure_date, return_date, group_size,
+                    preferred_arrival_hour=preferred_arrival_hour,
+                )
         elif api_key:
             result = await search_flights.ainvoke({
                 "origin": origin,
@@ -298,6 +337,7 @@ class FlightAgent(BaseAgent):
             "selected_flight": best,
             "flight_cost_usd": best["price_usd"] if best else 0,
             "feedback_metrics": feedback["metrics"],
+            "trip_window": window.as_record(),
         }
 
     def _inventory_mode(self) -> str:

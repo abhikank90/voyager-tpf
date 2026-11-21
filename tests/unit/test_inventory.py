@@ -78,8 +78,10 @@ def test_capture_and_replay_produce_identical_selections(tmp_inventory_dir):
     # derived per-mode (capture/replay both anchor on the same date source), so
     # the fixture is found across days. Capture under the id replay computes.
     probe = FlightAgent()
+    probe_intent = {"travel_year": 2026, "travel_month": "July"}
     with patch.object(probe, "_inventory_mode", return_value="replay"):
-        dep, ret = probe._effective_dates(2026)
+        window = probe._trip_window(probe_intent)
+    dep, ret = window.departure_iso, window.return_iso
     query_id = inventory.inventory_query_id(
         "serpapi", origin="New York", destination="Greece",
         departure_date=dep, return_date=ret, adults=1,
@@ -188,8 +190,12 @@ def test_weather_capture_writes_fixture(tmp_inventory_dir, monkeypatch):
     agent = WeatherAgent()
     asyncio.run(agent._execute({"intent": {"destination": "Greece", "travel_month": "July"}}))
 
-    query_id = inventory.inventory_query_id("openweather", destination="Greece", month="july")
+    # v1.5 captures record monthly climatology (protocol §5.2); with no key the
+    # fixture is the static climate table, marked as a fallback.
+    query_id = inventory.inventory_query_id("climatology", destination="Greece", month="july")
     manifest = inventory.load_manifest()
-    entry = manifest["fixtures"].get(f"{query_id}_openweather")
+    entry = manifest["fixtures"].get(f"{query_id}_climatology")
     assert entry is not None
-    assert entry["source"] == "openweather"
+    assert entry["source"] == "climatology"
+    payload = inventory.replay("climatology", query_id)
+    assert payload["source"] == "historical_average_fallback"

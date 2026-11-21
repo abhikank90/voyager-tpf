@@ -5,6 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2026-11-20
+
+The v1.5 evaluation window. The full protocol is in
+`docs/EVALUATION_PROTOCOL.md`; every number, with its inputs and method, is in
+`results/v1.5/paper_numbers.{json,md}`.
+
+### Added
+
+- Condition runs (`baseline`, `targeted`, `full_rerun`, `broadcast`, `two_way`)
+  over 25 synthetic queries (mock inventory), 5 runs per condition: 625 sessions.
+- Control profiles (10 control queries × 5 conditions × 3 runs): 150 sessions.
+- Real-inventory lane: 1 capture (25 sessions, 10 recorded) plus 3 replays of the
+  25 real queries × 5 conditions (375 sessions), replayed from the committed
+  `fixtures/live_inventory_v1.5/` fixture set.
+- H2c coherence audit: 30 plans sampled from resolved outcomes (seed 20261117),
+  20 double-scored across two rounds.
+- RQ4 hybrid-conflict-detector evaluation: 32 probes, deterministic rules vs
+  LLM candidates (isolation and shipped variants), with a second labeler.
+- Billing reconciliation and per-component usage accounting
+  (`scripts/reconcile_billing.py`, `results/v1.5/billing_reconciliation.*`).
+
+### Reported outcomes
+
+As `paper_numbers` reports them: H2a pass, H2b pass, H2c fail, H3a pass,
+H3b pass. H1/H4/H5 carry no single pass flag; see the numbers.
+
+### Deviations (logged in §13)
+
+Aborted first window (key exposure); capture-lane defects and their fixes;
+the narrowed capture guard; real-set provenance and sensitivity strata; the
+RQ4 shipped stub-client re-run; the `paper_numbers` candidate-field fix; the
+second labeler's self-check; the billing reconciliation fail (+1.18%) and its
+itemization; H2c eligibility and mock-only sample; the H2c contingency round.
 ## [Unreleased]
 
 ### Fixed

@@ -1,0 +1,692 @@
+{
+  "session_id": "94c14d21-d15c-4cec-8d9a-6098e1851fb5",
+  "intent": {
+    "destination": "Sydney, Australia",
+    "origin": "LAX",
+    "budget_usd": 4500.0,
+    "duration_days": 8,
+    "travel_month": "December",
+    "travel_year": 2027,
+    "interests": [
+      "beaches",
+      "harbour",
+      "sightseeing"
+    ],
+    "group_size": 2,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Sydney harbour and beaches, $4500 couple, 8 days, December 2027, from LAX"
+  },
+  "selected_flight": {
+    "price_usd": 1360,
+    "airline": "QF",
+    "departure": "2027-12-15T10:00:00",
+    "arrival": "2027-12-15T10:00:00",
+    "stops": 1,
+    "duration": "PT15H00M"
+  },
+  "selected_hotel": {
+    "name": "Harbour View Sydney",
+    "price_per_night_usd": 180,
+    "total_usd": 1440,
+    "rating": 4.4,
+    "amenities": [
+      "wifi",
+      "gym"
+    ],
+    "location": "Sydney"
+  },
+  "experiences": [
+    {
+      "name": "Sydney Harbour Bridge Climb",
+      "description": "Climb to the summit of the iconic Sydney Harbour Bridge for breathtaking 360-degree panoramic views of the harbour, Opera House, and city skyline. A bucket-list experience led by expert guides who share fascinating stories about the bridge's history and construction.",
+      "cost_usd": 130,
+      "category": "sightseeing",
+      "best_time_of_day": "sunset",
+      "location": "Milsons Point, Sydney Harbour"
+    },
+    {
+      "name": "Bondi to Coogee Coastal Walk",
+      "description": "Trek one of Australia's most scenic coastal paths stretching 6km along dramatic sandstone cliffs, passing through hidden coves, rock pools, and stunning beaches including Tamarama, Bronte, and Clovelly. Stop for a swim or a coffee at one of the many beachside cafes along the route.",
+      "cost_usd": 0,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Bondi Beach to Coogee Beach, Eastern Suburbs"
+    },
+    {
+      "name": "Sydney Harbour Ferry & Manly Beach Day",
+      "description": "Board a scenic public ferry from Circular Quay for a 30-minute ride across Sydney Harbour, passing the Opera House and iconic landmarks, arriving at the laid-back Manly Beach. Spend the day swimming in the surf, exploring the Corso, and dining on fresh seafood at waterfront restaurants.",
+      "cost_usd": 20,
+      "category": "harbour",
+      "best_time_of_day": "morning",
+      "location": "Manly, Northern Beaches"
+    },
+    {
+      "name": "Sydney Opera House Guided Tour & Performance",
+      "description": "Explore the architectural masterpiece of the Sydney Opera House with an expert-guided tour of its stunning interior, backstage areas, and performance halls. Complement the experience by attending an evening performance \u2014 from opera and ballet to contemporary theatre \u2014 for a truly world-class cultural evening.",
+      "cost_usd": 85,
+      "category": "culture",
+      "best_time_of_day": "afternoon",
+      "location": "Bennelong Point, Sydney CBD"
+    },
+    {
+      "name": "Sydney Harbour Sunset Kayaking",
+      "description": "Paddle through the stunning waters of Sydney Harbour at golden hour on a guided kayaking tour. Glide past the Opera House, Harbour Bridge, and historic Fort Denison while your guide shares stories of the harbour's maritime history. Includes all equipment, instruction, and a small snack on the water.",
+      "cost_usd": 95,
+      "category": "harbour",
+      "best_time_of_day": "sunset",
+      "location": "Lavender Bay, North Sydney"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-12-15",
+    "return": "2027-12-23",
+    "nights": 8,
+    "month": "december",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Sydney, Australia",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 3120.0,
+      "flight": {
+        "price_usd": 1360,
+        "airline": "QF",
+        "departure": "2027-12-15T10:00:00",
+        "arrival": "2027-12-15T10:00:00",
+        "stops": 1,
+        "duration": "PT15H00M"
+      },
+      "hotel": {
+        "name": "Harbour View Sydney",
+        "price_per_night_usd": 180,
+        "total_usd": 1440,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "gym"
+        ],
+        "location": "Sydney"
+      },
+      "experiences": [
+        {
+          "name": "Bondi to Coogee Coastal Walk",
+          "description": "Trek one of Australia's most scenic coastal paths stretching 6km along dramatic sandstone cliffs, passing through hidden coves, rock pools, and stunning beaches including Tamarama, Bronte, and Clovelly. Stop for a swim or a coffee at one of the many beachside cafes along the route.",
+          "cost_usd": 0,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Bondi Beach to Coogee Beach, Eastern Suburbs"
+        },
+        {
+          "name": "Sydney Harbour Ferry & Manly Beach Day",
+          "description": "Board a scenic public ferry from Circular Quay for a 30-minute ride across Sydney Harbour, passing the Opera House and iconic landmarks, arriving at the laid-back Manly Beach. Spend the day swimming in the surf, exploring the Corso, and dining on fresh seafood at waterfront restaurants.",
+          "cost_usd": 20,
+          "category": "harbour",
+          "best_time_of_day": "morning",
+          "location": "Manly, Northern Beaches"
+        }
+      ],
+      "itinerary": {
+        "num_days": 8,
+        "destination": "Sydney, Australia",
+        "style": "budget",
+        "total_cost": 3120.0,
+        "breakdown": {
+          "flight": 1360.0,
+          "hotel": 1440.0,
+          "experiences": 20.0,
+          "food": 200,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-12-15 (Tuesday)",
+          "morning": "Arrive at Sydney Airport at 10:00 on Flight QF. Clear customs and immigration, collect luggage, and take the Airport Link train from the International Terminal to the city centre (approx. AUD $19-21, ~13 minutes to Central Station). Check in or drop bags at Harbour View Sydney. Take a leisurely stroll around The Rocks historic precinct to get your bearings \u2014 free to explore the cobblestone laneways, colonial sandstone buildings, and street art.",
+          "afternoon": "Walk along the iconic Sydney Harbour foreshore from The Rocks to Circular Quay. Admire the Sydney Opera House exterior up close (free), snap photos from the Opera House forecourt, and continue along the Royal Botanic Garden waterfront path for a free, shaded, scenic walk with stunning harbour views. Rest and recharge in the gardens.",
+          "evening": "Head to Circular Quay to watch the sunset over the harbour \u2014 one of Sydney's best free experiences. Grab a budget-friendly dinner at Circular Quay or walk to the CBD for more affordable options. Return to hotel for an early night to recover from travel.",
+          "meals": {
+            "breakfast": "Grab a coffee and pastry at the airport or a caf\u00e9 near Central Station upon arrival (AUD $8-12)",
+            "lunch": "Grab a sandwich or wrap from a supermarket deli such as Woolworths Metro near Circular Quay (AUD $6-10)",
+            "dinner": "Chat Thai in the CBD or Haymarket for authentic, affordable Thai food (AUD $15-20 per person)"
+          },
+          "notes": "Day 1 is intentionally relaxed given the 10am arrival. Allow extra time for immigration queues, especially in peak December summer season. Purchase an Opal card at the airport for all public transport \u2014 it will save money across the entire trip. December is peak Australian summer so expect warm weather (25-30\u00b0C). Stay hydrated."
+        },
+        {
+          "day": 2,
+          "date": "2027-12-16 (Wednesday)",
+          "morning": "Start the day with the famous Bondi to Coogee Coastal Walk \u2014 one of Australia's most scenic free experiences. Take the bus from the city to Bondi Beach (Opal card, approx. AUD $3.50). Begin the 6km coastal trek from Bondi, walking south along dramatic sandstone cliffs past Tamarama Beach, Bronte Beach, Clovelly Beach, and Gordon's Bay, finishing at Coogee Beach. Allow 2-3 hours at a leisurely pace.",
+          "afternoon": "Relax and swim at Coogee Beach after the walk \u2014 it's less crowded than Bondi and equally beautiful. Take a dip in the ocean baths at Coogee (McIver's Ladies Baths or Giles Baths nearby, free entry). Catch the bus back toward the city or to Bondi Junction for shopping and exploring.",
+          "evening": "Return to the city via public bus. Explore the vibrant Newtown neighbourhood for dinner \u2014 one of Sydney's most eclectic and budget-friendly dining strips along King Street.",
+          "meals": {
+            "breakfast": "Grab a smoothie bowl or a\u00e7a\u00ed bowl from one of the many caf\u00e9s at Bondi Beach before starting the walk (AUD $12-16)",
+            "lunch": "Pack snacks and a water bottle for the coastal walk, or grab fish and chips at Coogee Beach from a local takeaway shop (AUD $10-14)",
+            "dinner": "Newtown has excellent budget options \u2014 try Thanh Binh for Vietnamese or Mary's Newtown for burgers (AUD $15-20 per person)"
+          },
+          "notes": "Wear sunscreen, a hat, and comfortable walking shoes for the coastal walk. Bring at least 1.5 litres of water. The walk is mostly flat with some steps. December summer sun is intense \u2014 start early (by 8-9am) to avoid peak heat. The full walk is free and one of the best budget activities in Sydney."
+        },
+        {
+          "day": 3,
+          "date": "2027-12-17 (Thursday)",
+          "morning": "Experience the Sydney Harbour Ferry & Manly Beach Day. Head to Circular Quay and board the Manly Ferry \u2014 a 30-minute scenic ride across Sydney Harbour passing the Opera House, Harbour Bridge, and North Head headland (Opal card fare approx. AUD $8 each way). Arrive at Manly and walk the Corso pedestrian mall to the ocean beach. Swim at Manly Beach, one of Sydney's most famous surf beaches.",
+          "afternoon": "Explore Manly further \u2014 walk the Manly to Shelly Beach coastal path (free, 20 minutes each way) to the beautiful protected Shelly Beach for snorkelling. Alternatively, rent a stand-up paddleboard or kayak on the Manly Cove harbour side (approx. AUD $20-30/hour). Browse the Manly beachside markets if operating on this day.",
+          "evening": "Catch the ferry back to Circular Quay in the early evening to enjoy the spectacular harbour sunset from the water \u2014 arguably the best view in Sydney. Walk across the Harbour Bridge pedestrian walkway (free!) for panoramic views of the city and harbour at dusk.",
+          "meals": {
+            "breakfast": "Grab a coffee and avocado toast from a caf\u00e9 near Circular Quay before boarding the ferry (AUD $10-15)",
+            "lunch": "Fish and chips on the Manly beachfront from a local takeaway, eaten on the grass \u2014 a classic Sydney experience (AUD $12-16)",
+            "dinner": "Grab a budget meal at the Night Noodle Markets if running in Hyde Park (seasonal, AUD $10-15) or a kebab/falafel wrap from a CBD takeaway shop (AUD $10-12)"
+          },
+          "notes": "The Manly Ferry is far more scenic than the fast ferry \u2014 make sure to board the regular ferry at Wharf 3, Circular Quay. The ferry ride itself is a sightseeing experience and excellent value. Manly is a full-day destination \u2014 bring beach gear, sunscreen, and a change of clothes. The Harbour Bridge pedestrian walk is completely free and takes about 20-30 minutes each way."
+        },
+        {
+          "day": 4,
+          "date": "2027-12-18 (Friday)",
+          "morning": "Explore the historic neighbourhood of The Rocks, right near the hotel. Join the free self-guided heritage walk through Australia's oldest European settlement \u2014 pick up a free map from The Rocks Discovery Museum (free entry). Visit the museum to learn about Sydney's colonial history, convict past, and Indigenous heritage. Browse the Rocks Markets if operating (Saturdays and Sundays, but check for Friday pop-ups).",
+          "afternoon": "Walk across the Sydney Harbour Bridge pedestrian walkway if not done previously (free). On the north side, explore Milsons Point and Kirribilli \u2014 a charming suburb with great harbour views back toward the city. Visit Bradfield Park under the bridge for classic Sydney Harbour Bridge and Opera House photos. Take the train back from Milsons Point station to the city.",
+          "evening": "Head to Darling Harbour for the free evening atmosphere, waterfront dining options, and the free Tumbalong Park area. Watch the free weekend light and water shows if scheduled. Explore the Chinese Garden of Friendship exterior and the Chinatown precinct nearby for dinner.",
+          "meals": {
+            "breakfast": "Grab breakfast at a local caf\u00e9 in The Rocks area \u2014 try the Pancakes on the Rocks for a budget-friendly sit-down option (AUD $15-20)",
+            "lunch": "Picnic lunch from a Woolworths or Coles supermarket in the CBD \u2014 grab fresh bread, cheese, fruit, and drinks (AUD $8-12)",
+            "dinner": "Chinatown's Dixon Street food court or BBQ King for roast duck rice or dumplings \u2014 excellent value (AUD $12-18 per person)"
+          },
+          "notes": "The Rocks Discovery Museum is free and highly recommended for understanding Sydney's layered history. The Harbour Bridge walk is best done in the morning or late afternoon to avoid midday heat. Kirribilli is a lovely, quieter neighbourhood worth exploring. Darling Harbour has free events and entertainment most evenings in summer."
+        },
+        {
+          "day": 5,
+          "date": "2027-12-19 (Saturday)",
+          "morning": "Visit the iconic Bondi Beach for a proper beach morning. Take the train to Bondi Junction then bus to Bondi Beach (Opal card, approx. AUD $5 total). Arrive early to secure a good spot on the beach. Swim between the flags (patrolled area), people-watch, and soak up the iconic Bondi atmosphere. Walk the Bondi Icebergs ocean pool area for great photos and a unique swim experience (entry to the pool approx. AUD $8-10).",
+          "afternoon": "Explore Bondi's Campbell Parade and side streets \u2014 browse surf shops, boutiques, and the Bondi Markets at Bondi Beach Public School on Saturdays (free entry, great for browsing local art, vintage clothing, and handmade goods). Grab a late lunch and relax in Bondi Park.",
+          "evening": "Return to the city and explore the vibrant Oxford Street and Paddington area. Browse the Paddington Markets on Saturdays (free entry) in the afternoon if time permits. Head to Surry Hills for dinner \u2014 one of Sydney's best and most diverse dining neighbourhoods.",
+          "meals": {
+            "breakfast": "Grab an a\u00e7a\u00ed bowl or breakfast burrito from one of the many casual Bondi beachfront caf\u00e9s (AUD $12-16)",
+            "lunch": "Grab a meat pie or sausage roll from a local bakery in Bondi, or a falafel wrap from a takeaway on Campbell Parade (AUD $8-12)",
+            "dinner": "Surry Hills has excellent budget dining \u2014 try Reuben Hills for coffee culture vibes and affordable food, or explore Crown Street options (AUD $15-22 per person)"
+          },
+          "notes": "Saturday at Bondi is busy and energetic \u2014 arrive by 8-9am to get a good beach spot. The Bondi Markets run every Saturday and are free to browse \u2014 a great place to find unique Australian souvenirs at reasonable prices. Bondi Icebergs pool is iconic for photos even if you don't swim. Apply sunscreen every 2 hours in the Australian summer sun."
+        },
+        {
+          "day": 6,
+          "date": "2027-12-20 (Sunday)",
+          "morning": "Visit the Royal Botanic Garden Sydney for a free morning of nature and harbour views. Walk through the extensive gardens, spot native birds including rainbow lorikeets and cockatoos, and enjoy the Mrs Macquaries Chair viewpoint \u2014 one of the best free panoramic views of the Opera House and Harbour Bridge together. The gardens are free to enter and open from 7am.",
+          "afternoon": "Explore the Art Gallery of New South Wales (free general admission for the permanent collection \u2014 one of Australia's finest art galleries). Spend 2-3 hours exploring Australian, Aboriginal, Asian, and European art collections. Afterwards, walk through Hyde Park \u2014 Sydney's oldest park \u2014 to see the Archibald Fountain and the ANZAC Memorial (free entry to the memorial and museum).",
+          "evening": "Explore the vibrant Sunday evening atmosphere in the CBD. Visit the Queen Victoria Building (QVB) \u2014 a stunning Victorian-era shopping arcade that is free to walk through and admire the architecture. Head to Barangaroo Reserve on the harbour foreshore for sunset views \u2014 a free public parkland with excellent harbour vistas.",
+          "meals": {
+            "breakfast": "Grab breakfast from a caf\u00e9 near the hotel or the Domain area before heading to the Botanic Garden (AUD $10-15)",
+            "lunch": "Pack a picnic from a nearby supermarket and eat in the Royal Botanic Garden or Hyde Park (AUD $8-12), or grab a budget caf\u00e9 meal near the Art Gallery",
+            "dinner": "Explore Barangaroo's casual dining options or head to Pyrmont for more affordable restaurants \u2014 try Nick's Seafood for a budget seafood experience (AUD $18-25 per person)"
+          },
+          "notes": "The Art Gallery of NSW permanent collection is completely free \u2014 a world-class museum at no cost. The Royal Botanic Garden is Sydney's green lung and a wonderful free escape from the city. Mrs Macquaries Chair at sunrise or sunset offers one of the most photographed views in Australia. The ANZAC Memorial in Hyde Park has been recently renovated and is deeply moving \u2014 free to visit."
+        },
+        {
+          "day": 7,
+          "date": "2027-12-21 (Monday)",
+          "morning": "Take a day trip to the Northern Beaches. Catch a bus from the city to Dee Why or Narrabeen Beach (Opal card, approx. AUD $4-5). These less-touristy northern beaches offer a more local Sydney beach experience. Walk the Dee Why to Curl Curl coastal walk (approx. 4km, free) along the northern beaches headlands with excellent ocean views.",
+          "afternoon": "Continue exploring the Northern Beaches \u2014 swim at Curl Curl or Freshwater Beach (one of Australia's most historic surf beaches where Hawaiian Duke Kahanamoku first demonstrated surfing in Australia in 1914). Alternatively, take the bus to Palm Beach (Sydney's northernmost ocean beach and harbour beach \u2014 iconic filming location for Home and Away TV show) for a longer excursion.",
+          "evening": "Return to the city by bus or ferry (from Manly if you visited the northern beaches via Manly). Have a quiet evening near the hotel, exploring the local dining scene around Circular Quay or The Rocks area.",
+          "meals": {
+            "breakfast": "Grab a coffee and muffin from a caf\u00e9 near the hotel before heading out (AUD $8-12)",
+            "lunch": "Fish and chips from a local takeaway at Dee Why or Curl Curl beachfront \u2014 eat on the grass watching the surf (AUD $12-15)",
+            "dinner": "The Rocks area has some affordable pub meal options \u2014 try the Hero of Waterloo Hotel for a budget pub dinner in a historic setting (AUD $18-25 per person)"
+          },
+          "notes": "The Northern Beaches are less visited by tourists and offer a more authentic Sydney local beach experience. Bus travel to the Northern Beaches can take 45-60 minutes from the CBD \u2014 plan accordingly. Palm Beach is a long journey (1.5 hours by bus) but very rewarding. December is peak surf season \u2014 always swim between the flags at patrolled beaches."
+        },
+        {
+          "day": 8,
+          "date": "2027-12-22 (Tuesday)",
+          "morning": "Final morning in Sydney \u2014 revisit your favourite spot or tick off any remaining sights. Consider a sunrise walk along the Harbour Bridge pedestrian path for spectacular golden-hour views over the harbour. Alternatively, return to the Circular Quay foreshore for a final leisurely coffee with Opera House views. Visit any remaining free attractions such as the Museum of Contemporary Art Australia (MCA) on the Circular Quay waterfront (free general entry).",
+          "afternoon": "Last-minute souvenir shopping at The Rocks Markets (if weekend) or the Queen Victoria Building. Pack bags and check out of the hotel. Store luggage at the hotel if needed for a late departure. Take one final harbour walk along the foreshore from The Rocks to Circular Quay to say goodbye to the harbour.",
+          "evening": "Head to the airport via the Airport Link train from Central Station (approx. AUD $19-21, allow 13-15 minutes travel time plus walking time). Arrive at the airport at least 2.5-3 hours before any international departure, or 1.5-2 hours before domestic. Enjoy a final Australian meal at the airport.",
+          "meals": {
+            "breakfast": "Splurge slightly on a final Sydney breakfast at a waterfront caf\u00e9 at Circular Quay \u2014 enjoy the iconic view one last time (AUD $18-25)",
+            "lunch": "Grab a quick and affordable lunch from a CBD food court or supermarket before heading to the airport (AUD $8-12)",
+            "dinner": "Airport dining \u2014 allow budget for a sit-down meal or grab-and-go option at Sydney Airport (AUD $15-25 per person)"
+          },
+          "notes": "Allow ample time to get to the airport \u2014 the Airport Link train is the most reliable and cost-effective option. Tap your Opal card for the airport journey. If you have remaining Opal card credit, you can request a refund at select locations or keep the card for a future visit. December 22 is close to Christmas \u2014 Sydney Airport will be very busy, so arrive with plenty of time to spare."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=LAX+to+Sydney, Australia+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Sydney, Australia&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Sydney, Australia",
+        "https://www.getyourguide.com/s/?q=Sydney, Australia"
+      ],
+      "highlights": [
+        "Save $255 vs. target budget",
+        "1 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Sydney, Australia Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 3550.0,
+      "flight": {
+        "price_usd": 1360,
+        "airline": "QF",
+        "departure": "2027-12-15T10:00:00",
+        "arrival": "2027-12-15T10:00:00",
+        "stops": 1,
+        "duration": "PT15H00M"
+      },
+      "hotel": {
+        "name": "Harbour View Sydney",
+        "price_per_night_usd": 180,
+        "total_usd": 1440,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "gym"
+        ],
+        "location": "Sydney"
+      },
+      "experiences": [
+        {
+          "name": "Sydney Harbour Bridge Climb",
+          "description": "Climb to the summit of the iconic Sydney Harbour Bridge for breathtaking 360-degree panoramic views of the harbour, Opera House, and city skyline. A bucket-list experience led by expert guides who share fascinating stories about the bridge's history and construction.",
+          "cost_usd": 130,
+          "category": "sightseeing",
+          "best_time_of_day": "sunset",
+          "location": "Milsons Point, Sydney Harbour"
+        },
+        {
+          "name": "Bondi to Coogee Coastal Walk",
+          "description": "Trek one of Australia's most scenic coastal paths stretching 6km along dramatic sandstone cliffs, passing through hidden coves, rock pools, and stunning beaches including Tamarama, Bronte, and Clovelly. Stop for a swim or a coffee at one of the many beachside cafes along the route.",
+          "cost_usd": 0,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Bondi Beach to Coogee Beach, Eastern Suburbs"
+        },
+        {
+          "name": "Sydney Harbour Ferry & Manly Beach Day",
+          "description": "Board a scenic public ferry from Circular Quay for a 30-minute ride across Sydney Harbour, passing the Opera House and iconic landmarks, arriving at the laid-back Manly Beach. Spend the day swimming in the surf, exploring the Corso, and dining on fresh seafood at waterfront restaurants.",
+          "cost_usd": 20,
+          "category": "harbour",
+          "best_time_of_day": "morning",
+          "location": "Manly, Northern Beaches"
+        },
+        {
+          "name": "Sydney Opera House Guided Tour & Performance",
+          "description": "Explore the architectural masterpiece of the Sydney Opera House with an expert-guided tour of its stunning interior, backstage areas, and performance halls. Complement the experience by attending an evening performance \u2014 from opera and ballet to contemporary theatre \u2014 for a truly world-class cultural evening.",
+          "cost_usd": 85,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Bennelong Point, Sydney CBD"
+        },
+        {
+          "name": "Sydney Harbour Sunset Kayaking",
+          "description": "Paddle through the stunning waters of Sydney Harbour at golden hour on a guided kayaking tour. Glide past the Opera House, Harbour Bridge, and historic Fort Denison while your guide shares stories of the harbour's maritime history. Includes all equipment, instruction, and a small snack on the water.",
+          "cost_usd": 95,
+          "category": "harbour",
+          "best_time_of_day": "sunset",
+          "location": "Lavender Bay, North Sydney"
+        }
+      ],
+      "itinerary": {
+        "num_days": 8,
+        "destination": "Sydney, Australia",
+        "style": "balanced",
+        "total_cost": 3550.0,
+        "breakdown": {
+          "flight": 1360.0,
+          "hotel": 1440.0,
+          "experiences": 330.0,
+          "food": 320,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-12-15 (Tuesday)",
+          "morning": "Arrive at Sydney Airport at 10:00 on Flight QF. Clear customs and immigration, collect luggage, and transfer to Harbour View Sydney hotel. Check in, freshen up, and get oriented with the local area around the harbour precinct.",
+          "afternoon": "Take a leisurely stroll around Circular Quay and The Rocks neighbourhood \u2014 Sydney's historic birthplace. Explore the cobblestone laneways, browse the weekend markets, and soak in your first views of the iconic Sydney Opera House and Harbour Bridge from the waterfront promenade.",
+          "evening": "Sydney Opera House Guided Tour & Performance: Book an early evening guided tour of the Sydney Opera House to explore its stunning interiors and architectural story. If a performance is available, enjoy a show to kick off the trip in style.",
+          "meals": {
+            "breakfast": "Grab a light bite at the airport or on the plane before landing.",
+            "lunch": "Pancakes on The Rocks \u2014 a beloved Sydney institution in The Rocks precinct offering hearty sweet and savoury pancakes at mid-range prices, perfect after a long flight.",
+            "dinner": "Aria Restaurant at Circular Quay \u2014 elegant waterfront dining with stunning Opera House views. Order the set menu for a refined but accessible mid-range experience."
+          },
+          "notes": "Day 1 is intentionally relaxed to allow for jet lag recovery. Keep the afternoon walk gentle. Pre-book the Opera House tour in advance as evening slots sell out quickly, especially in December. The hotel's harbour view location means Circular Quay is likely within walking distance."
+        },
+        {
+          "day": 2,
+          "date": "2027-12-16 (Wednesday)",
+          "morning": "Sydney Harbour Bridge Climb: Start the day with the iconic BridgeClimb experience. Book the morning twilight or summit climb for cooler temperatures. Ascend to the summit for breathtaking 360-degree panoramic views over Sydney Harbour, the Opera House, and the city skyline.",
+          "afternoon": "After the climb, explore Milsons Point on the north side of the bridge. Wander through Luna Park for a nostalgic Australian experience, then take the train or ferry back to the city. Spend the afternoon exploring the Royal Botanic Garden along the harbour foreshore.",
+          "evening": "Enjoy a relaxed sunset walk along the Mrs Macquaries Road lookout \u2014 one of the best free vantage points in Sydney \u2014 before heading back for dinner.",
+          "meals": {
+            "breakfast": "Caf\u00e9 Sydney at Customs House \u2014 a stylish caf\u00e9 with harbour views serving excellent eggs and coffee to fuel your bridge climb.",
+            "lunch": "North Sydney Harbourview Hotel bistro near Milsons Point \u2014 classic Australian pub lunch with great harbour views at mid-range prices.",
+            "dinner": "Quay Quarter dining precinct \u2014 try Bulletin Place wine bar and bistro for seasonal small plates and an excellent Australian wine list."
+          },
+          "notes": "BridgeClimb must be booked well in advance, especially during the December holiday season. Wear comfortable closed-toe shoes. The climb takes approximately 3.5 hours including briefing. Avoid wearing loose jewellery or bringing cameras \u2014 they provide headsets and photos are taken by guides."
+        },
+        {
+          "day": 3,
+          "date": "2027-12-17 (Thursday)",
+          "morning": "Sydney Harbour Ferry & Manly Beach Day: Depart from Circular Quay on the iconic Manly Ferry for a scenic 30-minute crossing of Sydney Harbour. Arrive at Manly and spend the morning swimming at the famous ocean beach, one of Australia's most celebrated surf beaches.",
+          "afternoon": "Explore the Manly Corso shopping and dining strip, then walk the Manly to Shelly Beach coastal path \u2014 a shorter, beautiful 1km walk to a protected cove perfect for snorkelling. Spend the late afternoon relaxing on Shelly Beach before catching the ferry back.",
+          "evening": "Return to Circular Quay by ferry as the sun sets over the harbour \u2014 an unforgettable experience with golden light on the Opera House and Bridge.",
+          "meals": {
+            "breakfast": "Grab a takeaway coffee and pastry from Wedgewood Caf\u00e9 near Circular Quay before boarding the ferry.",
+            "lunch": "Manly Wharf Hotel \u2014 a bustling waterfront pub right at the ferry terminal with fresh seafood, burgers, and salads at mid-range prices.",
+            "dinner": "The Glenmore Hotel rooftop in The Rocks \u2014 casual rooftop dining with spectacular Opera House and harbour views, great burgers and share plates."
+          },
+          "notes": "Use an Opal card for the ferry \u2014 it's the most cost-effective way to travel and the Manly Ferry is one of the world's great commuter journeys. December is peak summer so Manly Beach will be busy \u2014 arrive early for a good spot. Bring reef-safe sunscreen, a hat, and plenty of water."
+        },
+        {
+          "day": 4,
+          "date": "2027-12-18 (Friday)",
+          "morning": "Bondi to Coogee Coastal Walk: Take a bus or Uber to Bondi Beach for an early start on the famous 6km coastal walk. Trek along dramatic sandstone cliffs, passing Tamarama, Bronte, Clovelly, and Gordon's Bay before finishing at Coogee Beach. Allow 2\u20133 hours at a leisurely pace.",
+          "afternoon": "Relax at Coogee Beach after the walk \u2014 take a swim in the ocean or the historic Coogee Ocean Pool. Explore the Coogee beachfront promenade before heading back to the city via bus.",
+          "evening": "Head to Darling Harbour for a vibrant Friday evening atmosphere. Explore the waterfront precinct, browse the shops, and enjoy the lively dining scene.",
+          "meals": {
+            "breakfast": "Bondi Breakfast: Porch and Parlour at North Bondi \u2014 a beloved local caf\u00e9 serving excellent a\u00e7a\u00ed bowls, smashed avo, and strong coffee before the walk.",
+            "lunch": "Coogee Pavilion \u2014 a stunning multi-level venue right at Coogee Beach with a rooftop bar, great pizzas, salads, and seafood at mid-range prices.",
+            "dinner": "Blackbird Caf\u00e9 at Darling Harbour \u2014 casual waterfront dining with a broad menu of pastas, grills, and shared plates perfect for a Friday evening."
+          },
+          "notes": "Start the Bondi to Coogee walk before 9am to beat the December heat and crowds. Wear comfortable walking shoes with grip \u2014 some cliff sections can be slippery. The walk is one-way so plan your return from Coogee via bus (Route 353 back to the city). Carry water and sunscreen."
+        },
+        {
+          "day": 5,
+          "date": "2027-12-19 (Saturday)",
+          "morning": "Visit the vibrant Paddington Markets (held every Saturday) on Oxford Street \u2014 a Sydney institution with over 200 stalls of fashion, art, jewellery, and local produce. Explore the surrounding Paddington neighbourhood with its beautiful Victorian terrace houses and boutique galleries.",
+          "afternoon": "Head to the Art Gallery of New South Wales in the Domain \u2014 a world-class gallery with an outstanding collection of Australian, Aboriginal, and international art. Entry to the permanent collection is free. Spend 2\u20133 hours exploring at a relaxed pace.",
+          "evening": "Sydney Harbour Sunset Kayaking: Join a guided sunset kayaking tour on Sydney Harbour. Paddle past the Opera House, under the Harbour Bridge, and through iconic coves as the golden hour light transforms the harbour into something magical.",
+          "meals": {
+            "breakfast": "Grumpy Baker in Paddington \u2014 a neighbourhood favourite with exceptional sourdough, pastries, and coffee, perfect before the markets.",
+            "lunch": "Four in Hand pub in Paddington \u2014 a celebrated gastropub with outstanding seasonal Australian cuisine at accessible mid-range prices.",
+            "dinner": "Grab a post-kayak dinner at Caf\u00e9 del Mar at Cockle Bay Wharf, Darling Harbour \u2014 Mediterranean-inspired menu with great harbour views and a buzzing Saturday night atmosphere."
+          },
+          "notes": "Paddington Markets run every Saturday from 10am\u20134pm. Arrive early for the best selection. The sunset kayaking tour typically departs around 4:30\u20135pm \u2014 confirm exact times with the operator when booking. Book the kayaking experience at least a week in advance as Saturday slots are extremely popular in December."
+        },
+        {
+          "day": 6,
+          "date": "2027-12-20 (Sunday)",
+          "morning": "Take a train to Newtown and spend the morning exploring this eclectic, bohemian neighbourhood. Browse the vintage shops, record stores, and independent bookshops along King Street. Visit the stunning St Stephen's Church and explore the street art laneways.",
+          "afternoon": "Head to Glebe Markets (Sunday mornings until early afternoon) for more local artisan goods, then walk through Glebe Point Road for caf\u00e9 culture. In the late afternoon, visit Darling Harbour's SEA LIFE Sydney Aquarium for an impressive underwater journey through Australian marine life.",
+          "evening": "Enjoy a relaxed Sunday evening back in the harbour area. Take a post-dinner stroll along the Circular Quay foreshore to watch the ferries and enjoy the illuminated Opera House and Bridge at night.",
+          "meals": {
+            "breakfast": "Gigi's Pizzeria in Newtown \u2014 a laid-back spot with excellent weekend brunch including wood-fired eggs, Italian pastries, and great coffee.",
+            "lunch": "Cow & the Moon in Enmore (short walk from Newtown) \u2014 award-winning gelato and a relaxed lunch menu of sandwiches and salads at very reasonable prices.",
+            "dinner": "Sokyo at The Star \u2014 a sophisticated Japanese restaurant with exceptional sushi, sashimi, and robata-grilled dishes at the higher end of mid-range \u2014 a special Sunday treat."
+          },
+          "notes": "Newtown is best explored on foot \u2014 wear comfortable shoes. The neighbourhood has a wonderful creative energy and is very LGBTQ+ friendly. SEA LIFE Aquarium is best visited in the late afternoon when morning crowds have thinned. Pre-book tickets online for a discount."
+        },
+        {
+          "day": 7,
+          "date": "2027-12-21 (Monday)",
+          "morning": "Take a day trip to the Blue Mountains via train from Central Station (approximately 2 hours). Visit Echo Point in Katoomba for iconic views of the Three Sisters rock formation and the vast Jamison Valley. Walk the Prince Henry Cliff Walk for stunning escarpment views.",
+          "afternoon": "Ride the Scenic World attractions \u2014 the Scenic Railway (world's steepest railway), Scenic Cableway, and Scenic Walkway through the ancient rainforest. Explore Katoomba Falls and the Leura village shops before catching the train back to Sydney.",
+          "evening": "Return to Sydney by early evening. Enjoy a relaxed dinner close to the hotel to recover from the day trip.",
+          "meals": {
+            "breakfast": "Grab coffee and a pastry from a Central Station caf\u00e9 before boarding the Blue Mountains train.",
+            "lunch": "Leura Garage \u2014 a converted 1920s garage in the charming village of Leura offering excellent wood-fired pizzas, seasonal salads, and local wines in a relaxed setting.",
+            "dinner": "Rockpool Bar & Grill at nearby Wynyard \u2014 an iconic Sydney steakhouse with premium Australian beef. Order the set menu for a mid-range accessible experience at a landmark restaurant."
+          },
+          "notes": "The train to Katoomba departs Central Station regularly \u2014 a return ticket is very affordable. Scenic World requires separate ticketing \u2014 book online in advance. Wear layers as the Blue Mountains can be significantly cooler than Sydney, even in December. Carry water and a light jacket."
+        },
+        {
+          "day": 8,
+          "date": "2027-12-22 (Tuesday)",
+          "morning": "Final morning in Sydney \u2014 revisit your favourite harbour spots for a last look. Walk from the hotel to the Opera House forecourt for a final appreciation of this architectural icon. Browse the Opera House gift shop for quality souvenirs. Visit the Museum of Contemporary Art (MCA) at Circular Quay for a free final cultural experience.",
+          "afternoon": "Head to Pitt Street Mall for any last-minute shopping at mid-range retailers including David Jones and Westfield Sydney. Pick up Australian gifts \u2014 Tim Tams, Vegemite, native skincare, or local art. Return to the hotel to collect luggage and prepare for departure.",
+          "evening": "Farewell dinner with harbour views before transferring to the airport or continuing your journey.",
+          "meals": {
+            "breakfast": "Caf\u00e9 Morso at Jones Bay Wharf, Pyrmont \u2014 a beloved waterfront caf\u00e9 with exceptional eggs Benedict, smashed avo, and strong flat whites for a memorable final Sydney breakfast.",
+            "lunch": "Circular Quay food trucks or the MCA Caf\u00e9 \u2014 casual, affordable, and perfectly located for a quick final city lunch.",
+            "dinner": "Altitude Restaurant at Shangri-La Hotel \u2014 spectacular 360-degree views over Sydney Harbour for a special farewell dinner. The set menu offers excellent value for a fine dining experience as a memorable final night."
+          },
+          "notes": "Check hotel checkout time and arrange luggage storage if your departure is in the evening. Allow at least 3 hours before your flight for airport transfer and check-in during the busy December holiday period. The train from Central Station to Sydney International Airport takes approximately 13 minutes and is the most reliable option."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=LAX+to+Sydney, Australia+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Sydney, Australia&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Sydney, Australia",
+        "https://www.getyourguide.com/s/?q=Sydney, Australia",
+        "https://www.getyourguide.com/s/?q=Sydney, Australia",
+        "https://www.getyourguide.com/s/?q=Sydney, Australia",
+        "https://www.getyourguide.com/s/?q=Sydney, Australia"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Sydney, Australia Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 3710.0,
+      "flight": {
+        "price_usd": 1360,
+        "airline": "QF",
+        "departure": "2027-12-15T10:00:00",
+        "arrival": "2027-12-15T10:00:00",
+        "stops": 1,
+        "duration": "PT15H00M"
+      },
+      "hotel": {
+        "name": "Harbour View Sydney",
+        "price_per_night_usd": 180,
+        "total_usd": 1440,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "gym"
+        ],
+        "location": "Sydney"
+      },
+      "experiences": [
+        {
+          "name": "Sydney Harbour Bridge Climb",
+          "description": "Climb to the summit of the iconic Sydney Harbour Bridge for breathtaking 360-degree panoramic views of the harbour, Opera House, and city skyline. A bucket-list experience led by expert guides who share fascinating stories about the bridge's history and construction.",
+          "cost_usd": 130,
+          "category": "sightseeing",
+          "best_time_of_day": "sunset",
+          "location": "Milsons Point, Sydney Harbour"
+        },
+        {
+          "name": "Bondi to Coogee Coastal Walk",
+          "description": "Trek one of Australia's most scenic coastal paths stretching 6km along dramatic sandstone cliffs, passing through hidden coves, rock pools, and stunning beaches including Tamarama, Bronte, and Clovelly. Stop for a swim or a coffee at one of the many beachside cafes along the route.",
+          "cost_usd": 0,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Bondi Beach to Coogee Beach, Eastern Suburbs"
+        },
+        {
+          "name": "Sydney Harbour Ferry & Manly Beach Day",
+          "description": "Board a scenic public ferry from Circular Quay for a 30-minute ride across Sydney Harbour, passing the Opera House and iconic landmarks, arriving at the laid-back Manly Beach. Spend the day swimming in the surf, exploring the Corso, and dining on fresh seafood at waterfront restaurants.",
+          "cost_usd": 20,
+          "category": "harbour",
+          "best_time_of_day": "morning",
+          "location": "Manly, Northern Beaches"
+        },
+        {
+          "name": "Sydney Opera House Guided Tour & Performance",
+          "description": "Explore the architectural masterpiece of the Sydney Opera House with an expert-guided tour of its stunning interior, backstage areas, and performance halls. Complement the experience by attending an evening performance \u2014 from opera and ballet to contemporary theatre \u2014 for a truly world-class cultural evening.",
+          "cost_usd": 85,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Bennelong Point, Sydney CBD"
+        },
+        {
+          "name": "Sydney Harbour Sunset Kayaking",
+          "description": "Paddle through the stunning waters of Sydney Harbour at golden hour on a guided kayaking tour. Glide past the Opera House, Harbour Bridge, and historic Fort Denison while your guide shares stories of the harbour's maritime history. Includes all equipment, instruction, and a small snack on the water.",
+          "cost_usd": 95,
+          "category": "harbour",
+          "best_time_of_day": "sunset",
+          "location": "Lavender Bay, North Sydney"
+        }
+      ],
+      "itinerary": {
+        "num_days": 8,
+        "destination": "Sydney, Australia",
+        "style": "premium",
+        "total_cost": 3710.0,
+        "breakdown": {
+          "flight": 1360.0,
+          "hotel": 1440.0,
+          "experiences": 330.0,
+          "food": 480,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-12-15 (Tuesday)",
+          "morning": "Arrival at Sydney Airport at 10:00 on Flight QF. Clear customs and immigration, collect luggage, and transfer via private luxury car service to Harbour View Sydney. Check-in, freshen up, and settle into your harbour-view suite. Take a leisurely stroll along the nearby waterfront promenade to begin soaking in the iconic Sydney Harbour atmosphere.",
+          "afternoon": "Sydney Opera House Guided Tour \u2014 Join an expert-guided tour of the architectural masterpiece, exploring its stunning interiors, concert halls, and learning the fascinating history behind J\u00f8rn Utzon's visionary design. Afterwards, enjoy a relaxed walk around Circular Quay and the Royal Botanic Garden for gentle first-day exploration.",
+          "evening": "Attend a world-class performance at the Sydney Opera House (pre-book tickets for an orchestral or theatrical show). Conclude the evening with a celebratory welcome dinner at a harbourside restaurant.",
+          "meals": {
+            "breakfast": "Light in-suite welcome amenity provided by the hotel upon arrival",
+            "lunch": "Aria Restaurant (Circular Quay) \u2014 Contemporary Australian cuisine with floor-to-ceiling Opera House and Harbour Bridge views; tasting menu with matched wines",
+            "dinner": "Quay Restaurant \u2014 Sydney's legendary fine dining destination offering Peter Gilmore's iconic multi-course degustation with unrivalled harbour panoramas"
+          },
+          "notes": "Pre-arrange private airport transfer with the hotel concierge before arrival. Book Opera House tour and evening performance well in advance as December is peak season. Request an early check-in if possible given the 10:00 AM arrival."
+        },
+        {
+          "day": 2,
+          "date": "2027-12-16 (Wednesday)",
+          "morning": "Sydney Harbour Bridge Climb \u2014 Embark on the iconic BridgeClimb experience, ascending to the 134-metre summit of the Harbour Bridge for breathtaking 360-degree panoramic views over the harbour, Opera House, CBD skyline, and beyond. Opt for the Summit Climb for the full experience. Allow approximately 3.5 hours.",
+          "afternoon": "Return to the hotel to refresh, then head to the Royal Botanic Garden for a peaceful afternoon walk. Explore the Mrs Macquarie's Chair lookout for one of Sydney's most photographed views of the Opera House and Harbour Bridge framed together. Visit the Art Gallery of New South Wales for a curated premium art experience.",
+          "evening": "Sunset cocktails at a rooftop bar overlooking the harbour, followed by a premium dinner in the CBD.",
+          "meals": {
+            "breakfast": "In-suite or hotel dining \u2014 full \u00e0 la carte breakfast with harbour views",
+            "lunch": "Caf\u00e9 Sydney \u2014 Rooftop restaurant atop the Customs House with panoramic Circular Quay views; enjoy fresh Sydney rock oysters and grilled barramundi",
+            "dinner": "Bennelong Restaurant (inside the Sydney Opera House) \u2014 Peter Gilmore's celebrated contemporary Australian cuisine in the most iconic setting in Sydney"
+          },
+          "notes": "BridgeClimb must be pre-booked; choose the Twilight Climb option if preferred for a different atmosphere. Wear comfortable closed-toe shoes. Cameras and personal items are stored at the base \u2014 BridgeClimb provides official photos. December weather is warm so apply sunscreen and stay hydrated."
+        },
+        {
+          "day": 3,
+          "date": "2027-12-17 (Thursday)",
+          "morning": "Sydney Harbour Sunset Kayaking (morning session) \u2014 Join a guided kayaking tour through the stunning waters of Sydney Harbour, gliding past the Opera House, Harbour Bridge, and secluded coves. The morning light on the water creates a magical atmosphere. Expert guides provide all equipment and instruction, suitable for all fitness levels.",
+          "afternoon": "Visit the historic Rocks district \u2014 Sydney's oldest neighbourhood \u2014 for a curated self-guided or private guided walking tour. Explore the cobblestone laneways, heritage sandstone buildings, and boutique galleries. Browse the Rocks Markets (open weekends) or pop into premium local artisan shops. Enjoy a spa treatment at the hotel's luxury wellness facility.",
+          "evening": "Sunset cocktails at the hotel bar enjoying harbour views, followed by a fine dining dinner experience.",
+          "meals": {
+            "breakfast": "Hotel restaurant breakfast \u2014 smashed avocado, eggs benedict, fresh fruit platters and artisan coffee",
+            "lunch": "Rockpool Bar & Grill (The Rocks) \u2014 Iconic Sydney institution serving prime dry-aged steaks, fresh seafood, and an extraordinary wine list in a stunning heritage setting",
+            "dinner": "Cirrus Dining (Barangaroo) \u2014 Sophisticated waterfront seafood restaurant with exceptional harbour views and a menu celebrating the finest Australian coastal produce"
+          },
+          "notes": "Book the kayaking tour in advance with Sydney Harbour Kayaks or a premium operator offering private guided tours. Wear light, quick-dry clothing and bring a change of clothes. The Rocks area is walkable from the hotel. Consider booking a 90-minute spa treatment at the hotel spa in the early afternoon."
+        },
+        {
+          "day": 4,
+          "date": "2027-12-18 (Friday)",
+          "morning": "Sydney Harbour Ferry & Manly Beach Day \u2014 Depart from Circular Quay on the iconic 30-minute ferry crossing to Manly, passing beneath the Harbour Bridge and alongside spectacular harbour scenery. Arrive at Manly and spend the morning on the famous surf beach \u2014 swim, sunbathe, or arrange a private surf lesson with a local instructor.",
+          "afternoon": "Explore the Manly village \u2014 browse the Corso, enjoy the relaxed beach-town atmosphere, and visit Shelly Beach (a short walk from Manly) for excellent snorkelling in crystal-clear protected waters. Hire snorkelling equipment locally or pre-arrange a guided marine tour.",
+          "evening": "Return ferry to Circular Quay at golden hour for spectacular harbour views at sunset. Evening at leisure or pre-book a premium dining experience.",
+          "meals": {
+            "breakfast": "Hotel breakfast or grab artisan coffee and pastries from a caf\u00e9 near Circular Quay before boarding the ferry",
+            "lunch": "Manly Wharf Hotel or Hugos Manly \u2014 Upscale waterfront dining in Manly with fresh seafood platters, wood-fired pizzas, and panoramic harbour views",
+            "dinner": "Guillaume at Bennelong or Altitude Restaurant (Shangri-La Hotel) \u2014 Sophisticated French-influenced cuisine with sweeping Sydney Harbour panoramas"
+          },
+          "notes": "Purchase an Opal card or use contactless payment for the ferry. The ferry departs regularly from Wharf 3 at Circular Quay. Friday evenings in Manly are lively \u2014 consider staying later if the atmosphere appeals. Apply high SPF sunscreen as December UV levels in Sydney are extreme."
+        },
+        {
+          "day": 5,
+          "date": "2027-12-19 (Saturday)",
+          "morning": "Bondi to Coogee Coastal Walk \u2014 Transfer via private car to Bondi Beach (approximately 20 minutes from the hotel). Begin the spectacular 6km coastal walk from Bondi to Coogee, traversing dramatic sandstone cliffs, pristine ocean pools, and secluded beaches including Tamarama, Bronte, Clovelly, and Gordon's Bay. The walk takes approximately 2\u20133 hours at a leisurely pace.",
+          "afternoon": "Arrive at Coogee Beach for a refreshing swim and relaxation. Explore the vibrant Bondi area on the return \u2014 visit the iconic Bondi Icebergs ocean pool, browse Bondi's boutiques and galleries along Hall Street, and soak up Sydney's beach culture at its finest.",
+          "evening": "Return to the hotel to refresh before heading out for a premium dining and entertainment evening in the CBD or Darling Harbour precinct.",
+          "meals": {
+            "breakfast": "Icebergs Dining Room & Bar (Bondi) \u2014 Legendary clifftop restaurant with breathtaking ocean views; enjoy the full \u00e0 la carte breakfast before beginning the coastal walk",
+            "lunch": "Coogee Pavilion (rooftop) \u2014 Stylish multi-level venue at Coogee Beach with fresh seafood, gourmet burgers, and spectacular ocean views",
+            "dinner": "Sepia Restaurant or Momofuku Seiobo (The Star) \u2014 World-class contemporary dining with innovative tasting menus and impeccable service"
+          },
+          "notes": "Wear comfortable walking shoes, a hat, and sunscreen. Bring a light backpack with water and snacks. The walk is mostly flat with some moderate inclines. Saturday morning means Bondi will be busy \u2014 embrace the vibrant atmosphere. Private car transfers can be arranged through the hotel concierge."
+        },
+        {
+          "day": 6,
+          "date": "2027-12-20 (Sunday)",
+          "morning": "Private Luxury Harbour Cruise \u2014 Arrange a private chartered yacht or luxury vessel through the hotel concierge for an exclusive morning cruise of Sydney Harbour. Sail past the Opera House, under the Harbour Bridge, around Shark Island, and into the stunning Middle Harbour. Enjoy champagne, fresh fruit, and gourmet canap\u00e9s on board.",
+          "afternoon": "Visit Taronga Zoo via a short ferry from Circular Quay \u2014 a premium zoo experience with extraordinary harbour backdrop views. Upgrade to the VIP Roar & Snore experience or a private keeper tour for an exclusive animal encounter. Alternatively, explore the Barangaroo Reserve waterfront precinct and visit the Crown Sydney complex.",
+          "evening": "Farewell pre-dinner drinks at the hotel's harbour-view bar, followed by a spectacular fine dining experience to celebrate the penultimate evening.",
+          "meals": {
+            "breakfast": "Champagne breakfast served on board the private harbour cruise",
+            "lunch": "The Grounds of the City or a premium caf\u00e9 in Barangaroo \u2014 artisan sandwiches, salads, and specialty coffee in a beautifully designed setting",
+            "dinner": "Ester Restaurant or Firedoor \u2014 Award-winning wood-fire cooking with exceptional Australian produce; intimate and critically acclaimed dining experiences"
+          },
+          "notes": "Private harbour charters can be arranged through operators such as Sydney Harbour Escapes or Luxury Charter Yachts Sydney. Book at least 1\u20132 weeks in advance. The Taronga Zoo ferry departs from Wharf 2 at Circular Quay. Sunday is a wonderful day to experience Sydney's relaxed harbour culture."
+        },
+        {
+          "day": 7,
+          "date": "2027-12-21 (Monday)",
+          "morning": "Indulge in a full luxury spa morning at the hotel \u2014 book a signature treatment such as a hot stone massage, body scrub, or couples' wellness ritual. Afterwards, enjoy a leisurely late breakfast or brunch with harbour views. Visit the nearby Museum of Contemporary Art (MCA) at Circular Quay for a curated cultural experience.",
+          "afternoon": "Explore the upscale shopping precincts of Sydney \u2014 visit the Queen Victoria Building (QVB) for luxury boutiques, Westfield Sydney on Pitt Street for premium retail, and the exclusive stores of Castlereagh Street (Louis Vuitton, Herm\u00e8s, Gucci, and more). Alternatively, visit the historic Paddington neighbourhood for high-end galleries, designer boutiques, and the famous Paddington Markets.",
+          "evening": "Sunset cocktails at Opera Bar (beneath the Opera House sails) \u2014 one of Sydney's most atmospheric outdoor bars. Follow with a spectacular farewell dinner at one of Sydney's most prestigious restaurants.",
+          "meals": {
+            "breakfast": "Hotel in-room dining \u2014 full gourmet breakfast delivered to your suite with harbour views",
+            "lunch": "Chiswick Restaurant (Woollahra) \u2014 Garden-to-table dining in a beautiful heritage building with an exceptional seasonal menu and outstanding wine list",
+            "dinner": "Quay Restaurant (revisit) or Sixpenny (Stanmore) \u2014 A truly memorable multi-course degustation dinner to celebrate your final full evening in Sydney"
+          },
+          "notes": "Pre-book spa treatments at least 2\u20133 days in advance. Paddington is approximately 15 minutes by taxi or rideshare from the CBD. Opera Bar is extremely popular at sunset \u2014 arrive early or make a reservation. This is an ideal day for souvenir shopping and purchasing premium Australian goods such as fine wines, opal jewellery, and artisan products."
+        },
+        {
+          "day": 8,
+          "date": "2027-12-22 (Tuesday)",
+          "morning": "Final leisurely morning in Sydney \u2014 enjoy a last breakfast with harbour views at the hotel. Take a final sunrise or morning walk along the waterfront, capturing photographs of the Opera House and Harbour Bridge in the beautiful summer morning light. Visit any last-minute attractions near the hotel such as the Overseas Passenger Terminal viewing area.",
+          "afternoon": "Check out of the hotel (arrange late check-out if available \u2014 typically until 2:00 PM for premium guests). Transfer via private luxury car to Sydney Airport for departure. Allow at least 3 hours before international departure for check-in, security, and access to the premium airline lounge.",
+          "evening": "Departure from Sydney Airport. Enjoy the premium airline lounge facilities \u2014 shower, dining, and relaxation \u2014 before boarding your flight home.",
+          "meals": {
+            "breakfast": "Final hotel breakfast \u2014 full \u00e0 la carte spread with freshly squeezed juices, barista coffee, eggs your way, and Sydney's finest produce",
+            "lunch": "The Grounds of Alexandria (if time permits before airport transfer) or a premium meal at the Sydney Airport International Terminal's upscale dining options",
+            "dinner": "Premium airline lounge dining or in-flight fine dining on your departure flight"
+          },
+          "notes": "Arrange late check-out with the hotel in advance \u2014 most luxury properties accommodate this with prior notice. Confirm private airport transfer timing based on your departure flight. Allow extra time at the airport during the busy December holiday period. Ensure all duty-free purchases, packed souvenirs, and luggage are organised the night before for a smooth departure."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=LAX+to+Sydney, Australia+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Sydney, Australia&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Sydney, Australia",
+        "https://www.getyourguide.com/s/?q=Sydney, Australia",
+        "https://www.getyourguide.com/s/?q=Sydney, Australia",
+        "https://www.getyourguide.com/s/?q=Sydney, Australia",
+        "https://www.getyourguide.com/s/?q=Sydney, Australia"
+      ],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-1465 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Sydney harbour and beaches, $4500 couple, 8 days, December 2027, from LAX",
+  "session_tags": {
+    "query_id": "CTL-06",
+    "condition": "baseline",
+    "run_index": 1
+  }
+}

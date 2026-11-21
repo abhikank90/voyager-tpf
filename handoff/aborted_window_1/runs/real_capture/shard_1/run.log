@@ -1,0 +1,1591 @@
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=experience_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/experience_agent.py", line 85, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=flight_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/flight_agent.py", line 226, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=hotel_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/hotel_agent.py", line 124, in _execute
+    window = self._trip_window(intent, legacy_duration_days=duration)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=weather_agent error=fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/weather_agent.py", line 143, in _execute
+    window = self._trip_window(intent)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 192, in _trip_window
+    anchor, rule = inventory.ensure_capture_anchor(RULE_MONTH), RULE_MONTH
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 212, in ensure_capture_anchor
+    return _ensure_capture_anchor_locked(rule)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 220, in _ensure_capture_anchor_locked
+    raise RuntimeError(
+RuntimeError: fixtures/live_inventory_v1.5 holds fixtures captured before trip_window_rule was recorded; capture a new set into a fresh VOYAGER_INVENTORY_DIR.
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwr5G4mixSPLDkVnDw'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwr5G4mixSPLDkVnDw'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwr5G4mixSPLDkVnDw'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwrWoQfBMZeyRh24LZ'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwrWoQfBMZeyRh24LZ'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwrWoQfBMZeyRh24LZ'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwsa3pRgh7fVLvi7bd'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwsa3pRgh7fVLvi7bd'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwsa3pRgh7fVLvi7bd'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwt16ntWoDUwqDWGTY'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwt16ntWoDUwqDWGTY'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwt16ntWoDUwqDWGTY'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwtQQNz4zYn6rVzJtN'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwtQQNz4zYn6rVzJtN'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwtQQNz4zYn6rVzJtN'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwtpxFg1ATZh8fXxQh'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwtpxFg1ATZh8fXxQh'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwtpxFg1ATZh8fXxQh'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwutTYkY94T7s8aJnB'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwutTYkY94T7s8aJnB'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwutTYkY94T7s8aJnB'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwvJkdJoPVQSHeUv8g'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwvJkdJoPVQSHeUv8g'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwvJkdJoPVQSHeUv8g'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwvk42ToyH8WYT9C2n'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwvk42ToyH8WYT9C2n'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwvk42ToyH8WYT9C2n'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwwBqUk27gmrLQfkiT'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwwBqUk27gmrLQfkiT'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwwBqUk27gmrLQfkiT'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwxCMorSM1HkYPk8AH'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwxCMorSM1HkYPk8AH'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwxCMorSM1HkYPk8AH'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwxf9LJ2j9LtPaRqyx'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwxf9LJ2j9LtPaRqyx'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwxf9LJ2j9LtPaRqyx'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwy8B7yYw53jHui2e7'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwy8B7yYw53jHui2e7'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwy8B7yYw53jHui2e7'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwyawtTyesAw84kX8E'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwyawtTyesAw84kX8E'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwyawtTyesAw84kX8E'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwzQKRpFKKWmS9a6Ro'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwzQKRpFKKWmS9a6Ro'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwzQKRpFKKWmS9a6Ro'}
+agent=intent_parser error=Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwzqN8Pini3bJzHh1V'}
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2618, in _agenerate
+    raw_response = await self._acreate(payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2187, in _acreate
+    return await self._async_client.messages.with_raw_response.create(**payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_legacy_response.py", line 411, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/resources/messages/messages.py", line 2544, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 2277, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/anthropic/_base_client.py", line 1941, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwzqN8Pini3bJzHh1V'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/akankanala/voyager-tpf/agents/base_agent.py", line 38, in run
+    result = await self._execute(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 94, in _execute
+    parsed = await inventory.replay_or_record(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/inventory.py", line 146, in replay_or_record
+    payload = await produce()
+              ^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/agents/intent_parser.py", line 83, in _parse
+    intent: TravelIntent = await self.chain.ainvoke({
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 3497, in ainvoke
+    input_ = await coro_with_context(part(), context, create_task=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6028, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2179, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 2622, in _agenerate
+    _handle_anthropic_api_error(e)
+  File "/Users/akankanala/voyager-tpf/.venv/lib/python3.11/site-packages/langchain_anthropic/chat_models.py", line 1295, in _handle_anthropic_api_error
+    raise AnthropicAuthenticationError(
+langchain_anthropic.chat_models.AnthropicAuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwzqN8Pini3bJzHh1V'}
+
+Running 25 queries x 1 conditions x 1 runs (inventory=capture)
+Sessions  → results/v1.5/runs/real_capture/shard_1/sessions.jsonl
+Plans     → results/v1.5/plans
+Summaries → results/v1.5/runs/real_capture/shard_1
+
+  [1/25] run 1 REAL-01 baseline
+  [2/25] run 1 REAL-02 baseline
+  [3/25] run 1 REAL-03 baseline
+  [4/25] run 1 REAL-04 baseline
+  [5/25] run 1 REAL-05 baseline
+  [6/25] run 1 REAL-06 baseline
+  [7/25] run 1 REAL-07 baseline
+  [8/25] run 1 REAL-08 baseline
+  [9/25] run 1 REAL-09 baseline
+  [10/25] run 1 REAL-10 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwr5G4mixSPLDkVnDw'}
+  [11/25] run 1 REAL-11 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwrWoQfBMZeyRh24LZ'}
+  [12/25] run 1 REAL-12 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwsa3pRgh7fVLvi7bd'}
+  [13/25] run 1 REAL-13 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwt16ntWoDUwqDWGTY'}
+  [14/25] run 1 REAL-14 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwtQQNz4zYn6rVzJtN'}
+  [15/25] run 1 REAL-15 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwtpxFg1ATZh8fXxQh'}
+  [16/25] run 1 REAL-16 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwutTYkY94T7s8aJnB'}
+  [17/25] run 1 REAL-17 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwvJkdJoPVQSHeUv8g'}
+  [18/25] run 1 REAL-18 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwvk42ToyH8WYT9C2n'}
+  [19/25] run 1 REAL-19 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwwBqUk27gmrLQfkiT'}
+  [20/25] run 1 REAL-20 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwxCMorSM1HkYPk8AH'}
+  [21/25] run 1 REAL-21 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwxf9LJ2j9LtPaRqyx'}
+  [22/25] run 1 REAL-22 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwy8B7yYw53jHui2e7'}
+  [23/25] run 1 REAL-23 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwyawtTyesAw84kX8E'}
+  [24/25] run 1 REAL-24 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwzQKRpFKKWmS9a6Ro'}
+  [25/25] run 1 REAL-25 baseline
+           ✗ Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011ChBUwzqN8Pini3bJzHh1V'}
+
+  conditions: 9/25 sessions succeeded
+
+Results written → results/v1.5/runs/real_capture/shard_1 (inventory_mode=capture)

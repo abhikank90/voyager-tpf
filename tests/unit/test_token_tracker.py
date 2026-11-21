@@ -126,3 +126,50 @@ def test_token_usage_to_dict_includes_per_model():
     assert "per_model" in d
     assert d["per_model"][HAIKU] == {"input": M, "output": M}
     assert d["models_used"][HAIKU] == 1
+
+
+# ── per_component accumulation ────────────────────────────────────────────────
+
+def test_per_component_accumulated():
+    u = start_session()
+    track_usage(500_000, 200_000, model=HAIKU, component="flight_agent")
+    track_usage(300_000, 100_000, model=HAIKU, component="flight_agent")
+    track_usage(M, M, model=SONNET, component="option_generator")
+
+    assert u.per_component["flight_agent"]["input"] == 800_000
+    assert u.per_component["flight_agent"]["output"] == 300_000
+    assert u.per_component["option_generator"] == {"model": SONNET, "input": M, "output": M}
+
+
+def test_per_component_cost_sums_to_session_cost():
+    """Components must reconcile with the per-model totals and the session cost."""
+    u = start_session()
+    track_usage(500_000, 200_000, model=HAIKU, component="flight_agent")
+    track_usage(300_000, 100_000, model=HAIKU, component="hotel_agent")
+    track_usage(M, M, model=SONNET, component="option_generator")
+
+    d = u.to_dict()
+    comp_input = sum(c["input"] for c in d["per_component"].values())
+    comp_output = sum(c["output"] for c in d["per_component"].values())
+    model_input = sum(c["input"] for c in d["per_model"].values())
+    model_output = sum(c["output"] for c in d["per_model"].values())
+    assert comp_input == model_input == u.input_tokens
+    assert comp_output == model_output == u.output_tokens
+
+    comp_cost = sum(c["cost_usd"] for c in d["per_component"].values())
+    assert round(comp_cost, 6) == compute_session_cost(u)
+
+
+def test_to_dict_includes_per_component():
+    u = start_session()
+    track_usage(M, M, model=HAIKU, component="visa_safety_agent")
+    d = u.to_dict()
+    assert d["per_component"]["visa_safety_agent"]["model"] == HAIKU
+    assert d["per_component"]["visa_safety_agent"]["cost_usd"] == 6.0
+
+
+def test_no_component_calls_do_not_appear_in_per_component():
+    u = start_session()
+    track_usage(M, M, model=HAIKU)  # no component
+    assert u.per_component == {}
+    assert u.per_model[HAIKU] == {"input": M, "output": M}

@@ -1,0 +1,998 @@
+{
+  "snapshots": [
+    {
+      "label": "start",
+      "taken_at": "2026-11-19T02:24:39.150112+00:00",
+      "canary_prompts": {
+        "primes": "List the first ten prime numbers, separated by commas, and nothing else.",
+        "json": "Return exactly this JSON and nothing else: {\"city\": \"Athens\", \"nights\": 3}",
+        "arith": "What is 17 multiplied by 23? Answer with the number only.",
+        "capital": "What is the capital of Australia? Answer with one word.",
+        "month": "Which month comes after March? Answer with the month name only."
+      },
+      "canary_max_tokens": 64,
+      "canary_repeats": 3,
+      "usage": {
+        "component": "canary",
+        "input_tokens": 678,
+        "output_tokens": 393,
+        "cost_usd": 0.005211,
+        "calls": [
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000183
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000183
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000183
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 27,
+            "output_tokens": 20,
+            "cost_usd": 0.000127
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 27,
+            "output_tokens": 20,
+            "cost_usd": 0.000127
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 27,
+            "output_tokens": 20,
+            "cost_usd": 0.000127
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 4.9e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 4.9e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 4.9e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 5.4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 5.4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 5.4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000549
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000549
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000549
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 27,
+            "output_tokens": 15,
+            "cost_usd": 0.000306
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 27,
+            "output_tokens": 15,
+            "cost_usd": 0.000306
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 27,
+            "output_tokens": 15,
+            "cost_usd": 0.000306
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 0.000147
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 0.000147
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 0.000147
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 0.000162
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 0.000162
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 0.000162
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 0.00012
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 0.00012
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 0.00012
+          }
+        ]
+      },
+      "models": {
+        "claude-haiku-4-5-20251001": {
+          "entry": {
+            "id": "claude-haiku-4-5-20251001",
+            "capabilities": {
+              "batch": {
+                "supported": true
+              },
+              "citations": {
+                "supported": true
+              },
+              "code_execution": {
+                "supported": false
+              },
+              "context_management": {
+                "clear_thinking_20251015": {
+                  "supported": true
+                },
+                "clear_tool_uses_20250919": {
+                  "supported": true
+                },
+                "compact_20260112": {
+                  "supported": false
+                },
+                "supported": true
+              },
+              "effort": {
+                "high": {
+                  "supported": false
+                },
+                "low": {
+                  "supported": false
+                },
+                "max": {
+                  "supported": false
+                },
+                "medium": {
+                  "supported": false
+                },
+                "supported": false,
+                "xhigh": {
+                  "supported": false
+                }
+              },
+              "image_input": {
+                "supported": true
+              },
+              "pdf_input": {
+                "supported": true
+              },
+              "structured_outputs": {
+                "supported": true
+              },
+              "thinking": {
+                "supported": true,
+                "types": {
+                  "adaptive": {
+                    "supported": false
+                  },
+                  "enabled": {
+                    "supported": true
+                  },
+                  "disabled": {
+                    "supported": true
+                  },
+                  "between_tools": {
+                    "supported": false
+                  }
+                }
+              },
+              "server_tools": {
+                "supported": true,
+                "code_execution": {
+                  "supported": true
+                },
+                "web_search": {
+                  "supported": true
+                }
+              }
+            },
+            "created_at": "2025-10-15T00:00:00+00:00",
+            "display_name": "Claude Haiku 4.5",
+            "max_input_tokens": 200000,
+            "max_tokens": 64000,
+            "type": "model",
+            "line": "haiku",
+            "lifecycle": "active",
+            "deprecated_at": null,
+            "retires_at": null
+          },
+          "canaries": {
+            "primes": {
+              "sha256": [
+                "f55ea885b8e498bf08d4c296239bafd9dd29208a3cb1ce2672990138da235bc9"
+              ],
+              "outputs": [
+                "2, 3, 5, 7, 11, 13, 17, 19, 23, 29"
+              ]
+            },
+            "json": {
+              "sha256": [
+                "27ce34d683305e2d157275f6946b1354e0a33cb06a9cc7cd15962787293ea96f"
+              ],
+              "outputs": [
+                "```json\n{\"city\": \"Athens\", \"nights\": 3}\n```"
+              ]
+            },
+            "arith": {
+              "sha256": [
+                "a934c244755c66aebb0d6f9f5687038ffae8f00b00b28b4e17521016393f38b9"
+              ],
+              "outputs": [
+                "391"
+              ]
+            },
+            "capital": {
+              "sha256": [
+                "b36f06bee2e4f5485ff63ddc504a3f130d3bd06ec15693e8318babdc06e778ee"
+              ],
+              "outputs": [
+                "Canberra"
+              ]
+            },
+            "month": {
+              "sha256": [
+                "4afe6ea150d532c17693519cac32da104f47073d500d2507272d294d8590d3f8"
+              ],
+              "outputs": [
+                "April"
+              ]
+            }
+          }
+        },
+        "claude-sonnet-4-6": {
+          "entry": {
+            "id": "claude-sonnet-4-6",
+            "capabilities": {
+              "batch": {
+                "supported": true
+              },
+              "citations": {
+                "supported": true
+              },
+              "code_execution": {
+                "supported": true
+              },
+              "context_management": {
+                "clear_thinking_20251015": {
+                  "supported": true
+                },
+                "clear_tool_uses_20250919": {
+                  "supported": true
+                },
+                "compact_20260112": {
+                  "supported": true
+                },
+                "supported": true
+              },
+              "effort": {
+                "high": {
+                  "supported": true
+                },
+                "low": {
+                  "supported": true
+                },
+                "max": {
+                  "supported": true
+                },
+                "medium": {
+                  "supported": true
+                },
+                "supported": true,
+                "xhigh": {
+                  "supported": false
+                }
+              },
+              "image_input": {
+                "supported": true
+              },
+              "pdf_input": {
+                "supported": true
+              },
+              "structured_outputs": {
+                "supported": true
+              },
+              "thinking": {
+                "supported": true,
+                "types": {
+                  "adaptive": {
+                    "supported": true
+                  },
+                  "enabled": {
+                    "supported": true
+                  },
+                  "disabled": {
+                    "supported": true
+                  },
+                  "between_tools": {
+                    "supported": false
+                  }
+                }
+              },
+              "server_tools": {
+                "supported": true,
+                "code_execution": {
+                  "supported": true
+                },
+                "web_search": {
+                  "supported": true
+                }
+              }
+            },
+            "created_at": "2026-02-17T00:00:00+00:00",
+            "display_name": "Claude Sonnet 4.6",
+            "max_input_tokens": 1000000,
+            "max_tokens": 128000,
+            "type": "model",
+            "line": "sonnet",
+            "lifecycle": "active",
+            "deprecated_at": null,
+            "retires_at": null
+          },
+          "canaries": {
+            "primes": {
+              "sha256": [
+                "f55ea885b8e498bf08d4c296239bafd9dd29208a3cb1ce2672990138da235bc9"
+              ],
+              "outputs": [
+                "2, 3, 5, 7, 11, 13, 17, 19, 23, 29"
+              ]
+            },
+            "json": {
+              "sha256": [
+                "971d56b225cee874c92261fa6ef1084348959d327f5ff1b4eb46ce0f012c9345"
+              ],
+              "outputs": [
+                "{\"city\": \"Athens\", \"nights\": 3}"
+              ]
+            },
+            "arith": {
+              "sha256": [
+                "a934c244755c66aebb0d6f9f5687038ffae8f00b00b28b4e17521016393f38b9"
+              ],
+              "outputs": [
+                "391"
+              ]
+            },
+            "capital": {
+              "sha256": [
+                "b36f06bee2e4f5485ff63ddc504a3f130d3bd06ec15693e8318babdc06e778ee"
+              ],
+              "outputs": [
+                "Canberra"
+              ]
+            },
+            "month": {
+              "sha256": [
+                "4afe6ea150d532c17693519cac32da104f47073d500d2507272d294d8590d3f8"
+              ],
+              "outputs": [
+                "April"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "end",
+      "taken_at": "2026-11-19T10:36:51.576732+00:00",
+      "canary_prompts": {
+        "primes": "List the first ten prime numbers, separated by commas, and nothing else.",
+        "json": "Return exactly this JSON and nothing else: {\"city\": \"Athens\", \"nights\": 3}",
+        "arith": "What is 17 multiplied by 23? Answer with the number only.",
+        "capital": "What is the capital of Australia? Answer with one word.",
+        "month": "Which month comes after March? Answer with the month name only."
+      },
+      "canary_max_tokens": 64,
+      "canary_repeats": 3,
+      "usage": {
+        "component": "canary",
+        "input_tokens": 678,
+        "output_tokens": 393,
+        "cost_usd": 0.005211,
+        "calls": [
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000183
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000183
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000183
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 27,
+            "output_tokens": 20,
+            "cost_usd": 0.000127
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 27,
+            "output_tokens": 20,
+            "cost_usd": 0.000127
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 27,
+            "output_tokens": 20,
+            "cost_usd": 0.000127
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 4.9e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 4.9e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 4.9e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 5.4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 5.4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 5.4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-haiku-4-5-20251001",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 4e-05
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000549
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000549
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 23,
+            "output_tokens": 32,
+            "cost_usd": 0.000549
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 27,
+            "output_tokens": 15,
+            "cost_usd": 0.000306
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 27,
+            "output_tokens": 15,
+            "cost_usd": 0.000306
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 27,
+            "output_tokens": 15,
+            "cost_usd": 0.000306
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 0.000147
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 0.000147
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 24,
+            "output_tokens": 5,
+            "cost_usd": 0.000147
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 0.000162
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 0.000162
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 19,
+            "output_tokens": 7,
+            "cost_usd": 0.000162
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 0.00012
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 0.00012
+          },
+          {
+            "component": "canary",
+            "model": "claude-sonnet-4-6",
+            "input_tokens": 20,
+            "output_tokens": 4,
+            "cost_usd": 0.00012
+          }
+        ]
+      },
+      "models": {
+        "claude-haiku-4-5-20251001": {
+          "entry": {
+            "id": "claude-haiku-4-5-20251001",
+            "capabilities": {
+              "batch": {
+                "supported": true
+              },
+              "citations": {
+                "supported": true
+              },
+              "code_execution": {
+                "supported": false
+              },
+              "context_management": {
+                "clear_thinking_20251015": {
+                  "supported": true
+                },
+                "clear_tool_uses_20250919": {
+                  "supported": true
+                },
+                "compact_20260112": {
+                  "supported": false
+                },
+                "supported": true
+              },
+              "effort": {
+                "high": {
+                  "supported": false
+                },
+                "low": {
+                  "supported": false
+                },
+                "max": {
+                  "supported": false
+                },
+                "medium": {
+                  "supported": false
+                },
+                "supported": false,
+                "xhigh": {
+                  "supported": false
+                }
+              },
+              "image_input": {
+                "supported": true
+              },
+              "pdf_input": {
+                "supported": true
+              },
+              "structured_outputs": {
+                "supported": true
+              },
+              "thinking": {
+                "supported": true,
+                "types": {
+                  "adaptive": {
+                    "supported": false
+                  },
+                  "enabled": {
+                    "supported": true
+                  },
+                  "disabled": {
+                    "supported": true
+                  },
+                  "between_tools": {
+                    "supported": false
+                  }
+                }
+              },
+              "server_tools": {
+                "supported": true,
+                "code_execution": {
+                  "supported": true
+                },
+                "web_search": {
+                  "supported": true
+                }
+              }
+            },
+            "created_at": "2025-10-15T00:00:00+00:00",
+            "display_name": "Claude Haiku 4.5",
+            "max_input_tokens": 200000,
+            "max_tokens": 64000,
+            "type": "model",
+            "line": "haiku",
+            "lifecycle": "active",
+            "deprecated_at": null,
+            "retires_at": null
+          },
+          "canaries": {
+            "primes": {
+              "sha256": [
+                "f55ea885b8e498bf08d4c296239bafd9dd29208a3cb1ce2672990138da235bc9"
+              ],
+              "outputs": [
+                "2, 3, 5, 7, 11, 13, 17, 19, 23, 29"
+              ]
+            },
+            "json": {
+              "sha256": [
+                "27ce34d683305e2d157275f6946b1354e0a33cb06a9cc7cd15962787293ea96f"
+              ],
+              "outputs": [
+                "```json\n{\"city\": \"Athens\", \"nights\": 3}\n```"
+              ]
+            },
+            "arith": {
+              "sha256": [
+                "a934c244755c66aebb0d6f9f5687038ffae8f00b00b28b4e17521016393f38b9"
+              ],
+              "outputs": [
+                "391"
+              ]
+            },
+            "capital": {
+              "sha256": [
+                "b36f06bee2e4f5485ff63ddc504a3f130d3bd06ec15693e8318babdc06e778ee"
+              ],
+              "outputs": [
+                "Canberra"
+              ]
+            },
+            "month": {
+              "sha256": [
+                "4afe6ea150d532c17693519cac32da104f47073d500d2507272d294d8590d3f8"
+              ],
+              "outputs": [
+                "April"
+              ]
+            }
+          }
+        },
+        "claude-sonnet-4-6": {
+          "entry": {
+            "id": "claude-sonnet-4-6",
+            "capabilities": {
+              "batch": {
+                "supported": true
+              },
+              "citations": {
+                "supported": true
+              },
+              "code_execution": {
+                "supported": true
+              },
+              "context_management": {
+                "clear_thinking_20251015": {
+                  "supported": true
+                },
+                "clear_tool_uses_20250919": {
+                  "supported": true
+                },
+                "compact_20260112": {
+                  "supported": true
+                },
+                "supported": true
+              },
+              "effort": {
+                "high": {
+                  "supported": true
+                },
+                "low": {
+                  "supported": true
+                },
+                "max": {
+                  "supported": true
+                },
+                "medium": {
+                  "supported": true
+                },
+                "supported": true,
+                "xhigh": {
+                  "supported": false
+                }
+              },
+              "image_input": {
+                "supported": true
+              },
+              "pdf_input": {
+                "supported": true
+              },
+              "structured_outputs": {
+                "supported": true
+              },
+              "thinking": {
+                "supported": true,
+                "types": {
+                  "adaptive": {
+                    "supported": true
+                  },
+                  "enabled": {
+                    "supported": true
+                  },
+                  "disabled": {
+                    "supported": true
+                  },
+                  "between_tools": {
+                    "supported": false
+                  }
+                }
+              },
+              "server_tools": {
+                "supported": true,
+                "code_execution": {
+                  "supported": true
+                },
+                "web_search": {
+                  "supported": true
+                }
+              }
+            },
+            "created_at": "2026-02-17T00:00:00+00:00",
+            "display_name": "Claude Sonnet 4.6",
+            "max_input_tokens": 1000000,
+            "max_tokens": 128000,
+            "type": "model",
+            "line": "sonnet",
+            "lifecycle": "active",
+            "deprecated_at": null,
+            "retires_at": null
+          },
+          "canaries": {
+            "primes": {
+              "sha256": [
+                "f55ea885b8e498bf08d4c296239bafd9dd29208a3cb1ce2672990138da235bc9"
+              ],
+              "outputs": [
+                "2, 3, 5, 7, 11, 13, 17, 19, 23, 29"
+              ]
+            },
+            "json": {
+              "sha256": [
+                "971d56b225cee874c92261fa6ef1084348959d327f5ff1b4eb46ce0f012c9345"
+              ],
+              "outputs": [
+                "{\"city\": \"Athens\", \"nights\": 3}"
+              ]
+            },
+            "arith": {
+              "sha256": [
+                "a934c244755c66aebb0d6f9f5687038ffae8f00b00b28b4e17521016393f38b9"
+              ],
+              "outputs": [
+                "391"
+              ]
+            },
+            "capital": {
+              "sha256": [
+                "b36f06bee2e4f5485ff63ddc504a3f130d3bd06ec15693e8318babdc06e778ee"
+              ],
+              "outputs": [
+                "Canberra"
+              ]
+            },
+            "month": {
+              "sha256": [
+                "4afe6ea150d532c17693519cac32da104f47073d500d2507272d294d8590d3f8"
+              ],
+              "outputs": [
+                "April"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

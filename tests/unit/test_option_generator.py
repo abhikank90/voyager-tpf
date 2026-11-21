@@ -475,3 +475,37 @@ def test_itinerary_prompt_facts(agent):
     )
     assert "33.8" in weather and "10.2" in weather
     assert agent._format_weather_for_prompt({}) == "Unknown"
+
+
+@pytest.mark.asyncio
+async def test_three_options_generate_concurrently_and_keep_order(agent, complete_state):
+    """The three option itineraries run in parallel threads, in budget/balanced/premium order."""
+    import threading
+    import time
+
+    lock = threading.Lock()
+    active = {"n": 0, "max": 0}
+
+    def fake_create(**kwargs):
+        with lock:
+            active["n"] += 1
+            active["max"] = max(active["max"], active["n"])
+        time.sleep(0.05)
+        with lock:
+            active["n"] -= 1
+        response = MagicMock()
+        response.content = [MagicMock(text=json.dumps([
+            {"day": 1, "morning": "x", "afternoon": "y", "evening": "z",
+             "meals": {}, "notes": ""},
+        ]))]
+        response.usage = MagicMock(input_tokens=1, output_tokens=1)
+        return response
+
+    client = MagicMock()
+    client.messages.create.side_effect = fake_create
+    agent.client = client
+
+    result = await agent._execute(complete_state)
+    assert [o["style"] for o in result["trip_options"]] == ["budget", "balanced", "premium"]
+    assert client.messages.create.call_count == 3
+    assert active["max"] >= 2  # at least two itinerary calls overlapped

@@ -1,0 +1,271 @@
+{
+  "billed": {
+    "ignored_rows": 12,
+    "key_ids_seen": [
+      "apikey_016azyMATQe5h9cquzd6LB5g",
+      "apikey_019UUra2ru8uMDziHkiMKroD"
+    ],
+    "models": {
+      "claude-haiku-4-5-20251001": {
+        "cost": 6.49,
+        "input": 336672,
+        "output": 1230811
+      },
+      "claude-sonnet-4-6": {
+        "cost": 233.02,
+        "input": 3027701,
+        "output": 14929246
+      }
+    },
+    "token_mapping": [
+      {
+        "id_cost_usd": 6.49,
+        "key_id": "apikey_019UUra2ru8uMDziHkiMKroD",
+        "list_cost_usd": 6.49,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      {
+        "id_cost_usd": 0.12,
+        "key_id": "apikey_016azyMATQe5h9cquzd6LB5g",
+        "list_cost_usd": 0.12,
+        "model": "claude-haiku-4-5-20251001"
+      },
+      {
+        "id_cost_usd": 233.02,
+        "key_id": "apikey_019UUra2ru8uMDziHkiMKroD",
+        "list_cost_usd": 233.02,
+        "model": "claude-sonnet-4-6"
+      },
+      {
+        "id_cost_usd": 4.65,
+        "key_id": "apikey_016azyMATQe5h9cquzd6LB5g",
+        "list_cost_usd": 4.65,
+        "model": "claude-sonnet-4-6"
+      }
+    ],
+    "token_parts": {
+      "cache_read": 0,
+      "cache_write_1h": 0,
+      "cache_write_5m": 0,
+      "no_cache": 3364373
+    },
+    "totals": {
+      "cost_usd": 239.51000000000002,
+      "input_tokens": 3364373,
+      "output_tokens": 16160057
+    }
+  },
+  "deltas": {
+    "cost_delta_pct": 1.1836,
+    "cost_usd": 2.834764,
+    "input_tokens": 104060,
+    "models": {
+      "claude-haiku-4-5-20251001": {
+        "billed": {
+          "cost_usd": 6.49,
+          "input_tokens": 336672,
+          "output_tokens": 1230811
+        },
+        "input_delta": 5391,
+        "output_delta": 19922,
+        "tracked": {
+          "input_tokens": 331281,
+          "output_tokens": 1210889
+        }
+      },
+      "claude-sonnet-4-6": {
+        "billed": {
+          "cost_usd": 233.02,
+          "input_tokens": 3027701,
+          "output_tokens": 14929246
+        },
+        "input_delta": 193101,
+        "output_delta": 255705,
+        "tracked": {
+          "input_tokens": 2834600,
+          "output_tokens": 14673541
+        }
+      }
+    },
+    "output_tokens": 181978,
+    "pass": false
+  },
+  "explanation": {
+    "aborted_window_1": {
+      "billed_usd": 4.77,
+      "tracked_isolation_usd": 0.2418,
+      "tracked_sessions": 24,
+      "tracked_sessions_usd": 3.9135,
+      "tracked_usd": 4.1553
+    },
+    "conclusion": "The check fails at 1% (+1.18%); untracked runs on the window key (a-d) account for $1.42 of the +$2.83 gap (~50%); the residual $1.42 / ~81K output tokens (~0.59% of billed) is tracked-side token under-counting.",
+    "instrumentation_gap": "failures.csv partial-usage columns blank for every failure row (15 capture failures + 2 synthetic APITimeoutError rows); the 2 synthetic failures were re-run and their rerun usage is tracked.",
+    "key_identity": {
+      "aborted_key": {
+        "haiku": 0.12,
+        "sonnet": 4.65,
+        "total": 4.77
+      },
+      "aborted_key_id": "apikey_016azyMATQe5h9cquzd6LB5g",
+      "superseded_name_filter_pct": 3.1131,
+      "window_key": {
+        "haiku": 6.49,
+        "sonnet": 233.02,
+        "total": 239.51
+      },
+      "window_key_id": "apikey_019UUra2ru8uMDziHkiMKroD"
+    },
+    "per_model": {
+      "canary_mixed": {
+        "billed_cost_usd": 0.0,
+        "tracked_cost_usd": 0.010422
+      },
+      "claude-haiku-4-5-20251001": {
+        "billed_cost_usd": 6.49,
+        "billed_output_tokens": 1230811,
+        "tracked_cost_usd": 6.385726,
+        "tracked_output_tokens": 1210889
+      },
+      "claude-sonnet-4-6": {
+        "billed_cost_usd": 233.02,
+        "billed_output_tokens": 14929246,
+        "tracked_cost_usd": 230.279088,
+        "tracked_output_tokens": 14673541
+      }
+    },
+    "pre_registered": {
+      "billed_cost_usd": 239.51,
+      "cost_delta_pct": 1.1836,
+      "cost_delta_usd": 2.834764,
+      "input_token_delta": 104060,
+      "output_token_delta": 181978,
+      "pass": false,
+      "threshold_pct": 1.0,
+      "tracked_cost_usd": 236.675236
+    },
+    "residual_output_tokens": 81112,
+    "residual_usd": 1.4162,
+    "untracked_subtotal_output_tokens": 100866,
+    "untracked_subtotal_usd": 1.4186,
+    "untracked_uses": [
+      {
+        "cost_usd": 0.2007,
+        "evidence": "handoff/aborted_capture_2/runs_real_capture/shard_1/sessions.jsonl",
+        "id": "a",
+        "label": "aborted capture 2 \u2014 6 completed sessions set aside",
+        "output_tokens": 14524,
+        "sessions": 6
+      },
+      {
+        "cost_usd": 0.3891,
+        "estimate": true,
+        "evidence": "replay-1 baseline cost per query; failures.csv usage blank",
+        "id": "b",
+        "label": "15 relaunched capture failures (empty-inventory)",
+        "old_estimate_usd": 4.7411,
+        "output_tokens": 31546,
+        "sessions": 15
+      },
+      {
+        "cost_usd": 0.2742,
+        "evidence": "/tmp/cap_smoke/sessions.jsonl",
+        "id": "c",
+        "label": "CAPFIX live smoke + key-checks",
+        "output_tokens": 18087,
+        "sessions": 1
+      },
+      {
+        "cost_usd": 0.5546,
+        "estimate": true,
+        "evidence": "SYN-01 + SYN-02 baseline means",
+        "id": "d",
+        "label": "1 live integration full-suite run (Greece + Maldives, mock)",
+        "output_tokens": 36709,
+        "sessions": 2
+      }
+    ]
+  },
+  "filters": {
+    "key": "voyager-v1.5-window",
+    "key_id": "apikey_019UUra2ru8uMDziHkiMKroD",
+    "workspace": null
+  },
+  "pass": false,
+  "threshold_pct": 1.0,
+  "tracked": {
+    "models": {
+      "claude-haiku-4-5-20251001": {
+        "input": 331281,
+        "output": 1210889
+      },
+      "claude-sonnet-4-6": {
+        "input": 2834600,
+        "output": 14673541
+      }
+    },
+    "totals": {
+      "cost_usd": 236.6752360000003,
+      "input_tokens": 3260313,
+      "output_tokens": 15978079
+    }
+  },
+  "tracked_sources": {
+    "canary": {
+      "cost_usd": 0.010422,
+      "input_tokens": 1356,
+      "output_tokens": 786,
+      "snapshots": 2
+    },
+    "failed_sessions": {
+      "cost_usd": 0.0,
+      "input_tokens": 0,
+      "n": 2,
+      "output_tokens": 0
+    },
+    "rerun_sessions": {
+      "cost_usd": 0.45427,
+      "files": [
+        "runs/synthetic/reruns.jsonl"
+      ],
+      "input_tokens": 6877,
+      "n": 2,
+      "output_tokens": 30327
+    },
+    "rq4": {
+      "cost_usd": 1.672173,
+      "files": [
+        "isolation.json",
+        "shipped.json"
+      ],
+      "input_tokens": 93076,
+      "output_tokens": 92863
+    },
+    "sessions": {
+      "cost_usd": 234.5383710000003,
+      "files": [
+        "runs/control/shard_1/sessions.jsonl",
+        "runs/control/shard_2/sessions.jsonl",
+        "runs/real/replay_1/shard_1/sessions.jsonl",
+        "runs/real/replay_2/shard_1/sessions.jsonl",
+        "runs/real/replay_2/shard_2/sessions.jsonl",
+        "runs/real/replay_2/shard_3/sessions.jsonl",
+        "runs/real/replay_3/shard_1/sessions.jsonl",
+        "runs/real/replay_3/shard_2/sessions.jsonl",
+        "runs/real/replay_3/shard_3/sessions.jsonl",
+        "runs/real_capture/shard_1/sessions.jsonl",
+        "runs/synthetic/shard_1/sessions.jsonl",
+        "runs/synthetic/shard_2/sessions.jsonl",
+        "runs/synthetic/shard_3/sessions.jsonl",
+        "runs/synthetic/shard_4/sessions.jsonl"
+      ],
+      "input_tokens": 3159004,
+      "n": 1158,
+      "output_tokens": 15854103
+    }
+  },
+  "window": {
+    "end": "2026-11-19",
+    "source": "model_manifest",
+    "start": "2026-11-19"
+  }
+}

@@ -17,6 +17,7 @@ call print_summary() to produce the before/after table for the article.
 from __future__ import annotations
 
 import json
+import os
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -28,6 +29,12 @@ _SESSIONS_FILE = _METRICS_DIR / "sessions.jsonl"
 _RESULTS_DIR = Path(__file__).parent.parent / "results"
 _RESULTS_SCHEMA_VERSION = "2"
 _RESEARCH_AGENTS_COUNT = 5
+
+
+def _sessions_file() -> Path:
+    """Session log path. ``VOYAGER_METRICS_PATH`` gives each concurrent run its own file."""
+    override = os.environ.get("VOYAGER_METRICS_PATH")
+    return Path(override) if override else _SESSIONS_FILE
 
 
 def _default_convergence(run_metrics: dict[str, Any]) -> dict[str, Any]:
@@ -61,6 +68,8 @@ def record_session(
     mode: str = "full",
     token_usage=None,
     estimated_cost_usd: float = 0.0,
+    refinement_mode: str | None = None,
+    session_tags: dict | None = None,
 ) -> None:
     """Extract all metrics from a completed run and append to sessions.jsonl."""
     conflicts: list[dict] = final_state.get("conflicts", []) or []
@@ -107,8 +116,12 @@ def record_session(
     # preferred_arrival, weather_concerns, etc.) that explain WHY each conflict fired.
     # Conflict dicts from _identify_conflicts have no data field; we recover the
     # payload here by matching conflict type → (to_agent, message_type).
+    # agent_messages in the final state belong to the LAST hub, so Round 1 is
+    # read from the snapshot hub_1 takes (falls back for pre-v1.5 states).
+    r1_hub_messages: list[dict] = run_metrics.get("round_1_hub_messages", messages) or []
+    r1_messages: list[dict] = run_metrics.get("round_1_messages", messages) or []
     r1_msg_data: dict[tuple[str, str], dict] = {}
-    for msg in messages:
+    for msg in r1_hub_messages:
         if msg.get("round") == 1 and msg.get("from_agent") == "collaboration_hub":
             key = (msg.get("to_agent", ""), msg.get("message_type", ""))
             if key[0] and msg.get("data"):
@@ -152,8 +165,11 @@ def record_session(
             }
             for c in round_1_conflicts
         ],
-        "round_1_messages_sent": len(messages),
-        "round_1_agents_targeted": sorted({m.get("to_agent") for m in messages if m.get("to_agent") != "all"}),
+        "round_1_messages_sent": len(r1_messages),
+        "round_1_agents_targeted": sorted(
+            {m.get("to_agent") for m in r1_messages if m.get("to_agent") != "all"}
+        ),
+        "round_1_message_recipients": [m.get("to_agent") for m in r1_messages],
         "synergy_count": len(synergies),
 
         # Final state
@@ -214,19 +230,43 @@ def record_session(
 
         # ── Unsatisfiable feedback conditions ─────────────────────────────
         "feedback_metrics": final_state.get("feedback_metrics", {}),
+        "feedback_by_round": run_metrics.get("feedback_by_round", {}),
+        "itinerary_fallback_styles": [
+            o.get("style") for o in (final_state.get("trip_options") or [])
+            if o.get("itinerary_fallback")
+        ],
     }
 
-    _SESSIONS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with open(_SESSIONS_FILE, "a") as f:
+    record["refinement_mode"] = refinement_mode or ("targeted" if mode == "full" else mode)
+    record["trip_window"] = final_state.get("trip_window", {})
+    from config.settings import get_settings
+    record["inventory_mode"] = get_settings().inventory_mode
+    record["inventory_profile"] = final_state.get("inventory_profile", "default")
+    usage_dict = token_usage.to_dict() if token_usage is not None else {}
+    record["effective_temperatures"] = usage_dict.get("temperatures", {})
+    record["per_component_usage"] = usage_dict.get("per_component", {})
+    record["node_durations_s"] = run_metrics.get("node_durations_s", {})
+    record["agent_durations_s"] = {
+        f"round_{r}": run_metrics.get(f"round_{r}_agent_durations_s", {}) for r in (1, 2, 3)
+    }
+    record["unresolved_conflicts"] = run_metrics.get("unresolved_conflicts", [])
+    record["unresolved_reason_counts"] = run_metrics.get("unresolved_reason_counts", {})
+    for key, value in (session_tags or {}).items():
+        record.setdefault(key, value)
+
+    path = _sessions_file()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "a") as f:
         f.write(json.dumps(record) + "\n")
 
 
 def load_sessions(mode: str | None = None) -> list[dict]:
     """Load recorded sessions, optionally filtered by mode ('full' or 'baseline')."""
-    if not _SESSIONS_FILE.exists():
+    path = _sessions_file()
+    if not path.exists():
         return []
     sessions = []
-    with open(_SESSIONS_FILE) as f:
+    with open(path) as f:
         for line in f:
             if line.strip():
                 s = json.loads(line)

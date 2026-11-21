@@ -1,0 +1,592 @@
+{
+  "session_id": "88949a72-ea8b-44a0-bda8-56954a30bd5b",
+  "intent": {
+    "destination": "Amsterdam",
+    "origin": "New York City (NYC)",
+    "budget_usd": 2200.0,
+    "duration_days": 5,
+    "travel_month": "May",
+    "travel_year": 2027,
+    "interests": [
+      "museums",
+      "canals"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Amsterdam museums and canals, $2200 solo, 5 days, May 2027, from NYC"
+  },
+  "selected_flight": {
+    "price_usd": 350,
+    "airline": "KL",
+    "departure": "2027-05-15T09:00:00",
+    "arrival": "2027-05-15T13:00:00",
+    "stops": 0,
+    "duration": "PT7H00M"
+  },
+  "selected_hotel": {
+    "name": "Canal House Amsterdam",
+    "price_per_night_usd": 140,
+    "total_usd": 700,
+    "rating": 4.4,
+    "amenities": [
+      "wifi",
+      "breakfast included"
+    ],
+    "location": "Amsterdam"
+  },
+  "experiences": [
+    {
+      "name": "Rijksmuseum Visit",
+      "description": "Explore the Netherlands' premier art and history museum, home to masterpieces by Rembrandt and Vermeer. The stunning building itself is a work of art, and the collection spans 800 years of Dutch history. Book tickets in advance to skip the lines.",
+      "cost_usd": 25,
+      "category": "museums",
+      "best_time_of_day": "morning",
+      "location": "Museum Square (Museumplein), Amsterdam South"
+    },
+    {
+      "name": "Anne Frank House Tour",
+      "description": "Walk through the hidden annex where Anne Frank and her family hid during World War II. A deeply moving and historically significant experience that offers profound insight into wartime Amsterdam. Advance online booking is essential as tickets sell out weeks ahead.",
+      "cost_usd": 16,
+      "category": "culture",
+      "best_time_of_day": "afternoon",
+      "location": "Prinsengracht, Jordaan District"
+    },
+    {
+      "name": "Private Canal Boat Tour",
+      "description": "Glide through Amsterdam's UNESCO-listed canal ring on a guided boat tour, passing iconic 17th-century merchant houses, narrow bridges, and charming houseboats. Evening tours offer magical reflections of city lights on the water and a romantic atmosphere.",
+      "cost_usd": 35,
+      "category": "canals",
+      "best_time_of_day": "evening",
+      "location": "Grachtengordel (Canal Ring), Central Amsterdam"
+    },
+    {
+      "name": "Van Gogh Museum Experience",
+      "description": "Discover the world's largest collection of Van Gogh's works, including The Bedroom and Almond Blossom. The museum traces the artist's emotional journey through his paintings, drawings, and personal letters. A must-visit for art lovers and one of Europe's most visited museums.",
+      "cost_usd": 22,
+      "category": "museums",
+      "best_time_of_day": "morning",
+      "location": "Museum Square (Museumplein), Amsterdam South"
+    },
+    {
+      "name": "Jordaan Neighborhood Food & Canal Walk",
+      "description": "Wander through Amsterdam's most picturesque neighborhood, stopping at local cheese shops, stroopwafel stalls, and traditional Dutch brown cafes (bruine kroegen). Sample herring from a street cart, try bitterballen, and enjoy canal-side dining at a local restaurant. A perfect blend of food, culture, and scenic waterways.",
+      "cost_usd": 40,
+      "category": "food",
+      "best_time_of_day": "afternoon",
+      "location": "Jordaan District, Western Canal Ring"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-05-15",
+    "return": "2027-05-20",
+    "nights": 5,
+    "month": "may",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Amsterdam",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 1373.0,
+      "flight": {
+        "price_usd": 350,
+        "airline": "KL",
+        "departure": "2027-05-15T09:00:00",
+        "arrival": "2027-05-15T13:00:00",
+        "stops": 0,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Canal House Amsterdam",
+        "price_per_night_usd": 140,
+        "total_usd": 700,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Amsterdam"
+      },
+      "experiences": [
+        {
+          "name": "Rijksmuseum Visit",
+          "description": "Explore the Netherlands' premier art and history museum, home to masterpieces by Rembrandt and Vermeer. The stunning building itself is a work of art, and the collection spans 800 years of Dutch history. Book tickets in advance to skip the lines.",
+          "cost_usd": 25,
+          "category": "museums",
+          "best_time_of_day": "morning",
+          "location": "Museum Square (Museumplein), Amsterdam South"
+        },
+        {
+          "name": "Anne Frank House Tour",
+          "description": "Walk through the hidden annex where Anne Frank and her family hid during World War II. A deeply moving and historically significant experience that offers profound insight into wartime Amsterdam. Advance online booking is essential as tickets sell out weeks ahead.",
+          "cost_usd": 16,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Prinsengracht, Jordaan District"
+        },
+        {
+          "name": "Private Canal Boat Tour",
+          "description": "Glide through Amsterdam's UNESCO-listed canal ring on a guided boat tour, passing iconic 17th-century merchant houses, narrow bridges, and charming houseboats. Evening tours offer magical reflections of city lights on the water and a romantic atmosphere.",
+          "cost_usd": 35,
+          "category": "canals",
+          "best_time_of_day": "evening",
+          "location": "Grachtengordel (Canal Ring), Central Amsterdam"
+        },
+        {
+          "name": "Van Gogh Museum Experience",
+          "description": "Discover the world's largest collection of Van Gogh's works, including The Bedroom and Almond Blossom. The museum traces the artist's emotional journey through his paintings, drawings, and personal letters. A must-visit for art lovers and one of Europe's most visited museums.",
+          "cost_usd": 22,
+          "category": "museums",
+          "best_time_of_day": "morning",
+          "location": "Museum Square (Museumplein), Amsterdam South"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Amsterdam",
+        "style": "budget",
+        "total_cost": 1373.0,
+        "breakdown": {
+          "flight": 350.0,
+          "hotel": 700.0,
+          "experiences": 98.0,
+          "food": 125,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-05-15 (Friday)",
+          "morning": "Arrival at Amsterdam Airport Schiphol at 13:00 \u2014 no morning activities scheduled. Take the direct train from Schiphol to Amsterdam Centraal (\u20ac4.40, ~15 min), then walk or take tram to Canal House Amsterdam to check in and drop off luggage.",
+          "afternoon": "Self-guided walk along the Herengracht and Prinsengracht canals near the hotel. Explore the Jordaan neighborhood \u2014 browse local boutiques, spot the iconic canal houses, and get oriented with the city layout. Free activity, perfect for stretching legs after the flight.",
+          "evening": "Stroll to the Leidseplein or Rembrandtplein square to soak in the lively atmosphere. Enjoy dinner at a local budget-friendly spot nearby.",
+          "meals": {
+            "breakfast": "Eat at the airport or on the plane before landing.",
+            "lunch": "Grab a quick and cheap broodje (Dutch sandwich) from a bakery or FEBO automat near Amsterdam Centraal for around \u20ac3\u20135.",
+            "dinner": "Dinner at Wok to Walk or Maoz Falafel near Leidseplein \u2014 filling meals for \u20ac7\u201310."
+          },
+          "notes": "Get an OV-chipkaart (public transport card) at Schiphol for easy tram and bus travel throughout the trip. Load \u20ac10\u201315 to start. Many canal walks are free and ideal for the first evening."
+        },
+        {
+          "day": 2,
+          "date": "2027-05-16 (Saturday)",
+          "morning": "Rijksmuseum Visit \u2014 Explore the Netherlands' premier art and history museum, home to masterpieces by Rembrandt and Vermeer. Book tickets online in advance to save time and potentially get a discount (standard adult ticket ~\u20ac22.50). Arrive at opening (9:00) to beat the weekend crowds. Allow 2\u20133 hours.",
+          "afternoon": "Walk 10 minutes to the Van Gogh Museum Experience \u2014 Discover the world's largest collection of Van Gogh's works, including The Bedroom and Almond Blossom. Book timed-entry tickets online in advance (~\u20ac22). The two museums are side by side in the Museumplein area, making this a perfect combo day.",
+          "evening": "Relax at Vondelpark, Amsterdam's beloved green space just a short walk from Museumplein. Enjoy the open-air atmosphere, street musicians, and locals unwinding. Head back toward the hotel for a quiet evening.",
+          "meals": {
+            "breakfast": "Grocery store breakfast from Albert Heijn (AH to Go at Centraal or near hotel) \u2014 yogurt, fruit, and bread for \u20ac3\u20135.",
+            "lunch": "Packed lunch or grab a stroopwafel and snack from a market stall near Museumplein to save money between museums. Budget \u20ac5\u20137.",
+            "dinner": "Eat at Foodhallen (indoor food market in the Oud-West neighborhood, ~15 min walk from Museumplein) \u2014 wide variety of affordable dishes from \u20ac8\u201312 per person."
+          },
+          "notes": "Saturday can be very busy at both museums. Pre-booking timed tickets online is strongly recommended and often mandatory. Combined museum spend: ~\u20ac44.50. Consider the Museumkaart (\u20ac65) if planning to visit more than 3\u20134 museums total \u2014 it pays for itself quickly."
+        },
+        {
+          "day": 3,
+          "date": "2027-05-17 (Sunday)",
+          "morning": "Anne Frank House Tour \u2014 Walk through the hidden annex where Anne Frank and her family hid during World War II. A deeply moving and historically significant experience (~\u20ac16). Tickets MUST be booked well in advance online as they sell out weeks ahead. Morning slot recommended (9:00\u201310:00) to avoid peak crowds. Duration: ~1.5 hours.",
+          "afternoon": "Explore the Jordaan neighborhood on foot after the tour \u2014 it's right next door. Browse the Noordermarkt Sunday antique and organic market (free entry). Walk along the Brouwersgracht, considered one of Amsterdam's most picturesque canals. Stop by the Westerkerk church (free exterior, small fee to climb the tower for panoramic views).",
+          "evening": "Take a leisurely canal walk along the Singel and Keizersgracht at dusk \u2014 the canal reflections in the evening light are stunning and completely free.",
+          "meals": {
+            "breakfast": "Breakfast at Jordaan bakery such as Bakkerij Hartog or similar local bakery \u2014 coffee and pastry for \u20ac4\u20136.",
+            "lunch": "Noordermarkt area has affordable street food and small caf\u00e9s. Try a Dutch herring (haring) from a street cart for \u20ac3\u20134, a classic Amsterdam experience.",
+            "dinner": "Budget dinner at Dampkring caf\u00e9 area or a local eetcaf\u00e9 (Dutch pub-restaurant) in the Jordaan \u2014 expect stamppot or erwtensoep (pea soup) for \u20ac10\u201313."
+          },
+          "notes": "Anne Frank House tickets are extremely limited and must be booked weeks or even months in advance at annefrank.org. Without a pre-booked ticket, entry is not possible. The Jordaan neighborhood is ideal for free exploration and is very walkable from the Canal House hotel."
+        },
+        {
+          "day": 4,
+          "date": "2027-05-18 (Monday)",
+          "morning": "Private Canal Boat Tour \u2014 Glide through Amsterdam's UNESCO-listed canal ring on a guided boat tour, passing iconic 17th-century canal houses, bridges, and hidden waterways. This is the premium splurge experience of the trip. If the private tour exceeds budget, look for shared/group canal boat tours available from \u20ac15\u201318 per person from operators near Centraal or Leidseplein. Duration: ~1\u20131.5 hours.",
+          "afternoon": "Visit the Amsterdam Museum of the Canals (Amsterdams Historisch Museum / Museum of the Canals) to learn about the city's iconic waterway history \u2014 entry ~\u20ac15. Alternatively, visit the free Begijnhof courtyard nearby, a tranquil hidden garden with medieval chapel, completely free to enter.",
+          "evening": "Head to the NDSM Wharf in Amsterdam Noord \u2014 take the free ferry from behind Centraal Station (5 min). This former shipyard is now a creative hub with street art, pop-up bars, and an alternative vibe. Great for a free evening wander.",
+          "meals": {
+            "breakfast": "Breakfast at the hotel if included, or pick up supplies from Albert Heijn supermarket for a self-catered meal (~\u20ac3\u20135).",
+            "lunch": "Lunch at a brown caf\u00e9 (bruin caf\u00e9) near the canal tour departure point \u2014 broodje kroket or uitsmijter for \u20ac6\u20139.",
+            "dinner": "Dinner at NDSM Wharf area \u2014 IJ-Kantine offers affordable meals with waterfront views for \u20ac10\u201314, or bring picnic supplies from a supermarket for a budget-friendly option."
+          },
+          "notes": "The free ferry to Amsterdam Noord runs 24/7 and is a great way to see a different, less touristy side of Amsterdam. NDSM is especially lively on weekday evenings. If budget is tight, skip the private canal tour and opt for a shared group tour or simply walk the canal ring for free."
+        },
+        {
+          "day": 5,
+          "date": "2027-05-19 (Tuesday)",
+          "morning": "Visit the Albert Cuypmarkt in De Pijp neighborhood \u2014 one of Europe's largest outdoor street markets, open Monday\u2013Saturday (9:00\u201317:00). Browse Dutch cheeses, fresh stroopwafels, flowers, clothing, and local produce. Completely free to enter and explore. Great for picking up affordable souvenirs and snacks.",
+          "afternoon": "Explore De Pijp neighborhood on foot \u2014 walk along the Amstel River, cross the famous Magere Brug (Skinny Bridge), and enjoy the views of the river and houseboats. Visit the Heineken Experience (~\u20ac23) if interested in a fun brewery tour, or skip for free canal-side wandering to stay on budget. End with a final stroll through the flower market (Bloemenmarkt) on the Singel canal.",
+          "evening": "Final evening in Amsterdam \u2014 return to a favorite spot from the week or try a new neighborhood. Pack bags for departure and enjoy a relaxed farewell dinner.",
+          "meals": {
+            "breakfast": "Fresh stroopwafels and coffee from Albert Cuypmarkt stalls \u2014 budget \u20ac4\u20136 for a delicious market breakfast.",
+            "lunch": "Lunch from market stalls at Albert Cuypmarkt \u2014 try Dutch bitterballen, raw herring, or a fresh sandwich for \u20ac5\u20138 total.",
+            "dinner": "Farewell dinner at a local Indonesian restaurant (Indonesian cuisine is a Dutch staple due to colonial history) \u2014 a rijsttafel or nasi goreng for \u20ac12\u201315 at a neighborhood spot in De Pijp."
+          },
+          "notes": "Albert Cuypmarkt is closed on Sundays, so Tuesday is perfect. Keep departure logistics in mind \u2014 Schiphol is 15\u201320 min by train from Centraal (trains run frequently). Leave enough time for airport check-in. Return the OV-chipkaart at a machine for a \u20ac2.50 card deposit refund if desired."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City (NYC)+to+Amsterdam+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Amsterdam&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam"
+      ],
+      "highlights": [
+        "Save $277 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Amsterdam Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 1488.0,
+      "flight": {
+        "price_usd": 350,
+        "airline": "KL",
+        "departure": "2027-05-15T09:00:00",
+        "arrival": "2027-05-15T13:00:00",
+        "stops": 0,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Canal House Amsterdam",
+        "price_per_night_usd": 140,
+        "total_usd": 700,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Amsterdam"
+      },
+      "experiences": [
+        {
+          "name": "Rijksmuseum Visit",
+          "description": "Explore the Netherlands' premier art and history museum, home to masterpieces by Rembrandt and Vermeer. The stunning building itself is a work of art, and the collection spans 800 years of Dutch history. Book tickets in advance to skip the lines.",
+          "cost_usd": 25,
+          "category": "museums",
+          "best_time_of_day": "morning",
+          "location": "Museum Square (Museumplein), Amsterdam South"
+        },
+        {
+          "name": "Anne Frank House Tour",
+          "description": "Walk through the hidden annex where Anne Frank and her family hid during World War II. A deeply moving and historically significant experience that offers profound insight into wartime Amsterdam. Advance online booking is essential as tickets sell out weeks ahead.",
+          "cost_usd": 16,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Prinsengracht, Jordaan District"
+        },
+        {
+          "name": "Private Canal Boat Tour",
+          "description": "Glide through Amsterdam's UNESCO-listed canal ring on a guided boat tour, passing iconic 17th-century merchant houses, narrow bridges, and charming houseboats. Evening tours offer magical reflections of city lights on the water and a romantic atmosphere.",
+          "cost_usd": 35,
+          "category": "canals",
+          "best_time_of_day": "evening",
+          "location": "Grachtengordel (Canal Ring), Central Amsterdam"
+        },
+        {
+          "name": "Van Gogh Museum Experience",
+          "description": "Discover the world's largest collection of Van Gogh's works, including The Bedroom and Almond Blossom. The museum traces the artist's emotional journey through his paintings, drawings, and personal letters. A must-visit for art lovers and one of Europe's most visited museums.",
+          "cost_usd": 22,
+          "category": "museums",
+          "best_time_of_day": "morning",
+          "location": "Museum Square (Museumplein), Amsterdam South"
+        },
+        {
+          "name": "Jordaan Neighborhood Food & Canal Walk",
+          "description": "Wander through Amsterdam's most picturesque neighborhood, stopping at local cheese shops, stroopwafel stalls, and traditional Dutch brown cafes (bruine kroegen). Sample herring from a street cart, try bitterballen, and enjoy canal-side dining at a local restaurant. A perfect blend of food, culture, and scenic waterways.",
+          "cost_usd": 40,
+          "category": "food",
+          "best_time_of_day": "afternoon",
+          "location": "Jordaan District, Western Canal Ring"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Amsterdam",
+        "style": "balanced",
+        "total_cost": 1488.0,
+        "breakdown": {
+          "flight": 350.0,
+          "hotel": 700.0,
+          "experiences": 138.0,
+          "food": 200,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-05-15 (Saturday)",
+          "morning": "Arrival at Amsterdam Airport Schiphol at 13:00 \u2014 no morning activities scheduled. Take the Intercity Direct train from Schiphol to Amsterdam Centraal (approx. 17 min, ~\u20ac5.50). Check in to Canal House Amsterdam and freshen up.",
+          "afternoon": "After settling in, take a leisurely self-guided walk along the Herengracht and Keizersgracht canals near the hotel. Soak in the iconic 17th-century canal houses, bridges, and houseboats. Stop at a local caf\u00e9 for a coffee and Dutch apple pie to recharge after travel.",
+          "evening": "Explore the lively Leidseplein square area for dinner and a relaxed first evening in the city. After dinner, stroll along the illuminated canals as the city lights reflect on the water \u2014 a magical introduction to Amsterdam at night.",
+          "meals": {
+            "breakfast": "Grab a snack or light meal at Schiphol Airport before or after landing.",
+            "lunch": "Caf\u00e9 Papeneiland near the Jordaan \u2014 a historic brown caf\u00e9 serving Dutch sandwiches (broodjes) and soups for around \u20ac10\u201314.",
+            "dinner": "Restaurant Greetje (Peperstraat) \u2014 a beloved Dutch cuisine restaurant offering seasonal, traditional dishes. Expect to spend \u20ac30\u201345 per person including a drink."
+          },
+          "notes": "Keep Day 1 light \u2014 jet lag and travel fatigue are real. Avoid booking timed-entry attractions today. Pick up an Amsterdam & Region Travel Ticket at Centraal Station for unlimited public transport (\u20ac17\u201321/day) if planning to use trams and buses frequently."
+        },
+        {
+          "day": 2,
+          "date": "2027-05-16 (Sunday)",
+          "morning": "Rijksmuseum Visit \u2014 Spend the morning (9:00\u201312:30) exploring the Netherlands' premier art and history museum. Marvel at Rembrandt's 'The Night Watch,' Vermeer's 'The Milkmaid,' and Delftware collections. Book tickets online in advance (~\u20ac22.50) to skip queues. The museum opens at 9:00 AM.",
+          "afternoon": "After the Rijksmuseum, walk 10 minutes to the Van Gogh Museum Experience (13:30\u201316:00). Discover the world's largest collection of Van Gogh's works, including 'The Bedroom' and 'Almond Blossom.' Pre-book timed-entry tickets (~\u20ac22). Both museums are adjacent in Museumplein, making this a seamless cultural afternoon.",
+          "evening": "Head to the De Pijp neighborhood (10-minute walk from Museumplein) for a vibrant evening. Browse the tail end of the Albert Cuyp Market if it's still open, then settle into a cozy restaurant for dinner.",
+          "meals": {
+            "breakfast": "Caf\u00e9 Beurre at the hotel or nearby \u2014 fresh croissants, eggs, and coffee. Budget \u20ac8\u201312.",
+            "lunch": "Grab a quick, authentic Dutch herring (haring) from a street cart near Museumplein or a broodje at Loetje aan het Museumplein (~\u20ac10\u201315).",
+            "dinner": "Brouwerij Troost De Pijp \u2014 a lively craft brewery with excellent Dutch-inspired pub food. Try the bitterballen and a local beer. Budget \u20ac20\u201330 per person."
+          },
+          "notes": "Sunday can be busy at both museums \u2014 arrive at the Rijksmuseum right at opening (9:00 AM) to enjoy the galleries before crowds build. The Museumplein lawn is a great spot to rest between museums. Both museums are a short tram ride (Tram 2 or 12) from Canal House Amsterdam."
+        },
+        {
+          "day": 3,
+          "date": "2027-05-17 (Monday)",
+          "morning": "Anne Frank House Tour \u2014 Book the first available morning slot (9:00 or 9:30 AM). Walk through the hidden annex where Anne Frank and her family hid during WWII. A profoundly moving experience that takes approximately 1.5\u20132 hours. Tickets must be booked weeks in advance online (~\u20ac16). The house is a short walk from Canal House Amsterdam.",
+          "afternoon": "Private Canal Boat Tour \u2014 After a reflective morning, transition to one of Amsterdam's most iconic experiences. Board a guided private canal boat tour (approx. 2 hours, starting around 13:00\u201314:00) gliding through the UNESCO-listed canal ring. Pass 17th-century merchant houses, drawbridges, and hidden courtyards. Cost: ~\u20ac50\u201380 per person for a private/small group tour.",
+          "evening": "Spend a free evening exploring the Nine Streets (De 9 Straatjes) \u2014 a charming grid of boutique shops, vintage stores, and cozy caf\u00e9s between the main canals. Perfect for souvenir shopping and a relaxed dinner.",
+          "meals": {
+            "breakfast": "Buffet or continental breakfast at Canal House Amsterdam or nearby Caf\u00e9 Winkel 43 \u2014 famous for its apple pie. Budget \u20ac8\u201314.",
+            "lunch": "Lunch at Caf\u00e9 't Smalle on Egelantiersgracht \u2014 a historic brown caf\u00e9 right on the canal with sandwiches and soups. Budget \u20ac12\u201318.",
+            "dinner": "Toscanini (Jordaan) \u2014 a beloved Italian restaurant with fresh pasta and a warm atmosphere. Reservations recommended. Budget \u20ac30\u201340 per person."
+          },
+          "notes": "The Anne Frank House and the canal boat departure points are both within walking distance of Canal House Amsterdam \u2014 no transport needed in the morning. Bring a light jacket as canal boat tours can be breezy even in May. The Nine Streets area is best explored on foot."
+        },
+        {
+          "day": 4,
+          "date": "2027-05-18 (Tuesday)",
+          "morning": "Jordaan Neighborhood Food & Canal Walk \u2014 Join a guided food and canal walk through Amsterdam's most picturesque neighborhood (tours typically start at 10:00 AM, lasting 2.5\u20133 hours). Stop at local cheese shops for aged Gouda tastings, stroopwafel bakeries, and traditional Dutch markets. A perfect blend of food culture and canal scenery. Cost: ~\u20ac35\u201355 per person.",
+          "afternoon": "Visit the Amsterdam Museum area \u2014 explore the Westerkerk church (free entry, small fee for tower climb ~\u20ac9) for panoramic city views, then wander through the Jordaan's gallery-lined streets. Alternatively, visit the Foam Photography Museum (~\u20ac15) on Keizersgracht for a quieter cultural experience. Rest at a canal-side terrace with a local jenever (Dutch gin) tasting.",
+          "evening": "Take Tram 5 or 2 to the Vondelpark area for a relaxed evening stroll through Amsterdam's most beloved green space (beautiful in May with blooming flowers). Return to the Leidseplein area for a lively dinner and optional live jazz at a local venue.",
+          "meals": {
+            "breakfast": "Bakkerij Hartog (Jordaan) \u2014 an authentic Dutch bakery open early, offering fresh bread, pastries, and coffee. Budget \u20ac6\u201310.",
+            "lunch": "Included or partially included in the Jordaan Food Walk tour \u2014 cheese, stroopwafels, and Dutch snacks along the route.",
+            "dinner": "Caf\u00e9 de Koe (Marnixstraat) \u2014 a cozy, affordable neighborhood restaurant with a rotating menu of Dutch and international dishes. Budget \u20ac20\u201328 per person."
+          },
+          "notes": "The Jordaan Food & Canal Walk is one of the best ways to discover hidden gems locals love. Wear comfortable walking shoes. May weather in Amsterdam can be unpredictable \u2014 pack a light waterproof layer. The Westerkerk tower offers one of the best free-ish views of the canal ring."
+        },
+        {
+          "day": 5,
+          "date": "2027-05-19 (Wednesday)",
+          "morning": "Begin the final morning with a peaceful canal-side breakfast and a slow start. Visit the Bloemenmarkt (Flower Market) on the Singel canal \u2014 the world's only floating flower market \u2014 to pick up tulip bulbs or Dutch souvenirs. Then explore the Spui Square area with its bookshops and historic courtyards (the Begijnhof, a hidden medieval courtyard, is free and serene).",
+          "afternoon": "Last-minute museum option: Visit the Amsterdam Museum (Amsterdams Historisch Museum) or the Royal Palace on Dam Square (Koninklijk Paleis, ~\u20ac12) to understand the city's golden age history. Alternatively, rent a bike (~\u20ac12\u201315/day) for a final cycle along the eastern harbor docks (Java Island, NDSM Wharf) for a different perspective of Amsterdam beyond the tourist center.",
+          "evening": "Farewell dinner in the city center. Return to the hotel to pack and prepare for departure. If flying the next day, confirm transfer arrangements to Schiphol (train from Centraal Station is the easiest option, ~17 min).",
+          "meals": {
+            "breakfast": "Breakfast at Caf\u00e9 Americain (Leidseplein) \u2014 a stunning Art Deco grand caf\u00e9 perfect for a special final morning. Budget \u20ac14\u201320.",
+            "lunch": "Lunch at Haesje Claes (Spuistraat) \u2014 a classic Dutch restaurant in a historic building, excellent for traditional stamppot or erwtensoep (pea soup). Budget \u20ac15\u201322.",
+            "dinner": "Brasserie Ambassade (Herengracht) \u2014 an elegant yet approachable canal-side brasserie near the hotel, ideal for a memorable farewell dinner. Budget \u20ac35\u201350 per person."
+          },
+          "notes": "If departing on Day 6, store luggage at the hotel or at Amsterdam Centraal Station lockers (\u20ac6\u20139) to keep the afternoon free for exploration. The Bloemenmarkt is best visited before 11:00 AM to avoid crowds. Check if tulip bulbs are allowed through customs in your home country before purchasing."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City (NYC)+to+Amsterdam+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Amsterdam&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Amsterdam Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 1588.0,
+      "flight": {
+        "price_usd": 350,
+        "airline": "KL",
+        "departure": "2027-05-15T09:00:00",
+        "arrival": "2027-05-15T13:00:00",
+        "stops": 0,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Canal House Amsterdam",
+        "price_per_night_usd": 140,
+        "total_usd": 700,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included"
+        ],
+        "location": "Amsterdam"
+      },
+      "experiences": [
+        {
+          "name": "Rijksmuseum Visit",
+          "description": "Explore the Netherlands' premier art and history museum, home to masterpieces by Rembrandt and Vermeer. The stunning building itself is a work of art, and the collection spans 800 years of Dutch history. Book tickets in advance to skip the lines.",
+          "cost_usd": 25,
+          "category": "museums",
+          "best_time_of_day": "morning",
+          "location": "Museum Square (Museumplein), Amsterdam South"
+        },
+        {
+          "name": "Anne Frank House Tour",
+          "description": "Walk through the hidden annex where Anne Frank and her family hid during World War II. A deeply moving and historically significant experience that offers profound insight into wartime Amsterdam. Advance online booking is essential as tickets sell out weeks ahead.",
+          "cost_usd": 16,
+          "category": "culture",
+          "best_time_of_day": "afternoon",
+          "location": "Prinsengracht, Jordaan District"
+        },
+        {
+          "name": "Private Canal Boat Tour",
+          "description": "Glide through Amsterdam's UNESCO-listed canal ring on a guided boat tour, passing iconic 17th-century merchant houses, narrow bridges, and charming houseboats. Evening tours offer magical reflections of city lights on the water and a romantic atmosphere.",
+          "cost_usd": 35,
+          "category": "canals",
+          "best_time_of_day": "evening",
+          "location": "Grachtengordel (Canal Ring), Central Amsterdam"
+        },
+        {
+          "name": "Van Gogh Museum Experience",
+          "description": "Discover the world's largest collection of Van Gogh's works, including The Bedroom and Almond Blossom. The museum traces the artist's emotional journey through his paintings, drawings, and personal letters. A must-visit for art lovers and one of Europe's most visited museums.",
+          "cost_usd": 22,
+          "category": "museums",
+          "best_time_of_day": "morning",
+          "location": "Museum Square (Museumplein), Amsterdam South"
+        },
+        {
+          "name": "Jordaan Neighborhood Food & Canal Walk",
+          "description": "Wander through Amsterdam's most picturesque neighborhood, stopping at local cheese shops, stroopwafel stalls, and traditional Dutch brown cafes (bruine kroegen). Sample herring from a street cart, try bitterballen, and enjoy canal-side dining at a local restaurant. A perfect blend of food, culture, and scenic waterways.",
+          "cost_usd": 40,
+          "category": "food",
+          "best_time_of_day": "afternoon",
+          "location": "Jordaan District, Western Canal Ring"
+        }
+      ],
+      "itinerary": {
+        "num_days": 5,
+        "destination": "Amsterdam",
+        "style": "premium",
+        "total_cost": 1588.0,
+        "breakdown": {
+          "flight": 350.0,
+          "hotel": 700.0,
+          "experiences": 138.0,
+          "food": 300,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-05-15 (Saturday)",
+          "morning": "Arrival \u2014 Flight KL lands at 13:00. No morning activities scheduled. Transfer from Amsterdam Airport Schiphol to Canal House Amsterdam via private luxury chauffeur service (~30\u201340 min). Check in, freshen up, and settle into your canal-view suite.",
+          "afternoon": "Private Canal Boat Tour \u2014 At approximately 15:30, embark on a bespoke private canal boat tour departing near the Herengracht. Glide through Amsterdam's UNESCO-listed canal ring, passing iconic 17th-century merchant houses, drawbridges, and hidden gardens. Your private guide narrates the Golden Age history of the city. Duration: ~2 hours.",
+          "evening": "Jordaan Neighborhood Evening Stroll \u2014 Take a leisurely walk through the charming Jordaan district as the golden evening light reflects off the canals. Browse boutique galleries and admire the historic facades before heading to dinner.",
+          "meals": {
+            "breakfast": "Not applicable (in-flight or airport lounge)",
+            "lunch": "Not applicable (en route from airport \u2014 enjoy a light snack or refreshment prepared by the hotel upon arrival)",
+            "dinner": "Dinner at Restaurant Vinkeles \u2014 a Michelin-starred restaurant housed in a restored 18th-century bakery inside the Dylan Hotel. Exceptional French-Dutch tasting menu with impeccable wine pairings. Reservations essential."
+          },
+          "notes": "Arrange private airport transfer in advance through the hotel concierge. Request early check-in if possible. The private canal boat can be booked directly through the hotel \u2014 Canal House Amsterdam has strong local partnerships for bespoke experiences."
+        },
+        {
+          "day": 2,
+          "date": "2027-05-16 (Sunday)",
+          "morning": "Rijksmuseum Visit \u2014 Begin the day with a private guided tour of the Rijksmuseum, the Netherlands' premier art and history museum. Marvel at Rembrandt's 'The Night Watch', Vermeer's 'The Milkmaid', and an extraordinary collection of Delftware and Golden Age artifacts. A private guide ensures skip-the-line access and an intimate, unhurried experience. Duration: ~2.5\u20133 hours.",
+          "afternoon": "Van Gogh Museum Experience \u2014 A short walk from the Rijksmuseum, immerse yourself in the world's largest collection of Van Gogh's works. Highlights include 'The Bedroom', 'Almond Blossom', and his vivid Sunflowers series. With a premium timed-entry ticket and optional audio guide, explore at your own pace. Duration: ~2 hours. Afterward, relax in the museum's refined caf\u00e9 or stroll through Museumplein.",
+          "evening": "Return to the hotel to refresh before an elegant evening out in the canal belt area.",
+          "meals": {
+            "breakfast": "Breakfast at the hotel \u2014 Canal House Amsterdam offers a curated in-house breakfast; alternatively, visit Dignita Hoftuin nearby for artisan pastries, fresh juices, and specialty coffee in a serene garden setting.",
+            "lunch": "Lunch at Caf\u00e9 Loetje (Museum Quarter) \u2014 beloved Amsterdam institution known for perfectly prepared steak sandwiches and Dutch classics in a relaxed, upscale setting.",
+            "dinner": "Dinner at Ciel Bleu \u2014 Two Michelin-starred restaurant on the 23rd floor of Hotel Okura Amsterdam. Panoramic city views, extraordinary contemporary French cuisine, and an award-winning wine cellar. One of Amsterdam's finest dining experiences."
+          },
+          "notes": "Book Rijksmuseum private guide and Van Gogh Museum timed-entry tickets well in advance \u2014 both are extremely popular, especially on weekends. The two museums are within easy walking distance of each other in the Museumplein area (~15-minute walk or short taxi from the hotel)."
+        },
+        {
+          "day": 3,
+          "date": "2027-05-17 (Monday)",
+          "morning": "Anne Frank House Tour \u2014 A profoundly moving and historically significant experience. Walk through the hidden annex on the Prinsengracht where Anne Frank and her family hid during World War II. A private or priority-access guided tour deepens the emotional and historical context of the visit. Duration: ~1.5\u20132 hours. The location is steps from the canal belt and very close to the hotel.",
+          "afternoon": "Jordaan Neighborhood Food & Canal Walk \u2014 After the solemnity of the morning, enjoy a curated food and canal walk through Amsterdam's most picturesque neighborhood. Stop at artisan cheese shops, sample traditional stroopwafels fresh off the iron, browse independent galleries, and pause at hidden hofjes (historic almshouse courtyards). A knowledgeable local guide brings the neighborhood's bohemian history to life. Duration: ~2.5 hours.",
+          "evening": "Sunset Canal Cruise by Private Electric Boat \u2014 As evening descends, rent a premium private electric boat and cruise the illuminated canals at dusk. Bring a bottle of Dutch Jenever gin or champagne arranged by the hotel concierge for a truly romantic and exclusive Amsterdam experience.",
+          "meals": {
+            "breakfast": "Breakfast at Caf\u00e9 Papeneiland \u2014 one of Amsterdam's oldest and most atmospheric brown caf\u00e9s, located on the Prinsengracht near the Anne Frank House. Famous for its apple pie and Dutch coffee culture.",
+            "lunch": "Lunch at Worst Wijncaf\u00e9 \u2014 a stylish wine bar and charcuterie spot in the Jordaan, perfect for premium cured meats, artisan cheeses, natural wines, and freshly baked bread.",
+            "dinner": "Dinner at De Kas \u2014 a legendary farm-to-table restaurant set inside a stunning 1926 greenhouse in Frankendael Park. The seasonal tasting menu changes daily based on what's harvested from the restaurant's own garden and greenhouse. Unique, memorable, and quintessentially Dutch."
+          },
+          "notes": "Anne Frank House tickets must be booked online in advance \u2014 they sell out weeks or months ahead. Monday morning is often slightly less crowded. The Jordaan walk and Anne Frank House are both within easy walking distance of Canal House Amsterdam."
+        },
+        {
+          "day": 4,
+          "date": "2027-05-18 (Tuesday)",
+          "morning": "Hermitage aan de Amstel / Foam Photography Museum & Canal District Exploration \u2014 Spend a leisurely morning exploring the prestigious Foam Photography Museum on the Keizersgracht, one of Europe's leading photography galleries with rotating world-class exhibitions. Afterward, take a self-guided architectural walk along the Keizersgracht and Herengracht, admiring the 'Golden Bend' \u2014 the most opulent stretch of canal houses in Amsterdam, once home to the city's wealthiest merchants.",
+          "afternoon": "Private Art Gallery Tour & Antique Shopping \u2014 The canal belt and Spiegelkwartier (Mirror Quarter) are home to Amsterdam's finest antique dealers and contemporary art galleries. Arrange a private art consultant tour through the hotel to visit curated galleries and auction houses. A perfect afternoon for collectors or those seeking a unique, high-end souvenir.",
+          "evening": "Dutch Design & Cocktail Experience \u2014 Visit the iconic Pulitzer Amsterdam hotel bar for expertly crafted cocktails in a beautifully restored canal house setting. Then enjoy a pre-dinner aperitif stroll along the Brouwersgracht \u2014 widely considered Amsterdam's most beautiful canal.",
+          "meals": {
+            "breakfast": "In-room breakfast at Canal House Amsterdam \u2014 request a full Dutch breakfast spread delivered to your canal-view room: smoked salmon, aged Gouda, fresh-baked bread, soft-boiled eggs, and freshly squeezed juices.",
+            "lunch": "Lunch at Restaurant 212 \u2014 a celebrated Amsterdam restaurant known for its exceptional wine list (one of Europe's best) and refined European cuisine. Located on the Amstel, ideal for a long, indulgent midday meal.",
+            "dinner": "Dinner at Breda \u2014 a sophisticated modern Dutch restaurant in a beautifully designed space on the Singel canal. Creative tasting menus highlight seasonal Dutch ingredients with international flair and outstanding natural wines."
+          },
+          "notes": "The Spiegelkwartier antique district is a short walk from the hotel. Ask the concierge to pre-arrange introductions to specific gallery owners or dealers for a more personalized experience. The Pulitzer bar is very popular \u2014 arrive early or make a reservation."
+        },
+        {
+          "day": 5,
+          "date": "2027-05-19 (Wednesday)",
+          "morning": "Keukenhof Day Trip (if May tulips are still in bloom) or Amsterdam Royal Palace \u2014 If the iconic Keukenhof Gardens are still in season (they typically run through mid-May), arrange a private chauffeured day trip to witness millions of tulips in full bloom \u2014 a bucket-list Dutch experience. Alternatively, visit the Royal Palace on Dam Square (Koninklijk Paleis), a magnificent 17th-century building with lavishly decorated state rooms open to the public.",
+          "afternoon": "Spa & Wellness at the Hotel or Luxury Shopping \u2014 Spend a relaxing final afternoon at the hotel's wellness facilities or arrange a private spa session. Alternatively, explore Amsterdam's luxury shopping corridor: the PC Hooftstraat (Amsterdam's equivalent of Bond Street) for international designers, or the Nine Streets (De 9 Straatjes) for premium Dutch boutiques, rare bookshops, and independent concept stores.",
+          "evening": "Farewell Dinner & Final Canal Walk \u2014 End the trip with a special farewell dinner, followed by a final evening walk along the illuminated canals to soak in the magic of Amsterdam one last time.",
+          "meals": {
+            "breakfast": "Breakfast at The Duchess \u2014 a glamorous Art Deco restaurant near the hotel serving an indulgent breakfast with freshly baked pastries, eggs Benedict, smoked fish, and premium coffee in a stunning historic setting.",
+            "lunch": "Lunch at Caf\u00e9 de Klepel \u2014 a beloved Jordaan gem offering refined Dutch and French bistro fare, perfect for a relaxed final-day lunch with a glass of white Burgundy.",
+            "dinner": "Farewell dinner at Rijks \u2014 the Michelin-starred restaurant inside the Rijksmuseum itself, offering a modern Dutch tasting menu in an extraordinary setting surrounded by Golden Age art. A fittingly spectacular conclusion to a premium Amsterdam experience."
+          },
+          "notes": "Keukenhof Gardens close around May 11\u201315 annually \u2014 confirm exact 2027 dates in advance. If visiting, book private transport early as it's a 45-minute drive from Amsterdam. For departure planning, note that Schiphol Airport is approximately 30\u201340 minutes from the city center by private transfer \u2014 allow ample time based on your departure flight."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=New York City (NYC)+to+Amsterdam+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Amsterdam&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam",
+        "https://www.getyourguide.com/s/?q=Amsterdam"
+      ],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Direct flight (no layovers)",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-942 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Amsterdam museums and canals, $2200 solo, 5 days, May 2027, from NYC",
+  "session_tags": {
+    "query_id": "CTL-04",
+    "condition": "broadcast",
+    "run_index": 2
+  }
+}

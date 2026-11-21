@@ -1,0 +1,764 @@
+{
+  "session_id": "e671e256-3964-430b-a12c-46ababc4333c",
+  "intent": {
+    "destination": "Hawaii",
+    "origin": "Seattle",
+    "budget_usd": 5000.0,
+    "duration_days": 10,
+    "travel_month": "August",
+    "travel_year": 2026,
+    "interests": [
+      "beaches",
+      "family activities"
+    ],
+    "group_size": 1,
+    "accommodation_preference": null,
+    "flexibility": "moderate",
+    "raw_query": "Hawaii family beach vacation, $5000, 10 days, August 2026 from Seattle"
+  },
+  "selected_flight": {
+    "price_usd": 890,
+    "airline": "LH",
+    "departure": "2027-08-15T06:00:00",
+    "arrival": "2027-08-15T13:00:00",
+    "stops": 1,
+    "duration": "PT7H00M"
+  },
+  "selected_hotel": {
+    "name": "Hanauma Bay, East Oahu Boutique Stay",
+    "price_per_night_usd": 95,
+    "total_usd": 950,
+    "rating": 4.4,
+    "amenities": [
+      "wifi",
+      "breakfast included",
+      "rooftop terrace"
+    ],
+    "location": "Hanauma Bay, East Oahu"
+  },
+  "experiences": [
+    {
+      "name": "Snorkeling at Hanauma Bay",
+      "description": "Explore one of Hawaii's most pristine marine sanctuaries with crystal-clear waters teeming with colorful tropical fish and sea turtles. Perfect for families with kids of all ages, the bay offers calm, shallow waters ideal for beginner snorkelers. Equipment rentals are available on-site and an educational center teaches visitors about the reef ecosystem before entering.",
+      "cost_usd": 60,
+      "category": "beaches",
+      "best_time_of_day": "morning",
+      "location": "Hanauma Bay, East Oahu"
+    },
+    {
+      "name": "Luau Dinner at Old Lahaina Luau",
+      "description": "Immerse your family in authentic Hawaiian culture with a traditional luau featuring a kalua pig feast cooked in an underground imu oven, poi, fresh tropical fruits, and hula performances. This award-winning luau is considered one of the most culturally genuine on the islands and is beloved by families for its storytelling, fire dancing, and interactive lei-making activities.",
+      "cost_usd": 180,
+      "category": "culture",
+      "best_time_of_day": "evening",
+      "location": "Lahaina, Maui"
+    },
+    {
+      "name": "Waimea Canyon Hike and Lookout",
+      "description": "Known as the 'Grand Canyon of the Pacific,' Waimea Canyon offers breathtaking views and family-friendly hiking trails through lush valleys and red-rock formations. The Canyon Trail is manageable for older kids and rewards hikers with stunning panoramic vistas. Pack a picnic and enjoy the dramatic landscape that stretches over 14 miles long and 3,600 feet deep.",
+      "cost_usd": 35,
+      "category": "activities",
+      "best_time_of_day": "morning",
+      "location": "Waimea Canyon State Park, Kauai"
+    },
+    {
+      "name": "Shave Ice and Local Food Tour in Haleiwa",
+      "description": "Stroll through the charming surf town of Haleiwa on Oahu's North Shore and indulge in Hawaii's iconic shave ice topped with tropical syrups, mochi, and azuki beans. Explore local food trucks and family-run eateries serving fresh poke bowls, garlic shrimp plates, and malasadas. This laid-back town also offers boutique shopping and a glimpse into authentic Hawaiian surf culture.",
+      "cost_usd": 50,
+      "category": "food",
+      "best_time_of_day": "afternoon",
+      "location": "Haleiwa, North Shore Oahu"
+    },
+    {
+      "name": "Kaanapali Beach Day with Cliff Diving Spectacle",
+      "description": "Spend a full family beach day at one of Hawaii's most celebrated stretches of white sand. Swim in calm turquoise waters, build sandcastles, and rent paddleboards or boogie boards. Each evening, witness the legendary cliff diving ceremony at Black Rock (Puu Kekaa), where a torch-lit diver leaps into the ocean in a nightly tradition honoring ancient Hawaiian warriors \u2014 a magical and free spectacle for the whole family.",
+      "cost_usd": 75,
+      "category": "beaches",
+      "best_time_of_day": "afternoon",
+      "location": "Kaanapali Beach, West Maui"
+    }
+  ],
+  "weather": {
+    "source": "historical_average"
+  },
+  "trip_window": {
+    "departure": "2027-08-15",
+    "return": "2027-08-25",
+    "nights": 10,
+    "month": "august",
+    "rule": "month-v1.5",
+    "anchor": "2026-12-01",
+    "source": "parsed_month"
+  },
+  "trip_options": [
+    {
+      "option_id": 0,
+      "style": "budget",
+      "title": "Budget Explorer - Hawaii",
+      "description": "Save money without sacrificing the experience. Perfect for travelers who value authentic local experiences over luxury.",
+      "total_cost_usd": 2225.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-08-15T06:00:00",
+        "arrival": "2027-08-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Hanauma Bay, East Oahu Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 950,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Hanauma Bay, East Oahu"
+      },
+      "experiences": [
+        {
+          "name": "Waimea Canyon Hike and Lookout",
+          "description": "Known as the 'Grand Canyon of the Pacific,' Waimea Canyon offers breathtaking views and family-friendly hiking trails through lush valleys and red-rock formations. The Canyon Trail is manageable for older kids and rewards hikers with stunning panoramic vistas. Pack a picnic and enjoy the dramatic landscape that stretches over 14 miles long and 3,600 feet deep.",
+          "cost_usd": 35,
+          "category": "activities",
+          "best_time_of_day": "morning",
+          "location": "Waimea Canyon State Park, Kauai"
+        }
+      ],
+      "itinerary": {
+        "num_days": 10,
+        "destination": "Hawaii",
+        "style": "budget",
+        "total_cost": 2225.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 950.0,
+          "experiences": 35.0,
+          "food": 250,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Sunday)",
+          "morning": "No morning activities \u2014 flight arrives at 13:00. Rest and travel time.",
+          "afternoon": "Arrive at Daniel K. Inouye International Airport at 13:00. Collect luggage, pick up a budget rental car or take TheBus (Route 23) to Hanauma Bay area. Check in to Hanauma Bay, East Oahu Boutique Stay. Freshen up and take a short stroll along the nearby coastline to get your bearings. Pick up groceries at a local Foodland or Times Supermarket to stock up on snacks and breakfast items to save money throughout the trip.",
+          "evening": "Head to Koko Marina Center for a casual first dinner. Walk along the marina and watch the sunset over the water. Early night to recover from travel.",
+          "meals": {
+            "breakfast": "Eat on the plane or grab a quick snack at the airport \u2014 Jamba Juice or ABC Store for a light bite (~$8\u201312)",
+            "lunch": "Grab plate lunch from a food truck near the airport or a L&L Hawaiian Barbecue (~$10\u201314)",
+            "dinner": "Koko Marina Sushi or Zippy's Restaurant at Koko Marina Center \u2014 local comfort food, budget-friendly (~$12\u201318 per person)"
+          },
+          "notes": "Day 1 is intentionally light. Prioritize rest and grocery shopping. Buying breakfast items and snacks upfront (bread, fruit, granola bars, juice) will save $50\u201380 over the 10-day trip. TheBus is $3 per ride \u2014 consider a monthly pass ($70) if not renting a car."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16 (Monday)",
+          "morning": "Early morning visit to Hanauma Bay Nature Preserve \u2014 arrive by 7:00 AM to beat the crowds and secure entry (reservations required online, $25/adult, children under 13 free). Snorkel with tropical fish in one of Hawaii's most iconic bays. Rent snorkel gear on-site (~$12) or bring your own if you packed it.",
+          "afternoon": "After Hanauma Bay closes to visitors mid-day, drive the scenic Kalanianaole Highway (Hwy 72) along the southeastern coast. Stop at the Halona Blowhole Lookout (free) and Sandy Beach Park \u2014 a great spot for boogie boarding and family fun. Walk down to the beach and relax.",
+          "evening": "Drive to Kailua town for dinner. Explore the charming town center before heading back to the hotel.",
+          "meals": {
+            "breakfast": "Home-prepared breakfast at the hotel using groceries \u2014 fruit, toast, and juice (~$2\u20134 per person)",
+            "lunch": "Pack a picnic lunch from your grocery haul \u2014 sandwiches, chips, and fruit eaten at Sandy Beach (~$3\u20135 per person)",
+            "dinner": "Kalapawai Caf\u00e9 & Deli in Kailua \u2014 fresh, local sandwiches and salads at reasonable prices (~$12\u201316 per person)"
+          },
+          "notes": "Book Hanauma Bay reservations at least 2 days in advance at hawaiistateparks.reserveamerica.com. Arrive early \u2014 the bay fills up fast. Bring reef-safe sunscreen (required by Hawaii law). Sandy Beach has strong shorebreak \u2014 supervise children carefully."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17 (Tuesday)",
+          "morning": "Drive to Kailua Beach Park (about 20 minutes from hotel) \u2014 consistently rated one of the best beaches in the USA. Enjoy calm, turquoise waters perfect for families. Rent kayaks or stand-up paddleboards from Kailua Beach Adventures (~$25\u201335/hour for doubles) and paddle out to the Mokulua Islands.",
+          "afternoon": "Walk or cycle the Kailua Beach path. Visit the Kailua Town Farmers Market (Thursdays) or browse local shops. Head to Lanikai Beach \u2014 a short walk or drive from Kailua \u2014 for a quieter, postcard-perfect beach afternoon.",
+          "evening": "Return to the hotel area for a relaxed evening. Cook a simple meal using groceries or grab takeout.",
+          "meals": {
+            "breakfast": "Home-prepared breakfast at the hotel \u2014 yogurt, granola, and fruit (~$2\u20134 per person)",
+            "lunch": "Buzz's Original Steakhouse or Cinnamon's Restaurant in Kailua for a casual lunch (~$12\u201315 per person)",
+            "dinner": "Takeout from Moke's Bread & Breakfast in Kailua \u2014 famous for their loco moco and a\u00e7ai bowls (~$10\u201314 per person)"
+          },
+          "notes": "Kailua Beach has free parking and restrooms. Lanikai Beach has limited street parking \u2014 arrive early. Kayaking to the Mokulua Islands is a highlight for families; the islands are seabird sanctuaries so stay on the beach areas. Bring plenty of water and sunscreen."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18 (Wednesday)",
+          "morning": "Drive to Diamond Head State Monument (about 25 minutes from hotel). Hike the iconic 1.6-mile round-trip trail to the summit crater for panoramic views of Honolulu and Waikiki. Entry fee: $5/person or $10/car. Start early (7:00\u20138:00 AM) to avoid heat and crowds.",
+          "afternoon": "Head to Waikiki Beach for the afternoon. This world-famous beach is free and perfect for swimming and people-watching. Let the kids try boogie boarding with rental boards (~$10/hour). Walk the Waikiki strip and explore.",
+          "evening": "Stroll through Waikiki and watch the free hula and live music performances at Kuhio Beach Hula Show (free, starts around 6:30 PM at Kuhio Beach Park). Grab dinner nearby before heading back.",
+          "meals": {
+            "breakfast": "Home-prepared breakfast before the hike \u2014 energy-boosting oatmeal or granola bars (~$2\u20133 per person)",
+            "lunch": "Rainbow Drive-In near Diamond Head \u2014 a local institution famous for plate lunches (~$9\u201312 per person)",
+            "dinner": "Marukame Udon in Waikiki \u2014 incredibly affordable, authentic Japanese udon in a cafeteria-style setting (~$8\u201312 per person)"
+          },
+          "notes": "Diamond Head trail is paved but includes stairs and a tunnel \u2014 manageable for most families with older children. Bring water. Parking at Diamond Head fills quickly; arrive before 8:00 AM. Waikiki Beach has free public access \u2014 no need to pay for a beach chair unless desired."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19 (Thursday)",
+          "morning": "Visit the Bishop Museum (Hawaii's premier natural and cultural history museum) in Honolulu. Admission: ~$25/adult, $17/child (3\u201317). Explore Hawaiian Hall, the planetarium, and science exhibits \u2014 great for families. Allow 2\u20133 hours.",
+          "afternoon": "Drive to Chinatown Honolulu for an afternoon cultural experience. Walk through the historic district, browse the Oahu Market, visit art galleries, and explore the lei shops. Very budget-friendly with lots of free sights.",
+          "evening": "Visit Aloha Tower Marketplace on the Honolulu waterfront for sunset views over Honolulu Harbor. Browse shops and enjoy the harbor atmosphere.",
+          "meals": {
+            "breakfast": "Home-prepared breakfast at the hotel (~$2\u20134 per person)",
+            "lunch": "Chinatown lunch \u2014 try Little Village Noodle House or Fook Yuen for dim sum and noodle dishes (~$8\u201312 per person)",
+            "dinner": "Highway Inn Honolulu in Chinatown \u2014 authentic Hawaiian plate lunches and local comfort food (~$12\u201316 per person)"
+          },
+          "notes": "The Bishop Museum is worth the admission for families \u2014 check their website for any free community days. Chinatown is vibrant and safe during the day; stick to the main streets in the evening. Aloha Tower Marketplace has free parking validation at some restaurants."
+        },
+        {
+          "day": 6,
+          "date": "2027-08-20 (Friday)",
+          "morning": "Drive to the North Shore of Oahu (about 45\u201350 minutes from hotel). First stop: Waimea Bay Beach Park \u2014 a stunning crescent bay with calm summer waters perfect for swimming and snorkeling. In summer, the famous big waves are gone, making it ideal for families.",
+          "afternoon": "Continue along the Kamehameha Highway (Hwy 83) through Haleiwa town. Browse the surf shops, art galleries, and local boutiques. Stop at Laniakea Beach (Turtle Beach) to spot Hawaiian green sea turtles resting on the shore (free, just observe from a respectful distance).",
+          "evening": "Head back toward the hotel. Stop at a shrimp truck on the North Shore for a quintessential local experience before driving back.",
+          "meals": {
+            "breakfast": "Home-prepared early breakfast before the drive (~$2\u20134 per person)",
+            "lunch": "Giovanni's Shrimp Truck in Kahuku \u2014 legendary garlic shrimp plates (~$14\u201316 per person, cash preferred)",
+            "dinner": "Matsumoto Shave Ice in Haleiwa for dessert (~$4\u20136), then a simple home-cooked dinner back at the hotel using groceries (~$5\u20138 per person)"
+          },
+          "notes": "The drive to the North Shore is scenic and worth the trip. Waimea Bay is calm in summer (May\u2013September) \u2014 ideal for families. Turtle Beach has volunteer ocean stewards on weekends \u2014 great for an educational experience for kids. Bring cash for shrimp trucks."
+        },
+        {
+          "day": 7,
+          "date": "2027-08-21 (Saturday)",
+          "morning": "Take the ferry or a day trip to the USS Arizona Memorial and Pearl Harbor Historic Sites (about 30\u201335 minutes from hotel). The USS Arizona Memorial is free (timed-entry passes required \u2014 book in advance at recreation.gov). The Pearl Harbor Visitor Center is also free. Allow 3\u20134 hours for the full experience.",
+          "afternoon": "Drive back toward East Oahu. Stop at Makapu'u Point Lighthouse Trail (free) \u2014 a paved 2-mile round-trip coastal hike with spectacular ocean views and whale-watching potential (though August is not peak whale season). Great for families.",
+          "evening": "Relax at the hotel. Prepare a home-cooked dinner and enjoy the evening on your own schedule.",
+          "meals": {
+            "breakfast": "Home-prepared breakfast before heading out early (~$2\u20134 per person)",
+            "lunch": "Pack a picnic lunch from grocery supplies to eat near Pearl Harbor or at Makapu'u (~$3\u20135 per person)",
+            "dinner": "Home-cooked dinner at the hotel \u2014 pasta, rice dishes, or simple Hawaiian-style meals from grocery supplies (~$5\u20138 per person)"
+          },
+          "notes": "Pearl Harbor timed-entry passes for the USS Arizona Memorial are FREE but must be booked well in advance \u2014 check recreation.gov. The additional paid attractions (Battleship Missouri, Pacific Aviation Museum) are optional (~$25\u201330 each) and can be skipped on a budget. Makapu'u trail is stroller-accessible and dog-friendly."
+        },
+        {
+          "day": 8,
+          "date": "2027-08-22 (Sunday)",
+          "morning": "Spend a relaxed morning at Bellows Beach (open to the public on weekends) \u2014 a beautiful, less-crowded beach near Waimanalo with calm waters ideal for families and young children. Arrive early for the best parking spots.",
+          "afternoon": "Explore Waimanalo town \u2014 a charming, rural Hawaiian community. Visit Waimanalo Beach Park and Sherwood Forest Beach (free). These are some of the longest stretches of white sand beach on Oahu and are popular with locals.",
+          "evening": "Drive to Kailua for a sunset dinner. Walk Kailua town and enjoy the laid-back vibe.",
+          "meals": {
+            "breakfast": "Home-prepared breakfast at the hotel (~$2\u20134 per person)",
+            "lunch": "Keneke's BBQ in Waimanalo \u2014 a beloved local plate lunch spot with generous portions (~$10\u201314 per person)",
+            "dinner": "Boots & Kimo's Homestyle Kitchen in Kailua \u2014 famous for macadamia nut pancakes (open for dinner on select days) or Kailua Town Pub & Grill (~$12\u201318 per person)"
+          },
+          "notes": "Bellows Beach is only open to the public on weekends and federal holidays \u2014 check the schedule. Waimanalo is one of the most authentically Hawaiian communities on Oahu \u2014 be respectful and mindful as a visitor. The beaches in this area are stunning and far less crowded than Waikiki."
+        },
+        {
+          "day": 9,
+          "date": "2027-08-23 (Monday)",
+          "morning": "Drive to Kualoa Ranch (about 35 minutes from hotel) for a morning adventure. While full tours can be pricey (~$50\u2013120), the movie sites tour is a family favorite (Jurassic Park, Lost filming locations). Book in advance for the best rates. Alternatively, visit Kualoa Regional Park (free) nearby for stunning Ko'olau mountain backdrop views and beach access.",
+          "afternoon": "Head to He'eia State Park and He'eia Fishpond \u2014 a free or low-cost cultural experience showcasing ancient Hawaiian aquaculture. Walk the trails and learn about traditional Hawaiian land management. Then visit K\u0101ne'ohe Bay area and the beautiful Byodo-In Temple (Valley of the Temples Memorial Park, ~$5/adult, $2/child) \u2014 a stunning replica Japanese temple surrounded by mountains.",
+          "evening": "Return to the hotel for a relaxed final full-day evening. Prepare a special home-cooked dinner or splurge slightly on a nicer local meal.",
+          "meals": {
+            "breakfast": "Home-prepared breakfast at the hotel (~$2\u20134 per person)",
+            "lunch": "Poke Stop in Aiea or a local poke bowl shop near K\u0101ne'ohe \u2014 fresh, affordable Hawaiian poke bowls (~$12\u201316 per person)",
+            "dinner": "Haleiwa Joe's Haiku Gardens in K\u0101ne'ohe \u2014 scenic garden setting with moderate prices; share plates to keep costs down (~$15\u201322 per person)"
+          },
+          "notes": "Kualoa Ranch tours sell out fast \u2014 book at least 1\u20132 weeks in advance. The Byodo-In Temple is a hidden gem that most tourists miss \u2014 peacocks roam freely on the grounds, which kids love. The Valley of the Temples is also a working memorial park \u2014 be respectful."
+        },
+        {
+          "day": 10,
+          "date": "2027-08-24 (Tuesday)",
+          "morning": "Final morning \u2014 return to Hanauma Bay for one last snorkel session if entry is available (book the night before if possible), OR spend a peaceful final morning at a nearby beach of your choice. Pack and check out of the hotel. Store luggage with the hotel if possible for a late flight, or load the car.",
+          "afternoon": "Drive along the scenic Pali Highway (Hwy 61) through the Ko'olau Mountains. Stop at the Nu'uanu Pali Lookout (free, $3 parking) for dramatic cliffside views over the windward coast. Head toward the airport. Return rental car if applicable. Grab last-minute souvenirs at the airport or at a local ABC Store (more affordable than airport shops).",
+          "evening": "Check in for departure flight. Reflect on 10 amazing days in Hawaii!",
+          "meals": {
+            "breakfast": "Use up remaining grocery supplies for a final home-prepared breakfast (~$2\u20134 per person)",
+            "lunch": "Helena's Hawaiian Food in Honolulu (near the airport) \u2014 a James Beard Award-winning local institution for authentic Hawaiian food (~$12\u201316 per person)",
+            "dinner": "Airport dining or pack snacks for the flight \u2014 grab a plate lunch to go from a nearby spot (~$10\u201314 per person)"
+          },
+          "notes": "Nu'uanu Pali Lookout is extremely windy \u2014 hold onto hats and small children! Helena's Hawaiian Food is cash only and closes early \u2014 call ahead to confirm hours. Return rental car at least 3 hours before departure. Use any remaining grocery items for flight snacks. Budget tip: ABC Stores have more affordable Hawaii souvenirs than airport shops."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Seattle+to+Hawaii+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Hawaii&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Hawaii"
+      ],
+      "highlights": [
+        "Save $1525 vs. target budget",
+        "0 free experiences included",
+        "Authentic local experiences"
+      ],
+      "trade_offs": [
+        "1 stop(s) on flight",
+        "Limited dining at upscale restaurants"
+      ]
+    },
+    {
+      "option_id": 1,
+      "style": "balanced",
+      "title": "Classic Hawaii Experience",
+      "description": "The sweet spot between comfort and value. Enjoy quality accommodations, diverse experiences, and good food.",
+      "total_cost_usd": 2740.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-08-15T06:00:00",
+        "arrival": "2027-08-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Hanauma Bay, East Oahu Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 950,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Hanauma Bay, East Oahu"
+      },
+      "experiences": [
+        {
+          "name": "Snorkeling at Hanauma Bay",
+          "description": "Explore one of Hawaii's most pristine marine sanctuaries with crystal-clear waters teeming with colorful tropical fish and sea turtles. Perfect for families with kids of all ages, the bay offers calm, shallow waters ideal for beginner snorkelers. Equipment rentals are available on-site and an educational center teaches visitors about the reef ecosystem before entering.",
+          "cost_usd": 60,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Hanauma Bay, East Oahu"
+        },
+        {
+          "name": "Luau Dinner at Old Lahaina Luau",
+          "description": "Immerse your family in authentic Hawaiian culture with a traditional luau featuring a kalua pig feast cooked in an underground imu oven, poi, fresh tropical fruits, and hula performances. This award-winning luau is considered one of the most culturally genuine on the islands and is beloved by families for its storytelling, fire dancing, and interactive lei-making activities.",
+          "cost_usd": 180,
+          "category": "culture",
+          "best_time_of_day": "evening",
+          "location": "Lahaina, Maui"
+        },
+        {
+          "name": "Waimea Canyon Hike and Lookout",
+          "description": "Known as the 'Grand Canyon of the Pacific,' Waimea Canyon offers breathtaking views and family-friendly hiking trails through lush valleys and red-rock formations. The Canyon Trail is manageable for older kids and rewards hikers with stunning panoramic vistas. Pack a picnic and enjoy the dramatic landscape that stretches over 14 miles long and 3,600 feet deep.",
+          "cost_usd": 35,
+          "category": "activities",
+          "best_time_of_day": "morning",
+          "location": "Waimea Canyon State Park, Kauai"
+        },
+        {
+          "name": "Shave Ice and Local Food Tour in Haleiwa",
+          "description": "Stroll through the charming surf town of Haleiwa on Oahu's North Shore and indulge in Hawaii's iconic shave ice topped with tropical syrups, mochi, and azuki beans. Explore local food trucks and family-run eateries serving fresh poke bowls, garlic shrimp plates, and malasadas. This laid-back town also offers boutique shopping and a glimpse into authentic Hawaiian surf culture.",
+          "cost_usd": 50,
+          "category": "food",
+          "best_time_of_day": "afternoon",
+          "location": "Haleiwa, North Shore Oahu"
+        },
+        {
+          "name": "Kaanapali Beach Day with Cliff Diving Spectacle",
+          "description": "Spend a full family beach day at one of Hawaii's most celebrated stretches of white sand. Swim in calm turquoise waters, build sandcastles, and rent paddleboards or boogie boards. Each evening, witness the legendary cliff diving ceremony at Black Rock (Puu Kekaa), where a torch-lit diver leaps into the ocean in a nightly tradition honoring ancient Hawaiian warriors \u2014 a magical and free spectacle for the whole family.",
+          "cost_usd": 75,
+          "category": "beaches",
+          "best_time_of_day": "afternoon",
+          "location": "Kaanapali Beach, West Maui"
+        }
+      ],
+      "itinerary": {
+        "num_days": 10,
+        "destination": "Hawaii",
+        "style": "balanced",
+        "total_cost": 2740.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 950.0,
+          "experiences": 400.0,
+          "food": 400,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Sunday)",
+          "morning": "Arrival at 13:00 \u2014 no morning activities scheduled. Flight LH lands; clear customs, collect luggage, and arrange ground transportation to Hanauma Bay, East Oahu Boutique Stay (approx. 30\u201345 min drive from HNL).",
+          "afternoon": "Check in to the boutique stay, unpack, and settle in. Take a leisurely stroll along the coastline near Hanauma Bay to get your bearings and enjoy the ocean views. Pick up essentials at a nearby grocery store or convenience shop.",
+          "evening": "Enjoy a relaxed first evening at a nearby casual restaurant. Explore the immediate neighborhood, watch the sunset from the shoreline, and get an early night to recover from travel.",
+          "meals": {
+            "breakfast": "Meal on the flight or grab a snack at the airport upon arrival.",
+            "lunch": "Pick up a quick bite at the airport or a nearby plate lunch spot like Zippy's (a beloved local chain) on the drive to the hotel.",
+            "dinner": "Dinner at Kona Brewing Company \u2013 Koko Marina (approx. 5 min drive) \u2014 casual, family-friendly, great local craft beers and hearty pub food. Budget ~$20\u201335 per person."
+          },
+          "notes": "Do not over-schedule Day 1. Jet lag and travel fatigue are real \u2014 prioritize rest so the family is energized for the days ahead. Purchase a snorkel gear rental or reservation for Hanauma Bay online tonight if not already booked (reservations are required)."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16 (Monday)",
+          "morning": "Snorkeling at Hanauma Bay \u2014 One of Hawaii's most pristine marine sanctuaries, just minutes from the hotel. Arrive early (gates open at 6:45 AM) to beat crowds and secure parking. Watch the mandatory marine education video, then spend 2\u20133 hours snorkeling among colorful reef fish, sea turtles, and vibrant coral. The bay's calm, protected waters are perfect for all ages.",
+          "afternoon": "Head back to the hotel to rinse off and relax. In the early afternoon, drive to nearby Koko Head Crater Trail (moderate hike up 1,048 railway steps) for panoramic views of the coastline \u2014 a great family challenge with stunning photo opportunities at the top.",
+          "evening": "Sunset viewing from Makapu'u Point Lookout (a short scenic drive east), followed by a relaxed dinner back near the hotel area.",
+          "meals": {
+            "breakfast": "Early breakfast at the hotel or pack snacks and fruit from a nearby grocery store before heading to Hanauma Bay.",
+            "lunch": "Shave ice and plate lunch at Kona Brewing Co. or grab poke bowls from Tamura's Fine Wine & Liquors (Aina Haina location) \u2014 a local favorite for fresh, affordable poke. Budget ~$12\u201318 per person.",
+            "dinner": "Dinner at Plumeria Beach House at Kahala Hotel (nearby, upscale casual) or Roy's Hawaii Kai \u2014 a mid-range Hawaiian fusion restaurant with ocean views. Budget ~$30\u201350 per person."
+          },
+          "notes": "Hanauma Bay reservations are mandatory and sell out fast \u2014 book at least 2 days in advance online. Bring reef-safe sunscreen only (chemical sunscreens are banned at the bay). Bring water shoes for the rocky entry points."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17 (Tuesday)",
+          "morning": "Drive to Oahu's North Shore (approx. 1 hour from East Oahu). Begin with the Shave Ice and Local Food Tour in Haleiwa \u2014 stroll through this charming surf town, visit Matsumoto Shave Ice (an iconic stop since 1951), browse local boutiques, and soak in the laid-back surf culture. Walk along the Haleiwa harbor and watch surfers.",
+          "afternoon": "Head to Waimea Bay Beach Park (just east of Haleiwa) for an afternoon beach session. The bay offers calm summer waters ideal for swimming and snorkeling. Explore Waimea Valley (nearby botanical garden and cultural park) \u2014 a family-friendly attraction with a stunning waterfall and cultural demonstrations.",
+          "evening": "Drive back toward Honolulu or dine on the North Shore before heading back to the hotel. The drive back along the Kamehameha Highway at dusk is scenic.",
+          "meals": {
+            "breakfast": "Breakfast at Cinnamon's at the Ilikai in Honolulu on the way, or grab a\u00e7a\u00ed bowls from Lanikai Juice in Haleiwa upon arrival.",
+            "lunch": "Giovanni's Shrimp Truck \u2014 a legendary North Shore food truck serving garlic butter shrimp plates. Budget ~$14\u201318 per person.",
+            "dinner": "Dinner at Haleiwa Joe's Haiku Gardens or Kua Aina Sandwich Shop in Haleiwa \u2014 casual, family-friendly, and delicious. Budget ~$15\u201325 per person."
+          },
+          "notes": "North Shore surf can be extremely rough in winter but is calm and swimmable in August \u2014 perfect timing. Start the drive early (before 9 AM) to avoid traffic through Honolulu. Waimea Valley charges a small admission fee (~$20 adults, $10 children)."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18 (Wednesday)",
+          "morning": "Inter-island flight to Maui (approx. 30-min flight from HNL \u2014 book in advance with Hawaiian Airlines or Southwest). Arrive in Maui, pick up a rental car, and drive to Kaanapali on the west side (approx. 45 min from OGG airport).",
+          "afternoon": "Kaanapali Beach Day with Cliff Diving Spectacle \u2014 Spend the afternoon at one of Hawaii's most celebrated stretches of white sand. Swim in the calm, crystal-clear waters, build sandcastles, and enjoy the vibrant beach atmosphere. At the north end of the beach, watch the legendary cliff divers leap from Black Rock (Pu'u Keka'a) \u2014 a thrilling spectacle the whole family will love.",
+          "evening": "Explore Whaler's Village outdoor mall along the beach for shopping and dining. Watch the ceremonial torch lighting and cliff dive at sunset from Black Rock \u2014 a nightly tradition.",
+          "meals": {
+            "breakfast": "Quick breakfast at the airport or a grab-and-go caf\u00e9 before the flight.",
+            "lunch": "Beachside lunch at Leilani's on the Beach at Whaler's Village \u2014 casual oceanfront dining with burgers, fish tacos, and fresh salads. Budget ~$18\u201328 per person.",
+            "dinner": "Dinner at Hula Grill Kaanapali \u2014 a beloved open-air beachfront restaurant with Hawaiian-inspired cuisine and live music. Budget ~$25\u201345 per person."
+          },
+          "notes": "Book the inter-island flight well in advance. A rental car is essential on Maui. If staying overnight on Maui, book accommodations in the Kaanapali/Lahaina area. Confirm hotel arrangements for Maui nights separately if extending the trip \u2014 the itinerary assumes a 2-night Maui side trip (Days 4\u20135) before returning."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19 (Thursday)",
+          "morning": "Drive to Lahaina Town (10 min south of Kaanapali). Explore the historic waterfront district \u2014 visit the famous 150-year-old Banyan Tree, browse art galleries, and walk along Front Street. Stop at the Lahaina Courthouse and learn about Hawaii's royal history.",
+          "afternoon": "Snorkel cruise from Lahaina Harbor \u2014 book a family-friendly catamaran snorkel tour to Molokini Crater or Coral Gardens (approx. 3\u20134 hours, ~$60\u2013100 per person). These tours provide gear, instruction, and guides, making it ideal for families. Spot sea turtles, tropical fish, and possibly dolphins.",
+          "evening": "Luau Dinner at Old Lahaina Luau \u2014 Immerse the family in authentic Hawaiian culture with this world-renowned luau. Enjoy a traditional kalua pig feast, poi, lomi salmon, haupia dessert, and an extraordinary cultural performance featuring hula, fire knife dancing, and live music. One of the most memorable experiences in all of Hawaii.",
+          "meals": {
+            "breakfast": "Breakfast at Gazebo Restaurant in Napili (arrive early \u2014 long waits, worth it) for macadamia nut pancakes with ocean views. Budget ~$12\u201318 per person.",
+            "lunch": "Light lunch on the snorkel boat (usually included) or grab fish tacos at Aloha Mixed Plate in Lahaina. Budget ~$12\u201316 per person.",
+            "dinner": "Included in the Old Lahaina Luau experience. Budget ~$130\u2013160 per adult, ~$85\u2013100 per child (book months in advance \u2014 it sells out)."
+          },
+          "notes": "Old Lahaina Luau is one of the most sought-after experiences in Hawaii \u2014 reserve as early as possible, ideally 3\u20136 months ahead. The luau typically starts at 5:15 PM. Wear comfortable, casual clothing and bring a light layer for the evening breeze."
+        },
+        {
+          "day": 6,
+          "date": "2027-08-20 (Friday)",
+          "morning": "Waimea Canyon Hike and Lookout \u2014 Fly or drive to Kauai (inter-island flight ~30 min, or this can be a day trip via flight if budget allows). Alternatively, if staying on Maui, spend the morning at Road to Hana \u2014 drive the scenic coastal highway, stopping at Twin Falls, Garden of Eden Arboretum, and Wailua Falls. A spectacular family adventure.",
+          "afternoon": "If on Kauai: Explore Waimea Canyon State Park \u2014 known as the 'Grand Canyon of the Pacific.' Stop at multiple overlooks (Waimea Canyon Lookout and Pu'u Hinahina Lookout) for jaw-dropping views. Take the easy Canyon Trail (family-friendly, ~1.8 miles) through the red-rock canyon landscape. If on Maui: Continue the Road to Hana, stopping at Hamoa Beach and the Pools of 'Ohe'o (Seven Sacred Pools).",
+          "evening": "Return to base accommodations. If on a Kauai day trip, fly back to Oahu in the evening. Enjoy a quiet dinner and rest.",
+          "meals": {
+            "breakfast": "Grab pastries and coffee from a local bakery before departure.",
+            "lunch": "Waimea Canyon: Pack a picnic lunch or stop at the Waimea Canyon Drive food stands for plate lunches and local snacks. Road to Hana: Lunch at Coconut Glen's (vegan ice cream stop) and a picnic at one of the scenic pullouts.",
+            "dinner": "Back in East Oahu: Dinner at Assaggio Italian Restaurant in Aina Haina \u2014 a family-friendly, mid-range Italian restaurant with generous portions. Budget ~$20\u201335 per person."
+          },
+          "notes": "Day 6 involves the most travel logistics \u2014 plan flights and transportation carefully. If the budget doesn't allow a Kauai trip, substitute with a full Road to Hana day on Maui or a Haleakala Crater sunrise experience. Return to Oahu hotel by evening."
+        },
+        {
+          "day": 7,
+          "date": "2027-08-21 (Saturday)",
+          "morning": "Back on Oahu \u2014 visit Diamond Head State Monument. Hike the iconic 1.6-mile round-trip trail to the summit of the volcanic crater for panoramic views of Honolulu and Waikiki. The hike takes about 1\u20131.5 hours and is suitable for most fitness levels with kids.",
+          "afternoon": "Head to Waikiki Beach for a classic Hawaii beach afternoon. Rent surfboards or take a beginner surf lesson from one of the many beach instructors \u2014 a quintessential Hawaii experience for the whole family. Explore the Waikiki beachfront and International Market Place.",
+          "evening": "Stroll along Kalakaua Avenue in Waikiki. Enjoy street performers, browse shops, and watch the free hula shows at the Royal Hawaiian Center (held multiple evenings per week). End the evening with dessert at a local ice cream or shave ice shop.",
+          "meals": {
+            "breakfast": "Breakfast at Eggs 'n Things in Waikiki \u2014 a beloved local institution famous for pancakes and omelets. Budget ~$12\u201318 per person.",
+            "lunch": "Grab poke bowls or plate lunches from a local food court or Ono Seafood (a legendary poke spot) near Kapahulu Ave. Budget ~$12\u201316 per person.",
+            "dinner": "Dinner at Duke's Waikiki \u2014 a legendary oceanfront restaurant named after Duke Kahanamoku, serving Hawaiian-inspired seafood and classic dishes with live music. Budget ~$25\u201345 per person."
+          },
+          "notes": "Diamond Head reservations are required \u2014 book online in advance. Parking at Diamond Head is limited; consider taking TheBus or a rideshare. Surf lessons in Waikiki run ~$30\u201350 per person for a group lesson."
+        },
+        {
+          "day": 8,
+          "date": "2027-08-22 (Sunday)",
+          "morning": "Visit Pearl Harbor National Memorial \u2014 a deeply moving and historically significant experience. Tour the USS Arizona Memorial, USS Missouri Battleship, and the Pearl Harbor Aviation Museum. Allow 3\u20134 hours. Suitable for older children (recommended ages 8+).",
+          "afternoon": "Drive to Dole Plantation in central Oahu (about 30 min north of Pearl Harbor) \u2014 a fun, family-friendly stop famous for the Pineapple Express train ride, the world's largest maze, and, of course, fresh pineapple Dole Whip. A lighthearted contrast to the morning.",
+          "evening": "Return to East Oahu. Enjoy a relaxed beach sunset near the hotel and a casual dinner close to home base.",
+          "meals": {
+            "breakfast": "Early breakfast at Liliha Bakery \u2014 a Honolulu institution famous for coco puffs and breakfast plates. Budget ~$10\u201315 per person.",
+            "lunch": "Lunch near Pearl Harbor at Helena's Hawaiian Food (James Beard Award-winning local Hawaiian cuisine) or a casual caf\u00e9 near the memorial. Budget ~$12\u201320 per person.",
+            "dinner": "Dinner at Ono Hawaiian Foods in Kapahulu \u2014 an authentic, no-frills Hawaiian comfort food restaurant beloved by locals. Try the laulau, poi, and haupia. Budget ~$15\u201322 per person."
+          },
+          "notes": "Pearl Harbor is one of Oahu's most visited sites \u2014 arrive when it opens (7:00 AM) to avoid long lines. The USS Arizona Memorial is free but requires timed passes (reserve online). Allow extra time for security screening. The Dole Plantation maze costs ~$8 per person; the train ride ~$12 per person."
+        },
+        {
+          "day": 9,
+          "date": "2027-08-23 (Monday)",
+          "morning": "Explore Lanikai Beach and the Mokulua Islands \u2014 one of Oahu's most beautiful and serene beaches, just east of the hotel. Arrive early to claim a spot on the powdery white sand. Rent kayaks and paddle out to the twin Mokulua Islands (Moku Nui and Moku Iki) \u2014 a spectacular family adventure with snorkeling, sea turtle sightings, and stunning views.",
+          "afternoon": "Hike the Lanikai Pillbox Trail (Kaiwa Ridge Trail) \u2014 a short but rewarding hike (1.8 miles round trip) with sweeping views of Lanikai Beach and the Mokulua Islands. Moderate difficulty, manageable for older kids. Alternatively, relax on Kailua Beach (a short drive) \u2014 consistently rated one of America's best beaches.",
+          "evening": "Final full evening in the area \u2014 celebrate the trip with a special dinner. Visit the Kailua town center for shopping, local art galleries, and a festive dinner out.",
+          "meals": {
+            "breakfast": "Breakfast at Cinnamon's Restaurant in Kailua \u2014 famous for its red velvet pancakes and guava chiffon pancakes. A local favorite. Budget ~$12\u201318 per person.",
+            "lunch": "Lunch at Kalapawai Market & Deli in Kailua \u2014 a charming local market with excellent sandwiches, salads, and local specialties. Budget ~$12\u201318 per person.",
+            "dinner": "Dinner at Buzz's Original Steakhouse in Lanikai \u2014 a beloved institution serving steaks, fresh fish, and classic cocktails in a cozy, tropical setting. Budget ~$35\u201355 per person."
+          },
+          "notes": "Kayak rentals to the Mokulua Islands run ~$30\u201355 per kayak and require a moderate paddling effort (about 1 mile each way). Book rentals in advance from Kailua Beach Adventures or similar outfitters. The Pillbox Trail is best done in the morning before the heat peaks."
+        },
+        {
+          "day": 10,
+          "date": "2027-08-24 (Tuesday)",
+          "morning": "Final morning in Hawaii \u2014 wake up early for one last sunrise on the beach near the hotel. Take a slow, reflective walk along the Hanauma Bay coastline. Pack up belongings and check out of the boutique stay.",
+          "afternoon": "Depending on departure flight time, squeeze in a final stop at a local favorite \u2014 visit the Kapahulu area for a last shave ice at Waiola Shave Ice or pick up omiyage (souvenir gifts) at Longs Drugs or Don Quijote supermarket (a great spot for local snacks and treats to bring home). Head to Daniel K. Inouye International Airport (HNL) \u2014 allow at least 2.5\u20133 hours before departure for international flights.",
+          "evening": "Departure from HNL. Carry the memories of 10 incredible days in Hawaii \u2014 the aloha spirit, the ocean, the food, and the family moments.",
+          "meals": {
+            "breakfast": "Final breakfast at a nearby caf\u00e9 or the hotel \u2014 enjoy a leisurely last meal with ocean views. Try Leonard's Bakery on the way to the airport for malasadas (Portuguese donuts) \u2014 a Hawaii must-do. Budget ~$8\u201312 per person.",
+            "lunch": "Light lunch at the airport (HNL has several decent dining options including local favorites like Makai Market Food Court) or grab plate lunches to go. Budget ~$15\u201320 per person.",
+            "dinner": "Dinner on the flight or at the airport if departure is in the evening."
+          },
+          "notes": "Check flight departure time carefully and plan the day accordingly. Leave at least 3 hours for airport check-in and security for international departures. Return any rental cars and confirm all luggage weight limits for souvenirs. Don't forget to declare any agricultural items (fresh fruit, plants) at customs."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Seattle+to+Hawaii+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Hawaii&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii"
+      ],
+      "highlights": [
+        "Best value for money",
+        "4.4\u2605 rated hotel",
+        "Mix of paid and free experiences",
+        "Comfortable travel schedule"
+      ],
+      "trade_offs": [
+        "Some compromises on luxury"
+      ]
+    },
+    {
+      "option_id": 2,
+      "style": "premium",
+      "title": "Premium Hawaii Escape",
+      "description": "Indulge in the best the destination has to offer. Premium flights, luxury hotels, and exclusive experiences.",
+      "total_cost_usd": 2940.0,
+      "flight": {
+        "price_usd": 890,
+        "airline": "LH",
+        "departure": "2027-08-15T06:00:00",
+        "arrival": "2027-08-15T13:00:00",
+        "stops": 1,
+        "duration": "PT7H00M"
+      },
+      "hotel": {
+        "name": "Hanauma Bay, East Oahu Boutique Stay",
+        "price_per_night_usd": 95,
+        "total_usd": 950,
+        "rating": 4.4,
+        "amenities": [
+          "wifi",
+          "breakfast included",
+          "rooftop terrace"
+        ],
+        "location": "Hanauma Bay, East Oahu"
+      },
+      "experiences": [
+        {
+          "name": "Snorkeling at Hanauma Bay",
+          "description": "Explore one of Hawaii's most pristine marine sanctuaries with crystal-clear waters teeming with colorful tropical fish and sea turtles. Perfect for families with kids of all ages, the bay offers calm, shallow waters ideal for beginner snorkelers. Equipment rentals are available on-site and an educational center teaches visitors about the reef ecosystem before entering.",
+          "cost_usd": 60,
+          "category": "beaches",
+          "best_time_of_day": "morning",
+          "location": "Hanauma Bay, East Oahu"
+        },
+        {
+          "name": "Luau Dinner at Old Lahaina Luau",
+          "description": "Immerse your family in authentic Hawaiian culture with a traditional luau featuring a kalua pig feast cooked in an underground imu oven, poi, fresh tropical fruits, and hula performances. This award-winning luau is considered one of the most culturally genuine on the islands and is beloved by families for its storytelling, fire dancing, and interactive lei-making activities.",
+          "cost_usd": 180,
+          "category": "culture",
+          "best_time_of_day": "evening",
+          "location": "Lahaina, Maui"
+        },
+        {
+          "name": "Waimea Canyon Hike and Lookout",
+          "description": "Known as the 'Grand Canyon of the Pacific,' Waimea Canyon offers breathtaking views and family-friendly hiking trails through lush valleys and red-rock formations. The Canyon Trail is manageable for older kids and rewards hikers with stunning panoramic vistas. Pack a picnic and enjoy the dramatic landscape that stretches over 14 miles long and 3,600 feet deep.",
+          "cost_usd": 35,
+          "category": "activities",
+          "best_time_of_day": "morning",
+          "location": "Waimea Canyon State Park, Kauai"
+        },
+        {
+          "name": "Shave Ice and Local Food Tour in Haleiwa",
+          "description": "Stroll through the charming surf town of Haleiwa on Oahu's North Shore and indulge in Hawaii's iconic shave ice topped with tropical syrups, mochi, and azuki beans. Explore local food trucks and family-run eateries serving fresh poke bowls, garlic shrimp plates, and malasadas. This laid-back town also offers boutique shopping and a glimpse into authentic Hawaiian surf culture.",
+          "cost_usd": 50,
+          "category": "food",
+          "best_time_of_day": "afternoon",
+          "location": "Haleiwa, North Shore Oahu"
+        },
+        {
+          "name": "Kaanapali Beach Day with Cliff Diving Spectacle",
+          "description": "Spend a full family beach day at one of Hawaii's most celebrated stretches of white sand. Swim in calm turquoise waters, build sandcastles, and rent paddleboards or boogie boards. Each evening, witness the legendary cliff diving ceremony at Black Rock (Puu Kekaa), where a torch-lit diver leaps into the ocean in a nightly tradition honoring ancient Hawaiian warriors \u2014 a magical and free spectacle for the whole family.",
+          "cost_usd": 75,
+          "category": "beaches",
+          "best_time_of_day": "afternoon",
+          "location": "Kaanapali Beach, West Maui"
+        }
+      ],
+      "itinerary": {
+        "num_days": 10,
+        "destination": "Hawaii",
+        "style": "premium",
+        "total_cost": 2940.0,
+        "breakdown": {
+          "flight": 890.0,
+          "hotel": 950.0,
+          "experiences": 400.0,
+          "food": 600,
+          "misc": 100
+        }
+      },
+      "day_by_day": [
+        {
+          "day": 1,
+          "date": "2027-08-15 (Saturday)",
+          "morning": "Arrival at Honolulu International Airport at 13:00 \u2014 no morning activities scheduled. Private luxury transfer arranged from airport to Hanauma Bay, East Oahu Boutique Stay.",
+          "afternoon": "Check in to the boutique property and settle in. Enjoy a welcome amenity (chilled tropical fruit platter and sparkling water) prepared by the hotel. Take a leisurely stroll along the coastline near Hanauma Bay to get your bearings and breathe in the ocean air.",
+          "evening": "Sunset cocktails on the hotel terrace or private lanai, followed by a relaxed welcome dinner at the resort restaurant or a nearby upscale East Oahu eatery to ease into island time.",
+          "meals": {
+            "breakfast": "N/A \u2014 in-flight",
+            "lunch": "Light bites from the hotel's welcome spread upon arrival",
+            "dinner": "Dinner at Roy's Hawaii Kai (approx. 10 minutes from Hanauma Bay) \u2014 celebrated for its Hawaiian Fusion cuisine, fresh catch of the day, and elegant ocean-view ambiance. Reservations recommended."
+          },
+          "notes": "Keep Day 1 light and restful to combat jet lag. Confirm all upcoming activity reservations with the hotel concierge this evening. Request a premium snorkeling gear set for the next morning."
+        },
+        {
+          "day": 2,
+          "date": "2027-08-16 (Sunday)",
+          "morning": "Snorkeling at Hanauma Bay \u2014 arrive early (8:00 AM) with a private guided snorkeling experience to beat the crowds. Explore the pristine marine sanctuary with a certified marine naturalist guide, spotting sea turtles, colorful reef fish, and vibrant coral formations in crystal-clear waters.",
+          "afternoon": "Return to the boutique hotel for a poolside lunch and relaxation. In the mid-afternoon, arrange a private surf or stand-up paddleboard lesson for the family on a calm nearby beach, offered through the hotel's activity concierge.",
+          "evening": "Sunset catamaran cruise departing from nearby Koko Marina, featuring light appetizers, tropical cocktails, and panoramic views of the southeastern Oahu coastline.",
+          "meals": {
+            "breakfast": "In-room or hotel terrace breakfast \u2014 fresh a\u00e7a\u00ed bowls, eggs to order, Kona coffee, and tropical fruit platters",
+            "lunch": "Poolside dining at the boutique hotel \u2014 grilled fish tacos, fresh poke bowls, and fresh-pressed juices",
+            "dinner": "Dinner at Koko Head Caf\u00e9 (upscale brunch-to-dinner concept) or a private chef beach dinner arranged through the hotel concierge for a truly luxurious family experience"
+          },
+          "notes": "Hanauma Bay requires advance reservations and charges an entry fee. The private guided snorkeling upgrade is strongly recommended for families. Apply reef-safe sunscreen only \u2014 it is required at the bay."
+        },
+        {
+          "day": 3,
+          "date": "2027-08-17 (Monday)",
+          "morning": "Shave Ice and Local Food Tour in Haleiwa on Oahu's North Shore \u2014 depart by 9:00 AM via private luxury van. Stroll through the charming surf town, sampling legendary shave ice at Matsumoto's or Aoki's, fresh coconut, malasadas, and local artisan goods.",
+          "afternoon": "Continue along the North Shore to witness world-famous surf breaks (even in summer, the scenery is spectacular). Stop at Waimea Bay Beach Park for a family swim in calmer summer waters. Explore the Waimea Valley botanical garden with its stunning waterfall.",
+          "evening": "Return to East Oahu. Enjoy a relaxed evening at the hotel with a private in-room family movie night package or a bonfire experience on the beach arranged by the concierge.",
+          "meals": {
+            "breakfast": "Hotel breakfast before departure \u2014 avocado toast, fresh pastries, tropical smoothies",
+            "lunch": "North Shore food experience as part of the tour \u2014 Giovanni's Shrimp Truck (iconic garlic shrimp), fresh pineapple, and local snacks in Haleiwa town",
+            "dinner": "Dinner at Merriman's Honolulu or a curated farm-to-table dinner back in East Oahu featuring locally sourced Hawaiian ingredients"
+          },
+          "notes": "The drive from Hanauma Bay to Haleiwa is approximately 45\u201355 minutes. A private driver is recommended to allow the family to enjoy the scenic H1/H2 or coastal Kamehameha Highway route without stress. Book Waimea Valley entry tickets in advance."
+        },
+        {
+          "day": 4,
+          "date": "2027-08-18 (Tuesday)",
+          "morning": "Private family helicopter tour of Oahu \u2014 depart from Honolulu Airport's commuter terminal. Soar over Diamond Head, the Pali Lookout, Waimea Bay, and the lush Ko'olau Mountains for a breathtaking bird's-eye perspective of the island. Duration: approximately 45\u201360 minutes.",
+          "afternoon": "Visit Diamond Head State Monument for a family-friendly hike to the iconic crater summit. The trail is moderate (1.6 miles round trip) with panoramic views of Waikiki and Honolulu. Arrive by 1:30 PM to avoid peak heat.",
+          "evening": "Drive into Honolulu for a premium evening out. Enjoy cocktails at a rooftop bar overlooking the city before dinner at a Waikiki fine dining restaurant.",
+          "meals": {
+            "breakfast": "Hotel breakfast \u2014 eggs Benedict with kalua pork, fresh fruit, Kona coffee",
+            "lunch": "Post-helicopter light lunch at Hoku's at The Kahala Hotel \u2014 elegant, family-friendly, and conveniently located near Diamond Head",
+            "dinner": "Dinner at Nobu Honolulu in Waikiki \u2014 world-class Japanese-Peruvian cuisine with premium omakase options and fresh Hawaiian seafood"
+          },
+          "notes": "Helicopter tours must be booked well in advance. Blue Hawaiian Helicopters and Makani Kai offer top-tier private tours. Diamond Head hike is stroller-unfriendly but suitable for children aged 5+. Bring water and hats."
+        },
+        {
+          "day": 5,
+          "date": "2027-08-19 (Wednesday)",
+          "morning": "Inter-island flight from Honolulu (HNL) to Kahului, Maui (OGG) \u2014 depart approximately 8:00 AM on Hawaiian Airlines first class (approx. 35-minute flight). Private transfer to Kaanapali Beach area on Maui's west coast.",
+          "afternoon": "Kaanapali Beach Day with Cliff Diving Spectacle \u2014 spend a full luxury afternoon at one of Hawaii's most celebrated white-sand beaches. Swim in calm turquoise waters, rent premium beach cabanas, and watch the legendary Cliff Divers of Black Rock (Pu'u Keka'a) perform their breathtaking ceremonial dives at sunset.",
+          "evening": "Sunset at Black Rock followed by a world-class dinner at one of Kaanapali's premier resort restaurants.",
+          "meals": {
+            "breakfast": "Early hotel breakfast before airport transfer \u2014 grab-and-go option or hotel dining",
+            "lunch": "Beachside cabana service at Kaanapali \u2014 fresh ceviche, lobster rolls, tropical cocktails, and fresh coconut water delivered to your umbrella",
+            "dinner": "Dinner at Japengo at the Hyatt Regency Maui \u2014 stunning oceanfront setting with Pacific Rim cuisine and a premium sushi bar"
+          },
+          "notes": "The cliff diving at Black Rock occurs daily at sunset and is a free, spectacular family experience. Book inter-island flights and Maui accommodations (suggest a luxury suite at the Hyatt Regency Maui or Andaz Maui at Wailea) well in advance. This is a travel day \u2014 keep the pace relaxed."
+        },
+        {
+          "day": 6,
+          "date": "2027-08-20 (Thursday)",
+          "morning": "Luau Dinner at Old Lahaina Luau preparation day \u2014 explore the historic town of Lahaina in the morning. Visit the iconic Banyan Tree, browse art galleries, and stop at the Lahaina Heritage Museum to learn about the island's whaling history and Hawaiian culture.",
+          "afternoon": "Private snorkeling or whale watching boat charter (in summer, spinner dolphins and sea turtles are plentiful off Maui's coast). Depart from Lahaina Harbor for a 2\u20133 hour private luxury catamaran experience with snorkeling at Molokini Crater or Turtle Town.",
+          "evening": "Luau Dinner at Old Lahaina Luau \u2014 immerse the family in authentic Hawaiian culture with a traditional luau featuring kalua pig slow-roasted in an underground imu, poi, lomi salmon, haupia dessert, hula performances, and fire knife dancing. One of Maui's most beloved cultural experiences.",
+          "meals": {
+            "breakfast": "Hotel breakfast \u2014 loco moco (Hawaiian breakfast classic), fresh papaya, Maui-grown coffee",
+            "lunch": "Lunch aboard the private catamaran charter \u2014 catered gourmet spread with charcuterie, fresh island fish, and tropical beverages",
+            "dinner": "Old Lahaina Luau feast \u2014 all-inclusive traditional Hawaiian buffet with premium open bar included"
+          },
+          "notes": "Old Lahaina Luau is one of the most sought-after reservations on Maui \u2014 book 3\u20136 months in advance. The luau begins at sunset (approximately 5:30\u20136:00 PM) and lasts about 3 hours. It is highly family-friendly and appropriate for all ages."
+        },
+        {
+          "day": 7,
+          "date": "2027-08-21 (Friday)",
+          "morning": "Sunrise at Haleakala National Park \u2014 depart hotel by 3:30 AM for the dramatic 10,000-foot summit drive to watch the sunrise above the clouds. This is a once-in-a-lifetime experience and a must-do on Maui. Dress warmly (temperatures near 40\u00b0F at summit).",
+          "afternoon": "Descend from Haleakala and stop at Upcountry Maui farms \u2014 visit Surfing Goat Dairy and Ali'i Kula Lavender Farm for a fun, family-friendly agricultural experience unique to Maui. Return to the hotel by early afternoon for rest and pool time.",
+          "evening": "Relaxed luxury evening at the resort \u2014 spa treatments for adults, kids' club activities for children, followed by a premium beachfront dinner.",
+          "meals": {
+            "breakfast": "Pre-dawn hotel grab-and-go breakfast \u2014 thermos of Kona coffee, pastries, and energy bars for the summit",
+            "lunch": "Farm-fresh lunch at Upcountry Maui \u2014 artisan cheeses from Surfing Goat Dairy, lavender lemonade, and local produce picnic",
+            "dinner": "Dinner at Ferraro's Bar e Ristorante at Four Seasons Resort Maui at Wailea \u2014 authentic Italian cuisine with oceanfront views and impeccable service"
+          },
+          "notes": "Haleakala sunrise requires a timed entry reservation through recreation.gov \u2014 book months in advance as slots sell out quickly. The round-trip drive is approximately 3.5\u20134 hours from Kaanapali. A private driver is recommended so the family can sleep en route."
+        },
+        {
+          "day": 8,
+          "date": "2027-08-22 (Saturday)",
+          "morning": "Inter-island flight from Kahului, Maui (OGG) to Lihue, Kauai (LIH) \u2014 depart approximately 9:00 AM. Private luxury transfer to North Shore Kauai accommodations (suggest Princeville Resort or a luxury villa).",
+          "afternoon": "Explore Kauai's North Shore \u2014 visit the breathtaking Na Pali Coast Lookout at Ke'e Beach, swim in the stunning Tunnels Beach (one of Kauai's best snorkeling spots), and take in the lush, cinematic landscape that has served as the backdrop for films like Jurassic Park.",
+          "evening": "Sunset cocktails at the St. Regis Bar overlooking Hanalei Bay \u2014 one of the most spectacular sunset views in all of Hawaii.",
+          "meals": {
+            "breakfast": "Hotel breakfast before departure \u2014 acai bowls, fresh tropical fruit, eggs to order",
+            "lunch": "Lunch at Bar Acuda in Hanalei town \u2014 a beloved North Shore tapas-style restaurant with locally sourced ingredients and a relaxed upscale ambiance",
+            "dinner": "Dinner at The St. Regis Princeville's Kauai Grill \u2014 elevated Hawaiian cuisine with sweeping Hanalei Bay views and an exceptional wine list"
+          },
+          "notes": "Kauai is known as the 'Garden Isle' and is arguably Hawaii's most naturally beautiful island. The pace here is intentionally slower and more serene. This is a travel day \u2014 keep the schedule relaxed upon arrival."
+        },
+        {
+          "day": 9,
+          "date": "2027-08-23 (Sunday)",
+          "morning": "Waimea Canyon Hike and Lookout \u2014 depart by 8:00 AM for the drive to the 'Grand Canyon of the Pacific.' Stop at multiple lookout points including Waimea Canyon Lookout and Pu'u Hinahina Lookout for jaw-dropping panoramic views. Enjoy a family-friendly hike on the Canyon Trail (moderate, 3.6 miles round trip) through crimson canyon walls and tropical forest.",
+          "afternoon": "Continue to Koke'e State Park at the canyon's rim for additional scenic overlooks of the Na Pali Coast from above. Visit the Koke'e Natural History Museum for a kid-friendly introduction to Kauai's ecology. Return to North Shore by 3:00 PM.",
+          "evening": "Private sunset Na Pali Coast boat tour \u2014 sail along the dramatic 17-mile coastline of towering sea cliffs, hidden sea caves, and cascading waterfalls. Champagne and gourmet appetizers served on board.",
+          "meals": {
+            "breakfast": "Early hotel breakfast \u2014 pancakes with macadamia nut syrup, fresh fruit, Kauai-grown coffee",
+            "lunch": "Picnic lunch prepared by the hotel \u2014 gourmet sandwiches, local snacks, and chilled beverages enjoyed at a Waimea Canyon lookout point",
+            "dinner": "Dinner at Merriman's Fish House in Poipu \u2014 James Beard Award-nominated chef Peter Merriman's signature farm-to-table Hawaiian cuisine with an outstanding fresh fish menu"
+          },
+          "notes": "Waimea Canyon is approximately 1 hour from Princeville. The drive along Route 550 is scenic and worth savoring. Bring layers \u2014 it can be cool and misty at the canyon rim (elevation ~3,600 feet). The Na Pali sunset boat tour should be booked with Captain Andy's Sailing Adventures or a comparable premium operator."
+        },
+        {
+          "day": 10,
+          "date": "2027-08-24 (Monday)",
+          "morning": "Final morning on Kauai \u2014 enjoy a leisurely sunrise beach walk along Hanalei Bay or Anini Beach. Arrange a private yoga or meditation session on the beach through the resort for a peaceful, reflective start to the last day. Spend time in the hotel pool or spa.",
+          "afternoon": "Last-minute shopping and exploration in Hanalei town \u2014 pick up premium local souvenirs including Kauai Coffee, Kauai Chocolate, macadamia nut products, and Hawaiian art. Transfer to Lihue Airport (LIH) for the inter-island flight back to Honolulu (HNL) and onward international connection.",
+          "evening": "Departure from Honolulu International Airport or final night in Honolulu if the international flight is the following day. If staying an extra night, enjoy a farewell dinner in Waikiki.",
+          "meals": {
+            "breakfast": "Leisurely final hotel breakfast \u2014 full luxury spread with eggs to order, fresh pastries, tropical smoothies, and Kauai coffee",
+            "lunch": "Casual farewell lunch at Hanalei Taro & Juice Co. \u2014 healthy, local, and delicious taro-based dishes and fresh juices before heading to the airport",
+            "dinner": "If departing late: farewell dinner at La Mer at Halekulani Hotel in Waikiki \u2014 Honolulu's most celebrated fine dining restaurant, offering French-Hawaiian haute cuisine in an intimate oceanfront setting"
+          },
+          "notes": "Allow at least 2.5\u20133 hours before departure at Lihue Airport for inter-island check-in. Confirm all luggage, souvenirs, and duty-free items are properly packed. The hotel concierge can arrange a private luxury transfer to the airport. Consider sending excess luggage ahead via a luggage shipping service to ease travel on the final day."
+        }
+      ],
+      "itinerary_fallback": null,
+      "flight_booking_url": "https://www.google.com/travel/flights?q=Seattle+to+Hawaii+2026-07-01",
+      "hotel_booking_url": "https://www.booking.com/searchresults.html?ss=Hawaii&checkin=2026-07-01&checkout=2026-07-08",
+      "experience_booking_urls": [
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii",
+        "https://www.getyourguide.com/s/?q=Hawaii"
+      ],
+      "highlights": [
+        "4.4\u2605 luxury hotel",
+        "Exclusive and unique experiences",
+        "Premium dining experiences"
+      ],
+      "trade_offs": [
+        "$-2810 over standard budget",
+        "Higher overall investment"
+      ]
+    }
+  ],
+  "query": "Hawaii family beach vacation, $5000, 10 days, August 2026 from Seattle",
+  "session_tags": {
+    "query_id": "SYN-24",
+    "condition": "targeted",
+    "run_index": 4
+  }
+}

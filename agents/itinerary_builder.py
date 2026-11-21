@@ -6,6 +6,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from metrics.token_tracker import TokenTrackingCallback
 
 from .base_agent import BaseAgent
+from .trip_window import record_nights
 
 ITINERARY_PROMPT = """You are a master travel planner. Build a complete, realistic day-by-day itinerary.
 
@@ -42,7 +43,7 @@ class ItineraryBuilderAgent(BaseAgent):
 
     def _setup(self):
         try:
-            from config import effective_temperature, get_api_config
+            from config import effective_temperature, get_api_config, get_settings
             model = get_api_config().llm.itinerary_builder_model
         except Exception:
             model = "claude-sonnet-4-6"
@@ -50,6 +51,7 @@ class ItineraryBuilderAgent(BaseAgent):
             model=model,
             temperature=effective_temperature(0.4),
             max_tokens=4096,
+            max_retries=get_settings().llm_max_retries,
             callbacks=[TokenTrackingCallback(model=model)],
         )
         self.prompt = ChatPromptTemplate.from_messages([
@@ -60,16 +62,24 @@ class ItineraryBuilderAgent(BaseAgent):
     async def _execute(self, state: dict) -> dict:
         intent = state.get("intent", {})
         budget_breakdown = state.get("budget_breakdown", {})
-        # duration_days / travel_year can be present with a None value when the
-        # request doesn't name them, so `or` rather than a .get default.
-        travel_year = intent.get("travel_year") or 2026
-        duration = intent.get("duration_days") or 14
+        window = state.get("trip_window") or {}
+        nights = record_nights(window)
+        if nights:
+            # The dates the flight and hotel were searched for (protocol §5.2).
+            duration = nights
+            travel_dates = f"{window['departure']} to {window['return']}"
+        else:
+            # Pre-v1.5 states carry no window. duration_days may be present but
+            # None when the request names no length, so `or`, not a .get default.
+            duration = intent.get("duration_days") or 14
+            travel_year = intent.get("travel_year") or 2026
+            travel_dates = f"July 1 - July {1 + duration}, {travel_year}"
 
         chain = self.prompt | self.llm
         response = await chain.ainvoke({
             "destination": intent.get("destination", ""),
             "duration_days": duration,
-            "travel_dates": f"July 1 - July {1 + duration}, {travel_year}",
+            "travel_dates": travel_dates,
             "budget_breakdown": json.dumps(budget_breakdown, indent=2),
             "selected_flight": json.dumps(state.get("selected_flight", {})),
             "selected_hotel": json.dumps(state.get("selected_hotel", {})),

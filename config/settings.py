@@ -13,6 +13,7 @@ box.
 from __future__ import annotations
 
 import os
+from datetime import date
 from typing import Literal
 
 from dotenv import load_dotenv
@@ -49,6 +50,22 @@ class Settings(BaseSettings):
     # or API) and record it instead of failing (VOYAGER_REPLAY_RECORD_MISSING).
     # Used to backfill fixtures for sources added after the original capture.
     replay_record_missing: bool = False
+
+    # ── Refinement condition (protocol §3) ────────────────────────────────
+    # targeted | full_rerun | broadcast | two_way (VOYAGER_REFINEMENT_MODE).
+    # Baseline is enable_refinement=False on the query, not a mode.
+    refinement_mode: Literal["targeted", "full_rerun", "broadcast", "two_way"] = "targeted"
+
+    # ── Trip-window anchor (protocol §5.2) ────────────────────────────────
+    # Mock sessions resolve trip dates against this fixed date, so synthetic
+    # benchmarks do not drift with the day they run (VOYAGER_MOCK_ANCHOR_DATE).
+    mock_anchor_date: date = date(2026, 12, 1)
+
+    # ── LLM retry policy (protocol §8) ────────────────────────────────────
+    # Applied to every Anthropic client and every ChatAnthropic construction,
+    # so API errors and timeouts retry up to this many times with exponential
+    # backoff inside the session (VOYAGER_LLM_MAX_RETRIES).
+    llm_max_retries: int = 3
 
 
 def effective_temperature(default_temperature: float) -> float:

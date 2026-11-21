@@ -10,8 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 pytestmark = pytest.mark.skipif(
-    not os.getenv("ANTHROPIC_API_KEY"),
-    reason="ANTHROPIC_API_KEY not set — skipping integration test",
+    os.getenv("VOYAGER_LIVE_TESTS") != "1" or not os.getenv("ANTHROPIC_API_KEY"),
+    reason="set VOYAGER_LIVE_TESTS=1 and ANTHROPIC_API_KEY to run live integration tests",
 )
 
 
