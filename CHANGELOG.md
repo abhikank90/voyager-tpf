@@ -5,13 +5,55 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.5.0] - 2026-11-20
+## [Unreleased]
 
-The v1.5 evaluation window. The full protocol is in
+## [1.5.0] - 2026-11-21
+
+The v1.5 pre-registered evaluation. The full protocol is in
 `docs/EVALUATION_PROTOCOL.md`; every number, with its inputs and method, is in
 `results/v1.5/paper_numbers.{json,md}`.
 
 ### Added
+
+- Refinement conditions `broadcast` (detected conflicts sent as a prose critique,
+  interpreted by the flight and hotel agents) and `two_way` (re-runs exactly the
+  agents it messages), alongside `baseline`, `targeted` and `full_rerun`.
+- Trip-window rule `month-v1.5`: stay length is the trip window's nights for hotel
+  pricing, experiences, option costs and itinerary dates.
+- `control` inventory profile for mock mode (daytime flights, city-name hotels,
+  within-budget prices).
+- Failure handling (protocol §8): LLM and HTTP retries, a failure log
+  (`results/v1.5/failures.csv`), rerun-once, and sharded runs
+  (`scripts/run_shards.py`).
+- Model manifest with canary prompts, snapshotted at the start and end of a run
+  (`scripts/model_manifest.py`).
+- Analysis and audit tooling: `scripts/paper_stats.py`, `scripts/paper_numbers.py`,
+  `scripts/reconcile_billing.py` (two-file Console exports, filter by key ID),
+  `scripts/build_h2c_packets.py`, `scripts/build_rater_kit.py`, and probe, variant,
+  labeling-sheet and gold-merge options in `scripts/eval_hybrid_detection.py`.
+- Per-component token and cost accounting, including the intent parser.
+
+### Changed
+
+- Option-generator `max_tokens` raised from 3000 to 8192. Template fallback
+  itineraries are marked (`itinerary_fallback`) and logged per session.
+- Agent errors now accumulate across graph nodes. In capture and replay, a session
+  fails on any research-agent error, or on an option-generator error when flights
+  and hotels are present. An empty-inventory result is recorded as a normal session.
+- Integration tests run only when `VOYAGER_LIVE_TESTS=1` is set, so a full test run
+  can no longer make billed API calls by accident.
+
+### Fixed
+
+- Capture mode stamps the trip-window anchor before any fixture is captured.
+- Known city codes such as "NYC" resolve to an airport (JFK) before the 3-letter
+  IATA passthrough.
+- The RQ4 `shipped` variant drives the real client and refuses stub usage.
+- `eval_hybrid_detection.py` loads `.env` before checking for the API key.
+- `requirements-lock.txt` installs on Python 3.11 (Deprecated 1.3.1, numpy 2.4.6);
+  the previous pins required Python 3.12.
+
+### Evaluation
 
 - Condition runs (`baseline`, `targeted`, `full_rerun`, `broadcast`, `two_way`)
   over 25 synthetic queries (mock inventory), 5 runs per condition: 625 sessions.
@@ -23,8 +65,8 @@ The v1.5 evaluation window. The full protocol is in
   20 double-scored across two rounds.
 - RQ4 hybrid-conflict-detector evaluation: 32 probes, deterministic rules vs
   LLM candidates (isolation and shipped variants), with a second labeler.
-- Billing reconciliation and per-component usage accounting
-  (`scripts/reconcile_billing.py`, `results/v1.5/billing_reconciliation.*`).
+- Billing reconciliation against the Console exports
+  (`results/v1.5/billing_reconciliation.*`).
 
 ### Reported outcomes
 
@@ -38,12 +80,6 @@ the narrowed capture guard; real-set provenance and sensitivity strata; the
 RQ4 shipped stub-client re-run; the `paper_numbers` candidate-field fix; the
 second labeler's self-check; the billing reconciliation fail (+1.18%) and its
 itemization; H2c eligibility and mock-only sample; the H2c contingency round.
-## [Unreleased]
-
-### Fixed
-
-- requirements-lock.txt installs on Python 3.11 (Deprecated 1.3.1, numpy 2.4.6); the
-  previous pins required Python 3.12.
 
 ## [1.4.2] - 2026-11-16
 
@@ -64,7 +100,10 @@ Conflict detection, routing and the `scripts/reproduce.sh` metrics are
 unchanged: the option generator runs after the final audit.
 
 ## [1.4.1] - 2026-11-14
-- Added JOSS paper (paper/paper.md) and draft-PDF workflow.
+
+### Added
+
+- JOSS paper (`paper/paper.md`) and draft-PDF workflow.
 
 ### Changed
 
