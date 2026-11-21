@@ -60,6 +60,27 @@ def test_pair_queries_aligned_on_common_ids():
     assert x == [1.0, 3.0] and y == [9.0, 7.0]
 
 
+def test_h1c_cost_is_descriptive(tmp_path):
+    syn = []
+    for q in ("SYN-01", "SYN-02"):
+        for r in (1, 2):
+            syn.append(_session(q, "targeted", r, cost=0.20))
+            syn.append(_session(q, "broadcast", r, cost=0.30))
+    real = []
+    for q in ("REAL-01", "REAL-02"):
+        real.append(_session(q, "targeted", 1, cost=0.25))
+        real.append(_session(q, "broadcast", 1, cost=0.35))
+
+    row = pn.row_h1(tmp_path, {"synthetic": syn, "real": real}, allow_missing=True)
+    c = row["h1_c_cost"]
+    assert c["synthetic"]["n"] == 2
+    assert c["synthetic"]["estimate"] == pytest.approx(-0.10)
+    assert c["synthetic"]["equal_or_lower"] is True
+    assert c["real"]["n"] == 2
+    assert c["real"]["estimate"] == pytest.approx(-0.10)
+    assert "not in the Holm family" in c["method"]
+
+
 # ── §8 drop removes a query from every condition ─────────────────────────────
 
 def test_apply_drops_removes_query_from_all_conditions():

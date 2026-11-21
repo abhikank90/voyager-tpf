@@ -276,6 +276,33 @@ def row_h1(root: Path, sessions: dict[str, list[dict]], allow_missing: bool) -> 
                 "sources": [f"runs/{set_name}/sessions.jsonl"],
             }
     out["holm"] = holm(pvals) if pvals else None
+
+    # H1c's hypothesis text also says "at equal or lower cost"; the §9 table
+    # operationalised only the conflict test, so the cost half is a descriptive
+    # companion (not in the Holm family, no pass flag), using H1b's cost method.
+    out["h1_c_cost"] = {
+        "method": "Descriptive companion to H1c (not pre-registered in the §9 table, "
+                  "not in the Holm family, no pass flag): one-sided paired bootstrap "
+                  "(SEED=20261117, n=10000) of mean cost(targeted − broadcast) per query "
+                  "(per-query value across runs, exactly H1b's cost_usd term). "
+                  "equal_or_lower = one-sided 95% upper bound ≤ 0.",
+    }
+    for set_name in ("synthetic", "real"):
+        sess = sessions.get(set_name) or []
+        if set_name == "real":
+            sess = real_primary(sess)
+        targeted = per_query(_sessions_by_condition(sess, "targeted"), cost_usd)
+        broadcast = per_query(_sessions_by_condition(sess, "broadcast"), cost_usd)
+        x, y, queries = pair_queries(targeted, broadcast)
+        if not queries:
+            out["h1_c_cost"][set_name] = _no_data([f"runs/{set_name}/sessions.jsonl"])
+            continue
+        est, _, upper = bootstrap_mean_diff(x, y, sided="upper")
+        out["h1_c_cost"][set_name] = {
+            "estimate": est, "upper": upper, "equal_or_lower": upper <= 0,
+            "n": len(queries), "queries": queries,
+            "sources": [f"runs/{set_name}/sessions.jsonl"],
+        }
     return out
 
 

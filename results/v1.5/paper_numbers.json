@@ -4,7 +4,7 @@
       "delta_pct": 1.1836,
       "pass": false
     },
-    "git_head": "d94bc59be8a2dac6b365cbd06e7e4fb6cfcefd08",
+    "git_head": "edac97fd6d5a407c581947c7b6eef3b6b7869020",
     "inputs": {},
     "model_manifest": {
       "diffs": [],
@@ -15,6 +15,81 @@
   },
   "rows": {
     "H1a_H1c": {
+      "h1_c_cost": {
+        "method": "Descriptive companion to H1c (not pre-registered in the \u00a79 table, not in the Holm family, no pass flag): one-sided paired bootstrap (SEED=20261117, n=10000) of mean cost(targeted \u2212 broadcast) per query (per-query value across runs, exactly H1b's cost_usd term). equal_or_lower = one-sided 95% upper bound \u2264 0.",
+        "real": {
+          "equal_or_lower": true,
+          "estimate": -0.0205224,
+          "n": 25,
+          "queries": [
+            "REAL-01",
+            "REAL-02",
+            "REAL-03",
+            "REAL-04",
+            "REAL-05",
+            "REAL-06",
+            "REAL-07",
+            "REAL-08",
+            "REAL-09",
+            "REAL-10",
+            "REAL-11",
+            "REAL-12",
+            "REAL-13",
+            "REAL-14",
+            "REAL-15",
+            "REAL-16",
+            "REAL-17",
+            "REAL-18",
+            "REAL-19",
+            "REAL-20",
+            "REAL-21",
+            "REAL-22",
+            "REAL-23",
+            "REAL-24",
+            "REAL-25"
+          ],
+          "sources": [
+            "runs/real/sessions.jsonl"
+          ],
+          "upper": -0.014431312
+        },
+        "synthetic": {
+          "equal_or_lower": true,
+          "estimate": -0.014266959999999997,
+          "n": 25,
+          "queries": [
+            "SYN-01",
+            "SYN-02",
+            "SYN-03",
+            "SYN-04",
+            "SYN-05",
+            "SYN-06",
+            "SYN-07",
+            "SYN-08",
+            "SYN-09",
+            "SYN-10",
+            "SYN-11",
+            "SYN-12",
+            "SYN-13",
+            "SYN-14",
+            "SYN-15",
+            "SYN-16",
+            "SYN-17",
+            "SYN-18",
+            "SYN-19",
+            "SYN-20",
+            "SYN-21",
+            "SYN-22",
+            "SYN-23",
+            "SYN-24",
+            "SYN-25"
+          ],
+          "sources": [
+            "runs/synthetic/sessions.jsonl"
+          ],
+          "upper": -0.010492009999999996
+        }
+      },
       "holm": {
         "h1_a_real": 0.08326451666355039,
         "h1_a_synthetic": 1.7889463649800677e-06,
