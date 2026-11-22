@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.1] - 2026-11-21
+
+### Added
+
+- The H1c cost half, reported descriptively in `paper_numbers`
+  (`rows/H1/h1_c_cost`): one-sided paired bootstrap, synthetic −$0.0143/query
+  (upper bound −$0.0105), real −$0.0205 (upper bound −$0.0144). Not in the Holm
+  family and no pass flag; see §13.
+
+### Fixed
+
+- The `[1.5.0]` "Reported outcomes" line, which wrongly said H1/H4/H5 carry no
+  pass flag. The corrected verdicts are in the 1.5.0 section.
+
+### Docs
+
+- §13 row for the H1c operationalisation gap (cost half reported descriptively).
+
 ## [1.5.0] - 2026-11-21
 
 The v1.5 pre-registered evaluation. The full protocol is in
@@ -70,8 +88,14 @@ The v1.5 pre-registered evaluation. The full protocol is in
 
 ### Reported outcomes
 
-As `paper_numbers` reports them: H2a pass, H2b pass, H2c fail, H3a pass,
-H3b pass. H1/H4/H5 carry no single pass flag; see the numbers.
+Against §9's criteria: H1a and H1c pass on synthetic (Holm p 1.79e-6 and 0.00029)
+and are not significant on real (both 0.083); H1b passes all five terms; H1d fails
+(cost CI [0.0101, 0.0218] lies above 0); H2a, H2b, H3a and H3b pass; H2c fails;
+H4a fails (1 spurious conflict in 150 control sessions); the H4 LLM recall gain
+(−0.368 isolation, 0.0 shipped) and false-positive re-run cost are reported, with
+no pass criterion on recall gain; H5 is exploratory with no pass flag; billing
+reconciliation fails (+1.18%). Corrected in 1.5.1; the original line wrongly said
+H1/H4/H5 carry no pass flag.
 
 ### Deviations (logged in §13)
 
